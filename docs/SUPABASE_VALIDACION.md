@@ -11,7 +11,7 @@ Proyecto exclusivo: ATRY-Turnos, djoxdtloqwbrhgtgencc. ATRY LAB Operaciones no s
 - Origen y desafío firmado comprobados; los saltos internos variables del proxy no se usan como identidad del cliente. La prueba de regresión cubre el cambio de proxy y el rechazo de otra IP.
 - Panel, Insights, preferencias, auditoría, notificaciones y exportación consultados con JWT reales. Realtime recibe las revisiones del propio negocio y ninguna de la otra organización.
 - Invitación: rechazo de otra cuenta, correo verificado correcto, uso único y pérdida de acceso después de revocarla. Lista de espera: una cancelación genera oferta y su aceptación conserva idempotencia.
-- El navegador creó una reserva manual local conectada a Supabase y una reserva pública desde GitHub Pages con el worker de protección, conservando los datos al cambiar fecha y horario.
+- El navegador creó una reserva manual local conectada a Supabase y una reserva pública desde GitHub Pages con el worker de protección, conservando los datos al cambiar fecha y horario. La reserva pública se reprogramó a las 11:00 y se canceló desde el navegador, verificando ambos resultados.
 
 ## Datos y publicación
 
@@ -21,4 +21,4 @@ Datos, contraseñas, credenciales y enlaces de prueba se mantienen exclusivament
 
 GitHub main contiene el avance; CI y despliegue aprobaron. La raíz mantiene la demostración. /ATRY-Turnos/validacion/ conecta a Supabase real con un aviso permanente de prueba. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
 
-Pendiente: confirmar correo y recuperación de punta a punta con el destinatario autorizado, limpiar fixtures, cerrar el recorrido de navegador y activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.
+Pendiente: confirmar correo y recuperación de punta a punta con el destinatario autorizado, limpiar fixtures y activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.
