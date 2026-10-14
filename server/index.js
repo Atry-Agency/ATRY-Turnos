@@ -6,7 +6,7 @@ if(process.env.NODE_ENV==='production'){
  if(!/^https:\/\//.test(process.env.PUBLIC_URL||''))throw new Error('Producción requiere PUBLIC_URL con HTTPS');
 }
 const app=createApp();
-if(process.env.NODE_ENV==='production'&&app.db.prepare("SELECT id FROM users WHERE email IN ('demo@atryturnos.test','admin@atryturnos.test')").get())throw new Error('La base contiene cuentas de demo. Usá una base productiva sin credenciales públicas.');
+if(process.env.NODE_ENV==='production'&&app.db.prepare("SELECT id FROM users WHERE email IN ('usuario1@example.com','admin.prueba@example.com')").get())throw new Error('La base contiene cuentas de demo. Usá una base productiva sin credenciales públicas.');
 if(process.env.SEED_DEMO==='1'){
  if(process.env.NODE_ENV==='production')throw new Error('SEED_DEMO está prohibido en producción: contiene credenciales públicas.');
  seedDemo(app.db);

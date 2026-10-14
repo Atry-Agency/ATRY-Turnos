@@ -3,8 +3,8 @@
 Node.js 22.13+: ejecutar `npm install`, luego `npm start`.
 Abrir http://localhost:3300/?v=3#/app/agenda.
 
-Demo negocio: demo@atryturnos.test / AtryDemo2026!
-Demo administración: admin@atryturnos.test / AtryAdmin2026!
+Demo negocio: usuario1@example.com / AtryDemo2026!
+Demo administración: admin.prueba@example.com / AtryAdmin2026!
 Las cuentas demo impiden iniciar en producción.
 
 JavaScript/HTML/CSS, Node.js, SQLite WAL y Nodemailer 10.1.0. Se conserva la base data/atry-turnos.sqlite y la identidad Atry.

@@ -23,7 +23,7 @@ test('registro, autenticar, aislar negocio y permisos',async()=>{
     const login=await t.call('/api/auth/login',{method:'POST',data:payload});assert.equal(login.status,200);assert.ok(login.cookie);
     const own=await t.call('/api/auth/me',{cookie:login.cookie});assert.equal(own.body.businesses.length,1);
     const biz=await t.call('/api/business/'+newBiz.body.business_id,{cookie:login.cookie});assert.equal(biz.status,200);
-    const demo=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('estudio-sofia');
+    const demo=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('negocio-prueba-1');
     assert.equal((await t.call('/api/business/'+demo.id+'/dashboard',{cookie:login.cookie})).status,403);
     assert.equal((await t.call('/api/admin/businesses',{cookie:login.cookie})).status,403);
     const duplicate=await t.call('/api/auth/register',{method:'POST',data:payload});assert.equal(duplicate.status,409);
@@ -31,27 +31,27 @@ test('registro, autenticar, aislar negocio y permisos',async()=>{
 });
 test('reservas reales, bloqueo de superposición, cancelar y volver a reservar',async()=>{
  const t=await context();try{
-   const publicBiz=(await t.call('/api/public/estudio-sofia')).body;
+   const publicBiz=(await t.call('/api/public/negocio-prueba-1')).body;
    assert.ok(publicBiz.services.length>=3);
    const svc=publicBiz.services[0],staff=publicBiz.staff[0];const date=nextWeekday(8);
-   let response=await t.call(`/api/public/estudio-sofia/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`);
+   let response=await t.call(`/api/public/negocio-prueba-1/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`);
    assert.equal(response.status,200);assert.ok(response.body.slots.length>0);
    const slot=response.body.slots.find(s=>s.time==='09:00')||response.body.slots[0];
    const values={service_id:svc.id,staff_id:staff.id,starts_at:slot.start,customer_name:'Cliente de prueba',customer_email:'cliente-prueba@example.com',accept_policy:true};
-   const first=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:values});assert.equal(first.status,200);assert.ok(first.body.manage_token);assert.equal(first.body.status,'confirmed');
-   const second=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:{...values,customer_email:'otro@ejemplo.com'}});assert.equal(second.status,409);
-   response=await t.call(`/api/public/estudio-sofia/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`);
+   const first=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:values});assert.equal(first.status,200);assert.ok(first.body.manage_token);assert.equal(first.body.status,'confirmed');
+   const second=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{...values,customer_email:'otro@ejemplo.com'}});assert.equal(second.status,409);
+   response=await t.call(`/api/public/negocio-prueba-1/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`);
    assert.equal(response.body.slots.some(s=>s.start===slot.start),false);
    const managed=await t.call('/api/manage/'+first.body.manage_token);assert.equal(managed.status,200);
    const cancelled=await t.call('/api/manage/'+first.body.manage_token+'/cancel',{method:'POST',data:{}});assert.equal(cancelled.status,200);
-   const retry=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:{...values,customer_email:'otra@ejemplo.com'}});assert.equal(retry.status,200);
+   const retry=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{...values,customer_email:'otra@ejemplo.com'}});assert.equal(retry.status,200);
    assert.equal((await t.call('/api/manage/token-incorrecto')).status,404);
  }finally{await t.close();}
 });
 test('cambios de jornada, descansos, exportación y auditoría',async()=>{
  const t=await context();try{
-   const login=await t.call('/api/auth/login',{method:'POST',data:{email:'demo@atryturnos.test',password:'AtryDemo2026!'}});const cookie=login.cookie;
-   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('estudio-sofia').id;
+   const login=await t.call('/api/auth/login',{method:'POST',data:{email:'usuario1@example.com',password:'AtryDemo2026!'}});const cookie=login.cookie;
+   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('negocio-prueba-1').id;
    const staff=(await t.call(`/api/business/${biz}/staff`,{cookie})).body[0];
    const services=(await t.call(`/api/business/${biz}/services`,{cookie})).body;
    const svc=services[0];
@@ -64,28 +64,28 @@ test('cambios de jornada, descansos, exportación y auditoría',async()=>{
 });
 test('validación de datos y reservas fuera de horario',async()=>{
  const t=await context();try{
-   const publicBiz=(await t.call('/api/public/estudio-sofia')).body,svc=publicBiz.services[0],staff=publicBiz.staff[0];
-   const invalid=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:localISO(nextWeekday(5),180),customer_name:'Prueba',customer_email:'p@t.uy',accept_policy:true}});
+   const publicBiz=(await t.call('/api/public/negocio-prueba-1')).body,svc=publicBiz.services[0],staff=publicBiz.staff[0];
+   const invalid=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:localISO(nextWeekday(5),180),customer_name:'Prueba',customer_email:'p@t.uy',accept_policy:true}});
    assert.equal(invalid.status,409);
-   const noConsent=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:localISO(nextWeekday(5),600),customer_name:'Prueba',customer_email:'p@t.uy'}});
+   const noConsent=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:localISO(nextWeekday(5),600),customer_name:'Prueba',customer_email:'p@t.uy'}});
    assert.equal(noConsent.status,400);
  }finally{await t.close();}
 });
 test('lista de espera: solicitud, acceso del dueño y oferta cuando se cancela',async()=>{
  const t=await context();try{
-   const pub=(await t.call('/api/public/estudio-sofia')).body;
+   const pub=(await t.call('/api/public/negocio-prueba-1')).body;
    const date=nextWeekday(10),svc=pub.services[0],staff=pub.staff[0];
-   const slot=(await t.call(`/api/public/estudio-sofia/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`)).body.slots[0];
+   const slot=(await t.call(`/api/public/negocio-prueba-1/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`)).body.slots[0];
    assert.ok(slot);
-   const initial=await t.call('/api/public/estudio-sofia/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:slot.start,customer_name:'Primera clienta',customer_email:'primera@example.test',accept_policy:true}});
+   const initial=await t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{staff_id:staff.id,service_id:svc.id,starts_at:slot.start,customer_name:'Primera clienta',customer_email:'primera@example.test',accept_policy:true}});
    assert.equal(initial.status,200);
-   const waiter=await t.call('/api/public/estudio-sofia/waitlist',{method:'POST',data:{service_id:svc.id,staff_id:staff.id,desired_date:date,customer_name:'Lista Espera',customer_email:'wait@example.test',accept_policy:true}});
+   const waiter=await t.call('/api/public/negocio-prueba-1/waitlist',{method:'POST',data:{service_id:svc.id,staff_id:staff.id,desired_date:date,customer_name:'Lista Espera',customer_email:'wait@example.test',accept_policy:true}});
    assert.equal(waiter.status,200);
-   const repeat=await t.call('/api/public/estudio-sofia/waitlist',{method:'POST',data:{service_id:svc.id,staff_id:staff.id,desired_date:date,customer_name:'Lista Espera',customer_email:'wait@example.test',accept_policy:true}});
+   const repeat=await t.call('/api/public/negocio-prueba-1/waitlist',{method:'POST',data:{service_id:svc.id,staff_id:staff.id,desired_date:date,customer_name:'Lista Espera',customer_email:'wait@example.test',accept_policy:true}});
    assert.equal(repeat.status,409);
    const cancel=await t.call('/api/manage/'+initial.body.manage_token+'/cancel',{method:'POST',data:{}});assert.equal(cancel.status,200);
-   const owner=(await t.call('/api/auth/login',{method:'POST',data:{email:'demo@atryturnos.test',password:'AtryDemo2026!'}})).cookie;
-   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('estudio-sofia').id;
+   const owner=(await t.call('/api/auth/login',{method:'POST',data:{email:'usuario1@example.com',password:'AtryDemo2026!'}})).cookie;
+   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('negocio-prueba-1').id;
    const w=(await t.call(`/api/business/${biz}/waitlist`,{cookie:owner})).body;
    assert.equal(w.find(x=>x.id===waiter.body.id).status,'offered');
    const notes=(await t.call(`/api/business/${biz}/notifications`,{cookie:owner})).body;
@@ -94,9 +94,9 @@ test('lista de espera: solicitud, acceso del dueño y oferta cuando se cancela',
 });
 test('plan individual: límite de un profesional y reservas independientes por negocio',async()=>{
  const t=await context();try{
-   const owner=(await t.call('/api/auth/login',{method:'POST',data:{email:'demo@atryturnos.test',password:'AtryDemo2026!'}})).cookie;
-   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('estudio-sofia').id;
-   const admin=(await t.call('/api/auth/login',{method:'POST',data:{email:'admin@atryturnos.test',password:'AtryAdmin2026!'}})).cookie;
+   const owner=(await t.call('/api/auth/login',{method:'POST',data:{email:'usuario1@example.com',password:'AtryDemo2026!'}})).cookie;
+   const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('negocio-prueba-1').id;
+   const admin=(await t.call('/api/auth/login',{method:'POST',data:{email:'admin.prueba@example.com',password:'AtryAdmin2026!'}})).cookie;
    const change=await t.call(`/api/admin/businesses/${biz}`,{cookie:admin,method:'PATCH',data:{plan:'individual'}});assert.equal(change.status,200);
    const add=await t.call(`/api/business/${biz}/staff`,{cookie:owner,method:'POST',data:{name:'Cuarto empleado'}});assert.equal(add.status,403);
    const reg=await t.call('/api/auth/register',{method:'POST',data:{name:'Segundo Dueño',email:'new@independent.test',password:'password10293!',business_name:'Otra peluquería'}});
@@ -107,14 +107,14 @@ test('plan individual: límite de un profesional y reservas independientes por n
 });
 test('dos solicitudes simultáneas nunca confirman el mismo horario',async()=>{
  const t=await context();try{
-   const pub=(await t.call('/api/public/estudio-sofia')).body;
+   const pub=(await t.call('/api/public/negocio-prueba-1')).body;
    const date=nextWeekday(12),svc=pub.services[0],staff=pub.staff[0];
-   const slot=(await t.call(`/api/public/estudio-sofia/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`)).body.slots[0];
+   const slot=(await t.call(`/api/public/negocio-prueba-1/availability?date=${date}&service_id=${svc.id}&staff_id=${staff.id}`)).body.slots[0];
    assert.ok(slot);
    const base={service_id:svc.id,staff_id:staff.id,starts_at:slot.start,customer_name:'Simultáneo',accept_policy:true};
    const [first,second]=await Promise.all([
-     t.call('/api/public/estudio-sofia/book',{method:'POST',data:{...base,customer_email:'uno@test.uy'}}),
-     t.call('/api/public/estudio-sofia/book',{method:'POST',data:{...base,customer_email:'dos@test.uy'}})
+     t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{...base,customer_email:'uno@test.uy'}}),
+     t.call('/api/public/negocio-prueba-1/book',{method:'POST',data:{...base,customer_email:'dos@test.uy'}})
    ]);
    assert.deepEqual([first.status,second.status].sort(),[200,409]);
    const booked=t.db.prepare('SELECT count(*) n FROM bookings WHERE starts_at=? AND staff_id=? AND status IN (\'pending\',\'confirmed\')').get(slot.start,staff.id);

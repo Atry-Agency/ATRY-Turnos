@@ -49,7 +49,7 @@ Prefijo: `/api/business/:business_id`
   "service_id": "UUID-servicio",
   "staff_id": "UUID-profesional",
   "starts_at": "2026-10-20T13:00:00.000Z",
-  "customer_name": "Valentina",
+  "customer_name": "Cliente 1",
   "customer_email": "valentina@example.com",
   "customer_phone": "099123456",
   "accept_policy": true

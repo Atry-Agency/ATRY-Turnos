@@ -1,5 +1,5 @@
 const {test}=require('node:test');const assert=require('node:assert/strict');const {context}=require('./helpers');
-const credentials={email:'demo@atryturnos.test',password:'AtryDemo2026!'};
+const credentials={email:'usuario1@example.com',password:'AtryDemo2026!'};
 test('A: cuenta sin organización y creación de negocios adicionales aislados',async()=>{const t=await context();try{
  const account={name:'Empleado Nuevo',email:'cuenta@test.uy',password:'CuentaSegura2026!'};assert.equal((await t.call('/api/auth/account',{data:account})).status,200);const login=await t.call('/api/auth/login',{data:account});assert.equal((await t.call('/api/auth/me',{cookie:login.cookie})).body.businesses.length,0);
  const owner=await t.call('/api/auth/login',{data:credentials});const added=await t.call('/api/organizations',{cookie:owner.cookie,data:{name:'Segundo negocio'}});assert.equal(added.status,200);assert.equal((await t.call('/api/auth/me',{cookie:owner.cookie})).body.businesses.length,2);assert.equal((await t.call('/api/business/'+added.body.id,{cookie:login.cookie})).status,403);
@@ -16,7 +16,7 @@ test('A: invitación a empleado sin negocio, uso único, roles y revocación inm
 }finally{await t.close();}});
 test('A: invitación revocada/vencida, cuenta equivocada y cambios de perfil protegidos',async()=>{const t=await context();try{
  const owner=await t.call('/api/auth/login',{data:credentials}),cookie=owner.cookie;const bid=t.db.prepare('SELECT id FROM businesses').get().id,p='/api/business/'+bid;
- const invite=await t.call(p+'/invitations',{cookie,data:{email:'demo@atryturnos.test',role:'manager'}});assert.equal(invite.status,409);
+ const invite=await t.call(p+'/invitations',{cookie,data:{email:'usuario1@example.com',role:'manager'}});assert.equal(invite.status,409);
  await t.call('/api/auth/account',{data:{name:'Otra cuenta',email:'other@test.uy',password:'OtraCuentaSegura!'}});
  const created=await t.call(p+'/invitations',{cookie,data:{email:'other@test.uy',role:'manager'}});const token=t.db.prepare("SELECT content FROM system_outbox WHERE kind='invitation'").get().content.match(/invitacion\/([A-Za-z0-9_-]+)/)[1];assert.equal((await t.call('/api/invitations/'+token+'/accept',{cookie,data:{}})).status,401);
  await t.call(p+'/invitations/'+created.body.id,{cookie,method:'DELETE'});assert.equal((await t.call('/api/invitations/'+token)).status,404);

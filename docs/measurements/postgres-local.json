@@ -1,0 +1,29 @@
+{
+  "environment": "PGlite PostgreSQL WASM local, una conexión; no es Supabase ni una prueba de carga cloud",
+  "sample_bookings": 200,
+  "empty_schema_bytes": 638976,
+  "business_fixture_increment_bytes": 204800,
+  "booking_bundle_increment_bytes": 958464,
+  "average_booking_bundle_bytes": 4792.32,
+  "p50_ms": 1.5471000000000004,
+  "p95_ms": 2.188000000000102,
+  "max_ms": 19.092100000000073,
+  "included": [
+    "clientes nuevos",
+    "reservas",
+    "bloqueos de profesional y recurso",
+    "auditoría",
+    "notificación pendiente",
+    "idempotencia",
+    "revisión de agenda",
+    "índices y páginas"
+  ],
+  "not_measured": [
+    "red",
+    "Edge Functions",
+    "Auth real",
+    "Brevo",
+    "concurrencia multiconexión",
+    "Realtime distribuido"
+  ]
+}

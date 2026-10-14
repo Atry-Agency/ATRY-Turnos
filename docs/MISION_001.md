@@ -83,9 +83,9 @@ Mercado Pago de suscripciones y cobros a clientes, webhooks verificados, concili
 
 Node 22.13 o superior. `npm start` conserva los datos existentes y abre el servicio en http://localhost:3300. No se requiere instalar dependencias. `npm test` ejecuta las pruebas aisladas.
 
-Para una demo NUEVA local: en PowerShell, `$env:SEED_DEMO='1'` y `npm start`. La base actual ya contiene la demo, no requiere recargarla. Acceso local: demo@atryturnos.test / AtryDemo2026!; administración: admin@atryturnos.test / AtryAdmin2026!. Producción rechaza estas cuentas conocidas.
+Para una demo NUEVA local: en PowerShell, `$env:SEED_DEMO='1'` y `npm start`. La base actual ya contiene la demo, no requiere recargarla. Acceso local: usuario1@example.com / AtryDemo2026!; administración: admin.prueba@example.com / AtryAdmin2026!. Producción rechaza estas cuentas conocidas.
 
-Prueba del usuario: iniciar sesión, configurar datos, crear servicio/asignar profesional, ajustar horario, abrir `/#/reservar/estudio-sofia`, elegir servicio/horario, reservar y guardar el enlace privado. Probar cancelación/reprogramación desde ese enlace. En el panel, revisar agenda, cliente y mensajes en cola. El correo y los pagos requieren la integración indicada arriba.
+Prueba del usuario: iniciar sesión, configurar datos, crear servicio/asignar profesional, ajustar horario, abrir `/#/reservar/negocio-prueba-1`, elegir servicio/horario, reservar y guardar el enlace privado. Probar cancelación/reprogramación desde ese enlace. En el panel, revisar agenda, cliente y mensajes en cola. El correo y los pagos requieren la integración indicada arriba.
 
 Backup: `node scripts/backup.js data/backup-fecha.sqlite`. Usar un nombre nuevo; no sobrescribe una copia anterior. No copiar únicamente el archivo SQLite mientras está en WAL activo. La restauración debe hacerse con servidor detenido y una copia adicional de los datos actuales, sin reemplazar bases a ciegas.
 
