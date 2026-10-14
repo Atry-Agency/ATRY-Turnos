@@ -13,6 +13,7 @@ function exportMigration(db,businessIds){
  for(const table of ['working_hours','staff_services'])rows[table]=db.prepare(`SELECT x.* FROM ${table} x JOIN staff s ON s.id=x.staff_id WHERE s.business_id IN (${q})`).all(...ids);
  rows.service_resources=db.prepare(`SELECT x.* FROM service_resources x JOIN services s ON s.id=x.service_id WHERE s.business_id IN (${q})`).all(...ids);
  rows.booking_resources=db.prepare(`SELECT x.* FROM booking_resources x JOIN bookings b ON b.id=x.booking_id WHERE b.business_id IN (${q})`).all(...ids);
+ const contacts=new Map(rows.customers.map(c=>[c.id,c]));rows.bookings=rows.bookings.map(b=>{const c=contacts.get(b.customer_id);if(!c)throw new Error('Referencia de cliente inválida');return {...b,customer_name_snapshot:c.name,customer_email_snapshot:c.email,customer_phone_snapshot:c.phone};});
  // Expired offers must be reissued by the new backend, never carry bearer tokens.
  rows.waitlist=rows.waitlist.map(x=>({...x,status:x.status==='offered'?'waiting':x.status,offer_token_hash:null,offer_expires_at:null,offer_starts_at:null,offer_staff_id:null}));
  const payload=JSON.stringify(rows);return {version:1,created_at:new Date().toISOString(),checksum:crypto.createHash('sha256').update(payload).digest('hex'),counts:Object.fromEntries(Object.entries(rows).map(([t,r])=>[t,r.length])),excluded:['demo','password_hash','sessions','password_resets','invitations','notifications','mail_jobs','idempotency_keys'],rows};

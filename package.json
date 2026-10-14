@@ -19,9 +19,12 @@
     "measure:postgres": "node scripts/measure-postgres.js"
   },
   "dependencies": {
+    "@noble/hashes": "2.4.0",
+    "@supabase/supabase-js": "2.117.3",
     "nodemailer": "10.1.0"
   },
   "devDependencies": {
-    "@electric-sql/pglite": "0.5.9"
+    "@electric-sql/pglite": "0.5.9",
+    "esbuild": "0.28.2"
   }
 }

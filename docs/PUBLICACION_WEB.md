@@ -1,13 +1,13 @@
-# Publicación de Atry Turnos
+# Publicación en GitHub Pages
 
-GitHub Pages estaba configurado para publicar `main` desde la raíz. Como el HTML de la aplicación está en `web/index.html`, el sitio mostraba el README generado por Jekyll.
+Destino seleccionado por el usuario: https://atry-agency.github.io/ATRY-Turnos/ . El repositorio sigue siendo Atry-Agency/ATRY-Turnos, rama main. Cloudflare queda pausado; no se creó un proyecto Pages, widget ni servicio pago allí.
 
-El workflow `pages.yml` construye y publica solamente la interfaz de `web/`. Los recursos usan rutas relativas, compatibles con `/ATRY-Turnos/`. Los cambios de interfaz en `main` vuelven a desplegar la vista previa automáticamente.
+El workflow compila únicamente la interfaz y el adaptador Supabase. Mientras CLOUD_BACKEND_VALIDATED no sea 1, publica una demostración sin solicitudes operativas. La activación requiere terminar las comprobaciones de Auth, reservas públicas y limpieza de fixtures.
 
-URL: https://atry-agency.github.io/ATRY-Turnos/
+La configuración del navegador contiene únicamente la URL y clave pública del proyecto. No se publican SQLite, respaldos, archivos de correo, claves de servidor, manifiestos privados ni contraseñas. Variables del repositorio: PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_KEY y CLOUD_BACKEND_VALIDATED. PUBLIC_TURNSTILE_SITE_KEY es opcional para instalaciones que seleccionen ese proveedor; la configuración elegida usa el control integrado en Supabase.
 
-Esta publicación muestra la interfaz de acceso y registro. Incluye un aviso visible, deshabilita formularios y bloquea las solicitudes API antes de enviar datos. No usa cuentas ficticias para simular un backend remoto. No publica bases de datos, servidores, variables de entorno ni credenciales.
+Supabase Auth debe volver a la ruta /ATRY-Turnos/ y permitir los retornos exactos de signup, recovery y email_change. Las URL locales de prueba están limitadas al puerto 3301. Los enlaces de negocio/gestión y recursos de la interfaz respetan el subdirectorio del repositorio.
 
-GitHub Pages sirve archivos estáticos y no ejecuta el servidor Node/SQLite actual. Sigue pendiente completar y validar la conexión de la interfaz a Supabase, incluyendo todas las operaciones del producto. Publicar esta vista previa no completa la Misión 003 ni habilita la aplicación para operar con clientes.
+atry-public valida origen, tamaño del cuerpo, permisos de la operación y límites por IP/operación. El modo integrado añade un desafío firmado y de duración limitada, vinculado a solicitud, acción y negocio, resuelto en un worker del navegador. Eleva el costo de automatización y conserva idempotencia; no equivale a verificar que el visitante sea humano. Referencia de la implementación SHA-256: https://github.com/paulmillr/noble-hashes . Turnstile sigue como opción de código, sin claves configuradas ni cuenta creada para esta instalación.
 
-El proceso de construcción de Cloudflare conserva su bloqueo de publicación hasta validar el backend completo. Ningún otro proyecto, dominio ni DNS se modifica con este despliegue.
+El correo externo de reservas sigue deshabilitado hasta verificar Brevo, remitente y programación. Aceptación del proveedor y entrega final se registran por separado. La aplicación local original y sus respaldos se conservan.

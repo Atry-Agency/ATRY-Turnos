@@ -20,3 +20,5 @@ enable_signup = true
 enable_confirmations = true
 [functions.atry-mail]
 verify_jwt = true
+[functions.atry-public]
+verify_jwt = false
