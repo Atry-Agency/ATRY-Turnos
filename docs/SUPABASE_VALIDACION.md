@@ -15,10 +15,10 @@ Proyecto exclusivo: ATRY-Turnos, djoxdtloqwbrhgtgencc. ATRY LAB Operaciones no s
 
 ## Datos y publicación
 
-La primera prueba de dos cuentas y negocios se limpió con autorización. La segunda ejecución todavía conserva 3 identidades, 2 negocios y 10 reservas exclusivamente temporales. Hay un snapshot privado y una limpieza preparada que comprueba IDs, marca de ejecución, pertenencias, contactos de documentación, ausencia de entregas externas y datos ajenos. Se ensayó la transacción con ROLLBACK: todos los datos permanecieron. La eliminación definitiva requiere su confirmación puntual en el navegador.
+Las dos ejecuciones temporales se limpiaron con autorización. La segunda terminó con cero perfiles, negocios y reservas de prueba, retirando después sus tres identidades Auth mediante comprobación de marca de ejecución. Auth conserva una sola cuenta real autorizada, con correo confirmado e inicio de sesión registrado. El registro y el retorno del correo a Mi cuenta fueron verificados en Chrome de Atry. Supabase registró el envío de recuperación. El usuario completó la nueva contraseña y volvió a ingresar; el navegador mostró Mi cuenta con una sesión nueva y las anteriores cerradas.
 
 Datos, contraseñas, credenciales y enlaces de prueba se mantienen exclusivamente en data/cloud-private, ignorado por Git. No se publican capturas ni claves de servidor. SQLite y respaldos originales conservados e integridad verificada.
 
 GitHub main contiene el avance; CI y despliegue aprobaron. La raíz mantiene la demostración. /ATRY-Turnos/validacion/ conecta a Supabase real con un aviso permanente de prueba. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
 
-Pendiente: confirmar correo y recuperación de punta a punta con el destinatario autorizado, limpiar fixtures y activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.
+Pendiente: activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.

@@ -10,7 +10,7 @@ SDK oficial Supabase Auth con PKCE, confirmación, recuperación, perfil/correo/
 
 atry-public y atry-mail desplegadas. La función pública usa origen autorizado, límites y, en el modo seleccionado, desafío firmado de duración limitada; no requiere proveedor CAPTCHA externo. No prueba que el visitante sea humano. El modo Turnstile queda como opción de código, sin credenciales configuradas. Referencias: https://github.com/paulmillr/noble-hashes y https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile (formato de la IP reenviada por el gateway).
 
-Auth tiene guardada la URL principal de GitHub Pages y nueve retornos exactos de signup/recovery/email_change, en la raíz de GitHub, su ruta de validación y localhost:3301. Falta verificar recepción y recorridos reales del correo. El worker de Brevo mantiene autenticación de servidor y envíos deshabilitados; faltan credenciales, remitente verificado, SMTP Auth y programación. Nunca se afirma entrega sin verificación.
+Auth tiene guardada la URL principal de GitHub Pages y nueve retornos exactos de signup/recovery/email_change, en la raíz de GitHub, su ruta de validación y localhost:3301. Registro, recepción del correo, confirmación y retorno a Mi cuenta verificados con la cuenta real autorizada. Recuperación real completada por el usuario: nueva contraseña, cierre global de sesiones e ingreso posterior comprobado en Mi cuenta. Mínimo de contraseña del servidor alineado a 10 caracteres. El worker de Brevo mantiene autenticación de servidor y envíos deshabilitados; faltan credenciales, remitente verificado, SMTP Auth y programación. Nunca se afirma entrega sin verificación.
 
 ## Evidencia y límites
 
@@ -18,12 +18,14 @@ Auth tiene guardada la URL principal de GitHub Pages y nueve retornos exactos de
 
 Aprobados contra Supabase remoto: login con JWT real, creación/aislamiento de organizaciones, revocación inmediata, permisos de empleados, concurrencia por profesional y recurso compartido, idempotencia, protección de reservas ante cambios de servicio, reserva pública por RPC de servicio, gestión privada, cancelación repetida, reprogramación, panel/informes/preferencias/auditoría/exportación y Realtime aislado. El navegador creó una reserva real desde GitHub Pages, la reprogramó a las 11:00 y comprobó su cancelación en Supabase. Invitaciones y aceptación idempotente de ofertas de espera también aprobaron en remoto. El recorrido real de la función Edge también aprobó: origen, desafío, concurrencia, idempotencia, gestión privada, reprogramación y cancelación repetida. Se corrigió y comprobó la IP del gateway sin registrar IP en claro.
 
-SQLite y respaldos originales conservados: 3 usuarios, 2 negocios, 4 profesionales, 4 servicios, 9 clientes y 9 reservas originales por ID; integridad correcta. La producción no importó la demo. Los fixtures temporales de la segunda ejecución remota siguen pendientes de limpieza autorizada. Las credenciales y sus manifiestos permanecen en data/cloud-private, ignorado por Git.
+SQLite y respaldos originales conservados: 3 usuarios, 2 negocios, 4 profesionales, 4 servicios, 9 clientes y 9 reservas originales por ID; integridad correcta. La producción no importó la demo. La segunda ejecución se limpió con autorización puntual: cero perfiles, negocios y reservas de prueba; tres identidades Auth retiradas. Auth conserva únicamente la cuenta real autorizada, con correo confirmado e inicio de sesión registrado. Las credenciales y sus manifiestos permanecen en data/cloud-private, ignorado por Git.
 
 ## Publicación y pendientes
 
 https://atry-agency.github.io/ATRY-Turnos/ mantiene la demostración sin operaciones. El nuevo workflow puede compilar el adaptador Supabase, el worker de protección y los recursos bajo /ATRY-Turnos/. CLOUD_BACKEND_VALIDATED sigue en 0 hasta finalizar la validación. Solo se distribuyen URL y clave pública; nunca claves de servidor ni datos locales.
 
-Para terminar: confirmar correo y recuperación, limpiar fixtures con autorización puntual, preparar el correo externo real y activar la publicación conectada. CI y despliegue aprobaron el commit 23dd5ed. Todavía no se declara listo para uso comercial ni se presentan integraciones pendientes como exitosas.
+Para terminar: preparar el correo externo real y verificar el despliegue de la publicación conectada. CI y despliegue aprobaron el commit 23dd5ed. Todavía no se declara listo para uso comercial ni se presentan integraciones pendientes como exitosas.
 
 La ruta /ATRY-Turnos/validacion/ está desplegada y superó el recorrido de reservas del navegador con Supabase real, identificada como validación con datos temporales. La raíz mantiene el bloqueo de demostración. Esta ruta de QA se retira al activar producción y limpiar los fixtures.
+
+El SMTP propio sigue desactivado. El proveedor de prueba de Supabase entrega solo a miembros del equipo y tiene un cupo reducido; antes de incorporar negocios externos se necesita SMTP propio (https://supabase.com/docs/guides/auth/auth-smtp). La prueba con la cuenta autorizada no certifica altas externas. Brevo continúa sin credenciales ni remitente verificado.
