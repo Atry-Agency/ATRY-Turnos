@@ -63,3 +63,7 @@ body{background:var(--bg)}h1,h2,h3{letter-spacing:-.035em}.brand-original{width:
  .sidebar-close{display:flex;position:absolute;right:12px;top:14px;min-height:34px;width:34px;padding:7px}
  .sidebar .logo{margin-top:38px}
 }
+.deployment-notice{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:14px 24px;background:#e8f6fb;color:#123d50;border-bottom:1px solid #b7dce9;font-size:14px;line-height:1.5}
+.deployment-notice strong{flex-shrink:0}
+.deployment-notice span{flex:1 1 320px}
+@media(max-width:560px){.deployment-notice{padding:12px 18px;font-size:13px}}

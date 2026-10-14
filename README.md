@@ -17,6 +17,6 @@ Las variables de .env.example se configuran en el entorno: no se carga .env auto
 
 [Informe Misión 002](docs/MISION_002.md), [correo](docs/NOTIFICACIONES.md), [preparación PostgreSQL](docs/POSTGRESQL.md), [API](docs/API.md) y [producción](docs/PRODUCCION.md).
 
-Correo local genera archivos EML reales sin entrega externa. SMTP requiere configurar un proveedor. Sin pagos, WhatsApp ni publicación. Zona horaria America/Montevideo.
+Correo local genera archivos EML reales sin entrega externa. SMTP requiere configurar un proveedor. Sin pagos ni WhatsApp. Zona horaria America/Montevideo.
 
-Misión 003 en curso: [estado y pendientes](docs/MISION_003.md), [consumo medido y cuotas](docs/CONSUMO_003.md). Repositorio privado: https://github.com/Atry-Agency/ATRY-Turnos. La aplicación continúa local; no se publicó un backend cloud incompleto. Suite actual: 42 pruebas.
+Misión 003 en curso: [estado y pendientes](docs/MISION_003.md), [consumo medido y cuotas](docs/CONSUMO_003.md). El repositorio es público por decisión del propietario. [Vista previa de la interfaz](https://atry-agency.github.io/ATRY-Turnos/): acceso, registro y reservas online deshabilitados hasta completar el backend Supabase. La aplicación funcional completa sigue disponible localmente. [Publicación web y límites actuales](docs/PUBLICACION_WEB.md).
