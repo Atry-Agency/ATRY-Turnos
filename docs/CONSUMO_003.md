@@ -29,7 +29,7 @@ A cinco reservas diarias/negocio, 200/15 da hasta 13 negocios como escenario mat
 
 ## Supervisión y costos al crecer
 
-RPC administrativa attry_usage_local (nombre real: atry_usage_local) mide bytes de base y presupuesto local con alerta 70%; no conoce automáticamente cuotas de los proveedores. Para datos completos: Supabase organización → Usage (egress, MAU, Edge, Realtime, Storage) y proyecto → Database/Reports; Cloudflare Pages proyecto → deployments/builds y analytics; Brevo → transactional statistics/quota. Falta integrar alertas automáticas de todos esos paneles. Consultar errores/latencia reales antes de estimar pilotos.
+RPC administrativa atry_usage_local mide bytes de base y presupuesto local con alerta 70%; no conoce automáticamente cuotas de los proveedores. Para datos completos: Supabase organización → Usage (egress, MAU, Edge, Realtime, Storage) y proyecto → Database/Reports; Cloudflare Pages proyecto → deployments/builds y analytics; Brevo → transactional statistics/quota. Falta integrar alertas automáticas de todos esos paneles. Consultar errores/latencia reales antes de estimar pilotos.
 
 Supabase Pro empieza en US$25/mes con primer proyecto; proyectos adicionales desde US$10/mes, y posibles cargos variables. Egress extra desde US$0,09/GB, base adicional US$0,125/GB, invocaciones extra US$2/millón y mensajes extra US$2,50/millón según billing. Considerar pago por respaldo/continuidad o cercanía a cuotas, no únicamente almacenamiento. Elevar la organización actual afectaría su facturación conjunta: nunca hacerlo sin autorización.
 

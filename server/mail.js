@@ -27,7 +27,7 @@ function createProvider(env=process.env){
  if(!env.SMTP_HOST||!env.MAIL_FROM)throw new Error('SMTP requiere SMTP_HOST y MAIL_FROM');
  const port=Number(env.SMTP_PORT||587);if(!Number.isInteger(port)||port<1||port>65535)throw new Error('SMTP_PORT inválido');
  const transport=nodemailer.createTransport({host:env.SMTP_HOST,port,secure:env.SMTP_SECURE==='1',requireTLS:env.NODE_ENV==='production'||env.SMTP_REQUIRE_TLS!=='0',auth:env.SMTP_USER?{user:env.SMTP_USER,pass:env.SMTP_PASSWORD}:undefined,connectionTimeout:10000,greetingTimeout:10000,socketTimeout:20000,disableFileAccess:true,disableUrlAccess:true});
- return {mode,async send(job,message){const result=await transport.sendMail(message);if(!result.accepted?.length)throw Object.assign(new Error('Recipient rejected'),{code:'RECIPIENT_REJECTED'});return {state:'smtp_accepted',id:result.messageId};}};
+ return {mode,async send(job,message){if(!['127.0.0.1','localhost','::1'].includes(env.SMTP_HOST)&&/@(example\.(com|net|org)|[^@]+\.(test|invalid|example|localhost))$/i.test(job.recipient))throw Object.assign(new Error('Destinatario de documentación bloqueado'),{code:'TEST_RECIPIENT_BLOCKED'});const result=await transport.sendMail(message);if(!result.accepted?.length)throw Object.assign(new Error('Recipient rejected'),{code:'RECIPIENT_REJECTED'});return {state:'smtp_accepted',id:result.messageId};}};
 }
 function shouldDeliver(db,job){
  if(job.business_id){

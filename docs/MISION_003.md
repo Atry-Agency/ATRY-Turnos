@@ -36,7 +36,7 @@ Comprobación de base actual respecto al respaldo Misión 002: 3 usuarios, 2 neg
 
 ## Pruebas y límites
 
-41 pruebas aprobadas, 0 fallidas: se mantienen las 32 y se agregan 9 para PostgreSQL, migración, Brevo y configuración. Medición de 200 reservas en docs/measurements/postgres-local.json; interpretación en CONSUMO_003.md. No es una prueba de carga cloud. Falta validar Auth, Realtime remoto, scheduler, RLS con JWT reales, errores/red y recorridos completos móvil/escritorio contra la arquitectura nueva.
+42 pruebas aprobadas, 0 fallidas: se mantienen las 32 y se agregan 10 para PostgreSQL, migración, Brevo y configuración. Medición de 200 reservas en docs/measurements/postgres-local.json; interpretación en CONSUMO_003.md. No es una prueba de carga cloud. Falta validar Auth, Realtime remoto, scheduler, RLS con JWT reales, errores/red y recorridos completos móvil/escritorio contra la arquitectura nueva.
 
 ## Trabajo pendiente para terminar A–I
 

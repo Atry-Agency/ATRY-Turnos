@@ -14,7 +14,7 @@ Configurar variables de .env.example en entorno, no se carga .env automáticamen
 - SMTP_USER/SMTP_PASSWORD: autenticación del proveedor.
 - SMTP_REQUIRE_TLS: requerido salvo 0 en desarrollo; producción siempre exige TLS y valida certificados.
 
-Estados: queued pendiente, sending reclamado, retry reintento, failed cinco intentos agotados, skipped omitido, stored_local archivo EML generado, smtp_accepted aceptado por SMTP. Aceptación no acredita entrega o lectura.
+Estados: queued pendiente, processing reclamado, retry reintento, failed cinco intentos agotados, skipped omitido, stored_local archivo EML generado, smtp_accepted aceptado por SMTP. Aceptación no acredita entrega o lectura.
 
 Reclamación transaccional con concesión de 60 segundos; hasta 20 trabajos/ciclo; reintentos exponenciales desde 30 segundos y máximo una hora. Disabled conserva pendientes. Dos workers probados para evitar reclamaciones simultáneas.
 
