@@ -4,7 +4,7 @@
 
 ## Infraestructura e implementación
 
-Supabase exclusivo: ATRY-Turnos, referencia djoxdtloqwbrhgtgencc. Migraciones 001–022 aplicadas; los lotes 007–014 y 015–022 tienen hashes privados auditados. RLS habilitado en todas las tablas públicas y privadas. La migración 023, que permite el enlace de correo de GitHub Pages, está preparada en código y todavía no aplicada. ATRY LAB Operaciones y los otros repositorios permanecen intactos.
+Supabase exclusivo: ATRY-Turnos, referencia djoxdtloqwbrhgtgencc. Migraciones 001–023 aplicadas; los lotes 007–014 y 015–022 tienen hashes privados auditados. RLS habilitado en todas las tablas públicas y privadas. La migración 023 permite el enlace de correo de GitHub Pages y conserva los permisos exclusivos del servidor. ATRY LAB Operaciones y los otros repositorios permanecen intactos.
 
 SDK oficial Supabase Auth con PKCE, confirmación, recuperación, perfil/correo/contraseña y sesiones. Adaptador para los módulos existentes de agenda, reservas, equipo y permisos, invitaciones, clientes, servicios, disponibilidad, recursos, espera, SmartSlots, informes y administración. Realtime autentica el websocket con el JWT y revisa periódicamente el acceso. La sesión revocada no bloquea futuros intentos de login.
 
@@ -24,6 +24,6 @@ SQLite y respaldos originales conservados: 3 usuarios, 2 negocios, 4 profesional
 
 https://atry-agency.github.io/ATRY-Turnos/ mantiene la demostración sin operaciones. El nuevo workflow puede compilar el adaptador Supabase, el worker de protección y los recursos bajo /ATRY-Turnos/. CLOUD_BACKEND_VALIDATED sigue en 0 hasta finalizar la validación. Solo se distribuyen URL y clave pública; nunca claves de servidor ni datos locales.
 
-Para terminar: completar pruebas Edge/navegador, confirmar correo y recuperación, cerrar las comprobaciones de invitaciones/espera, limpiar fixtures, aplicar 023 y preparar el correo externo real, verificar CI y activar la publicación conectada. Todavía no se declara listo para uso comercial ni se presentan integraciones pendientes como exitosas.
+Para terminar: completar pruebas Edge/navegador, confirmar correo y recuperación, cerrar las comprobaciones de invitaciones/espera, limpiar fixtures, preparar el correo externo real, verificar CI y activar la publicación conectada. Todavía no se declara listo para uso comercial ni se presentan integraciones pendientes como exitosas.
 
 La ruta /ATRY-Turnos/validacion/ está preparada para el recorrido del navegador con Supabase real, identificada como validación con datos temporales. La raíz mantiene el bloqueo de demostración. Esta ruta de QA se retira al activar producción y limpiar los fixtures.

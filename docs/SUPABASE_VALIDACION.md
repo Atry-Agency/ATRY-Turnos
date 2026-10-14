@@ -1,27 +1,24 @@
-# Validación real de Supabase — 14 de octubre de 2026
+# Validación real de Supabase
 
-Proyecto exclusivo: `djoxdtloqwbrhgtgencc`, ATRY-Turnos. No se intervino ATRY LAB Operaciones.
+Proyecto exclusivo: ATRY-Turnos, djoxdtloqwbrhgtgencc. ATRY LAB Operaciones no se modificó. Migraciones 001–023 aplicadas. Los hashes de 007–022 coinciden con el código revisado; 023 se registró al aplicar el ajuste de enlaces GitHub manteniendo el correo deshabilitado. No hay tablas públicas/privadas sin RLS.
 
-Migraciones 007–014 aplicadas y auditadas. El registro privado contiene las ocho versiones y hashes SHA-256 coincidentes con los archivos. Cero tablas públicas/privadas sin RLS. Usuarios anónimos no pueden crear organizaciones; clientes autenticados no pueden invocar directamente la reserva pública; el servicio protegido sí tiene ese permiso.
+## Resultados remotos
 
-El editor duplicó el lote durante la preparación. La primera transacción se completó; el guard de versiones detuvo la segunda. Se auditó el estado con una consulta nueva, sin reejecutar migraciones. Para lotes posteriores se usa siempre un editor nuevo y vacío.
+- Auth emite JWT reales; los metadatos no conceden administración. Cada organización queda aislada mediante RLS/RPC. La revocación de sesión bloquea inmediatamente el JWT previo y conserva el acceso de las otras cuentas.
+- Profesionales, servicios, horarios, asignaciones y roles funcionan. El empleado no accede a CRM ni a agenda ajena. Cambios de duración/activación protegen reservas existentes.
+- Solicitudes simultáneas producen una sola reserva por profesional o recurso compartido. Reintentar la misma solicitud conserva su ID.
+- Reserva pública y gestión privada, cancelación repetida y reprogramación aprobadas mediante la función Edge real. Se verificó que la respuesta de conflicto pertenece al horario, usando claves nuevas en cada intento de la prueba.
+- Origen y desafío firmado comprobados; los saltos internos variables del proxy no se usan como identidad del cliente. La prueba de regresión cubre el cambio de proxy y el rechazo de otra IP.
+- Panel, Insights, preferencias, auditoría, notificaciones y exportación consultados con JWT reales. Realtime recibe las revisiones del propio negocio y ninguna de la otra organización.
+- Invitación: rechazo de otra cuenta, correo verificado correcto, uso único y pérdida de acceso después de revocarla. Lista de espera: una cancelación genera oferta y su aceptación conserva idempotencia.
+- El navegador creó una reserva manual local conectada a Supabase y una reserva pública desde GitHub Pages con el worker de protección, conservando los datos al cambiar fecha y horario.
 
-Prueba real mediante GoTrue y PostgREST, con dos cuentas temporales y JWT emitidos por Supabase:
+## Datos y publicación
 
-- Creación de identidades de prueba por la API de administración y acceso con contraseñas aleatorias. No se enviaron correos externos.
-- Metadatos `platform_admin` y `role` no otorgan privilegios en la aplicación.
-- Cada cuenta crea su organización mediante RPC y solo puede leer esa organización bajo RLS.
-- RPC de catálogo rechaza el ID de una organización ajena.
-- La revocación elimina inmediatamente el acceso privado del JWT previo y no afecta la otra cuenta.
+La primera prueba de dos cuentas y negocios se limpió con autorización. La segunda ejecución todavía conserva 3 identidades, 2 negocios y 10 reservas exclusivamente temporales. Hay un snapshot privado y una limpieza preparada que comprueba IDs, marca de ejecución, pertenencias, contactos de documentación, ausencia de entregas externas y datos ajenos. Se ensayó la transacción con ROLLBACK: todos los datos permanecieron. La eliminación definitiva requiere su confirmación puntual en el navegador.
 
-Limpieza autorizada de los fixtures de esa ejecución: comprobación de IDs, marcas de integración y ausencia de datos operativos inesperados; eliminación de perfiles/organizaciones y de sus identidades Auth. Resultado remoto final: usuarios=0, negocios=0, reservas=0, identidades Auth=0. SQLite y respaldos conservados.
+Datos, contraseñas, credenciales y enlaces de prueba se mantienen exclusivamente en data/cloud-private, ignorado por Git. No se publican capturas ni claves de servidor. SQLite y respaldos originales conservados e integridad verificada.
 
-Las credenciales de servidor se guardan exclusivamente bajo `data/cloud-private/`, excluido de Git. Nunca se incluyen en la interfaz, el build ni este informe. Los manifiestos privados de pruebas no se publican; sus contraseñas se retiran tras la limpieza.
+GitHub main contiene el avance; CI y despliegue aprobaron. La raíz mantiene la demostración. /ATRY-Turnos/validacion/ conecta a Supabase real con un aviso permanente de prueba. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
 
-Todavía faltan pruebas reales de confirmación de correo/recuperación, empleados/invitaciones, reservas concurrentes, Realtime y recorridos del navegador. Las migraciones 015–022 ya se aplicaron y sus ocho hashes coinciden; se verificó RLS en todas las tablas y acceso de escrituras privado/por rol. Estos resultados no certifican todavía el producto completo online.
-
-## Segunda ejecución de integración (todavía en curso)
-
-Tres identidades temporales y dos negocios genéricos. Aprobados remotamente: equipo verificado/rol empleado, aislamiento, concurrencia real sobre un profesional y sobre un recurso compartido, idempotencia, protección de reservas ante cambios de servicios, reserva pública por RPC del servicio, gestión privada, cancelación repetida y reprogramación; panel, Insights, preferencias, notificaciones, auditoría y exportación. Realtime recibió revisiones propias y ninguna de la organización ajena. Se corrigió la autenticación explícita del websocket con JWT. El formulario del navegador creó una reserva real de prueba, visible después en la agenda. Los fixtures de esta segunda ejecución siguen pendientes de limpieza autorizada al finalizar las pruebas; no se presenta el estado actual como producción vacía.
-
-Las funciones atry-public y atry-mail están desplegadas. La pública requiere configuración real y responde PUBLIC_NOT_CONFIGURED (503) mientras falte; el worker mantiene la verificación JWT y no tiene entrega habilitada. No se enviaron mensajes externos.
+Pendiente: confirmar correo y recuperación de punta a punta con el destinatario autorizado, limpiar fixtures, cerrar el recorrido de navegador y activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.

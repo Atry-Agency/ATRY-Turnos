@@ -357,6 +357,14 @@ async function boot(){
  document.addEventListener('keydown',e=>{const modal=$('.modal');if(!modal)return;if(e.key==='Escape'){e.preventDefault();modal.querySelector('[data-action="close-modal"]')?.click();}if(e.key==='Tab'){const focusable=[...modal.querySelectorAll('a,button,input,select,textarea')].filter(x=>!x.disabled&&x.getClientRects().length);const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}});
  try{state.me=await api('/api/auth/me');state.businesses=state.me.businesses;}catch{state.me=null;}
  try{state.config=await api('/api/config');}catch{state.config={mail_provider:'disabled'};}
+ if(window.ATRY_CLOUD&&state.me?.user){
+  const flow=new URL(location.href).searchParams.get('auth_flow');
+  if(flow==='signup'||flow==='email_change'){
+   const saved=localStorage.getItem('atry_return_to');localStorage.removeItem('atry_return_to');
+   const destination=/^\/invitacion\/[A-Za-z0-9_-]{32,100}$/.test(saved||'')?saved:state.businesses.length?'/app/inicio':'/app/cuenta';
+   history.replaceState(null,'',location.pathname+'#'+destination);
+  }
+ }
  await router();
  if(window.ATRY_CONFIG?.backend!=='preview'&&'serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }

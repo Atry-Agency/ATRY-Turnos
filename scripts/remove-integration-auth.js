@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),{createClient}=require('@supabase/supabase-js');
 async function main(){
- const filename=process.argv[2];if(!filename?.startsWith('data/cloud-private/integration-'))throw new Error('FIXTURE_MANIFEST_REQUIRED');
+ const filename=process.argv[2];if(!/^data\/cloud-private\/(integration|modules)-[a-f0-9-]+\.json$/.test(filename||''))throw new Error('FIXTURE_MANIFEST_REQUIRED');
  const manifest=JSON.parse(fs.readFileSync(filename,'utf8')),config=JSON.parse(fs.readFileSync('data/cloud-private/connection.json','utf8'));
  if(manifest.project!=='djoxdtloqwbrhgtgencc'||config.url!=='https://djoxdtloqwbrhgtgencc.supabase.co')throw new Error('TARGET_MISMATCH');
  const options={auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}},admin=createClient(config.url,config.serverKey,options);
