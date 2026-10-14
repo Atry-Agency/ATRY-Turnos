@@ -19,6 +19,8 @@ Las dos ejecuciones temporales se limpiaron con autorización. La segunda termin
 
 Datos, contraseñas, credenciales y enlaces de prueba se mantienen exclusivamente en data/cloud-private, ignorado por Git. No se publican capturas ni claves de servidor. SQLite y respaldos originales conservados e integridad verificada.
 
-GitHub main contiene el avance; CI y despliegue aprobaron. La raíz mantiene la demostración. /ATRY-Turnos/validacion/ conecta a Supabase real con un aviso permanente de prueba. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
+GitHub main contiene el avance; CI y despliegue aprobaron. La raíz publica la aplicación conectada real, verificada con la sesión autorizada. La ruta temporal /ATRY-Turnos/validacion/ se retiró del artefacto. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
 
-Pendiente: activar la publicación principal. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron mensajes externos ni se certifica todavía la preparación comercial completa.
+La publicación principal está activada. Pendiente: completar la integración de correo externo. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron notificaciones de reservas por Brevo ni se certifica todavía la preparación comercial completa.
+
+Auditoría final remota: Auth 1, perfiles 1, negocios 0, reservas 0, clientes 0, mail_jobs 0, tablas sin RLS 0, ledger 007–023 con 17 registros, correo de reservas deshabilitado. CI y despliegue 38c2485 aprobados. Acceso móvil publicado: viewport y contenido de 390 px, sin desborde horizontal.

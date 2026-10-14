@@ -22,10 +22,10 @@ SQLite y respaldos originales conservados: 3 usuarios, 2 negocios, 4 profesional
 
 ## Publicación y pendientes
 
-https://atry-agency.github.io/ATRY-Turnos/ mantiene la demostración sin operaciones. El nuevo workflow puede compilar el adaptador Supabase, el worker de protección y los recursos bajo /ATRY-Turnos/. CLOUD_BACKEND_VALIDATED sigue en 0 hasta finalizar la validación. Solo se distribuyen URL y clave pública; nunca claves de servidor ni datos locales.
+https://atry-agency.github.io/ATRY-Turnos/ sirve la aplicación real conectada a Supabase. CLOUD_BACKEND_VALIDATED=1 y CLOUD_INTEGRATION_QA=0. CI y Pages aprobaron el commit 38c2485. La cuenta real se abrió y consultó en la raíz publicada; el acceso a 390 px no desborda horizontalmente. La ruta temporal /validacion/ dejó de formar parte del artefacto.
 
-Para terminar: preparar el correo externo real y verificar el despliegue de la publicación conectada. CI y despliegue aprobaron el commit 23dd5ed. Todavía no se declara listo para uso comercial ni se presentan integraciones pendientes como exitosas.
+Auditoría remota final: Auth 1 cuenta, perfiles 1, negocios 0, reservas 0, clientes 0, mail_jobs 0, tablas públicas/privadas sin RLS 0. Ledger 007–023: 17 registros. mail_enabled=false. La cuenta real no tiene negocios ficticios ni se le asignó administración global.
 
-La ruta /ATRY-Turnos/validacion/ está desplegada y superó el recorrido de reservas del navegador con Supabase real, identificada como validación con datos temporales. La raíz mantiene el bloqueo de demostración. Esta ruta de QA se retira al activar producción y limpiar los fixtures.
+El SMTP propio sigue desactivado. El proveedor de prueba de Supabase entrega solo a miembros del equipo y tiene un cupo reducido; antes de incorporar negocios externos se necesita SMTP propio (https://supabase.com/docs/guides/auth/auth-smtp). La prueba con la cuenta autorizada no certifica altas externas. Brevo continúa sin credenciales ni remitente verificado; faltan validación de envíos y programación del worker. El worker deberá redeplegarse desde el código actual antes de habilitarlo, para incluir la URL de GitHub permitida. No se declara terminada la preparación comercial del correo.
 
-El SMTP propio sigue desactivado. El proveedor de prueba de Supabase entrega solo a miembros del equipo y tiene un cupo reducido; antes de incorporar negocios externos se necesita SMTP propio (https://supabase.com/docs/guides/auth/auth-smtp). La prueba con la cuenta autorizada no certifica altas externas. Brevo continúa sin credenciales ni remitente verificado.
+Solo se distribuyen URL y clave pública de Supabase. SQLite y respaldos originales siguen íntegros. Cloudflare permanece pausado por la elección posterior del usuario de trabajar en GitHub y Supabase.
