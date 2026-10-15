@@ -11,9 +11,9 @@ INSERT INTO auth.users(id,email,email_confirmed_at,raw_user_meta_data) VALUES
 ('11111111-1111-4111-8111-111111111103','qa026-staff@example.com',now(),'{"name":"Usuario Prueba 026-3"}'),
 ('11111111-1111-4111-8111-111111111104','qa026-new@example.com',now(),'{"name":"Usuario Prueba 026-4","requested_business_name":"Negocio Prueba 026-4","requested_business_slug":"qa-026-20261015-new","requested_business_sector":"Taller de cerámica","platform_admin":true}');
 INSERT INTO auth.sessions(id,user_id,created_at,updated_at) SELECT id,id,now(),now() FROM auth.users WHERE id IN ('11111111-1111-4111-8111-111111111101','11111111-1111-4111-8111-111111111102','11111111-1111-4111-8111-111111111103','11111111-1111-4111-8111-111111111104');
-INSERT INTO public.businesses(id,slug,name,trial_until,created_at,min_notice_min) VALUES
-('qa_026_20261015_a','qa-026-20261015-a','Negocio Prueba 026-1',now()+interval '1 year',now(),0),
-('qa_026_20261015_b','qa-026-20261015-b','Negocio Prueba 026-2',now()+interval '1 year',now(),0);
+INSERT INTO public.businesses(id,slug,name,trial_until,created_at,min_notice_min,subscription_status) VALUES
+('qa_026_20261015_a','qa-026-20261015-a','Negocio Prueba 026-1',now()+interval '1 year',now(),0,'trialing'),
+('qa_026_20261015_b','qa-026-20261015-b','Negocio Prueba 026-2',now()+interval '1 year',now(),0,'trialing');
 INSERT INTO public.memberships VALUES('11111111-1111-4111-8111-111111111101','qa_026_20261015_a','owner'),('11111111-1111-4111-8111-111111111102','qa_026_20261015_b','owner'),('11111111-1111-4111-8111-111111111103','qa_026_20261015_a','staff');
 INSERT INTO public.staff(id,business_id,user_id,name,created_at) VALUES('qa_026_staff_a','qa_026_20261015_a','11111111-1111-4111-8111-111111111103','Empleado Prueba 026-1',now()),('qa_026_staff_b','qa_026_20261015_b',null,'Empleado Prueba 026-2',now());
 INSERT INTO public.services(id,business_id,name,duration_min,created_at) VALUES('qa_026_service_a','qa_026_20261015_a','Servicio Prueba 026-1',30,now()),('qa_026_service_b','qa_026_20261015_b','Servicio Prueba 026-2',30,now());

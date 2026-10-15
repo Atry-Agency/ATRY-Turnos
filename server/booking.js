@@ -13,7 +13,7 @@ const localDay=utc=>new Date(Date.parse(utc)-3*3600000).toISOString().slice(0,10
 const localHM=utc=>new Date(Date.parse(utc)-3*3600000).toISOString().slice(11,16);
 const weekday=day=>new Date(`${day}T12:00:00Z`).getUTCDay();
 const overlap=(a,b,c,d)=>a<d && c<b;
-function isLive(b){return b.is_active && ['trialing','active'].includes(b.subscription_status) && (b.subscription_status!=='trialing' || b.trial_until>now());}
+const isLive=b=>require('./subscriptions').live(b);
 function base(db,bizId,staffId,serviceId){
   const business=db.prepare('SELECT * FROM businesses WHERE id=?').get(bizId);
   const staff=db.prepare('SELECT * FROM staff WHERE id=? AND business_id=? AND active=1').get(staffId,bizId);
@@ -24,6 +24,7 @@ function base(db,bizId,staffId,serviceId){
 }
 function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enforceNotice=true,ignoreRecurring=''}={}) {
   const {business,staff,service}=base(db,bizId,staffId,serviceId);
+  if(!isLive(business))fail(403,'El acceso del negocio requiere habilitación o renovación de Atry');
   if(business.timezone!=='America/Montevideo')fail(400,'Zona horaria no compatible en esta versión');
   if(!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\dZ$/.test(startISO))fail(400,'Formato de fecha incorrecto');
   const startMs=Date.parse(startISO);

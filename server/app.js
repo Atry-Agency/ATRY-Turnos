@@ -32,7 +32,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     if(!membership||!roles.includes(membership.role))fail(403,'No tenés permiso para esta acción');
     return {biz,role:membership.role,user:u};
   }
-  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,trial_until:b.trial_until,is_active:b.is_active});
+  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,paid_until:b.paid_until,trial_until:b.trial_until,is_active:b.is_active});
   function appointmentList(bizId,from,to){return db.prepare(`SELECT b.id,b.business_id,b.staff_id,b.service_id,b.starts_at,b.ends_at,b.status,b.source,b.recurring_id,b.occurrence_day,b.price_uyu,b.payment_status,b.notes,b.created_at, st.name staff_name,s.name service_name,c.id customer_id,c.name customer_name,c.phone customer_phone,c.email customer_email
     FROM bookings b JOIN staff st ON st.id=b.staff_id JOIN services s ON s.id=b.service_id JOIN customers c ON c.id=b.customer_id
     WHERE b.business_id=? AND b.starts_at>=? AND b.starts_at<? ORDER BY b.starts_at`).all(bizId,from,to);}
@@ -57,7 +57,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       db.prepare("INSERT INTO memberships(user_id,business_id,role) VALUES(?,?,'owner')").run(uid,bid);
       const sid=id();db.prepare('INSERT INTO staff(id,business_id,user_id,name,email,created_at) VALUES(?,?,?,?,?,?)').run(sid,bid,uid,name,email,now());
       const wk=db.prepare('INSERT INTO working_hours(staff_id,weekday,start_min,end_min) VALUES(?,?,?,?)');for(let d=1;d<=6;d++)wk.run(sid,d,9*60,18*60);
-      record(bid,uid,'business.created','business',bid);
+      db.prepare("UPDATE businesses SET subscription_status='pending',trial_until=? WHERE id=?").run(now(),bid);record(bid,uid,'business.created','business',bid);
     });
     return {business_id:bid,slug};
   });
@@ -141,6 +141,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   r('GET','/api/business/([A-Za-z0-9_-]+)',({req,params})=>{const a=authorized(req,params[0],['owner','manager','staff']);return {...dataBusiness(a.biz),role:a.role,staff_id:db.prepare('SELECT id FROM staff WHERE business_id=? AND user_id=? AND active=1').get(a.biz.id,a.user.id)?.id||null,public_url:`/#/reservar/${a.biz.slug}`};});
   r('PATCH','/api/business/([A-Za-z0-9_-]+)',({req,params,body})=>{
     const {biz,user}=authorized(req,params[0],['owner','manager']);
+    if(!isLive(biz))fail(403,'El acceso del negocio requiere habilitación o renovación de Atry');
     const editable={name:100,description:800,phone:35,email:150,address:180,city:100,sector:100,primary_color:30,logo_url:140000};
     const updates={};for(const [key,max] of Object.entries(editable))if(body[key]!==undefined)updates[key]=string(body[key],max);
     if(updates.name!==undefined&&updates.name.length<2)fail(400,'Nombre demasiado corto');
@@ -297,20 +298,14 @@ function createApp({db=connect(),webRoot=root}={}) {
   });
   r('GET','/api/admin/businesses',({req})=>{
     if(!auth(req).platform_admin)fail(403,'Solo administración Atry');
-    return db.prepare(`SELECT b.id,b.name,b.slug,b.plan,b.subscription_status,b.trial_until,b.created_at,b.is_active,
+    return db.prepare(`SELECT b.id,b.name,b.slug,b.email,b.plan,b.subscription_status,b.trial_until,b.paid_until,b.created_at,b.is_active,
     (SELECT COUNT(*) FROM bookings x WHERE x.business_id=b.id) bookings,
-    (SELECT COUNT(*) FROM memberships m WHERE m.business_id=b.id) members FROM businesses b ORDER BY b.created_at DESC`).all();
+    (SELECT COUNT(*) FROM memberships m WHERE m.business_id=b.id) members FROM businesses b ORDER BY b.created_at DESC`).all().map(b=>({...b,license_history:db.prepare('SELECT * FROM subscription_events WHERE business_id=? ORDER BY created_at DESC LIMIT 20').all(b.id).map(e=>({...e,after_state:JSON.parse(e.after_state),actor_name:db.prepare('SELECT name FROM users WHERE id=?').get(e.actor_id)?.name||'Atry'}))}));
   });
   r('PATCH','/api/admin/businesses/([A-Za-z0-9_-]+)',({req,params,body})=>{
     if(!auth(req).platform_admin)fail(403,'Solo administración Atry');
     const biz=db.prepare('SELECT * FROM businesses WHERE id=?').get(params[0]);if(!biz)fail(404,'Negocio inexistente');
-    const allowed={plan:['trial','individual','negocio','pro'],subscription_status:['trialing','active','past_due','suspended']};
-    const fields={};for(const [key,valid] of Object.entries(allowed))if(body[key]!==undefined){if(!valid.includes(body[key]))fail(400,'Valor inválido');fields[key]=body[key];}
-    if(body.is_active!==undefined)fields.is_active=integer(body.is_active,0,1,'Estado');
-    const keys=Object.keys(fields);if(keys.length)db.prepare('UPDATE businesses SET '+keys.map(k=>k+'=?').join(',')+' WHERE id=?').run(...keys.map(k=>fields[k]),biz.id);
-    record(biz.id,req.user.id,'admin.business.updated','business',biz.id);
-    db.prepare('INSERT INTO platform_audit VALUES(?,?,?,?,?)').run(id(),req.user.id,'admin.business.updated',biz.id,now());
-    return {ok:true};
+    return require('./subscriptions').save(db,biz.id,body,req.user.id);
   });
 
   require('./product').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
@@ -347,12 +342,13 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
       if(req.method==='HEAD')res.end();else res.end(content);
     }catch(e){
+      if(e.message?.includes('SUBSCRIPTION_REQUIRED'))e=new HttpError(403,'El acceso del negocio requiere habilitación o renovación de Atry');
       if(!res.writableEnded){if(!(e instanceof HttpError)){const errorId=id();console.error('Error de servidor:',errorId,e.code||'INTERNAL_ERROR');try{db.prepare('INSERT INTO system_errors VALUES(?,?,?)').run(errorId,String(e.code||'INTERNAL_ERROR').slice(0,80),now());}catch{}}send(res,e.status||500,{error:e.status?e.message:'Error interno del servidor'});}
     }
   };

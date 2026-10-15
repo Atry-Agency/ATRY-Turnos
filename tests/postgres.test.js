@@ -128,7 +128,7 @@ test('PostgreSQL: worker reservado al servicio, presupuesto diario y confirmaci�
 async function fixture(db){await db.exec(`
 INSERT INTO auth.users(id,email) VALUES('00000000-0000-0000-0000-000000000001','owner1@example.com'),('00000000-0000-0000-0000-000000000002','owner2@example.com'),('00000000-0000-0000-0000-000000000003','staff@example.com');
 INSERT INTO auth.sessions(id,user_id) SELECT id,id FROM auth.users;
-INSERT INTO businesses(id,slug,name,trial_until,created_at,min_notice_min) VALUES('b1','negocio-prueba-1','Negocio Prueba 1',now()+interval '1 year',now(),0),('b2','negocio-prueba-2','Negocio Prueba 2',now()+interval '1 year',now(),0);
+INSERT INTO businesses(id,slug,name,trial_until,created_at,min_notice_min,subscription_status) VALUES('b1','negocio-prueba-1','Negocio Prueba 1',now()+interval '1 year',now(),0,'trialing'),('b2','negocio-prueba-2','Negocio Prueba 2',now()+interval '1 year',now(),0,'trialing');
 INSERT INTO memberships VALUES('00000000-0000-0000-0000-000000000001','b1','owner'),('00000000-0000-0000-0000-000000000002','b2','owner'),('00000000-0000-0000-0000-000000000003','b1','staff');
 INSERT INTO staff(id,business_id,user_id,name,created_at) VALUES('s1','b1','00000000-0000-0000-0000-000000000003','Empleado 1',now()),('s2','b1',null,'Empleado 2',now()),('s3','b2',null,'Empleado 3',now());
 INSERT INTO services(id,business_id,name,duration_min,created_at) VALUES('v1','b1','Servicio 1',30,now()),('v2','b2','Servicio 2',30,now());
@@ -188,5 +188,33 @@ test('PostgreSQL: CRM crea contactos sin duplicados y conserva el rubro personal
   await db.exec('RESET ROLE');await db.query('INSERT INTO auth.users(id,email,email_confirmed_at,raw_user_meta_data) VALUES($1,$2,now(),$3::jsonb)',['00000000-0000-0000-0000-000000000004','owner4@example.com',JSON.stringify({name:'Usuario Prueba 4',requested_business_name:'Negocio Prueba 4',requested_business_slug:'negocio-prueba-4',requested_business_sector:'Taller de cerámica',platform_admin:true})]);
   await db.exec("INSERT INTO auth.sessions(id,user_id) VALUES('00000000-0000-0000-0000-000000000004','00000000-0000-0000-0000-000000000004')");await asUser(db,4);await db.query('SELECT atry_finish_registration()');await db.query('SELECT atry_finish_registration()');const fresh=(await db.query('SELECT atry_me() v')).rows[0].v;assert.equal(fresh.businesses.length,1);assert.equal(fresh.businesses[0].sector,'Taller de cerámica');assert.equal(fresh.user.platform_admin,0);
 
+ }finally{await db.close();}
+});
+
+test('PostgreSQL: aprobación manual, vencimientos, transferencias idempotentes y protección de todas las escrituras',async()=>{
+ const db=await pg();try{
+  await fixture(db);await db.exec("UPDATE public.users SET platform_admin=1 WHERE id='00000000-0000-0000-0000-000000000002'");await asUser(db,1);
+  const b=(await db.query('SELECT atry_create_organization($1::jsonb) v',[JSON.stringify({name:'Negocio Pendiente',slug:'negocio-pendiente',subscription_status:'active',paid_until:'2099-01-01'})])).rows[0].v;
+  const current=(await db.query('SELECT atry_business($1) v',[b.id])).rows[0].v;assert.equal(current.subscription_status,'pending');assert.equal(current.paid_until,null);
+  await assert.rejects(db.query('SELECT atry_save_customer($1,NULL,$2::jsonb)',[b.id,'{"name":"Cliente Prueba","phone":"099555123"}']),/SUBSCRIPTION_REQUIRED/);
+  const date=new Date(Date.now()+2*86400000).toISOString().slice(0,10),payload={subscription_action:'activate',plan:'negocio',until_day:date,amount_uyu:1190,reference:'TR-PG-001',request_id:'subscription_pg_activate_001'};
+  await assert.rejects(db.query('SELECT atry_admin_save_business($1,$2::jsonb)',[b.id,JSON.stringify(payload)]),/FORBIDDEN/);
+  await asUser(db,2);const first=(await db.query('SELECT atry_admin_save_business($1,$2::jsonb) v',[b.id,JSON.stringify(payload)])).rows[0].v;assert.equal((await db.query('SELECT atry_admin_save_business($1,$2::jsonb) v',[b.id,JSON.stringify(payload)])).rows[0].v.event_id,first.event_id);
+  await assert.rejects(db.query('SELECT atry_admin_save_business($1,$2::jsonb)',[b.id,JSON.stringify({...payload,until_day:new Date(Date.now()+40*86400000).toISOString().slice(0,10),subscription_action:'renew',request_id:'subscription_pg_renew_001'})]),/DUPLICATE_TRANSFER/);
+  const rows=(await db.query('SELECT atry_admin_businesses() v')).rows[0].v;assert.equal(rows.find(x=>x.id===b.id).license_history.length,1);
+  await asUser(db,1);const c=(await db.query('SELECT atry_save_customer($1,NULL,$2::jsonb) v',[b.id,'{"name":"Cliente Prueba","phone":"099555123"}'])).rows[0].v;
+  await db.exec('RESET ROLE');await db.query("UPDATE businesses SET paid_until=now()-interval '1 second' WHERE id=$1",[b.id]);await asUser(db,1);
+  assert.equal((await db.query('SELECT atry_customers($1,$2) v',[b.id,''])).rows[0].v.length,1);
+  await assert.rejects(db.query('SELECT atry_save_customer($1,$2,$3::jsonb)',[b.id,c.id,'{"notes":"No permitido"}']),/SUBSCRIPTION_REQUIRED/);
+  await assert.rejects(db.query('SELECT atry_save_business($1,$2::jsonb)',[b.id,'{"paid_until":"2099-01-01","name":"No permitido"}']),/SUBSCRIPTION_REQUIRED/);
+  await assert.rejects(db.query("UPDATE businesses SET paid_until=now()+interval '10 years' WHERE id=$1",[b.id]));
+  await asUser(db,2);await db.query('SELECT atry_admin_save_business($1,$2::jsonb)',[b.id,JSON.stringify({subscription_action:'trial',until_day:date,note:'Prueba coordinada',request_id:'subscription_pg_trial_001'})]);
+  await asUser(db,1);await db.query('SELECT atry_save_customer($1,$2,$3::jsonb)',[b.id,c.id,'{"notes":"Permitido"}']);
+  // Past bookings remain readable and cancellable; changing their data stays blocked.
+  const starts=new Date(Date.now()+10*86400000);starts.setUTCHours(17,0,0,0);const booking=(await db.query('SELECT atry_create_booking($1,$2::jsonb) v',['b1',JSON.stringify({staff_id:'s1',service_id:'v1',starts_at:starts.toISOString(),customer_name:'Cliente Existente',customer_phone:'099555124',idempotency_key:'subscription_old_booking_001'})])).rows[0].v;
+  await db.exec("RESET ROLE;UPDATE businesses SET trial_until=now()-interval '1 second' WHERE id='b1'");await asUser(db,1);
+  await assert.rejects(db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',booking.id,'{"status":"completed"}']),/SUBSCRIPTION_REQUIRED/);
+  await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',booking.id,'{"status":"cancelled"}']);
+  assert.equal((await db.query('SELECT atry_bookings($1,$2,1) v',['b1',starts.toISOString().slice(0,10)])).rows[0].v[0].status,'cancelled');
  }finally{await db.close();}
 });
