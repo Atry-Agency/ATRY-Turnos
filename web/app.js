@@ -367,7 +367,14 @@ async function onChange(e){
  }catch(err){toast(err.message,true);}
 }
 async function router(){
- const route=path();state.dialog=null;document.title='Atry Turnos | Gestión de reservas';loading();
+ const route=path();state.dialog=null;document.title='Atry Turnos | Gestión de reservas';
+ const initial=!!root.querySelector('.boot');
+ if(initial)loading();
+ // Keep the current screen in place during navigation; avoid a flash for fast reads.
+ const progress=initial?null:setTimeout(()=>document.body.classList.add('route-pending'),250);
+ root.setAttribute('aria-busy','true');
+ root.inert=true;
+ setMenu(false);
  try{
   if(route.startsWith('/oferta/')){await offerView(route.split('/')[2]);return;}
   if(route.startsWith('/invitacion/')){await invitationView(route.split('/')[2]);return;}
@@ -383,6 +390,7 @@ async function router(){
   if(route==='/app'||route.startsWith('/app/')){state.appView=route.split('/')[2]||'inicio';await renderApp();return;}
   if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');}else authView(false);
  }catch(err){toast(err.message,true);if(err.status===401){state.me=null;nav('/login');}else page(`<div class="closing"><h2>No pudimos cargar esta pantalla</h2><p>${esc(err.message)}</p><button class="btn" data-action="reload-page">Reintentar</button></div>`);}
+ finally{clearTimeout(progress);document.body.classList.remove('route-pending');root.removeAttribute('aria-busy');root.inert=false;}
 }
 async function boot(){
  window.addEventListener('atry-cloud-signed-out',()=>{disconnectAgendaEvents();state.me=null;state.business=null;state.businesses=[];state.dialog=null;state.slots=[];state.public=null;nav('/login');});
