@@ -33,7 +33,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     return {biz,role:membership.role,user:u};
   }
   const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,trial_until:b.trial_until,is_active:b.is_active});
-  function appointmentList(bizId,from,to){return db.prepare(`SELECT b.id,b.business_id,b.staff_id,b.service_id,b.starts_at,b.ends_at,b.status,b.source,b.price_uyu,b.payment_status,b.notes,b.created_at, st.name staff_name,s.name service_name,c.id customer_id,c.name customer_name,c.phone customer_phone,c.email customer_email
+  function appointmentList(bizId,from,to){return db.prepare(`SELECT b.id,b.business_id,b.staff_id,b.service_id,b.starts_at,b.ends_at,b.status,b.source,b.recurring_id,b.occurrence_day,b.price_uyu,b.payment_status,b.notes,b.created_at, st.name staff_name,s.name service_name,c.id customer_id,c.name customer_name,c.phone customer_phone,c.email customer_email
     FROM bookings b JOIN staff st ON st.id=b.staff_id JOIN services s ON s.id=b.service_id JOIN customers c ON c.id=b.customer_id
     WHERE b.business_id=? AND b.starts_at>=? AND b.starts_at<? ORDER BY b.starts_at`).all(bizId,from,to);}
   const staffList=biz=>db.prepare('SELECT * FROM staff WHERE business_id=? ORDER BY created_at').all(biz);
@@ -53,7 +53,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       if(db.prepare('SELECT id FROM businesses WHERE slug=?').get(slug))fail(409,'Ese enlace ya está en uso');
       db.prepare('INSERT INTO users(id,name,email,password_hash,created_at) VALUES(?,?,?,?,?)').run(uid,name,email,passwordHash(password),now());
       const trialUntil=new Date(Date.now()+14*86400000).toISOString();
-      db.prepare('INSERT INTO businesses(id,slug,name,email,trial_until,created_at) VALUES(?,?,?,?,?,?)').run(bid,slug,businessName,email,trialUntil,now());
+      db.prepare('INSERT INTO businesses(id,slug,name,email,sector,trial_until,created_at) VALUES(?,?,?,?,?,?,?)').run(bid,slug,businessName,email,string(body.sector,100)||'General',trialUntil,now());
       db.prepare("INSERT INTO memberships(user_id,business_id,role) VALUES(?,?,'owner')").run(uid,bid);
       const sid=id();db.prepare('INSERT INTO staff(id,business_id,user_id,name,email,created_at) VALUES(?,?,?,?,?,?)').run(sid,bid,uid,name,email,now());
       const wk=db.prepare('INSERT INTO working_hours(staff_id,weekday,start_min,end_min) VALUES(?,?,?,?)');for(let d=1;d<=6;d++)wk.run(sid,d,9*60,18*60);
@@ -240,10 +240,15 @@ function createApp({db=connect(),webRoot=root}={}) {
   r('GET','/api/business/([A-Za-z0-9_-]+)/bookings',({req,params,url})=>{
     const a=authorized(req,params[0],['owner','manager','staff']);const date=url.searchParams.get('date')||localDay(now());if(!isDate(date))fail(400,'Fecha inválida');
     const days=integer(url.searchParams.get('days')||1,1,url.searchParams.get('calendar')==='month'?42:31,'Período');
+    require('./recurring').expand(db,params[0],date,days);
     let items=appointmentList(params[0],localISO(date,0),localISO(date,1440*days));
     if(a.role==='staff'){const own=db.prepare('SELECT id FROM staff WHERE business_id=? AND user_id=?').get(a.biz.id,a.user.id);items=items.filter(x=>x.staff_id===own?.id);}
     return items;
   });
+
+  r('GET','/api/business/([A-Za-z0-9_-]+)/recurring',({req,params})=>{authorized(req,params[0],['owner','manager']);return require('./recurring').list(db,params[0]);});
+  r('POST','/api/business/([A-Za-z0-9_-]+)/recurring',({req,params,body})=>{const a=authorized(req,params[0],['owner','manager']);return require('./recurring').create(db,a.biz.id,body,a.user.id);});
+  r('POST','/api/business/([A-Za-z0-9_-]+)/recurring/([A-Za-z0-9_-]+)/end',({req,params,body})=>{const a=authorized(req,params[0],['owner','manager']);return require('./recurring').end(db,a.biz.id,params[1],body.from_day,a.user.id);});
   r('POST','/api/business/([A-Za-z0-9_-]+)/bookings',({req,params,body})=>{const a=authorized(req,params[0],['owner','manager','staff']);if(a.role==='staff'&&!db.prepare('SELECT id FROM staff WHERE id=? AND business_id=? AND user_id=? AND active=1').get(body.staff_id||'',a.biz.id,a.user.id))fail(403,'Solo podés crear turnos en tu agenda');return createBooking(db,{...body,business_id:a.biz.id},{actorId:a.user.id,source:'manual',enforceNotice:false});});
   r('PATCH','/api/business/([A-Za-z0-9_-]+)/bookings/([A-Za-z0-9_-]+)',({req,params,body})=>{const a=authorized(req,params[0],['owner','manager','staff']);if(a.role==='staff'){const own=db.prepare('SELECT id FROM staff WHERE business_id=? AND user_id=? AND active=1').get(a.biz.id,a.user.id);const booking=db.prepare('SELECT staff_id FROM bookings WHERE id=? AND business_id=?').get(params[1],a.biz.id);if(!own||booking?.staff_id!==own.id||(body.staff_id&&body.staff_id!==own.id))fail(403,'Solo podés modificar turnos de tu agenda');}return updateBooking(db,a.biz.id,params[1],body,a.user.id);});
   r('GET','/api/business/([A-Za-z0-9_-]+)/waitlist',({req,params})=>{
@@ -256,16 +261,14 @@ function createApp({db=connect(),webRoot=root}={}) {
   });
   r('GET','/api/business/([A-Za-z0-9_-]+)/customers',({req,params,url})=>{
     authorized(req,params[0]);const q=string(url.searchParams.get('q'),80);
-    if(q)return db.prepare(`SELECT c.*, (SELECT COUNT(*) FROM bookings b WHERE b.customer_id=c.id AND b.status!='cancelled') visits FROM customers c WHERE c.business_id=? AND (c.name LIKE ? OR c.email LIKE ? OR c.phone LIKE ?) ORDER BY c.name LIMIT 100`).all(params[0],...Array(3).fill('%'+q+'%'));
-    return db.prepare(`SELECT c.*, (SELECT COUNT(*) FROM bookings b WHERE b.customer_id=c.id AND b.status!='cancelled') visits FROM customers c WHERE c.business_id=? ORDER BY c.created_at DESC LIMIT 100`).all(params[0]);
+    const rows=db.prepare(`SELECT c.*, (SELECT COUNT(*) FROM bookings b WHERE b.customer_id=c.id AND b.status!='cancelled') visits FROM customers c WHERE c.business_id=? ORDER BY c.created_at DESC`).all(params[0]);
+    const normalized=q.toLowerCase(),digits=require('./customers').digits(q);return rows.filter(c=>!q||[c.name,c.email,c.phone].some(v=>v.toLowerCase().includes(normalized))||(digits&&require('./customers').digits(c.phone).includes(digits))).sort((a,b)=>q?a.name.localeCompare(b.name):0).slice(0,100);
   });
-  r('PATCH','/api/business/([A-Za-z0-9_-]+)/customers/([A-Za-z0-9_-]+)',({req,params,body})=>{
-    const {biz,user}=authorized(req,params[0]);const c=db.prepare('SELECT * FROM customers WHERE business_id=? AND id=?').get(biz.id,params[1]);if(!c)fail(404,'Cliente no encontrado');
-    db.prepare('UPDATE customers SET notes=?,marketing_consent=? WHERE id=?').run(string(body.notes??c.notes,700),body.marketing_consent?1:0,c.id);
-    record(biz.id,user.id,'customer.updated','customer',c.id);return {ok:true};
-  });
+  r('POST','/api/business/([A-Za-z0-9_-]+)/customers',({req,params,body})=>{const {biz,user}=authorized(req,params[0]);return require('./customers').save(db,biz.id,null,body,user.id);});
+  r('PATCH','/api/business/([A-Za-z0-9_-]+)/customers/([A-Za-z0-9_-]+)',({req,params,body})=>{const {biz,user}=authorized(req,params[0]);return require('./customers').save(db,biz.id,params[1],body,user.id);});
   r('GET','/api/business/([A-Za-z0-9_-]+)/dashboard',({req,params})=>{
     const {biz}=authorized(req,params[0]);const today=localDay(now());const beginning=localISO(today,0),end=localISO(today,1440);
+    require('./recurring').expand(db,biz.id,today,31);
     const todayBookings=appointmentList(biz.id,beginning,end);
     const totals=db.prepare(`SELECT COUNT(*) total, SUM(CASE WHEN status='completed' THEN price_uyu ELSE 0 END) completed_revenue, SUM(CASE WHEN status='cancelled' THEN 1 ELSE 0 END) cancelled, SUM(CASE WHEN status='no_show' THEN 1 ELSE 0 END) no_show FROM bookings WHERE business_id=? AND starts_at>=? AND starts_at<?`).get(biz.id,new Date(Date.now()-30*86400000).toISOString(),now());
     const next=db.prepare(`SELECT b.id,b.starts_at,b.status,c.name customer_name,s.name service_name,st.name staff_name FROM bookings b JOIN customers c ON c.id=b.customer_id JOIN services s ON s.id=b.service_id JOIN staff st ON st.id=b.staff_id WHERE b.business_id=? AND b.starts_at>=? AND b.status IN ('confirmed','pending') ORDER BY b.starts_at LIMIT 8`).all(biz.id,now());
@@ -344,7 +347,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/app.js','/features.js','/management.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});

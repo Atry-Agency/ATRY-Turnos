@@ -6,6 +6,7 @@ test('Supabase Auth: registro espera verificación y recuperación requiere enla
  const auth={onAuthStateChange(fn){callback=fn;return {data:{subscription:{unsubscribe(){}}}};},getSession:async()=>({data:{session:null}}),signUp:async value=>{registered=value;return {data:{user:{id:'auth-id'},session:null}};},updateUser:async value=>{updated=value;return {data:{user:{id:'auth-id'}}};},signOut:async value=>{logout=value;return {data:{}};}};
  const client=createCloudAuth(config,{clientFactory:()=>({auth}),location:{href:'https://turnos.pages.dev/?old=1#/registro'}});
  assert.deepEqual(await client.signUp({name:'Usuario Prueba 1',email:'usuario1@example.com',password:'TestAuthPassword2026!'}),{id:'auth-id',requiresEmailVerification:true});
+ await client.signUp({name:'Usuario Prueba 1',email:'usuario1@example.com',password:'TestAuthPassword2026!',business_name:'Negocio Prueba',sector:'Taller de cerámica',platform_admin:true});assert.equal(registered.options.data.requested_business_sector,'Taller de cerámica');assert.ok(!('platform_admin' in registered.options.data));
  assert.equal(registered.options.emailRedirectTo,'https://turnos.pages.dev/?auth_flow=signup');assert.ok(!('role' in registered.options.data));
  await assert.rejects(client.resetPassword('NewAuthPassword2026!'),/enlace válido/);
  callback('PASSWORD_RECOVERY');await client.resetPassword('NewAuthPassword2026!');assert.deepEqual(updated,{password:'NewAuthPassword2026!'});assert.deepEqual(logout,{scope:'global'});

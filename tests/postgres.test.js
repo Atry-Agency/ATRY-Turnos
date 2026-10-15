@@ -144,3 +144,49 @@ const first=await book(payload);assert.ok(first.manage_token);assert.deepEqual(a
 await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',first.id,JSON.stringify({starts_at:new Date(starts.getTime()+3600000).toISOString()})]);const second=await book({...payload,staff_id:'s2',idempotency_key:'request_key_00000003'});await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',second.id,JSON.stringify({status:'cancelled'})]);const third=await book({...payload,idempotency_key:'request_key_00000004'});assert.notEqual(third.id,second.id);
 await asUser(db,2);await assert.rejects(book({...payload,idempotency_key:'request_key_00000005'}),/FORBIDDEN/);await asUser(db,3);await assert.rejects(book({...payload,staff_id:'s2',idempotency_key:'request_key_00000006'}),/FORBIDDEN/);
 }finally{await db.close();}});
+
+test('PostgreSQL: turnos fijos indefinidos, recursos, RLS, idempotencia y excepciones por fecha',async()=>{
+ const db=await pg();try{
+  await fixture(db);await asUser(db,1);
+  const first=new Date(Date.now()+14*86400000).toISOString().slice(0,10),add=(d,n)=>new Date(Date.parse(d+'T12:00:00Z')+n*86400000).toISOString().slice(0,10);
+  const payload={staff_id:'s1',service_id:'v1',customer_name:'Cliente Fijo',customer_phone:'099000099',start_day:first,time:'14:00',interval_weeks:1,idempotency_key:'recurring_postgres_test_01'};
+  const create=async p=>(await db.query('SELECT atry_create_recurring($1,$2::jsonb) v',['b1',JSON.stringify(p)])).rows[0].v;
+  const series=await create(payload);assert.ok(series.id);assert.equal((await create(payload)).id,series.id);await assert.rejects(create({...payload,time:'15:00'}),/IDEMPOTENCY_MISMATCH/);
+  assert.equal((await db.query('SELECT count(*) n FROM bookings WHERE recurring_id=$1',[series.id])).rows[0].n,6);
+  const far=add(first,3640),starts=far+'T17:00:00.000Z';
+  await assert.rejects(db.query('SELECT atry_create_booking($1,$2::jsonb)',['b1',JSON.stringify({staff_id:'s2',service_id:'v1',starts_at:starts,customer_name:'Cliente 2',customer_phone:'099000098',idempotency_key:'recurring_far_resource_01'})]),/RECURRING_CONFLICT/);
+  let appointments=(await db.query('SELECT atry_bookings($1,$2,1) v',['b1',first])).rows[0].v;assert.equal(appointments.length,1);assert.equal(appointments[0].recurring_id,series.id);
+  await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',appointments[0].id,'{"status":"cancelled"}']);
+  assert.equal((await db.query('SELECT atry_bookings($1,$2,1) v',['b1',first])).rows[0].v.length,1);
+  await db.query('SELECT atry_create_booking($1,$2::jsonb)',['b1',JSON.stringify({staff_id:'s1',service_id:'v1',starts_at:first+'T17:00:00.000Z',customer_name:'Cliente reemplazo',customer_phone:'099000097',idempotency_key:'recurring_cancel_exception_01'})]);
+  await db.query('SELECT atry_bookings($1,$2,1) v',['b1',far]);await db.query('SELECT atry_bookings($1,$2,1) v',['b1',far]);assert.equal((await db.query('SELECT count(*) n FROM bookings WHERE recurring_id=$1 AND occurrence_day=$2',[series.id,far])).rows[0].n,1);
+  await asUser(db,2);assert.equal((await db.query('SELECT * FROM recurring_appointments')).rows.length,0);await assert.rejects(db.query('SELECT atry_recurring($1)',['b1']),/FORBIDDEN/);
+  await asUser(db,3);await assert.rejects(create({...payload,idempotency_key:'recurring_staff_denied_01'}),/FORBIDDEN/);assert.equal((await db.query('SELECT * FROM recurring_appointments')).rows.length,0);
+  await asUser(db,2);const unrelated=(await db.query('SELECT atry_create_booking($1,$2::jsonb) v',['b2',JSON.stringify({staff_id:'s3',service_id:'v2',starts_at:far+'T19:00:00.000Z',customer_name:'Cliente ajeno',customer_phone:'099000090',idempotency_key:'recurring_unrelated_01'})])).rows[0].v;
+  await asUser(db,1);await db.query('SELECT atry_end_recurring($1,$2,$3)',['b1',series.id,first]);
+  await asUser(db,2);assert.equal((await db.query('SELECT status FROM bookings WHERE id=$1',[unrelated.id])).rows[0].status,'confirmed');await asUser(db,1);
+  const after=(await db.query('SELECT atry_bookings($1,$2,1) v',['b1',far])).rows[0].v;assert.ok(after.every(x=>x.status==='cancelled'));
+ }finally{await db.close();}
+});
+
+test('PostgreSQL: CRM crea contactos sin duplicados y conserva el rubro personalizado al confirmar',async()=>{
+ const db=await pg();try{
+  await fixture(db);await asUser(db,1);
+  const c=(await db.query('SELECT atry_save_customer($1,NULL,$2::jsonb) v',['b1',JSON.stringify({name:'Cliente habitual',phone:'099 123 456',email:'habitual@example.com'})])).rows[0].v;
+  assert.equal(c.name,'Cliente habitual');assert.equal((await db.query('SELECT atry_customers($1,$2) v',['b1','099123456'])).rows[0].v[0].id,c.id);
+  await assert.rejects(db.query('SELECT atry_save_customer($1,NULL,$2::jsonb)',['b1',JSON.stringify({name:'Duplicado',phone:'099-123-456'})]),/CONTACT_CONFLICT/);
+  await db.query('SELECT atry_save_customer($1,$2,$3::jsonb)',['b1',c.id,JSON.stringify({name:'Cliente actualizado'})]);
+  assert.equal((await db.query('SELECT atry_customers($1,$2) v',['b1','habitual@example.com'])).rows[0].v[0].phone,'099 123 456');
+  const starts=new Date(Date.now()+20*86400000);starts.setUTCHours(18,0,0,0);
+  const selected={staff_id:'s1',service_id:'v1',starts_at:starts.toISOString(),customer_id:c.id,customer_name:'Cliente actualizado',customer_email:'habitual@example.com',customer_phone:'099 123 456',idempotency_key:'crm_selected_customer_001'};
+  const booked=(await db.query('SELECT atry_create_booking($1,$2::jsonb) v',['b1',JSON.stringify(selected)])).rows[0].v;
+  assert.ok((await db.query('SELECT atry_customer_history($1,$2) v',['b1',c.id])).rows[0].v.some(b=>b.id===booked.id));
+  await assert.rejects(db.query('SELECT atry_create_booking($1,$2::jsonb)',['b1',JSON.stringify({...selected,starts_at:new Date(starts.getTime()+3600000).toISOString(),customer_id:'foreign-customer',idempotency_key:'crm_selected_customer_002'})]),/CONTACT_CHANGED/);
+  await asUser(db,2);await assert.rejects(db.query('SELECT atry_save_customer($1,$2,$3::jsonb)',['b1',c.id,'{"notes":"ajeno"}']),/FORBIDDEN/);
+  const org=(await db.query('SELECT atry_create_organization($1::jsonb) v',[JSON.stringify({name:'Taller creativo',slug:'taller-creativo',sector:'Modista y costura'})])).rows[0].v;
+  const me=(await db.query('SELECT atry_me() v')).rows[0].v;assert.equal(me.businesses.find(b=>b.id===org.id).sector,'Modista y costura');
+  await db.exec('RESET ROLE');await db.query('INSERT INTO auth.users(id,email,email_confirmed_at,raw_user_meta_data) VALUES($1,$2,now(),$3::jsonb)',['00000000-0000-0000-0000-000000000004','owner4@example.com',JSON.stringify({name:'Usuario Prueba 4',requested_business_name:'Negocio Prueba 4',requested_business_slug:'negocio-prueba-4',requested_business_sector:'Taller de cerámica',platform_admin:true})]);
+  await db.exec("INSERT INTO auth.sessions(id,user_id) VALUES('00000000-0000-0000-0000-000000000004','00000000-0000-0000-0000-000000000004')");await asUser(db,4);await db.query('SELECT atry_finish_registration()');await db.query('SELECT atry_finish_registration()');const fresh=(await db.query('SELECT atry_me() v')).rows[0].v;assert.equal(fresh.businesses.length,1);assert.equal(fresh.businesses[0].sector,'Taller de cerámica');assert.equal(fresh.user.platform_admin,0);
+
+ }finally{await db.close();}
+});

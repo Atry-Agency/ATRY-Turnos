@@ -22,7 +22,7 @@ function base(db,bizId,staffId,serviceId){
   if(!db.prepare('SELECT 1 FROM staff_services WHERE staff_id=? AND service_id=?').get(staffId,serviceId))fail(400,'Este profesional no ofrece ese servicio');
   return {business,staff,service};
 }
-function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enforceNotice=true}={}) {
+function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enforceNotice=true,ignoreRecurring=''}={}) {
   const {business,staff,service}=base(db,bizId,staffId,serviceId);
   if(business.timezone!=='America/Montevideo')fail(400,'Zona horaria no compatible en esta versión');
   if(!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\dZ$/.test(startISO))fail(400,'Formato de fecha incorrecto');
@@ -43,6 +43,7 @@ function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enfor
   const blockedEnd=new Date(endMs+service.buffer_after_min*60000).toISOString();
   const breaks=db.prepare('SELECT * FROM recurring_breaks WHERE staff_id=? AND weekday=?').all(staffId,weekday(startDay));
   if(breaks.some(b=>overlap(minute-service.buffer_before_min,minute+service.duration_min+service.buffer_after_min,b.start_min,b.end_min)))fail(409,'El horario coincide con un descanso recurrente');
+  if(require('./recurring').blocks(db,bizId,staffId,serviceId,startISO,ignoreRecurring))fail(409,'Ese horario pertenece a un cliente con turno fijo');
   const resources=requiredResources(db,serviceId);
   for(const resource of resources){
    if(resource.business_id!==bizId||!resource.active)fail(409,'Un recurso requerido no está disponible');
@@ -83,22 +84,19 @@ function notify(db,businessId,bookingId,kind,customer,service,startsAt,manageTok
   db.prepare('INSERT INTO notifications (id,business_id,booking_id,channel,kind,recipient,subject,content,state,created_at) VALUES (?,?,?,?,?,?,?,?,?,?)')
     .run(id(),businessId,bookingId,'email',kind,customer.email,`Atry Turnos — ${kind}`,message,'queued',now());
 }
-function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,withinTransaction=false}={}){
+function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,withinTransaction=false,ignoreRecurring='',silent=false}={}){
   const execute=()=>{
     const key=data.idempotency_key;
-    const scope=`booking:${source}:${data.business_id}:${actorId||'guest'}`;const requestHash=hashToken(JSON.stringify([data.service_id,data.staff_id,data.starts_at,data.customer_name,data.customer_email,data.customer_phone||'',data.notes||'']));
+    const scope=`booking:${source}:${data.business_id}:${actorId||'guest'}`;const requestHash=hashToken(JSON.stringify([data.service_id,data.staff_id,data.starts_at,data.customer_name,data.customer_email,data.customer_phone||'',data.notes||'',data.customer_id||'']));
     if(key!==undefined){if(typeof key!=='string'||!/^[A-Za-z0-9_-]{16,100}$/.test(key))fail(400,'Clave de idempotencia inválida');const previous=db.prepare('SELECT * FROM idempotency_keys WHERE scope=? AND key_hash=?').get(scope,hashToken(key));if(previous){if(previous.request_hash!==requestHash)fail(409,'La clave ya fue usada para otra solicitud');return JSON.parse(previous.response);}}
-    const slot=checkSlot(db,data.business_id,data.staff_id,data.service_id,data.starts_at,{enforceNotice});
+    const slot=checkSlot(db,data.business_id,data.staff_id,data.service_id,data.starts_at,{enforceNotice,ignoreRecurring});
     if(!isLive(slot.business) && source==='public')fail(403,'Este negocio todavía no admite reservas');
     const name=String(data.customer_name||'').trim(); const email=String(data.customer_email||'').trim().toLowerCase(); const phone=String(data.customer_phone||'').trim();
     if(name.length<2||name.length>100)fail(400,'Ingresá un nombre válido');
     if(!phone && !email)fail(400,'Ingresá teléfono o correo electrónico');
     if(email && !/^\S+@\S+\.\S+$/.test(email))fail(400,'Correo electrónico inválido');
     if(phone.length>35||email.length>150)fail(400,'Datos de contacto demasiado largos');
-    let customer = (email?db.prepare('SELECT * FROM customers WHERE business_id=? AND email=? AND email != ?').get(data.business_id,email,''):null)
-      ||(phone?db.prepare('SELECT * FROM customers WHERE business_id=? AND phone=? AND phone != ?').get(data.business_id,phone,''):null);
-    if(customer){if(source==='manual')db.prepare('UPDATE customers SET name=?, phone=?, email=? WHERE id=?').run(name,phone||customer.phone,email||customer.email,customer.id);}
-    else {const cid=id();db.prepare('INSERT INTO customers(id,business_id,name,email,phone,marketing_consent,created_at) VALUES(?,?,?,?,?,?,?)').run(cid,data.business_id,name,email,phone,data.marketing_consent?1:0,now()); customer={id:cid,name,email,phone};}
+    const customer=require('./customers').resolve(db,data.business_id,data);
     const bid=id(),manageToken=randomToken();
     const status=slot.business.auto_confirm?'confirmed':'pending';
     // Los pagos son solo estado de seguimiento interno: no hay pasarela activa en la preview.
@@ -106,7 +104,7 @@ function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,
       .run(bid,data.business_id,data.staff_id,data.service_id,customer.id,slot.starts_at,slot.ends_at,slot.blocked_from,slot.blocked_until,status,source,String(data.notes||'').slice(0,500),'not_required',slot.service.price_uyu,hashToken(manageToken),now(),now());
     for(const resource of slot.resources)db.prepare('INSERT INTO booking_resources VALUES(?,?)').run(bid,resource.id);
     audit(db,data.business_id,actorId,'booking.created','booking',bid);
-    notify(db,data.business_id,bid,status,customer,slot.service,slot.starts_at,manageToken);
+    if(!silent)notify(db,data.business_id,bid,status,customer,slot.service,slot.starts_at,manageToken);
     const response={id:bid,status,manage_token:manageToken,starts_at:slot.starts_at};if(key!==undefined)db.prepare('INSERT INTO idempotency_keys VALUES(?,?,?,?,?)').run(scope,hashToken(key),requestHash,JSON.stringify(response),now());return response;
   };
   return withinTransaction?execute():transaction(db,execute);
