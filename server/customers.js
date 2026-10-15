@@ -8,10 +8,10 @@ function contact(payload,previous={}){
 }
 function matching(db,bid,email,phone){return db.prepare('SELECT * FROM customers WHERE business_id=?').all(bid).filter(c=>(email&&c.email.toLowerCase()===email)||(digits(phone)&&digits(c.phone)===digits(phone)));}
 function resolve(db,bid,data){
- const c=contact({name:data.customer_name,email:data.customer_email,phone:data.customer_phone});
+ const c=contact({name:data.customer_name,email:data.customer_email,phone:data.customer_phone,marketing_consent:data.marketing_consent});
  if(data.customer_id){const selected=db.prepare('SELECT * FROM customers WHERE business_id=? AND id=?').get(bid,data.customer_id);if(!selected)fail(404,'Cliente no encontrado');if(c.email!==selected.email.toLowerCase()||digits(c.phone)!==digits(selected.phone))fail(409,'El contacto cambió. Abrí nuevamente la ficha del cliente');return selected;}
  const matches=matching(db,bid,c.email,c.phone);if(matches.length>1)fail(409,'El correo y el teléfono corresponden a fichas diferentes. Revisá Clientes');if(matches.length)return matches[0];
- const created={...c,id:id()};db.prepare('INSERT INTO customers(id,business_id,name,email,phone,created_at) VALUES(?,?,?,?,?,?)').run(created.id,bid,c.name,c.email,c.phone,now());return created;
+ const created={...c,id:id()};db.prepare('INSERT INTO customers(id,business_id,name,email,phone,marketing_consent,created_at) VALUES(?,?,?,?,?,?,?)').run(created.id,bid,c.name,c.email,c.phone,c.marketing_consent,now());return created;
 }
 function save(db,bid,cid,payload,actor){return transaction(db,()=>{
  const previous=cid?db.prepare('SELECT * FROM customers WHERE business_id=? AND id=?').get(bid,cid):null;if(cid&&!previous)fail(404,'Cliente no encontrado');const c=contact(payload,previous||{});
