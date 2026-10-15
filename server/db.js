@@ -148,6 +148,7 @@ CREATE TRIGGER IF NOT EXISTS bookings_overlap_update BEFORE UPDATE ON bookings W
 END;`);
   db.prepare('INSERT OR IGNORE INTO schema_migrations(version,applied_at) VALUES(1,?)').run(now());
   require('./schema-v2').migrate(db);
+  require('./recurring').migrate(db);
 }
 function transaction(db,fn) {
   db.exec('BEGIN IMMEDIATE');

@@ -22,7 +22,7 @@ export function createCloudAuth(config,{clientFactory=createClient,location=glob
    const businessName=String(payload.business_name||'').trim().slice(0,100);
    const businessSlug=businessName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,55);
    if(businessName&&(businessName.length<2||businessSlug.length<3))throw new Error('Elegí un nombre de negocio que genere un enlace de al menos tres caracteres.');
-   const data=unwrap(await client.auth.signUp({email,password,options:{emailRedirectTo:redirect('signup'),data:{name,...(businessName?{requested_business_name:businessName,requested_business_slug:businessSlug}:{})}}}));
+   const data=unwrap(await client.auth.signUp({email,password,options:{emailRedirectTo:redirect('signup'),data:{name,...(businessName?{requested_business_name:businessName,requested_business_slug:businessSlug,requested_business_sector:String(payload.sector||'General').trim().slice(0,100)}:{})}}}));
    return {id:data.user?.id,requiresEmailVerification:!data.session};
   },
   async signIn(email,password){unwrap(await client.auth.signInWithPassword({email:String(email).trim().toLowerCase(),password}));return {ok:true};},
