@@ -69,3 +69,31 @@ body{background:var(--bg)}h1,h2,h3{letter-spacing:-.035em}.brand-original{width:
 @media(max-width:560px){.deployment-notice{padding:12px 18px;font-size:13px}}
 
 .integration-notice{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);z-index:10000;width:max-content;max-width:calc(100% - 24px);padding:8px 14px;border-radius:10px;background:#fff2c6;color:#5f4400;font-size:12px;text-align:center;box-shadow:0 2px 12px #0002;pointer-events:none}
+
+/* One consistent, rounded icon system with feedback tied to the action. */
+.i{stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform .22s ease,opacity .22s ease}
+.i path,.i rect,.i circle{vector-effect:non-scaling-stroke}
+.navlink .i{width:20px;height:20px}
+.navlink:hover .i,.navlink:focus-visible .i{transform:translateY(-2px)}
+.navlink.active .i{stroke-width:2;color:#7de9fa}
+.btn:hover .i-settings,.btn:focus-visible .i-settings{transform:rotate(35deg)}
+.btn:hover .i-arrow,.btn:focus-visible .i-arrow{transform:translateX(3px)}
+.btn:hover .i-plus,.btn:focus-visible .i-plus{transform:rotate(90deg)}
+.btn:hover .i-refresh,.btn:focus-visible .i-refresh{transform:rotate(45deg)}
+.i-menu path{transform-origin:12px 12px;transition:transform .22s ease,opacity .18s ease}
+[data-action="toggle-menu"][aria-expanded="true"] .i-menu path:nth-child(1){transform:translateY(6px) rotate(45deg)}
+[data-action="toggle-menu"][aria-expanded="true"] .i-menu path:nth-child(2){opacity:0}
+[data-action="toggle-menu"][aria-expanded="true"] .i-menu path:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.btn:focus-visible,.navlink:focus-visible{outline:3px solid #00a5e2;outline-offset:3px}
+.confirm-dialog{width:min(460px,calc(100% - 32px));padding:28px;border:1px solid var(--line);border-radius:22px;background:white;color:var(--ink);box-shadow:0 24px 90px #071a2140}
+.confirm-dialog::backdrop{background:#071a2180;backdrop-filter:blur(4px)}
+.confirm-dialog h2{font-size:22px;margin:18px 0 10px}
+.confirm-dialog p{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:24px}
+.confirm-dialog .actions{justify-content:flex-end;flex-wrap:wrap}
+.confirm-symbol{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#e6f4fa;color:var(--accent)}
+@container workspace (max-width:560px){
+ .agenda-toolbar .grow{grid-column:1/-1;grid-row:3}
+ .agenda-toolbar>button:last-child{grid-column:2/-1}
+ .activity:has([data-action="edit-role"]),.activity:has([data-action="revoke-member"]){flex-wrap:wrap}
+ .activity:has([data-action="edit-role"])>.grow,.activity:has([data-action="revoke-member"])>.grow{flex-basis:100%;overflow-wrap:anywhere}
+}
