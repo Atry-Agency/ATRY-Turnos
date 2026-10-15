@@ -1,6 +1,6 @@
 # Clientes, turnos fijos e identidad del negocio
 
-Estado: implementado y validado localmente. Las migraciones 026 y 027 **todavía no se aplicaron en Supabase** y esta versión **no se publicó**. El control de la pestaña de Chrome no responde; actualizar la página no recuperó la conexión. No confundir las pruebas locales con una verificación en producción.
+Estado: implementado y validado localmente y en Supabase ATRY-Turnos (`djoxdtloqwbrhgtgencc`). Migraciones 026 y 027 aplicadas y sus hashes verificados el 15/10/2026. Conexión de Chrome recuperada mediante una pestaña vigente del proyecto; publicación de interfaz en curso.
 
 ## Recorridos disponibles
 
@@ -18,7 +18,7 @@ Los turnos ya creados en Supabase conservan sus datos de contacto originales; mo
 
 ## Evidencia
 
-- `npm test`: 86/86 pruebas, sin omisiones. PostgreSQL ejecutado con PGlite y todas las migraciones, no contra Supabase remoto en esta entrega.
+- `npm test`: 86/86 pruebas, sin omisiones. PostgreSQL ejecutado con PGlite y todas las migraciones; además se ejecutó la prueba nativa reproducible descrita debajo.
 - Cobertura de recurrencias: bloqueo indefinido, conflictos de profesional y recursos, idempotencia, cancelación individual, cambios atómicos, fin de repetición y aislamiento por negocio/rol.
 - Cobertura de CRM: alta y edición, búsqueda de teléfono formateado, duplicados, vinculación de reserva por ID y denegación de operaciones ajenas.
 - Cobertura de registro: rubro personalizado después de confirmar correo, finalización idempotente y rechazo de privilegios incluidos en metadatos.
@@ -26,10 +26,19 @@ Los turnos ya creados en Supabase conservan sus datos de contacto originales; mo
 - Compilación de interfaz Supabase correcta en `dist/qa-026-027` (ignorado).
 - SQLite original leído sin cambios: 3 usuarios, 2 negocios, 4 profesionales, 4 servicios, 9 clientes y 9 reservas. Pruebas de navegador en `data/qa-recurring-20261015.sqlite`, independiente.
 
-## Publicación pendiente
+## Verificación nativa
 
-1. Recuperar el control de Chrome de Atry. Usar únicamente el proyecto `djoxdtloqwbrhgtgencc`.
-2. Ejecutar `node scripts/prepare-recurring-migration.js`. Genera los lotes transaccionales `tmp/recurring-migration.sql` y `tmp/identity-migration.sql`, sin semillas. Cada lote verifica la migración anterior y registra SHA-256. La autorización explícita de 026 ya está registrada.
-3. Aplicar 026, verificar resultado, luego 027; esta última conserva las firmas y permisos existentes, sin nuevos GRANT. Comprobar ledger, RLS y permisos en Supabase y ejecutar pruebas con rollback.
-4. Publicar la interfaz después de validar el backend remoto. No enviar esta versión a `main` antes: el despliegue de Pages se ejecuta automáticamente al modificar archivos web/cloud.
-5. Verificar recorridos reales y cron de recordatorios; no dejar usuarios ni negocios ficticios en producción.
+Se ejecutó en el editor SQL del proyecto correcto la prueba transaccional reproducible `supabase/operations/verify-recurring-crm.sql`. Pasaron alta de contacto, búsqueda normalizada, rechazo de duplicados, creación de seis fechas, idempotencia, bloqueo a diez años, cancelación y reprogramación individuales que liberan solo su horario, aislamiento entre dos negocios, restricciones del empleado y alta con rubro personalizado sin privilegios de metadatos. El rollback dejó cero cuentas y negocios de prueba.
+
+La comprobación inicial de largo plazo construía el timestamp sin agrupar la suma de fecha y hora antes de aplicar AT TIME ZONE. En una sesión UTC consultaba otra hora. Se corrigió la consulta de prueba; no fue necesario modificar la función aplicada.
+
+Auditoría posterior: 1 usuario real, 0 negocios, clientes, reservas y reglas; RLS activo en todas las tablas públicas. Creación anónima y acceso autenticado al generador privado denegados. Cron `atry-turnos-mail` activo cada dos minutos. No se simularon envíos ni se enviaron mensajes desde los fixtures.
+
+Hashes del ledger:
+
+- 026: `f5987caf2af8eefc6e2887e52160bd027ff14892483415c3e1bcc8d3fe251a99`.
+- 027: `f6e67347d3f2f025085ea2177f93d39f4fc66c8242c581b0140be35d3925d2a7`.
+
+## Publicación
+
+La rama de trabajo y el PR conservan la implementación. Fusionar y publicar únicamente después de la verificación nativa anterior (completada). Después comprobar que Pages entrega el nuevo registro y los módulos, y que la cuenta real puede iniciar su negocio. La auditoría no creó un negocio comercial ficticio ni requirió conocer la contraseña del usuario.
