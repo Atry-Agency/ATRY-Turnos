@@ -26,6 +26,7 @@ Se revisaron las vistas de inicio, agenda, servicios, equipo, disponibilidad, cl
 | Reserva fuera de jornada | Rechazada. |
 | Menú móvil | Apertura, cierre al tocar fuera y navegación comprobados. |
 | Casilleros de asignación | Corregidas etiquetas; cada profesional tiene su propio nombre accesible. |
+| Borrador sin guardar y Escape | Se detectó y corrigió una confirmación duplicada; Escape conserva el borrador y descartar cierra ambas ventanas sin guardar. |
 | Suite automatizada | 81 pruebas aprobadas; incluye permisos, concurrencia, recursos, espera, Auth, PostgreSQL local y correo con adaptadores de prueba. No son 81 recorridos manuales ni 81 pruebas contra producción. |
 
 ## Cambios realizados
