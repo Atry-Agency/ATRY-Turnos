@@ -4,6 +4,32 @@ const {PGlite}=require('@electric-sql/pglite');const {btree_gist}=require('@elec
 async function pg(){const db=new PGlite({extensions:{btree_gist}});await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_role;CREATE SCHEMA auth;CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,email_confirmed_at timestamptz,raw_user_meta_data jsonb DEFAULT '{}');CREATE TABLE auth.sessions(id uuid PRIMARY KEY,user_id uuid REFERENCES auth.users(id),created_at timestamptz DEFAULT now(),not_after timestamptz);CREATE FUNCTION auth.jwt() RETURNS jsonb LANGUAGE sql STABLE AS $$SELECT coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb$$;CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;`);for(const f of fs.readdirSync('supabase/migrations').sort())await db.exec(fs.readFileSync('supabase/migrations/'+f,'utf8'));return db;}
 test('PostgreSQL: esquema completo, sin semillas ni credenciales heredadas y RLS en todas las tablas',async()=>{const db=await pg();try{assert.equal((await db.query('SELECT count(*) n FROM businesses')).rows[0].n,0);const rows=(await db.query("SELECT relname,relrowsecurity FROM pg_class JOIN pg_namespace n ON n.oid=relnamespace WHERE n.nspname='public' AND relkind='r'")).rows;assert.ok(rows.length>=25);assert.ok(rows.every(r=>r.relrowsecurity));await db.exec('SET ROLE anon');await assert.rejects(db.query('SELECT * FROM users'));await assert.rejects(db.query('SELECT * FROM mail_jobs'));}finally{await db.close();}});
 module.exports={pg};
+
+test('PostgreSQL: el operador inicial exige cuenta real verificada, es idempotente y no abre CRM ajeno',async()=>{
+ const db=await pg();try{
+  await fixture(db);const script=fs.readFileSync('supabase/operations/bootstrap-operator.sql','utf8');
+  await db.query("SELECT set_config('atry.bootstrap_email',$1,false)",['owner1@example.com']);await assert.rejects(db.exec(script),/VERIFIED_REAL_OPERATOR_REQUIRED/);await db.exec('ROLLBACK');
+  await db.exec('UPDATE auth.users SET email_confirmed_at=now()');await db.exec(script);await db.exec(script);
+  assert.equal((await db.query("SELECT count(*) n FROM platform_audit WHERE action='operator.bootstrap'")).rows[0].n,1);
+  await asUser(db,1);assert.equal((await db.query('SELECT atry_admin_businesses() v')).rows[0].v.length,2);await assert.rejects(db.query('SELECT atry_customers($1,$2)',['b2','']),/FORBIDDEN/);
+  await db.exec('RESET ROLE');await db.query("SELECT set_config('atry.bootstrap_email',$1,false)",['owner2@example.com']);await assert.rejects(db.exec(script),/EXISTING_OPERATOR_REQUIRES_REVIEW/);await db.exec('ROLLBACK');
+  assert.equal((await db.query('SELECT count(*) n FROM public.users WHERE platform_admin=1')).rows[0].n,1);
+ }finally{await db.close();}
+});
+
+test('PostgreSQL: la cola descarta confirmaciones y horarios superados por otro cambio',async()=>{
+ const db=await pg();try{
+  await fixture(db);await db.exec("UPDATE businesses SET email='owner@atry-unit-mail.com' WHERE id='b1'");await asUser(db,1);
+  const starts=new Date(Date.now()+7*86400000);starts.setUTCHours(13,0,0,0);
+  const booking=(await db.query('SELECT atry_create_booking($1,$2::jsonb) v',['b1',JSON.stringify({staff_id:'s1',service_id:'v1',starts_at:starts.toISOString(),customer_name:'Cliente 1',customer_email:'client@atry-unit-mail.com',idempotency_key:'mail_stale_booking_001'})])).rows[0].v;
+  await db.exec('RESET ROLE');const original=(await db.query("SELECT * FROM mail_jobs WHERE kind IN ('confirmed','business_alert') ORDER BY kind")).rows;assert.equal(original.length,2);assert.ok(original.every(j=>j.booking_snapshot?.starts_at));
+  assert.equal((await db.query('SELECT private.mail_is_valid(j) ok FROM mail_jobs j WHERE id=$1',[original[0].id])).rows[0].ok,true);
+  await asUser(db,1);await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',booking.id,JSON.stringify({starts_at:new Date(starts.getTime()+3600000).toISOString()})]);
+  await db.exec('RESET ROLE');assert.ok((await db.query('SELECT private.mail_is_valid(j) ok FROM mail_jobs j WHERE id=ANY($1::text[])',[original.map(j=>j.id)])).rows.every(j=>j.ok===false));
+  await asUser(db,1);await db.query('SELECT atry_update_booking($1,$2,$3::jsonb)',['b1',booking.id,'{"status":"cancelled"}']);
+  await db.exec('RESET ROLE;SET ROLE service_role');const claimed=(await db.query('SELECT * FROM atry_mail_claim(20)')).rows;assert.equal(claimed.length,2);assert.ok(claimed.some(j=>j.kind==='cancelled'));assert.ok(claimed.every(j=>j.booking_snapshot.status==='cancelled'));
+ }finally{await db.close();}
+});
 test('PostgreSQL: cola de correo deduplica, respeta preferencias y no declara entregas inciertas',async()=>{
  const db=await pg();try{
   await fixture(db);await db.exec("UPDATE businesses SET email='owner@atry-unit-mail.com' WHERE id='b1';");await asUser(db,1);
@@ -29,6 +55,8 @@ test('PostgreSQL: administración gestiona planes e incidencias sin acceso globa
   assert.equal((await db.query('SELECT atry_admin_incidents() v')).rows[0].v[0].state,'investigating');assert.ok((await db.query('SELECT atry_admin_diagnostics() v')).rows[0].v.integrity);
   assert.deepEqual((await db.query("SELECT * FROM customers WHERE business_id='b2'")).rows,[]);await assert.rejects(db.query('SELECT atry_customers($1)',['b2']),/FORBIDDEN/);
   await asUser(db,2);await assert.rejects(db.query('SELECT atry_admin_save_plan($1,$2::jsonb)',['pro','{"staff_limit":100}']),/FORBIDDEN/);
+  await db.exec('RESET ROLE');await db.query('SELECT atry_configure_delivery($1,$2)',['https://atry-agency.github.io/ATRY-Turnos/',true]);await asUser(db,1);
+  assert.equal((await db.query('SELECT atry_admin_diagnostics() v')).rows[0].v.mail_provider,'brevo');assert.match((await db.query('SELECT atry_admin_operations() v')).rows[0].v.integrations.email,/Brevo configurado/);
  }finally{await db.close();}
 });
 test('PostgreSQL: lista de espera ofrece sin retener, confirma una vez y conserva idempotencia',async()=>{

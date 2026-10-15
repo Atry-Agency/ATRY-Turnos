@@ -10,6 +10,4 @@ Supabase Auth debe volver a la ruta /ATRY-Turnos/ y permitir los retornos exacto
 
 atry-public valida origen, tamaño del cuerpo, permisos de la operación y límites por IP/operación. El modo integrado añade un desafío firmado y de duración limitada, vinculado a solicitud, acción y negocio, resuelto en un worker del navegador. Eleva el costo de automatización y conserva idempotencia; no equivale a verificar que el visitante sea humano. Referencia de la implementación SHA-256: https://github.com/paulmillr/noble-hashes . Turnstile sigue como opción de código, sin claves configuradas ni cuenta creada para esta instalación.
 
-El correo externo de reservas sigue deshabilitado hasta verificar Brevo, remitente y programación. Aceptación del proveedor y entrega final se registran por separado. La aplicación local original y sus respaldos se conservan.
-
-Antes de incorporar negocios externos, conectar SMTP propio a Auth. El proveedor predeterminado de Supabase solo entrega a miembros del equipo (https://supabase.com/docs/guides/auth/auth-smtp). Esta limitación permanece aunque la aplicación esté publicada y las operaciones de la cuenta autorizada funcionen.
+El correo usa SMTP personalizado y API de Brevo, con remitente verificado y programación privada cada dos minutos. Se comprobó entrega real de recuperación y del mensaje integral de verificación. Aceptación y entrega se distinguen; los recibos aún no se sincronizan automáticamente. Ver CORREO_SUPABASE.md para límites, seguridad y operación. La aplicación local original y sus respaldos se conservan.

@@ -2,6 +2,13 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const config={url:'https://project.supabase.co',siteUrl:'https://atry-test.pages.dev',serviceKey:'private-test',enabled:'1',apiKey:'provider-test',sender:'sender@example.net',senderVerified:'1'};
 const request=()=>new Request('https://project.supabase.co/functions/v1/atry-mail',{method:'POST',headers:{authorization:'Bearer private-test'}});
+
+test('Worker cloud: el token de invocación se separa de la clave de acceso a la base',async()=>{
+ const {createMailWorker}=await import('../supabase/functions/_shared/mail-worker.mjs');let calls=0;
+ const worker=createMailWorker({...config,invocationKey:'invocation-test'},{fetchImpl:async(_url,options)=>{calls++;assert.equal(options.headers.apikey,'private-test');assert.equal(options.headers.authorization,'Bearer private-test');return Response.json(calls===1?true:[]);}});
+ assert.equal((await worker(request())).status,403);assert.equal(calls,0);
+ const accepted=await worker(new Request('https://project.supabase.co/functions/v1/atry-mail',{method:'POST',headers:{authorization:'Bearer invocation-test'}}));assert.equal(accepted.status,200);assert.equal(calls,2);
+});
 test('Worker cloud: reclama uno por vez y distingue aceptación de entrega',async()=>{
  const {createMailWorker}=await import('../supabase/functions/_shared/mail-worker.mjs');const events=[];let claims=0;
  const worker=createMailWorker(config,{fetchImpl:async(url,options)=>{

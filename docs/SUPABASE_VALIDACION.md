@@ -1,6 +1,6 @@
 # Validación real de Supabase
 
-Proyecto exclusivo: ATRY-Turnos, djoxdtloqwbrhgtgencc. ATRY LAB Operaciones no se modificó. Migraciones 001–023 aplicadas. Los hashes de 007–022 coinciden con el código revisado; 023 se registró al aplicar el ajuste de enlaces GitHub manteniendo el correo deshabilitado. No hay tablas públicas/privadas sin RLS.
+Proyecto exclusivo: ATRY-Turnos, djoxdtloqwbrhgtgencc. ATRY LAB Operaciones no se modificó. Migraciones 001–025 aplicadas. Los hashes de 007–022 coinciden con el código revisado; 023 se registró al aplicar el ajuste de enlaces GitHub manteniendo el correo deshabilitado. No hay tablas públicas/privadas sin RLS.
 
 ## Resultados remotos
 
@@ -21,6 +21,6 @@ Datos, contraseñas, credenciales y enlaces de prueba se mantienen exclusivament
 
 GitHub main contiene el avance; CI y despliegue aprobaron. La raíz publica la aplicación conectada real, verificada con la sesión autorizada. La ruta temporal /ATRY-Turnos/validacion/ se retiró del artefacto. Auth permite los retornos exactos de la aplicación y de esta ruta de validación; no se habilitaron dominios ajenos.
 
-La publicación principal está activada. Pendiente: completar la integración de correo externo. Brevo, remitente, SMTP Auth, programación y recibos externos siguen pendientes; no se enviaron notificaciones de reservas por Brevo ni se certifica todavía la preparación comercial completa.
+La publicación principal está activada. SMTP personalizado de Brevo comprobado con recuperación real. Notificaciones: recorrido SQL → pg_net → Edge → Brevo completado y entrega verificada en el proveedor; un intento y ningún duplicado. Cron privado cada dos minutos: tres ejecuciones consecutivas exitosas con HTTP 200. Los recibos no se sincronizan automáticamente; la interfaz conserva esa distinción. Detalles y límites en CORREO_SUPABASE.md.
 
-Auditoría final remota: Auth 1, perfiles 1, negocios 0, reservas 0, clientes 0, mail_jobs 0, tablas sin RLS 0, ledger 007–023 con 17 registros, correo de reservas deshabilitado. CI y despliegue 38c2485 aprobados. Acceso móvil publicado: viewport y contenido de 390 px, sin desborde horizontal.
+Auditoría remota: Auth 1, perfiles 1, negocios 0, reservas 0, clientes 0 y un registro de comprobación de correo sin negocio. Ledger 007–025 con 19 registros; correo habilitado. El titular autorizó su rol de administrador de plataforma, comprobado en el navegador, sin acceso global al CRM. Pruebas locales finales: 81. Acceso móvil publicado: viewport y contenido de 390 px, sin desborde horizontal.

@@ -1,7 +1,8 @@
 export function createMailWorker(config,{fetchImpl=fetch,now=Date.now}={}){
  const json=(status,body)=>Response.json(body,{status});
  return async req=>{
-  if(!config.serviceKey||req.headers.get('authorization')!==`Bearer ${config.serviceKey}`)return json(403,{error:'FORBIDDEN'});
+  const invocationKey=config.invocationKey||config.serviceKey;
+  if(!config.serviceKey||!invocationKey||req.headers.get('authorization')!==`Bearer ${invocationKey}`)return json(403,{error:'FORBIDDEN'});
   if(req.method!=='POST')return json(405,{error:'METHOD_NOT_ALLOWED'});
   if(config.enabled!=='1')return json(503,{error:'DELIVERY_DISABLED'});
   const validSite=/^https:\/\/[a-z0-9-]+\.pages\.dev\/?$/.test(config.siteUrl||'')||/^https:\/\/atry-agency\.github\.io\/ATRY-Turnos\/?$/.test(config.siteUrl||'');
