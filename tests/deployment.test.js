@@ -11,7 +11,7 @@ test('GitHub Pages: publica los recursos de la interfaz y bloquea solicitudes de
   const js=fs.readFileSync(path.join(dir,'app.js'),'utf8');
   const fn=js.slice(js.indexOf('async function api('),js.indexOf('const post='));
   let calls=0;
-  const context=vm.createContext({window:{ATRY_CONFIG:{backend:'preview'}},fetch:()=>{calls++;throw new Error('No debe llamarse');}});
+  const context=vm.createContext({window:{ATRY_CONFIG:{backend:'preview'}},readCache:require('../web/read-cache').createReadCache(),fetch:()=>{calls++;throw new Error('No debe llamarse');}});
   vm.runInContext(fn,context);
   await assert.rejects(context.api('/api/auth/login',{method:'POST',body:'{}'}),/conexión online/);
   assert.equal(calls,0);

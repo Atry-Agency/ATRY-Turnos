@@ -40,7 +40,17 @@ function confirmAction(message){
   document.body.append(dialog);dialog.showModal();
  });
 }
+const readCache=createAtryReadCache();
 async function api(route,opts={}){
+ const method=(opts.method||'GET').toUpperCase();
+ if(method!=='GET'){
+  readCache.clear();
+  try{return await requestApi(route,opts);}finally{readCache.clear();}
+ }
+ try{return await readCache.read(route,()=>requestApi(route,opts),{namespace:state.me?.user?.id||'',fresh:opts.fresh===true});}
+ catch(error){if(error.status===401||error.status===403)readCache.clear();throw error;}
+}
+async function requestApi(route,opts={}){
   if(window.ATRY_CONFIG?.backend==='preview')throw Object.assign(new Error('Esta publicación muestra la interfaz. La conexión online de cuentas y reservas todavía está pendiente.'),{status:503});
   if(window.ATRY_CLOUD){await window.ATRY_CLOUD.ready;return window.ATRY_CLOUD.request(route,opts);}
   let res;try{res=await fetch(route,{credentials:'same-origin',...opts,headers:{...(opts.body?{'Content-Type':'application/json'}:{}),...(opts.headers||{})}});}catch{throw new Error('No hay conexión con el servidor. Conservá tus datos y reintentá la operación.');}
@@ -92,14 +102,31 @@ async function publicView(slug,reset=false){
  }catch(e){page(`<div class="public-shell"><header class="public-nav">${brand()}</header><div class="closing"><h1>No encontramos ese negocio.</h1><p class="muted">${esc(e.message)}</p><a href="#/" class="btn">Volver al inicio</a></div></div>`);}
 }
 async function loadSlots(){if(!state.service){state.slots=[];return;}const params=new URLSearchParams({date:state.date,service_id:state.service});if(state.staff)params.set('staff_id',state.staff);try{const res=await api(`/api/public/${state.public.business.slug}/availability?${params}`);state.slots=res.slots;}catch(e){state.slots=[];toast(e.message,true);}}
-function setScreen(body,title){state.screen=body;state.screenTitle=title;appLayout(body,title);}
+function setScreen(body,title){state.screen=body;state.screenTitle=title;appLayout(body,title);warmNavigation();}
+let warmNavigationKey='',warmNavigationTimer;
+function sectionReads(view){
+ if(!state.business)return [];
+ if(state.business.role==='staff'&&view!=='agenda')return [];
+ const routes={inicio:['/dashboard'],clientes:['/customers?q='+encodeURIComponent(state.customerQuery||'')],servicios:['/services','/staff'],equipo:['/services','/staff','/time-off'],disponibilidad:['/services','/staff','/scheduling'], 'turnos-fijos':['/recurring','/services','/staff'],'lista-espera':['/waitlist']};
+ if(view==='agenda'){const range=calendarRange(state.dateAgenda,state.agendaMode);return [bapi(`/bookings?date=${range.start}&days=${range.days}${state.agendaMode==='mes'?'&calendar=month':''}`),...(state.business.role==='staff'?[]:[bapi('/staff')])];}
+ return (routes[view]||[]).map(bapi);
+}
+function prefetchSection(view){return Promise.allSettled(sectionReads(view).map(route=>api(route)));}
+function warmNavigation(){
+ const key=state.me?.user?.id+'|'+state.business?.id;if(!state.business||warmNavigationKey===key)return;
+ warmNavigationKey=key;clearTimeout(warmNavigationTimer);
+ warmNavigationTimer=setTimeout(()=>{if(key!==state.me?.user?.id+'|'+state.business?.id)return;prefetchSection('agenda');if(state.business.role!=='staff'){prefetchSection('clientes');prefetchSection('servicios');}},500);
+}
+document.addEventListener('pointerover',e=>{const link=e.target.closest('#sidebar a[href^="#/app/"]');if(!link||link.contains(e.relatedTarget))return;prefetchSection(link.hash.split('/')[2]);});
+document.addEventListener('focusin',e=>{const link=e.target.closest('#sidebar a[href^="#/app/"]');if(link)prefetchSection(link.hash.split('/')[2]);});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){readCache.clear();warmNavigationKey='';}});
+document.addEventListener('click',e=>{if(e.target.closest('[data-action="refresh"],[data-action="select-business"]')){readCache.clear();warmNavigationKey='';}},true);
 async function renderApp(refresh=true){
  if(!ensureAuth())return;
  if(!state.business){
    const selected=state.businesses.find(b=>b.id===localStorage.getItem('atry_biz'))||state.businesses[0];
    if(!selected){if(state.me.user.platform_admin){nav('/admin');return;}await viewAccount();return;}
-   state.business=await api(`/api/business/${selected.id}`);
-   state.entitlements=await api(`/api/business/${selected.id}/entitlements`);
+   [state.business,state.entitlements]=await Promise.all([api(`/api/business/${selected.id}`),api(`/api/business/${selected.id}/entitlements`)]);
  }
  if(refresh&&state.business)state.business=await api(bapi(''));
  if(path()==='/app'&&!state.business.onboarding_completed&&state.business.role!=='staff'){nav('/app/configuracion-inicial');return;}
@@ -360,7 +387,7 @@ async function onClick(e){
 async function onChange(e){
  try{
   if(e.target.id==='public-date'){state.date=e.target.value;state.slot='';await loadSlots();await publicView(state.public.business.slug);}
-  if(e.target.id==='business-switch'){disconnectAgendaEvents();localStorage.setItem('atry_biz',e.target.value);state.business=null;state.screen=null;state.agendaStaff='';state.staffList=[];state.currentBookings=[];await renderApp();}
+  if(e.target.id==='business-switch'){readCache.clear();warmNavigationKey='';disconnectAgendaEvents();localStorage.setItem('atry_biz',e.target.value);state.business=null;state.screen=null;state.agendaStaff='';state.staffList=[];state.currentBookings=[];await renderApp();}
   if(e.target.id==='agenda-mode'){state.agendaMode=e.target.value;await renderApp();}
   if(e.target.id==='agenda-staff'){state.agendaStaff=e.target.value;await renderApp();}
   if(e.target.id==='agenda-date'){state.dateAgenda=e.target.value;await renderApp();}
@@ -393,7 +420,7 @@ async function router(){
  finally{clearTimeout(progress);document.body.classList.remove('route-pending');root.removeAttribute('aria-busy');root.inert=false;}
 }
 async function boot(){
- window.addEventListener('atry-cloud-signed-out',()=>{disconnectAgendaEvents();state.me=null;state.business=null;state.businesses=[];state.dialog=null;state.slots=[];state.public=null;nav('/login');});
+ window.addEventListener('atry-cloud-signed-out',()=>{readCache.clear();disconnectAgendaEvents();state.me=null;state.business=null;state.businesses=[];state.dialog=null;state.slots=[];state.public=null;nav('/login');});
  window.addEventListener('hashchange',router);
  document.addEventListener('submit',onSubmit);document.addEventListener('click',onClick);document.addEventListener('change',onChange);
  document.addEventListener('input',e=>{if(e.target.closest('form[data-form]'))e.target.closest('form').dataset.dirty='true';});

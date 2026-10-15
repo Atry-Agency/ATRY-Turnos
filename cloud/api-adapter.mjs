@@ -6,7 +6,8 @@ export function createApiAdapter({auth,config,fetchImpl=fetch,protection=null,ca
  const client=auth.client;
  async function rpc(name,args={}){const result=await client.rpc(name,args);if(result.error){if(result.error.status===401||result.error.code==='PGRST301')throw fail(401,'La sesión venció. Iniciá sesión nuevamente.');throw rpcError(result.error);}return result.data;}
  const minutes=time=>{if(!/^\d{2}:\d{2}$/.test(time||''))throw fail(400,'Ingresá una hora válida.');const [h,m]=time.split(':').map(Number);if(h>23||m>59)throw fail(400,'Hora fuera de rango.');return h*60+m;};
- const catalog=bid=>rpc('atry_catalog',{bid});
+ const catalogs=new Map();
+ const catalog=bid=>{if(!catalogs.has(bid)){const pending=rpc('atry_catalog',{bid}).finally(()=>{if(catalogs.get(bid)===pending)catalogs.delete(bid);});catalogs.set(bid,pending);}return catalogs.get(bid);};
  async function publicCall(operation,{slug,token,data={},query={}}={}){
   const url=new URL(config.supabaseUrl+'/functions/v1/atry-public');url.searchParams.set('operation',operation);if(slug)url.searchParams.set('slug',slug);
   const read=['info','availability'].includes(operation),payload={...data,...(token?{token}:{})};
@@ -27,6 +28,7 @@ export function createApiAdapter({auth,config,fetchImpl=fetch,protection=null,ca
  async function finishRegistration(){const result=await client.rpc('atry_finish_registration');if(result.error?.code==='23505')return {needsOrganizationSetup:true};if(result.error)throw rpcError(result.error);return result.data;}
  return {rpc,publicCall,identity,exportCsv,finishRegistration,async request(route,opts={}){
   const url=new URL(route,'https://atry.internal'),path=url.pathname,method=(opts.method||'GET').toUpperCase(),body=opts.body?JSON.parse(opts.body):{};
+  if(method!=='GET')catalogs.clear();
   if(path==='/api/health')return rpc('atry_health');
   if(path==='/api/config'){const {data}=await client.auth.getSession();return data?.session?rpc('atry_runtime_config'):{app:'Atry Turnos',version:'1.2.0',currency:'UYU',timezone:'America/Montevideo',mail_provider:'disabled',payments_live:false,whatsapp_live:false};}
   if(path==='/api/auth/me')return identity();
