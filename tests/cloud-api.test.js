@@ -1,5 +1,13 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
+test('Catálogo: servicios y equipo simultáneos comparten una consulta y una edición obliga a leer de nuevo',async()=>{
+ const {createApiAdapter}=await import('../cloud/api-adapter.mjs');let count=0,release;
+ const adapter=createApiAdapter({auth:{client:{rpc:()=>{count++;return new Promise(resolve=>release=resolve);}}},config:{}});
+ const services=adapter.request('/api/business/b1/services'),staff=adapter.request('/api/business/b1/staff');
+ assert.equal(count,1);release({data:{services:[{id:'s'}],staff:[{id:'p'}]}});
+ assert.deepEqual(await services,[{id:'s'}]);assert.deepEqual(await staff,[{id:'p'}]);
+ const next=adapter.request('/api/business/b1/staff');assert.equal(count,2);release({data:{staff:[]}});await next;
+});
 test('Adaptador cloud: cliente conserva idempotencia y los enlaces privados se envían en el cuerpo',async()=>{
  const {createApiAdapter}=await import('../cloud/api-adapter.mjs');let sent;
  const adapter=createApiAdapter({auth:{client:{}},config:{supabaseUrl:'https://project.supabase.co',supabaseKey:'sb_publishable_test'},fetchImpl:async(url,options)=>{sent={url:String(url),options};return {ok:true,json:async()=>({status:'cancelled'})};}});
