@@ -149,6 +149,7 @@ END;`);
   db.prepare('INSERT OR IGNORE INTO schema_migrations(version,applied_at) VALUES(1,?)').run(now());
   require('./schema-v2').migrate(db);
   require('./recurring').migrate(db);
+  require('./subscriptions').migrate(db);
 }
 function transaction(db,fn) {
   db.exec('BEGIN IMMEDIATE');

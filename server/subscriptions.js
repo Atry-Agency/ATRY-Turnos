@@ -1,0 +1,39 @@
+'use strict';
+const {id,now,hashToken,transaction,audit}=require('./db');
+const live=b=>!!(b?.is_active&&((b.subscription_status==='trialing'&&Date.parse(b.trial_until)>Date.now())||(b.subscription_status==='active'&&Date.parse(b.paid_until)>Date.now())));
+function migrate(db){
+ if(!db.prepare('PRAGMA table_info(businesses)').all().some(c=>c.name==='paid_until'))db.exec('ALTER TABLE businesses ADD COLUMN paid_until TEXT');
+ db.exec(`CREATE TABLE IF NOT EXISTS subscription_events(id TEXT PRIMARY KEY,business_id TEXT NOT NULL REFERENCES businesses(id),actor_id TEXT NOT NULL REFERENCES users(id),action TEXT NOT NULL,request_key TEXT NOT NULL,request_hash TEXT NOT NULL,before_state TEXT NOT NULL,after_state TEXT NOT NULL,amount_uyu INTEGER NOT NULL DEFAULT 0,reference TEXT NOT NULL DEFAULT '',note TEXT NOT NULL DEFAULT '',created_at TEXT NOT NULL,UNIQUE(business_id,request_key));CREATE UNIQUE INDEX IF NOT EXISTS subscription_transfer_reference ON subscription_events(business_id,lower(trim(reference))) WHERE action IN ('activate','renew') AND reference!='';`);
+ const tables=['staff','services','customers','working_hours','staff_services','time_off','recurring_breaks','schedule_exceptions','holidays','resources','service_resources','bookings','waitlist','notification_preferences','recurring_appointments','invitations'];
+ for(const table of tables){const cols=db.prepare(`PRAGMA table_info(${table})`).all().map(c=>c.name);for(const op of ['INSERT','UPDATE','DELETE']){
+  const row=op==='DELETE'?'OLD':'NEW',bid=cols.includes('business_id')?`${row}.business_id`:cols.includes('staff_id')?`(SELECT business_id FROM staff WHERE id=${row}.staff_id)`:`(SELECT business_id FROM services WHERE id=${row}.service_id)`;
+  const cancellation=op==='UPDATE'&&['bookings','waitlist'].includes(table)?` AND NOT (NEW.status='cancelled' ${table==='waitlist'?'AND NEW.offer_token_hash IS NULL AND NEW.offer_expires_at IS NULL':''} AND ${cols.filter(c=>!['status','updated_at',...(table==='waitlist'?['offer_token_hash','offer_expires_at']:[])].includes(c)).map(c=>`NEW.${c} IS OLD.${c}`).join(' AND ')})`:'';
+  const revoking=op==='UPDATE'&&table==='invitations'?` AND NOT(NEW.revoked_at IS NOT NULL AND ${cols.filter(c=>c!=='revoked_at').map(c=>`NEW.${c} IS OLD.${c}`).join(' AND ')})`:'';
+  const ending=op==='UPDATE'&&table==='recurring_appointments'?` AND NOT(NEW.end_day IS NOT NULL AND (OLD.end_day IS NULL OR NEW.end_day<=OLD.end_day) AND NEW.active<=OLD.active AND ${cols.filter(c=>!['end_day','active','updated_at'].includes(c)).map(c=>`NEW.${c} IS OLD.${c}`).join(' AND ')})`:'';
+  db.exec(`CREATE TRIGGER IF NOT EXISTS subscription_${table}_${op.toLowerCase()} BEFORE ${op} ON ${table} WHEN NOT EXISTS(SELECT 1 FROM businesses WHERE id=${bid} AND is_active=1 AND ((subscription_status='trialing' AND julianday(trial_until)>julianday('now')) OR (subscription_status='active' AND julianday(paid_until)>julianday('now'))))${cancellation}${ending}${revoking} BEGIN SELECT RAISE(ABORT,'SUBSCRIPTION_REQUIRED');END;`);
+ }}
+}
+function save(db,bid,payload,actor){return transaction(db,()=>{
+ const {fail}=require('./booking');const b=db.prepare('SELECT * FROM businesses WHERE id=?').get(bid);if(!b)fail(404,'Negocio no encontrado');
+ const action=payload.subscription_action||'adjust',key=payload.request_id||id(),digest=hashToken(JSON.stringify(Object.fromEntries(Object.entries(payload).filter(([k])=>k!=='request_id').sort(([a],[b])=>a.localeCompare(b))))),amount=Number(payload.amount_uyu||0),reference=String(payload.reference||'').trim(),note=String(payload.note||'').trim();
+ if(!['adjust','activate','renew','trial','suspend','restore'].includes(action)||!/^[A-Za-z0-9_-]{16,100}$/.test(key)||!Number.isInteger(amount)||amount<0||amount>10000000||reference.length>160||note.length>500)fail(400,'Revisá los datos de habilitación');
+ const previous=db.prepare('SELECT * FROM subscription_events WHERE business_id=? AND request_key=?').get(bid,key);if(previous){if(previous.request_hash!==digest)fail(409,'La solicitud ya se usó con otros datos');return {ok:true,event_id:previous.id};}
+ const snapshot=x=>({plan:x.plan,status:x.subscription_status,paid_until:x.paid_until,trial_until:x.trial_until,is_active:x.is_active});const before=snapshot(b);
+ if(payload.plan!==undefined){if(!['trial','individual','negocio','pro'].includes(payload.plan))fail(400,'Plan inválido');b.plan=payload.plan;}
+ if(['activate','renew','trial'].includes(action)){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(payload.until_day||''))fail(400,'Elegí el último día de acceso');const d=new Date(payload.until_day+'T12:00:00Z');if(!Number.isFinite(d.getTime())||d.toISOString().slice(0,10)!==payload.until_day)fail(400,'Fecha inválida');
+  const end=new Date(Date.parse(payload.until_day+'T00:00:00-03:00')+86400000);if(end.getTime()<=Date.now()||end.getTime()>Date.now()+5*366*86400000)fail(400,'El vencimiento debe ser futuro, hasta cinco años');
+  if(action==='trial'){b.plan='trial';b.subscription_status='trialing';b.trial_until=end.toISOString();b.paid_until=null;}
+  else{
+   if(b.plan==='trial'||(!reference&&!note)||(amount>0&&!reference))fail(400,'Indicá la referencia de transferencia o el motivo de la habilitación');
+   if((action==='renew'&&end.getTime()<=Math.max(Date.parse(b.paid_until)||0,Date.now()))||(action==='activate'&&Date.parse(b.paid_until)>end.getTime()))fail(400,'La renovación debe ampliar el período');
+   if(reference&&db.prepare("SELECT 1 FROM subscription_events WHERE business_id=? AND action IN ('activate','renew') AND lower(trim(reference))=lower(?)").get(bid,reference))fail(409,'Esta transferencia ya se registró para este negocio');
+   b.subscription_status='active';b.paid_until=end.toISOString();
+  }b.is_active=1;
+ }else if(action==='suspend')b.subscription_status='suspended';
+ else if(action==='restore'){if(Date.parse(b.paid_until)>Date.now())b.subscription_status='active';else if(Date.parse(b.trial_until)>Date.now())b.subscription_status='trialing';else fail(400,'El período venció. Registrá una renovación');b.is_active=1;}
+ else{if(payload.subscription_status!==undefined){if(!['pending','trialing','active','past_due','suspended'].includes(payload.subscription_status))fail(400,'Estado inválido');b.subscription_status=payload.subscription_status;}if(payload.is_active!==undefined){if(![0,1].includes(Number(payload.is_active)))fail(400,'Estado inválido');b.is_active=Number(payload.is_active);}if(b.subscription_status==='active'&&!(Date.parse(b.paid_until)>Date.now()))fail(400,'La activación requiere un período válido');}
+ db.prepare('UPDATE businesses SET plan=?,subscription_status=?,paid_until=?,trial_until=?,is_active=? WHERE id=?').run(b.plan,b.subscription_status,b.paid_until,b.trial_until,b.is_active,bid);
+ const event=id();db.prepare('INSERT INTO subscription_events VALUES(?,?,?,?,?,?,?,?,?,?,?,?)').run(event,bid,actor,action,key,digest,JSON.stringify(before),JSON.stringify(snapshot(b)),amount,reference,note,now());audit(db,bid,actor,'subscription.'+action,'business',bid);db.prepare('INSERT INTO platform_audit VALUES(?,?,?,?,?)').run(id(),actor,'subscription.'+action,bid,now());return {ok:true,event_id:event};
+ });}
+module.exports={live,migrate,save};

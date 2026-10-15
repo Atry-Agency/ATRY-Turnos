@@ -8,8 +8,8 @@ function seedDemo(db){
   const userId=id(),bizId=id(),today=new Date(Date.now()-3*3600000).toISOString().slice(0,10);
   db.prepare('INSERT INTO users(id,name,email,password_hash,created_at) VALUES(?,?,?,?,?)').run(userId,'Usuario Prueba 1','usuario1@example.com',passwordHash('AtryDemo2026!'),now());
   const adminId=id();db.prepare('INSERT INTO users(id,name,email,password_hash,platform_admin,created_at) VALUES(?,?,?,?,?,?)').run(adminId,'Administrador Prueba','admin.prueba@example.com',passwordHash('AtryAdmin2026!'),1,now());
-  db.prepare("INSERT INTO businesses(id,slug,name,sector,description,phone,email,address,city,primary_color,plan,subscription_status,trial_until,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)")
-    .run(bizId,'negocio-prueba-1','Negocio Prueba 1','General','Negocio genérico de demostración.', '099 123 456','negocio1@example.com','Dirección de prueba 1','Montevideo','#1b826e','negocio','active',new Date(Date.now()+360*86400000).toISOString(),now());
+  db.prepare("INSERT INTO businesses(id,slug,name,sector,description,phone,email,address,city,primary_color,plan,subscription_status,trial_until,paid_until,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")
+    .run(bizId,'negocio-prueba-1','Negocio Prueba 1','General','Negocio genérico de demostración.', '099 123 456','negocio1@example.com','Dirección de prueba 1','Montevideo','#1b826e','negocio','active',new Date(Date.now()+360*86400000).toISOString(),new Date(Date.now()+360*86400000).toISOString(),now());
   db.prepare("INSERT INTO memberships(user_id,business_id,role) VALUES(?,?,'owner')").run(userId,bizId);
   const st=[];for(const [name,email,color] of [['Empleado 1','empleado1@example.com','#237d75'],['Empleado 2','empleado2@example.com','#9673d8'],['Empleado 3','empleado3@example.com','#bd8248']]){
     const sid=id();db.prepare('INSERT INTO staff(id,business_id,name,email,color,created_at) VALUES(?,?,?,?,?,?)').run(sid,bizId,name,email,color,now());st.push(sid);

@@ -26,6 +26,7 @@ function blocks(db,bid,sid,vid,starts,ignoreSeries=''){
   minute-service.buffer_before_min<r.minute+r.duration_min+r.buffer_after_min&&r.minute-r.buffer_before_min<minute+service.duration_min+service.buffer_after_min);
 }
 function expandInside(db,bid,start,days,{strict=false,actorId=null,onlySeries=''}={}){
+ if(!require('./subscriptions').live(db.prepare('SELECT * FROM businesses WHERE id=?').get(bid)))return false;
  const series=db.prepare('SELECT * FROM recurring_appointments WHERE business_id=? AND active=1').all(bid);
  for(const r of series.filter(r=>!onlySeries||r.id===onlySeries)){let error='';for(let i=0;i<days;i++){
   const day=addDays(start,i);if(!applies(r,day)||db.prepare('SELECT 1 FROM bookings WHERE recurring_id=? AND occurrence_day=?').get(r.id,day))continue;
