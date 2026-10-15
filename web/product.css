@@ -138,3 +138,7 @@ body{background:var(--bg)}h1,h2,h3{letter-spacing:-.035em}.brand-original{width:
 body.route-pending::after{content:"";position:fixed;top:0;left:0;width:100%;height:2px;z-index:1000;pointer-events:none;background:linear-gradient(90deg,transparent,#00a5d8,#78e5f5,transparent);background-size:50% 100%;background-repeat:no-repeat;animation:route-progress 1.3s ease-in-out infinite}
 @keyframes route-progress{from{background-position:-100% 0}to{background-position:200% 0}}
 @media(prefers-reduced-motion:reduce){.brand-sculpture img,.sculpture-star .i{animation:none}.subscription-status summary>.i,.color-swatch{transition:none}body.route-pending::after{animation:none;background:#0086b8}}
+
+.auth-signature a{color:#a8c4cf;font-weight:500;text-decoration:none;text-underline-offset:4px;transition:color .18s ease}
+.auth-signature a:hover{color:#51cbe4;text-decoration:underline}
+.auth-signature a:focus-visible{outline:2px solid #51cbe4;outline-offset:5px;border-radius:2px}
