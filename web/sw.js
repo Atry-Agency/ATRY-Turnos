@@ -1,7 +1,7 @@
 // Public static assets only. Cache ownership is scoped to this application path.
 const PREFIX='atry-turnos-shell-'+encodeURIComponent(self.registration.scope)+'-';
-const CACHE=PREFIX+'v9';
-const assets=['./','./index.html','./styles.css?v=7','./product.css?v=8','./app.js?v=8','./features.js?v=7','./management.js?v=7','./recurring.js?v=1','./onboarding.js?v=2','./subscriptions.js?v=1','./assets/brand/atry.png','./assets/brand/favicon.png'];
+const CACHE=PREFIX+'v10';
+const assets=['./','./index.html','./styles.css?v=7','./product.css?v=9','./app.js?v=9','./features.js?v=7','./management.js?v=8','./recurring.js?v=1','./onboarding.js?v=3','./subscriptions.js?v=2','./assets/brand/atry.png','./assets/brand/favicon.png'];
 const allowed=new Set([...assets,'./cloud-backend.js','./runtime-config.js','./proof-worker.js'].map(file=>new URL(file,self.registration.scope).pathname));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(assets.map(file=>new URL(file,self.registration.scope).href))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

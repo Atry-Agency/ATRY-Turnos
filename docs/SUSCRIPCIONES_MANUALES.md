@@ -6,7 +6,7 @@ Atry controla el acceso comercial desde `#/admin`. Los negocios nuevos quedan pe
 
 1. El cliente crea su cuenta, confirma el correo y registra su negocio. Puede copiar el código del negocio desde el aviso de habilitación.
 2. Atry acuerda el servicio y verifica la transferencia en su banco. La aplicación no consulta cuentas bancarias ni procesa pagos.
-3. En Administración Atry, buscar el negocio por nombre, correo, enlace o código y pulsar **Administrar**.
+3. En Administración Atry, buscar el negocio por nombre, correo, enlace o código y pulsar **Habilitar negocio** o **Gestionar acceso**.
 4. Elegir **Activar un período**, seleccionar Individual, Negocio o Pro e indicar el último día de acceso. Ese día está incluido completo según America/Montevideo.
 5. Registrar el importe recibido en pesos uruguayos y la referencia. Para una cortesía sin importe, indicar un motivo. Guardar la habilitación.
 6. El cliente pulsa **Revisar habilitación** o vuelve a entrar al panel.
