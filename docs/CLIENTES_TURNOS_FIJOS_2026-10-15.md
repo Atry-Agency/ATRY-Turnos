@@ -1,6 +1,6 @@
 # Clientes, turnos fijos e identidad del negocio
 
-Estado: implementado y validado localmente y en Supabase ATRY-Turnos (`djoxdtloqwbrhgtgencc`). Migraciones 026 y 027 aplicadas y sus hashes verificados el 15/10/2026. Conexión de Chrome recuperada mediante una pestaña vigente del proyecto; publicación de interfaz en curso.
+Estado: implementado y validado localmente y en Supabase ATRY-Turnos (`djoxdtloqwbrhgtgencc`). Migraciones 026 y 027 aplicadas y sus hashes verificados el 15/10/2026. Conexión de Chrome recuperada mediante una pestaña vigente del proyecto. Interfaz publicada y verificada en https://atry-agency.github.io/ATRY-Turnos/.
 
 ## Recorridos disponibles
 
@@ -41,4 +41,6 @@ Hashes del ledger:
 
 ## Publicación
 
-La rama de trabajo y el PR conservan la implementación. Fusionar y publicar únicamente después de la verificación nativa anterior (completada). Después comprobar que Pages entrega el nuevo registro y los módulos, y que la cuenta real puede iniciar su negocio. La auditoría no creó un negocio comercial ficticio ni requirió conocer la contraseña del usuario.
+PR #1 fusionado en main. Publicación y verificación de GitHub Actions exitosas para `53bdb335bc6bb4c25e118716cc5c2319fa267bc8` (ejecuciones 38680997259 y 38680997272). Se abrió el sitio real en Chrome de Atry y se comprobó el nuevo registro y la selección de rubro. Capturas locales en docs/screenshots (ignoradas por Git).
+
+La auditoría no creó un negocio comercial ficticio ni requirió conocer la contraseña del usuario. El primer negocio real se configura desde su cuenta, con sus propios servicios, profesionales y horarios. La validación privada completa desde navegador se realizó en la base local aislada; la validación nativa de Supabase se realizó mediante RPCs dentro de una transacción con rollback. No se creó una cuenta comercial para presentar una prueba ficticia como un cliente real.
