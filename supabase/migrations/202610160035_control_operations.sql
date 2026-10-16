@@ -80,3 +80,16 @@ BEGIN IF uid IS NOT NULL AND EXISTS(SELECT 1 FROM public.users WHERE id=uid AND 
 CREATE TRIGGER control_plan_changed AFTER UPDATE ON public.plans FOR EACH ROW EXECUTE FUNCTION private.control_plan_audit();
 REVOKE ALL ON FUNCTION private.control_plan_audit() FROM PUBLIC,anon,authenticated,service_role;
 DO $$ DECLARE src text;BEGIN SELECT pg_get_functiondef('public.atry_admin_save_plan(text,jsonb)'::regprocedure) INTO src;src:=replace(src,' RETURN private.control_save_plan_base',E' PERFORM set_config(''atry.control_reason'',left(coalesce(payload->>''reason'',''Configuración global de plan''),500),true);\n RETURN private.control_save_plan_base');EXECUTE src;END $$;
+-- Existing recurring commitments must remain materializable while new reservations are paused.
+CREATE OR REPLACE FUNCTION private.control_booking_guard() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
+DECLARE scope text;
+BEGIN SELECT reservation_scope INTO scope FROM private.business_controls WHERE business_id=NEW.business_id;
+ IF (scope='all' AND NEW.source<>'recurring') OR (scope='public' AND NEW.source='public') THEN RAISE EXCEPTION 'RESERVATIONS_PAUSED' USING ERRCODE='42501';END IF;RETURN NEW;END $$;
+CREATE FUNCTION private.control_new_series_guard() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
+BEGIN IF EXISTS(SELECT 1 FROM private.business_controls WHERE business_id=NEW.business_id AND reservation_scope='all') THEN RAISE EXCEPTION 'RESERVATIONS_PAUSED' USING ERRCODE='42501';END IF;RETURN NEW;END $$;
+CREATE TRIGGER control_series_pause BEFORE INSERT ON public.recurring_appointments FOR EACH ROW EXECUTE FUNCTION private.control_new_series_guard();
+REVOKE ALL ON FUNCTION private.control_new_series_guard() FROM PUBLIC,anon,authenticated,service_role;
+DO $$ DECLARE src text;BEGIN
+ SELECT pg_get_functiondef('private.control_read_base(text,jsonb)'::regprocedure) INTO src;src:=replace(src,'SELECT se.id,se.action,se.before_state',E'SELECT (SELECT verified_at FROM private.payment_reviews WHERE event_id=se.id) verified_at,se.id,se.action,se.before_state');EXECUTE src;
+ SELECT pg_get_functiondef('public.atry_save_notification_preferences(text,jsonb)'::regprocedure) INTO src;src:=replace(src,'AND coalesce(j.last_error,'''')<>''ADMIN_CANCELLED''',E'AND coalesce(j.last_error,'''')<>''ADMIN_CANCELLED'' AND NOT EXISTS(SELECT 1 FROM private.mail_archives a WHERE a.job_id=j.id)');EXECUTE src;
+END $$;
