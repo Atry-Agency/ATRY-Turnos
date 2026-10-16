@@ -1,8 +1,8 @@
 # Misión 005 — ATRY Control Center
 
-Estado de entrega: implementación local y validación aislada. **No publicado en producción; migraciones remotas pendientes.** Proyecto único: ATRY Turnos, `djoxdtloqwbrhgtgencc`. ATRY LAB Operaciones queda excluido.
+Estado de entrega: backend desplegado y validado remotamente el 16/10/2026; interfaz pendiente de publicación en este corte. Proyecto único: ATRY Turnos, `djoxdtloqwbrhgtgencc`. ATRY LAB Operaciones queda excluido.
 
-## Implementado y probado en entorno aislado
+## Implementado y probado localmente; backend verificado en producción
 
 - Navegación de diez áreas con rutas `#/admin/<sección>` y ficha `#/admin/negocios/<id>`. Carga independiente por sección; errores recuperables. Arranque tras cargar todos los módulos para evitar la carrera que mostraba la interfaz anterior.
 - Inicio con estados de suscripción coherentes (incluido programado), vencimientos a siete días, solicitudes, incidencias y estados de correo. Evidencia y fecha de consulta. Bandeja de pendientes/fallos priorizada; no se infiere salud por ausencia de reportes.
@@ -48,16 +48,16 @@ Móvil 390×844: ancho del documento 390 px, sin overflow horizontal; modal de p
 
 ## Migraciones y orden de despliegue
 
-Pendientes en remoto:
+Aplicadas en remoto el 16/10/2026 (hashes registrados en `private.migration_ledger`):
 
 1. `202610150033_control_center.sql`: tablas privadas, consultas/acciones, permisos y guardas.
 2. `202610150034_control_integration.sql`: historia existente, configuración, CAS, cuotas y sesión reciente.
 3. `202610160035_control_operations.sql`: retención manual, soporte esencial, diagnósticos y pausas públicas.
 4. `202610160036_delivery_receipts.sql`: recibos opcionales y permisos de servicio.
 
-Antes de aplicar: verificar proyecto, ledger 001–032, definiciones/grants/RLS, política y respaldo apropiado; ejecutar prueba de restauración aislada pertinente. No usar negocios reales como fixtures. Aplicar cada migración en transacción y guardar SHA-256 en el ledger existente con el mecanismo del proyecto. Después desplegar `atry-mail` con telemetría y, solo si se habilita el webhook, `atry-mail-events`; después publicar frontend. Validar lecturas autenticadas y escritorio/móvil, sin enviar mensajes o suspender negocios reales para probar.
+Realizado antes de aplicar: identidad del proyecto, ledger 007–032, hashes coincidentes, RLS y copia manual fuera de Git. Ensayo PGlite de 44 tablas y 112 filas sin alterar conteos; Auth simulado, no ensayo integral de recuperación. No usar negocios reales como fixtures. Aplicar cada migración en transacción y guardar SHA-256 en el ledger existente con el mecanismo del proyecto. Después desplegar `atry-mail` con telemetría y, solo si se habilita el webhook, `atry-mail-events`; después publicar frontend. Validar lecturas autenticadas y escritorio/móvil, sin enviar mensajes o suspender negocios reales para probar.
 
-No se debe mezclar la nueva interfaz con una base que aún no tenga estas RPC. Mantener PR en borrador mientras la comprobación remota esté bloqueada.
+No se debe mezclar la nueva interfaz con una base que aún no tenga estas RPC. La verificación SQL remota pasó: 12 secciones, permisos anónimos/privados, idempotencia, revisión obsoleta, autenticación reciente y rechazo de usuario de negocio; todas las mutaciones de prueba se revirtieron.
 
 ## Retención, respaldos y costos
 
@@ -79,3 +79,9 @@ Brevo documenta [autenticación Bearer para webhooks](https://developers.brevo.c
 | Liberar almacenamiento | Retención manual y redacción de contenido terminal conservando claves y cuotas | Definir política del titular; no se garantiza reducción física inmediata |
 | Problema general | Evidencia de consulta DB, errores, estado desconocido donde falta monitoreo y procedimiento | Monitor continuo y comprobaciones reales de todos los proveedores |
 | Cien negocios | Consultas y listados paginados, filtros y carga por sección | Ensayo de carga con datos representativos y lectura de recursos remotos |
+
+## Copia manual y verificación remota — 16/10/2026
+
+Copia puntual privada fuera del repositorio (`../respaldo-manual-005`), JSON con permisos 0600 y directorio 0700. Incluye 53 tablas, 121 funciones y metadatos; 2 negocios, 4 usuarios, 2 reservas y cero objetos Storage. SHA-256: `bcc798bd9733fcd7e2bebfdc06f8e25c670eccbe625fe672726e16cfa533ed78`. Excluye Vault, sesiones/refresh tokens, configuración de proveedores/plataforma y archivos Storage. No se implementó un sistema de respaldos ni se contrataron servicios.
+
+Herramientas reproducibles: `manual-control-snapshot.sql`, `validate-control-snapshot.js`, `prepare-control-migrations.js`, `verify-control.sql`. Los archivos con datos y código previo del worker permanecen fuera de GitHub. Prueba remota usa roles y sesiones simuladas dentro de transacción, no sustituye la comprobación de login en navegador. Los conteos productivos se conservaron en las cuatro migraciones; pausa global sigue desactivada y retención permanece sin configurar.
