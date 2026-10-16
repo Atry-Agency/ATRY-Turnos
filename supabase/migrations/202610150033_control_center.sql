@@ -30,9 +30,11 @@ BEGIN
  IF NOT EXISTS(SELECT 1 FROM jsonb_array_elements(coalesce(auth.jwt()->'amr','[]')) a WHERE a->>'method' IN ('password','totp','otp','webauthn') AND (a->>'timestamp')::numeric>extract(epoch FROM now())-600) THEN RAISE EXCEPTION 'RECENT_AUTH_REQUIRED' USING ERRCODE='42501';END IF;
 END $$;
 -- A blocked identity cannot use any private RPC or tenant RLS path, even with a live JWT.
-ALTER FUNCTION private.user_id() RENAME TO user_id_before_control;
-CREATE FUNCTION private.user_id() RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$SELECT u FROM private.user_id_before_control() u WHERE NOT EXISTS(SELECT 1 FROM private.user_controls c WHERE c.user_id=u AND c.blocked)$$;
-REVOKE ALL ON FUNCTION private.user_id_before_control() FROM PUBLIC,anon,authenticated,service_role;
+CREATE OR REPLACE FUNCTION private.user_id() RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
+ SELECT u.id FROM public.users u WHERE u.auth_user_id=auth.uid()
+ AND EXISTS(SELECT 1 FROM auth.sessions s WHERE s.user_id=u.auth_user_id AND s.id::text=auth.jwt()->>'session_id' AND s.created_at>now()-interval '7 days' AND (s.not_after IS NULL OR s.not_after>now()))
+ AND NOT EXISTS(SELECT 1 FROM private.user_controls c WHERE c.user_id=u.id AND c.blocked)
+$$;
 GRANT EXECUTE ON FUNCTION private.user_id() TO authenticated;
 -- Existing functions call private.user_id by name; original SQL policies are replaced to rebind OID.
 ALTER POLICY self_read ON public.users USING(id=private.user_id());

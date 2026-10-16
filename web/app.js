@@ -80,6 +80,7 @@ function appLayout(content,title='Panel'){
  allItems.splice(3,0,['insights','chart','Estadísticas']);
  allItems.splice(2,0,['turnos-fijos','repeat','Turnos fijos']);
  if(b.role==='owner')allItems.push(['accesos','shield','Usuarios y accesos']);
+ allItems.push(['soporte','info','Ayuda y soporte']);
  allItems.push(['cuenta','settings','Mi cuenta']);
  allItems.push(['suscripcion','wallet','Mi plan y suscripción']);
  if(!hasCapability('team'))allItems.push(['mi-horario','clock','Mi horario']);
@@ -89,7 +90,7 @@ function appLayout(content,title='Panel'){
  page(`<div class="app-shell"><button class="sidebar-backdrop" data-action="close-menu" aria-label="Cerrar menú lateral" tabindex="-1"></button><aside class="sidebar" id="sidebar"><button class="btn secondary icon-only sidebar-close" data-action="close-menu" aria-label="Cerrar menú">${ic('x')}</button><div class="logo"><img class="brand-original" src="./assets/brand/atry.png" alt="Símbolo oficial Atry"><span>ATRY</span> <b>TURNOS</b></div><div class="store-box"><div class="store-icon">${ic('shop')}</div><div class="grow truncate"><strong class="truncate">${esc(b.name)}</strong><span>Plan ${esc(subscriptionPlan(b))} · ${esc(b.city)}</span></div></div><label class="tiny" for="business-switch">Espacio activo</label><select id="business-switch">${state.businesses.map(x=>option(x.id,x.name,x.id===b.id)).join('')}</select><div class="side-title">TU NEGOCIO</div>${items.map(([n,i,label])=>`<a href="#/app/${n}" class="navlink ${v===n?'active':''}">${ic(i)} ${label}</a>`).join('')}<div class="side-title" style="margin-top:17px">RECURSOS</div><a class="navlink" href="#/reservar/${esc(b.slug)}" target="_blank">${ic('external')} Ver página pública</a>${state.me?.user?.platform_admin?`<a class="navlink" href="#/admin">${ic('shield')} Administración Atry</a>`:''}<div class="sidebar-bottom"><div class="hint-block small" style="margin-bottom:14px">${ic('spark')} Las habilitaciones y renovaciones se coordinan con Atry.</div><div class="user-card"><div class="avatar">${ucode(state.me.user.name)}</div><div class="grow truncate"><strong class="truncate">${esc(state.me.user.name)}</strong><span class="truncate">${esc(state.me.user.email)}</span></div><button class="btn secondary icon-only sm" data-action="logout" title="Cerrar sesión">${ic('logout')}</button></div></div></aside><main class="main"><div class="topbar"><div class="row"><button class="btn secondary icon-only mobile-menu" data-action="toggle-menu" aria-label="Abrir menú">${ic('menu')}</button><span class="breadcrumb">Atry Turnos / <strong>${esc(b.name)} / ${esc(title)}</strong></span></div><div class="actions"><button class="btn secondary sm" data-action="copy-link">${ic('copy')} <span class="desktop-label">Copiar enlace</span></button><a class="btn sm" href="#/reservar/${esc(b.slug)}" target="_blank">${ic('external')} Reservar</a></div></div><div class="main-content">${subscriptionNotice(b)}${content}</div></main></div>${state.dialog?modalContent():''}`);lockSubscriptionControls();pruneCommercialControls();
 }
 function modalContent(){return `<div class="modal-mask" data-action="close-modal" data-backdrop="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="modal-head"><h2 id="dialog-title">${esc(state.dialog.title)}</h2><button class="btn secondary icon-only sm" aria-label="Cerrar ventana" data-action="close-modal">${ic('x')}</button></div>${state.dialog.body}</div></div>`;}
-async function showDialog(title,body){state.dialog={title,body};if(path()==='/admin')await adminView();else await renderApp(false);$('.modal input, .modal select, .modal button')?.focus();}
+async function showDialog(title,body){state.dialog={title,body};if(path().startsWith('/admin'))await adminView();else await renderApp(false);$('.modal input, .modal select, .modal button')?.focus();}
 const bapi=p=>`/api/business/${state.business.id}${p}`;
 const stepHeader=(n,t)=>`<div class="book-step"><div class="num">${n}</div><h2>${t}</h2></div>`;
 async function publicView(slug,reset=false){
@@ -142,6 +143,7 @@ async function renderApp(refresh=true){
  const view=state.appView;
  try{
   if(view==='suscripcion')await viewSubscription();
+  else if(view==='soporte')await viewEssentialSupport();
   else if(view==='mi-horario')await viewOwnHours();
   else if(view==='estadisticas')await viewBasicStatistics();
   else if(view==='configuracion-inicial')await viewOnboarding();
@@ -340,7 +342,7 @@ async function onClick(e){
  e.preventDefault();
  try{
   if(await clickFeature(a,btn))return;
-  if(a==='close-modal'){if($('.modal form[data-dirty="true"]')&&!await confirmAction('Hay cambios sin guardar. ¿Querés cerrar esta ventana?'))return;state.dialog=null;if(path()==='/admin')await adminView();else await renderApp(state.syncPending||false);return;}
+  if(a==='close-modal'){if($('.modal form[data-dirty="true"]')&&!await confirmAction('Hay cambios sin guardar. ¿Querés cerrar esta ventana?'))return;state.dialog=null;if(path().startsWith('/admin'))await adminView();else await renderApp(state.syncPending||false);return;}
   if(a==='toggle-menu'){setMenu(!$('#sidebar')?.classList.contains('open'));return;} if(a==='close-menu'){setMenu(false);return;}
   if(a==='logout'){await post('/api/auth/logout',{});state.me=null;state.business=null;state.businesses=[];state.dialog=null;toast('Sesión cerrada');nav('/login');return;}
   if(a==='copy-link'||a==='copy-custom'){
@@ -427,7 +429,7 @@ async function router(){
   if(route.startsWith('/restablecer/')){recoveryView(route.split('/')[2]);return;}
   if(route==='/login'){if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');return;}authView(false);return;}
   if(route==='/registro'){authView(true);return;}
-  if(route==='/admin'){await adminView();return;}
+  if(route==='/admin'||route.startsWith('/admin/')){await adminView();return;}
   if(route==='/app'||route.startsWith('/app/')){state.appView=route.split('/')[2]||'inicio';await renderApp();return;}
   if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');}else authView(false);
  }catch(err){toast(err.message,true);if(err.status===401){state.me=null;nav('/login');}else page(`<div class="closing"><h2>No pudimos cargar esta pantalla</h2><p>${esc(err.message)}</p><button class="btn" data-action="reload-page">Reintentar</button></div>`);}
@@ -470,4 +472,5 @@ async function viewOnboarding(){
  const services=await api(bapi('/services'));const b=state.business;
  setScreen(`${headerTitle('Configurá tu espacio','Tres pasos para habilitar tus primeras reservas.')}<div class="onboarding-grid"><a class="card setup-step" href="#/app/configuracion"><span class="num">1</span><h2>Tu negocio</h2><p class="muted">Revisá nombre, contacto, dirección y políticas.</p><strong>${esc(b.name)}</strong></a><a class="card setup-step" href="#/app/servicios"><span class="num">2</span><h2>Tus servicios</h2><p class="muted">Definí duración, precio y profesionales.</p><strong>${services.length} servicios creados</strong></a><a class="card setup-step" href="#/app/equipo"><span class="num">3</span><h2>Tu disponibilidad</h2><p class="muted">Ajustá jornadas, descansos y ausencias.</p><strong>Revisar horarios</strong></a></div><div class="card" style="margin-top:20px"><h2>Tu enlace de reservas</h2><p class="preview-url">${esc(businessUrl())}</p><form data-form="complete-onboarding"><button class="btn" ${services.length?'':'disabled'}>Completar configuración</button></form><p class="muted small">Necesitás al menos un servicio. Podés modificar la configuración después.</p></div>`, 'Configuración inicial');
 }
-boot();
+// Wait for every deferred feature module before selecting a route.
+if(document.readyState==='complete')boot();else window.addEventListener('DOMContentLoaded',boot,{once:true});

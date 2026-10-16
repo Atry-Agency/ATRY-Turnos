@@ -88,7 +88,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     const b=getBizFromSlug(params[0]);
     const services=serviceList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,description:s.description,duration_min:s.duration_min,price_uyu:s.price_uyu,deposit_percent:s.deposit_percent}));
     const staff=staffList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,service_ids:db.prepare('SELECT service_id FROM staff_services WHERE staff_id=?').all(s.id).map(x=>x.service_id)}));
-    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)};
+    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)&&!db.prepare("SELECT 1 FROM business_controls WHERE business_id=? AND reservation_scope IN ('public','all')").get(b.id)};
   });
   r('GET','/api/public/([a-z0-9-]+)/availability',({params,url})=>{
     const b=getBizFromSlug(params[0]);const date=url.searchParams.get('date'),service=url.searchParams.get('service_id'),staff=url.searchParams.get('staff_id')||null;
@@ -315,7 +315,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   require('./scheduling').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./operations').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./commercial').register({r,db,auth,authorized});
-  require('./control-center').register({r,db,auth});
+  require('./control-center').register({r,db,auth,authorized});
   const requestCounts=new Map();
   const handler=async(req,res)=>{
     try{
@@ -335,6 +335,7 @@ function createApp({db=connect(),webRoot=root}={}) {
         const matched=routes.find(x=>x.method===req.method&&x.regex.test(pathname));
         if(!matched)fail(404,'Ruta API inexistente');
         req.user=user(req);
+        if(pathname.startsWith('/api/admin/')&&!['GET','HEAD','OPTIONS'].includes(req.method)){const u=auth(req);const session=db.prepare('SELECT created_at FROM sessions WHERE user_id=? AND token_hash=?').get(u.id,hashToken(cookie(req,'atry_session')));if(!session||Date.parse(session.created_at)<Date.now()-600000)fail(403,'Volvé a iniciar sesión para confirmar la operación administrativa');}
         const params=matched.regex.exec(pathname).slice(1),body=['POST','PATCH','PUT','DELETE'].includes(req.method)?await readBody(req):{};
         const gated=pathname.match(/^\/api\/business\/([A-Za-z0-9_-]+)\/(.*)$/);
         if(gated){

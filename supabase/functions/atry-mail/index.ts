@@ -1,5 +1,6 @@
 import {createMailWorker} from '../_shared/mail-worker.mjs';
 Deno.serve(createMailWorker({
+ telemetry:true,
  serviceKey:Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'),
  invocationKey:Deno.env.get('MAIL_INVOKE_KEY'),
  url:Deno.env.get('SUPABASE_URL'),
