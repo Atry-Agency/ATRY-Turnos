@@ -21,7 +21,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   const cookieHeader=(value,req,maxAge)=>`atry_session=${value}; HttpOnly; Path=/; SameSite=Lax; Max-Age=${maxAge}; ${((req.headers['x-forwarded-proto']==='https')||process.env.NODE_ENV==='production')?'Secure; ':''}`;
   function user(req){
     const token=cookie(req,'atry_session'); if(!token)return null;
-    return db.prepare('SELECT u.id,u.name,u.email,u.platform_admin FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').get(hashToken(token),now())||null;
+    return db.prepare('SELECT u.id,u.name,u.email,u.platform_admin FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>? AND NOT EXISTS(SELECT 1 FROM user_controls uc WHERE uc.user_id=u.id AND uc.blocked=1)').get(hashToken(token),now())||null;
   }
   const auth=req=>{if(!req.user)fail(401,'Iniciá sesión para continuar');return req.user;};
   function authorized(req,businessId,roles=['owner','manager']){
@@ -88,7 +88,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     const b=getBizFromSlug(params[0]);
     const services=serviceList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,description:s.description,duration_min:s.duration_min,price_uyu:s.price_uyu,deposit_percent:s.deposit_percent}));
     const staff=staffList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,service_ids:db.prepare('SELECT service_id FROM staff_services WHERE staff_id=?').all(s.id).map(x=>x.service_id)}));
-    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)};
+    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)&&!db.prepare("SELECT 1 FROM business_controls WHERE business_id=? AND reservation_scope IN ('public','all')").get(b.id)};
   });
   r('GET','/api/public/([a-z0-9-]+)/availability',({params,url})=>{
     const b=getBizFromSlug(params[0]);const date=url.searchParams.get('date'),service=url.searchParams.get('service_id'),staff=url.searchParams.get('staff_id')||null;
@@ -315,6 +315,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   require('./scheduling').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./operations').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./commercial').register({r,db,auth,authorized});
+  require('./control-center').register({r,db,auth,authorized});
   const requestCounts=new Map();
   const handler=async(req,res)=>{
     try{
@@ -334,6 +335,7 @@ function createApp({db=connect(),webRoot=root}={}) {
         const matched=routes.find(x=>x.method===req.method&&x.regex.test(pathname));
         if(!matched)fail(404,'Ruta API inexistente');
         req.user=user(req);
+        if(pathname.startsWith('/api/admin/')&&!['GET','HEAD','OPTIONS'].includes(req.method)){const u=auth(req);const session=db.prepare('SELECT created_at FROM sessions WHERE user_id=? AND token_hash=?').get(u.id,hashToken(cookie(req,'atry_session')));if(!session||Date.parse(session.created_at)<Date.now()-600000)fail(403,'Volvé a iniciar sesión para confirmar la operación administrativa');}
         const params=matched.regex.exec(pathname).slice(1),body=['POST','PATCH','PUT','DELETE'].includes(req.method)?await readBody(req):{};
         const gated=pathname.match(/^\/api\/business\/([A-Za-z0-9_-]+)\/(.*)$/);
         if(gated){
@@ -350,13 +352,14 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
       if(req.method==='HEAD')res.end();else res.end(content);
     }catch(e){
       if(/FEATURE_DISABLED|STAFF_LIMIT/.test(e.message||''))e=new HttpError(403,'Esta operación supera las capacidades del plan');
+      if(e.message?.includes('RESERVATIONS_PAUSED'))e=new HttpError(403,'El negocio pausó las nuevas reservas. Los turnos existentes se conservan');
       if(e.message?.includes('SUBSCRIPTION_REQUIRED'))e=new HttpError(403,'El acceso del negocio requiere habilitación o renovación de Atry');
       if(!res.writableEnded){if(!(e instanceof HttpError)){const errorId=id();console.error('Error de servidor:',errorId,e.code||'INTERNAL_ERROR');try{db.prepare('INSERT INTO system_errors VALUES(?,?,?)').run(errorId,String(e.code||'INTERNAL_ERROR').slice(0,80),now());}catch{}}send(res,e.status||500,{error:e.status?e.message:'Error interno del servidor'});}
     }

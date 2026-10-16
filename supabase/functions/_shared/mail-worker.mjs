@@ -10,6 +10,7 @@ export function createMailWorker(config,{fetchImpl=fetch,now=Date.now}={}){
   const rpc=async(name,body)=>{const r=await fetchImpl(`${config.url}/rest/v1/rpc/${name}`,{method:'POST',headers:{apikey:config.serviceKey,authorization:`Bearer ${config.serviceKey}`,'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(15000)});if(!r.ok)throw new Error('DATABASE_ERROR');return r.json();};
   let processed=0,accepted=0,unknown=0;const deadline=now()+85000;
   try{
+   if(config.telemetry)await rpc('atry_control_worker',{phase:'start'});
    await rpc('atry_mail_ingest',{});
    // Claim immediately before each send so other jobs cannot lose their lease while waiting.
    while(processed<10&&now()<deadline){
@@ -24,7 +25,8 @@ export function createMailWorker(config,{fetchImpl=fetch,now=Date.now}={}){
     if(acknowledged!==true)throw new Error('LEASE_NOT_ACKNOWLEDGED');
     processed++;if(providerId)accepted++;if(['PROVIDER_CONNECTION_ERROR','BREVO_DUPLICATE_UNKNOWN','BREVO_HTTP_503'].includes(errorCode))unknown++;
    }
+   if(config.telemetry)await rpc('atry_control_worker',{phase:'finish',outcome:'ok'});
    return json(200,{processed,provider_accepted:accepted,delivery_unknown:unknown});
-  }catch{return json(503,{error:'WORKER_ERROR',processed,provider_accepted:accepted,delivery_unknown:unknown});}
+  }catch{if(config.telemetry)try{await rpc('atry_control_worker',{phase:'finish',outcome:'error'});}catch{}return json(503,{error:'WORKER_ERROR',processed,provider_accepted:accepted,delivery_unknown:unknown});}
  };
 }

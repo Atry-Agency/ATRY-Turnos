@@ -63,12 +63,13 @@ function ingest(db){
 function createWorker(db,{provider=createProvider(),env=process.env,clock=()=>Date.now(),maxAttempts=5}={}){
  let running=false;
  async function tick(){if(running)return {busy:true};running=true;try{
+  db.prepare("UPDATE worker_health SET started_at=?,result='running' WHERE id=1").run(new Date(clock()).toISOString());
   ingest(db);const current=new Date(clock()).toISOString();
   db.prepare("UPDATE mail_jobs SET state='delivery_unknown',last_error='LEASE_EXPIRED_RECONCILIATION_REQUIRED',lease_until=NULL WHERE state='processing' AND lease_until<?").run(current);
   if(provider.mode==='disabled')return {provider:'disabled',processed:0};
   let processed=0;
   for(let i=0;i<20;i++){
-   const job=transaction(db,()=>{const candidate=db.prepare("SELECT * FROM mail_jobs WHERE state IN ('queued','retry','quota_exhausted') AND next_attempt_at<=? ORDER BY CASE WHEN kind IN ('password_reset','invitation','security','auth') THEN 0 ELSE 1 END,next_attempt_at,created_at LIMIT 1").get(current);if(!candidate)return null;
+   const job=transaction(db,()=>{const candidate=db.prepare("SELECT * FROM mail_jobs WHERE state IN ('queued','retry','quota_exhausted') AND next_attempt_at<=? AND (kind IN ('password_reset','invitation','security','auth') OR ((SELECT operational_mail_paused FROM control_settings WHERE id=1)=0 AND NOT EXISTS(SELECT 1 FROM business_controls c WHERE c.business_id=mail_jobs.business_id AND c.mail_paused=1))) ORDER BY CASE WHEN kind IN ('password_reset','invitation','security','auth') THEN 0 ELSE 1 END,next_attempt_at,created_at LIMIT 1").get(current);if(!candidate)return null;
     if(!shouldDeliver(db,candidate)){db.prepare("UPDATE mail_jobs SET state='skipped',last_error='RECIPIENT_OR_PLAN_BLOCKED' WHERE id=?").run(candidate.id);return {omitted:true};}
     const commercial=require('./commercial'),s=commercial.settings(db),day=current.slice(0,10);db.prepare('INSERT OR IGNORE INTO mail_global_budget(day) VALUES(?)').run(day);const usage=db.prepare('SELECT attempts FROM mail_global_budget WHERE day=?').get(day).attempts,ceiling=s.provider_daily_limit-(commercial.essential(candidate.kind)?0:s.security_reserve);if(usage>=ceiling)return null;
     if(!commercial.reserve(db,candidate)){db.prepare("UPDATE mail_jobs SET state='quota_exhausted',last_error='MONTHLY_QUOTA_EXHAUSTED',next_attempt_at=? WHERE id=?").run(commercial.cycle(db,candidate.business_id).end,candidate.id);return {omitted:true};}
@@ -80,7 +81,7 @@ function createWorker(db,{provider=createProvider(),env=process.env,clock=()=>Da
    catch(e){error=String(e.code||'PROVIDER_ERROR').replace(/[^A-Z0-9_-]/gi,'').slice(0,80);state=['ETIMEDOUT','ESOCKET','PROVIDER_CONNECTION_ERROR'].includes(error)?'delivery_unknown':job.attempts>=maxAttempts?'failed':'retry';next=new Date(clock()+Math.min(3600000,30000*2**(job.attempts-1))).toISOString();}
    transaction(db,()=>{require('./commercial').settle(db,job,state);db.prepare('UPDATE mail_jobs SET state=?,provider_id=?,last_error=?,next_attempt_at=?,lease_until=NULL,updated_at=? WHERE id=?').run(state,providerId,error,next,new Date(clock()).toISOString(),job.id);if(['stored_local','smtp_accepted','skipped','failed'].includes(state)){if(job.source==='notification')db.prepare('UPDATE notifications SET state=? WHERE id=?').run(state,job.source_id);if(job.source==='outbox')db.prepare('UPDATE system_outbox SET state=? WHERE id=?').run(state,job.source_id);}});processed++;
   }return {provider:provider.mode,processed};
- }finally{running=false;}}
+ }catch(e){db.prepare("UPDATE worker_health SET finished_at=?,result='error' WHERE id=1").run(new Date(clock()).toISOString());throw e;}finally{db.prepare("UPDATE worker_health SET finished_at=?,result=CASE WHEN result='error' THEN 'error' ELSE ? END WHERE id=1").run(new Date(clock()).toISOString(),provider.mode==='disabled'?'disabled':'ok');running=false;}}
  return {tick,provider:provider.mode,start({keepAlive=false}={}){const interval=setInterval(()=>tick().catch(e=>console.error('Mail worker:',e.code||'WORKER_ERROR')),Number(env.MAIL_INTERVAL_MS)||5000);if(!keepAlive)interval.unref();tick().catch(e=>console.error('Mail worker:',e.code||'WORKER_ERROR'));return ()=>clearInterval(interval);}};
 }
 module.exports={enqueue,preferences,template,createProvider,createWorker,ingest,shouldDeliver};

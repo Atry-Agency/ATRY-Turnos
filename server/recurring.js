@@ -34,7 +34,7 @@ function expandInside(db,bid,start,days,{strict=false,actorId=null,onlySeries=''
   const day=addDays(start,i);if(!applies(r,day)||db.prepare('SELECT 1 FROM bookings WHERE recurring_id=? AND occurrence_day=?').get(r.id,day))continue;
   try{
    const b=createBooking(db,{business_id:bid,staff_id:r.staff_id,service_id:r.service_id,starts_at:localISO(day,r.minute),customer_name:r.customer_name,customer_email:r.customer_email,customer_phone:r.customer_phone,notes:r.notes},
-    {actorId,source:'manual',enforceNotice:false,withinTransaction:true,ignoreRecurring:r.id,silent:true});
+    {actorId,source:'recurring',enforceNotice:false,withinTransaction:true,ignoreRecurring:r.id,silent:true});
    db.prepare("UPDATE bookings SET recurring_id=?,occurrence_day=?,status='confirmed',source='recurring' WHERE id=?").run(r.id,day,b.id);
   }catch(e){if(strict)fail(e.status||409,`${day}: ${e.message}`);error=`${day}: ${e.message}`;}
  }db.prepare('UPDATE recurring_appointments SET last_error=? WHERE id=?').run(error,r.id);}

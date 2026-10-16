@@ -22,3 +22,6 @@ enable_confirmations = true
 verify_jwt = true
 [functions.atry-public]
 verify_jwt = false
+
+[functions.atry-mail-events]
+verify_jwt = false
