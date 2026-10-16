@@ -151,6 +151,7 @@ END;`);
   require('./recurring').migrate(db);
   require('./subscriptions').migrate(db);
   require('./commercial').migrate(db);
+  require('./control-center').migrate(db);
 }
 function transaction(db,fn) {
   db.exec('BEGIN IMMEDIATE');

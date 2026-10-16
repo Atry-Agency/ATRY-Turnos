@@ -1,0 +1,23 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');const {pg}=require('./pg-context');
+const uid=n=>'55555555-5555-4555-8555-55555555550'+n;
+async function who(db,n,recent=true){await db.exec('RESET ROLE');await db.query("SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claims',$2,false)",[uid(n),JSON.stringify({session_id:uid(n),amr:recent?[{method:'password',timestamp:Math.floor(Date.now()/1000)}]:[]})]);await db.exec('SET ROLE authenticated');}
+async function setup(){const db=await pg();for(const n of [1,2,3])await db.query('INSERT INTO auth.users(id,email,email_confirmed_at,raw_user_meta_data) VALUES($1,$2,now(),$3)',[uid(n),'control'+n+'@local.test',JSON.stringify({name:'Control '+n})]);await db.exec('INSERT INTO auth.sessions(id,user_id) SELECT id,id FROM auth.users;UPDATE users SET platform_admin=1 WHERE id=\''+uid(2)+'\'');await who(db,1);const b=(await db.query("SELECT atry_create_organization('{\"name\":\"Control A\",\"slug\":\"control-a\"}') v")).rows[0].v.id;return {db,b};}
+const read=async(db,s,p={})=>(await db.query('SELECT atry_control_read($1,$2::jsonb) v',[s,JSON.stringify(p)])).rows[0].v;
+const cmd=async(db,a,id,p={})=>(await db.query('SELECT atry_control_command($1,$2,$3::jsonb) v',[a,id,JSON.stringify({request_id:crypto.randomUUID(),reason:'Prueba aislada de seguridad',...p})])).rows[0].v;
+test('Control PG: paginación, privacidad, permisos, revisión y repetición idempotente',async()=>{const {db,b}=await setup();try{
+ await assert.rejects(read(db,'users'),/FORBIDDEN/);await who(db,2);const page=await read(db,'businesses',{limit:1});assert.equal(page.total,1);assert.equal(page.rows.length,1);assert.equal((await read(db,'businesses',{offset:1})).rows.length,0);assert.equal((await read(db,'business',{business_id:b})).data.customers,undefined);
+ const p={scope:'public',revision:0,request_id:crypto.randomUUID()};await cmd(db,'reservations',b,p);assert.equal((await cmd(db,'reservations',b,p)).replayed,true);await assert.rejects(cmd(db,'reservations',b,{scope:'all',revision:0}),/STALE_REVISION/);assert.equal((await read(db,'business',{business_id:b})).data.reservation_scope,'public');await cmd(db,'reservations',b,{scope:'none',revision:2});
+ await assert.rejects(db.query('SELECT atry_customers($1,$2)',[b,'']),/FORBIDDEN/);
+ await who(db,2,false);await assert.rejects(cmd(db,'global_mail','global',{paused:true,revision:1}),/RECENT_AUTH_REQUIRED/);
+ }finally{await db.close();}});
+test('Control PG: bloqueo revoca sesiones, impide identidad y protege último admin y propietario',async()=>{const {db,b}=await setup();try{
+ await who(db,2);await assert.rejects(cmd(db,'block_user',uid(2),{blocked:true}),/LAST_ADMIN/);await assert.rejects(cmd(db,'remove_membership',uid(1),{business_id:b}),/LAST_OWNER/);
+ await cmd(db,'block_user',uid(1),{blocked:true});await who(db,1);assert.equal((await db.query('SELECT atry_me() v')).rows[0].v.user,null);await assert.rejects(db.query('SELECT atry_customers($1,$2)',[b,'']),/FORBIDDEN/);
+ }finally{await db.close();}});
+test('Control PG: estados programado y suspendido coherentes; lecturas no inventan salud',async()=>{const {db,b}=await setup();try{
+ await db.exec('RESET ROLE');await db.query("UPDATE businesses SET subscription_status='active',paid_until=now()+interval '30 days',subscription_started_at=now()+interval '1 day' WHERE id=$1",[b]);await who(db,2);assert.equal((await read(db,'businesses',{status:'scheduled'})).total,1);await db.exec('RESET ROLE');await db.query("UPDATE businesses SET subscription_status='suspended' WHERE id=$1",[b]);await who(db,2);assert.equal((await read(db,'businesses',{status:'suspended'})).total,1);assert.equal((await read(db,'system')).brevo,'unknown');assert.equal((await read(db,'storage')).destructive_enabled,false);
+ }finally{await db.close();}});
+test('Control PG: correo incierto no admite reintento ni cancelación; auditoría conserva reservas',async()=>{const {db,b}=await setup();try{
+ await db.exec('RESET ROLE');await db.query("INSERT INTO mail_jobs(id,dedupe_key,business_id,source,source_id,kind,recipient,subject,content,state,next_attempt_at,created_at,updated_at) VALUES('unknown','unknown',$1,'system','','confirmed','qa@local.test','Privado','Privado','delivery_unknown',now(),now(),now())",[b]);await who(db,2);for(const a of ['mail_retry','mail_cancel'])await assert.rejects(cmd(db,a,'unknown'),/UNSAFE_MAIL_ACTION/);const rows=await read(db,'mail');assert.equal(rows.rows[0].recipient,undefined);assert.equal(rows.rows[0].content,undefined);await cmd(db,'global_mail','global',{paused:true,revision:1});assert.equal((await read(db,'overview')).settings.operational_mail_paused,true);
+ }finally{await db.close();}});

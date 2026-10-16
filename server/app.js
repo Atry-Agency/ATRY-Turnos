@@ -21,7 +21,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   const cookieHeader=(value,req,maxAge)=>`atry_session=${value}; HttpOnly; Path=/; SameSite=Lax; Max-Age=${maxAge}; ${((req.headers['x-forwarded-proto']==='https')||process.env.NODE_ENV==='production')?'Secure; ':''}`;
   function user(req){
     const token=cookie(req,'atry_session'); if(!token)return null;
-    return db.prepare('SELECT u.id,u.name,u.email,u.platform_admin FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').get(hashToken(token),now())||null;
+    return db.prepare('SELECT u.id,u.name,u.email,u.platform_admin FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>? AND NOT EXISTS(SELECT 1 FROM user_controls uc WHERE uc.user_id=u.id AND uc.blocked=1)').get(hashToken(token),now())||null;
   }
   const auth=req=>{if(!req.user)fail(401,'Iniciá sesión para continuar');return req.user;};
   function authorized(req,businessId,roles=['owner','manager']){
@@ -315,6 +315,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   require('./scheduling').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./operations').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./commercial').register({r,db,auth,authorized});
+  require('./control-center').register({r,db,auth});
   const requestCounts=new Map();
   const handler=async(req,res)=>{
     try{
@@ -350,13 +351,14 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
       if(req.method==='HEAD')res.end();else res.end(content);
     }catch(e){
       if(/FEATURE_DISABLED|STAFF_LIMIT/.test(e.message||''))e=new HttpError(403,'Esta operación supera las capacidades del plan');
+      if(e.message?.includes('RESERVATIONS_PAUSED'))e=new HttpError(403,'El negocio pausó las nuevas reservas. Los turnos existentes se conservan');
       if(e.message?.includes('SUBSCRIPTION_REQUIRED'))e=new HttpError(403,'El acceso del negocio requiere habilitación o renovación de Atry');
       if(!res.writableEnded){if(!(e instanceof HttpError)){const errorId=id();console.error('Error de servidor:',errorId,e.code||'INTERNAL_ERROR');try{db.prepare('INSERT INTO system_errors VALUES(?,?,?)').run(errorId,String(e.code||'INTERNAL_ERROR').slice(0,80),now());}catch{}}send(res,e.status||500,{error:e.status?e.message:'Error interno del servidor'});}
     }
