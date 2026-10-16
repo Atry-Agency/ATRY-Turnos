@@ -21,11 +21,13 @@ El empaquetado de Pages con configuración pública ficticia de compilación com
 
 ## Despliegue seguro pendiente
 
-1. Recuperar acceso autenticado al proyecto **ATRY Turnos**. Comprobar URL y referencia `djoxdtloqwbrhgtgencc`, ledger 007–037, conteos de negocios/usuarios/reservas y RLS. Hacer nueva copia puntual gratuita fuera de Git antes de migrar y registrar alcance/hash. La copia anterior de M005 no sustituye una copia actual.
+1. **Completado:** proyecto **ATRY Turnos** `djoxdtloqwbrhgtgencc`, ledger 007–037, conteos y nueva copia puntual fuera de Git comprobados. Falta consultar RLS y grants efectivos en remoto porque la sesión del panel se cerró después de la exportación.
 2. Revisar los SQL 038 y 039 contra las funciones reales del proyecto y aplicar **038 antes de 039**, cada uno en transacción con hash en `private.migration_ledger` según `scripts/prepare-control-migrations.js`. Verificar conteos invariantes, grants de RPC, propietario frente a empleado/tercero y lectura pública sin datos privados. Hacer mutaciones de prueba solo dentro de transacciones revertidas.
 3. Publicar por el flujo existente de GitHub después de verificar las RPC remotas y CI; comprobar en Chrome la cuenta real de Atry Agency, negocio real en lectura, escritorio y 390 px. No crear clientes/reservas ficticias en producción. Confirmar el monitor y el coste efectivo dentro de cuotas gratuitas.
 
 No publicar el frontend antes de las RPC: la sección de apariencia y el registro administrativo de incidencia dependen de ellas. Las herramientas de eliminación definitiva siguen deshabilitadas. La copia manual no incluye automáticamente Auth, secretos ni archivos Storage y no demuestra restauración integral.
+
+**Copia previa ya efectuada:** `../respaldo-manual-006/turnos-pre-006.json`, fuera de Git, directorio 0700 y archivo 0600; SHA-256 `0d4e0e1fe84c42901af032bdb8ee2ca06a139a46cdda366443f09c207004e16f`. Capturada el 16/10/2026 a las 19:41:34 UTC; 63 tablas, 140 funciones y tres grupos de metadatos. Incluye cuatro filas de Auth users y metadatos de Storage (cero objetos), además de datos privados de la aplicación; no publicar ni compartir el archivo. Alcance excluido: archivos físicos, sesiones/refresh tokens, Vault, configuración de proveedores y restauración ensayada. Se verificaron los 31 hashes del ledger 007–037 con el repositorio, las precondiciones de esquema y el marcador exacto de la función pública que modifica la 038. Conteos previos: dos negocios, cuatro usuarios de aplicación y dos reservas. **Quedan por comprobar RLS y permisos efectivos en remoto antes de ejecutar SQL.**
 
 ## Límites y preparación comercial
 
