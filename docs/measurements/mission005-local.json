@@ -1,6 +1,6 @@
 {
   "project": "djoxdtloqwbrhgtgencc",
-  "environment": "local-and-production-sql",
+  "environment": "production-validated",
   "production_migrations_applied": true,
   "migrations": [
     {
@@ -33,14 +33,23 @@
       "modal_height": 595.03125
     },
     "reservation_pause_and_resume": "confirmed_in_disposable_local_database",
-    "production_browser_validation": false
+    "production_browser_validation": true,
+    "production_sections": 10,
+    "production_mobile": {
+      "viewport_width": 390,
+      "document_width": 390,
+      "viewport_height": 844,
+      "navigation_links": 10
+    },
+    "public_booking_page": "loaded_without_creating_booking"
   },
   "tests": {
-    "suite": "npm test",
-    "total": 124,
-    "passed": 124,
+    "suite": "GitHub Actions npm test",
+    "total": 125,
+    "passed": 125,
     "failed": 0,
-    "skipped": 0
+    "skipped": 0,
+    "run": "https://github.com/Atry-Agency/ATRY-Turnos/actions/runs/38915496876"
   },
   "additional_targeted_tests": {
     "suite": "tests/control-center-pg.test.js",
@@ -58,5 +67,18 @@
       "bookings": 2
     },
     "manual_snapshot_outside_git": true
+  },
+  "publication": {
+    "commit": "3c0acf33e9cb27f12442e00989c43e16a9a1ecd8",
+    "pull_request": "https://github.com/Atry-Agency/ATRY-Turnos/pull/8",
+    "pages_run": "https://github.com/Atry-Agency/ATRY-Turnos/actions/runs/38915692056",
+    "status": "success"
+  },
+  "worker_production": {
+    "result": "ok",
+    "started_at": "2026-10-16T14:22:01.011641+00:00",
+    "finished_at": "2026-10-16T14:22:01.348613+00:00",
+    "cron": "*/2 * * * *",
+    "delivery_not_confirmed_by_heartbeat": true
   }
 }
