@@ -129,6 +129,8 @@ CREATE TABLE IF NOT EXISTS schema_migrations (version INTEGER PRIMARY KEY,applie
 `);
   const columns=db.prepare('PRAGMA table_info(businesses)').all().map(x=>x.name);
   if(!columns.includes('onboarding_completed'))db.exec('ALTER TABLE businesses ADD COLUMN onboarding_completed INTEGER NOT NULL DEFAULT 0');
+  if(!columns.includes('secondary_color'))db.exec("ALTER TABLE businesses ADD COLUMN secondary_color TEXT NOT NULL DEFAULT '#00A5E2'");
+  if(!columns.includes('appearance_mode'))db.exec("ALTER TABLE businesses ADD COLUMN appearance_mode TEXT NOT NULL DEFAULT 'light'");
   const waitColumns=db.prepare('PRAGMA table_info(waitlist)').all().map(x=>x.name);
   for(const column of ['offer_token_hash','offer_expires_at','offer_starts_at','offer_staff_id'])if(!waitColumns.includes(column))db.exec(`ALTER TABLE waitlist ADD COLUMN ${column} TEXT`);
   db.exec(`CREATE UNIQUE INDEX IF NOT EXISTS idx_waitlist_offer_token ON waitlist(offer_token_hash);

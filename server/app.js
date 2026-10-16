@@ -32,7 +32,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     if(!membership||!roles.includes(membership.role))fail(403,'No tenés permiso para esta acción');
     return {biz,role:membership.role,user:u};
   }
-  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,paid_until:b.paid_until,subscription_started_at:b.subscription_started_at,trial_until:b.trial_until,is_active:b.is_active});
+  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,secondary_color:b.secondary_color,appearance_mode:b.appearance_mode,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,paid_until:b.paid_until,subscription_started_at:b.subscription_started_at,trial_until:b.trial_until,is_active:b.is_active});
   function appointmentList(bizId,from,to){return db.prepare(`SELECT b.id,b.business_id,b.staff_id,b.service_id,b.starts_at,b.ends_at,b.status,b.source,b.recurring_id,b.occurrence_day,b.price_uyu,b.payment_status,b.notes,b.created_at, st.name staff_name,s.name service_name,c.id customer_id,c.name customer_name,c.phone customer_phone,c.email customer_email
     FROM bookings b JOIN staff st ON st.id=b.staff_id JOIN services s ON s.id=b.service_id JOIN customers c ON c.id=b.customer_id
     WHERE b.business_id=? AND b.starts_at>=? AND b.starts_at<? ORDER BY b.starts_at`).all(bizId,from,to);}
@@ -88,7 +88,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     const b=getBizFromSlug(params[0]);
     const services=serviceList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,description:s.description,duration_min:s.duration_min,price_uyu:s.price_uyu,deposit_percent:s.deposit_percent}));
     const staff=staffList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,service_ids:db.prepare('SELECT service_id FROM staff_services WHERE staff_id=?').all(s.id).map(x=>x.service_id)}));
-    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)&&!db.prepare("SELECT 1 FROM business_controls WHERE business_id=? AND reservation_scope IN ('public','all')").get(b.id)};
+    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,secondary_color:b.secondary_color,appearance_mode:b.appearance_mode,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)&&!db.prepare("SELECT 1 FROM business_controls WHERE business_id=? AND reservation_scope IN ('public','all')").get(b.id)};
   });
   r('GET','/api/public/([a-z0-9-]+)/availability',({params,url})=>{
     const b=getBizFromSlug(params[0]);const date=url.searchParams.get('date'),service=url.searchParams.get('service_id'),staff=url.searchParams.get('staff_id')||null;
@@ -139,6 +139,17 @@ function createApp({db=connect(),webRoot=root}={}) {
   });
 
   r('GET','/api/business/([A-Za-z0-9_-]+)',({req,params})=>{const a=authorized(req,params[0],['owner','manager','staff']);return {...dataBusiness(a.biz),role:a.role,staff_id:db.prepare('SELECT id FROM staff WHERE business_id=? AND user_id=? AND active=1').get(a.biz.id,a.user.id)?.id||null,public_url:`/#/reservar/${a.biz.slug}`};});
+  r('PATCH','/api/business/([A-Za-z0-9_-]+)/appearance',({req,params,body})=>{
+    const {biz,user}=authorized(req,params[0],['owner']);
+    if(!body||typeof body!=='object'||Array.isArray(body)||Object.keys(body).some(k=>!['primary_color','secondary_color','appearance_mode','logo_url'].includes(k)))fail(400,'Revisá los datos de apariencia');
+    const color=/^#[0-9a-fA-F]{6}$/;
+    for(const k of ['primary_color','secondary_color'])if(body[k]!==undefined&&(!color.test(body[k])))fail(400,'Ingresá colores HEX válidos');
+    if(body.appearance_mode!==undefined&&!['light','dark'].includes(body.appearance_mode))fail(400,'Elegí tema claro u oscuro');
+    if(body.logo_url!==undefined&&(typeof body.logo_url!=='string'||body.logo_url.length>140000||(body.logo_url!==''&&!/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(body.logo_url))))fail(400,'Elegí PNG, JPEG o WebP de hasta 90 KB');
+    const data={};for(const key of ['primary_color','secondary_color','appearance_mode','logo_url'])if(key in body)data[key]=body[key];
+    if(Object.keys(data).length){const keys=Object.keys(data);db.prepare('UPDATE businesses SET '+keys.map(k=>k+'=?').join(',')+' WHERE id=?').run(...keys.map(k=>data[k]),biz.id);record(biz.id,user.id,'business.appearance.updated','business',biz.id);}
+    return dataBusiness(db.prepare('SELECT * FROM businesses WHERE id=?').get(biz.id));
+  });
   r('PATCH','/api/business/([A-Za-z0-9_-]+)',({req,params,body})=>{
     const {biz,user}=authorized(req,params[0],['owner','manager']);
     if(!isLive(biz))fail(403,'El acceso del negocio requiere habilitación o renovación de Atry');
@@ -352,7 +363,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
