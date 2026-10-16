@@ -17,6 +17,7 @@ function migrate(db){
 }
 const applies=(s,d)=>s.active&&d>=s.start_day&&(!s.end_day||d<=s.end_day)&&(dayNumber(d)-dayNumber(s.start_day))%(s.interval_weeks*7)===0;
 function blocks(db,bid,sid,vid,starts,ignoreSeries=''){
+ if(!require('./commercial').has(db,bid,'recurring'))return false;
  const day=localDay(starts),minute=asMinutes(localHM(starts));
  const service=db.prepare('SELECT * FROM services WHERE id=? AND business_id=?').get(vid,bid);if(!service)return false;
  const rows=db.prepare('SELECT r.*,s.duration_min,s.buffer_before_min,s.buffer_after_min FROM recurring_appointments r JOIN services s ON s.id=r.service_id WHERE r.business_id=? AND r.active=1').all(bid);
@@ -26,6 +27,7 @@ function blocks(db,bid,sid,vid,starts,ignoreSeries=''){
   minute-service.buffer_before_min<r.minute+r.duration_min+r.buffer_after_min&&r.minute-r.buffer_before_min<minute+service.duration_min+service.buffer_after_min);
 }
 function expandInside(db,bid,start,days,{strict=false,actorId=null,onlySeries=''}={}){
+ if(!require('./commercial').has(db,bid,'recurring'))return false;
  if(!require('./subscriptions').live(db.prepare('SELECT * FROM businesses WHERE id=?').get(bid)))return false;
  const series=db.prepare('SELECT * FROM recurring_appointments WHERE business_id=? AND active=1').all(bid);
  for(const r of series.filter(r=>!onlySeries||r.id===onlySeries)){let error='';for(let i=0;i<days;i++){

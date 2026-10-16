@@ -20,3 +20,5 @@ supabase/.temp/
 supabase/.branches/
 docs/screenshots/
 coverage/
+
+node_modules

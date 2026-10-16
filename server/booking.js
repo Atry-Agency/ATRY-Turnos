@@ -132,7 +132,7 @@ function updateBooking(db,businessId,bookingId,patch,actorId=null){
       if(patch.status==='cancelled' && Date.parse(b.starts_at)>Date.now()){
         const waiting=db.prepare(`SELECT * FROM waitlist WHERE business_id=? AND service_id=? AND desired_date=? AND status='waiting' AND (staff_id IS NULL OR staff_id=?) ORDER BY created_at LIMIT 1`).get(businessId,b.service_id,localDay(b.starts_at),b.staff_id);
         let offerSlot=null;
-        if(waiting){try{offerSlot=checkSlot(db,businessId,b.staff_id,waiting.service_id,b.starts_at);}catch(e){if(!(e instanceof HttpError))throw e;}}
+        if(waiting&&require('./commercial').has(db,businessId,'auto_offers')){try{offerSlot=checkSlot(db,businessId,b.staff_id,waiting.service_id,b.starts_at);}catch(e){if(!(e instanceof HttpError))throw e;}}
         if(waiting&&offerSlot){
           const offerToken=randomToken();
           db.prepare("UPDATE waitlist SET status='offered',offered_at=?,offer_token_hash=?,offer_expires_at=?,offer_starts_at=?,offer_staff_id=? WHERE id=?").run(now(),hashToken(offerToken),new Date(Date.now()+30*60000).toISOString(),b.starts_at,b.staff_id,waiting.id);

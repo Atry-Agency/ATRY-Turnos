@@ -1,7 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
-const {PGlite}=require('@electric-sql/pglite');const {btree_gist}=require('@electric-sql/pglite/contrib/btree_gist');
-async function pg(){const db=new PGlite({extensions:{btree_gist}});await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_role;CREATE SCHEMA auth;CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,email_confirmed_at timestamptz,raw_user_meta_data jsonb DEFAULT '{}');CREATE TABLE auth.sessions(id uuid PRIMARY KEY,user_id uuid REFERENCES auth.users(id),created_at timestamptz DEFAULT now(),not_after timestamptz);CREATE FUNCTION auth.jwt() RETURNS jsonb LANGUAGE sql STABLE AS $$SELECT coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb$$;CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;`);for(const f of fs.readdirSync('supabase/migrations').sort())await db.exec(fs.readFileSync('supabase/migrations/'+f,'utf8'));return db;}
+const {pg}=require('./pg-context');
 test('PostgreSQL: esquema completo, sin semillas ni credenciales heredadas y RLS en todas las tablas',async()=>{const db=await pg();try{assert.equal((await db.query('SELECT count(*) n FROM businesses')).rows[0].n,0);const rows=(await db.query("SELECT relname,relrowsecurity FROM pg_class JOIN pg_namespace n ON n.oid=relnamespace WHERE n.nspname='public' AND relkind='r'")).rows;assert.ok(rows.length>=25);assert.ok(rows.every(r=>r.relrowsecurity));await db.exec('SET ROLE anon');await assert.rejects(db.query('SELECT * FROM users'));await assert.rejects(db.query('SELECT * FROM mail_jobs'));}finally{await db.close();}});
 module.exports={pg};
 

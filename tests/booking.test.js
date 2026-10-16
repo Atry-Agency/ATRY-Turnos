@@ -97,7 +97,11 @@ test('plan individual: límite de un profesional y reservas independientes por n
    const owner=(await t.call('/api/auth/login',{method:'POST',data:{email:'usuario1@example.com',password:'AtryDemo2026!'}})).cookie;
    const biz=t.db.prepare('SELECT id FROM businesses WHERE slug=?').get('negocio-prueba-1').id;
    const admin=(await t.call('/api/auth/login',{method:'POST',data:{email:'admin.prueba@example.com',password:'AtryAdmin2026!'}})).cookie;
-   const change=await t.call(`/api/admin/businesses/${biz}`,{cookie:admin,method:'PATCH',data:{plan:'individual'}});assert.equal(change.status,200);
+   assert.equal((await t.call(`/api/admin/businesses/${biz}`,{cookie:admin,method:'PATCH',data:{plan:'individual'}})).status,409);
+   // Release fixture appointments explicitly before choosing the single active professional.
+   t.db.exec("UPDATE bookings SET status='completed'");
+   const keep=t.db.prepare('SELECT id FROM staff WHERE business_id=? LIMIT 1').get(biz).id;
+   const change=await t.call(`/api/admin/businesses/${biz}`,{cookie:admin,method:'PATCH',data:{plan:'individual',keep_staff_ids:[keep]}});assert.equal(change.status,200);
    const add=await t.call(`/api/business/${biz}/staff`,{cookie:owner,method:'POST',data:{name:'Cuarto empleado'}});assert.equal(add.status,403);
    const reg=await t.call('/api/auth/register',{method:'POST',data:{name:'Segundo Dueño',email:'new@independent.test',password:'password10293!',business_name:'Otra peluquería'}});
    assert.equal(reg.status,200);

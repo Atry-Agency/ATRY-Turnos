@@ -4,7 +4,7 @@ const {fail,isDate,available,createBooking,checkSlot}=require('./booking');
 function register({r,db,auth,authorized,string,isEmail,record}){
  r('GET','/api/offers/([A-Za-z0-9_-]+)',({params})=>{
   const w=db.prepare("SELECT w.*,b.name business_name,s.name service_name FROM waitlist w JOIN businesses b ON b.id=w.business_id JOIN services s ON s.id=w.service_id WHERE offer_token_hash=? AND w.status='offered' AND offer_expires_at>?").get(hashToken(params[0]),now());if(!w)fail(404,'Oferta vencida o no disponible');
-  checkSlot(db,w.business_id,w.offer_staff_id,w.service_id,w.offer_starts_at);return {business_name:w.business_name,service_name:w.service_name,starts_at:w.offer_starts_at,expires_at:w.offer_expires_at};
+  require('./commercial').requireFeature(db,w.business_id,'waitlist');checkSlot(db,w.business_id,w.offer_staff_id,w.service_id,w.offer_starts_at);return {business_name:w.business_name,service_name:w.service_name,starts_at:w.offer_starts_at,expires_at:w.offer_expires_at};
  });
  r('POST','/api/offers/([A-Za-z0-9_-]+)/accept',({params,body})=>{
   if(body.accept_policy!==true)fail(400,'Aceptá la política de reservas');
@@ -12,7 +12,7 @@ function register({r,db,auth,authorized,string,isEmail,record}){
    const key=body.idempotency_key,scope='offer:'+hashToken(params[0]);
    if(key!==undefined){if(typeof key!=='string'||!/^[A-Za-z0-9_-]{16,100}$/.test(key))fail(400,'Clave de idempotencia inválida');const previous=db.prepare('SELECT response FROM idempotency_keys WHERE scope=? AND key_hash=?').get(scope,hashToken(key));if(previous)return JSON.parse(previous.response);}
    const w=db.prepare("SELECT * FROM waitlist WHERE offer_token_hash=? AND status='offered' AND offer_expires_at>?").get(hashToken(params[0]),now());if(!w)fail(409,'Oferta vencida o ya utilizada');
-   const booked=createBooking(db,{business_id:w.business_id,service_id:w.service_id,staff_id:w.offer_staff_id,starts_at:w.offer_starts_at,customer_name:w.customer_name,customer_email:w.customer_email,customer_phone:w.customer_phone},{withinTransaction:true});
+   require('./commercial').requireFeature(db,w.business_id,'waitlist');const booked=createBooking(db,{business_id:w.business_id,service_id:w.service_id,staff_id:w.offer_staff_id,starts_at:w.offer_starts_at,customer_name:w.customer_name,customer_email:w.customer_email,customer_phone:w.customer_phone},{withinTransaction:true});
    db.prepare("UPDATE waitlist SET status='booked',offer_token_hash=NULL WHERE id=?").run(w.id);if(key!==undefined)db.prepare('INSERT INTO idempotency_keys VALUES(?,?,?,?,?)').run(scope,hashToken(key),hashToken('accepted'),JSON.stringify(booked),now());return booked;
   });
  });

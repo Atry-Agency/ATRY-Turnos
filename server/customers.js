@@ -18,7 +18,7 @@ function save(db,bid,cid,payload,actor){return transaction(db,()=>{
  if(matching(db,bid,c.email,c.phone).some(other=>other.id!==cid))fail(409,'Ya existe una ficha con ese correo o teléfono. Buscala antes de crear otra');
  const key=cid||id();if(cid)db.prepare('UPDATE customers SET name=?,email=?,phone=?,notes=?,marketing_consent=? WHERE business_id=? AND id=?').run(c.name,c.email,c.phone,c.notes,c.marketing_consent,bid,key);else db.prepare('INSERT INTO customers(id,business_id,name,email,phone,notes,marketing_consent,created_at) VALUES(?,?,?,?,?,?,?,?)').run(key,bid,c.name,c.email,c.phone,c.notes,c.marketing_consent,now());
  // Keep recurring contact snapshots current for occurrences not generated yet.
- if(previous)db.prepare('UPDATE recurring_appointments SET customer_name=?,customer_email=?,customer_phone=? WHERE business_id=? AND customer_email=? AND customer_phone=?').run(c.name,c.email,c.phone,bid,previous.email,previous.phone);
+ if(previous&&require('./commercial').has(db,bid,'recurring'))db.prepare('UPDATE recurring_appointments SET customer_name=?,customer_email=?,customer_phone=? WHERE business_id=? AND customer_email=? AND customer_phone=?').run(c.name,c.email,c.phone,bid,previous.email,previous.phone);
  audit(db,bid,actor,cid?'customer.updated':'customer.created','customer',key);return {...c,id:key};
  });}
 module.exports={digits,contact,matching,resolve,save};
