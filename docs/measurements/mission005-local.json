@@ -1,0 +1,41 @@
+{
+  "project": "djoxdtloqwbrhgtgencc",
+  "environment": "isolated-only",
+  "production_migrations_applied": false,
+  "migrations": [
+    {
+      "file": "supabase/migrations/202610150033_control_center.sql",
+      "sha256": "c4cb508bec7a738ae23adcd51ef4895d7582d5143c8cc8da8ee853cf7c811ca2"
+    },
+    {
+      "file": "supabase/migrations/202610150034_control_integration.sql",
+      "sha256": "0a60cf0b8b6a66e403b29078ee06e7d935d61a810ed7ac35cde760a7a62f51d5"
+    },
+    {
+      "file": "supabase/migrations/202610160035_control_operations.sql",
+      "sha256": "f76fb8ee1cc475e8c25ba2af3d0cf6837f9833d889f4ef0a0121c16c000575db"
+    },
+    {
+      "file": "supabase/migrations/202610160036_delivery_receipts.sql",
+      "sha256": "d87d035259ed59228a0c7021e9d46d86fd3fb60eff9be4c3e78d86a99fdf0db7"
+    }
+  ],
+  "browser_checks": {
+    "desktop": true,
+    "mobile": {
+      "viewport_width": 390,
+      "document_width": 390,
+      "viewport_height": 844,
+      "modal_height": 595.03125
+    },
+    "reservation_pause_and_resume": "confirmed_in_disposable_local_database",
+    "production_browser_validation": false
+  },
+  "tests": {
+    "suite": "npm test",
+    "total": 124,
+    "passed": 124,
+    "failed": 0,
+    "skipped": 0
+  }
+}
