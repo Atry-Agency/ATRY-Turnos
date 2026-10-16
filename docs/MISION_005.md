@@ -15,7 +15,7 @@ Estado de entrega: backend desplegado y validado remotamente el 16/10/2026; inte
 - Correo: metadatos paginados sin destinatario/cuerpo, presupuesto y heartbeat del worker; cancelación de pendientes no esenciales y reintento de fallos expresamente rechazados por el proveedor. Desconocidos y trabajos en procesamiento no admiten estas acciones. Las cancelaciones no se reactivan al cambiar preferencias.
 - Soporte esencial independiente del plan: asunto, descripción y categoría. Bandeja por severidad, prioridad Pro y antigüedad; resolución obligatoria al cerrar desde el Control Center, autor, fecha y revisión. Historial y ficha enlazados. No se prometen SLA. Los clientes heredados de incidencias mantienen su API anterior; su cierre simple no se transforma retroactivamente en evidencia de reparación.
 - Auditoría unificada de eventos nuevos, suscripciones e historial de plataforma; filtros de fecha, actor, entidad y negocio, antes/después cuando existe información y exportación CSV de la página con protección frente a fórmulas.
-- Almacenamiento: tamaño de base PostgreSQL medido y conteos por categoría; Storage sin medición disponible se informa como desconocido. Retención manual de contenido de correo terminal configurable y sin valor inicial: nada se limpia hasta que el titular defina días y confirme. Se limpian lotes de hasta 100 destinatarios/asuntos/cuerpos de entregados, rebotados u omitidos antiguos. Se conservan filas, estados, claves de deduplicación, cuotas, proveedor y auditoría. No se atribuye liberación física inmediata.
+- Almacenamiento: tamaño de base PostgreSQL medido y conteos por categoría; Storage muestra cantidad de objetos y suma de tamaños registrados; si falta tamaño en algún objeto se informa incompleto. No expone nombres ni propietarios. Retención manual de contenido de correo terminal configurable y sin valor inicial: nada se limpia hasta que el titular defina días y confirme. Se limpian lotes de hasta 100 destinatarios/asuntos/cuerpos de entregados, rebotados u omitidos antiguos. Se conservan filas, estados, claves de deduplicación, cuotas, proveedor y auditoría. No se atribuye liberación física inmediata.
 - Solicitudes de baja/anonimización con vista previa de dependencias principales. Registro del procedimiento; **ejecución definitiva de cuentas/negocios deshabilitada**.
 - Autenticación reciente (AMR de contraseña/OTP/WebAuthn/TOTP de los últimos diez minutos) para comandos sensibles y las transacciones públicas de planes/configuración/suscripción. Sesiones locales verificadas por token concreto. Confirmaciones, motivo y límites de nuevas operaciones administrativas.
 
@@ -23,14 +23,14 @@ Estado de entrega: backend desplegado y validado remotamente el 16/10/2026; inte
 
 **Recibos Brevo:** función `atry-mail-events`, token Bearer de al menos 32 caracteres, límite de lote y tamaño, RPC solo service_role; deduplicación, orden temporal y reconciliación por ID del proveedor. No almacena email, IP ni cuerpo recibido. El gateway JWT se desactiva solo para este nuevo endpoint porque Brevo usa su propio token; los endpoints existentes mantienen sus protecciones. `BREVO_EVENTS_ENABLED` debe permanecer sin configurar hasta provisionar `BREVO_EVENTS_TOKEN`, registrar webhook y hacer una prueba autorizada. No se afirma entrega real por pasar tests con respuestas simuladas del proveedor.
 
-**Monitoreo independiente:** workflow manual `control-monitor.yml` reutiliza GitHub Actions y consulta recursos estáticos e identidad del proyecto. No usa clave privilegiada ni crea reservas. No está programado ni se ejecutó en producción. Auth/DB/Brevo quedan desconocidos, no verdes. Puede habilitarse una frecuencia después de revisar cuotas y alertas; no se añadió servicio externo.
+**Monitoreo independiente:** workflow manual `control-monitor.yml` reutiliza GitHub Actions y consulta recursos estáticos e identidad del proyecto. No usa clave privilegiada ni crea reservas. No está programado. Auth/DB/Brevo quedan desconocidos, no verdes. Puede habilitarse una frecuencia después de revisar cuotas y alertas; no se añadió servicio externo.
 
 ## No implementado / limitaciones explícitas
 
 - Eliminación definitiva o anonimización integral coordinada entre Auth, PostgreSQL y Storage. Hace falta política de conservación, inventario completo de archivos y entorno Supabase de staging con esas dependencias reales. PGlite prueba SQL aislado; no sustituye ese ensayo de recuperación.
 - Envío administrativo directo de recuperación/verificación desde servidor. Se mantiene recuperación autoservicio; no se crea un botón que simule envío.
 - Transferencia de propiedad con aceptación; MFA de plataforma provisionado; roles administrativos especializados; detector de anomalías; reconciliación bancaria; facturación fiscal; deuda contable; cambios de plan programados; CSV financiero masivo.
-- Monitorización independiente continua, chequeo de estado Brevo en vivo, diagnóstico completo de Realtime/Edge/Auth, consulta de cron remoto y costos por negocio. Los componentes sin evidencia actual muestran estado desconocido.
+- Monitorización independiente continua, chequeo de estado Brevo en vivo, diagnóstico completo de Realtime/Edge/Auth, costos por negocio. Los componentes sin evidencia actual muestran estado desconocido.
 - Consumo global SMTP de Auth en Brevo; capacidad comercial comprometida no equivale al consumo del proveedor.
 - Respaldos automáticos nuevos, inventario verificado de backups remotos, ensayo de restauración integral y restauración de producción desde el panel. Se informa desconocido; ningún archivo antiguo se presenta como respaldo vigente.
 - Historial antiguo de planes puede no tener antes/después ni motivo. No se inventan esos datos.
@@ -39,6 +39,8 @@ Estado de entrega: backend desplegado y validado remotamente el 16/10/2026; inte
 ## Pruebas y evidencia
 
 Suite completa: **124 pruebas pasaron, cero fallos y cero omitidas**, después de integrar SQL, AMR, conservación, recibos y pruebas de pausas. Los cambios posteriores de interfaz se verifican adicionalmente con sintaxis y navegador.
+
+Suite de Control PostgreSQL: 9 pruebas pasan, incluida la nueva de tamaños incompletos de Storage y privacidad de nombres/comandos cron.
 
 Pruebas nuevas: roles, sesión reciente, bloqueo, último administrador/propietario, paginación y privacidad, revisión obsoleta, idempotencia, estados programado/suspendido, pausa pública/manual y reanudación sin borrar reservas, correo esencial durante pausa, desconocidos no reintentables, soporte sin plan pago, cierre con resolución, limpieza terminal sin borrar dedupe/cuotas, recibos duplicados/fuera de orden y token ausente.
 
@@ -54,8 +56,9 @@ Aplicadas en remoto el 16/10/2026 (hashes registrados en `private.migration_ledg
 2. `202610150034_control_integration.sql`: historia existente, configuración, CAS, cuotas y sesión reciente.
 3. `202610160035_control_operations.sql`: retención manual, soporte esencial, diagnósticos y pausas públicas.
 4. `202610160036_delivery_receipts.sql`: recibos opcionales y permisos de servicio.
+5. `202610160037_control_storage_evidence.sql`: medición agregada de Storage y programación cron sin comandos ni secretos.
 
-Realizado antes de aplicar: identidad del proyecto, ledger 007–032, hashes coincidentes, RLS y copia manual fuera de Git. Ensayo PGlite de 44 tablas y 112 filas sin alterar conteos; Auth simulado, no ensayo integral de recuperación. No usar negocios reales como fixtures. Aplicar cada migración en transacción y guardar SHA-256 en el ledger existente con el mecanismo del proyecto. Después desplegar `atry-mail` con telemetría y, solo si se habilita el webhook, `atry-mail-events`; después publicar frontend. Validar lecturas autenticadas y escritorio/móvil, sin enviar mensajes o suspender negocios reales para probar.
+Realizado antes de aplicar: identidad del proyecto, ledger 007–032, hashes coincidentes, RLS y copia manual fuera de Git. Ensayo PGlite de 44 tablas y 112 filas sin alterar conteos; Auth simulado, no ensayo integral de recuperación. No usar negocios reales como fixtures. Aplicar cada migración en transacción y guardar SHA-256 en el ledger existente con el mecanismo del proyecto. `atry-mail` con telemetría ya fue desplegado desde el código probado; y, solo si se habilita el webhook, `atry-mail-events`; publicar frontend tras verificar CI. Validar lecturas autenticadas y escritorio/móvil, sin enviar mensajes o suspender negocios reales para probar.
 
 No se debe mezclar la nueva interfaz con una base que aún no tenga estas RPC. La verificación SQL remota pasó: 12 secciones, permisos anónimos/privados, idempotencia, revisión obsoleta, autenticación reciente y rechazo de usuario de negocio; todas las mutaciones de prueba se revirtieron.
 
@@ -84,4 +87,4 @@ Brevo documenta [autenticación Bearer para webhooks](https://developers.brevo.c
 
 Copia puntual privada fuera del repositorio (`../respaldo-manual-005`), JSON con permisos 0600 y directorio 0700. Incluye 53 tablas, 121 funciones y metadatos; 2 negocios, 4 usuarios, 2 reservas y cero objetos Storage. SHA-256: `bcc798bd9733fcd7e2bebfdc06f8e25c670eccbe625fe672726e16cfa533ed78`. Excluye Vault, sesiones/refresh tokens, configuración de proveedores/plataforma y archivos Storage. No se implementó un sistema de respaldos ni se contrataron servicios.
 
-Herramientas reproducibles: `manual-control-snapshot.sql`, `validate-control-snapshot.js`, `prepare-control-migrations.js`, `verify-control.sql`. Los archivos con datos y código previo del worker permanecen fuera de GitHub. Prueba remota usa roles y sesiones simuladas dentro de transacción, no sustituye la comprobación de login en navegador. Los conteos productivos se conservaron en las cuatro migraciones; pausa global sigue desactivada y retención permanece sin configurar.
+Herramientas reproducibles: `manual-control-snapshot.sql`, `validate-control-snapshot.js`, `prepare-control-migrations.js`, `verify-control.sql`. Los archivos con datos y código previo del worker permanecen fuera de GitHub. Prueba remota usa roles y sesiones simuladas dentro de transacción, no sustituye la comprobación de login en navegador. Los conteos productivos se conservaron en las cinco migraciones; pausa global sigue desactivada y retención permanece sin configurar.

@@ -3,7 +3,7 @@
 BEGIN;
 SET LOCAL statement_timeout='60s';
 DO $$ DECLARE claims jsonb; BEGIN
- IF (SELECT count(*) FROM private.migration_ledger WHERE version IN ('202610150033','202610150034','202610160035','202610160036'))<>4 THEN RAISE EXCEPTION 'MIGRATIONS_REQUIRED';END IF;
+ IF (SELECT count(*) FROM private.migration_ledger WHERE version IN ('202610150033','202610150034','202610160035','202610160036','202610160037'))<>5 THEN RAISE EXCEPTION 'MIGRATIONS_REQUIRED';END IF;
  IF has_function_privilege('anon','public.atry_control_read(text,jsonb)','EXECUTE') OR has_function_privilege('anon','public.atry_control_command(text,text,jsonb)','EXECUTE') THEN RAISE EXCEPTION 'ANONYMOUS_ADMIN_ACCESS';END IF;
  IF has_function_privilege('authenticated','public.atry_record_mail_receipt(text,text,text,timestamptz)','EXECUTE') THEN RAISE EXCEPTION 'RECEIPT_SERVICE_ONLY';END IF;
  IF EXISTS(SELECT 1 FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='private' AND c.relkind='r' AND (NOT c.relrowsecurity OR has_table_privilege('authenticated',c.oid,'SELECT'))) THEN RAISE EXCEPTION 'PRIVATE_TABLE_EXPOSED';END IF;
