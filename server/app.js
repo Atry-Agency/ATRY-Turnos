@@ -32,7 +32,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     if(!membership||!roles.includes(membership.role))fail(403,'No tenés permiso para esta acción');
     return {biz,role:membership.role,user:u};
   }
-  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,paid_until:b.paid_until,trial_until:b.trial_until,is_active:b.is_active});
+  const dataBusiness=b=>({id:b.id,slug:b.slug,name:b.name,sector:b.sector,description:b.description,phone:b.phone,email:b.email,address:b.address,city:b.city,primary_color:b.primary_color,logo_url:b.logo_url,onboarding_completed:b.onboarding_completed,timezone:b.timezone,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours,slot_step_min:b.slot_step_min,auto_confirm:b.auto_confirm,plan:b.plan,subscription_status:b.subscription_status,paid_until:b.paid_until,subscription_started_at:b.subscription_started_at,trial_until:b.trial_until,is_active:b.is_active});
   function appointmentList(bizId,from,to){return db.prepare(`SELECT b.id,b.business_id,b.staff_id,b.service_id,b.starts_at,b.ends_at,b.status,b.source,b.recurring_id,b.occurrence_day,b.price_uyu,b.payment_status,b.notes,b.created_at, st.name staff_name,s.name service_name,c.id customer_id,c.name customer_name,c.phone customer_phone,c.email customer_email
     FROM bookings b JOIN staff st ON st.id=b.staff_id JOIN services s ON s.id=b.service_id JOIN customers c ON c.id=b.customer_id
     WHERE b.business_id=? AND b.starts_at>=? AND b.starts_at<? ORDER BY b.starts_at`).all(bizId,from,to);}
@@ -42,7 +42,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   const record=(biz,userId,action,entity,entityId)=>audit(db,biz,userId,action,entity,entityId);
 
   r('GET','/api/health',()=>({status:'ok',app:'Atry Turnos',version:'1.2.0'}));
-  r('GET','/api/config',()=>({app:'Atry Turnos',version:'1.2.0',currency:'UYU',timezone:'America/Montevideo',payments_live:false,mail_provider:process.env.MAIL_PROVIDER||(process.env.NODE_ENV==='production'?'disabled':'local'),automatic_email_live:process.env.MAIL_PROVIDER==='smtp',whatsapp_live:false,plans:[{code:'individual',name:'Individual',price:590},{code:'negocio',name:'Negocio',price:1190},{code:'pro',name:'Pro',price:1990}]}));
+  r('GET','/api/config',()=>({app:'Atry Turnos',version:'1.2.0',currency:'UYU',timezone:'America/Montevideo',payments_live:false,mail_provider:process.env.MAIL_PROVIDER||(process.env.NODE_ENV==='production'?'disabled':'local'),automatic_email_live:process.env.MAIL_PROVIDER==='smtp',whatsapp_live:false,tax_status:require('./commercial').settings(db).tax_status,plans:['individual','negocio','pro'].map(code=>require('./commercial').plan(db,code))}));
   r('POST','/api/auth/register',async({req,body})=>{
     const email=string(body.email,150).toLowerCase(),name=string(body.name,100),password=String(body.password||'');
     const businessName=string(body.business_name,100),slug=slugify(body.slug||businessName);
@@ -88,7 +88,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     const b=getBizFromSlug(params[0]);
     const services=serviceList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,description:s.description,duration_min:s.duration_min,price_uyu:s.price_uyu,deposit_percent:s.deposit_percent}));
     const staff=staffList(b.id).filter(x=>x.active).map(s=>({id:s.id,name:s.name,service_ids:db.prepare('SELECT service_id FROM staff_services WHERE staff_id=?').all(s.id).map(x=>x.service_id)}));
-    return {business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)};
+    return {waitlist_enabled:require('./commercial').has(db,b.id,'waitlist'),operational_mail:require('./commercial').has(db,b.id,'operational_mail'),business:{id:b.id,name:b.name,slug:b.slug,sector:b.sector,description:b.description,city:b.city,address:b.address,phone:b.phone,primary_color:b.primary_color,logo_url:b.logo_url,min_notice_min:b.min_notice_min,max_days:b.max_days,cancel_notice_hours:b.cancel_notice_hours},services,staff,bookable:isLive(b)};
   });
   r('GET','/api/public/([a-z0-9-]+)/availability',({params,url})=>{
     const b=getBizFromSlug(params[0]);const date=url.searchParams.get('date'),service=url.searchParams.get('service_id'),staff=url.searchParams.get('staff_id')||null;
@@ -102,7 +102,7 @@ function createApp({db=connect(),webRoot=root}={}) {
     return createBooking(db,{...body,business_id:b.id},{source:'public'});
   });
   r('POST','/api/public/([a-z0-9-]+)/waitlist',({params,body})=>{
-    const biz=getBizFromSlug(params[0]);if(!isLive(biz))fail(403,'Este negocio no acepta solicitudes');
+    const biz=getBizFromSlug(params[0]);require('./commercial').requireFeature(db,biz.id,'waitlist');if(!isLive(biz))fail(403,'Este negocio no acepta solicitudes');
     const service=db.prepare('SELECT id FROM services WHERE id=? AND business_id=? AND active=1').get(body.service_id,biz.id);
     if(!service)fail(404,'Servicio no disponible');
     const date=string(body.desired_date,10);
@@ -298,9 +298,9 @@ function createApp({db=connect(),webRoot=root}={}) {
   });
   r('GET','/api/admin/businesses',({req})=>{
     if(!auth(req).platform_admin)fail(403,'Solo administración Atry');
-    return db.prepare(`SELECT b.id,b.name,b.slug,b.email,b.plan,b.subscription_status,b.trial_until,b.paid_until,b.created_at,b.is_active,
+    return db.prepare(`SELECT b.id,b.name,b.slug,b.email,b.phone,b.plan,b.subscription_status,b.trial_until,b.paid_until,b.subscription_started_at,b.created_at,b.is_active,
     (SELECT COUNT(*) FROM bookings x WHERE x.business_id=b.id) bookings,
-    (SELECT COUNT(*) FROM memberships m WHERE m.business_id=b.id) members FROM businesses b ORDER BY b.created_at DESC`).all().map(b=>({...b,license_history:db.prepare('SELECT * FROM subscription_events WHERE business_id=? ORDER BY created_at DESC LIMIT 20').all(b.id).map(e=>({...e,after_state:JSON.parse(e.after_state),actor_name:db.prepare('SELECT name FROM users WHERE id=?').get(e.actor_id)?.name||'Atry'}))}));
+    (SELECT COUNT(*) FROM memberships m WHERE m.business_id=b.id) members FROM businesses b ORDER BY b.created_at DESC`).all().map(b=>({...b,active_staff:db.prepare('SELECT id,name FROM staff WHERE business_id=? AND active=1').all(b.id),phone:b.phone,license_history:db.prepare('SELECT * FROM subscription_events WHERE business_id=? ORDER BY created_at DESC').all(b.id).map(e=>({...e,after_state:JSON.parse(e.after_state),actor_name:db.prepare('SELECT name FROM users WHERE id=?').get(e.actor_id)?.name||'Atry'}))}));
   });
   r('PATCH','/api/admin/businesses/([A-Za-z0-9_-]+)',({req,params,body})=>{
     if(!auth(req).platform_admin)fail(403,'Solo administración Atry');
@@ -314,6 +314,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   require('./realtime').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./scheduling').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./operations').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
+  require('./commercial').register({r,db,auth,authorized});
   const requestCounts=new Map();
   const handler=async(req,res)=>{
     try{
@@ -334,20 +335,28 @@ function createApp({db=connect(),webRoot=root}={}) {
         if(!matched)fail(404,'Ruta API inexistente');
         req.user=user(req);
         const params=matched.regex.exec(pathname).slice(1),body=['POST','PATCH','PUT','DELETE'].includes(req.method)?await readBody(req):{};
-        const planFeature=pathname.match(/^\/api\/business\/([A-Za-z0-9_-]+)\/(smartslots|resources|scheduling|breaks|exceptions|holidays|services\/[A-Za-z0-9_-]+\/resources|insights|export\/bookings)/);
-        if(planFeature){const a=authorized(req,planFeature[1]);const code=planFeature[2]==='smartslots'?'smartslots':/^(insights|export)/.test(planFeature[2])?'reports':'resources';require('./operations').feature(db,a.biz,code);}
-        const result=await matched.handler({req,res,params,body,url:u,db});
+        const gated=pathname.match(/^\/api\/business\/([A-Za-z0-9_-]+)\/(.*)$/);
+        if(gated){
+          const tail=gated[2],modules=[[/^smartslots(?:$|\/)/,'smartslots'],[/^resources(?:$|\/)|^services\/[^/]+\/resources$/,'resources'],[/^insights$/,'advanced'],[/^statistics$/,'statistics'],[/^export\//,'exports'],[/^recurring(?:$|\/)/,'recurring'],[/^waitlist(?:$|\/)/,'waitlist'],[/^(members|invitations)(?:$|\/)/,'access'],[/^(notifications|mail-jobs|notification-preferences)$/,'operational_mail']];
+          const match=modules.find(([pattern])=>pattern.test(tail));
+          const closing=req.method==='POST'&&/^recurring\/[^/]+\/end$/.test(tail);
+          if(match&&!closing){authorized(req,gated[1],['owner','manager','staff']);require('./commercial').requireFeature(db,gated[1],match[1]);}
+        }
+        let result=await matched.handler({req,res,params,body,url:u,db});
+        if(gated&&gated[2]==='scheduling'&&!require('./commercial').has(db,gated[1],'resources'))result={...result,resources:[],assignments:[]};
+        if(gated&&gated[2]==='dashboard'&&!require('./commercial').has(db,gated[1],'statistics'))result={today:result.today,today_count:result.today_count,upcoming:result.upcoming,customers:result.customers,staff:result.staff,services:result.services,totals:{},daily:[],insights:[],waitlist:0};
         if(!res.writableEnded&&!res.headersSent)send(res,200,result===undefined?{ok:true}:result);
         return;
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/index.html','/read-cache.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
       if(req.method==='HEAD')res.end();else res.end(content);
     }catch(e){
+      if(/FEATURE_DISABLED|STAFF_LIMIT/.test(e.message||''))e=new HttpError(403,'Esta operación supera las capacidades del plan');
       if(e.message?.includes('SUBSCRIPTION_REQUIRED'))e=new HttpError(403,'El acceso del negocio requiere habilitación o renovación de Atry');
       if(!res.writableEnded){if(!(e instanceof HttpError)){const errorId=id();console.error('Error de servidor:',errorId,e.code||'INTERNAL_ERROR');try{db.prepare('INSERT INTO system_errors VALUES(?,?,?)').run(errorId,String(e.code||'INTERNAL_ERROR').slice(0,80),now());}catch{}}send(res,e.status||500,{error:e.status?e.message:'Error interno del servidor'});}
     }

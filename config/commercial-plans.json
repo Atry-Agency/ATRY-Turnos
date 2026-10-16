@@ -1,0 +1,5 @@
+{
+  "individual":{"name":"ATRY Individual","price_uyu":790,"staff_limit":1,"mail_limit":0,"features":{"team":false,"access":false,"recurring":false,"waitlist":false,"statistics":false,"advanced":false,"smartslots":false,"resources":false,"exports":false,"operational_mail":false,"auto_offers":false,"priority_support":false}},
+  "negocio":{"name":"ATRY Negocio","price_uyu":1490,"staff_limit":4,"mail_limit":300,"features":{"team":true,"access":true,"recurring":true,"waitlist":true,"statistics":true,"advanced":false,"smartslots":false,"resources":false,"exports":false,"operational_mail":true,"auto_offers":false,"priority_support":false}},
+  "pro":{"name":"ATRY Pro","price_uyu":2490,"staff_limit":10,"mail_limit":900,"features":{"team":true,"access":true,"recurring":true,"waitlist":true,"statistics":true,"advanced":true,"smartslots":true,"resources":true,"exports":true,"operational_mail":true,"auto_offers":true,"priority_support":true}}
+}

@@ -81,7 +81,7 @@ CREATE TRIGGER IF NOT EXISTS resource_tenant_insert BEFORE INSERT ON booking_res
  THEN RAISE(ABORT,'resource overlap') END;
 END;
 `);
- const insertPlan=db.prepare('INSERT OR IGNORE INTO plans VALUES(?,?,?,?,?,?)');for(const [code,name,limit] of [['trial','Prueba',5],['individual','Individual',1],['negocio','Negocio',5],['pro','Pro',10]])insertPlan.run(code,name,limit,1,1,1);
+ const insertPlan=db.prepare('INSERT OR IGNORE INTO plans(code,name,staff_limit,smartslots,resources,reports) VALUES(?,?,?,?,?,?)');for(const [code,name,limit] of [['trial','Prueba',5],['individual','Individual',1],['negocio','Negocio',5],['pro','Pro',10]])insertPlan.run(code,name,limit,1,1,1);
  if(!db.prepare('PRAGMA table_info(notification_preferences)').all().some(c=>c.name==='business_alerts'))db.exec('ALTER TABLE notification_preferences ADD COLUMN business_alerts INTEGER NOT NULL DEFAULT 1');
  db.prepare('INSERT OR IGNORE INTO schema_migrations(version,applied_at) VALUES(2,?)').run(new Date().toISOString());
 }

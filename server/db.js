@@ -150,6 +150,7 @@ END;`);
   require('./schema-v2').migrate(db);
   require('./recurring').migrate(db);
   require('./subscriptions').migrate(db);
+  require('./commercial').migrate(db);
 }
 function transaction(db,fn) {
   db.exec('BEGIN IMMEDIATE');

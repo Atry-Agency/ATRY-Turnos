@@ -1,22 +1,15 @@
-# Atry Turnos — versión 1.2.0
+# Atry Turnos
 
-Node.js 22.13+: ejecutar `npm install`, luego `npm start`.
-Abrir http://localhost:3300/?v=3#/app/agenda.
+Plataforma multiempresa de agenda y reservas, con interfaz JavaScript/HTML/CSS. Tiene un backend local Node.js + SQLite WAL y una implementación online Supabase (Auth, PostgreSQL, RPC, RLS, Realtime y funciones Edge). Son entornos separados: clonar el repositorio no copia ni sincroniza la base productiva.
 
-Demo negocio: usuario1@example.com / AtryDemo2026!
-Demo administración: admin.prueba@example.com / AtryAdmin2026!
-Las cuentas demo impiden iniciar en producción.
+Requiere Node.js 22.13 o superior. Ejecutar `npm ci` y `npm start`; abrir http://localhost:3300/#/app/agenda. Se crea una base local vacía en `data/atry-turnos.sqlite`. Las variables de `.env.example` se configuran en el entorno; `.env` no se carga automáticamente.
 
-JavaScript/HTML/CSS, Node.js, SQLite WAL y Nodemailer 10.1.0. Se conserva la base data/atry-turnos.sqlite y la identidad Atry.
+Para una demo exclusivamente local: `SEED_DEMO=1 MAIL_PROVIDER=local npm start`. Cuenta de negocio: `usuario1@example.com` / `AtryDemo2026!`. Administración: `admin.prueba@example.com` / `AtryAdmin2026!`. La demo usa Pro para mostrar todos los módulos; estas cuentas están prohibidas en producción.
 
-Misión 002 incorpora cuentas sin negocio, varios espacios, invitaciones/roles/sesiones, agenda diaria/semanal/mensual y SSE, descansos/excepciones/cierres/recursos, idempotencia, correo local/SMTP, Insights, planes y diagnóstico.
+La Misión 004 integra contratación manual, solicitud persistente, contacto voluntario por WhatsApp, catálogo administrable y capacidades reales por plan. Individual: $790 UYU/mes y 1 profesional; Negocio: $1.490 y hasta 4; Pro: $2.490 y hasta 10. **Precios propuestos, impuestos pendientes de confirmación.** Los cupos de correo operativo son 0, 300 y 900 por ciclo mensual. El registro o la solicitud no habilitan una suscripción.
 
-Ejecutar `npm test` (32 pruebas aisladas), `npm audit --omit=dev`, `npm run backup -- data/backup-nuevo.sqlite` y `node scripts/verify-data.js data/backup-mision002.sqlite`. No borrar data/.
+Ejecutar `npm test` para las pruebas aisladas y `npm audit --omit=dev` para dependencias. Los datos, respaldos, correos y configuración privada están ignorados por Git. No borrar `data/`.
 
-Las variables de .env.example se configuran en el entorno: no se carga .env automáticamente. El worker corre dentro del servidor; para separarlo, configurar MAIL_WORKER=0 y ejecutar `npm run mail-worker` con la misma base y configuración.
+Documentación actual: [Misión 004](docs/MISION_004.md), [habilitaciones manuales](docs/SUSCRIPCIONES_MANUALES.md), [clientes y turnos fijos](docs/CLIENTES_TURNOS_FIJOS_2026-10-15.md), [correo Supabase](docs/CORREO_SUPABASE.md), [API histórica](docs/API.md). Los informes de misiones anteriores conservan el alcance y los resultados de su fecha; para las reglas comerciales vigentes consultar Misión 004 y el código.
 
-[Informe Misión 002](docs/MISION_002.md), [correo](docs/NOTIFICACIONES.md), [preparación PostgreSQL](docs/POSTGRESQL.md), [API](docs/API.md) y [producción](docs/PRODUCCION.md).
-
-Correo local genera archivos EML reales sin entrega externa. SMTP requiere configurar un proveedor. Sin pagos ni WhatsApp. Zona horaria America/Montevideo.
-
-Misión 003 en curso: [estado y pendientes](docs/MISION_003.md), [consumo medido y cuotas](docs/CONSUMO_003.md). El repositorio es público por decisión del propietario. [Vista previa de la interfaz](https://atry-agency.github.io/ATRY-Turnos/): acceso, registro y reservas online deshabilitados hasta completar el backend Supabase. La aplicación funcional completa sigue disponible localmente. [Publicación web y límites actuales](docs/PUBLICACION_WEB.md).
+No hay cobros online, conciliación bancaria automática ni WhatsApp automático. La operación está centrada en America/Montevideo y UYU. [Aplicación publicada](https://atry-agency.github.io/ATRY-Turnos/).
