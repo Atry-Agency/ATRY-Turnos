@@ -59,3 +59,37 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:540px){.appearance-preview{grid-template-columns:1fr}.appearance-preview aside{display:flex;flex-wrap:wrap;align-items:center}.cc-metrics,.cc-guides{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:430px){.cc-guides{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cc-metric{transition:none}}
+/* El panel de marca acompaña el cambio entre acceso y registro. */
+.auth-artwork .auth-switch{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;margin-top:30px;padding:10px 19px;border:1px solid #8CEAF2;border-radius:12px;color:#E7FCFF;font-size:13px;font-weight:650;letter-spacing:.01em;transition:background .22s ease,border-color .22s ease,transform .22s ease}
+.auth-artwork .auth-switch:hover{background:#6CE5F221;border-color:#C3FAFF;transform:translateY(-2px)}
+.auth-artwork .auth-switch .i{width:16px;height:16px}
+@media(min-width:801px){
+ .auth-shell--register .auth-artwork{grid-column:2;grid-row:1}
+ .auth-shell--register .auth-right{grid-column:1;grid-row:1}
+ .auth-shell .auth-artwork{view-transition-name:atry-auth-artwork}
+ .auth-shell .auth-right{view-transition-name:atry-auth-form}
+ ::view-transition-old(root),::view-transition-new(root){animation:none}
+ ::view-transition-group(atry-auth-artwork),::view-transition-group(atry-auth-form){animation-duration:720ms;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+ ::view-transition-group(atry-auth-artwork){z-index:2}
+ ::view-transition-group(atry-auth-form){z-index:1}
+ ::view-transition-old(atry-auth-artwork){animation:none;opacity:0}
+ ::view-transition-new(atry-auth-artwork){animation:none;opacity:1}
+ ::view-transition-old(atry-auth-form){animation:atry-auth-swap-out 720ms linear both}
+ ::view-transition-new(atry-auth-form){animation:atry-auth-swap-in 720ms linear both}
+ .auth-shell--fallback-register .auth-artwork{z-index:2;animation:atry-auth-from-left 720ms cubic-bezier(.22,1,.36,1) both}
+ .auth-shell--fallback-register .auth-right{position:relative;z-index:1;animation:atry-auth-from-right 720ms cubic-bezier(.22,1,.36,1) both}
+ .auth-shell--fallback-login .auth-artwork{z-index:2;animation:atry-auth-from-right 720ms cubic-bezier(.22,1,.36,1) both}
+ .auth-shell--fallback-login .auth-right{position:relative;z-index:1;animation:atry-auth-from-left 720ms cubic-bezier(.22,1,.36,1) both}
+}
+@keyframes atry-auth-swap-out{0%,44%{opacity:1}50%,100%{opacity:0}}
+@keyframes atry-auth-swap-in{0%,44%{opacity:0}50%,100%{opacity:1}}
+@keyframes atry-auth-from-left{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+@keyframes atry-auth-from-right{from{transform:translateX(100%)}to{transform:translateX(0)}}
+@media(max-width:800px){
+ .auth-shell--register .auth-right{min-height:100svh}
+ .auth-shell--mobile-register .auth-right{animation:atry-auth-mobile-right 280ms ease-out both}
+ .auth-shell--mobile-login .auth-right{animation:atry-auth-mobile-left 280ms ease-out both}
+}
+@keyframes atry-auth-mobile-right{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes atry-auth-mobile-left{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.auth-artwork .auth-switch,.auth-artwork .auth-switch:hover{transition:none;transform:none}}

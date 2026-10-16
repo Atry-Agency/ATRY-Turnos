@@ -69,9 +69,25 @@ const loading=()=>page(`<div class="boot"><img class="brand-original" src="./ass
 const headerTitle=(title,sub,action='')=>`<div class="page-header"><div><span class="eyebrow">ATRY TURNOS / PANEL</span><h1>${title}</h1><p>${sub}</p></div>${action}</div>`;
 const ensureAuth=()=>{if(!state.me){nav('/login');return false;}return true;};
 const businessUrl=()=>`${new URL("./",location.href).href}#/reservar/${state.business?.slug||'negocio-prueba-1'}`;
-function authView(register=false){
- if(register&&typeof registrationWizard==='function'){registrationWizard();return;}
-  page(`<div class="auth-shell">${authArtwork()}<div class="auth-right"><div class="auth-form"><div class="auth-mobile-brand">${brand()}</div><div style="margin-top:30px" class="eyebrow">${register?'CREÁ TU ESPACIO':'BIENVENIDO DE VUELTA'}</div><h2>${register?'Empezá con Atry Turnos':'Ingresá a tu negocio'}</h2><p>${register?'Configurá tu cuenta y tu agenda. Sin tarjeta de crédito.':'Accedé a tus turnos, clientes y equipo desde cualquier dispositivo.'}</p><form data-form="${register?'register':'login'}">${register?`${field('name','Tu nombre','','text','required minlength="2"')}${field('business_name','Nombre de tu negocio','','text','required minlength="2"')}`:''}${field('email','Correo electrónico','','email','required')}${field('password','Contraseña','','password',`required ${register?'minlength="10"':''} autocomplete="${register?'new-password':'current-password'}"`)}${register?'<div class="hint-block">La habilitación y las pruebas se coordinan con Atry. Registrarte no activa una suscripción.</div>':''}<button class="btn full" type="submit">${register?'Crear mi negocio':'Ingresar a mi panel'} ${ic('arrow')}</button></form><div class="bottom">${register?'¿Ya tenés una cuenta? <a href="#/login">Iniciar sesión</a>':'¿Todavía no tenés cuenta? <a href="#/registro">Crear mi negocio</a>'}</div>${!register?'<a class="recovery-link" href="#/recuperar">Olvidé mi contraseña</a>':''}</div></div></div>`);
+async function renderAuthScreen(content,mode){
+ const previous=root.querySelector('.auth-shell[data-auth-mode]');
+ if(!previous||previous.dataset.authMode===mode||matchMedia('(prefers-reduced-motion: reduce)').matches){page(content);return;}
+ if(innerWidth<=800){
+  page(content.replace('class="auth-shell ',`class="auth-shell auth-shell--mobile-${mode} `));
+  await new Promise(resolve=>setTimeout(resolve,280));
+  return;
+ }
+ if(!document.startViewTransition){
+  page(content.replace('class="auth-shell ',`class="auth-shell auth-shell--fallback-${mode} `));
+  await new Promise(resolve=>setTimeout(resolve,720));
+  return;
+ }
+ const transition=document.startViewTransition(()=>page(content));
+ await transition.finished.catch(()=>{});
+}
+async function authView(register=false){
+ if(register&&typeof registrationWizard==='function')return registrationWizard();
+ await renderAuthScreen(`<div class="auth-shell auth-shell--${register?'register':'login'}" data-auth-mode="${register?'register':'login'}">${authArtwork(register)}<div class="auth-right"><div class="auth-form"><div class="auth-mobile-brand">${brand()}</div><div style="margin-top:30px" class="eyebrow">${register?'CREÁ TU ESPACIO':'BIENVENIDO DE VUELTA'}</div><h2>${register?'Empezá con Atry Turnos':'Ingresá a tu negocio'}</h2><p>${register?'Configurá tu cuenta y tu agenda. Sin tarjeta de crédito.':'Accedé a tus turnos, clientes y equipo desde cualquier dispositivo.'}</p><form data-form="${register?'register':'login'}">${register?`${field('name','Tu nombre','','text','required minlength="2"')}${field('business_name','Nombre de tu negocio','','text','required minlength="2"')}`:''}${field('email','Correo electrónico','','email','required')}${field('password','Contraseña','','password',`required ${register?'minlength="10"':''} autocomplete="${register?'new-password':'current-password'}"`)}${register?'<div class="hint-block">La habilitación y las pruebas se coordinan con Atry. Registrarte no activa una suscripción.</div>':''}<button class="btn full" type="submit">${register?'Crear mi negocio':'Ingresar a mi panel'} ${ic('arrow')}</button></form><div class="bottom">${register?'¿Ya tenés una cuenta? <a href="#/login">Iniciar sesión</a>':'¿Todavía no tenés cuenta? <a href="#/registro">Crear mi negocio</a>'}</div>${!register?'<a class="recovery-link" href="#/recuperar">Olvidé mi contraseña</a>':''}</div></div></div>`,register?'register':'login');
 }
 function appLayout(content,title='Panel'){
  const b=state.business;const v=state.appView;ATRY_APPEARANCE.apply(b,'business');
@@ -435,11 +451,11 @@ async function router(){
   if(route.startsWith('/gestionar/')){await manageView(route.split('/')[2]);return;}
   if(route==='/recuperar'){recoveryView();return;}
   if(route.startsWith('/restablecer/')){recoveryView(route.split('/')[2]);return;}
-  if(route==='/login'){if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');return;}authView(false);return;}
-  if(route==='/registro'){authView(true);return;}
+  if(route==='/login'){if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');return;}await authView(false);return;}
+  if(route==='/registro'){await authView(true);return;}
   if(route==='/admin'||route.startsWith('/admin/')){await adminView();return;}
   if(route==='/app'||route.startsWith('/app/')){state.appView=route.split('/')[2]||'inicio';await renderApp();return;}
-  if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');}else authView(false);
+  if(state.me){nav(state.me.user.platform_admin?'/admin':'/app');}else await authView(false);
  }catch(err){toast(err.message,true);if(err.status===401){state.me=null;nav('/login');}else page(`<div class="closing"><h2>No pudimos cargar esta pantalla</h2><p>${esc(err.message)}</p><button class="btn" data-action="reload-page">Reintentar</button></div>`);}
  finally{clearTimeout(progress);document.body.classList.remove('route-pending');root.removeAttribute('aria-busy');root.inert=false;}
 }
