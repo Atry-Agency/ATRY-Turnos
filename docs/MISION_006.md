@@ -1,6 +1,6 @@
 # Misión 006 — identidad, apariencia y operación comercial
 
-**Estado al 16/10/2026: desarrollo y validación local terminados; migraciones 038–039 y publicación remota pendientes de ejecución/verificación.** La versión pública sigue siendo la Misión 005 hasta aplicar primero las migraciones y desplegar la interfaz. Proyecto exclusivo: Supabase ATRY Turnos `djoxdtloqwbrhgtgencc`. No intervenir ATRY Lab.
+**Estado al 16/10/2026: desarrollo y validación local terminados; migraciones 038–039 y publicación remota pendientes de ejecución/verificación.** [PR #9 en borrador](https://github.com/Atry-Agency/ATRY-Turnos/pull/9); [CI de la rama aprobado](https://github.com/Atry-Agency/ATRY-Turnos/actions/runs/38956333425). La versión pública sigue siendo la Misión 005 hasta aplicar primero las migraciones y desplegar la interfaz. Proyecto exclusivo: Supabase ATRY Turnos `djoxdtloqwbrhgtgencc`. No intervenir ATRY Lab.
 
 ## Cambios implementados en esta rama
 
@@ -16,6 +16,8 @@
 La suite integrada pasó **129/129, cero fallos y cero omitidas**, incluida la regresión de archivos estáticos. Las pruebas nuevas verifican aislamiento del propietario, lectura por personal, rechazo de datos maliciosos, apariencia pública, contraste de colores extremos, limpieza de tema, idempotencia y auditoría de incidentes, y rutas HTTP locales. La prueba visual detectó que faltaban los archivos nuevos en la lista de recursos permitidos; se corrigió y se añadió regresión.
 
 Chrome headless sobre una base SQLite **ficticia aislada** completó login de propietario, editor a 1280×800 y 390×844, guardado de `#FFFFFF`/`#FF2D55` en tema oscuro, reservas públicas y Control Center. Todas las capturas reportaron ancho del documento igual al viewport, sin desbordamiento horizontal. Capturas reales locales, fuera de Git: `../mision006-validacion/`. El tema del Control Center regresó a Atry después de visitar un negocio personalizado. Estas capturas **no** prueban producción ni Supabase.
+
+El empaquetado de Pages con configuración pública ficticia de compilación completó sin errores. Ese artefacto local no está autorizado para despliegue y no contiene la clave pública real. La página pública anterior respondió HTTP 200 durante esta revisión.
 
 ## Despliegue seguro pendiente
 
