@@ -76,11 +76,11 @@ La API local valida capacidades, rol y organización. PostgreSQL valida RPC, RLS
 
 Antes de migrar se guardó un respaldo lógico privado local de 38 tablas de aplicación y 104 funciones en `data/backups/pre-mission004.json`, ignorado por Git y con permisos 0600. Incluye los datos de aplicación y funciones; no es un respaldo completo de todos los componentes de Supabase, Auth, Storage o Vault. Las migraciones se ensayaron dentro de una transacción con rollback antes de aplicar.
 
-La aplicación de 029 y 030 conservó 2 negocios, 2 reservas y 4 usuarios; cero usuarios de prueba persistentes y cero tablas públicas/privadas sin RLS. No se editaron sus planes efectivos, períodos comerciales ni reservas al instalar el catálogo.
+La aplicación de 029–031 conservó 2 negocios, 2 reservas y 4 usuarios; cero usuarios de prueba persistentes y cero tablas públicas/privadas sin RLS. No se editaron sus planes efectivos, períodos comerciales ni reservas al instalar el catálogo.
 
 ## Validación
 
-- Suite existente conservada; fixtures demo ajustados a Pro para seguir cubriendo todos los módulos. Los casos de reducción ahora prueban su selección explícita.
+- 108 pruebas automatizadas (106 en la suite completa previa más 2 casos de interfaz agregados y aprobados; CI vuelve a ejecutar la suite completa). Suite existente conservada; fixtures demo ajustados a Pro para seguir cubriendo todos los módulos. Los casos de reducción ahora prueban su selección explícita.
 - Nuevos casos SQLite/API y PostgreSQL/PGlite: solicitudes, idempotencia, aislamiento, permisos comerciales, acceso directo a RPC, límites de profesionales, mejoras sin privilegios anticipados, reducción sin borrado, cuotas reservadas, conciliación idempotente, concurrencia de workers, cancelación/restablecimiento y renovación sin reiniciar ciclo.
 - `supabase/operations/verify-commercial.sql`: prueba nativa ejecutada contra Supabase ATRY-Turnos; termina en rollback y no invoca proveedores de correo. Resultado: `MISION_004_NATIVE_OK_ROLLED_BACK`.
 - Navegador local real: selección, teléfono, solicitud persistente, aprobación por cortesía de prueba, administración y navegación adaptada. Pantalla móvil de 390 px sin desborde horizontal.
