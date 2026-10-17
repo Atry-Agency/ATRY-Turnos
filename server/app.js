@@ -223,6 +223,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   });
   r('PUT','/api/business/([A-Za-z0-9_-]+)/staff/([A-Za-z0-9_-]+)/hours',({req,params,body})=>{
     const {biz,user}=authorized(req,params[0],['owner','manager']);if(!db.prepare('SELECT id FROM staff WHERE id=? AND business_id=?').get(params[1],biz.id))fail(404,'Profesional inexistente');
+    if(body.windows!==undefined)return require('./weekly-schedule').saveWeek(db,biz.id,params[1],body.windows,user.id);
     if(!Array.isArray(body.hours)||body.hours.length>7)fail(400,'Ingresá una semana válida');
     const days=new Set();for(const h of body.hours){const day=integer(h.weekday,0,6,'Día'),start=integer(h.start_min,0,1439,'Inicio'),end=integer(h.end_min,1,1440,'Fin');if(days.has(day)||start>=end)fail(400,'Hay días duplicados u horarios inválidos');days.add(day);}
     transaction(db,()=>{
@@ -363,7 +364,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});

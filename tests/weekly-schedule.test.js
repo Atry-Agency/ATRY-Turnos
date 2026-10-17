@@ -1,0 +1,21 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {context}=require('./helpers');const {localISO}=require('../server/booking');const {normalizeWindows}=require('../server/weekly-schedule');
+const windows=[{weekday:1,start_min:540,end_min:660},{weekday:1,start_min:840,end_min:900},{weekday:1,start_min:1020,end_min:1080}];
+test('Semana: valida hasta seis tramos, ordena y rechaza solapes y rangos inválidos',()=>{assert.deepEqual(normalizeWindows([...windows].reverse()),windows);assert.throws(()=>normalizeWindows([{weekday:1,start_min:600,end_min:700},{weekday:1,start_min:660,end_min:720}]));for(const value of [null,{},[{weekday:8,start_min:540,end_min:660}],[{weekday:1,start_min:540,end_min:1441}],[{weekday:1,start_min:540.1,end_min:600}],[{weekday:1,start_min:600,end_min:540}]])assert.throws(()=>normalizeWindows(value));assert.deepEqual(normalizeWindows([]),[]);});
+test('Semana HTTP: varios tramos producen disponibilidad real y el rechazo revierte todo',async()=>{const t=await context();try{
+ const cookie=(await t.call('/api/auth/login',{data:{email:'usuario1@example.com',password:'AtryDemo2026!'}})).cookie,bid=t.db.prepare('SELECT id FROM businesses').get().id,p='/api/business/'+bid;
+ const service=(await t.call(p+'/services',{cookie,data:{name:'Atención flexible',duration_min:30,price_uyu:300}})).body;
+ const staff=(await t.call(p+'/staff',{cookie,data:{name:'Profesional flexible',service_ids:[service.id]}})).body;
+ const dayDate=new Date(Date.now()+20*86400000);while(dayDate.getUTCDay()!==1)dayDate.setUTCDate(dayDate.getUTCDate()+1);const day=dayDate.toISOString().slice(0,10);
+ assert.equal((await t.call(p+'/staff/'+staff.id+'/hours',{cookie,method:'PUT',data:{windows}})).status,200);
+ const available=(await t.call(`/api/public/negocio-prueba-1/availability?date=${day}&service_id=${service.id}&staff_id=${staff.id}`)).body.slots;
+ for(const time of ['09:00','10:30','14:00','14:30','17:00'])assert.ok(available.some(x=>x.time===time),time);
+ for(const time of ['11:00','12:00','15:00','16:00','18:00'])assert.ok(!available.some(x=>x.time===time),time);
+ const booking=await t.call('/api/public/negocio-prueba-1/book',{data:{service_id:service.id,staff_id:staff.id,starts_at:localISO(day,840),customer_name:'Cliente Flexible',customer_email:'flex@local.test',accept_policy:true}});assert.equal(booking.status,200);
+ const before=t.db.prepare('SELECT * FROM recurring_breaks WHERE staff_id=? ORDER BY start_min').all(staff.id);
+ assert.equal((await t.call(p+'/staff/'+staff.id+'/hours',{cookie,method:'PUT',data:{windows:[windows[0]]}})).status,409);
+ assert.deepEqual(t.db.prepare('SELECT * FROM recurring_breaks WHERE staff_id=? ORDER BY start_min').all(staff.id),before);
+ assert.equal(t.db.prepare('SELECT count(*) n FROM bookings WHERE id=?').get(booking.body.id).n,1);
+ assert.equal((await t.call(p+'/staff/foreign/hours',{cookie,method:'PUT',data:{windows}})).status,404);
+}finally{await t.close();}});

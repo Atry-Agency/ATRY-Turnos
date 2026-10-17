@@ -1,7 +1,7 @@
 // Public static assets only. Cache ownership is scoped to this application path.
 const PREFIX='atry-turnos-shell-'+encodeURIComponent(self.registration.scope)+'-';
-const CACHE=PREFIX+'v26';
-const assets=['./control-center.js?v=6','./control-center.css?v=2','./appearance.js?v=1','./appearance.css?v=8','./commercial.js?v=2','./read-cache.js?v=1','./','./index.html','./styles.css?v=7','./product.css?v=12','./app.js?v=18','./features.js?v=8','./management.js?v=8','./recurring.js?v=1','./onboarding.js?v=7','./subscriptions.js?v=3','./assets/brand/atry.png','./assets/brand/favicon.png'];
+const CACHE=PREFIX+'v27';
+const assets=['./workspace.js?v=1','./workspace.css?v=1','./control-center.js?v=6','./control-center.css?v=2','./appearance.js?v=1','./appearance.css?v=9','./commercial.js?v=3','./read-cache.js?v=1','./','./index.html','./styles.css?v=7','./product.css?v=12','./app.js?v=19','./features.js?v=9','./management.js?v=8','./recurring.js?v=1','./onboarding.js?v=7','./subscriptions.js?v=4','./assets/brand/atry.png','./assets/brand/favicon.png'];
 const allowed=new Set([...assets,'./cloud-backend.js','./runtime-config.js','./proof-worker.js'].map(file=>new URL(file,self.registration.scope).pathname));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(assets.map(file=>new URL(file,self.registration.scope).href))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
