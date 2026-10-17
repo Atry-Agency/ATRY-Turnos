@@ -3,7 +3,7 @@ const weekDays=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sáb
 const weekOrder=[1,2,3,4,5,6,0];
 const minuteLabel=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
 function businessNavigationItems(b){
- const items=[['inicio','grid','Inicio'],['agenda','calendar','Agenda'],['turnos-fijos','repeat','Turnos fijos'],['lista-espera','clock','Lista de espera'],['servicios',sectorIcon(b.sector),'Servicios'],['equipo','users','Equipo'],['disponibilidad','clock','Horarios'],['clientes','heart','Clientes']];
+ const items=[['inicio','grid','Inicio'],['agenda','calendar','Agenda'],['turnos-fijos','repeat','Turnos fijos'],['lista-espera','waitlist','Lista de espera'],['servicios',sectorIcon(b.sector),'Servicios'],['equipo','users','Equipo'],['disponibilidad','clock','Horarios'],['clientes','heart','Clientes']];
  if(hasCapability('advanced'))items.push(['insights','chart','Estadísticas']);else if(hasCapability('statistics'))items.push(['estadisticas','chart','Estadísticas']);
  if(hasCapability('smartslots'))items.push(['smartslots','spark','Oportunidades de agenda']);
  items.push(['configuracion','settings','Configuración'],['soporte','help','Ayuda y soporte']);
