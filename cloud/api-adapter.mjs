@@ -77,7 +77,7 @@ export function createApiAdapter({auth,config,fetchImpl=fetch,protection=null,ca
    let resource=tail.match(/^\/(services|staff)(?:\/([A-Za-z0-9_-]+))?$/);
    if(resource&&['POST','PATCH'].includes(method))return rpc(resource[1]==='services'?'atry_save_service':'atry_save_staff',{bid,[resource[1]==='services'?'service_id':'staff_id']:resource[2]||null,payload:body});
    resource=tail.match(/^\/staff\/([A-Za-z0-9_-]+)\/hours$/);
-   if(resource)return method==='GET'?(await rpc('atry_rules',{bid})).hours.filter(x=>x.staff_id===resource[1]):rpc('atry_save_rule',{bid,kind:'hours',rule_id:null,payload:{staff_id:resource[1],hours:body.hours},remove:false});
+   if(resource)return method==='GET'?(await rpc('atry_rules',{bid})).hours.filter(x=>x.staff_id===resource[1]):body.windows!==undefined?rpc('atry_save_week',{bid,sid:resource[1],payload:{windows:body.windows}}):rpc('atry_save_rule',{bid,kind:'hours',rule_id:null,payload:{staff_id:resource[1],hours:body.hours},remove:false});
    resource=tail.match(/^\/services\/([A-Za-z0-9_-]+)\/resources$/);
    if(resource)return rpc('atry_save_rule',{bid,kind:'service_resources',rule_id:null,payload:{service_id:resource[1],resource_ids:body.resource_ids},remove:false});
    if(tail==='/scheduling'){
