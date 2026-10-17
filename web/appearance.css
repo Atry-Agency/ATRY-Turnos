@@ -149,3 +149,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .auth-artwork .auth-pitch p,.auth-artwork .auth-signature,.auth-artwork .auth-signature a{color:#FFFFFF}
 .auth-artwork .auth-switch{border-color:#FFFFFF99;color:#FFFFFF}
 .auth-artwork .auth-switch:hover{background:#FFFFFF14;border-color:#FFFFFF}
+/* Keep all three phrases intact, including at browser zoom and narrow desktops. */
+.auth-artwork .auth-pitch{container-type:inline-size}
+.auth-artwork .auth-pitch h1{font-size:clamp(32px,4.3vw,64px);font-size:clamp(32px,13.4cqw,74px);white-space:nowrap}
+.auth-artwork .auth-pitch h1 span{white-space:nowrap}
