@@ -93,3 +93,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @keyframes atry-auth-mobile-right{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 @keyframes atry-auth-mobile-left{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.auth-artwork .auth-switch,.auth-artwork .auth-switch:hover{transition:none;transform:none}}
+
+/* The brand panel keeps its curved inner edge as it changes sides. */
+@media(min-width:801px){
+ .auth-shell{--auth-curve:clamp(90px,12vw,190px)}
+ .auth-shell--login .auth-artwork{border-radius:0 var(--auth-curve) var(--auth-curve) 0}
+ .auth-shell--register .auth-artwork{border-radius:var(--auth-curve) 0 0 var(--auth-curve)}
+}
+
+/* The current Control Center destination grows into the content surface. */
+@media(min-width:761px){
+ .cc-sidebar nav{margin-right:-18px}
+ .cc-sidebar nav a{position:relative;margin-right:18px;transition:background-color .2s ease,color .2s ease,margin-right .2s ease}
+ .cc-sidebar nav a[aria-current]{margin-right:0;border-left:0;border-radius:13px 0 0 13px;background:#F6F7FC;color:#232A6B;font-weight:700}
+ .cc-sidebar nav a[aria-current] .i{color:#4754E6}
+ .cc-sidebar nav a[aria-current]::before,.cc-sidebar nav a[aria-current]::after{content:"";position:absolute;right:0;width:22px;height:22px;pointer-events:none}
+ .cc-sidebar nav a[aria-current]::before{top:-22px;border-radius:0 0 22px 0;box-shadow:0 11px 0 #F6F7FC}
+ .cc-sidebar nav a[aria-current]::after{bottom:-22px;border-radius:0 22px 0 0;box-shadow:0 -11px 0 #F6F7FC}
+ .cc-main{background:#F6F7FC}
+}
