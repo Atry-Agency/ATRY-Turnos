@@ -25,9 +25,13 @@ function ccFilters(fields='q,status,plan,sort'){
  return `<form data-cc-form="filters" class="cc-filters" ${fields==='state'?'data-cc-auto-filter':''}>${fields.split(',').map(f=>parts[f]).join('')}${fields==='state'?'':`<button class="btn">Aplicar</button>${active?`<a class="btn secondary" href="${ccLink(ccSection,{clear:1})}">Limpiar</a>`:''}`}</form>`;
 }
 function ccPager(d){if(!d||!d.total)return ''; const previous=Math.max(0,d.offset-d.limit),next=d.offset+d.limit;return `<div class="cc-pagination"><span>${d.total} registros · página ${Math.floor(d.offset/d.limit)+1}</span><a class="btn secondary sm" ${d.offset===0?'aria-disabled="true" tabindex="-1"':`href="${ccLink(ccSection,{...ccParams,offset:previous})}"`}>Anterior</a><a class="btn secondary sm" ${next>=d.total?'aria-disabled="true" tabindex="-1"':`href="${ccLink(ccSection,{...ccParams,offset:next})}"`}>Siguiente</a></div>`;}
-function ccShell(body){
+function ccNavEntry(key,label){
+ const active=key===ccSection;
+ return `<a href="${ccLink(key)}" ${active?'aria-current="page"':''}>${ic(ccSectionIcons[key])}<span>${esc(label)}</span></a>`;
+}
+function ccShell(body,enter=false){
  const globalSearch=['negocios','usuarios','comercial','auditoria'].includes(ccSection)?'':`<form data-cc-form="global" role="search"><label class="sr-only" for="cc-global">Buscar en la plataforma</label><input id="cc-global" name="q" placeholder="Buscar negocio, persona o código" maxlength="100"><button class="btn secondary">Buscar</button></form>`;
- return `<div class="cc-shell cc-section-${ccSection}"><aside class="cc-sidebar"><div class="cc-brand">${brand()}<small>CONTROL CENTER</small></div><nav aria-label="Administración de plataforma">${Object.entries(ccSections).map(([key,label])=>`<a href="${ccLink(key)}" ${key===ccSection?'aria-current="page"':''}>${ic(ccSectionIcons[key])}<span>${esc(label)}</span></a>`).join('')}</nav><a href="#/cuenta">${ic('lock')}<span>Mi cuenta y seguridad</span></a><button class="btn secondary sm" data-action="logout">${ic('logout')}<span>Salir</span></button></aside><main class="cc-main"><header class="cc-header"><div><span class="eyebrow">ATRY TURNOS · ADMINISTRACIÓN</span><h1>${esc(ccSections[ccSection])}</h1></div>${globalSearch}<button class="btn secondary sm" data-cc-refresh>Actualizar</button><a class="btn secondary sm" href="#/cuenta">Mi cuenta</a><button class="btn secondary sm" data-action="logout">Salir</button></header><div id="cc-content" aria-live="polite">${body}</div><p class="cc-footnote">Solo administradores autorizados · sin acceso global al CRM privado.</p></main></div>${state.dialog?modalContent():''}`;
+ return `<div class="cc-shell cc-section-${ccSection}${enter?' cc-shell--enter':''}" data-cc-section="${ccSection}"><aside class="cc-sidebar"><div class="cc-brand">${brand()}<small>CONTROL CENTER</small></div><nav aria-label="Administración de plataforma">${Object.entries(ccSections).map(([key,label])=>ccNavEntry(key,label)).join('')}</nav><a href="#/cuenta">${ic('lock')}<span>Mi cuenta y seguridad</span></a><button class="btn secondary sm" data-action="logout">${ic('logout')}<span>Salir</span></button></aside><main class="cc-main"><header class="cc-header"><div><span class="eyebrow">ATRY TURNOS · ADMINISTRACIÓN</span><h1>${esc(ccSections[ccSection])}</h1></div>${globalSearch}<button class="btn secondary sm" data-cc-refresh>Actualizar</button><a class="btn secondary sm" href="#/cuenta">Mi cuenta</a><button class="btn secondary sm" data-action="logout">Salir</button></header><div id="cc-content" aria-live="polite">${body}</div><p class="cc-footnote">Solo administradores autorizados · sin acceso global al CRM privado.</p></main></div>${state.dialog?modalContent():''}`;
 }
 function ccMetric(label,value,section,query={}){return `<a class="cc-metric" href="${ccLink(section,query)}"><span>${esc(label)}</span><strong>${esc(value??'—')}</strong></a>`;}
 function ccMetricStatic(label,value){return `<div class="cc-metric" role="group" aria-label="${esc(label)}"><span>${esc(label)}</span><strong>${esc(value??'—')}</strong></div>`;}
@@ -80,8 +84,19 @@ async function adminView(){
  if(!ensureAuth())return;if(!state.me.user.platform_admin){nav('/app');return;}
  const url=new URL(location.hash.slice(1),'https://atry.internal'),parts=url.pathname.split('/');ccSection=parts[2]||'inicio';if(!ccSections[ccSection])ccSection='inicio';ccEntity=ccSection==='negocios'&&parts[3]?parts[3]:null;
  ccParams=Object.fromEntries(url.searchParams);if(ccParams.clear){sessionStorage.removeItem('atry-cc:'+state.me.user.id+':'+ccSection);ccParams={};}if(!url.search&&ccSection!=='inicio'&&!ccEntity){try{ccParams=JSON.parse(sessionStorage.getItem('atry-cc:'+state.me.user.id+':'+ccSection)||'{}');}catch{ccParams={};}}
- document.title=ccSections[ccSection]+' · ATRY Control Center';const token=++ccSequence;page(ccShell('<div class="cc-panel" role="status">Cargando '+esc(ccSections[ccSection])+'…</div>'));
- try{const body=await ccRenderSection(token);if(token!==ccSequence)return;page(ccShell(body+`<p class="cc-source">Fuente de sección · ${ccDate(ccData.checked_at)}</p>`));}catch(e){if(token!==ccSequence)return;if(e.status===401){state.me=null;nav('/login');return;}page(ccShell(`<section class="cc-panel" role="alert"><h2>No pudimos cargar ${esc(ccSections[ccSection])}</h2><p>${esc(e.message)}</p><button class="btn" data-cc-refresh>Reintentar esta sección</button><a href="#/admin/inicio">Volver al inicio</a></section>`));}
+ document.title=ccSections[ccSection]+' · ATRY Control Center';const token=++ccSequence;
+ const previousSection=root.querySelector('.cc-shell')?.dataset.ccSection;
+ const changing=previousSection&&previousSection!==ccSection;
+ if(changing)root.querySelector('.cc-shell')?.classList.add('cc-shell--loading');
+ else page(ccShell('<div class="cc-panel" role="status">Cargando '+esc(ccSections[ccSection])+'…</div>'));
+ const show=async body=>{
+  root.querySelector('.cc-shell')?.classList.remove('cc-shell--loading');
+  const render=()=>page(ccShell(body,changing));
+  if(changing&&innerWidth>760&&document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+   await document.startViewTransition(render).finished.catch(()=>{});
+  }else render();
+ };
+ try{const body=await ccRenderSection(token);if(token!==ccSequence)return;await show(body+`<p class="cc-source">Fuente de sección · ${ccDate(ccData.checked_at)}</p>`);}catch(e){if(token!==ccSequence)return;if(e.status===401){state.me=null;nav('/login');return;}await show(`<section class="cc-panel" role="alert"><h2>No pudimos cargar ${esc(ccSections[ccSection])}</h2><p>${esc(e.message)}</p><button class="btn" data-cc-refresh>Reintentar esta sección</button><a href="#/admin/inicio">Volver al inicio</a></section>`);}
 }
 async function ccActionDialog(button){
  const originalRoute=location.hash,action=button.dataset.ccAction,id=button.dataset.id;let controls='',revision,extra={};
