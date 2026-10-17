@@ -125,3 +125,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @keyframes atry-cc-content-in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
 @keyframes atry-cc-progress{to{background-position:-200% 0}}
 @media(prefers-reduced-motion:reduce){.cc-shell--enter #cc-content,.cc-shell--loading .cc-main::before{animation:none}.cc-sidebar nav a{transition:none!important}}
+
+/* Business navigation shares the same curved connection with its own content surface. */
+@media(min-width:1001px){
+ :root[data-appearance=business] .app-shell{--business-nav-surface:#F6F7FC}
+ :root[data-appearance=business][data-appearance-mode=dark] .app-shell{--business-nav-surface:var(--bg)}
+ :root[data-appearance=business] .app-shell .main{background:var(--business-nav-surface)}
+ :root[data-appearance=business] .sidebar .navlink{position:relative;transition:background-color .22s ease,color .22s ease,transform .22s ease}
+ :root[data-appearance=business] .sidebar .navlink.active{margin-right:-18px;border-radius:16px 0 0 16px;background:var(--business-nav-surface);color:var(--ink);box-shadow:inset 3px 0 var(--theme-action);font-weight:750}
+ :root[data-appearance=business] .sidebar .navlink.active .i{color:var(--theme-action)}
+ :root[data-appearance=business] .sidebar .navlink.active::before,:root[data-appearance=business] .sidebar .navlink.active::after{content:"";position:absolute;right:0;width:24px;height:24px;pointer-events:none}
+ :root[data-appearance=business] .sidebar .navlink.active::before{top:-24px;background:radial-gradient(circle at 0 0,transparent 23.5px,var(--business-nav-surface) 24px)}
+ :root[data-appearance=business] .sidebar .navlink.active::after{bottom:-24px;background:radial-gradient(circle at 0 100%,transparent 23.5px,var(--business-nav-surface) 24px)}
+ .app-shell--enter .main-content{animation:atry-business-content-in 460ms cubic-bezier(.16,1,.3,1) both}
+}
+@keyframes atry-business-content-in{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.app-shell--enter .main-content{animation:none}}
