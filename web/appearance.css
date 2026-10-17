@@ -141,3 +141,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 @keyframes atry-business-content-in{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.app-shell--enter .main-content{animation:none}}
+
+/* Solid official Atry violet; keep the sliding panel and its curved edge. */
+.auth-artwork{background:var(--atry-primary,#4754E6)}
+.auth-artwork::before,.auth-motion{display:none}
+.auth-artwork .logo b{color:#FFFFFF}
+.auth-artwork .auth-pitch h1,.auth-artwork h1 span{color:#FFFFFF}
+.auth-artwork .auth-pitch p,.auth-artwork .auth-signature,.auth-artwork .auth-signature a{color:#FFFFFF}
+.auth-artwork .auth-switch{border-color:#FFFFFF99;color:#FFFFFF}
+.auth-artwork .auth-switch:hover{background:#FFFFFF14;border-color:#FFFFFF}

@@ -11,13 +11,18 @@ test('Apariencia: propietario guarda por negocio, empleado lee, terceros y valor
   await who(db,2);const b=(await db.query('SELECT atry_create_organization($1::jsonb) v',[JSON.stringify({name:'Consultorio Dos',slug:'consultorio-dos'})])).rows[0].v.id;
   await db.exec('RESET ROLE');await db.query("INSERT INTO memberships(user_id,business_id,role) VALUES($1,$2,'staff')",[uid(3),a]);
   await who(db,1);const changed=(await db.query('SELECT atry_save_appearance($1,$2::jsonb) v',[a,JSON.stringify({primary_color:'#FDEDED',secondary_color:'#123456',appearance_mode:'dark'})])).rows[0].v;
+  const logo='data:image/png;base64,iVBORw0KGgo=';
+  await db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,JSON.stringify({logo_url:logo})]);
+  assert.equal((await db.query('SELECT atry_business($1) v',[a])).rows[0].v.logo_url,logo);
+  await db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,'{"logo_url":""}']);
+  assert.equal((await db.query('SELECT atry_business($1) v',[a])).rows[0].v.logo_url,'');
   assert.equal(changed.primary_color,'#FDEDED');assert.equal(changed.secondary_color,'#123456');assert.equal(changed.appearance_mode,'dark');
   await assert.rejects(db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,JSON.stringify({primary_color:'red;--ink:black'})]),/INVALID_APPEARANCE/);
   await assert.rejects(db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,JSON.stringify({logo_url:'javascript:alert(1)'})]),/INVALID_APPEARANCE/);
   await who(db,2);await assert.rejects(db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,'{"appearance_mode":"light"}']),/FORBIDDEN/);
   assert.equal((await db.query('SELECT atry_business($1) v',[b])).rows[0].v.appearance_mode,'light');
   await who(db,3);assert.equal((await db.query('SELECT atry_business($1) v',[a])).rows[0].v.secondary_color,'#123456');await assert.rejects(db.query('SELECT atry_save_appearance($1,$2::jsonb)',[a,'{"appearance_mode":"light"}']),/FORBIDDEN/);
-  await db.exec('RESET ROLE;SET ROLE service_role');const publicResult=(await db.query('SELECT atry_public_info($1) v',['consultorio-uno'])).rows[0].v,publicA=publicResult.business;assert.equal(publicA.secondary_color,'#123456');assert.equal(publicA.appearance_mode,'dark');assert.equal(publicA.email,undefined);assert.equal(typeof publicResult.waitlist_enabled,'boolean');
+  await db.exec('RESET ROLE;SET ROLE service_role');const publicResult=(await db.query('SELECT atry_public_info($1) v',['consultorio-uno'])).rows[0].v,publicA=publicResult.business;assert.equal(publicA.logo_url,'');assert.equal(publicA.secondary_color,'#123456');assert.equal(publicA.appearance_mode,'dark');assert.equal(publicA.email,undefined);assert.equal(typeof publicResult.waitlist_enabled,'boolean');
  }finally{await db.close();}
 });
 test('Apariencia: los colores extremos producen texto y acciones con contraste AA, y el tema anterior se limpia',()=>{
@@ -57,6 +62,12 @@ test('Servidor local: apariencia persistente en panel y reservas; registro de in
   assert.equal((await request(route,appearance,owner,'PATCH')).status,200);
   assert.equal((await request('/api/business/'+bid,null,owner)).data.appearance_mode,'dark');
   assert.equal((await request('/api/public/negocio-prueba-1')).data.business.secondary_color,'#C79537');
+  const logo='data:image/png;base64,iVBORw0KGgo=';
+  assert.equal((await request(route,{logo_url:logo},owner,'PATCH')).status,200);
+  assert.equal((await request('/api/public/negocio-prueba-1')).data.business.logo_url,logo);
+  assert.equal((await request(route,{logo_url:''},owner,'PATCH')).status,200);
+  assert.equal(db.prepare('SELECT logo_url FROM businesses WHERE id=?').get(bid).logo_url,'');
+  assert.equal((await request('/api/public/negocio-prueba-1')).data.business.logo_url,'');
   const incident={business_id:bid,subject:'Reporte por WhatsApp',description:'El negocio informa que no puede abrir la agenda.',category:'access',priority:'high',state:'open',reason:'Mensaje del propietario en WhatsApp',request_id:'incident_local_2026_001'};
   const created=await request('/api/admin/control/incident_create/new',incident,admin);assert.equal(created.status,200);assert.equal(created.data.after.state,'open');assert.equal((await request('/api/admin/control/incident_create/new',incident,admin)).data.replayed,true);
  }finally{await new Promise(resolve=>server.close(resolve));db.close();}
