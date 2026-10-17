@@ -14,7 +14,7 @@ function preparedBusinessLogo(form){
 function refreshLogoControl(form,url){
  const preview=form.querySelector('[data-logo-preview]');if(!preview)return;
  if(url){const img=new Image();img.src=url;img.alt='Vista previa del logo del negocio';preview.replaceChildren(img);}else preview.innerHTML=ic('shop');
- form.querySelector('[data-logo-edit]').hidden=!url;
+ form.querySelector('[data-logo-edit]').hidden=!url;form.querySelector('[data-logo-delete]').hidden=!state.business.logo_url;form.querySelector('[data-logo-filename]').textContent=url?'Logo guardado':'Sin logo guardado';
 }
 if(typeof module!=='undefined')module.exports={logoCropRect,preparedBusinessLogo};
 if(typeof document!=='undefined')(()=>{
@@ -42,7 +42,13 @@ if(typeof document!=='undefined')(()=>{
  });
  document.addEventListener('input',event=>{const box=event.target.closest('[data-logo-crop]');if(box)render(box);});
  document.addEventListener('click',async event=>{
-  const button=event.target.closest('[data-logo-edit],[data-logo-cancel],[data-logo-center],[data-logo-rotate],[data-logo-apply]');if(!button)return;event.preventDefault();const form=button.closest('form');
+  const button=event.target.closest('[data-logo-delete],[data-logo-edit],[data-logo-cancel],[data-logo-center],[data-logo-rotate],[data-logo-apply]');if(!button)return;event.preventDefault();const form=button.closest('form');
+  if(button.hasAttribute('data-logo-delete')){
+   if(state.business.role!=='owner')return;
+   if(!await confirmAction('¿Eliminar el logo guardado? Se borrará del negocio y dejará de aparecer en el panel y las reservas. No se puede deshacer desde el panel. Las copias de seguridad históricas no se purgan.'))return;
+   button.disabled=true;
+   try{const changed=await post(bapi('/appearance'),{logo_url:''},'PATCH');closeEditor(form);state.business={...state.business,...changed};state.businesses=state.businesses.map(b=>b.id===state.business.id?{...b,logo_url:''}:b);if(state.public?.business?.id===state.business.id)state.public.business.logo_url='';state.screen=null;delete form.dataset.logoData;delete form.dataset.appearanceLogo;if(form.elements.remove_logo)form.elements.remove_logo.checked=false;refreshLogoControl(form,'');if(form.matches('[data-appearance-form]'))refreshAppearancePreview(form);for(const avatar of root.querySelectorAll('.sidebar .business-logo-avatar'))avatar.outerHTML=businessLogoAvatar(state.business,avatar.classList.contains('store-icon')?'store-icon':'avatar',avatar.classList.contains('store-icon')?null:state.me.user.name);toast('Logo eliminado del negocio.');}catch(error){toast(error.message||'No se pudo eliminar el logo.',true);}finally{if(button.isConnected)button.disabled=false;}return;
+  }
   if(button.hasAttribute('data-logo-edit')){const url=form.dataset.logoData||state.business.logo_url;if(url)await openEditor(form,url);return;}
   const box=button.closest('[data-logo-crop]'),model=editors.get(box);
   if(button.hasAttribute('data-logo-cancel')){closeEditor(form);form.querySelector('[data-logo-edit]')?.focus();return;}

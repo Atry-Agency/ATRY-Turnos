@@ -97,9 +97,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* The brand panel keeps its curved inner edge as it changes sides. */
 @media(min-width:801px){
- .auth-shell{--auth-curve:clamp(90px,12vw,190px)}
- .auth-shell--login .auth-artwork{border-radius:0 var(--auth-curve) var(--auth-curve) 0}
- .auth-shell--register .auth-artwork{border-radius:var(--auth-curve) 0 0 var(--auth-curve)}
+ .auth-shell--login .auth-artwork{border-radius:0 40% 27% 0 / 0 31% 21% 0}
+ .auth-shell--register .auth-artwork{border-radius:40% 0 0 27% / 31% 0 0 21%}
 }
 
 /* The active destination joins the content without shadow seams or pointed tips. */
@@ -141,3 +140,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 @keyframes atry-business-content-in{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.app-shell--enter .main-content{animation:none}}
+
+/* Subtle Atry violet gradient; reference proportions for the two inner curves. */
+.auth-artwork{background:linear-gradient(90deg,#4754E6 0%,#6250DF 100%)}
+.auth-artwork::before,.auth-motion{display:none}
+.auth-artwork .logo b{color:#FFFFFF}
+.auth-artwork .auth-pitch h1,.auth-artwork h1 span{color:#FFFFFF}
+.auth-artwork .auth-pitch p,.auth-artwork .auth-signature,.auth-artwork .auth-signature a{color:#FFFFFF}
+.auth-artwork .auth-switch{border-color:#FFFFFF99;color:#FFFFFF}
+.auth-artwork .auth-switch:hover{background:#FFFFFF14;border-color:#FFFFFF}
