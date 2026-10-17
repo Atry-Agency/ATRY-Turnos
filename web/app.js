@@ -79,7 +79,7 @@ async function renderAuthScreen(content,mode){
  }
  if(!document.startViewTransition){
   page(content.replace('class="auth-shell ',`class="auth-shell auth-shell--fallback-${mode} `));
-  await new Promise(resolve=>setTimeout(resolve,720));
+  await new Promise(resolve=>setTimeout(resolve,860));
   return;
  }
  const transition=document.startViewTransition(()=>page(content));
