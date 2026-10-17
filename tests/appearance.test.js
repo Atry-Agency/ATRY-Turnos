@@ -48,7 +48,7 @@ test('Servidor local: apariencia persistente en panel y reservas; registro de in
  const base='http://127.0.0.1:'+server.address().port,bid=db.prepare('SELECT id FROM businesses LIMIT 1').get().id;
  async function request(route,body,cookie='',method=body?'POST':'GET'){const res=await fetch(base+route,{method,headers:{'Content-Type':'application/json',cookie},body:body?JSON.stringify(body):undefined});return {status:res.status,data:await res.json(),cookie:res.headers.get('set-cookie')};}
  try{
-  for(const asset of ['/appearance.js','/appearance.css','/workspace.js','/workspace.css'])assert.equal((await fetch(base+asset)).status,200,asset+' debe servirse sin autenticación');
+  for(const asset of ['/appearance.js','/appearance.css','/workspace.js','/workspace.css','/typography.css','/assets/brand/atry-eurostile-medium.otf','/assets/brand/atry-eurostile-extended-bold.otf'])assert.equal((await fetch(base+asset)).status,200,asset+' debe servirse sin autenticación');
   const owner=(await request('/api/auth/login',{email:'usuario1@example.com',password:'AtryDemo2026!'})).cookie;
   const admin=(await request('/api/auth/login',{email:'admin.prueba@example.com',password:'AtryAdmin2026!'})).cookie;
   const route='/api/business/'+bid+'/appearance';const appearance={primary_color:'#111111',secondary_color:'#C79537',appearance_mode:'dark'};

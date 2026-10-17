@@ -1,0 +1,13 @@
+/* Same font files and family hierarchy as RodrigoBrun/ATRYAGENCY.
+   Family/weight only: existing component sizes and spacing remain authoritative. */
+@font-face{font-family:"Atry Eurostile";src:url('./assets/brand/atry-eurostile-medium.otf') format('opentype');font-weight:100 599;font-style:normal;font-display:swap}
+@font-face{font-family:"Atry Eurostile";src:url('./assets/brand/atry-eurostile-demi.otf') format('opentype');font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Atry Eurostile";src:url('./assets/brand/atry-eurostile-demi-italic.otf') format('opentype');font-weight:600 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Atry Eurostile Extended";src:url('./assets/brand/atry-eurostile-extended.ttf') format('truetype');font-weight:100 599;font-style:normal;font-display:swap}
+@font-face{font-family:"Atry Eurostile Extended";src:url('./assets/brand/atry-eurostile-extended-bold.otf') format('opentype');font-weight:600 900;font-style:normal;font-display:swap}
+:root,body,input,select,textarea,.mail-preview{font-family:"Atry Eurostile",Arial,Helvetica,sans-serif}
+body{font-weight:500}
+h1,h2,.display,.auth-artwork .auth-pitch h1,button,.btn,.logo{font-family:"Atry Eurostile Extended",Arial,Helvetica,sans-serif}
+h1,h2,.display,.auth-artwork .auth-pitch h1{font-weight:800}
+h3,h4,strong,b{font-family:"Atry Eurostile",Arial,Helvetica,sans-serif;font-weight:700}
+h1 em,h2 em{font-family:"Atry Eurostile",Arial,Helvetica,sans-serif;font-weight:700;font-style:italic}
