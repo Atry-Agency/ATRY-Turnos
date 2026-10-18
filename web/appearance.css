@@ -203,3 +203,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  .registration-wizard .sector-option>span{min-height:46px;padding-block:8px}
  .auth-shell--register .auth-form .bottom{margin-top:14px}
 }
+
+/* Mirror the brand anchors with the artwork, away from its curved inner edge. */
+@media(min-width:801px){
+ .auth-artwork>.logo,.auth-artwork>.auth-signature{flex-shrink:0}
+ .auth-shell--register .auth-artwork>.logo{align-self:flex-end}
+ .auth-shell--register .auth-artwork>.auth-signature{align-self:flex-end;justify-content:flex-end;text-align:right}
+}
