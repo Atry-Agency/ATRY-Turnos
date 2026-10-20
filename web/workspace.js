@@ -15,7 +15,7 @@ function workspaceSetupPrompt(view){
 }
 function workspaceSettingsNavigation(view){
  if(!['configuracion','notificaciones','accesos','suscripcion'].includes(view))return '';
- const entries=[...(state.business.role==='staff'?[]:[['configuracion','shop','Negocio']]),...(hasCapability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(state.business.role==='owner'&&hasCapability('access')?[['accesos','shield','Usuarios y accesos']]:[]),['suscripcion','wallet','Plan y suscripción']];
+ const entries=[...(state.business.role==='staff'?[]:[['configuracion','shop','Negocio']]),...(hasCapability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(state.business.role==='owner'&&hasCapability('access')?[['accesos','shield','Usuarios y accesos']]:[]),['suscripcion','wallet','Mi plan y acceso']];
  return `<nav class="workspace-settings-nav" aria-label="Configuración del negocio">${entries.map(([id,icon,label])=>`<a href="#/app/${id}" ${view===id?'aria-current="page"':''}>${ic(icon)} ${label}</a>`).join('')}</nav>`;
 }
 function weeklyWindows(hours,breaks=[],staffId){
