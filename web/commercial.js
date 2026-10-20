@@ -1,5 +1,5 @@
 'use strict';
-const commercialLabels={team:'Gestión de equipo',access:'Usuarios y permisos',recurring:'Turnos fijos',waitlist:'Lista de espera',statistics:'Estadísticas básicas',advanced:'Insights avanzados',smartslots:'SmartSlots',resources:'Recursos compartidos',exports:'Exportaciones e informes',operational_mail:'Confirmaciones y recordatorios por correo',auto_offers:'Ofertas automáticas de espera',priority_support:'Prioridad de soporte'};
+const commercialLabels={team:'Gestión de equipo',access:'Usuarios y permisos',recurring:'Turnos fijos',waitlist:'Lista de espera',statistics:'Estadísticas básicas',advanced:'Estadísticas avanzadas',smartslots:'Oportunidades de agenda',resources:'Recursos compartidos',exports:'Exportaciones e informes',operational_mail:'Confirmaciones y recordatorios por correo',auto_offers:'Ofertas automáticas de espera',priority_support:'Prioridad de soporte'};
 const requestLabels={pending_contact:'Pendiente de contacto',pending_payment:'Pendiente de pago',pending_verification:'Pendiente de verificación',active:'Activa',cancelled:'Cancelada'};
 const commercialRoutes={'turnos-fijos':'recurring',smartslots:'smartslots','lista-espera':'waitlist',insights:'advanced',estadisticas:'statistics',equipo:'team',notificaciones:'operational_mail',accesos:'access'};
 const hasCapability=feature=>state.entitlements?.features?.[feature]===true;

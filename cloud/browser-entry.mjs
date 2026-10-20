@@ -6,7 +6,7 @@ import {createProofClient} from './proof-client.mjs';
 import {initializeCloudSession} from './bootstrap.mjs';
 
 const config=window.ATRY_CONFIG;
-if(config?.backend==='supabase'){
+if(config?.backend==='supabase'&&!window.ATRY_DEMO?.enabled){
  const captcha=createCaptcha({siteKey:config.turnstileSiteKey});
  const auth=createCloudAuth(config,{onRecovery:()=>{location.hash='#/restablecer/supabase';},onSignedOut:()=>{window.dispatchEvent(new Event('atry-cloud-signed-out'));}});
  const adapter=createApiAdapter({auth,config,protection:config.turnstileSiteKey?null:createProofClient(config),captcha:request=>captcha.getToken(request)});
