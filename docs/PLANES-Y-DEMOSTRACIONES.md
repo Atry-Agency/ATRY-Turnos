@@ -43,4 +43,5 @@ Las demostraciones están separadas del backend real. Se ejecutan únicamente en
 - Negocio: https://atryturnos.com/?demo=1&plan=2#/app/inicio
 - Pro: https://atryturnos.com/?demo=1&plan=3#/app/inicio
 
-No ingreses datos reales de clientes en las demostraciones. Las tres cuentas creadas previamente en Supabase son registros independientes; retirarlas de la base requiere una limpieza puntual confirmada. Las nuevas demos no las utilizan.
+No ingreses datos reales de clientes en las demostraciones. Las tres cuentas y negocios de ejemplo creados previamente en Supabase fueron retirados tras la confirmación del titular. Las nuevas demos no necesitan cuentas y no suman cuotas ni registros administrativos.
+
