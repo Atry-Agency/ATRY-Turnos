@@ -1,5 +1,5 @@
 /* Misión 006: Atry owns the platform shell; a business owns only its surfaces. */
-:root{--atry-primary:#4754E6;--atry-primary-hover:#3643CB;--atry-cyan:#00EFFF;--atry-link:#007BA9;--atry-pale:#BCDAED;--atry-alert:#FF2D55;--atry-alert-ink:#A80E32;--atry-positive:#207950;--atry-warning:#91630B;--motion-fast:160ms;--motion-normal:240ms;--focus-ring:0 0 0 3px #4754E633;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--radius-control:12px;--radius-panel:20px;--shadow-panel:0 14px 38px #171C6010;--accent:#4754E6;--accent2:#00A5E2;--primary:#4754E6;--radius:20px;--shadow:var(--shadow-panel)}
+:root{--atry-primary:#4754E6;--atry-primary-hover:#3643CB;--atry-cyan:#00EFFF;--atry-link:#007BA9;--atry-pale:#BCDAED;--atry-alert:#FF2D55;--atry-alert-ink:#A80E32;--atry-positive:#26D366;--atry-warning:#91630B;--motion-fast:160ms;--motion-normal:240ms;--focus-ring:0 0 0 3px #4754E633;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--radius-control:12px;--radius-panel:20px;--shadow-panel:0 14px 38px #171C6010;--accent:#4754E6;--accent2:#00A5E2;--primary:#4754E6;--radius:20px;--shadow:var(--shadow-panel)}
 body{background:#F6F7FC}
 :root:not([data-appearance=business]) .btn:not(.secondary,.outline,.danger,.success,.warning,.orange){background:var(--atry-primary);color:#FFFFFF}
 :root:not([data-appearance=business]) .btn:not(.secondary,.outline,.danger,.success,.warning,.orange):hover:not(:disabled){background:var(--atry-primary-hover)}
@@ -193,7 +193,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  .auth-shell--register .auth-artwork>.auth-signature{align-self:flex-end;justify-content:flex-end;text-align:right}
 }
 /* Shared semantic palette: filled actions and explicit evidence labels. */
-:root{--atry-danger:#E51D4F;--atry-danger-hover:#C81240;--atry-success:#087E58;--atry-success-hover:#066547;--atry-amber:#F2C94C;--atry-orange:#C44D14;--atry-danger-soft:#FFF0F4;--atry-success-soft:#E8F7F0;--atry-warning-soft:#FFF8DC;--atry-orange-soft:#FFF1E7}
+:root{--atry-danger:#E51D4F;--atry-danger-hover:#C81240;--atry-success:#26D366;--atry-success-hover:#1FBB58;--atry-amber:#F2C94C;--atry-orange:#C44D14;--atry-danger-soft:#FFF0F4;--atry-success-soft:#E8F7F0;--atry-warning-soft:#FFF8DC;--atry-orange-soft:#FFF1E7}
 .btn.danger{background:var(--atry-danger);border-color:var(--atry-danger);color:#FFF;box-shadow:0 4px 12px #E51D4F16}
 .btn.danger:hover:not(:disabled){background:var(--atry-danger-hover);border-color:var(--atry-danger-hover);color:#FFF}
 .btn.success{background:var(--atry-success);border-color:var(--atry-success);color:#FFF}
@@ -263,7 +263,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-worker>.btn{margin-top:10px;gap:14px;font-size:12px}
 .cc-shell .cc-badge{display:inline-flex;align-items:center;gap:6px;min-height:25px;padding:5px 9px;border-radius:8px;font-size:10px;font-weight:600;line-height:1.4;background:#F0F2F7;color:#626B83;vertical-align:middle}
 .cc-status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
-.cc-shell .cc-badge.success{background:var(--atry-success-soft);color:#08724F}
+.cc-shell .cc-badge.success{background:var(--atry-success);color:#FFF}
 .cc-shell .cc-badge.danger{background:var(--atry-danger-soft);color:#BF153F}
 .cc-shell .cc-badge.warning{background:var(--atry-warning-soft);color:#805B00}
 .cc-shell .cc-badge.orange{background:var(--atry-orange-soft);color:#A7410F}
