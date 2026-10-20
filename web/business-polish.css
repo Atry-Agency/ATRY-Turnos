@@ -1,0 +1,70 @@
+/* Business workspace: brand navigation, stable controls and semantic states. */
+:root[data-appearance=business] .app-shell,
+:root[data-appearance=business] .modal-mask{
+ --theme-action:var(--panel-action,#4754E6);--theme-secondary:#007BA9;
+ --theme-soft:var(--panel-soft,#EEF0FF);--theme-soft-secondary:var(--line);--accent:var(--panel-action,#4754E6);
+}
+:root[data-appearance=business] .app-shell .btn:not(.secondary,.outline,.danger,.success,.warning,.orange),
+:root[data-appearance=business] .modal-mask .btn:not(.secondary,.outline,.danger,.success,.warning,.orange){background:var(--panel-action,#4754E6);color:var(--panel-on-action,#FFF)}
+:root[data-appearance=business] .app-shell .sidebar.sidebar{background:linear-gradient(155deg,var(--brand-sidebar,#4754E6),var(--brand-sidebar-end,#6250DF));color:var(--brand-on-sidebar,#FFF)}
+:root[data-appearance=business] .app-shell .sidebar .navlink,
+:root[data-appearance=business] .app-shell .sidebar .side-title,
+:root[data-appearance=business] .app-shell .sidebar .user-card span,
+:root[data-appearance=business] .app-shell .sidebar .store-box span,
+:root[data-appearance=business] .app-shell .sidebar .logo b{color:var(--brand-on-sidebar,#FFF)}
+:root[data-appearance=business] .app-shell .sidebar .store-box,
+:root[data-appearance=business] .app-shell .sidebar select,
+:root[data-appearance=business] .app-shell .sidebar .btn{background:color-mix(in srgb,var(--brand-on-sidebar) 8%,transparent);border-color:color-mix(in srgb,var(--brand-on-sidebar) 24%,transparent);color:var(--brand-on-sidebar)}
+:root[data-appearance=business] .app-shell .sidebar .store-icon,
+:root[data-appearance=business] .app-shell .sidebar .avatar{background:color-mix(in srgb,var(--brand-on-sidebar) 12%,transparent);color:var(--brand-on-sidebar)}
+:root[data-appearance=business] .app-shell .sidebar .navlink:hover:not(.active){background:color-mix(in srgb,var(--brand-on-sidebar) 10%,transparent);color:var(--brand-on-sidebar)}
+:root[data-appearance=business] .app-shell .sidebar .navlink.active{background:var(--bg);color:var(--ink);box-shadow:none}
+:root[data-appearance=business] .app-shell .sidebar .navlink.active .i{color:var(--panel-action)}
+:root[data-appearance=business] .app-shell .sidebar .user-card{border-color:color-mix(in srgb,var(--brand-on-sidebar) 22%,transparent)}
+.appearance-preview aside{background:var(--preview-sidebar);color:var(--preview-on-sidebar)}
+.appearance-preview .preview-selected{background:var(--preview-surface);color:var(--preview-ink)}
+.appearance-preview .preview-card{border-color:#DDE1EF}
+/* States are never recoloured by a business palette. */
+.app-shell .badge.cancelled,.app-shell .badge.no_show,.public-shell .badge.cancelled{background:#E51D4F;color:#FFF;border-color:#E51D4F}
+.app-shell .badge.completed,.app-shell .badge.confirmed,.public-shell .badge.confirmed{background:#087E58;color:#FFF;border-color:#087E58}
+.app-shell .badge.pending{background:#F2C94C;color:#493500;border-color:#F2C94C}
+.app-shell .badge{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:5px 9px;font-size:10px;font-weight:650;line-height:1.35;white-space:normal;max-width:100%;overflow-wrap:normal}
+.app-shell .calendar-event.cancelled,.app-shell .calendar-event.no_show{opacity:1;text-decoration:none}
+/* Comfortable action spacing for all card footers and table actions. */
+.card-footer-actions{display:flex;flex-wrap:wrap;gap:12px;padding-top:22px;margin-top:6px}
+.card>.actions:last-child,.card>.btn:last-child,.card>.row:last-child:has(>.btn){margin-top:20px}
+.upcoming-list .activity{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;padding:17px 0;line-height:1.6}
+.upcoming-list .activity>span:last-child{font-size:13px;color:var(--muted)}
+.upcoming-list .activity:last-child{border-bottom:0}
+/* Calendar density follows available content width, not full monitor width. */
+.calendar-surface{container-type:inline-size;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 12px 34px #17204406}
+.calendar-grid.month,.calendar-grid.week{gap:10px;align-items:stretch}
+.calendar-weekday{text-align:center;padding:8px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.calendar-grid .calendar-day{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:124px;overflow:visible}
+.calendar-grid .calendar-day.outside-month{background:var(--surface3);opacity:.6}
+.calendar-grid .calendar-day.today-cell{border-color:var(--panel-action);box-shadow:inset 0 0 0 1px var(--panel-action)}
+.calendar-date{font-size:11px;line-height:1.5;min-height:32px;width:100%;text-align:left;padding:3px 1px;white-space:normal}
+.app-shell .calendar-grid .calendar-event,.app-shell .day-events .calendar-event{display:flex;flex-direction:column;align-items:stretch;gap:6px;width:100%;min-width:0;border:1px solid var(--line);border-left:3px solid #4754E6;background:var(--surface);color:var(--ink);padding:12px;margin:10px 0 0;border-radius:12px;text-align:left;box-shadow:0 3px 12px #17204406;transition:border-color .16s ease,box-shadow .16s ease}
+.app-shell .calendar-event:hover{border-color:#8C95EA;box-shadow:0 6px 18px #4754E615}
+.calendar-event .event-time{font:650 12px/1.4 system-ui,sans-serif;color:var(--panel-action);letter-spacing:.02em}
+.calendar-event strong{font:650 12px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
+.calendar-event .event-service,.calendar-event .event-staff{font:400 11px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
+.calendar-event .event-staff{color:var(--muted)}
+.app-shell .calendar-event.completed,.app-shell .calendar-event.confirmed{border-left-color:#087E58}
+.app-shell .calendar-event.cancelled,.app-shell .calendar-event.no_show{border-left-color:#E51D4F}
+.app-shell .calendar-event.pending{border-left-color:#C3920D}
+.calendar-event .badge{align-self:flex-start;margin-top:3px;font-size:10px!important;padding:5px 8px!important}
+.agenda-filters{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:18px;flex-wrap:wrap;align-items:end;gap:14px}
+.agenda-filters label{flex:1 1 150px;min-width:0}.agenda-filters form{flex:2 1 260px;min-width:0;gap:10px}.agenda-filters form input{min-width:0;flex:1;width:100%}
+.agenda-toolbar{gap:10px;flex-wrap:wrap;align-items:center;padding:4px 0}.agenda-toolbar>input{max-width:100%;min-width:0}
+.day-events{display:grid;gap:16px}.day-events .card{margin:0}.day-events .row{gap:20px;align-items:flex-start}.day-events .calendar-event{margin:0!important;flex:1}.day-events .row>div{display:flex;gap:10px;flex-wrap:wrap;padding-top:8px}
+@container(max-width:1000px){.calendar-grid.month,.calendar-grid.week{grid-template-columns:repeat(3,minmax(0,1fr))}.calendar-weekday{display:none}.calendar-grid .calendar-day{padding:12px}}
+@container(max-width:650px){.calendar-grid.month,.calendar-grid.week{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container(max-width:400px){.calendar-grid.month,.calendar-grid.week{grid-template-columns:1fr}}
+@media(max-width:600px){.calendar-surface{padding:12px;border-radius:18px}.upcoming-list .activity{grid-template-columns:1fr;gap:5px}.card-footer-actions>.btn{width:100%}.agenda-filters{padding:14px}.agenda-filters form{flex-basis:100%;flex-wrap:wrap}.agenda-toolbar>span{flex-basis:100%;order:5;line-height:1.6}.day-events .row{flex-direction:column}.day-events .row>div{width:100%}.day-events .row>div>.btn{flex:1}}
+@media(prefers-reduced-motion:reduce){.app-shell .calendar-event{transition:none}}
+.agenda-toolbar{display:flex!important;flex-wrap:wrap;gap:10px;align-items:center}
+.agenda-toolbar>input[type=date]{width:190px;flex:0 1 190px;min-width:150px}
+.agenda-toolbar>.btn{flex-shrink:0}
+@media(max-width:600px){.agenda-toolbar>input[type=date]{width:auto;flex:1 1 150px}.agenda-toolbar>.grow{min-width:0;flex-basis:100%}}
+:root[data-appearance=business] .app-shell{--primary:var(--panel-action);--accent2:#007BA9;--brand-focus:var(--panel-action)}

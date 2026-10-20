@@ -53,7 +53,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       if(db.prepare('SELECT id FROM businesses WHERE slug=?').get(slug))fail(409,'Ese enlace ya está en uso');
       db.prepare('INSERT INTO users(id,name,email,password_hash,created_at) VALUES(?,?,?,?,?)').run(uid,name,email,passwordHash(password),now());
       const trialUntil=new Date(Date.now()+14*86400000).toISOString();
-      db.prepare('INSERT INTO businesses(id,slug,name,email,sector,trial_until,created_at) VALUES(?,?,?,?,?,?,?)').run(bid,slug,businessName,email,string(body.sector,100)||'General',trialUntil,now());
+      db.prepare("INSERT INTO businesses(id,slug,name,email,sector,trial_until,created_at,primary_color) VALUES(?,?,?,?,?,?,?,'#4754E6')").run(bid,slug,businessName,email,string(body.sector,100)||'General',trialUntil,now());
       db.prepare("INSERT INTO memberships(user_id,business_id,role) VALUES(?,?,'owner')").run(uid,bid);
       const sid=id();db.prepare('INSERT INTO staff(id,business_id,user_id,name,email,created_at) VALUES(?,?,?,?,?,?)').run(sid,bid,uid,name,email,now());
       const wk=db.prepare('INSERT INTO working_hours(staff_id,weekday,start_min,end_min) VALUES(?,?,?,?)');for(let d=1;d<=6;d++)wk.run(sid,d,9*60,18*60);
@@ -364,7 +364,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
