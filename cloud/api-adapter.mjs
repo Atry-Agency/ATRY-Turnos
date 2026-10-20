@@ -29,8 +29,8 @@ export function createApiAdapter({auth,config,fetchImpl=fetch,protection=null,ca
  return {rpc,publicCall,identity,exportCsv,finishRegistration,async request(route,opts={}){
   const url=new URL(route,'https://atry.internal'),path=url.pathname,method=(opts.method||'GET').toUpperCase(),body=opts.body?JSON.parse(opts.body):{};
   if(method!=='GET')catalogs.clear();
-  const ccRead=path.match(/^\/api\/admin\/control\/([a-z_]+)$/);if(ccRead&&method==='GET')return rpc('atry_control_read',{section:ccRead[1],params:Object.fromEntries(url.searchParams)});
-  const ccAction=path.match(/^\/api\/admin\/control\/([a-z_]+)\/([A-Za-z0-9_-]+)$/);if(ccAction&&method==='POST')return ccAction[1]==='incident_create'?rpc('atry_admin_report_incident',{payload:body}):rpc('atry_control_command',{action:ccAction[1],entity_id:ccAction[2],payload:body});
+  const ccRead=path.match(/^\/api\/admin\/control\/([a-z_]+)$/);if(ccRead&&method==='GET'&&ccRead[1]==='business_delete_preview')return rpc('atry_business_delete_preview',{bid:url.searchParams.get('id')});if(ccRead&&method==='GET')return rpc('atry_control_read',{section:ccRead[1],params:Object.fromEntries(url.searchParams)});
+  const ccAction=path.match(/^\/api\/admin\/control\/([a-z_]+)\/([A-Za-z0-9_-]+)$/);if(ccAction&&method==='POST'&&ccAction[1]==='business_delete')return rpc('atry_delete_business',{bid:ccAction[2],payload:body});if(ccAction&&method==='POST')return ccAction[1]==='incident_create'?rpc('atry_admin_report_incident',{payload:body}):rpc('atry_control_command',{action:ccAction[1],entity_id:ccAction[2],payload:body});
   const support=path.match(/^\/api\/business\/([A-Za-z0-9_-]+)\/support$/);if(support&&method==='POST')return rpc('atry_report_support',{bid:support[1],payload:body});
   if(path==='/api/health')return rpc('atry_health');
   if(path==='/api/config'){const {data}=await client.auth.getSession();return data?.session?rpc('atry_runtime_config'):{app:'Atry Turnos',version:'1.2.0',currency:'UYU',timezone:'America/Montevideo',mail_provider:'disabled',payments_live:false,whatsapp_live:false};}

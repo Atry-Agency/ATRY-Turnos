@@ -24,6 +24,7 @@ function connect(filename = process.env.DB_FILE || './data/atry-turnos.sqlite') 
   if (filename !== ':memory:') fs.mkdirSync(path.dirname(path.resolve(filename)),{recursive:true});
   const db = new DatabaseSync(filename);
   db.exec('PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000;');
+  db.function('atry_business_purge',()=>require('./business-delete').active(db));
   init(db);
   return db;
 }
