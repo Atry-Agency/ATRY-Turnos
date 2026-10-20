@@ -53,11 +53,29 @@ async function api(route,opts={}){
 async function requestApi(route,opts={}){
   if(window.ATRY_DEMO?.enabled)return window.ATRY_DEMO.request(route,opts);
   if(window.ATRY_CONFIG?.backend==='preview')throw Object.assign(new Error('Esta publicación muestra la interfaz. La conexión online de cuentas y reservas todavía está pendiente.'),{status:503});
-  if(window.ATRY_CLOUD){await window.ATRY_CLOUD.ready;return window.ATRY_CLOUD.request(route,opts);}
+  if(window.ATRY_CLOUD){await window.ATRY_CLOUD.ready;try{return await window.ATRY_CLOUD.request(route,opts);}catch(error){if(error.code!=='RECENT_AUTH_REQUIRED')throw error;await confirmAdminIdentity();return window.ATRY_CLOUD.request(route,opts);}}
   let res;try{res=await fetch(route,{credentials:'same-origin',...opts,headers:{...(opts.body?{'Content-Type':'application/json'}:{}),...(opts.headers||{})}});}catch{throw new Error('No hay conexión con el servidor. Conservá tus datos y reintentá la operación.');}
   const contentType=res.headers.get('content-type')||'';
   if(!res.ok){let txt='No se pudo completar la operación';try{const body=await res.json();txt=body.error||txt;}catch{}throw Object.assign(new Error(txt),{status:res.status});}
   return contentType.includes('application/json')?res.json():res.text();
+}
+let adminIdentityConfirmation=null;
+function confirmAdminIdentity(){
+ if(adminIdentityConfirmation)return adminIdentityConfirmation;
+ adminIdentityConfirmation=new Promise((resolve,reject)=>{
+  const previousFocus=document.activeElement,dialog=document.createElement('dialog'),originalRoute=location.hash;
+  dialog.className='admin-identity-dialog';
+  dialog.innerHTML=`<form class="stack"><div class="row between"><h2 id="admin-identity-title">Confirmá tu identidad</h2><button type="button" class="btn secondary icon-only" aria-label="Cancelar">${ic('x')}</button></div><p class="muted small">Tu sesión sigue abierta y tus cambios están conservados. Ingresá tu contraseña para autorizar esta operación administrativa.</p><label>Contraseña actual<input name="password" type="password" autocomplete="current-password" required maxlength="128"></label><p role="status" class="small"></p><button class="btn" type="submit">Confirmar y continuar</button></form>`;
+  dialog.setAttribute('aria-labelledby','admin-identity-title');document.body.append(dialog);
+  const form=dialog.querySelector('form'),password=form.elements.password,status=dialog.querySelector('[role=status]'),submit=form.querySelector('[type=submit]');
+  let finished=false;
+  const finish=error=>{if(finished)return;finished=true;password.value='';dialog.close();dialog.remove();window.removeEventListener('hashchange',cancel);previousFocus?.focus();error?reject(error):resolve();};
+  const cancel=()=>finish(new Error('Operación cancelada. Tus datos siguen en el formulario.'));
+  dialog.querySelector('[type=button]').onclick=cancel;dialog.oncancel=e=>{e.preventDefault();cancel();};window.addEventListener('hashchange',cancel);
+  form.onsubmit=async e=>{e.preventDefault();e.stopPropagation();if(submit.disabled)return;submit.disabled=true;status.textContent='Verificando…';try{const email=state.me?.user?.email;if(!email)throw new Error('No se pudo identificar la sesión.');await window.ATRY_CLOUD.auth.signIn(email,password.value);password.value='';if(finished)return;if(location.hash!==originalRoute)throw new Error('La pantalla cambió. Revisá la operación antes de continuar.');finish();}catch(error){password.value='';status.textContent=error.message;submit.disabled=false;if(!finished)password.focus();}};
+  dialog.showModal();password.focus();
+ }).finally(()=>{adminIdentityConfirmation=null;});
+ return adminIdentityConfirmation;
 }
 const post=(route,data,method='POST')=>api(route,{method,body:JSON.stringify(data)});
 let state={me:null, business:null,businesses:[],appView:'inicio',public:null,service:'',staff:'',date:today(),slot:'',slots:[],dateAgenda:today(),dialog:null,settingsTab:'general',loading:false};
