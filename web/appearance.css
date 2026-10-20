@@ -442,3 +442,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-shell .cc-sidebar.sidebar nav a[aria-current]{background:#F5F6FC;color:#262B6D;box-shadow:none;border-left:0}
 .cc-shell .cc-sidebar.sidebar nav a[aria-current] .i{color:#4754E6}
 .cc-shell .cc-sidebar.sidebar>.sidebar-close{background:#FFFFFF15;border-color:#FFFFFF35;color:#FFF}
+
+.account-avatar{display:inline-grid;place-items:center;flex-shrink:0;overflow:hidden}.account-avatar--atry{background:#191E63!important;border:1px solid #FFFFFF30}.account-avatar--atry img{display:block;width:80%;height:80%;object-fit:contain}.cc-sidebar>a>.account-avatar{width:32px;height:32px;border-radius:10px}.account-identity>.account-avatar{width:58px;height:58px;border-radius:17px}
