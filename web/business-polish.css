@@ -68,3 +68,34 @@
 .agenda-toolbar>.btn{flex-shrink:0}
 @media(max-width:600px){.agenda-toolbar>input[type=date]{width:auto;flex:1 1 150px}.agenda-toolbar>.grow{min-width:0;flex-basis:100%}}
 :root[data-appearance=business] .app-shell{--primary:var(--panel-action);--accent2:#007BA9;--brand-focus:var(--panel-action)}
+/* Keep the administrator identity circular on every surface and breakpoint. */
+.account-avatar.account-avatar--atry{background:#FFF!important;border:1px solid #E7EAF2!important;border-radius:50%!important;aspect-ratio:1;padding:0!important}
+.account-avatar.account-avatar--atry img{width:78%;height:78%;object-fit:contain}
+/* iOS standalone status bar and home indicator belong to the drawer surface. */
+@media(max-width:1000px){
+ html:has(.cc-sidebar.open),body:has(.cc-sidebar.open){background:#4754E6}
+ body:has(.sidebar.open){overflow:hidden;overscroll-behavior:none}
+ .cc-shell .cc-sidebar.sidebar,.app-shell .sidebar.sidebar{inset:0 auto 0 0;height:100vh;height:100dvh;max-height:100dvh;padding-top:calc(28px + env(safe-area-inset-top,0px));padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));padding-left:calc(18px + env(safe-area-inset-left,0px));overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+ .cc-shell .cc-sidebar.sidebar>.sidebar-close,.app-shell .sidebar.sidebar>.sidebar-close{top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+ .cc-shell .cc-main{padding-top:calc(20px + env(safe-area-inset-top,0px))}
+ .app-shell .topbar{padding-top:calc(18px + env(safe-area-inset-top,0px))}
+ .sidebar-backdrop{inset:0;height:100vh;height:100dvh}
+}
+/* Forms must size to their grid cell, including long submit labels. */
+.cc-shell .cc-filters>*{min-width:0;max-width:100%;box-sizing:border-box}
+.cc-shell .cc-filters>.field{width:100%;margin:0;align-self:end}
+.cc-shell .cc-filters label:has(input[name=reason]){grid-column:1/-1}
+.cc-shell .cc-filters>.btn{grid-column:1/-1;justify-self:start;white-space:normal;overflow-wrap:anywhere;line-height:1.45;max-width:100%;min-width:0}
+.cc-shell .btn,.modal:has([data-cc-form]) .btn,.modal:has([data-commercial-form]) .btn{white-space:normal;max-width:100%;min-width:0;overflow-wrap:break-word;line-height:1.45}
+.cc-shell input,.cc-shell select,.cc-shell textarea{box-sizing:border-box;max-width:100%;min-width:0}
+@media(max-width:600px){
+ .cc-shell .cc-filters{grid-template-columns:minmax(0,1fr);gap:16px;padding:16px}
+ .cc-shell .cc-filters>.btn{width:100%;justify-self:stretch;min-height:46px}
+ .cc-shell .cc-filters label,.cc-shell .cc-filters .field{gap:8px;line-height:1.5}
+ .cc-shell .cc-facts{gap:18px}
+}
+/* Prevent scrolling content from showing through the iOS status bar. */
+@media(max-width:1000px){
+ body:has(.cc-shell)::before{content:'';position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#F5F6FC;z-index:40;pointer-events:none}
+ body:has(.cc-sidebar.open)::before{background:#4754E6}
+}
