@@ -7,7 +7,7 @@ function register({r,db,auth,authorized,string,isEmail,record}){
   const name=string(body.name,100),slug=slugify(body.slug||name);if(name.length<2||slug.length<3)fail(400,'Ingresá un nombre y enlace válidos');
   if(db.prepare("SELECT count(*) n FROM memberships WHERE user_id=? AND role='owner'").get(user.id).n>=10)fail(403,'La cuenta alcanzó el límite de diez negocios');
   return transaction(db,()=>{if(db.prepare('SELECT id FROM businesses WHERE slug=?').get(slug))fail(409,'El enlace ya está en uso');const bid=id(),sid=id();
-   db.prepare('INSERT INTO businesses(id,slug,name,email,sector,trial_until,created_at) VALUES(?,?,?,?,?,?,?)').run(bid,slug,name,user.email,string(body.sector,100)||'General',new Date(Date.now()+14*86400000).toISOString(),now());
+   db.prepare("INSERT INTO businesses(id,slug,name,email,sector,trial_until,created_at,primary_color) VALUES(?,?,?,?,?,?,?,'#4754E6')").run(bid,slug,name,user.email,string(body.sector,100)||'General',new Date(Date.now()+14*86400000).toISOString(),now());
    db.prepare('INSERT INTO memberships VALUES(?,?,?)').run(user.id,bid,'owner');db.prepare('INSERT INTO staff(id,business_id,user_id,name,email,created_at) VALUES(?,?,?,?,?,?)').run(sid,bid,user.id,user.name,user.email,now());
    for(let weekday=1;weekday<=6;weekday++)db.prepare('INSERT INTO working_hours VALUES(?,?,?,?)').run(sid,weekday,540,1080);db.prepare("UPDATE businesses SET subscription_status='pending',trial_until=? WHERE id=?").run(now(),bid);record(bid,user.id,'business.created','business',bid);return {id:bid,name,slug};
   });

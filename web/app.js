@@ -253,7 +253,7 @@ async function renderApp(refresh=true){
  }catch(e){toast(e.message,true);setScreen(`<div class="card">${empty('No se pudo cargar esta sección. Reintentá la operación.','info')}<button class="btn" data-action="refresh">Reintentar</button></div>`,view);}
 }
 async function viewDashboard(){
- if(!hasCapability('statistics')){const x=await api(bapi('/dashboard'));setScreen(`${headerTitle('Tu negocio','Tus próximos turnos y configuración.')}<div class="card"><h2>Próximos turnos</h2>${(x.upcoming||[]).map(b=>`<div class="activity"><span>${esc(b.customer_name)} · ${esc(b.service_name)}</span><span>${dateLocal(b.starts_at)}</span></div>`).join('')||empty('No hay próximos turnos.')}<a class="btn" href="#/app/agenda">Abrir agenda</a></div>`,'Inicio');return;}
+ if(!hasCapability('statistics')){const x=await api(bapi('/dashboard'));setScreen(`${headerTitle('Tu negocio','Tus próximos turnos y configuración.')}<div class="card upcoming-essential"><h2>Próximos turnos</h2><div class="upcoming-list">${(x.upcoming||[]).map(b=>`<div class="activity"><span>${esc(b.customer_name)} · ${esc(b.service_name)}</span><span>${dateDisplay(dayLocal(b.starts_at))} · ${hmLocal(b.starts_at)}</span></div>`).join('')||empty('No hay próximos turnos.')}</div><div class="card-footer-actions"><a class="btn" href="#/app/agenda">Abrir agenda ${ic('arrow')}</a></div></div>`,'Inicio');return;}
 
  const x=await api(bapi('/dashboard'));
  const setup='';
