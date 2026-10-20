@@ -26,7 +26,7 @@
 .appearance-preview .preview-card{border-color:#DDE1EF}
 /* States are never recoloured by a business palette. */
 .app-shell .badge.cancelled,.app-shell .badge.no_show,.public-shell .badge.cancelled{background:#E51D4F;color:#FFF;border-color:#E51D4F}
-.app-shell .badge.completed,.app-shell .badge.confirmed,.public-shell .badge.confirmed{background:var(--atry-success,#26D366);color:#FFF;border-color:var(--atry-success,#26D366)}
+.app-shell .badge.completed,.app-shell .badge.confirmed,.public-shell .badge.confirmed{background:var(--atry-success,#22C55E);color:#FFF;border-color:var(--atry-success,#22C55E)}
 .app-shell .badge.pending{background:#F2C94C;color:#493500;border-color:#F2C94C}
 .app-shell .badge{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:5px 9px;font-size:10px;font-weight:650;line-height:1.35;white-space:normal;max-width:100%;overflow-wrap:normal}
 .app-shell .calendar-event.cancelled,.app-shell .calendar-event.no_show{opacity:1;text-decoration:none}
@@ -50,7 +50,7 @@
 .calendar-event strong{font:650 12px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
 .calendar-event .event-service,.calendar-event .event-staff{font:400 11px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
 .calendar-event .event-staff{color:var(--muted)}
-.app-shell .calendar-event.completed,.app-shell .calendar-event.confirmed{border-left-color:var(--atry-success,#26D366)}
+.app-shell .calendar-event.completed,.app-shell .calendar-event.confirmed{border-left-color:var(--atry-success,#22C55E)}
 .app-shell .calendar-event.cancelled,.app-shell .calendar-event.no_show{border-left-color:#E51D4F}
 .app-shell .calendar-event.pending{border-left-color:#C3920D}
 .calendar-event .badge{align-self:flex-start;margin-top:3px;font-size:10px!important;padding:5px 8px!important}
