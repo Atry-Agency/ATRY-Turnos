@@ -66,3 +66,6 @@ if(typeof document!=='undefined')(()=>{
  document.addEventListener('pointermove',event=>{const canvas=event.target.closest('[data-logo-crop] canvas');if(!canvas)return;const box=canvas.closest('[data-logo-crop]'),m=editors.get(box);if(!m?.drag)return;const scale=m.rect.size/canvas.getBoundingClientRect().width;for(const [axis,size,pos] of [['x','width','clientX'],['y','height','clientY']]){const range=m.source[size]-m.rect.size;box.querySelector(`[data-crop-${axis}]`).value=range?m.drag['p'+axis]-(event[pos]-m.drag[axis])*scale/range*100:50;}render(box);});
  for(const type of ['pointerup','pointercancel','lostpointercapture'])document.addEventListener(type,event=>{const box=event.target.closest('[data-logo-crop]');if(box&&editors.has(box))delete editors.get(box).drag;});
 })();
+
+// Platform administrators use the official Atry identity; this never grants access.
+function accountAvatar(user,kind="avatar"){return `<span class="${kind} account-avatar${user?.platform_admin?' account-avatar--atry':''}">${user?.platform_admin?'<img src="./assets/brand/atry.png" alt="Logo de Atry Agency">':esc(ucode(user?.name||'Usuario'))}</span>`;}
