@@ -29,3 +29,12 @@ Las zonas rayadas se obtienen de las jornadas y bloqueos existentes. No se muest
 - 36 combinaciones comprobadas desde navegador: Individual/Negocio/Pro × Día/Semana/Mes × 320/393/768/1440 px, sin desborde horizontal de página.
 - Recorrido de creación, reprogramación y completado exclusivamente en una demostración en memoria; comprobación de salto Mes → Día, filtros y búsqueda.
 - La batería existente sigue comprobando las reglas reales de reserva, concurrencia, permisos, PostgreSQL y aislamiento entre negocios.
+
+## Capa operativa de la agenda
+
+- La barra concentra fechas, vistas, filtros, actualización y densidad. Los filtros se despliegan a pedido; sus etiquetas permiten retirarlos individualmente.
+- Densidad Compacta/Cómoda: escala uniforme de minutos, sin alterar duraciones ni superposiciones. Preferencia temporal de la sesión.
+- El detalle se monta sobre la agenda sin volver a consultar sus datos ni reconstruir sus columnas; a la derecha en escritorio y desde abajo en teléfono. Cerrar conserva el contexto y devuelve el foco al turno. Reprogramación y cambios de estado siguen usando las operaciones existentes.
+- Atender hoy muestra los turnos pendientes y confirmados que coinciden con el horario actual y los próximos del día, respetando los filtros y permisos existentes. Conserva todos los simultáneos. No cambia estados por el mero paso del tiempo. Se actualiza cada minuto y permite volver al período anterior.
+- Atajos H, N, 1/2/3 y / únicamente dentro de Agenda, fuera de formularios y diálogos. No disparan cambios de estado ni operaciones destructivas.
+- Validación adicional: 156 pruebas; 36 combinaciones de vistas/planes/tamaños desde navegador (320, 393, 768 y 1440 px), filtros individuales, ambas densidades, detalle móvil/escritorio y paso a reprogramación sin duplicar ventanas. Pruebas exclusivamente en demos en memoria, sin escrituras en producción.
