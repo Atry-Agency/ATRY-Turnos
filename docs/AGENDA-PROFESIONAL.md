@@ -56,3 +56,11 @@ Las zonas rayadas se obtienen de las jornadas y bloqueos existentes. No se muest
 - En teléfono, Día y Semana muestran un profesional a la vez con selector propio, sin comprimir el equipo. El encabezado mantiene accesible Crear turno al desplazarse.
 - El historial se consulta a pedido desde el detalle, solo para roles con acceso al CRM. Admite la respuesta de PostgreSQL (lista) y la local (objeto). Los conteos se limitan explícitamente a las reservas consultadas, hasta 100; no se presentan como totales de toda la vida del cliente.
 - Validación adicional: 161 pruebas, 36 combinaciones plan/vista/tamaño sin desborde de página ni múltiples columnas en móvil, precarga desde disponibilidad e historial en detalle comprobados en demo aislada.
+
+## Reserva conectada y reprogramación comparada
+
+- El formulario de reserva permite consultar otro horario conservando cliente, contacto, servicio, notas y vínculo con su ficha. Volver sin elegir una opción recupera el borrador; elegir un horario reemplaza fecha/hora/profesional, conservando el resto. Borrador exclusivamente en memoria.
+- Reprogramar muestra horario actual y propuesta juntos. Se pueden consultar alternativas del mismo servicio y regresar al formulario antes de guardar mediante el PATCH existente. La búsqueda pública conserva ocupado el turno original: ofrece alternativas conservadoras, sin prometer disponibilidad para mover parcialmente sobre su propio intervalo.
+- El personal solo consulta y propone su profesional vinculado. No cambia la autorización del backend ni las reglas de disponibilidad.
+- En móvil, Más opciones agrupa visualmente actualización, densidad y salto al horario útil. Los controles permanecen accesibles a pedido.
+- Validación: 162 pruebas, recorrido de reserva con cliente/notas conservados y reprogramación completa en demo en memoria; comparación y controles secundarios comprobados en móvil.
