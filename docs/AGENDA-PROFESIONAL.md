@@ -64,3 +64,13 @@ Las zonas rayadas se obtienen de las jornadas y bloqueos existentes. No se muest
 - El personal solo consulta y propone su profesional vinculado. No cambia la autorización del backend ni las reglas de disponibilidad.
 - En móvil, Más opciones agrupa visualmente actualización, densidad y salto al horario útil. Los controles permanecen accesibles a pedido.
 - Validación: 162 pruebas, recorrido de reserva con cliente/notas conservados y reprogramación completa en demo en memoria; comparación y controles secundarios comprobados en móvil.
+
+## Prevención al reservar y gráfica útil en Inicio
+
+- Las reservas manuales comprueban nombre/contacto y compatibilidad del servicio con el profesional, indicando errores junto al campo y conservando los datos. El servidor sigue siendo la autoridad para disponibilidad y permisos.
+- Propietarios/encargados reciben un aviso ante coincidencias exactas de correo normalizado o teléfono sin signos, dentro de su negocio. Deben elegir la ficha existente o corregir el contacto si es otra persona. No hay fusiones automáticas ni bypass de la política de contactos únicos del servidor. Empleados no consultan el CRM para esta comprobación.
+- Las acciones del turno muestran Reprogramar, Cancelar y Marcar ausencia además de Completar/Confirmar. Se adaptan a botones de ancho completo en teléfonos pequeños.
+- La gráfica de Inicio usa el agregado diario existente (fecha del turno, no fecha de creación; excluye cancelados), con siete fechas, escala desde cero, valores visibles, total, promedio por siete días y máximo diario con empates. Hoy queda marcado como período en curso. No compara crecimiento sin datos de la semana anterior.
+- Cada barra abre su día en la agenda, retirando filtros anteriores para que corresponda al conjunto del gráfico. Datos ausentes/incorrectos muestran un estado de error; días omitidos en el agregado disperso del backend representan cero. El plan Individual mantiene su restricción de estadísticas.
+- La demostración calcula sus agregados diarios a partir de sus reservas en memoria. Los cambios no generan datos reales, cargos ni envíos.
+- Validación: 165 pruebas aprobadas; aviso de duplicado y reutilización de ficha, contacto faltante, acciones con texto, navegación de barra a agenda y 12 combinaciones de gráfica/plan/tamaño comprobadas en demos aisladas sin desbordes ni acceso estadístico en Individual.
