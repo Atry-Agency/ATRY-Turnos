@@ -84,6 +84,9 @@ async function agendaInteraction(action,button){
   await agendaShowDetail('Detalle del turno',`<article class="ag-booking-detail"><header>${agendaStatus(b.status)}<h3>${esc(b.customer_name)}</h3><p>${esc(b.service_name)}</p></header><dl><div><dt>Fecha</dt><dd>${esc(agendaDayTitle(dayLocal(b.starts_at)))}</dd></div><div><dt>Horario</dt><dd>${hmLocal(b.starts_at)} – ${hmLocal(b.ends_at)} <small>· ${minutes} min</small></dd></div><div><dt>Profesional</dt><dd>${esc(b.staff_name)}</dd></div><div><dt>Contacto</dt><dd>${esc([b.customer_phone,b.customer_email].filter(Boolean).join(' · ')||'Sin contacto registrado')}</dd></div>${resources.length?`<div><dt>Recursos del servicio</dt><dd>${resources.map(r=>esc(r.name)).join(', ')}</dd></div>`:''}</dl>${b.notes?`<div class="ag-booking-notes"><strong>Notas internas</strong><p>${esc(b.notes)}</p></div>`:''}${b.customer_id&&state.business.role!=='staff'?`<section class="ag-history"><button type="button" class="btn secondary sm" data-action="agenda-customer-history" data-id="${esc(b.customer_id)}">${ic('users')} Ver historial del cliente</button><div class="ag-history-content" aria-live="polite"></div></section>`:''}<footer>${bookingActions(b)}</footer></article>`);return true;
  }
 
+ if(action==='agenda-open-activity-day'){state.dateAgenda=button.dataset.date;state.agendaMobileDate=state.dateAgenda;state.agendaMode='dia';state.agendaAttention=false;state.agendaSearch='';state.agendaStaff='';state.agendaResource='';state.agendaStatusFilter='';nav('/app/agenda');return true;}
+ if(action==='agenda-use-duplicate'){const c=(state.agendaDuplicateCandidates||[]).find(c=>c.id===button.dataset.id);if(c){state.agendaCustomerResults=[c];agendaSelectCustomer(c.id);button.closest('.ag-duplicate-notice')?.remove();}return true;}
+ if(action==='agenda-distinct-customer'){const form=button.closest('form');button.closest('.ag-duplicate-notice')?.remove();agendaFieldError(form,'customer_phone','Si es otra persona, ingresá un teléfono o correo diferente: este contacto pertenece a una ficha existente.');form.elements.customer_phone.focus();return true;}
  if(action==='agenda-toggle-tools'){state.agendaToolsOpen=!state.agendaToolsOpen;document.querySelector('.ag-workspace')?.classList.toggle('ag-tools-open',state.agendaToolsOpen);button.setAttribute('aria-pressed',String(state.agendaToolsOpen));return true;}
  if(action==='agenda-useful-hour'){agendaScrollUseful(state.currentBookings||[],true);return true;}
  if(action==='agenda-find-time'){state.agendaFlowDraft=null;state.agendaRescheduleId=null;await agendaFindTime();return true;}
@@ -170,7 +173,7 @@ function agendaSelectCustomer(id){
  form.querySelector('[name="customer_id"]')?.remove();
  if(c)form.insertAdjacentHTML('afterbegin',`<input type="hidden" name="customer_id" value="${esc(c.id)}">`);
  for(const [name,value]of [['customer_name',c?.name],['customer_email',c?.email],['customer_phone',c?.phone]]){const input=form.elements[name];input.value=value||'';input.readOnly=!!c;}
- form.dataset.dirty='true';form.querySelector('#ag-customer-results').innerHTML=c?`<div class="ag-customer-selected">${ic('check')}<span><strong>${esc(c.name)}</strong><small>Cliente seleccionado. Su ficha de contacto se conserva.</small></span><button type="button" data-action="agenda-customer-reset" aria-label="Cambiar cliente">${ic('x')}</button></div>${!c.email&&!c.phone?'<p>Este cliente no tiene correo ni teléfono. Agregá un contacto desde su ficha antes de reservar.</p>':''}`:'<p>Completá los datos de una primera visita o buscá otro cliente.</p>';
+ form.dataset.dirty='true';const result=form.querySelector('#ag-customer-results');if(result)result.innerHTML=c?`<div class="ag-customer-selected">${ic('check')}<span><strong>${esc(c.name)}</strong><small>Cliente seleccionado. Su ficha de contacto se conserva.</small></span><button type="button" data-action="agenda-customer-reset" aria-label="Cambiar cliente">${ic('x')}</button></div>${!c.email&&!c.phone?'<p>Este cliente no tiene correo ni teléfono. Agregá un contacto desde su ficha antes de reservar.</p>':''}`:'<p>Completá los datos de una primera visita o buscá otro cliente.</p>';
 }
 // Enter in the customer search performs a lookup, never an accidental reservation.
 document.addEventListener('keydown',event=>{if(event.target.id==='ag-customer-query'&&event.key==='Enter'){event.preventDefault();event.target.closest('form').querySelector('[data-action="agenda-customer-search"]')?.click();}});
@@ -259,3 +262,71 @@ function agendaUpdateComparison(form){
 document.addEventListener('change',event=>{const form=event.target.closest('form[data-form="reschedule"]');if(form)agendaUpdateComparison(form);});
 
 function agendaDraftAtSlot(draft,context){return {...draft,date:context.date,time:context.time,staff_id:context.staff||draft.staff_id};}
+
+function agendaContactKey(email,phone){return String(email||'').trim().toLowerCase()+'|'+String(phone||'').replace(/[^0-9]/g,'');}
+function agendaExactContacts(customers,email,phone){
+ const e=String(email||'').trim().toLowerCase(),p=String(phone||'').replace(/[^0-9]/g,'');
+ return customers.filter(c=>(e&&String(c.email||'').trim().toLowerCase()===e)||(p&&String(c.phone||'').replace(/[^0-9]/g,'')===p));
+}
+function agendaBookingIssues(data,services,people){
+ const issues={};if(!String(data.customer_name||'').trim()||String(data.customer_name||'').trim().length<2)issues.customer_name='Ingresá el nombre del cliente (al menos dos caracteres).';
+ if(!String(data.customer_email||'').trim()&&!String(data.customer_phone||'').trim())issues.customer_phone='Ingresá un teléfono o correo para identificar y contactar al cliente.';
+ if(data.customer_phone&&!/[0-9]/.test(data.customer_phone))issues.customer_phone='Ingresá un número de teléfono válido.';
+ if(data.customer_email&&!/^\S+@\S+\.\S+$/.test(String(data.customer_email).trim()))issues.customer_email='Ingresá un correo electrónico válido.';
+ const service=services.find(s=>s.id===data.service_id),person=people.find(p=>p.id===data.staff_id);
+ if(!service||!service.active)issues.service_id='Elegí un servicio activo.';
+ if(!person||!person.active)issues.staff_id='Elegí un profesional activo.';
+ else if(service&&((Array.isArray(person.service_ids)&&!person.service_ids.includes(service.id))||(!Array.isArray(person.service_ids)&&Array.isArray(service.staff_ids)&&!service.staff_ids.includes(person.id))))issues.staff_id='Este profesional no ofrece el servicio elegido. Cambiá el profesional o el servicio.';
+ if(!data.date)issues.date='Elegí una fecha.';if(!data.time)issues.time='Elegí una hora.';
+ return issues;
+}
+function agendaFieldError(form,name,message){
+ const input=form.elements.namedItem(name);if(!input||input.type==='hidden')return;
+ const container=input.closest('.field')||input.parentElement,id='booking-error-'+name;container.querySelector('#'+id)?.remove();input.removeAttribute('aria-invalid');
+ const descriptions=(input.getAttribute('aria-describedby')||'').split(' ').filter(x=>x&&x!==id);
+ if(message){input.setAttribute('aria-invalid','true');descriptions.push(id);container.insertAdjacentHTML('beforeend',`<p class="ag-field-error" id="${id}" role="alert">${esc(message)}</p>`);}
+ if(descriptions.length)input.setAttribute('aria-describedby',descriptions.join(' '));else input.removeAttribute('aria-describedby');
+}
+async function agendaCheckDuplicates(form){
+ if(state.business.role==='staff'||form.elements.namedItem('customer_id')?.value)return [];
+ const email=form.elements.customer_email.value.trim(),phone=form.elements.customer_phone.value.trim(),key=agendaContactKey(email,phone);
+ if(!email&&!phone)return [];
+ const bid=state.business.id,sequence=Number(form.dataset.duplicateSequence||0)+1;form.dataset.duplicateSequence=sequence;
+ const queries=[email,phone].filter(Boolean),results=await Promise.all(queries.map(q=>api(bapi('/customers?q='+encodeURIComponent(q)))));
+ if(!form.isConnected||bid!==state.business.id||Number(form.dataset.duplicateSequence)!==sequence||key!==agendaContactKey(form.elements.customer_email.value,form.elements.customer_phone.value))return null;
+ const candidates=agendaExactContacts([...new Map(results.flat().map(c=>[c.id,c])).values()],email,phone);state.agendaDuplicateCandidates=candidates;
+ form.querySelector('.ag-duplicate-notice')?.remove();
+ if(candidates.length){const anchor=form.elements.customer_phone.closest('.field');anchor.insertAdjacentHTML('afterend',`<section class="ag-duplicate-notice form-full" role="status"><strong>Este contacto ya está registrado</strong><p>Revisá la ficha antes de crear otra persona. No unimos clientes automáticamente.</p>${candidates.map(c=>`<button type="button" class="btn secondary sm" data-action="agenda-use-duplicate" data-id="${esc(c.id)}">${ic('users')} Usar ficha de ${esc(c.name)}</button>`).join('')}<button type="button" class="ag-distinct-customer" data-action="agenda-distinct-customer">Es otra persona: corregir el contacto</button></section>`);}
+ return candidates;
+}
+async function agendaValidateBooking(form,data){
+ const issues=agendaBookingIssues(data,state.services||[],state.staffList||[]);
+ // Employee catalog is deliberately scoped; it is also the source of service validation.
+ for(const name of ['customer_name','customer_phone','customer_email','service_id','staff_id','date','time'])agendaFieldError(form,name,issues[name]||'');
+ const first=Object.keys(issues)[0];if(first){form.elements.namedItem(first)?.focus();throw new Error('Revisá los campos indicados antes de guardar.');}
+ let duplicates;try{duplicates=await agendaCheckDuplicates(form);}catch{agendaFieldError(form,'customer_phone','No pudimos comprobar si el contacto ya existe. Intentá guardar nuevamente.');throw new Error('No se pudo comprobar el contacto. Tus datos se conservan.');}
+ if(duplicates===null)throw new Error('El contacto cambió durante la comprobación. Revisalo y guardá nuevamente.');
+ if(duplicates.length){form.querySelector('.ag-duplicate-notice button')?.focus();throw new Error('Elegí una ficha existente o indicá que se trata de otra persona.');}
+}
+document.addEventListener('focusout',event=>{
+ const form=event.target.closest('form[data-form="manual-book"]');if(!form||!['customer_email','customer_phone'].includes(event.target.name))return;
+ agendaCheckDuplicates(form).catch(()=>{});
+});
+document.addEventListener('input',event=>{const form=event.target.closest('form[data-form="manual-book"]');if(!form)return;agendaFieldError(form,event.target.name,'');if(['customer_email','customer_phone'].includes(event.target.name)){form.dataset.duplicateSequence=Number(form.dataset.duplicateSequence||0)+1;delete form.dataset.duplicateAcknowledged;form.querySelector('.ag-duplicate-notice')?.remove();}});
+document.addEventListener('invalid',event=>{const form=event.target.closest('form[data-form="manual-book"]');if(form)agendaFieldError(form,event.target.name,event.target.validationMessage);},true);
+document.addEventListener('change',event=>{const form=event.target.closest('form[data-form="manual-book"]');if(!form||!['service_id','staff_id'].includes(event.target.name))return;
+ const data={service_id:form.elements.service_id.value,staff_id:form.elements.staff_id.value},issue=agendaBookingIssues(data,state.services||[],state.staffList||[]).staff_id;agendaFieldError(form,'staff_id',issue||'');
+ const service=(state.services||[]).find(s=>s.id===data.service_id),field=form.elements.service_id.closest('.field');field.querySelector('.ag-duration-note')?.remove();if(service)field.insertAdjacentHTML('beforeend',`<p class="ag-duration-note">Duración del servicio: ${Number(service.duration_min)} min${Number(service.buffer_before_min)||Number(service.buffer_after_min)?' · La preparación y limpieza también ocupan agenda.':''}</p>`);
+});
+
+function agendaWeeklyModel(rows,end){
+ if(!Array.isArray(rows)||rows.some(r=>!r||!/^\d{4}-\d{2}-\d{2}$/.test(r.day)||!Number.isInteger(Number(r.n))||Number(r.n)<0))return null;
+ const days=Array.from({length:7},(_,i)=>plusDate(end,i-6)).map(day=>({day,n:rows.filter(r=>r.day===day).reduce((sum,r)=>sum+(Number.isFinite(Number(r.n))&&Number(r.n)>=0?Number(r.n):0),0)}));
+ const total=days.reduce((s,d)=>s+d.n,0),peak=Math.max(...days.map(d=>d.n)),step=Math.max(1,Math.ceil(peak/4)),max=step*4;
+ return {days,total,average:total/7,peak,peakDays:days.filter(d=>d.n===peak).length,max,ticks:[max,max-step,max-2*step,max-3*step,0]};
+}
+function agendaWeeklyActivity(rows,end){
+ const model=agendaWeeklyModel(rows,end);if(!model)return '<section class="card aw-card"><h2 class="section-label">Actividad de los últimos 7 días</h2><p class="muted small">No se pudo obtener la actividad. Actualizá para consultar los datos.</p></section>';
+ const {days,total,average,peak,peakDays,max,ticks}=model,weekday=d=>new Intl.DateTimeFormat('es-UY',{weekday:'short'}).format(new Date(d+'T12:00Z'));
+ return `<section class="card aw-card" aria-label="Actividad de los últimos siete días"><header><div><h2 class="section-label">Tu semana, en números</h2><p>${esc(agendaDayTitle(days[0].day))} — ${esc(agendaDayTitle(end))}</p></div><span class="aw-period">7 días</span></header><div class="aw-summary"><div><strong>${total}</strong><span>turnos no cancelados</span></div><div><strong>${average.toLocaleString('es-UY',{maximumFractionDigits:1})}</strong><span>promedio por día</span></div><div><strong>${peak}</strong><span>máximo diario${peak&&peakDays>1?' · '+peakDays+' días':''}</span></div></div><div class="aw-plot"><div class="aw-axis" aria-hidden="true">${ticks.map(n=>`<span>${n}</span>`).join('')}</div><div class="aw-bars" role="group" aria-label="Turnos por fecha. Seleccioná un día para abrir su agenda.">${days.map(d=>`<button class="aw-column ${d.day===end?'is-today':''}" data-action="agenda-open-activity-day" data-date="${d.day}" aria-label="${esc(agendaDayTitle(d.day))}: ${d.n} ${d.n===1?'turno':'turnos'}${d.day===end?', hoy en curso':''}. Abrir agenda" title="${esc(agendaDayTitle(d.day))} · ${d.n} turnos${d.day===end?' · Hoy en curso':''}"><span class="aw-track"><span class="aw-bar ${d.n?'':'is-zero'}" style="--aw-height:${d.n/max*100}%"><strong>${d.n}</strong></span></span><span class="aw-day">${esc(weekday(d.day))}<b>${d.day.slice(8)}</b>${d.day===end?'<i>Hoy</i>':''}</span></button>`).join('')}</div></div><footer><span><i></i> Por fecha del turno · excluye cancelados</span><span>Hoy está en curso</span></footer>${total?'':'<p class="aw-empty">Todavía no hay turnos en este período. Las fechas permiten abrir la agenda para organizar la semana.</p>'}<p class="aw-help">Tocá un día para ver sus turnos ${ic('arrow')}</p></section>`;
+}
