@@ -511,7 +511,7 @@ async function onChange(e){
   if(e.target.id==='business-switch'){ATRY_APPEARANCE.apply(null);readCache.clear();warmNavigationKey='';disconnectAgendaEvents();if(!window.ATRY_DEMO?.enabled)localStorage.setItem('atry_biz',e.target.value);state.business=null;state.screen=null;state.agendaStaff='';state.staffList=[];state.currentBookings=[];await renderApp();}
   if(e.target.id==='agenda-mode'){state.agendaMode=e.target.value;await renderApp();}
   if(e.target.id==='agenda-staff'){state.agendaStaff=e.target.value;await renderApp();}
-  if(e.target.id==='agenda-date'){if(!/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)){e.target.value=state.dateAgenda;return;}state.dateAgenda=e.target.value;await renderApp();}
+  if(e.target.id==='agenda-date'){if(!/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)){e.target.value=state.dateAgenda;return;}state.dateAgenda=e.target.value;state.agendaMobileDate=state.dateAgenda;await renderApp();}
  }catch(err){toast(err.message,true);}
 }
 async function router(){
