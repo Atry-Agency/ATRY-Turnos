@@ -47,3 +47,12 @@ Las zonas rayadas se obtienen de las jornadas y bloqueos existentes. No se muest
 - La tecla Enter dentro del buscador solo busca contactos. Las solicitudes tardías se descartan al cerrar la ventana o cambiar de negocio. Los datos del cliente y los identificadores se escapan antes de renderizar.
 - Las tarjetas ajustan la jerarquía y reconocen turnos fijos con un símbolo de repetición cuando la reserva trae recurring_id. Las acciones sobre series conservan su implementación original.
 - Validación: 158 pruebas aprobadas, 36 combinaciones de plan/vista/tamaño sin desbordes; selección de profesional, precarga desde un hueco, búsqueda, selección/cambio de cliente y guardado comprobados en demostración aislada.
+
+## Navegación útil y consulta de horarios
+
+- La agenda abre en la hora actual dentro de jornada, en el último turno de hoy si la jornada terminó o en el primer turno para otras fechas. Un botón permite repetir el salto; las actualizaciones normales conservan el desplazamiento.
+- Buscar horario consulta el endpoint público de disponibilidad ya utilizado por la página de reservas, con servicio, fecha y profesional. No deduce disponibilidad localmente ni guarda reservas. Cada opción abre el formulario existente precargado; el servidor revalida al guardar. Fallos de consulta muestran un error, sin inventar opciones. Cambiar filtros invalida los resultados pendientes.
+- Las demos usan únicamente su adaptador en memoria. En producción se aplican las reglas de disponibilidad y protección del endpoint existente, sin nuevos permisos ni API.
+- En teléfono, Día y Semana muestran un profesional a la vez con selector propio, sin comprimir el equipo. El encabezado mantiene accesible Crear turno al desplazarse.
+- El historial se consulta a pedido desde el detalle, solo para roles con acceso al CRM. Admite la respuesta de PostgreSQL (lista) y la local (objeto). Los conteos se limitan explícitamente a las reservas consultadas, hasta 100; no se presentan como totales de toda la vida del cliente.
+- Validación adicional: 161 pruebas, 36 combinaciones plan/vista/tamaño sin desborde de página ni múltiples columnas en móvil, precarga desde disponibilidad e historial en detalle comprobados en demo aislada.
