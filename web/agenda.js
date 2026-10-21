@@ -71,7 +71,7 @@ async function renderProfessionalAgenda({background=false}={}){
 }
 function updateAgendaClock(){if(!path().startsWith('/app/agenda')){clearInterval(agendaClockTimer);return;}const now=ATRY_AGENDA.parts(new Date(),agendaZone());for(const line of document.querySelectorAll('.ag-now-line')){const start=Number(line.dataset.start),end=Number(line.dataset.end);line.hidden=now.day!==line.dataset.day||now.minute<start||now.minute>=end;line.style.top=(now.minute-start)/(end-start)*100+'%';} }
 async function agendaInteraction(action,button){
- if(action==='close-modal'&&document.querySelector('.ag-detail-mask')){state.dialog=null;document.querySelector('.ag-detail-mask').remove();document.querySelector('.ag-event[data-id="'+CSS.escape(state.agendaDetailId||'')+'"]')?.focus();if(state.syncPending)await viewAgenda({background:true});return true;}
+ if(action==='close-modal'&&document.querySelector('.ag-detail-mask')){state.dialog=null;document.querySelector('.ag-detail-mask').remove();document.querySelector('[data-action="agenda-detail"][data-id="'+CSS.escape(state.agendaDetailId||'')+'"]')?.focus();if(state.syncPending)await viewAgenda({background:true});return true;}
  if(action==='agenda-toggle-filters'){state.agendaFiltersOpen=!state.agendaFiltersOpen;document.querySelector('.ag-workspace')?.classList.toggle('ag-filters-open',state.agendaFiltersOpen);document.querySelector('.ag-filterbar')?.classList.toggle('is-open',state.agendaFiltersOpen);button.setAttribute('aria-pressed',String(state.agendaFiltersOpen));return true;}
  if(action==='agenda-detail'){
   state.agendaDetailId=button.dataset.id;
