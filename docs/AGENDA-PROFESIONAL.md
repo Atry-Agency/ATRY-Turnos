@@ -38,3 +38,12 @@ Las zonas rayadas se obtienen de las jornadas y bloqueos existentes. No se muest
 - Atender hoy muestra los turnos pendientes y confirmados que coinciden con el horario actual y los próximos del día, respetando los filtros y permisos existentes. Conserva todos los simultáneos. No cambia estados por el mero paso del tiempo. Se actualiza cada minuto y permite volver al período anterior.
 - Atajos H, N, 1/2/3 y / únicamente dentro de Agenda, fuera de formularios y diálogos. No disparan cambios de estado ni operaciones destructivas.
 - Validación adicional: 156 pruebas; 36 combinaciones de vistas/planes/tamaños desde navegador (320, 393, 768 y 1440 px), filtros individuales, ambas densidades, detalle móvil/escritorio y paso a reprogramación sin duplicar ventanas. Pruebas exclusivamente en demos en memoria, sin escrituras en producción.
+
+## Selección de equipo y creación contextual
+
+- Negocio/Pro incorporan fichas con iniciales, nombre y cantidad de turnos del período. Individual y empleados no muestran controles de equipo.
+- El resumen por estado filtra el calendario sin descartar sus reservas originales. Las etiquetas permiten retirar cada filtro.
+- Crear desde un hueco o desde el encabezado conserva el profesional seleccionado. El formulario existente incorpora contexto de fecha/hora y búsqueda explícita de clientes por nombre, teléfono o correo, únicamente para los roles con acceso al CRM. La búsqueda no crea contactos; seleccionar envía su identificador por la operación existente y conserva su ficha. Los contactos sin teléfono ni correo se señalan para completar su ficha antes de reservar.
+- La tecla Enter dentro del buscador solo busca contactos. Las solicitudes tardías se descartan al cerrar la ventana o cambiar de negocio. Los datos del cliente y los identificadores se escapan antes de renderizar.
+- Las tarjetas ajustan la jerarquía y reconocen turnos fijos con un símbolo de repetición cuando la reserva trae recurring_id. Las acciones sobre series conservan su implementación original.
+- Validación: 158 pruebas aprobadas, 36 combinaciones de plan/vista/tamaño sin desbordes; selección de profesional, precarga desde un hueco, búsqueda, selección/cambio de cliente y guardado comprobados en demostración aislada.
