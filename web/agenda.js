@@ -87,7 +87,7 @@ async function agendaInteraction(action,button){
  if(action==='agenda-useful-hour'){agendaScrollUseful(state.currentBookings||[],true);return true;}
  if(action==='agenda-find-time'){await agendaFindTime();return true;}
  if(action==='agenda-load-times'){await agendaLoadTimes(button);return true;}
- if(action==='agenda-choose-time'){const slot=(state.agendaAvailableSlots||[])[Number(button.dataset.index)];if(slot)await agendaCreateBooking({date:ATRY_AGENDA.parts(slot.start||slot.starts_at,agendaZone()).day,time:hmLocal(slot.start||slot.starts_at),staff:slot.staff_id});const form=document.querySelector('form[data-form="manual-book"]');if(form&&state.agendaAvailableService)form.elements.service_id.value=state.agendaAvailableService;return true;}
+ if(action==='agenda-choose-time'){const slot=(state.agendaAvailableSlots||[])[Number(button.dataset.index)];if(slot){state.dateAgenda=ATRY_AGENDA.parts(slot.start||slot.starts_at,agendaZone()).day;state.agendaMobileDate=state.dateAgenda;state.agendaMobileStaff=slot.staff_id;state.agendaAttention=false;await agendaCreateBooking({date:state.dateAgenda,time:hmLocal(slot.start||slot.starts_at),staff:slot.staff_id});}const form=document.querySelector('form[data-form="manual-book"]');if(form&&state.agendaAvailableService)form.elements.service_id.value=state.agendaAvailableService;return true;}
  if(action==='agenda-customer-history'){await agendaCustomerHistory(button);return true;}
  if(action==='agenda-professional'){state.agendaStaff=button.dataset.id||'';await viewAgenda();return true;}
  if(action==='agenda-status-filter'){state.agendaStatusFilter=state.agendaStatusFilter===button.dataset.status?'':button.dataset.status;await viewAgenda();return true;}
