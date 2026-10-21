@@ -186,7 +186,7 @@ function agendaScrollUseful(bookings,smooth=false){
  const lanes=[...scroll.querySelectorAll('.ag-lane')],day=lanes.some(l=>l.dataset.date===now.day)?now.day:lanes[0]?.dataset.date;if(!day)continue;
  const line=scroll.querySelector('.ag-now-line'),start=Number(line?.dataset.start||480),end=Number(line?.dataset.end||1200),body=scroll.querySelector('.ag-hours');if(!body)continue;
  const minute=agendaUsefulMinute(bookings.filter(b=>!state.agendaStaff||b.staff_id===state.agendaStaff),day,now,agendaZone(),{start,end}),scale=body.getBoundingClientRect().height/(end-start),top=Math.max(0,(Math.min(end,Math.max(start,minute))-start)*scale-55);
- scroll.scrollTo({top,behavior:smooth&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'});
+ scroll.scrollTo({top,behavior:smooth&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});
  }
 }
 function agendaMobileCalendar(bookings,people,rules,day){
