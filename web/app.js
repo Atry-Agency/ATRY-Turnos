@@ -490,7 +490,7 @@ async function onClick(e){
   if(a==='booking-status'){
     if(btn.dataset.status==='completed'&&Date.parse(btn.dataset.startsAt)>Date.now()&&!await confirmAction('Este turno todavía no comenzó. ¿Marcarlo como completado de todos modos?'))return;
     if(['cancelled','no_show'].includes(btn.dataset.status)&&!await confirmAction(btn.dataset.status==='cancelled'?'¿Querés cancelar este turno? Esta acción no se puede deshacer.':'¿Marcar este turno como ausente?'))return;
-    await post(bapi('/bookings/'+btn.dataset.id),{status:btn.dataset.status},'PATCH');toast('Estado actualizado');await renderApp();return;
+    await post(bapi('/bookings/'+btn.dataset.id),{status:btn.dataset.status},'PATCH');toast('Estado actualizado');state.dialog=null;await renderApp();return;
   }
   if(a==='booking-reschedule'){
     if(!state.staffList)state.staffList=await api(bapi('/staff'));

@@ -364,7 +364,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/agenda.css','/agenda.js','/agenda-core.js','/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});
