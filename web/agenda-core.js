@@ -19,7 +19,8 @@
   for(const off of rules.time_off||[])if(off.staff_id===staffId){const s=segment(off,day,zone);if(s)blocks.push(s);}
   for(const block of blocks)result=subtract(result,block);return result.sort((a,b)=>a.start-b.start);
  }
- function bounds(bookings,rules,staffIds,days,zone){const points=[];for(const day of days){for(const id of staffIds)for(const w of windows(rules,id,day,zone)||[])points.push(w.start,w.end);for(const b of bookings){const s=segment(b,day,zone);if(s)points.push(s.start,s.end);}}if(!points.length)return {start:480,end:1200};return {start:Math.max(0,Math.floor((Math.min(...points)-30)/60)*60),end:Math.min(1440,Math.ceil((Math.max(...points)+30)/60)*60)};}
+ function bounds(bookings,rules,staffIds,days,zone){const points=[];for(const day of days){const weekday=new Date(day+'T12:00Z').getUTCDay();for(const id of staffIds){const exceptions=(rules?.exceptions||[]).filter(h=>h.staff_id===id&&h.day===day&&!Number(h.closed)),source=exceptions.length?exceptions:(rules?.hours||[]).filter(h=>h.staff_id===id&&Number(h.weekday)===weekday);for(const h of source)if(Number.isFinite(Number(h.start_min))&&Number(h.end_min)>Number(h.start_min))points.push(Number(h.start_min),Number(h.end_min));}for(const b of bookings){const s=segment(b,day,zone);if(s)points.push(s.start,s.end);}}if(!points.length)return {start:480,end:1200};return {start:Math.max(0,Math.floor(Math.min(...points)/60)*60),end:Math.min(1440,Math.ceil(Math.max(...points)/60)*60)};}
+
  const tones=['violet','blue','rose','amber','teal'];
  const serviceTone=id=>tones[[...String(id||'service')].reduce((n,c)=>(n*31+c.charCodeAt(0))>>>0,0)%tones.length];
  const api={parts,clock,segment,layout,windows,bounds,serviceTone};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.ATRY_AGENDA=api;
