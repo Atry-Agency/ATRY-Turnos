@@ -1,0 +1,6 @@
+/* Pure sequential visit search. Availability is supplied by the trusted adapter. */
+(function(root){'use strict';
+function overlaps(a,b){return a.blocked_from<b.blocked_until&&b.blocked_from<a.blocked_until&&(a.staff_id===b.staff_id||a.resource_ids.some(id=>b.resource_ids.includes(id)));}
+function solve({serviceIds,candidates,starts,slot,maxNodes=20000}){let nodes=0;const results=[];for(const start of starts){function next(index,time,legs){if(++nodes>maxNodes)throw Object.assign(Error('La búsqueda es demasiado amplia. Elegí menos servicios o profesionales específicos.'),{code:'VISIT_SEARCH_LIMIT'});if(index===serviceIds.length)return legs;for(const person of candidates(serviceIds[index])){const item=slot(serviceIds[index],person,time,index);if(!item||legs.some(other=>overlaps(other,item)))continue;const found=next(index+1,item.ends_at,[...legs,item]);if(found)return found;}return null;}const legs=next(0,start,[]);if(legs)results.push({start,ends_at:legs.at(-1).ends_at,time:legs[0].time,legs,price_uyu:legs.reduce((n,x)=>n+x.price_uyu,0),duration_min:legs.reduce((n,x)=>n+x.duration_min,0)});}return results;}
+const api={solve,overlaps};if(typeof module==='object'&&module.exports)module.exports=api;else root.ATRY_VISIT_CORE=api;
+})(typeof globalThis==='object'?globalThis:this);

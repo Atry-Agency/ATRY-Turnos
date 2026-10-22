@@ -5,7 +5,7 @@ function logoCropRect(width,height,zoom=1,x=50,y=50){
  const clamp=(n,min,max)=>Math.min(max,Math.max(min,Number(n)||min)),size=Math.min(width,height)/clamp(zoom,1,4);
  return {x:(width-size)*clamp(x,0,100)/100,y:(height-size)*clamp(y,0,100)/100,size};
 }
-function businessLogoAvatar(b,kind,fallback){return `<div class="${kind} business-logo-avatar${b.logo_url?' has-logo':''}">${b.logo_url?`<img src="${esc(b.logo_url)}" alt="Logo de ${esc(b.name)}" decoding="async">`:fallback?esc(ucode(fallback)):ic('shop')}</div>`;}
+function businessLogoAvatar(b,kind,fallback){if(typeof ATRY_THEME_CORE!=='undefined'&&b.plan)b={...b,logo_url:ATRY_THEME_CORE.effective(b).logo};return `<div class="${kind} business-logo-avatar${b.logo_url?' has-logo':''}">${b.logo_url?`<img src="${esc(b.logo_url)}" alt="Logo de ${esc(b.name)}" decoding="async">`:fallback?esc(ucode(fallback)):ic('shop')}</div>`;}
 function preparedBusinessLogo(form){
  if(form.elements.remove_logo?.checked)return '';
  if(form.querySelector('[data-logo-crop]')||form.querySelector('[name=logo_file]')?.files.length)throw Error('Aplicá el recorte o cancelalo antes de guardar.');
@@ -45,6 +45,7 @@ if(typeof document!=='undefined')(()=>{
   const button=event.target.closest('[data-logo-delete],[data-logo-edit],[data-logo-cancel],[data-logo-center],[data-logo-rotate],[data-logo-apply]');if(!button)return;event.preventDefault();const form=button.closest('form');
   if(button.hasAttribute('data-logo-delete')){
    if(state.business.role!=='owner')return;
+   if(form.matches('[data-theme-studio]')){form.elements.remove_logo.checked=true;delete form.dataset.logoData;delete form.dataset.appearanceLogo;form.elements.logo_file.value='';closeEditor(form);refreshLogoControl(form,'');form.dataset.dirty='true';refreshAppearancePreview(form);return;}
    if(!await confirmAction('¿Eliminar el logo guardado? Se borrará del negocio y dejará de aparecer en el panel y las reservas. No se puede deshacer desde el panel. Las copias de seguridad históricas no se purgan.'))return;
    button.disabled=true;
    try{const changed=await post(bapi('/appearance'),{logo_url:''},'PATCH');closeEditor(form);state.business={...state.business,...changed};state.businesses=state.businesses.map(b=>b.id===state.business.id?{...b,logo_url:''}:b);if(state.public?.business?.id===state.business.id)state.public.business.logo_url='';state.screen=null;delete form.dataset.logoData;delete form.dataset.appearanceLogo;if(form.elements.remove_logo)form.elements.remove_logo.checked=false;refreshLogoControl(form,'');if(form.matches('[data-appearance-form]'))refreshAppearancePreview(form);for(const avatar of root.querySelectorAll('.sidebar .business-logo-avatar'))avatar.outerHTML=businessLogoAvatar(state.business,avatar.classList.contains('store-icon')?'store-icon':'avatar',avatar.classList.contains('store-icon')?null:state.me.user.name);toast('Logo eliminado del negocio.');}catch(error){toast(error.message||'No se pudo eliminar el logo.',true);}finally{if(button.isConnected)button.disabled=false;}return;

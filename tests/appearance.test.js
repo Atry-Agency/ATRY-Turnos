@@ -9,6 +9,10 @@ test('Apariencia: propietario guarda por negocio, empleado lee, terceros y valor
   await db.exec('INSERT INTO auth.sessions(id,user_id) SELECT id,id FROM auth.users');await who(db,1);
   const a=(await db.query('SELECT atry_create_organization($1::jsonb) v',[JSON.stringify({name:'Consultorio Uno',slug:'consultorio-uno'})])).rows[0].v.id;
   await who(db,2);const b=(await db.query('SELECT atry_create_organization($1::jsonb) v',[JSON.stringify({name:'Consultorio Dos',slug:'consultorio-dos'})])).rows[0].v.id;
+  // Custom logo and arbitrary colours now belong to an activated Negocio plan.
+  await db.exec('RESET ROLE');await db.query('UPDATE users SET platform_admin=1 WHERE id=$1',[uid(3)]);await who(db,3);
+  for(const bid of [a,b])await db.query('SELECT atry_admin_save_business($1,$2::jsonb)',[bid,JSON.stringify({subscription_action:'activate',plan:'negocio',until_day:new Date(Date.now()+60*86400000).toISOString().slice(0,10),amount_uyu:0,note:'Prueba de apariencia',request_id:'appearance_activation_'+bid})]);
+  await db.exec('RESET ROLE');await db.query('UPDATE users SET platform_admin=0 WHERE id=$1',[uid(3)]);
   await db.exec('RESET ROLE');await db.query("INSERT INTO memberships(user_id,business_id,role) VALUES($1,$2,'staff')",[uid(3),a]);
   await who(db,1);const changed=(await db.query('SELECT atry_save_appearance($1,$2::jsonb) v',[a,JSON.stringify({primary_color:'#FDEDED',secondary_color:'#123456',appearance_mode:'dark'})])).rows[0].v;
   const logo='data:image/png;base64,iVBORw0KGgo=';

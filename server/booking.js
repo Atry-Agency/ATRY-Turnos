@@ -22,7 +22,7 @@ function base(db,bizId,staffId,serviceId){
   if(!db.prepare('SELECT 1 FROM staff_services WHERE staff_id=? AND service_id=?').get(staffId,serviceId))fail(400,'Este profesional no ofrece ese servicio');
   return {business,staff,service};
 }
-function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enforceNotice=true,ignoreRecurring=''}={}) {
+function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enforceNotice=true,ignoreRecurring='',ignoreBookings=[],allowOffGrid=false}={}) {
   const {business,staff,service}=base(db,bizId,staffId,serviceId);
   if(!isLive(business))fail(403,'El acceso del negocio requiere habilitación o renovación de Atry');
   if(business.timezone!=='America/Montevideo')fail(400,'Zona horaria no compatible en esta versión');
@@ -39,19 +39,20 @@ function checkSlot(db,bizId,staffId,serviceId,startISO,{ignoreBooking=null,enfor
   if(db.prepare('SELECT id FROM holidays WHERE business_id=? AND day=?').get(bizId,startDay))fail(409,'El negocio está cerrado por un feriado configurado');
   const wh=scheduleFor(db,staffId,startDay);
   if(!wh || minute-service.buffer_before_min<wh.start_min || minute+service.duration_min+service.buffer_after_min>wh.end_min)fail(409,'El horario y su preparación deben estar dentro de la jornada laboral');
-  if(minute%business.slot_step_min!==0)fail(409,'Horario no compatible con el intervalo del negocio');
+  if(!allowOffGrid&&minute%business.slot_step_min!==0)fail(409,'Horario no compatible con el intervalo del negocio');
   const blockedStart=new Date(startMs-service.buffer_before_min*60000).toISOString();
   const blockedEnd=new Date(endMs+service.buffer_after_min*60000).toISOString();
   const breaks=db.prepare('SELECT * FROM recurring_breaks WHERE staff_id=? AND weekday=?').all(staffId,weekday(startDay));
   if(breaks.some(b=>overlap(minute-service.buffer_before_min,minute+service.duration_min+service.buffer_after_min,b.start_min,b.end_min)))fail(409,'El horario coincide con un descanso recurrente');
   if(require('./recurring').blocks(db,bizId,staffId,serviceId,startISO,ignoreRecurring))fail(409,'Ese horario pertenece a un cliente con turno fijo');
+  const ignored=new Set([...ignoreBookings,ignoreBooking]);
   const resources=requiredResources(db,serviceId);
   for(const resource of resources){
    if(resource.business_id!==bizId||!resource.active)fail(409,'Un recurso requerido no está disponible');
-   const used=db.prepare("SELECT b.id FROM booking_resources br JOIN bookings b ON b.id=br.booking_id WHERE br.resource_id=? AND b.status IN ('pending','confirmed') AND b.blocked_from<? AND b.blocked_until>? AND b.id!=? LIMIT 1").get(resource.id,blockedEnd,blockedStart,ignoreBooking||'');if(used)fail(409,`El recurso ${resource.name} está ocupado`);
+   const used=db.prepare("SELECT b.id FROM booking_resources br JOIN bookings b ON b.id=br.booking_id WHERE br.resource_id=? AND b.status IN ('pending','confirmed') AND b.blocked_from<? AND b.blocked_until>? AND b.id!=?").all(resource.id,blockedEnd,blockedStart,ignoreBooking||'').find(x=>!ignored.has(x.id));if(used)fail(409,`El recurso ${resource.name} está ocupado`);
   }
-  const collision=db.prepare(`SELECT id FROM bookings WHERE staff_id=? AND status IN ('pending','confirmed') AND blocked_from < ? AND blocked_until > ? AND id != ? LIMIT 1`)
-    .get(staffId,blockedEnd,blockedStart,ignoreBooking||'');
+  const collision=db.prepare(`SELECT id FROM bookings WHERE staff_id=? AND status IN ('pending','confirmed') AND blocked_from < ? AND blocked_until > ? AND id != ?`)
+    .all(staffId,blockedEnd,blockedStart,ignoreBooking||'').find(x=>!ignored.has(x.id));
   if(collision)fail(409,'Ese horario ya fue reservado');
   const timeOff=db.prepare('SELECT id FROM time_off WHERE staff_id=? AND starts_at < ? AND ends_at > ? LIMIT 1')
     .get(staffId,blockedEnd,blockedStart);
@@ -85,12 +86,12 @@ function notify(db,businessId,bookingId,kind,customer,service,startsAt,manageTok
   db.prepare('INSERT INTO notifications (id,business_id,booking_id,channel,kind,recipient,subject,content,state,created_at) VALUES (?,?,?,?,?,?,?,?,?,?)')
     .run(id(),businessId,bookingId,'email',kind,customer.email,`Atry Turnos — ${kind}`,message,'queued',now());
 }
-function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,withinTransaction=false,ignoreRecurring='',silent=false}={}){
+function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,withinTransaction=false,ignoreRecurring='',silent=false,allowOffGrid=false}={}){
   const execute=()=>{
     const key=data.idempotency_key;
     const scope=`booking:${source}:${data.business_id}:${actorId||'guest'}`;const requestHash=hashToken(JSON.stringify([data.service_id,data.staff_id,data.starts_at,data.customer_name,data.customer_email,data.customer_phone||'',data.notes||'',data.customer_id||'']));
     if(key!==undefined){if(typeof key!=='string'||!/^[A-Za-z0-9_-]{16,100}$/.test(key))fail(400,'Clave de idempotencia inválida');const previous=db.prepare('SELECT * FROM idempotency_keys WHERE scope=? AND key_hash=?').get(scope,hashToken(key));if(previous){if(previous.request_hash!==requestHash)fail(409,'La clave ya fue usada para otra solicitud');return JSON.parse(previous.response);}}
-    const slot=checkSlot(db,data.business_id,data.staff_id,data.service_id,data.starts_at,{enforceNotice,ignoreRecurring});
+    const slot=checkSlot(db,data.business_id,data.staff_id,data.service_id,data.starts_at,{enforceNotice,ignoreRecurring,allowOffGrid});
     if(!isLive(slot.business) && source==='public')fail(403,'Este negocio todavía no admite reservas');
     const name=String(data.customer_name||'').trim(); const email=String(data.customer_email||'').trim().toLowerCase(); const phone=String(data.customer_phone||'').trim();
     if(name.length<2||name.length>100)fail(400,'Ingresá un nombre válido');
@@ -110,14 +111,15 @@ function createBooking(db,data,{actorId=null,source='public',enforceNotice=true,
   };
   return withinTransaction?execute():transaction(db,execute);
 }
-function updateBooking(db,businessId,bookingId,patch,actorId=null){
-  return transaction(db,()=>{
+function updateBooking(db,businessId,bookingId,patch,actorId=null,{withinTransaction=false,silent=false,ignoreBookings=[],allowOffGrid=false}={}){
+  const execute=()=>{
     const b=db.prepare('SELECT * FROM bookings WHERE id=? AND business_id=?').get(bookingId,businessId);
     if(!b)fail(404,'Reserva no encontrada');
+    if(!withinTransaction&&(patch.starts_at||patch.staff_id||patch.status==='cancelled'||patch.status==='confirmed')&&db.prepare('SELECT 1 FROM booking_visit_items WHERE booking_id=?').get(b.id))fail(409,'Esta reserva pertenece a una visita combinada. Gestioná la visita completa.');
     if(patch.starts_at===b.starts_at&&(!patch.staff_id||patch.staff_id===b.staff_id)&&!patch.status)return b;
     if(patch.starts_at||patch.staff_id){
       if(['cancelled','completed','no_show'].includes(b.status))fail(409,'Una reserva finalizada no se puede reprogramar');
-      const slot=checkSlot(db,businessId,patch.staff_id||b.staff_id,b.service_id,patch.starts_at||b.starts_at,{ignoreBooking:b.id,enforceNotice:false});
+      const slot=checkSlot(db,businessId,patch.staff_id||b.staff_id,b.service_id,patch.starts_at||b.starts_at,{ignoreBooking:b.id,enforceNotice:false,ignoreBookings,allowOffGrid});
       db.prepare('DELETE FROM booking_resources WHERE booking_id=?').run(b.id);
       db.prepare('UPDATE bookings SET staff_id=?,starts_at=?,ends_at=?,blocked_from=?,blocked_until=?,updated_at=? WHERE id=?')
         .run(slot.staff.id,slot.starts_at,slot.ends_at,slot.blocked_from,slot.blocked_until,now(),b.id);
@@ -144,8 +146,9 @@ function updateBooking(db,businessId,bookingId,patch,actorId=null){
       }
     }
     const result=db.prepare(`SELECT b.*,s.name AS service_name, st.name AS staff_name,c.name AS customer_name,c.email AS customer_email,c.phone AS customer_phone FROM bookings b JOIN services s ON s.id=b.service_id JOIN staff st ON st.id=b.staff_id JOIN customers c ON c.id=b.customer_id WHERE b.id=?`).get(b.id);
-    if(patch.status||patch.starts_at||patch.staff_id){notify(db,businessId,b.id,patch.status||'reprogramado',{name:result.customer_name,email:result.customer_email},{name:result.service_name},result.starts_at);}
+    if(!silent&&(patch.status||patch.starts_at||patch.staff_id)){notify(db,businessId,b.id,patch.status||'reprogramado',{name:result.customer_name,email:result.customer_email},{name:result.service_name},result.starts_at);}
     return result;
-  });
+  };
+  return withinTransaction?execute():transaction(db,execute);
 }
-module.exports={HttpError,fail,isDate,asMinutes,minutesText,localISO,localDay,localHM,weekday,isLive,available,createBooking,updateBooking,checkSlot};
+module.exports={HttpError,fail,isDate,asMinutes,minutesText,localISO,localDay,localHM,weekday,isLive,available,createBooking,updateBooking,checkSlot,notify};

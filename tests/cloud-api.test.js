@@ -1,5 +1,13 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
+test('Adaptador cloud: visitas públicas conservan clave/protección y las privadas usan el negocio autorizado',async()=>{
+ const {createApiAdapter}=await import('../cloud/api-adapter.mjs');const sent=[],rpcs=[];let protection;
+ const adapter=createApiAdapter({auth:{client:{rpc:async(name,args)=>{rpcs.push({name,args});return {data:{}};}}},config:{supabaseUrl:'https://project.supabase.co',supabaseKey:'public'},protection:async request=>{protection=request;return {proof_challenge:'proof',proof_counter:1};},fetchImpl:async(url,opts)=>{sent.push({url:String(url),body:JSON.parse(opts.body)});return Response.json({options:[]});}});
+ await adapter.request('/api/public/salon-completo/visits/availability',{method:'POST',body:JSON.stringify({date:'2026-10-24',service_ids:['s1','s2']})});assert.ok(sent[0].url.includes('operation=visit_availability'));assert.equal(protection,undefined);
+ await adapter.request('/api/public/salon-completo/visits',{method:'POST',body:JSON.stringify({idempotency_key:'request_visit_00001',legs:[]})});assert.equal(protection.action,'booking');assert.equal(sent[1].body.idempotency_key,'request_visit_00001');assert.ok(sent[1].url.includes('operation=visit_book'));
+ const token='a'.repeat(64);await adapter.request('/api/manage/'+token+'/visit-availability',{method:'POST',body:'{"date":"2026-10-24"}'});assert.ok(!sent[2].url.includes(token));assert.equal(sent[2].body.token,token);assert.ok(sent[2].url.includes('operation=visit_manage_availability'));
+ await adapter.request('/api/business/b1/visits/v1/reschedule',{method:'POST',body:'{"quote":"checked"}'});assert.deepEqual(rpcs[0],{name:'atry_visit_command',args:{bid:'b1',visit_id:'v1',operation:'reschedule',payload:{quote:'checked'}}});
+});
 test('Catálogo: servicios y equipo simultáneos comparten una consulta y una edición obliga a leer de nuevo',async()=>{
  const {createApiAdapter}=await import('../cloud/api-adapter.mjs');let count=0,release;
  const adapter=createApiAdapter({auth:{client:{rpc:()=>{count++;return new Promise(resolve=>release=resolve);}}},config:{}});

@@ -20,7 +20,7 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
   let payload;try{payload=JSON.parse(text);}catch{throw reject(400,'INVALID_JSON');}
   if(!payload||typeof payload!=='object'||Array.isArray(payload))throw reject(400,'INVALID_JSON');return payload;
  };
- const operations=['info','availability','book','waitlist','manage','manage_availability','cancel','reschedule','offer','accept_offer','invitation','challenge'];
+ const operations=['info','availability','book','waitlist','manage','manage_availability','cancel','reschedule','offer','accept_offer','invitation','challenge','visit_availability','visit_book','visit_manage_availability'];
  return async req=>{
   let expectedOrigin;try{expectedOrigin=new URL(siteUrl).origin;}catch{return reply(503,{error:'PUBLIC_NOT_CONFIGURED'});}
   if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(supabaseUrl||'')||!serviceKey||!['turnstile','proof'].includes(protectionMode)||(protectionMode==='turnstile'&&!turnstileSecret)||!expectedOrigin.startsWith('https://'))return reply(503,{error:'PUBLIC_NOT_CONFIGURED'});
@@ -28,7 +28,7 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
   if(req.method==='OPTIONS')return reply(200,{ok:true},origin);
   const url=new URL(req.url),slug=url.searchParams.get('slug'),operation=url.searchParams.get('operation');
   if(!operations.includes(operation)||url.searchParams.has('token'))return reply(400,{error:'INVALID_REQUEST'},origin);
-  const businessOperation=['info','availability','book','waitlist'].includes(operation);
+  const businessOperation=['info','availability','book','waitlist','visit_availability','visit_book'].includes(operation);
   if(businessOperation&&!/^[a-z0-9][a-z0-9-]{1,53}[a-z0-9]$/.test(slug||''))return reply(400,{error:'INVALID_REQUEST'},origin);
   if(req.method!==(['info','availability'].includes(operation)?'GET':'POST'))return reply(405,{error:'METHOD_NOT_ALLOWED'},origin);
   try{
@@ -50,8 +50,8 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
     return reply(200,await proof.issue({ip:hashed,action:payload.action,key:payload.key,slug:slug||''}),origin);
    }
    if(!businessOperation&&(typeof token!=='string'||!/^[A-Za-z0-9_-]{32,100}$/.test(token)))throw reject(400,'INVALID_TOKEN');
-   if(['book','waitlist','accept_offer'].includes(operation)){
-    const action=operation==='book'?'booking':operation==='waitlist'?'waitlist':'offer';
+   if(['book','visit_book','waitlist','accept_offer'].includes(operation)){
+    const action=['book','visit_book'].includes(operation)?'booking':operation==='waitlist'?'waitlist':'offer';
     if(typeof payload.idempotency_key!=='string'||!/^[A-Za-z0-9_-]{16,100}$/.test(payload.idempotency_key))throw reject(400,'INVALID_REQUEST');
     if(protectionMode==='proof'){
      if(!await proof.verify(payload.proof_challenge,payload.proof_counter,{ip:hashed,action,key:payload.idempotency_key,slug:slug||''}))throw reject(403,'PROTECTION_REJECTED');
@@ -63,6 +63,9 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
     }
    }
    const {turnstile_token,proof_challenge,proof_counter,token:ignoredToken,...data}=payload;
+   if(operation==='visit_availability')return reply(200,await rpc('atry_public_visit_availability',{slug,payload:data}),origin);
+   if(operation==='visit_book')return reply(200,await rpc('atry_public_visit_book',{slug,payload:data}),origin);
+   if(operation==='visit_manage_availability')return reply(200,await rpc('atry_manage_visit_availability',{token,payload:data}),origin);
    if(operation==='book')return reply(200,await rpc('atry_public_book',{slug,payload:data}),origin);
    if(operation==='waitlist')return reply(200,await rpc('atry_public_waitlist',{slug,payload:data}),origin);
    if(operation==='manage')return reply(200,await rpc('atry_manage',{token}),origin);
