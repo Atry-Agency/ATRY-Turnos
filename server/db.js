@@ -132,6 +132,10 @@ CREATE TABLE IF NOT EXISTS schema_migrations (version INTEGER PRIMARY KEY,applie
   if(!columns.includes('onboarding_completed'))db.exec('ALTER TABLE businesses ADD COLUMN onboarding_completed INTEGER NOT NULL DEFAULT 0');
   if(!columns.includes('secondary_color'))db.exec("ALTER TABLE businesses ADD COLUMN secondary_color TEXT NOT NULL DEFAULT '#00A5E2'");
   if(!columns.includes('appearance_mode'))db.exec("ALTER TABLE businesses ADD COLUMN appearance_mode TEXT NOT NULL DEFAULT 'light'");
+  if(!columns.includes('theme_config'))db.exec("ALTER TABLE businesses ADD COLUMN theme_config TEXT NOT NULL DEFAULT '{}'");
+  if(!columns.includes('multi_service_enabled'))db.exec('ALTER TABLE businesses ADD COLUMN multi_service_enabled INTEGER NOT NULL DEFAULT 0');
+  db.exec(`CREATE TABLE IF NOT EXISTS booking_visits(id TEXT PRIMARY KEY,business_id TEXT NOT NULL REFERENCES businesses(id),manage_token_hash TEXT NOT NULL UNIQUE,created_at TEXT NOT NULL); CREATE TABLE IF NOT EXISTS booking_visit_items(visit_id TEXT NOT NULL REFERENCES booking_visits(id) ON DELETE CASCADE,booking_id TEXT NOT NULL UNIQUE REFERENCES bookings(id) ON DELETE CASCADE,position INTEGER NOT NULL,PRIMARY KEY(visit_id,position));`);
+  if(!columns.includes('theme_revision'))db.exec('ALTER TABLE businesses ADD COLUMN theme_revision INTEGER NOT NULL DEFAULT 0');
   const waitColumns=db.prepare('PRAGMA table_info(waitlist)').all().map(x=>x.name);
   for(const column of ['offer_token_hash','offer_expires_at','offer_starts_at','offer_staff_id'])if(!waitColumns.includes(column))db.exec(`ALTER TABLE waitlist ADD COLUMN ${column} TEXT`);
   db.exec(`CREATE UNIQUE INDEX IF NOT EXISTS idx_waitlist_offer_token ON waitlist(offer_token_hash);
