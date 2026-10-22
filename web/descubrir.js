@@ -1,5 +1,7 @@
 'use strict';
 document.documentElement.classList.add('js');
+// iOS Home Screen uses a separate viewport from the Safari tab.
+document.documentElement.classList.toggle('ios-standalone',navigator.standalone===true||matchMedia('(display-mode: standalone)').matches);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if('IntersectionObserver' in window&&!reduced){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');observer.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));}else document.querySelectorAll('.reveal').forEach(e=>e.classList.add('seen'));
 const screens={panel:{label:'INICIO',alt:'Panel real con próximos turnos y actividad semanal del negocio',caption:'Próximos turnos y actividad del negocio. Una primera mirada para saber por dónde empezar. Resumen y estadísticas desde Negocio.'},agenda:{label:'AGENDA',alt:'Agenda real de ATRY Turnos con horarios, profesionales y estados de las reservas',caption:'Día, semana y mes. Encontrá cada turno y filtrá por profesional según tu plan. Los horarios disponibles se comprueban al reservar.'},reservas:{label:'RESERVAS',alt:'Página real de reservas con selección de servicios para una visita',caption:'El cliente elige sus servicios. Si habilitás visitas combinadas, ATRY busca un recorrido completo con profesionales disponibles.'}};
