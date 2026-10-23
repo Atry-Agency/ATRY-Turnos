@@ -46,3 +46,6 @@
  .cc-sidebar>a:not(.cc-brand),.cc-sidebar>button:not(.sidebar-close){display:none}.cc-sidebar>.sidebar-close{display:flex}.cc-mobile-account{display:block;margin-top:auto;padding-top:19px}.cc-mobile-account .user-card{border-color:#FFFFFF20;padding:19px 8px 0}.cc-mobile-account .user-card .avatar{background:#4754E6;color:#FFFFFF;flex-shrink:0}.cc-mobile-account .account-shortcut{color:#FFFFFF}.cc-mobile-account .user-card span{color:#A7BDC6}.cc-mobile-account .user-card .btn:not(.success,.danger,.warning,.orange,:disabled,[aria-disabled=true]){background:#17343F;color:#D2E7ED;border-color:#31505D}
  .cc-menu-toggle{display:inline-flex;flex-shrink:0}.cc-header>button.cc-menu-toggle{margin-left:0}.cc-header>a[href="#/cuenta"],.cc-header>button[data-action="logout"]{display:none}.cc-main{padding:20px 14px}.cc-header{gap:10px}.cc-header form{order:3;flex-basis:100%;min-width:0;margin:0}.cc-header>button[data-cc-refresh]{margin-left:auto}
 }
+/* This banner keeps its own dark surface even when the business uses a light theme. */
+:root .app-shell .workspace-setup>.grow>h2{color:#FFF}
+:root .app-shell .workspace-setup>.grow>.eyebrow{color:#A3EAF5}
