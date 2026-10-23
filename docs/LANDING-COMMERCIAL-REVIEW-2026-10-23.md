@@ -61,8 +61,8 @@ CSS analizado con esbuild sin advertencias; JavaScript válido; git diff --check
 
 ## Rendimiento
 
-- Captura inicial: 110,412 → 58,114 bytes (47% menos).
-- Tres capturas originales principales: 247,294 → 161,484 bytes (35% menos), más imágenes nuevas diferidas.
+- Captura inicial: 110,412 → 59,602 bytes (46% menos).
+- Tres capturas originales principales: 247,294 → 164,058 bytes (34% menos), más imágenes nuevas diferidas.
 - Capturas WebP sin dependencias externas, dimensiones declaradas y carga diferida secundaria.
 - JS de landing ~5.3 KB gzip; motor puro WhatsApp ~2.6 KB gzip; CSS ~10.4 KB gzip. Sin librería de animación ni scroll hijack.
 - No se midieron Core Web Vitals reales ni una puntuación Lighthouse; no se inventan resultados.
@@ -73,3 +73,10 @@ Ejecutar `node scripts/preview-commercial.js` y abrir `http://127.0.0.1:3473/des
 La ruta `/__capture__/?demo=1&plan=3&capture=1#/app/inicio` sirve exclusivamente la fixture comercial local. Las herramientas viven fuera de web/ y no forman parte de GitHub Pages.
 
 Pendientes antes de publicar: aprobación visual del usuario de composición, capturas y texto comercial; comprobación en Safari de un iPhone físico (la emulación de tamaño no sustituye Safari real). No se hizo push, merge, despliegue ni operación remota de datos.
+
+
+## Revisión de coherencia comercial posterior
+
+A pedido del usuario, se reemplazó Corte y barba por Coloración y brushing en la fixture de Estudio Aurora. Las capturas de Inicio, Agenda, Clientes, Comunicación y Reservas se renderizaron nuevamente. Se usan 30 contactos ficticios y una clienta distinta en cada reserva de la muestra; no se repite una coloración para la misma persona dentro del período. Duraciones y precios coinciden con el catálogo, las cantidades de visitas salen de las reservas y el resumen suma los servicios completados (ejemplo: $4.800). La demostración de WhatsApp representa la misma reserva de Paula Suárez con Lucía Fernández, el 24 de octubre a las 10:00, Coloración y brushing, 60 minutos.
+
+La explicación comercial y FAQ ya no mencionan Brevo: se usa lenguaje orientado al cliente. El proveedor puede seguir apareciendo en capturas de la aplicación real; no se alteró la interfaz del SaaS para ocultarlo. Continúa sin publicar.

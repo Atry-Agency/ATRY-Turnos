@@ -74,7 +74,7 @@ document.querySelectorAll('[data-showcase-open]').forEach(link=>link.addEventLis
 updateShowcaseLinks();
 
 // Same pure template renderer as the product. No phone number, send link or API.
-const messageValues={cliente:'Lucía Costa',negocio:'Estudio Aurora',profesional:'Sofía Pereira',servicio:'Corte y peinado',fecha:'24 de octubre',hora:'14:30',duracion:'45',direccion:'',fecha_anterior:'23 de octubre',hora_anterior:'10:00',enlace:'[enlace de reservas del negocio]'};
+const messageValues={cliente:'Paula Suárez',negocio:'Estudio Aurora',profesional:'Lucía Fernández',servicio:'Coloración y brushing',fecha:'24 de octubre',hora:'10:00',duracion:'60',direccion:'',fecha_anterior:'23 de octubre',hora_anterior:'14:00',enlace:'[enlace de reservas del negocio]'};
 function renderMessageExample(key){
  const core=window.AtryWhatsApp;if(!core||!core.templates[key])return;
  const text=key==='free'?core.templates.free+'¿Querés que coordinemos tu próxima visita?':core.templates[key];
