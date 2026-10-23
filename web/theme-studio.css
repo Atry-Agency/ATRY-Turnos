@@ -13,7 +13,7 @@
 :root[data-theme-cards=flat] :is(.app-shell,.public-shell) :is(.card,.metric){box-shadow:none;border-color:transparent}
 :root[data-theme-cards=outlined] :is(.app-shell,.public-shell) :is(.card,.metric){box-shadow:none;border:1px solid var(--line)}
 :root[data-theme-density=compact] .app-shell .card{padding:18px}:root[data-theme-density=compact] .app-shell .metric{padding:18px}
-:root[data-theme-buttons=outline] :is(.app-shell,.public-shell) .btn:not(.secondary,.danger,.success,.warning,.orange){background:transparent;border:1px solid var(--panel-action);color:var(--panel-action)}
+:root[data-theme-buttons=outline] :is(.app-shell,.public-shell) .btn:not(.secondary,.outline,.ghost,.danger,.success,.warning,.orange){--button-bg:transparent;--button-fg:var(--panel-action);--button-border:var(--panel-action)}
 :root[data-theme-plan=negocio] .app-shell .metric{position:relative;overflow:hidden}
 :root[data-theme-plan=pro] .app-shell .topbar{border-bottom:1px solid var(--line)}
 :root[data-appearance=business] .ag-workspace{--ag-violet:var(--panel-action);--ag-canvas:var(--bg)}:root[data-appearance-mode=dark] .ag-workspace .ag-event{box-shadow:0 2px 5px #00000020}:root[data-theme-agenda=contrast] .ag-workspace .ag-event{border:1px solid var(--ag-service);border-left-width:4px;border-radius:8px}:root[data-theme-agenda=contrast] .ag-lane:after{opacity:1.9}
@@ -33,7 +33,7 @@
 
 .ts-plan-negocio .ts-preview-metrics>div{border-top:2px solid var(--sp-action)}.ts-plan-individual .ts-preview-metrics>div{box-shadow:none}.ts-plan-pro .ts-preview-metrics>div{background:var(--sp-surface2)}.ts-plan-pro .ts-preview-content>nav{border-right:1px solid var(--sp-line)}
 
-:root[data-appearance=business] :is(.badge.confirmed,.badge.completed,.btn.success,.ag-event--confirmed .ag-event-status,.ag-event--completed .ag-event-status,.ts-pill:not(.danger,.warning)){color:#07351B!important}.ts-preview-frame .ts-pill:not(.danger,.warning){color:#07351B}.ts-preview-frame{color-scheme:normal}
+:root[data-appearance=business] :is(.badge.confirmed,.badge.completed,.ag-event--confirmed .ag-event-status,.ag-event--completed .ag-event-status,.ts-pill:not(.danger,.warning)){color:#07351B!important}.ts-preview-frame .ts-pill:not(.danger,.warning){color:#07351B}.ts-preview-frame{color-scheme:normal}
 
 .ts-host{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
 

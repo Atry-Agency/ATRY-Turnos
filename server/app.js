@@ -333,6 +333,8 @@ function createApp({db=connect(),webRoot=root}={}) {
   require('./product').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./accounts').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./communications').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
+  require('./whatsapp').register({r,db,authorized,record});
+  require('./staff-photos').register({r,db,authorized,record});
   require('./realtime').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./scheduling').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
   require('./operations').register({r,db,auth,authorized,string,isEmail,record,dataBusiness});
@@ -376,7 +378,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/showcase-preview.js','/descubrir.html','/descubrir.css','/descubrir.js','/visit-demo.js','/visit-core.js','/visits.js','/visits.css','/theme-core.js','/theme-studio.js','/theme-studio.css','/agenda.css','/agenda.js','/agenda-core.js','/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|jpg|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(!['/staff-photo-core.js','/staff-photos.js','/staff-photos.css','/buttons.css','/whatsapp.js','/whatsapp.css','/whatsapp-core.js','/whatsapp-demo.js','/showcase-preview.js','/descubrir.html','/descubrir.css','/descubrir.js','/visit-demo.js','/visit-core.js','/visits.js','/visits.css','/theme-core.js','/theme-studio.js','/theme-studio.css','/agenda.css','/agenda.js','/agenda-core.js','/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|jpg|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});

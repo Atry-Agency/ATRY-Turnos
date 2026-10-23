@@ -3,7 +3,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),vm=require(
 const theme=require('../web/theme-core'),visits=require('../web/visit-demo');
 const source=fs.readFileSync(require.resolve('../web/demo'),'utf8');
 function browser(search,embedded=true){
- const scope={location:{search},URL,URLSearchParams,structuredClone,crypto,ATRY_THEME_CORE:theme,ATRY_VISIT_DEMO:visits};
+ const scope={location:{search},URL,URLSearchParams,structuredClone,crypto,ATRY_THEME_CORE:theme,ATRY_VISIT_DEMO:visits,ATRY_WHATSAPP_DEMO:require('../web/whatsapp-demo')};
  scope.parent=embedded?{}:scope;vm.runInNewContext(source,scope);return scope.ATRY_DEMO;
 }
 test('Presentación: el control visual existe solo en una demo embebida explícita',()=>{

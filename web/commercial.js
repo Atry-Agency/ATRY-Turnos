@@ -3,7 +3,7 @@ const commercialLabels={team:'Gestión de equipo',access:'Usuarios y permisos',r
 const requestLabels={pending_contact:'Pendiente de contacto',pending_payment:'Pendiente de pago',pending_verification:'Pendiente de verificación',active:'Activa',cancelled:'Cancelada'};
 const commercialRoutes={'turnos-fijos':'recurring',smartslots:'smartslots','lista-espera':'waitlist',insights:'advanced',estadisticas:'statistics',equipo:'team',notificaciones:'operational_mail',accesos:'access'};
 const hasCapability=feature=>state.entitlements?.features?.[feature]===true;
-const commercialRouteAllowed=view=>!commercialRoutes[view]||hasCapability(commercialRoutes[view]);
+const commercialRouteAllowed=view=>view==='equipo'&&typeof staffPhotoProfiles==='function'||!commercialRoutes[view]||hasCapability(commercialRoutes[view]);
 const taxLabel=status=>({pending:'Precios propuestos. Tratamiento impositivo pendiente de confirmación.',included:'Precios con impuestos incluidos.',excluded:'Precios sin impuestos; se agregan los impuestos aplicables.'})[status]||'Tratamiento impositivo pendiente.';
 function pruneCommercialControls(){
  const selectors={recurring:'[data-action="customer-fixed"],[data-action="new-recurring"]',exports:'[data-action="export"]',team:'[data-action="add-staff"]',resources:'form[data-form="create-resource"],form[data-form="assign-resources"]'};

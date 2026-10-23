@@ -1,0 +1,19 @@
+.staff-avatar{display:inline-grid;place-items:center;width:40px;height:40px;flex:0 0 40px;background:var(--surface2);color:var(--accent);font-size:14px;font-weight:650}
+.staff-photo-avatar{position:relative;overflow:hidden;border-radius:50%;flex-shrink:0}
+.staff-photo-avatar>img,.staff-photo-edit-preview>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.staff-photo-editor{min-width:0;border:1px solid var(--line);border-radius:18px;padding:18px;margin:0}
+.staff-photo-editor legend{font-size:12px;font-weight:650;padding:0 7px;color:var(--muted)}
+.staff-photo-layout{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:center;padding:6px 0 18px}
+.staff-photo-controls{min-width:0}.staff-photo-editor .staff-photo-intro{font:12px/1.65 system-ui,sans-serif;color:var(--muted);margin:0 0 12px}
+.staff-photo-controls>.actions{gap:8px}.staff-photo-controls [data-photo-remove][hidden]{display:none}
+.staff-photo-editor .staff-photo-file{position:absolute;width:1px;height:1px;min-height:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.staff-photo-public{display:flex;align-items:flex-start;gap:11px;padding-top:16px;border-top:1px solid var(--line);cursor:pointer}
+.staff-photo-public input{flex:0 0 17px;margin:2px 0 0}.staff-photo-public>span{min-width:0}
+.staff-photo-public strong{display:block;font:600 12px/1.5 system-ui,sans-serif;color:var(--ink)}
+.staff-photo-public small{display:block;font:11px/1.6 system-ui,sans-serif;color:var(--muted);margin-top:3px}
+.staff-photo-editor .staff-photo-feedback{font:11px/1.6 system-ui,sans-serif;margin:14px 0 0;color:var(--muted)}
+.staff-photo-requirements{margin-top:9px;font:10px/1.7 system-ui,sans-serif;color:var(--muted)}
+.staff-photo-requirements summary{cursor:pointer;padding:5px 0}.staff-photo-requirements p{margin:7px 0 0;max-width:42em}
+.staff-photo-edit-preview{position:relative;border-radius:50%;overflow:hidden;width:72px;height:72px;flex-basis:72px;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);font:650 23px system-ui,sans-serif}
+.staff-option .staff-photo-avatar{margin-right:8px;vertical-align:middle}
+@media(max-width:430px){.staff-photo-editor{padding:14px}.staff-photo-layout{grid-template-columns:56px minmax(0,1fr);gap:13px}.staff-photo-edit-preview{width:56px;height:56px;flex-basis:56px;font-size:20px}.staff-photo-controls>.actions{gap:7px}.staff-photo-requirements summary{min-height:32px}}

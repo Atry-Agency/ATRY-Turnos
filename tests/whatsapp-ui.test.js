@@ -1,0 +1,13 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');const core=require('../web/whatsapp-core');
+test('WhatsApp UI: tres planes, estados honestos, filtros Pro y controles táctiles',async()=>{
+ for(const plan of ['individual','negocio','pro']){
+  let html='';const requests=[];const state={business:{id:'business',plan,name:'Claudia Llorente',role:'owner'},me:{user:{id:'owner'}}};
+  const context={window:{AtryWhatsApp:core},iconPaths:{},state,Map,Date,document:{addEventListener(){}},bapi:p=>'/api/business/business'+p,api:async route=>{requests.push(route);if(route.endsWith('/whatsapp'))return {plan,can_edit:true,config:core.settings({enabled:true,phone:'+59899123456'},plan)};if(route.endsWith('/stats'))return [{state:'opened',count:2}];return [{id:'booking',starts_at:new Date(Date.now()+3600000).toISOString(),customer_name:'<script>Cliente</script>',customer_phone:'+59899123456',service_name:'Corte',staff_name:'Agustina Rojas',staff_id:'person'}];},setScreen:s=>html=s,headerTitle:(a,b)=>a+b,ic:()=>'',esc:s=>String(s??'').replaceAll('<','&lt;'),dateLocal:s=>s,option:(v,l)=>'<option>'+l+'</option>',empty:s=>s};
+  vm.createContext(context);vm.runInContext(fs.readFileSync('web/whatsapp.js','utf8'),context);await context.viewWhatsApp();assert.ok(html.includes('Recordatorios por WhatsApp'));assert.ok(html.includes('envío manual'));assert.ok(html.includes('correos de Brevo son independientes'));for(const label of ['Pendientes','Pospuestos','Gestionados'])assert.ok(html.includes(label));assert.ok(!html.includes('<script>Cliente'));assert.equal(html.includes('data-wa-filter'),plan==='pro');assert.equal(requests.some(r=>r.endsWith('/stats')),plan==='pro');
+  assert.ok(context.waContact({id:'b',customer_id:'c',customer_phone:'+59899123456'}).includes('data-wa-booking'));
+  for(const phone of ['', '123']){const contact=context.waContact({id:'b',customer_id:'c',customer_phone:phone});assert.ok(!contact.includes('data-wa-booking'));assert.ok(contact.includes('data-wa-add-phone'));assert.ok(!context.waCustomerContact({id:'c',phone}).includes('data-wa-customer'));}
+  state.business.role='staff';assert.ok(!context.waContact({id:'b',customer_id:'c',customer_phone:''}).includes('data-wa-add-phone'));state.business.role='owner';
+  await context.waConfig();assert.equal(requests.filter(r=>r.endsWith('/whatsapp')).length,1);
+ }
+ const css=fs.readFileSync('web/whatsapp.css','utf8');assert.ok(css.includes('max-width:700px'));assert.ok(css.includes('min-height:46px'));assert.ok(css.includes('font-size:16px'));
+});
