@@ -20,7 +20,7 @@ test('Presentación: nombre y tema quedan aislados y no alteran límites ni impo
  assert.equal(untouched.theme_config.primary,'#4754E6');
  const config=await a.request('/api/config');assert.ok(config.plans.every(p=>p.price_uyu===0));
  assert.equal(config.mail_provider,'disabled');assert.equal(config.payments_live,false);
- const bookings=await a.request('/api/business/'+value.id+'/bookings');assert.ok(bookings.some(x=>x.customer_name==='Agustina Rojas'));
+ const bookings=await a.request('/api/business/'+value.id+'/bookings');assert.ok(bookings.length>0);assert.ok(bookings.every(x=>x.customer_name&&!/Claudia Llorente|Agustina Rojas|Cliente Ejemplo/.test(x.customer_name)));assert.equal(new Set(bookings.map(x=>x.customer_id)).size,bookings.length);assert.ok(bookings.every(x=>!x.service_name.includes('barba')));
  await assert.rejects(a.request('/api/auth/register',{method:'POST',body:{}}),e=>e.status===403);
  await assert.rejects(a.request('/api/admin/businesses'),e=>e.status===403);
 });
@@ -51,4 +51,12 @@ test('Demo completa: conserva nombre y tema válidos sin cambiar otras instancia
  const invalid=browser('?demo=1&plan=1&demo_theme='+encodeURIComponent(JSON.stringify({sidebar:'#ED80A6'})),false);
  assert.equal((await invalid.request('/api/auth/me')).businesses[0].theme_config.sidebar,undefined);
  assert.equal(browser('?demo_theme='+params.get('demo_theme'),false).enabled,false);
+});
+
+test('Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos',async()=>{
+ const demo=browser('?demo=1&plan=3&showcase=1');const business=demo.showcase.apply({name:'Estudio Aurora',theme_config:{primary:'#4754E6'}});
+ const route='/api/business/'+business.id+'/bookings';const before=await demo.request(route);
+ demo.showcase.apply({name:'Tu estudio',theme_config:{primary:'#A44B6D'}});const after=await demo.request(route);
+ assert.deepEqual(after.map(x=>[x.id,x.customer_id,x.service_name]),before.map(x=>[x.id,x.customer_id,x.service_name]));
+ const customers=await demo.request('/api/business/'+business.id+'/customers');assert.equal(customers.length,30);assert.equal(new Set(customers.map(c=>c.name)).size,30);
 });

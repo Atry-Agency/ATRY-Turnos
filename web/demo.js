@@ -94,18 +94,27 @@ const plans={
   "pro":{"name":"ATRY Pro","price_uyu":2490,"staff_limit":10,"mail_limit":900,"features":{"team":true,"access":true,"recurring":true,"waitlist":true,"statistics":true,"advanced":true,"smartslots":true,"resources":true,"exports":true,"operational_mail":true,"auto_offers":true,"priority_support":true}}
 }
 ;
+// Natural, varied fictional data only for the landing's isolated identity demo.
+function seedShowcaseData(instance){
+ const names=['Ana Costa','Adriana Suárez','Florencia Díaz','Julieta Pérez','Victoria Lima','Natalia Santos','Emilia Torres','Mariana López','Daniela Castro','Cecilia Méndez','Andrea Silva','Gabriela Núñez','Paula Suárez','Carolina Ríos','Lorena Acosta','Verónica Sosa','Patricia Molina','Clara Vidal','Romina Cabrera','Luciana Ramos','Micaela Duarte','Elena Pereira','Sandra Reyes','Inés Ferreira','Beatriz León','Noelia Medina','Laura Benítez','Camila Ortiz','Valeria Santos','Malena Costa'];
+ const template=instance.data.customers[0];
+ instance.data.customers=names.map((name,i)=>({...template,id:'demo-showcase-customer-'+i,name,email:'',phone:'',visits:0}));
+ instance.data.bookings.forEach((booking,i)=>{const customer=instance.data.customers[i%names.length];booking.customer_id=customer.id;customer.visits++;});
+ instance.data.services.forEach(service=>{if(service.name==='Corte y barba')service.name='Coloración y brushing';});
+ instance.data.staff.forEach((person,i)=>person.name=['Sofía Pereira','Lucía Fernández','Valentina Costa','Martina Silva','Camila Méndez'][i]);
+}
 if(typeof module==='object'&&module.exports)module.exports={createDemo,plans};
 else{let showcaseSeeded=false;function ThemeForPreview(){return root.ATRY_THEME_CORE;}const query=new URLSearchParams(location.search),enabled=query.get('demo')==='1',instance=enabled?createDemo(query.get('plan'),plans):null;if(enabled&&query.get('demo_theme')?.length<2000){try{
  const config=root.ATRY_THEME_CORE.validate(JSON.parse(query.get('demo_theme')),instance.business.plan);
  Object.assign(instance.business,{theme_config:config,name:(query.get('demo_name')||instance.business.name).trim().slice(0,28)||instance.business.name});
- instance.data.customers[0].name='Claudia Llorente';instance.data.customers[1].name='Agustina Rojas';instance.data.bookings.forEach((b,i)=>b.customer_id=instance.data.customers[i%2].id);
+ seedShowcaseData(instance);
  }catch{/* Invalid visual URLs leave the ordinary isolated demo unchanged. */}}
  root.ATRY_DEMO={enabled,request:instance?.request,number:instance?.number,showcase:enabled&&query.get('showcase')==='1'&&root.parent!==root?{
  apply(input){
   const config=ThemeForPreview().validate(input.theme_config||{},instance.business.plan);
   const name=typeof input.name==='string'?input.name.trim().slice(0,28):'Tu estudio';
   Object.assign(instance.business,{name:name||'Tu estudio',theme_config:config,description:'Tu próximo momento empieza acá. Elegí cómo querés disfrutarlo.'});
-  if(!showcaseSeeded){instance.data.customers[0].name='Claudia Llorente';instance.data.customers[1].name='Agustina Rojas';instance.data.bookings.forEach((b,i)=>b.customer_id=instance.data.customers[i%2].id);showcaseSeeded=true;}
+  if(!showcaseSeeded){seedShowcaseData(instance);showcaseSeeded=true;}
   return structuredClone(instance.business);
  }
 }:null,loginPlan:email=>/^plan[123]@example\.com$/i.test(email||'')?Number(email[4]):0};}

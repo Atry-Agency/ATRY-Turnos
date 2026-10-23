@@ -1,6 +1,6 @@
 # Landing comercial: revisión local del 23/10/2026
 
-Estado: **sin publicar**. Rama `codex/landing-commercial-evolution`, base `6d260eb` de main. Se conserva `web/descubrir.html` como diseño base; no se utilizó la alternativa storytelling.
+Estado: **aprobada por el usuario para publicación**. Rama `codex/landing-commercial-evolution`, base `6d260eb` de main. Se conserva `web/descubrir.html` como diseño base; no se utilizó la alternativa storytelling.
 
 ## Alcance
 
@@ -80,3 +80,8 @@ Pendientes antes de publicar: aprobación visual del usuario de composición, ca
 A pedido del usuario, se reemplazó Corte y barba por Coloración y brushing en la fixture de Estudio Aurora. Las capturas de Inicio, Agenda, Clientes, Comunicación y Reservas se renderizaron nuevamente. Se usan 30 contactos ficticios y una clienta distinta en cada reserva de la muestra; no se repite una coloración para la misma persona dentro del período. Duraciones y precios coinciden con el catálogo, las cantidades de visitas salen de las reservas y el resumen suma los servicios completados (ejemplo: $4.800). La demostración de WhatsApp representa la misma reserva de Paula Suárez con Lucía Fernández, el 24 de octubre a las 10:00, Coloración y brushing, 60 minutos.
 
 La explicación comercial y FAQ ya no mencionan Brevo: se usa lenguaje orientado al cliente. El proveedor puede seguir apareciendo en capturas de la aplicación real; no se alteró la interfaz del SaaS para ocultarlo. Continúa sin publicar.
+
+
+## Corrección de la demo de identidad antes de publicar
+
+La demostración de colores conservaba un sembrado distinto que alternaba dos nombres. Se corrigieron los dos accesos a esa presentación (iframe y apertura completa con tema), con 30 contactos ficticios, reserva por contacto y servicios de peluquería coherentes. Los cambios de paleta no reinicializan la agenda. La demo común y los negocios reales quedan intactos. Se actualizan solamente la versión del script demo y la caché de recursos para distribuir la corrección. 18 pruebas específicas aprobadas. Publicación autorizada por el usuario el 23/10/2026.
