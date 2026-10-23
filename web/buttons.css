@@ -1,0 +1,50 @@
+/* Shared action system. Semantic colors belong here, never to business palettes.
+   Context styles may arrange actions; they must not recolor semantic variants. */
+/* Component visibility and responsive controls take precedence over the default. */
+:where(.btn){display:inline-flex}
+:root .btn{
+ --button-bg:var(--panel-action,var(--brand-action,#4D4CE8));
+ --button-fg:var(--panel-on-action,var(--brand-on-action,#FFF));
+ --button-border:var(--button-bg);
+ align-items:center;justify-content:center;gap:8px;
+ min-height:44px;max-width:100%;min-width:0;padding:11px 17px;
+ border:1px solid var(--button-border);border-radius:13px;
+ background:var(--button-bg);color:var(--button-fg);font-size:13px;font-weight:650;
+ line-height:1.4;text-align:center;text-decoration:none;white-space:normal;
+ overflow-wrap:anywhere;cursor:pointer;box-shadow:none;
+ transition:background .16s,border-color .16s,box-shadow .16s;
+}
+:root .btn.secondary{--button-bg:var(--surface2,#F2F3FA);--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
+:root .btn.outline{--button-bg:transparent;--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
+:root .btn.ghost{--button-bg:transparent;--button-fg:var(--ink,#1B2030);--button-border:transparent}
+:root .btn.success{--button-bg:#15803D;--button-fg:#FFF;--button-border:#15803D}
+:root .btn.danger{--button-bg:#BE123C;--button-fg:#FFF;--button-border:#BE123C}
+:root .btn.danger.outline{--button-bg:#FFF1F2;--button-fg:#9F1239;--button-border:#FDA4AF}
+:root .btn.warning,:root .btn.orange{--button-bg:#F2C94C;--button-fg:#493500;--button-border:#D4A925}
+:root .btn:hover:not(:disabled):not([aria-disabled=true]){background:color-mix(in srgb,var(--button-bg) 90%,var(--button-fg) 10%);color:var(--button-fg);filter:none}
+:root .btn:active:not(:disabled):not([aria-disabled=true]){background:color-mix(in srgb,var(--button-bg) 82%,var(--button-fg) 18%);color:var(--button-fg);transform:none}
+:root .btn.success:hover:not(:disabled):not([aria-disabled=true]){background:#166534;border-color:#166534}
+:root .btn.success:active:not(:disabled):not([aria-disabled=true]){background:#14532D;border-color:#14532D}
+:root .btn.danger:hover:not(:disabled):not([aria-disabled=true]){background:#9F1239;border-color:#9F1239}
+:root .btn.danger:active:not(:disabled):not([aria-disabled=true]){background:#881337;border-color:#881337}
+:root .btn.danger.outline:hover:not(:disabled):not([aria-disabled=true]){background:#FFE4E6;border-color:#FB7185}
+:root .btn.danger.outline:active:not(:disabled):not([aria-disabled=true]){background:#FECDD3;border-color:#E11D48}
+/* Approved solid ATRY cancellation treatment; other destructive contexts stay unchanged. */
+:root .btn.danger.booking-cancel{--button-bg:var(--atry-danger,#E51D4F);--button-fg:#FFF;--button-border:var(--atry-danger,#E51D4F)}
+:root .btn.danger.booking-cancel:hover:not(:disabled):not([aria-disabled=true]){background:var(--atry-danger-hover,#C81240);border-color:var(--atry-danger-hover,#C81240)}
+:root .btn.danger.booking-cancel:active:not(:disabled):not([aria-disabled=true]){background:#A80F35;border-color:#A80F35}
+:root .btn:focus-visible{outline:3px solid #4754E6;outline-offset:3px;box-shadow:0 0 0 2px #FFF}
+:root .btn:disabled,:root .btn[aria-disabled=true]{background:#E5E7EB;border-color:#D1D5DB;color:#4B5563;box-shadow:none;filter:none;opacity:1;cursor:not-allowed;transform:none}
+:root .btn .i,:root .btn svg,:root .btn .spin{color:inherit}
+:root .btn .spin{border-color:currentColor;border-right-color:transparent}
+:root .btn.sm{min-height:40px;padding:9px 12px;font-size:11px}
+:root .btn.icon-only{width:44px;min-width:44px;padding:10px}
+:root .btn.full{width:100%}
+@media(pointer:coarse){:root .btn.btn{min-height:44px;min-width:44px}}
+@media(prefers-reduced-motion:reduce){:root .btn{transition:none}}
+/* Profile sections follow the data / communication / history / save hierarchy. */
+.customer-profile{min-width:0}.customer-profile>section{border-top:1px solid var(--line);padding-top:22px;margin-top:22px}
+.customer-profile h3{font-size:15px;margin:0 0 15px}.customer-profile-subtitle{font-size:12px;color:var(--muted);margin:-9px 0 22px}
+.customer-profile-actions{position:sticky;bottom:-27px;z-index:2;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));margin-top:22px;background:var(--surface);border-top:1px solid var(--line)}
+.modal:has(.customer-profile){scroll-padding-block:24px 100px;max-height:calc(var(--wa-visible-height,100dvh) - 30px)}
+@media(max-width:540px){.customer-profile-actions{bottom:-18px}.customer-profile-actions>.btn{flex:1 1 120px}.modal:has(.customer-profile) input,.modal:has(.customer-profile) textarea{font-size:16px}}
