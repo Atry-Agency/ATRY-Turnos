@@ -1,0 +1,2 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});const p=await b.newPage();p.on('pageerror',e=>console.log('PAGEERROR',e.message));await p.goto('http://127.0.0.1:3321/legacy/?demo=1&plan=1&capture=1&react=1#/app/servicios');await p.waitForSelector('[data-react-pilot]',{timeout:15000});console.log(await p.locator('[data-react-pilot]').innerText());await b.close();})().catch(e=>{console.error(e);process.exitCode=1});

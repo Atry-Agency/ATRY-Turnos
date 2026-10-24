@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Estado inicial de carga y bloqueo de acciones hasta recibir catálogo",
+    "Foco inicial, trap Tab/Shift+Tab, Escape y retorno al disparador",
+    "Restauración de bfcache recarga y monta una sola raíz"
+  ],
+  "errors": []
+}

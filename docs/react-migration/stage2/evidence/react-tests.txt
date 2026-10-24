@@ -1,0 +1,80 @@
+
+> test
+> node ../../scripts/react/unit.cjs
+
+TAP version 13
+# Subtest: ServiceCard escapes untrusted business text and preserves service actions
+ok 1 - ServiceCard escapes untrusted business text and preserves service actions
+  ---
+  duration_ms: 31.759709
+  type: 'test'
+  ...
+# Subtest: Hidden service preserves publish action and fallback description
+ok 2 - Hidden service preserves publish action and fallback description
+  ---
+  duration_ms: 0.629458
+  type: 'test'
+  ...
+# Subtest: catalog shares pending reads, validates and publishes once
+ok 3 - catalog shares pending reads, validates and publishes once
+  ---
+  duration_ms: 0.92475
+  type: 'test'
+  ...
+# Subtest: both late catalog responses are rejected after session change
+ok 4 - both late catalog responses are rejected after session change
+  ---
+  duration_ms: 0.474875
+  type: 'test'
+  ...
+# Subtest: staff and disabled subscriptions are denied before transport
+ok 5 - staff and disabled subscriptions are denied before transport
+  ---
+  duration_ms: 0.213833
+  type: 'test'
+  ...
+# Subtest: concurrent mutations do not duplicate writes, server errors remain errors
+ok 6 - concurrent mutations do not duplicate writes, server errors remain errors
+  ---
+  duration_ms: 0.142834
+  type: 'test'
+  ...
+# Subtest: malformed catalogs fail closed; form serialization preserves price, buffers, deposits and professional IDs
+ok 7 - malformed catalogs fail closed; form serialization preserves price, buffers, deposits and professional IDs
+  ---
+  duration_ms: 0.478583
+  type: 'test'
+  ...
+# Subtest: disposed catalog never publishes even if the same account returns to the same business
+ok 8 - disposed catalog never publishes even if the same account returns to the same business
+  ---
+  duration_ms: 0.136041
+  type: 'test'
+  ...
+# Subtest: new session version and different business both reject an old mutation before transport
+ok 9 - new session version and different business both reject an old mutation before transport
+  ---
+  duration_ms: 0.169791
+  type: 'test'
+  ...
+# Subtest: Services repository reuses the cloud API contract, deduplicates catalog RPC and propagates permission denial
+ok 10 - Services repository reuses the cloud API contract, deduplicates catalog RPC and propagates permission denial
+  ---
+  duration_ms: 6.409375
+  type: 'test'
+  ...
+# Subtest: effect cleanup and replay rejects previous generation without poisoning the new catalog request
+ok 11 - effect cleanup and replay rejects previous generation without poisoning the new catalog request
+  ---
+  duration_ms: 0.401083
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 106.74875

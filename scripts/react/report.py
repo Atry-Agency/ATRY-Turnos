@@ -1,0 +1,47 @@
+from pathlib import Path
+from PIL import Image,ImageChops
+import json,statistics,gzip,re
+r=Path(__file__).resolve().parents[2];d=r/'docs/react-migration';p=d/'evidence';q=json.loads((p/'qa.json').read_text());rows=[]
+for a in sorted(p.glob('javascript-*.png'))+list(p.glob('custom-javascript.png')):
+ b=p/a.name.replace('javascript','react');i=Image.open(a).convert('RGB');j=Image.open(b).convert('RGB');diff=ImageChops.difference(i,j);count=sum(1 for pix in diff.getdata() if pix!=(0,0,0));rows.append({'javascript':a.name,'react':b.name,'dimensions':i.size,'differentPixels':count,'bbox':diff.getbbox()})
+(p/'pixel-comparison.json').write_text(json.dumps(rows,indent=2))
+metrics=[('appReadyMs','Carga hasta tarjetas listas (navegador)'),('dialogMs','Abrir diálogo'),('navigationMs','Navegar a Clientes'),('agendaMs','Renderizar Agenda'),('serviceSelectionMs','Seleccionar servicio público'),('staffSelectionMs','Seleccionar profesional público'),('availabilityDemoAdapterMs','Disponibilidad del adaptador demo')]
+s='''# Resultados de la primera etapa
+
+## Verificación
+
+- 241/241 pruebas originales aprobadas (SQLite/HTTP temporal y PGlite; 0 omitidas); log completo evidence/legacy-tests.txt.
+- 2/2 unitarias adicionales: escapar contenido de negocio no confiable, conservar acciones/atributos y variantes oculto/publicado, seña y descripción alternativa.
+- TypeScript estricto y bundle Vite aprobados. npm audit del paquete React: 0 vulnerabilidades durante instalación. Dependencias originales: 1 moderada en nodemailer10.1.0, avisos addressparser [GHSA-8c8m-p3m8-cjg8](https://github.com/advisories/GHSA-8c8m-p3m8-cjg8), [GHSA-m943-m63m-w62w](https://github.com/advisories/GHSA-m943-m63m-w62w), [GHSA-85x2-q946-cp5h](https://github.com/advisories/GHSA-85x2-q946-cp5h). No se actualizó el backend como efecto secundario.
+- Chrome: editar/guardar, ocultar/publicar, diálogo/Escape y 3 ciclos Clientes/Servicios sin doble raíz. 0 errores JavaScript y 0 peticiones externas en la ejecución final.
+- API experimental rechaza POST con403; HTML exige demo=1; sin ATRY_CLOUD ni registros de service worker. Fecha de fixtures fija24/10/2026; performance.now real.
+- Capturas: 3 planes x 5 anchos (320/390/430/768/1440), más tema Pro personalizado = 16 pares / 32 imágenes. Mismos datos y dimensiones. Los cambios en los tests quedan en memoria.
+
+'''
+s+=f"Coincidencias exactas: {sum(x['differentPixels']==0 for x in rows)}/16 pares. Máxima diferencia: {max(x['differentPixels'] for x in rows)} píxeles por captura (detalles de bordes/rasterización en móvil, sin desplazamiento de contenido). Ver pixel-comparison.json; no se aplica tolerancia oculta.\n\n"
+s+='## Rendimiento local medido\n\nChrome headless de escritorio 1440x960, Node22.18, loopback, caché de navegador nueva por página; 5 muestras por variante en orden JS y después React. Servidor Vite sirve archivos estáticos y bundle React compilado con NODE_ENV production; NO son tiempos del dev bundle ni de Supabase. Tiempo de carga: performance.now desde navegación hasta tarjetas y fuentes listas. Interacciones: reloj del runner alrededor de acción y selector visible, incluyen automatización; se usan como línea base reproducible, no microbenchmark de CPU. Sin inferencia estadística de mejora.\n\n| Medición | JavaScript mediana [mín-máx], ms | React mediana [mín-máx], ms |\n|---|---|---|\n'
+for key,label in metrics:
+ vals=[]
+ for variant in ['javascript','react']:
+  a=[v[key] for v in q['performance'] if v['variant']==variant]; vals.append(f'{statistics.median(a):.1f} [{min(a):.1f}-{max(a):.1f}]')
+ s+=f'| {label} | {vals[0]} | {vals[1]} |\n'
+for variant in ['javascript','react']:
+ x=[v for v in q['performance'] if v['variant']==variant];s+=f"\n{variant}: solicitudes de recursos del navegador por muestra: {[v['resourceRequests'] for v in x]}; llamadas efectivas al adaptador demo durante interacciones (después de carga inicial): {[len(v['adapterReads']) for v in x]}. Las lecturas están detalladas por ruta/método/tiempo en qa.json; los hits de caché no se cuentan como nuevas llamadas al adaptador.\n"
+jsfiles=[r/'web'/m for m in re.findall(r'<script src="\./([^?" ]+)',(r/'web/index.html').read_text())];cssfiles=[r/'web'/m for m in re.findall(r'<link rel="stylesheet" href="\./([^?" ]+)',(r/'web/index.html').read_text())];bundle=(r/'frontend/react/dist/pilot.js').read_bytes()
+s+=f'''\nBundle React adicional: {len(bundle):,} bytes crudos / {len(gzip.compress(bundle)):,} bytes gzip; incluye React/DOM y piloto, minificado. Scripts clásicos de index: {sum(f.stat().st_size for f in jsfiles):,} bytes crudos / {sum(len(gzip.compress(f.read_bytes())) for f in jsfiles):,} gzip sumando cada archivo. CSS de index: {sum(f.stat().st_size for f in cssfiles):,} bytes crudos. Estos tamaños excluyen fuentes/logo y cloud bundle de publicación; no son una comparación de app totalmente migrada. El piloto conserva todos los scripts legacy y agrega React: coste transitorio real.
+
+## Diagnóstico y límites
+
+La costura del piloto ejecuta primero el render legacy y luego monta React; al abrir diálogos se recompone el panel y se remonta la isla. Eso agrega trabajo y puede elevar el tiempo de diálogo. Antes de ampliar React, sustituir la costura por una ruta con dueño único. No optimizar escondiendo esta duplicación en las mediciones.
+
+Observaciones de código: renderApp refresca negocio y entitlements en paralelo antes de cargar vista; Servicios lee servicios/staff en paralelo. Agenda lee bookings/staff y después scheduling, con posibles lecturas adicionales de horas/time-off si falta el catálogo; esto puede generar rondas secuenciales cuando no hay caché. Cliente público consulta disponibilidad al cambiar selección. Son candidatos a instrumentación, no causas productivas demostradas.
+
+Supabase no fue contactado: tiempo de respuesta de red/RPC/DB productivo **no medido**. La disponibilidad demo es CPU local, no latencia de Supabase. No se alteraron consultas, índices, RLS, autenticación o políticas. Para localizar las esperas publicadas hace falta entorno staging con fixtures, Network/ResourceTiming del transporte y timings de RPC, separando caché, cola, red y render. No usar service role ni medir creando reservas productivas.
+
+La suite original cubre permisos, tenant, reservas, correo, PostgreSQL y contratos; la validación de navegador de esta etapa cubre la isla, navegación, temas y responsive. No se ejecutó todavía un E2E React de todas las pantallas porque siguen en JS. La matriz y puertas exigen esas pruebas al migrar cada flujo. Ninguna pantalla completa ni todo el producto se declara migrado por compilar.
+
+## Conservación y siguiente paso
+
+SHA-256 de los271 archivos de IAtry coincide con el respaldo; main continúa limpio. Git diff de archivos rastreados del worktree React está vacío: sólo se agregaron frontend/react, scripts/react y docs/react-migration (más PDF local). Archivos guardados, sin commit/push/merge. React se detiene aquí para revisión de la base. Antes de una segunda etapa: aprobar costura/propuesta, crear fachada de contratos y elegir una pantalla completa de bajo riesgo.
+'''
+(d/'RESULTADOS.md').write_text(s);print(s[s.index('| Medición'):s.index('## Diagnóstico')])

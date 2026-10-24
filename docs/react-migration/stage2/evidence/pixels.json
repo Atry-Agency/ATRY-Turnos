@@ -1,0 +1,895 @@
+[
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 320,
+    "kind": "list",
+    "javascript": "javascript-plan1-320-list.png",
+    "react": "react-plan1-320-list.png",
+    "dimensions": [
+      320,
+      1348
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 320,
+    "kind": "dialog",
+    "javascript": "javascript-plan1-320-dialog.png",
+    "react": "react-plan1-320-dialog.png",
+    "dimensions": [
+      320,
+      1348
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 390,
+    "kind": "list",
+    "javascript": "javascript-plan1-390-list.png",
+    "react": "react-plan1-390-list.png",
+    "dimensions": [
+      390,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 390,
+    "kind": "dialog",
+    "javascript": "javascript-plan1-390-dialog.png",
+    "react": "react-plan1-390-dialog.png",
+    "dimensions": [
+      390,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 430,
+    "kind": "list",
+    "javascript": "javascript-plan1-430-list.png",
+    "react": "react-plan1-430-list.png",
+    "dimensions": [
+      430,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 430,
+    "kind": "dialog",
+    "javascript": "javascript-plan1-430-dialog.png",
+    "react": "react-plan1-430-dialog.png",
+    "dimensions": [
+      430,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 768,
+    "kind": "list",
+    "javascript": "javascript-plan1-768-list.png",
+    "react": "react-plan1-768-list.png",
+    "dimensions": [
+      768,
+      978
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 768,
+    "kind": "dialog",
+    "javascript": "javascript-plan1-768-dialog.png",
+    "react": "react-plan1-768-dialog.png",
+    "dimensions": [
+      768,
+      978
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 1440,
+    "kind": "list",
+    "javascript": "javascript-plan1-1440-list.png",
+    "react": "react-plan1-1440-list.png",
+    "dimensions": [
+      1440,
+      960
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 1440,
+    "kind": "dialog",
+    "javascript": "javascript-plan1-1440-dialog.png",
+    "react": "react-plan1-1440-dialog.png",
+    "dimensions": [
+      1440,
+      960
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 320,
+    "kind": "list",
+    "javascript": "javascript-plan2-320-list.png",
+    "react": "react-plan2-320-list.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 15,
+    "pixelsChannelDeltaAbove4": 7,
+    "maxChannelDelta": 15,
+    "bbox": [
+      15,
+      307,
+      300,
+      2313
+    ]
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 320,
+    "kind": "dialog",
+    "javascript": "javascript-plan2-320-dialog.png",
+    "react": "react-plan2-320-dialog.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 390,
+    "kind": "list",
+    "javascript": "javascript-plan2-390-list.png",
+    "react": "react-plan2-390-list.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 390,
+    "kind": "dialog",
+    "javascript": "javascript-plan2-390-dialog.png",
+    "react": "react-plan2-390-dialog.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 430,
+    "kind": "list",
+    "javascript": "javascript-plan2-430-list.png",
+    "react": "react-plan2-430-list.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 430,
+    "kind": "dialog",
+    "javascript": "javascript-plan2-430-dialog.png",
+    "react": "react-plan2-430-dialog.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 768,
+    "kind": "list",
+    "javascript": "javascript-plan2-768-list.png",
+    "react": "react-plan2-768-list.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 768,
+    "kind": "dialog",
+    "javascript": "javascript-plan2-768-dialog.png",
+    "react": "react-plan2-768-dialog.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 1440,
+    "kind": "list",
+    "javascript": "javascript-plan2-1440-list.png",
+    "react": "react-plan2-1440-list.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 1440,
+    "kind": "dialog",
+    "javascript": "javascript-plan2-1440-dialog.png",
+    "react": "react-plan2-1440-dialog.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 320,
+    "kind": "list",
+    "javascript": "javascript-plan3-320-list.png",
+    "react": "react-plan3-320-list.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 320,
+    "kind": "dialog",
+    "javascript": "javascript-plan3-320-dialog.png",
+    "react": "react-plan3-320-dialog.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 390,
+    "kind": "list",
+    "javascript": "javascript-plan3-390-list.png",
+    "react": "react-plan3-390-list.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 390,
+    "kind": "dialog",
+    "javascript": "javascript-plan3-390-dialog.png",
+    "react": "react-plan3-390-dialog.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 19,
+    "pixelsChannelDeltaAbove4": 11,
+    "maxChannelDelta": 45,
+    "bbox": [
+      45,
+      53,
+      359,
+      2102
+    ]
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 430,
+    "kind": "list",
+    "javascript": "javascript-plan3-430-list.png",
+    "react": "react-plan3-430-list.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 430,
+    "kind": "dialog",
+    "javascript": "javascript-plan3-430-dialog.png",
+    "react": "react-plan3-430-dialog.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 768,
+    "kind": "list",
+    "javascript": "javascript-plan3-768-list.png",
+    "react": "react-plan3-768-list.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 7,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 3,
+    "bbox": [
+      21,
+      124,
+      747,
+      1302
+    ]
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 768,
+    "kind": "dialog",
+    "javascript": "javascript-plan3-768-dialog.png",
+    "react": "react-plan3-768-dialog.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 1440,
+    "kind": "list",
+    "javascript": "javascript-plan3-1440-list.png",
+    "react": "react-plan3-1440-list.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 1440,
+    "kind": "dialog",
+    "javascript": "javascript-plan3-1440-dialog.png",
+    "react": "react-plan3-1440-dialog.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 390,
+    "kind": "list",
+    "javascript": "javascript-dark-390-list.png",
+    "react": "react-dark-390-list.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 390,
+    "kind": "dialog",
+    "javascript": "javascript-dark-390-dialog.png",
+    "react": "react-dark-390-dialog.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 390,
+    "kind": "list",
+    "javascript": "javascript-custom-390-list.png",
+    "react": "react-custom-390-list.png",
+    "dimensions": [
+      390,
+      2275
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 390,
+    "kind": "dialog",
+    "javascript": "javascript-custom-390-dialog.png",
+    "react": "react-custom-390-dialog.png",
+    "dimensions": [
+      390,
+      2275
+    ],
+    "differentPixels": 21,
+    "pixelsChannelDeltaAbove4": 3,
+    "maxChannelDelta": 15,
+    "bbox": [
+      111,
+      53,
+      366,
+      2110
+    ]
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 768,
+    "kind": "list",
+    "javascript": "javascript-dark-768-list.png",
+    "react": "react-dark-768-list.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 768,
+    "kind": "dialog",
+    "javascript": "javascript-dark-768-dialog.png",
+    "react": "react-dark-768-dialog.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 19,
+    "pixelsChannelDeltaAbove4": 3,
+    "maxChannelDelta": 38,
+    "bbox": [
+      21,
+      234,
+      748,
+      1302
+    ]
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 768,
+    "kind": "list",
+    "javascript": "javascript-custom-768-list.png",
+    "react": "react-custom-768-list.png",
+    "dimensions": [
+      768,
+      1268
+    ],
+    "differentPixels": 5,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 3,
+    "bbox": [
+      53,
+      255,
+      729,
+      572
+    ]
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 768,
+    "kind": "dialog",
+    "javascript": "javascript-custom-768-dialog.png",
+    "react": "react-custom-768-dialog.png",
+    "dimensions": [
+      768,
+      1268
+    ],
+    "differentPixels": 52,
+    "pixelsChannelDeltaAbove4": 1,
+    "maxChannelDelta": 45,
+    "bbox": [
+      48,
+      244,
+      738,
+      833
+    ]
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 1440,
+    "kind": "list",
+    "javascript": "javascript-dark-1440-list.png",
+    "react": "react-dark-1440-list.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 1440,
+    "kind": "dialog",
+    "javascript": "javascript-dark-1440-dialog.png",
+    "react": "react-dark-1440-dialog.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 1440,
+    "kind": "list",
+    "javascript": "javascript-custom-1440-list.png",
+    "react": "react-custom-1440-list.png",
+    "dimensions": [
+      1440,
+      960
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 1440,
+    "kind": "dialog",
+    "javascript": "javascript-custom-1440-dialog.png",
+    "react": "react-custom-1440-dialog.png",
+    "dimensions": [
+      1440,
+      960
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 320,
+    "kind": "bottom",
+    "javascript": "javascript-plan1-320-bottom.png",
+    "react": "react-plan1-320-bottom.png",
+    "dimensions": [
+      320,
+      1348
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 390,
+    "kind": "bottom",
+    "javascript": "javascript-plan1-390-bottom.png",
+    "react": "react-plan1-390-bottom.png",
+    "dimensions": [
+      390,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan1",
+    "plan": 1,
+    "width": 430,
+    "kind": "bottom",
+    "javascript": "javascript-plan1-430-bottom.png",
+    "react": "react-plan1-430-bottom.png",
+    "dimensions": [
+      430,
+      1328
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 320,
+    "kind": "bottom",
+    "javascript": "javascript-plan2-320-bottom.png",
+    "react": "react-plan2-320-bottom.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 390,
+    "kind": "bottom",
+    "javascript": "javascript-plan2-390-bottom.png",
+    "react": "react-plan2-390-bottom.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan2",
+    "plan": 2,
+    "width": 430,
+    "kind": "bottom",
+    "javascript": "javascript-plan2-430-bottom.png",
+    "react": "react-plan2-430-bottom.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 320,
+    "kind": "bottom",
+    "javascript": "javascript-plan3-320-bottom.png",
+    "react": "react-plan3-320-bottom.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 390,
+    "kind": "bottom",
+    "javascript": "javascript-plan3-390-bottom.png",
+    "react": "react-plan3-390-bottom.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "plan3",
+    "plan": 3,
+    "width": 430,
+    "kind": "bottom",
+    "javascript": "javascript-plan3-430-bottom.png",
+    "react": "react-plan3-430-bottom.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "pixelsChannelDeltaAbove4": 0,
+    "maxChannelDelta": 0,
+    "bbox": null
+  },
+  {
+    "name": "dark",
+    "plan": 3,
+    "width": 390,
+    "kind": "bottom",
+    "javascript": "javascript-dark-390-bottom.png",
+    "react": "react-dark-390-bottom.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 20,
+    "pixelsChannelDeltaAbove4": 13,
+    "maxChannelDelta": 38,
+    "bbox": [
+      35,
+      768,
+      376,
+      2102
+    ]
+  },
+  {
+    "name": "custom",
+    "plan": 3,
+    "width": 390,
+    "kind": "bottom",
+    "javascript": "javascript-custom-390-bottom.png",
+    "react": "react-custom-390-bottom.png",
+    "dimensions": [
+      390,
+      2275
+    ],
+    "differentPixels": 20,
+    "pixelsChannelDeltaAbove4": 5,
+    "maxChannelDelta": 45,
+    "bbox": [
+      34,
+      626,
+      366,
+      2110
+    ]
+  }
+]

@@ -1,0 +1,3569 @@
+{
+  "web/subscriptions.js": {
+    "lines": 23,
+    "bytes": 9138,
+    "functions": [
+      "subscriptionNotice",
+      "subscriptionSidebar",
+      "lockSubscriptionControls",
+      "manualSubscriptionModal"
+    ],
+    "forms": [
+      "admin-business"
+    ],
+    "actions": [
+      "copy-custom",
+      "refresh"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/typography.css": {
+    "lines": 13,
+    "bytes": 1528,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/theme-studio.css": {
+    "lines": 100,
+    "bytes": 29558,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/onboarding.js": {
+    "lines": 49,
+    "bytes": 10723,
+    "functions": [
+      "sectorIcon",
+      "registrationWizard",
+      "authArtwork",
+      "brandLogoControl",
+      "brandColorControl",
+      "receiptDetails",
+      "bookingReceiptPage",
+      "updateBrandColor"
+    ],
+    "forms": [
+      "register"
+    ],
+    "actions": [
+      "copy-custom"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/staff-photos.css": {
+    "lines": 19,
+    "bytes": 2475,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/index.html": {
+    "lines": 17,
+    "bytes": 4313,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/control-center.js": {
+    "lines": 160,
+    "bytes": 57856,
+    "functions": [
+      "ccTable",
+      "ccFilters",
+      "ccPager",
+      "ccNavEntry",
+      "ccShell",
+      "ccMetric",
+      "ccMetricStatic",
+      "ccOverview",
+      "ccBusinessList",
+      "ccBusiness",
+      "ccUsers",
+      "ccMail",
+      "ccRequests",
+      "ccIncidents",
+      "ccAudit",
+      "ccSystem",
+      "ccGuides",
+      "ccStorage",
+      "ccRenderSection",
+      "adminView",
+      "ccActionDialog",
+      "ccConfirm",
+      "viewEssentialSupport",
+      "ccDiagnostic"
+    ],
+    "forms": [
+      "admin-business",
+      "command",
+      "filters",
+      "global",
+      "support"
+    ],
+    "actions": [
+      "close-menu",
+      "edit-plan",
+      "logout",
+      "toggle-menu"
+    ],
+    "rpc": [],
+    "tests": [
+      ",",
+      ",",
+      "/",
+      ".",
+      "."
+    ]
+  },
+  "web/features.js": {
+    "lines": 73,
+    "bytes": 20466,
+    "functions": [
+      "refreshIdentity",
+      "featureLayout",
+      "accountRegistrationView",
+      "addAccountLink",
+      "viewMemberships",
+      "memberForm",
+      "invitationView",
+      "submitFeature",
+      "clickFeature",
+      "mailState",
+      "calendarRange",
+      "viewAgenda",
+      "disconnectAgendaEvents",
+      "connectAgendaEvents",
+      "employeeBookingModal",
+      "employeeCatalog"
+    ],
+    "forms": [
+      "accept-invitation",
+      "login",
+      "manual-book",
+      "plan-settings",
+      "register",
+      "register-account",
+      "update-resource"
+    ],
+    "actions": [
+      "edit-role",
+      "invitation-login",
+      "invite-member",
+      "logout",
+      "revoke-invitation",
+      "revoke-member"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/styles.css": {
+    "lines": 14,
+    "bytes": 19685,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/descubrir.css": {
+    "lines": 86,
+    "bytes": 45655,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/agenda.js": {
+    "lines": 332,
+    "bytes": 60266,
+    "functions": [
+      "agendaStatus",
+      "agendaRules",
+      "agendaMonth",
+      "agendaEvent",
+      "agendaTimeGrid",
+      "agendaAttentionGroups",
+      "agendaAttention",
+      "renderProfessionalAgenda",
+      "updateAgendaClock",
+      "agendaInteraction",
+      "agendaShowDetail",
+      "agendaProfessionals",
+      "agendaSummary",
+      "agendaCreateBooking",
+      "agendaFindCustomer",
+      "agendaSelectCustomer",
+      "agendaUsefulMinute",
+      "agendaScrollUseful",
+      "agendaMobileCalendar",
+      "agendaFindTime",
+      "agendaLoadTimes",
+      "agendaCustomerHistory",
+      "agendaCaptureDraft",
+      "agendaRestoreDraft",
+      "agendaPrepareReschedule",
+      "agendaUpdateComparison",
+      "agendaDraftAtSlot",
+      "agendaContactKey",
+      "agendaExactContacts",
+      "agendaBookingIssues",
+      "agendaFieldError",
+      "agendaCheckDuplicates",
+      "agendaValidateBooking",
+      "agendaWeeklyModel",
+      "agendaWeeklyActivity"
+    ],
+    "forms": [
+      "agenda-search",
+      "manual-book",
+      "reschedule"
+    ],
+    "actions": [
+      "agenda-attention",
+      "agenda-choose-time",
+      "agenda-clear-filters",
+      "agenda-customer-history",
+      "agenda-customer-reset",
+      "agenda-customer-search",
+      "agenda-customer-select",
+      "agenda-date-shift",
+      "agenda-density",
+      "agenda-detail",
+      "agenda-distinct-customer",
+      "agenda-find-for-booking",
+      "agenda-find-for-reschedule",
+      "agenda-find-time",
+      "agenda-flow-back",
+      "agenda-load-times",
+      "agenda-open-activity-day",
+      "agenda-open-day",
+      "agenda-professional",
+      "agenda-remove-filter",
+      "agenda-slot",
+      "agenda-status-filter",
+      "agenda-today",
+      "agenda-toggle-filters",
+      "agenda-toggle-tools",
+      "agenda-use-duplicate",
+      "agenda-useful-hour",
+      "agenda-view",
+      "agenda-week-day",
+      "open-booking",
+      "refresh"
+    ],
+    "rpc": [],
+    "tests": [
+      "/",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "web/visit-core.js": {
+    "lines": 6,
+    "bytes": 1299,
+    "functions": [
+      "overlaps",
+      "solve",
+      "next"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/staff-photos.js": {
+    "lines": 33,
+    "bytes": 12094,
+    "functions": [
+      "staffAvatar",
+      "photoRequest",
+      "photoList",
+      "photoURL",
+      "clearStaffPhotos",
+      "loadStaffAvatar",
+      "scanStaffPhotos",
+      "refreshStaffPhotos",
+      "staffPhotoEditor",
+      "staffPhotoVisibility",
+      "bindStaffPhotoEditor",
+      "photoPreview",
+      "optimizeStaffPhoto",
+      "saveStaffPhoto",
+      "staffPhotoProfiles",
+      "startStaffPhotos"
+    ],
+    "forms": [],
+    "actions": [
+      "edit-staff-photo"
+    ],
+    "rpc": [],
+    "tests": [
+      "/",
+      "/"
+    ]
+  },
+  "web/business-polish.css": {
+    "lines": 159,
+    "bytes": 23425,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/agenda-core.js": {
+    "lines": 27,
+    "bytes": 4179,
+    "functions": [
+      "segment",
+      "layout",
+      "windows",
+      "bounds"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/visits.css": {
+    "lines": 11,
+    "bytes": 4713,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/whatsapp-demo.js": {
+    "lines": 18,
+    "bytes": 5045,
+    "functions": [
+      "create",
+      "handle"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "/"
+    ]
+  },
+  "web/whatsapp.js": {
+    "lines": 81,
+    "bytes": 26698,
+    "functions": [
+      "waResizeMessage",
+      "waFitEditor",
+      "waConfig",
+      "waButton",
+      "waPhoneState",
+      "waContact",
+      "waCustomerQuick",
+      "waCustomerContact",
+      "waOffer",
+      "viewWhatsApp",
+      "waSettings",
+      "waCustomFields",
+      "waCompose",
+      "waFilterRows"
+    ],
+    "forms": [],
+    "actions": [
+      "close-modal"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/product.css": {
+    "lines": 146,
+    "bytes": 40108,
+    "functions": [],
+    "forms": [],
+    "actions": [
+      "edit-role",
+      "revoke-member",
+      "toggle-menu"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/recurring.js": {
+    "lines": 30,
+    "bytes": 7215,
+    "functions": [
+      "viewRecurring",
+      "recurringModal",
+      "clickRecurring",
+      "submitRecurring"
+    ],
+    "forms": [
+      "end-recurring",
+      "save-recurring"
+    ],
+    "actions": [
+      "edit-recurring",
+      "end-recurring",
+      "new-recurring"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/staff-photo-core.js": {
+    "lines": 7,
+    "bytes": 1197,
+    "functions": [
+      "path",
+      "validPath",
+      "bytes"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ","
+    ]
+  },
+  "web/demo.js": {
+    "lines": 121,
+    "bytes": 22479,
+    "functions": [
+      "create",
+      "available",
+      "slots",
+      "createDemo",
+      "request",
+      "seedShowcaseData",
+      "ThemeForPreview"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/commercial.js": {
+    "lines": 54,
+    "bytes": 21709,
+    "functions": [
+      "pruneCommercialControls",
+      "planCards",
+      "requestContact",
+      "viewSubscription",
+      "viewOwnHours",
+      "viewBasicStatistics",
+      "commercialPlanModal",
+      "commercialAdminPanel"
+    ],
+    "forms": [
+      "admin-business",
+      "assign-resources",
+      "create-resource"
+    ],
+    "actions": [
+      "add-staff",
+      "close-modal",
+      "customer-fixed",
+      "edit-hours",
+      "edit-plan",
+      "export",
+      "new-recurring",
+      "refresh"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/workspace.js": {
+    "lines": 99,
+    "bytes": 27363,
+    "functions": [
+      "businessNavigationItems",
+      "workspaceSetupPrompt",
+      "workspaceSettingsNavigation",
+      "weeklyWindows",
+      "weekSummary",
+      "intervalRow",
+      "weeklyHoursModal",
+      "syncWeekInputs",
+      "saveWeeklyHours",
+      "viewSchedule",
+      "viewOnboarding",
+      "viewAccount",
+      "viewNotifications"
+    ],
+    "forms": [
+      "account-password",
+      "account-profile",
+      "assign-resources",
+      "complete-onboarding",
+      "create-exception",
+      "create-holiday",
+      "create-organization",
+      "create-resource",
+      "create-timeoff",
+      "notification-preferences",
+      "save-hours"
+    ],
+    "actions": [
+      "delete-schedule-rule",
+      "delete-timeoff",
+      "edit-hours",
+      "edit-resource",
+      "preview-mail",
+      "revoke-session",
+      "select-business"
+    ],
+    "rpc": [],
+    "tests": [
+      " "
+    ]
+  },
+  "web/showcase-preview.js": {
+    "lines": 36,
+    "bytes": 2048,
+    "functions": [
+      "startShowcasePreview",
+      "update"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/whatsapp.css": {
+    "lines": 18,
+    "bytes": 7782,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/appearance.js": {
+    "lines": 41,
+    "bytes": 9772,
+    "functions": [
+      "values",
+      "apply",
+      "appearanceMiniPreview",
+      "appearanceEditor",
+      "refreshAppearancePreview"
+    ],
+    "forms": [
+      "save-appearance"
+    ],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/agenda.css": {
+    "lines": 82,
+    "bytes": 46103,
+    "functions": [],
+    "forms": [],
+    "actions": [
+      "agenda-useful-hour"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/appearance.css": {
+    "lines": 435,
+    "bytes": 36056,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/visits.js": {
+    "lines": 15,
+    "bytes": 15736,
+    "functions": [
+      "visitTimeline",
+      "visitFlowFor",
+      "searchVisit",
+      "publicVisitView",
+      "visitBookingActions",
+      "visitManageView",
+      "visitManageUrl",
+      "reloadVisitManage"
+    ],
+    "forms": [
+      "book",
+      "manage-search"
+    ],
+    "actions": [
+      "booking-status",
+      "copy-custom"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/descubrir.html": {
+    "lines": 61,
+    "bytes": 26830,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/buttons.css": {
+    "lines": 50,
+    "bytes": 4739,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/theme-studio.js": {
+    "lines": 77,
+    "bytes": 27008,
+    "functions": [
+      "applyThemeTokens",
+      "studioControl",
+      "studioColor",
+      "appearanceEditor",
+      "studioDraft",
+      "studioSetDraft",
+      "refreshAppearancePreview",
+      "studioPreview",
+      "themeStudioPayload",
+      "studioInitialDraft",
+      "publicBusinessIdentity"
+    ],
+    "forms": [
+      "create-staff",
+      "save-appearance",
+      "update-staff"
+    ],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/whatsapp-core.js": {
+    "lines": 40,
+    "bytes": 6976,
+    "functions": [
+      "phone",
+      "validateText",
+      "settings",
+      "effective",
+      "context",
+      "render",
+      "link"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/control-center.css": {
+    "lines": 3,
+    "bytes": 6315,
+    "functions": [],
+    "forms": [],
+    "actions": [
+      "logout"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/workspace.css": {
+    "lines": 51,
+    "bytes": 23910,
+    "functions": [],
+    "forms": [],
+    "actions": [
+      "logout"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/management.js": {
+    "lines": 20,
+    "bytes": 14627,
+    "functions": [
+      "manageView",
+      "viewInsights",
+      "adminView"
+    ],
+    "forms": [
+      "admin-incident",
+      "admin-search",
+      "create-incident",
+      "public-reschedule"
+    ],
+    "actions": [
+      "admin-edit",
+      "copy-custom",
+      "edit-plan",
+      "logout",
+      "manage-cancel",
+      "manage-reschedule"
+    ],
+    "rpc": [],
+    "tests": []
+  },
+  "web/app.js": {
+    "lines": 611,
+    "bytes": 95963,
+    "functions": [
+      "toast",
+      "confirmAction",
+      "api",
+      "requestApi",
+      "confirmAdminIdentity",
+      "renderAuthScreen",
+      "authView",
+      "appLayout",
+      "modalContent",
+      "showDialog",
+      "publicView",
+      "loadSlots",
+      "setScreen",
+      "sectionReads",
+      "prefetchSection",
+      "warmNavigation",
+      "renderApp",
+      "viewDashboard",
+      "bookingActions",
+      "viewServices",
+      "viewTeam",
+      "viewWaitlist",
+      "viewCustomers",
+      "viewSettings",
+      "serviceModal",
+      "staffModal",
+      "hoursModal",
+      "timeOffModal",
+      "bookingModal",
+      "rescheduleModal",
+      "customerModal",
+      "saveCustomerForm",
+      "customerBeforeContact",
+      "adminModal",
+      "parseMontevideo",
+      "onSubmit",
+      "setMenu",
+      "onClick",
+      "onChange",
+      "router",
+      "boot",
+      "offerView",
+      "viewSmartSlots",
+      "recoveryView",
+      "verificationView",
+      "ownerTodaySummary"
+    ],
+    "forms": [
+      "accept-offer",
+      "add-member",
+      "admin-business",
+      "create-timeoff",
+      "manual-book",
+      "public-book",
+      "public-waitlist",
+      "reschedule",
+      "save-settings",
+      "search-customers",
+      "smart-date",
+      "staff-photo",
+      "update-customer"
+    ],
+    "actions": [
+      "add-member",
+      "add-service",
+      "add-staff",
+      "add-timeoff",
+      "booking-reschedule",
+      "booking-status",
+      "close-menu",
+      "close-modal",
+      "copy-link",
+      "customer-booking",
+      "customer-fixed",
+      "delete-timeoff",
+      "edit-customer",
+      "edit-hours",
+      "edit-service",
+      "edit-staff",
+      "export",
+      "logout",
+      "new-customer",
+      "open-booking",
+      "public-service",
+      "public-slot",
+      "public-staff",
+      "refresh",
+      "reload-page",
+      "select-business",
+      "settings-tab",
+      "toggle-menu",
+      "toggle-service",
+      "waitlist-status"
+    ],
+    "rpc": [],
+    "tests": [
+      "/",
+      "/",
+      " ",
+      "|",
+      "/",
+      "/",
+      "/",
+      "/",
+      "/",
+      "/",
+      "/",
+      "/"
+    ]
+  },
+  "web/theme-core.js": {
+    "lines": 49,
+    "bytes": 7073,
+    "functions": [
+      "readable",
+      "defaults",
+      "parse",
+      "validate",
+      "calmSurface",
+      "effective",
+      "colorDistance"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/visit-demo.js": {
+    "lines": 8,
+    "bytes": 6170,
+    "functions": [
+      "createVisitDemo",
+      "solve",
+      "read",
+      "mutable",
+      "validate"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/sw.js": {
+    "lines": 15,
+    "bytes": 2466,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/read-cache.js": {
+    "lines": 25,
+    "bytes": 1546,
+    "functions": [
+      "createReadCache"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/descubrir.js": {
+    "lines": 90,
+    "bytes": 13612,
+    "functions": [
+      "chooseScreen",
+      "marketingIcon",
+      "polishIcons",
+      "showcasePayload",
+      "sendShowcaseTheme",
+      "loadShowcase",
+      "updateShowcaseLinks",
+      "renderMessageExample"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "web/logo-editor.js": {
+    "lines": 72,
+    "bytes": 11005,
+    "functions": [
+      "logoCropRect",
+      "businessLogoAvatar",
+      "preparedBusinessLogo",
+      "refreshLogoControl",
+      "closeEditor",
+      "notifyPreview",
+      "openEditor",
+      "render",
+      "accountAvatar"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ",",
+      ",",
+      ","
+    ]
+  },
+  "cloud/proof-work.mjs": {
+    "lines": 10,
+    "bytes": 642,
+    "functions": [
+      "findProof"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/realtime.mjs": {
+    "lines": 21,
+    "bytes": 1679,
+    "functions": [
+      "subscribeAgenda"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_access_context"
+    ],
+    "tests": [
+      "access_revoked",
+      "change",
+      "ready",
+      "access_revoked"
+    ]
+  },
+  "cloud/captcha.mjs": {
+    "lines": 19,
+    "bytes": 1865,
+    "functions": [
+      "createCaptcha"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/api-adapter.mjs": {
+    "lines": 119,
+    "bytes": 20091,
+    "functions": [
+      "rpcError",
+      "createApiAdapter",
+      "rpc",
+      "publicCall",
+      "identity",
+      "exportCsv",
+      "finishRegistration"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_accept_invitation",
+      "atry_access",
+      "atry_add_member",
+      "atry_admin_commercial",
+      "atry_admin_report_incident",
+      "atry_admin_request_state",
+      "atry_admin_save_commercial",
+      "atry_bookings",
+      "atry_business",
+      "atry_business_delete_preview",
+      "atry_cancel_plan_request",
+      "atry_catalog",
+      "atry_control_command",
+      "atry_control_read",
+      "atry_create_booking",
+      "atry_create_incident",
+      "atry_create_organization",
+      "atry_create_recurring",
+      "atry_customer_history",
+      "atry_customers",
+      "atry_delete_business",
+      "atry_end_recurring",
+      "atry_export_bookings",
+      "atry_finish_registration",
+      "atry_health",
+      "atry_incidents",
+      "atry_invite",
+      "atry_me",
+      "atry_notification_preferences",
+      "atry_profile",
+      "atry_recurring",
+      "atry_report_support",
+      "atry_request_plan",
+      "atry_revoke_invitation",
+      "atry_revoke_session",
+      "atry_rules",
+      "atry_runtime_config",
+      "atry_save_appearance",
+      "atry_save_business",
+      "atry_save_customer",
+      "atry_save_notification_preferences",
+      "atry_save_rule",
+      "atry_save_week",
+      "atry_sessions",
+      "atry_smartslots",
+      "atry_statistics",
+      "atry_subscription",
+      "atry_update_booking",
+      "atry_update_member",
+      "atry_update_waitlist",
+      "atry_visit",
+      "atry_visit_availability",
+      "atry_visit_command",
+      "atry_waitlist",
+      "atry_whatsapp"
+    ],
+    "tests": [
+      ":",
+      ":"
+    ]
+  },
+  "cloud/browser-entry.mjs": {
+    "lines": 16,
+    "bytes": 1098,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/auth-transport.js": {
+    "lines": 27,
+    "bytes": 3308,
+    "functions": [
+      "createAuthTransport",
+      "request",
+      "accept",
+      "refresh"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/proof-worker.mjs": {
+    "lines": 2,
+    "bytes": 201,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/proof-client.mjs": {
+    "lines": 16,
+    "bytes": 1290,
+    "functions": [
+      "createProofClient"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/bootstrap.mjs": {
+    "lines": 12,
+    "bytes": 683,
+    "functions": [
+      "initializeCloudSession"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/supabase-auth.mjs": {
+    "lines": 44,
+    "bytes": 5257,
+    "functions": [
+      "authError",
+      "createCloudAuth"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "cloud/staff-photos.mjs": {
+    "lines": 23,
+    "bytes": 2072,
+    "functions": [
+      "createStaffPhotoAdapter",
+      "request"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_staff_photos"
+    ],
+    "tests": []
+  },
+  "server/business-delete.js": {
+    "lines": 21,
+    "bytes": 3788,
+    "functions": [
+      "collect",
+      "preview",
+      "purge"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/subscriptions.js": {
+    "lines": 45,
+    "bytes": 9798,
+    "functions": [
+      "migrate",
+      "save"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/booking.js": {
+    "lines": 154,
+    "bytes": 15385,
+    "functions": [
+      "base",
+      "checkSlot",
+      "available",
+      "notify",
+      "createBooking",
+      "updateBooking"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ":"
+    ]
+  },
+  "server/control-center.js": {
+    "lines": 107,
+    "bytes": 27797,
+    "functions": [
+      "migrate",
+      "read",
+      "command",
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ";"
+    ]
+  },
+  "server/create-admin.js": {
+    "lines": 14,
+    "bytes": 1033,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/db.js": {
+    "lines": 172,
+    "bytes": 11231,
+    "functions": [
+      "passwordHash",
+      "verifyPassword",
+      "connect",
+      "init",
+      "transaction",
+      "audit"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ":"
+    ]
+  },
+  "server/staff-photos.js": {
+    "lines": 14,
+    "bytes": 3373,
+    "functions": [
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/mail.js": {
+    "lines": 87,
+    "bytes": 14129,
+    "functions": [
+      "preferences",
+      "enqueue",
+      "template",
+      "createProvider",
+      "shouldDeliver",
+      "ingest",
+      "createWorker",
+      "tick"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/realtime.js": {
+    "lines": 21,
+    "bytes": 1888,
+    "functions": [
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ";"
+    ]
+  },
+  "server/accounts.js": {
+    "lines": 46,
+    "bytes": 10619,
+    "functions": [
+      "register",
+      "addBusiness",
+      "validateAssignment",
+      "invitation",
+      "protectOwner"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ";"
+    ]
+  },
+  "server/index.js": {
+    "lines": 16,
+    "bytes": 1087,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/whatsapp.js": {
+    "lines": 55,
+    "bytes": 13728,
+    "functions": [
+      "migrate",
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/schema-v2.js": {
+    "lines": 88,
+    "bytes": 6023,
+    "functions": [
+      "migrate"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/recurring.js": {
+    "lines": 84,
+    "bytes": 9510,
+    "functions": [
+      "migrate",
+      "blocks",
+      "expandInside",
+      "expand",
+      "list",
+      "create",
+      "endInside",
+      "end"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/customers.js": {
+    "lines": 24,
+    "bytes": 3336,
+    "functions": [
+      "contact",
+      "matching",
+      "resolve",
+      "save"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/commercial.js": {
+    "lines": 58,
+    "bytes": 15450,
+    "functions": [
+      "migrate",
+      "settings",
+      "plan",
+      "has",
+      "requireFeature",
+      "cycle",
+      "entitlements",
+      "message",
+      "overview",
+      "request",
+      "reserve",
+      "settle",
+      "updatePlan",
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/appearance.js": {
+    "lines": 19,
+    "bytes": 2239,
+    "functions": [
+      "prepare",
+      "publicConfig"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/communications.js": {
+    "lines": 14,
+    "bytes": 3458,
+    "functions": [
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/visits.js": {
+    "lines": 17,
+    "bytes": 12251,
+    "functions": [
+      "services",
+      "leg",
+      "availability",
+      "validateLegs",
+      "read",
+      "notify",
+      "create",
+      "mutable",
+      "cancel",
+      "reschedule",
+      "confirm",
+      "forPublic"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/brevo.js": {
+    "lines": 14,
+    "bytes": 1486,
+    "functions": [
+      "createBrevo"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "@"
+    ]
+  },
+  "server/mail-worker.js": {
+    "lines": 3,
+    "bytes": 236,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/seed.js": {
+    "lines": 34,
+    "bytes": 3507,
+    "functions": [
+      "seedDemo"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/operations.js": {
+    "lines": 30,
+    "bytes": 8110,
+    "functions": [
+      "feature",
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/scheduling.js": {
+    "lines": 16,
+    "bytes": 6639,
+    "functions": [
+      "register",
+      "staffOf",
+      "preserveBookings"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/product.js": {
+    "lines": 50,
+    "bytes": 7214,
+    "functions": [
+      "register"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/app.js": {
+    "lines": 395,
+    "bytes": 49246,
+    "functions": [
+      "send",
+      "cookie",
+      "readBody",
+      "route",
+      "createApp",
+      "user",
+      "authorized",
+      "appointmentList"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      ";"
+    ]
+  },
+  "server/availability-rules.js": {
+    "lines": 4,
+    "bytes": 647,
+    "functions": [
+      "scheduleFor",
+      "requiredResources"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "server/weekly-schedule.js": {
+    "lines": 16,
+    "bytes": 2170,
+    "functions": [
+      "normalizeWindows",
+      "saveWeek"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "tests/scheduling.test.js": {
+    "lines": 22,
+    "bytes": 4946,
+    "functions": [
+      "weekdayFuture",
+      "setup"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "D: descansos, jornadas excepcionales y feriados se aplican al backend",
+      "D: recursos compartidos impiden simultaneidad entre profesionales y se liberan al cancelar",
+      "D: reglas que invalidan reservas se revierten y no aceptan profesionales de otros negocios",
+      "D: idempotencia devuelve la misma reserva y rechaza cambios con la misma clave"
+    ]
+  },
+  "tests/staff-photos-ui.test.js": {
+    "lines": 18,
+    "bytes": 2602,
+    "functions": [
+      "pruneCommercialControls",
+      "staffModal"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Fotos UI: iniciales accesibles, publicación explícita, guardado sin cambios no hace consultas",
+      "Fotos UI: integración espera el modal antes de cargar datos y conserva los tamaños circulares"
+    ]
+  },
+  "tests/public-edge.test.js": {
+    "lines": 17,
+    "bytes": 4245,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Edge pública: la visita completa exige la misma protección vinculada y no expone lectura privada anónima",
+      "/",
+      "Edge pública: no reserva con origen o captcha inválidos y no expone claves",
+      "Edge pública: comprueba dominio, acción y clave vinculada antes del RPC protegido",
+      "Edge pública: cuota, configuración y límite de cuerpo fallan de forma cerrada"
+    ]
+  },
+  "tests/customers.test.js": {
+    "lines": 22,
+    "bytes": 2912,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Clientes: alta, búsqueda por teléfono formateado, duplicados, edición y aislamiento"
+    ]
+  },
+  "tests/whatsapp-migration.test.js": {
+    "lines": 18,
+    "bytes": 3390,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "WhatsApp migración: conserva datos anteriores, RLS y permisos mínimos incluso con grants por defecto",
+      "WhatsApp migración: fallo revierte DDL parcial y no deja permisos abiertos"
+    ]
+  },
+  "tests/postgres.test.js": {
+    "lines": 219,
+    "bytes": 41105,
+    "functions": [
+      "fixture",
+      "asUser"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "PostgreSQL: esquema completo, sin semillas ni credenciales heredadas y RLS en todas las tablas",
+      "PostgreSQL: el operador inicial exige cuenta real verificada, es idempotente y no abre CRM ajeno",
+      "PostgreSQL: la cola descarta confirmaciones y horarios superados por otro cambio",
+      "PostgreSQL: cola de correo deduplica, respeta preferencias y no declara entregas inciertas",
+      "PostgreSQL: administración gestiona planes e incidencias sin acceso global al CRM",
+      "PostgreSQL: lista de espera ofrece sin retener, confirma una vez y conserva idempotencia",
+      "PostgreSQL: dashboard, ocupación y SmartSlots calculan datos propios sin inventar cobros",
+      "PostgreSQL: configuración y CRM preservan roles, negocio y datos protegidos",
+      "PostgreSQL: invitaciones exigen correo verificado, cuenta correcta y aceptación única",
+      "PostgreSQL: reserva pública no revela datos previos del CRM por coincidir un contacto",
+      "PostgreSQL: enlace privado reprograma con disponibilidad real, protege notas y cancela sin duplicar",
+      "PostgreSQL: jornadas, descansos y cierres no invalidan reservas futuras ni mezclan negocios",
+      "PostgreSQL: límite público transaccional no es invocable por clientes",
+      "PostgreSQL: disponibilidad pública sin contactos y reserva pública solo por el servicio protegido",
+      "PostgreSQL: catálogo scoped, asignaciones ajenas se revierten y límites de equipo se aplican",
+      "PostgreSQL: sesión revocada impide usar el JWT previo y no permite revocar otra cuenta",
+      "PostgreSQL: cuentas sin negocio, espacios adicionales y último propietario",
+      "PostgreSQL: worker reservado al servicio, presupuesto diario y confirmación del proveedor",
+      "PostgreSQL: RLS entre negocios, rol empleado y escrituras directas denegadas",
+      "PostgreSQL: reserva atómica, recursos exclusivos, idempotencia, reprogramación y cancelación",
+      "PostgreSQL: turnos fijos indefinidos, recursos, RLS, idempotencia y excepciones por fecha",
+      "PostgreSQL: CRM crea contactos sin duplicados y conserva el rubro personalizado al confirmar",
+      "PostgreSQL: aprobación manual, vencimientos, transferencias idempotentes y protección de todas las escrituras"
+    ]
+  },
+  "tests/business-delete-demo.test.js": {
+    "lines": 7,
+    "bytes": 6288,
+    "functions": [
+      "who"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Eliminación SQLite: rechazo obsoleto, baja completa vencida, otras cuentas y reintento seguro",
+      "Demostración: todo en memoria, sin costes, sin privilegios, límites y envíos bloqueados",
+      "Eliminación PostgreSQL: administrador reciente, dependencias, aislamiento y cuentas conservadas"
+    ]
+  },
+  "tests/migration.test.js": {
+    "lines": 3,
+    "bytes": 1755,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Migración: demo excluida, selección explícita y exportación sin contraseñas/sesiones",
+      "Normalización: no modifica cuentas o negocios que no coinciden con la demo conocida"
+    ]
+  },
+  "tests/weekly-schedule.test.js": {
+    "lines": 21,
+    "bytes": 2984,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Semana: valida hasta seis tramos, ordena y rechaza solapes y rangos inválidos",
+      "Semana HTTP: varios tramos producen disponibilidad real y el rechazo revierte todo"
+    ]
+  },
+  "tests/appearance.test.js": {
+    "lines": 78,
+    "bytes": 10091,
+    "functions": [
+      "who",
+      "request"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Apariencia: propietario guarda por negocio, empleado lee, terceros y valores maliciosos no cambian datos",
+      "Apariencia: los colores extremos producen texto y acciones con contraste AA, y el tema anterior se limpia",
+      "Incidencia administrativa: sesión reciente, negocio real, idempotencia y auditoría",
+      "Servidor local: apariencia persistente en panel y reservas; registro de incidencia desde administración"
+    ]
+  },
+  "tests/mail.test.js": {
+    "lines": 25,
+    "bytes": 8189,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "B: proveedor local genera EML real y deduplica sin marcar entrega externa",
+      "B: error de proveedor, backoff, máximo de intentos y persistencia de estados",
+      "B: preferencias y tokens vencidos impiden envío; HTML escapa contenido",
+      "B: workers concurrentes no reclaman el mismo trabajo y disabled conserva la cola",
+      "B: adaptador SMTP real obtiene aceptación de un servidor local sin simular recepción final",
+      "B: aviso al negocio sin correo de cliente y cambio de anticipación de recordatorios"
+    ]
+  },
+  "tests/commercial-pg.test.js": {
+    "lines": 41,
+    "bytes": 9759,
+    "functions": [
+      "fixture",
+      "user",
+      "rpc",
+      "org",
+      "activate"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Comercial PostgreSQL: solicitud persistente, idempotencia, aislamiento y activación manual",
+      "Comercial PostgreSQL: Individual deniega RPC Pro y lecturas RLS; horarios propios siguen disponibles",
+      "Comercial PostgreSQL: Negocio habilita estadísticas y espera; Pro habilita recursos y exportación",
+      "Comercial PostgreSQL: cuota reserva hasta el límite, acepta una vez y retiene resultados inciertos",
+      "Comercial PostgreSQL: reducción exige selección, conserva profesionales y no borra datos",
+      "Comercial PostgreSQL: verificación nativa reproducible termina en rollback sin fixtures",
+      "Comercial PostgreSQL: cancelación y restablecimiento de suscripción son auditables y conservan el negocio",
+      "Comercial PostgreSQL: una renovación no reinicia la cuota mensual",
+      "Comercial PostgreSQL: administración configura exportación e Insights independientemente"
+    ]
+  },
+  "tests/showcase-preview.test.js": {
+    "lines": 62,
+    "bytes": 5343,
+    "functions": [
+      "browser"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Presentación: el control visual existe solo en una demo embebida explícita",
+      "Presentación: nombre y tema quedan aislados y no alteran límites ni importes",
+      "Presentación: no acepta estilos ejecutables ni opciones de otro plan",
+      "Presentación: mensajes de otro origen o ventana no pueden cambiar la demo",
+      "Demo completa: conserva nombre y tema válidos sin cambiar otras instancias",
+      "Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos"
+    ]
+  },
+  "tests/landing-commercial.test.js": {
+    "lines": 13,
+    "bytes": 5859,
+    "functions": [
+      "explorer"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Explorer keeps latest selection when an older image finishes later",
+      "A failed screenshot retains the existing image and reports retry",
+      "Commercial messages use the product renderer, including reschedule and cancellation",
+      "Capture fixture changes only isolated seed data, with natural names and sample prices",
+      "Landing assets have explicit dimensions; plan and entry URLs remain intact",
+      "Capture gate rejects missing spacing and incomplete images instead of accepting a generated file"
+    ]
+  },
+  "tests/cloud-auth.test.js": {
+    "lines": 5,
+    "bytes": 2512,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "admin_raw_sql",
+      "atry_me"
+    ],
+    "tests": [
+      "Cloud Auth: nunca acepta claves privilegiadas y transmite solo JWT del usuario a RPC",
+      "Cloud Auth: consultas concurrentes comparten una renovación y logout elimina sesión",
+      "Cloud Auth: confirmación de email obligatoria se respeta y error no refleja datos del proveedor"
+    ]
+  },
+  "tests/control-center-pg.test.js": {
+    "lines": 52,
+    "bytes": 12151,
+    "functions": [
+      "who",
+      "setup"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Control PG: paginación, privacidad, permisos, revisión y repetición idempotente",
+      "Control PG: bloqueo revoca sesiones, impide identidad y protege último admin y propietario",
+      "Control PG: estados programado y suspendido coherentes; lecturas no inventan salud",
+      "Control PG: correo incierto no admite reintento ni cancelación; auditoría conserva reservas",
+      "Control PG: configura con revisión, consulta secciones y registra soporte esencial sin plan pago",
+      "Control PG: pausa pública y manual se verifica en el motor sin borrar reservas existentes",
+      "Control PG: limpieza terminal conserva clave, estados y cuotas; excluye incertidumbre y requiere política",
+      "Control PG: correo pausado no consume cuota y no bloquea la cola esencial",
+      "Control PG: Storage informa bytes incompletos sin exponer objetos y cron solo entrega metadatos"
+    ]
+  },
+  "tests/deployment.test.js": {
+    "lines": 37,
+    "bytes": 4510,
+    "functions": [
+      "api"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "GitHub Pages: publica los recursos de la interfaz y bloquea solicitudes de datos en preview",
+      "Pages: rechaza secretos y bloquea publicación antes de validar equivalencia",
+      "Cloudflare: bundle real antes de la interfaz, sin datos ni credenciales de servidor",
+      "GitHub: conserva la demostración hasta validar y luego incluye el adaptador real"
+    ]
+  },
+  "tests/staff-photos.test.js": {
+    "lines": 30,
+    "bytes": 4920,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Fotos: formato, tamaño y rutas quedan limitados a WebP y negocio/profesional",
+      "Fotos local: subir, ocultar/publicar, reemplazar con revisión y eliminar sin modificar profesional",
+      "Fotos cloud: carga única, fallo de confirmación ambiguo y limpieza posterior segura"
+    ]
+  },
+  "tests/operations.test.js": {
+    "lines": 21,
+    "bytes": 6033,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "F: límites y funciones por plan se controlan en backend y se auditan",
+      "F: estadísticas distinguen servicio completado, previsto y pagos sin proveedor",
+      "F: incidencias aisladas, administración controla estado y no accede a clientes",
+      "C/E: empleado crea y modifica solo su agenda, cliente reprograma con disponibilidad segura"
+    ]
+  },
+  "tests/control-center.test.js": {
+    "lines": 8,
+    "bytes": 4804,
+    "functions": [
+      "setup",
+      "command"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Control local: pagina en servidor, busca contacto y conserva privacidad",
+      "Control local: pausas independientes, revisión e idempotencia; último admin protegido",
+      "Control local: desconocidos no se reintentan ni se descuentan; solicitudes no eliminan filas",
+      "Control local: resolución obligatoria y versión concurrente",
+      "Control local: pausar nuevas reservas conserva materialización de turnos fijos existentes"
+    ]
+  },
+  "tests/theme-visits-pg.test.js": {
+    "lines": 105,
+    "bytes": 13489,
+    "functions": [
+      "who",
+      "service",
+      "setup",
+      "booking"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "PostgreSQL temas: esquema, revisión, permisos, aislamiento y proyección pública",
+      "PostgreSQL visitas: continuidad fuera de cuadrícula, guardado íntegro, cuota y repetición segura",
+      "PostgreSQL visitas: reprogramación íntegra, conflicto de cliente, cancelación y datos completados",
+      "PostgreSQL visitas: cotización vieja, servicios repetidos y colisiones no dejan reservas parciales",
+      "PostgreSQL visitas: recursos, preparación, pausas y feriados impiden recorridos imposibles",
+      "PostgreSQL: la comprobación remota controlada revierte fixtures y no cambia datos existentes"
+    ]
+  },
+  "tests/staff-photos-pg.test.js": {
+    "lines": 19,
+    "bytes": 4020,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "other",
+      "pb"
+    ],
+    "tests": [
+      "Fotos PostgreSQL: Storage privado, políticas cerradas, tres planes y CAS entre operadores"
+    ]
+  },
+  "tests/release-043-044.test.js": {
+    "lines": 18,
+    "bytes": 1993,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Release 043–044: el paquete preserva datos existentes y rechaza una segunda aplicación"
+    ]
+  },
+  "tests/mail-scheduler.test.js": {
+    "lines": 24,
+    "bytes": 2943,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Scheduler: invoca solo el endpoint previsto, respeta pausa y mantiene Vault y la función privados"
+    ]
+  },
+  "tests/product.test.js": {
+    "lines": 56,
+    "bytes": 9706,
+    "functions": [
+      "setup"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "recuperación: sin enumeración, token único, vencimiento y revocación de sesiones",
+      "/",
+      "/",
+      "empleado solo consulta su agenda y administración no abre datos privados",
+      "configuración inicial, períodos de agenda, SmartSlots y recursos de marca",
+      "oferta de lista de espera: disponibilidad, aceptación concurrente y vencimiento",
+      "migración aditiva y persistencia conservan usuarios y reservas al reconectar",
+      "buffers dentro de jornada, minutos completos y métricas sin reservas futuras"
+    ]
+  },
+  "tests/logo-crop.test.js": {
+    "lines": 16,
+    "bytes": 1250,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Logo: recorte cuadrado dentro de imagen horizontal/vertical, zoom y extremos de desplazamiento",
+      "Logo: solo se envía el recorte confirmado, cancelar conserva el actual y quitar tiene prioridad"
+    ]
+  },
+  "tests/whatsapp.test.js": {
+    "lines": 55,
+    "bytes": 9147,
+    "functions": [
+      "fixture"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "WhatsApp: teléfonos internacionales, Uruguay y enlaces codificados sin ejecución",
+      "WhatsApp: plantillas sin datos ficticios, variables verificadas y límites de planes",
+      "/api/business/",
+      "WhatsApp local: rechaza teléfono y revisión de reserva cambiados mientras se edita el mensaje",
+      "WhatsApp local: consentimiento, estados de envío, pendientes sin duplicados y cambios reales",
+      "WhatsApp: demos por plan permanecen aisladas en memoria",
+      "WhatsApp local: conserva plantillas al bajar de plan, guardar y volver a ampliar",
+      "WhatsApp local: bandeja evita consultas por cada reserva",
+      "WhatsApp recordatorios: posponer, persistir, deshacer y gestionar sin estados de envío falsos"
+    ]
+  },
+  "tests/commercial-ui.test.js": {
+    "lines": 9,
+    "bytes": 2332,
+    "functions": [
+      "browser"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Comercial UI: WhatsApp exige consentimiento, valida destino y codifica todos los datos",
+      "Comercial UI: rutas de módulos se adaptan al cambio de capacidades sin bloquear suscripción"
+    ]
+  },
+  "tests/whatsapp-round2.test.js": {
+    "lines": 6,
+    "bytes": 3112,
+    "functions": [
+      "mailState",
+      "luminance"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Comunicación: correo distingue aceptación y entrega, sin mezclar estados de WhatsApp",
+      "WhatsApp configuración: representación internacional única, conversión segura de valores anteriores",
+      "Botón de éxito: sistema compartido preserva contraste y foco",
+      "Formularios largos: un scroll de editor, textarea expansible y acciones accesibles"
+    ]
+  },
+  "tests/brevo.test.js": {
+    "lines": 4,
+    "bytes": 1891,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Brevo: aceptación verificable y errores/cuota sin divulgar clave ni respuesta privada",
+      "Brevo: bloquea direcciones de documentación antes de hacer una llamada externa",
+      "SMTP externo: no transmite destinatarios de documentación"
+    ]
+  },
+  "tests/admin-presentation.test.js": {
+    "lines": 6,
+    "bytes": 1812,
+    "functions": [
+      "ui",
+      "ccBusinessList"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "function ccBusinessList",
+      "Admin presentation: unconfirmed delivery never receives a successful state",
+      "Admin presentation: zero failures stay neutral and metric links retain exact filters",
+      "Admin presentation: empty overview reports missing evidence and escapes record titles"
+    ]
+  },
+  "tests/recurring.test.js": {
+    "lines": 43,
+    "bytes": 5129,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Turnos fijos: duración indefinida, fechas individuales, idempotencia y fin de repetición",
+      "Turnos fijos: cambiar repetición es atómico, quincenas y fecha final"
+    ]
+  },
+  "tests/commercial.test.js": {
+    "lines": 48,
+    "bytes": 8315,
+    "functions": [
+      "fixture"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Comercial: catálogo persistente, solicitud idempotente, teléfono y sin privilegios anticipados",
+      "Comercial: Individual bloquea módulos, exportación, espera pública y conserva horarios y cuenta",
+      "Comercial: Negocio tiene estadísticas y espera sin recursos, exportación u ofertas automáticas",
+      "Comercial: habilitación de solicitud, pago manual y reducción conserva reservas y datos",
+      "Comercial: reserva simultánea de cuota no supera el cupo y conciliación es idempotente",
+      "Comercial: dos workers simultáneos no consumen más cuota ni duplican la solicitud"
+    ]
+  },
+  "tests/cloud-api.test.js": {
+    "lines": 34,
+    "bytes": 4857,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Adaptador cloud: visitas públicas conservan clave/protección y las privadas usan el negocio autorizado",
+      "Catálogo: servicios y equipo simultáneos comparten una consulta y una edición obliga a leer de nuevo",
+      "Adaptador cloud: cliente conserva idempotencia y los enlaces privados se envían en el cuerpo",
+      "Adaptador cloud: consultas privadas usan el negocio del recorrido y traducen reglas de horario",
+      "Adaptador cloud: exporta todas las páginas y rechaza una agenda que cambia durante la exportación"
+    ]
+  },
+  "tests/cloud-mail.test.js": {
+    "lines": 32,
+    "bytes": 3150,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Worker cloud: el token de invocación se separa de la clave de acceso a la base",
+      "Worker cloud: reclama uno por vez y distingue aceptación de entrega",
+      "Worker cloud: remitente sin verificar bloquea envíos; timeout requiere revisión"
+    ]
+  },
+  "tests/public-proof.test.js": {
+    "lines": 24,
+    "bytes": 2874,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Protección integrada: firma, vencimiento, IP, negocio, acción y nonce se validan en servidor",
+      "Edge integrada: desafío real protege la escritura sin contactar Cloudflare"
+    ]
+  },
+  "tests/subscriptions.test.js": {
+    "lines": 27,
+    "bytes": 3040,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Suscripciones: registro pendiente, activación manual, referencia única, renovación y solo lectura al vencer"
+    ]
+  },
+  "tests/mail-events.test.js": {
+    "lines": 2,
+    "bytes": 1206,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Recibos: token obligatorio, sin PII, duplicados con clave estable y límite de lote"
+    ]
+  },
+  "tests/visits.test.js": {
+    "lines": 14,
+    "bytes": 10205,
+    "functions": [
+      "fixture"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Visita: tres servicios con distintos profesionales, consecutivos, precio real, una confirmación e idempotencia",
+      "Visita: precio cambiado, duplicados, servicio ajeno y conflicto intermedio no dejan reservas parciales",
+      "Visita: respeta preparación, recursos compartidos y horarios interiores fuera de cuadrícula",
+      "Visita: reprogramación y cancelación conjuntas, sin perder original, repetición segura",
+      "Visita HTTP: solicitudes simultáneas no duplican ni crean tramos parciales y permisos aislados",
+      "Demo de visitas: aislada, sin importes, confirmación y gestión solo en memoria",
+      "Visita: aprobación conjunta y cancelación de pendientes por el negocio conserva servicios completados y privacidad",
+      "Visita: impide superponer al cliente con otro profesional sin dejar tramos parciales"
+    ]
+  },
+  "tests/demo-owner.test.js": {
+    "lines": 22,
+    "bytes": 2573,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Demo: jornada, pausas, ausencias, especialidad y guardado usan disponibilidad consistente",
+      "Demo: contador de hoy cambia con los turnos y excluye cancelados"
+    ]
+  },
+  "tests/action-system.test.js": {
+    "lines": 83,
+    "bytes": 8990,
+    "functions": [
+      "bookingActions",
+      "bookingActions",
+      "profile",
+      "customerModal",
+      "adminModal",
+      "luminance"
+    ],
+    "forms": [],
+    "actions": [
+      "copy-link"
+    ],
+    "rpc": [],
+    "tests": [
+      "Inicio: próximos turnos y gráfica se apilan según espacio disponible, con filas compactas en tarjetas angostas",
+      "Cabecera móvil: altura adaptable, acciones sin apilar y copia con etiqueta accesible",
+      "Agenda angosta: las acciones conservan palabras y ancho de contenido al distribuirse en filas",
+      "Visibilidad responsive: el botón base no impone display sobre menú y cierre móviles",
+      "Cancelación de turnos: rojo sólido, completar verde y ausencia neutra",
+      "Visitas combinadas: ambas cancelaciones conservan sólido y confirmación",
+      "Ficha: nombre, secciones separadas y guardado asociado al formulario al final",
+      "Contacto: cancelar mantiene cambios; guardar usa los datos editados y limpia dirty",
+      "Contacto: validación, error de red y guardado concurrente no pierden la edición",
+      "Paleta funcional: contraste AA en colores definidos de éxito, peligro, advertencia y deshabilitado",
+      "Sistema CSS: sintaxis, carga final, iconos heredados y ausencia de imposición oscura sobre success"
+    ]
+  },
+  "tests/booking.test.js": {
+    "lines": 127,
+    "bytes": 11093,
+    "functions": [
+      "nextWeekday",
+      "context",
+      "call"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "registro, autenticar, aislar negocio y permisos",
+      "reservas reales, bloqueo de superposición, cancelar y volver a reservar",
+      "cambios de jornada, descansos, exportación y auditoría",
+      "validación de datos y reservas fuera de horario",
+      "lista de espera: solicitud, acceso del dueño y oferta cuando se cancela",
+      "plan individual: límite de un profesional y reservas independientes por negocio",
+      "dos solicitudes simultáneas nunca confirman el mismo horario"
+    ]
+  },
+  "tests/helpers.js": {
+    "lines": 5,
+    "bytes": 829,
+    "functions": [
+      "context"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "tests/whatsapp-opening.test.js": {
+    "lines": 13,
+    "bytes": 3884,
+    "functions": [
+      "editor"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "WhatsApp apertura: valida antes de navegar, mantiene noopener y envío siempre manual",
+      "WhatsApp apertura bloqueada: no acredita apertura ni envío",
+      "WhatsApp consentimiento retirado: no se vuelve a autorizar por una casilla preexistente",
+      "WhatsApp UX: teléfono ausente o inválido bloquea apertura y ofrece corrección",
+      "WhatsApp UX: consentimiento nuevo exige acción explícita y no viene marcado"
+    ]
+  },
+  "tests/agenda-layout.test.js": {
+    "lines": 39,
+    "bytes": 13183,
+    "functions": [
+      "renderPlan",
+      "calendarRange",
+      "viewAgenda"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Agenda: tiempo local, duración proporcional y recorte en medianoche",
+      "Agenda: turnos simultáneos tienen columnas separadas sin ocultar estados finales",
+      "Agenda: jornadas, descansos, ausencias, excepciones y cierres conservan su interpretación",
+      "Agenda: Día/Semana/Mes en los tres planes usan solo lecturas y respetan filtros comerciales",
+      "Agenda: empleado no solicita reglas del equipo ni muestra filtros de otros profesionales",
+      "Agenda: ausencias en los bordes no recortan la jornada que debe visualizarse",
+      "Agenda: seleccionar día semanal actualiza la fecha y Hoy restaura ambas selecciones",
+      "Agenda: atención conserva turnos simultáneos, excluye estados finales y ordena los próximos",
+      "Agenda: modo atención vuelve al período previo y los chips quitan solo su filtro",
+      "Agenda: selección visual del equipo y estados conserva el conjunto al quitar el filtro",
+      "Agenda: selector visual del equipo solo en planes habilitados y nunca para empleados",
+      "Agenda: horario útil prioriza hora actual, primer turno y último turno fuera de jornada",
+      "Agenda: móvil ofrece un único profesional y conserva selector para el equipo",
+      "Agenda: historial admite respuesta PostgreSQL y local, sin consultas para empleados",
+      "Agenda: cambiar horario conserva cliente y notas pero usa la nueva fecha y profesional",
+      "Agenda: duplicados por contacto normalizado no confunden nombres ni fusionan personas",
+      "Agenda: validación de reserva indica contacto faltante y servicio incompatible por campo",
+      "Inicio: gráfica semanal completa días sin turnos, parte de cero y trata empates sin inventar crecimiento"
+    ]
+  },
+  "tests/realtime.test.js": {
+    "lines": 11,
+    "bytes": 2367,
+    "functions": [
+      "readUntil"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "C: SSE autentica, emite cambios y termina tras revocación de membresía",
+      "C: SSE rechaza identificadores de otra organización"
+    ]
+  },
+  "tests/customer-whatsapp-quick.test.js": {
+    "lines": 21,
+    "bytes": 2282,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Clientes: acceso circular sin texto visible reutiliza el mismo editor y su guardia",
+      "Clientes: círculo fijo de 44px, verde de marca y tres acciones existentes intactas"
+    ]
+  },
+  "tests/whatsapp-pg.test.js": {
+    "lines": 30,
+    "bytes": 6238,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "settings"
+    ],
+    "tests": [
+      "WhatsApp Supabase: RLS, límites, alcance de empleados, cambios de reserva y confirmación manual"
+    ]
+  },
+  "tests/pg-context.js": {
+    "lines": 5,
+    "bytes": 2000,
+    "functions": [
+      "pg"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_"
+    ]
+  },
+  "tests/weekly-schedule-pg.test.js": {
+    "lines": 30,
+    "bytes": 5219,
+    "functions": [
+      "who",
+      "rpc",
+      "setup"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Semana PostgreSQL: tramos atómicos, validación, aislamiento y permiso de suscripción",
+      "Semana PostgreSQL: protege una reserva existente y conserva horas y pausas tras rollback",
+      "Semana PostgreSQL: la verificación remota controlada revierte todos los cambios"
+    ]
+  },
+  "tests/subscription-presentation.test.js": {
+    "lines": 5,
+    "bytes": 1372,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Acceso: negocio habilitado sin aviso superior y con enlace discreto al plan",
+      "Acceso: vencimiento cercano visible; vencido, suspendido y cancelado mantienen restricciones"
+    ]
+  },
+  "tests/accounts.test.js": {
+    "lines": 25,
+    "bytes": 5000,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "A: cuenta sin organización y creación de negocios adicionales aislados",
+      "A: invitación a empleado sin negocio, uso único, roles y revocación inmediata",
+      "A: invitación revocada/vencida, cuenta equivocada y cambios de perfil protegidos"
+    ]
+  },
+  "tests/supabase-auth.test.js": {
+    "lines": 19,
+    "bytes": 2605,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Supabase Auth: registro espera verificación y recuperación requiere enlace de Auth",
+      "Supabase Auth: cambios de contraseña requieren contraseña actual y cierran todas las sesiones"
+    ]
+  },
+  "tests/cloud-realtime.test.js": {
+    "lines": 9,
+    "bytes": 1330,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Realtime: autentica el websocket antes de suscribir y cancela conexiones pendientes"
+    ]
+  },
+  "tests/theme-studio.test.js": {
+    "lines": 41,
+    "bytes": 6980,
+    "functions": [
+      "req"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Temas: cada plan tiene composición propia y contraste accesible incluso con colores extremos",
+      "Temas: opciones permitidas por plan, sin CSS, URLs, fuentes externas ni estilos recursivos",
+      "Temas: baja de plan proyecta opciones seguras sin destruir el estilo avanzado ni sus presets",
+      "Temas HTTP: guardado duradero, propietarios, aislamiento, restricciones y exposición pública segura",
+      "Armonía: superficies intensas se suavizan y una navegación personalizada coordina los acentos por defecto"
+    ]
+  },
+  "tests/whatsapp-ui.test.js": {
+    "lines": 13,
+    "bytes": 2606,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "WhatsApp UI: tres planes, estados honestos, filtros Pro y controles táctiles"
+    ]
+  },
+  "tests/admin-reauth.test.js": {
+    "lines": 6,
+    "bytes": 2012,
+    "functions": [
+      "requestWith",
+      "requestApi"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Administración: conserva el código de verificación sin exigir salir del panel",
+      "Administración: verifica identidad y repite exactamente una vez el mismo formulario",
+      "Administración: cancelar no ejecuta la operación y un segundo rechazo no entra en bucle"
+    ]
+  },
+  "tests/service-worker.test.js": {
+    "lines": 9,
+    "bytes": 1277,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Caché: recursos bajo /ATRY-Turnos/, sin interceptar Auth, datos privados ni cachés ajenas"
+    ]
+  },
+  "tests/control-receipts-pg.test.js": {
+    "lines": 7,
+    "bytes": 2692,
+    "functions": [
+      "who",
+      "setup"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Control PG: recibos auténticos de servicio, duplicados y fuera de orden no fabrican entregas"
+    ]
+  },
+  "tests/cloud-bootstrap.test.js": {
+    "lines": 8,
+    "bytes": 868,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Inicio cloud: sesión revocada permite volver a ingresar; un corte de red no borra una sesión válida"
+    ]
+  },
+  "tests/read-cache.test.js": {
+    "lines": 31,
+    "bytes": 2541,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "Lecturas: comparte consultas en vuelo y entrega copias independientes, con vencimiento",
+      "Lecturas: aislamiento por usuario y negocio, y las invalidaciones no se repueblan con respuestas antiguas",
+      "Lecturas: errores, Auth, disponibilidad, enlaces privados y exportaciones siempre consultan al servidor"
+    ]
+  },
+  "supabase/commercial-tail.sql": {
+    "lines": 264,
+    "bytes": 33245,
+    "functions": [
+      "as"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/parity-tail.sql": {
+    "lines": 28,
+    "bytes": 3113,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/public-booking-tail.sql": {
+    "lines": 41,
+    "bytes": 4967,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/config.toml": {
+    "lines": 27,
+    "bytes": 534,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/management-tail.sql": {
+    "lines": 37,
+    "bytes": 3588,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140005_mail_quota.sql": {
+    "lines": 36,
+    "bytes": 3777,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150030_commercial_mail.sql": {
+    "lines": 53,
+    "bytes": 5927,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140010_public_booking.sql": {
+    "lines": 79,
+    "bytes": 9846,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150026_recurring_appointments.sql": {
+    "lines": 230,
+    "bytes": 25833,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150032_independent_report_capabilities.sql": {
+    "lines": 5,
+    "bytes": 377,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610220044_combined_visits.sql": {
+    "lines": 306,
+    "bytes": 33328,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140014_management.sql": {
+    "lines": 68,
+    "bytes": 6011,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140004_booking_rpc.sql": {
+    "lines": 88,
+    "bytes": 9805,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140023_github_delivery.sql": {
+    "lines": 6,
+    "bytes": 671,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140015_access.sql": {
+    "lines": 82,
+    "bytes": 7670,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610160036_delivery_receipts.sql": {
+    "lines": 26,
+    "bytes": 3455,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140003_conflicts.sql": {
+    "lines": 33,
+    "bytes": 2348,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140007_accounts.sql": {
+    "lines": 47,
+    "bytes": 4565,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140006_realtime.sql": {
+    "lines": 12,
+    "bytes": 1169,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610160039_admin_incident_creation.sql": {
+    "lines": 32,
+    "bytes": 3307,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140017_reports.sql": {
+    "lines": 60,
+    "bytes": 8981,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140022_parity.sql": {
+    "lines": 97,
+    "bytes": 10636,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140008_sessions.sql": {
+    "lines": 30,
+    "bytes": 2633,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140011_public_rate.sql": {
+    "lines": 17,
+    "bytes": 1557,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140025_delivery_diagnostics.sql": {
+    "lines": 13,
+    "bytes": 2124,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150027_business_identity.sql": {
+    "lines": 92,
+    "bytes": 10572,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150031_billing_anchor.sql": {
+    "lines": 7,
+    "bytes": 552,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610200041_default_business_violet.sql": {
+    "lines": 2,
+    "bytes": 162,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610230002_staff_photos.sql": {
+    "lines": 59,
+    "bytes": 6096,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140001_baseline.sql": {
+    "lines": 188,
+    "bytes": 11319,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610220043_theme_studio.sql": {
+    "lines": 114,
+    "bytes": 11015,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150033_control_center.sql": {
+    "lines": 165,
+    "bytes": 28781,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140012_integrity.sql": {
+    "lines": 21,
+    "bytes": 1880,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610200042_business_deletion.sql": {
+    "lines": 97,
+    "bytes": 11428,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140021_parity_integrity.sql": {
+    "lines": 72,
+    "bytes": 7619,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140013_scheduling.sql": {
+    "lines": 66,
+    "bytes": 7116,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610160037_control_storage_evidence.sql": {
+    "lines": 19,
+    "bytes": 1778,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610230001_whatsapp.sql": {
+    "lines": 148,
+    "bytes": 20435,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140009_catalog.sql": {
+    "lines": 64,
+    "bytes": 7998,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140018_waitlist.sql": {
+    "lines": 82,
+    "bytes": 9923,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610160035_control_operations.sql": {
+    "lines": 95,
+    "bytes": 12895,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140016_business_customers.sql": {
+    "lines": 65,
+    "bytes": 6807,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140024_mail_snapshots.sql": {
+    "lines": 25,
+    "bytes": 2745,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150034_control_integration.sql": {
+    "lines": 58,
+    "bytes": 7234,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140019_administration.sql": {
+    "lines": 63,
+    "bytes": 8443,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150029_commercial.sql": {
+    "lines": 270,
+    "bytes": 34937,
+    "functions": [
+      "as"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140020_notifications.sql": {
+    "lines": 119,
+    "bytes": 16707,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610160038_business_appearance.sql": {
+    "lines": 37,
+    "bytes": 2756,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610150028_manual_subscriptions.sql": {
+    "lines": 107,
+    "bytes": 11822,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610140002_security.sql": {
+    "lines": 47,
+    "bytes": 4632,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/migrations/202610170040_weekly_availability.sql": {
+    "lines": 55,
+    "bytes": 3966,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/staff-photos-verify.sql": {
+    "lines": 8,
+    "bytes": 892,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-manual-subscriptions.sql": {
+    "lines": 75,
+    "bytes": 8291,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-recurring-crm.sql": {
+    "lines": 82,
+    "bytes": 9530,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/manual-control-snapshot.sql": {
+    "lines": 22,
+    "bytes": 2283,
+    "functions": [
+      "definitions"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-commercial.sql": {
+    "lines": 66,
+    "bytes": 7319,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/audit-control.sql": {
+    "lines": 12,
+    "bytes": 1911,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-weekly-availability.sql": {
+    "lines": 35,
+    "bytes": 3561,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/bootstrap-operator.sql": {
+    "lines": 16,
+    "bytes": 1135,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/whatsapp-preflight.sql": {
+    "lines": 12,
+    "bytes": 1327,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/schedule-mail.sql": {
+    "lines": 39,
+    "bytes": 2342,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-mail.sql": {
+    "lines": 14,
+    "bytes": 1342,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/audit-mail.sql": {
+    "lines": 9,
+    "bytes": 1671,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/staff-photos-preflight.sql": {
+    "lines": 9,
+    "bytes": 790,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/whatsapp-verify.sql": {
+    "lines": 9,
+    "bytes": 1257,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-theme-visits.sql": {
+    "lines": 53,
+    "bytes": 5234,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/operations/verify-control.sql": {
+    "lines": 46,
+    "bytes": 4711,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/functions/_shared/public-handler.mjs": {
+    "lines": 1,
+    "bytes": 58,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/functions/_shared/proof.mjs": {
+    "lines": 18,
+    "bytes": 1641,
+    "functions": [
+      "createProof"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "."
+    ]
+  },
+  "supabase/functions/_shared/mail-events.mjs": {
+    "lines": 21,
+    "bytes": 2347,
+    "functions": [
+      "createMailEvents"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "supabase/functions/_shared/mail-worker.mjs": {
+    "lines": 32,
+    "bytes": 3335,
+    "functions": [
+      "createMailWorker"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_control_worker",
+      "atry_mail_claim",
+      "atry_mail_ingest",
+      "atry_mail_result"
+    ],
+    "tests": []
+  },
+  "supabase/functions/_shared/public-gateway.mjs": {
+    "lines": 82,
+    "bytes": 8373,
+    "functions": [
+      "createPublicHandler"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_accept_offer",
+      "atry_invitation",
+      "atry_manage",
+      "atry_manage_availability",
+      "atry_manage_change",
+      "atry_manage_visit_availability",
+      "atry_offer",
+      "atry_public_availability",
+      "atry_public_book",
+      "atry_public_info",
+      "atry_public_rate",
+      "atry_public_visit_availability",
+      "atry_public_visit_book",
+      "atry_public_waitlist"
+    ],
+    "tests": [
+      ","
+    ]
+  },
+  "scripts/preview-commercial.js": {
+    "lines": 30,
+    "bytes": 4055,
+    "functions": [
+      "captureDemo",
+      "start"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-mail-migration.js": {
+    "lines": 21,
+    "bytes": 1494,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/generate-commercial-migration.js": {
+    "lines": 6,
+    "bytes": 993,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-modules-cleanup.js": {
+    "lines": 54,
+    "bytes": 6345,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-recurring-migration.js": {
+    "lines": 31,
+    "bytes": 2335,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/normalize-demo.js": {
+    "lines": 32,
+    "bytes": 3422,
+    "functions": [
+      "normalizeDemo"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/build-github.js": {
+    "lines": 19,
+    "bytes": 1001,
+    "functions": [
+      "build"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/generate-parity.js": {
+    "lines": 8,
+    "bytes": 1166,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/probe-supabase-access-waitlist.js": {
+    "lines": 34,
+    "bytes": 5005,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_accept_invitation",
+      "atry_customers"
+    ],
+    "tests": []
+  },
+  "scripts/export-migration.js": {
+    "lines": 22,
+    "bytes": 3750,
+    "functions": [
+      "exportMigration"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-integration-cleanup.js": {
+    "lines": 27,
+    "bytes": 2757,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/verify-data.js": {
+    "lines": 10,
+    "bytes": 712,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/backup.js": {
+    "lines": 9,
+    "bytes": 386,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/generate-management.js": {
+    "lines": 8,
+    "bytes": 1312,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/probe-supabase-auth.js": {
+    "lines": 33,
+    "bytes": 3441,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_catalog",
+      "atry_create_organization",
+      "atry_me",
+      "atry_revoke_session",
+      "atry_sessions"
+    ],
+    "tests": []
+  },
+  "scripts/probe-supabase-modules.js": {
+    "lines": 50,
+    "bytes": 6721,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_catalog",
+      "atry_create_booking",
+      "atry_customers",
+      "atry_save_service"
+    ],
+    "tests": []
+  },
+  "scripts/probe-supabase-public.js": {
+    "lines": 30,
+    "bytes": 4808,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_business"
+    ],
+    "tests": []
+  },
+  "scripts/check-supabase-connection.js": {
+    "lines": 15,
+    "bytes": 1468,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_create_organization",
+      "atry_public_info"
+    ],
+    "tests": []
+  },
+  "scripts/build-pages.js": {
+    "lines": 22,
+    "bytes": 2651,
+    "functions": [
+      "config",
+      "build"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "."
+    ]
+  },
+  "scripts/remove-integration-auth.js": {
+    "lines": 19,
+    "bytes": 1952,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_me"
+    ],
+    "tests": []
+  },
+  "scripts/serve-cloud-verification.js": {
+    "lines": 20,
+    "bytes": 2361,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-release-043-044.js": {
+    "lines": 36,
+    "bytes": 3061,
+    "functions": [
+      "prepare"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_"
+    ]
+  },
+  "scripts/commercial-quality.js": {
+    "lines": 22,
+    "bytes": 1848,
+    "functions": [
+      "inspect",
+      "schedule"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/monitor-public.js": {
+    "lines": 14,
+    "bytes": 1243,
+    "functions": [
+      "probe"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/validate-control-snapshot.js": {
+    "lines": 43,
+    "bytes": 4236,
+    "functions": [
+      "hash",
+      "counts"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_",
+      ".",
+      ".",
+      "_",
+      "."
+    ]
+  },
+  "scripts/prepare-functional-migrations.js": {
+    "lines": 19,
+    "bytes": 1769,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_"
+    ]
+  },
+  "scripts/restore-copy.js": {
+    "lines": 6,
+    "bytes": 903,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-subscription-migration.js": {
+    "lines": 16,
+    "bytes": 1325,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/generate-postgres-schema.js": {
+    "lines": 19,
+    "bytes": 2189,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-pending-migrations.js": {
+    "lines": 25,
+    "bytes": 2017,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_"
+    ]
+  },
+  "scripts/generate-public-booking.js": {
+    "lines": 17,
+    "bytes": 3920,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/build-github-preview.js": {
+    "lines": 16,
+    "bytes": 862,
+    "functions": [
+      "build"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  },
+  "scripts/prepare-control-migrations.js": {
+    "lines": 21,
+    "bytes": 1956,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": [
+      "_",
+      "_",
+      "_"
+    ]
+  },
+  "scripts/probe-supabase-realtime.js": {
+    "lines": 21,
+    "bytes": 2799,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_catalog",
+      "atry_save_staff"
+    ],
+    "tests": []
+  },
+  "scripts/probe-supabase-resources.js": {
+    "lines": 22,
+    "bytes": 3128,
+    "functions": [
+      "main"
+    ],
+    "forms": [],
+    "actions": [],
+    "rpc": [
+      "atry_create_booking",
+      "atry_public_availability"
+    ],
+    "tests": []
+  },
+  "scripts/measure-postgres.js": {
+    "lines": 11,
+    "bytes": 3852,
+    "functions": [],
+    "forms": [],
+    "actions": [],
+    "rpc": [],
+    "tests": []
+  }
+}

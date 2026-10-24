@@ -1,0 +1,27 @@
+# Matriz de conservación funcional
+
+Todas las filas conservan la implementación JavaScript original. Sólo las tarjetas de Servicios tienen una isla React experimental; ninguna otra fila se considera migrada. Nombres de pruebas remiten a `tests/<nombre>.test.js`.
+
+| Área | Funciones obligatorias | Fuente web | Pruebas existentes | Puerta antes de migrar |
+|---|---|---|---|---|
+| Acceso y cuenta | Login, registro de negocio/cuenta, verificación, recuperación, contraseña, email, sesiones, multi-negocio | app/onboarding/workspace | accounts, product, cloud-auth, supabase-auth, cloud-bootstrap | Sesión, expiración, retorno a invitación, cierre y borrador |
+| Inicio y estadísticas | Resumen hoy, próximos turnos, métricas, insights por reglas, estadísticas básicas/avanzadas | app/agenda/commercial/management | product, commercial, commercial-ui | Comparar cifras, intervalos y capacidades por plan |
+| Agenda | Día/semana/mes, móvil, filtros, recursos, búsqueda, teclado, reloj, crear/editar/resincronizar | agenda/features/agenda-core | agenda-layout, scheduling, realtime, product | E2E todas las vistas, conflictos y foco |
+| Reservas privadas | Alta manual, asociación cliente, anticipación, buffers, cancelación, reprogramación, ausente/completada | app/agenda | booking, scheduling, customers | Doble clic, concurrencia, cambio de servicio/profesional |
+| Reservas públicas | Slug, servicio/profesional, fechas, slots, contacto, política, idempotencia, gestión por token | app/management | public-edge, public-proof, booking | Móvil, token vencido, recuperación de red, conservar borrador |
+| Visitas combinadas | Hasta 6 servicios consecutivos, cotización, orden, profesional por paso, operación atómica | visits/visit-core/visit-demo | visits, theme-visits-pg | No dividir cancelación/reprogramación ni confirmar cotización vieja |
+| Turnos fijos | Serie, frecuencia, conflictos por fecha, finalizar, excepciones de una ocurrencia | recurring | recurring | Fallo atómico y conservación de historial |
+| Servicios | Precio UYU, duración, seña, buffers, asignaciones, publicar/ocultar; bloqueo con reservas futuras | app | booking, scheduling | Piloto: tarjetas React; formularios y reglas siguen legacy |
+| Profesionales y fotos | Alta/edición/estado, servicios, color, subida/recorte/consentimiento/eliminación de foto | app/staff-photos/staff-photo-core | staff-photos, staff-photos-pg, staff-photos-ui, logo-crop | Storage, permisos, revocar URL, no filtrar fotos privadas |
+| Disponibilidad | 6 tramos/día, pausas, copiar días, fechas especiales, cierres, ausencias, bloqueos, recursos | workspace/features | weekly-schedule, weekly-schedule-pg, scheduling | Medianoche, intersecciones y reservas existentes |
+| Clientes | Búsqueda, alta/edición, historial, contacto original de turno, consentimiento, reservar/turno fijo | app | customers, customer-whatsapp-quick | Conflicto de contacto, no sobrescribir ficha con turno |
+| Lista de espera y SmartSlots | Registro, alternativas, ofertas con vencimiento, aceptación que revalida disponibilidad | app/features | product, booking | Oferta no retiene slot; carrera de aceptación |
+| WhatsApp manual | Configuración, plantillas, filtros/cola, preparar/abrir y declarar enviado, consentimiento | whatsapp/whatsapp-core/whatsapp-demo | whatsapp, whatsapp-round2, whatsapp-pg, whatsapp-opening, whatsapp-ui | Preparado no significa enviado ni entregado; no automatizar |
+| Correo Brevo | Preferencias, cuota, cola/estados, recordatorios, eventos, reintentos y evidencia | workspace + server/mail/brevo + edge worker | brevo, mail, mail-events, mail-scheduler, cloud-mail | Aceptación del proveedor distinta de entrega; sin envío real QA |
+| Configuración | Datos, reglas, página pública, exportación CSV, configuración inicial | app/workspace | product, deployment, booking | Slugs y enlaces profundos, formulario sin guardar |
+| Temas e identidad | Logo, tipografías, modos, paletas, densidad, botones, radios y variantes por plan | appearance/theme-core/theme-studio/logo-editor | appearance, theme-studio, theme-visits-pg, action-system | Capturas con datos/dimensiones iguales; conflictos de revisión |
+| Accesos y permisos | Owner/manager/staff, asociación a profesional, invitación/aceptación/revocación | features/app | accounts, booking, product, postgres | Denegación backend y aislamiento cruzado; frontend no autoridad |
+| Planes y activación | Entitlements, límites, período, upgrade/downgrade, solicitud, pago manual verificado | commercial/subscriptions | subscriptions, commercial, commercial-pg, subscription-presentation | Negocio separado, no transferir cuotas; downgrade con turnos futuros |
+| Administración ATRY | Centro de control, negocios/cuentas, planes, cobros, correo, incidencias, soporte, auditoría, eliminación | control-center/management | control-center, control-center-pg, control-receipts-pg, business-delete-demo, admin-reauth | Reautenticación reciente, último admin/owner, revisión y recibos |
+| Demos y comercial | 3 planes, fixtures, showcase, descubrimiento, catálogo y flujos comerciales | demo/showcase-preview/descubrir/commercial | demo-owner, showcase-preview, landing-commercial | No conectar demo al servidor; diferencias por plan |
+| Infraestructura cliente | Caché, prefetch, realtime, revocación, SW/offline, errores/red, responsive | read-cache/features/sw/cloud | read-cache, realtime, cloud-realtime, service-worker, deployment | No duplicar canales ni cachear datos/tokens; rollback |

@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Crear React -> HTTP real -> SQLite: precio/duración/seña/buffers/asignaciones persistidos",
+    "Editar precio real sin normalización de demo",
+    "Activar/desactivar persistidos en backend",
+    "Regla real de reservas futuras: HTTP409 conserva duración y borrador",
+    "Cookie de otro negocio: backend403 aunque el frontend declare owner; datos intactos",
+    "Suscripción vencida: backend bloquea escritura sin confiar en React"
+  ],
+  "errors": [],
+  "environment": "SQLite :memory:, local HTTP ephemeral, no Supabase"
+}

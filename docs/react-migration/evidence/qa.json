@@ -1,0 +1,1116 @@
+{
+  "visual": [
+    {
+      "plan": 1,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-plan1-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      },
+      "react": {
+        "file": "react-plan1-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      }
+    },
+    {
+      "plan": 1,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-plan1-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      },
+      "react": {
+        "file": "react-plan1-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      }
+    },
+    {
+      "plan": 1,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-plan1-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      },
+      "react": {
+        "file": "react-plan1-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      }
+    },
+    {
+      "plan": 1,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-plan1-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      },
+      "react": {
+        "file": "react-plan1-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      }
+    },
+    {
+      "plan": 1,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-plan1-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      },
+      "react": {
+        "file": "react-plan1-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 3
+      }
+    },
+    {
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-plan2-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan2-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-plan2-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan2-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-plan2-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan2-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-plan2-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan2-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-plan2-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan2-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-plan3-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan3-320.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-plan3-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan3-390.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-plan3-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan3-430.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-plan3-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan3-768.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-plan3-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      },
+      "react": {
+        "file": "react-plan3-1440.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false,
+        "cards": 6
+      }
+    }
+  ],
+  "functional": [
+    "Editar y guardar servicio con formulario legacy desde tarjeta React",
+    "Ocultar servicio y actualizar tarjeta React",
+    "Publicar servicio",
+    "Navegar y remontar sin raíces duplicadas (3 ciclos)",
+    "Abrir diálogo y cerrar con Escape",
+    "API denegada, sin cloud, sin service workers, requiere demo=1"
+  ],
+  "performance": [
+    {
+      "variant": "javascript",
+      "sample": 0,
+      "initialBrowserAndAppMs": 286.273334,
+      "appReadyMs": 106.89999999850988,
+      "dialogMs": 49.41579199999978,
+      "navigationMs": 22.69762499999979,
+      "agendaMs": 50.413792000000285,
+      "publicNavigationMs": 26.719292000000223,
+      "serviceSelectionMs": 46.49129200000016,
+      "staffSelectionMs": 29.97824999999966,
+      "availabilityDemoAdapterMs": 0.7000000029802322,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.2999999970197678
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.7000000029802322
+        }
+      ],
+      "resourceRequests": 49
+    },
+    {
+      "variant": "javascript",
+      "sample": 1,
+      "initialBrowserAndAppMs": 265.33587499999976,
+      "appReadyMs": 102.80000000447035,
+      "dialogMs": 35.81520899999987,
+      "navigationMs": 21.234083000000282,
+      "agendaMs": 46.54708299999993,
+      "publicNavigationMs": 17.34137499999997,
+      "serviceSelectionMs": 45.28379099999984,
+      "staffSelectionMs": 31.369666999999936,
+      "availabilityDemoAdapterMs": 0.8000000044703484,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.2999999970197678
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.5
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.7000000029802322
+        }
+      ],
+      "resourceRequests": 49
+    },
+    {
+      "variant": "javascript",
+      "sample": 2,
+      "initialBrowserAndAppMs": 255.76770799999986,
+      "appReadyMs": 98.19999999552965,
+      "dialogMs": 50.01329100000021,
+      "navigationMs": 20.57912499999975,
+      "agendaMs": 46.32258300000012,
+      "publicNavigationMs": 17.429834000000028,
+      "serviceSelectionMs": 46.19758300000012,
+      "staffSelectionMs": 30.9822079999999,
+      "availabilityDemoAdapterMs": 0.7000000029802322,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.2999999970197678
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.7000000029802322
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.7000000029802322
+        }
+      ],
+      "resourceRequests": 49
+    },
+    {
+      "variant": "javascript",
+      "sample": 3,
+      "initialBrowserAndAppMs": 286.7518749999999,
+      "appReadyMs": 133.80000000447035,
+      "dialogMs": 19.93270900000016,
+      "navigationMs": 13.974374999999782,
+      "agendaMs": 55.08408299999974,
+      "publicNavigationMs": 17.38575000000037,
+      "serviceSelectionMs": 41.92925000000014,
+      "staffSelectionMs": 31.394416000000092,
+      "availabilityDemoAdapterMs": 0.6999999955296516,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.2000000029802322
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.5999999940395355
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6999999955296516
+        }
+      ],
+      "resourceRequests": 49
+    },
+    {
+      "variant": "javascript",
+      "sample": 4,
+      "initialBrowserAndAppMs": 261.658375,
+      "appReadyMs": 102.80000000447035,
+      "dialogMs": 34.63000000000011,
+      "navigationMs": 12.179040999999415,
+      "agendaMs": 54.85504200000014,
+      "publicNavigationMs": 16.613999999999578,
+      "serviceSelectionMs": 47.48454200000015,
+      "staffSelectionMs": 30.887041999999383,
+      "availabilityDemoAdapterMs": 0.6999999955296516,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.09999999403953552
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.1999999955296516
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.7000000029802322
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6999999955296516
+        }
+      ],
+      "resourceRequests": 49
+    },
+    {
+      "variant": "react",
+      "sample": 0,
+      "initialBrowserAndAppMs": 275.07687500000065,
+      "appReadyMs": 115.79999999701977,
+      "dialogMs": 75.33379200000036,
+      "navigationMs": 20.274250000000393,
+      "agendaMs": 46.38116699999955,
+      "publicNavigationMs": 17.507665999999517,
+      "serviceSelectionMs": 38.320583999999144,
+      "staffSelectionMs": 31.481416999999965,
+      "availabilityDemoAdapterMs": 0.8999999985098839,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.2999999970197678
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.8999999985098839
+        }
+      ],
+      "resourceRequests": 50
+    },
+    {
+      "variant": "react",
+      "sample": 1,
+      "initialBrowserAndAppMs": 279.2046250000003,
+      "appReadyMs": 119.29999999701977,
+      "dialogMs": 74.51633300000049,
+      "navigationMs": 21.808625000000575,
+      "agendaMs": 48.28362500000003,
+      "publicNavigationMs": 16.312709000000723,
+      "serviceSelectionMs": 50.58304099999987,
+      "staffSelectionMs": 31.215833000000202,
+      "availabilityDemoAdapterMs": 0.6000000014901161,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.3000000044703484
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        }
+      ],
+      "resourceRequests": 50
+    },
+    {
+      "variant": "react",
+      "sample": 2,
+      "initialBrowserAndAppMs": 284.5241249999999,
+      "appReadyMs": 122.89999999850988,
+      "dialogMs": 43.843832999999904,
+      "navigationMs": 21.927292000000307,
+      "agendaMs": 47.39729100000022,
+      "publicNavigationMs": 17.79595900000004,
+      "serviceSelectionMs": 52.33099999999922,
+      "staffSelectionMs": 30.036583000000064,
+      "availabilityDemoAdapterMs": 0.8999999985098839,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.399999998509884
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.8999999985098839
+        }
+      ],
+      "resourceRequests": 50
+    },
+    {
+      "variant": "react",
+      "sample": 3,
+      "initialBrowserAndAppMs": 290.13341599999967,
+      "appReadyMs": 130.79999999701977,
+      "dialogMs": 85.40454199999931,
+      "navigationMs": 21.489167000000634,
+      "agendaMs": 47.533417000000554,
+      "publicNavigationMs": 15.460375000000568,
+      "serviceSelectionMs": 51.97600000000057,
+      "staffSelectionMs": 30.693874999999935,
+      "availabilityDemoAdapterMs": 0.5999999940395355,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.19999999552965164
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0.09999999403953552
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2.399999998509884
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.6000000014901161
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.5999999940395355
+        }
+      ],
+      "resourceRequests": 50
+    },
+    {
+      "variant": "react",
+      "sample": 4,
+      "initialBrowserAndAppMs": 257.4857920000004,
+      "appReadyMs": 114.80000000447035,
+      "dialogMs": 83.10633300000063,
+      "navigationMs": 22.02887499999997,
+      "agendaMs": 46.63329199999953,
+      "publicNavigationMs": 28.392125000000306,
+      "serviceSelectionMs": 41.988624999999956,
+      "staffSelectionMs": 43.62595799999963,
+      "availabilityDemoAdapterMs": 0.8999999985098839,
+      "adapterReads": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/customers?q=",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/bookings?date=2026-10-24&days=1",
+          "method": "GET",
+          "ms": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/scheduling",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-0/hours",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-1/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/staff/demo-staff-2/hours",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/time-off",
+          "method": "GET",
+          "ms": 0
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "PATCH",
+          "ms": 0
+        },
+        {
+          "route": "/api/public/demo-negocioplan2",
+          "method": "GET",
+          "ms": 0.10000000149011612
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0",
+          "method": "GET",
+          "ms": 2
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-24&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.5
+        },
+        {
+          "route": "/api/public/demo-negocioplan2/availability?date=2026-10-26&service_id=demo-service-0&staff_id=demo-staff-0",
+          "method": "GET",
+          "ms": 0.8999999985098839
+        }
+      ],
+      "resourceRequests": 50
+    }
+  ],
+  "errors": [],
+  "external": []
+}

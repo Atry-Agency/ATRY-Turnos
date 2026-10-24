@@ -1,0 +1,760 @@
+{
+  "visual": [
+    {
+      "plan": 1,
+      "width": 320,
+      "name": "plan1",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan1-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 320,
+      "name": "plan1",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan1-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 390,
+      "name": "plan1",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan1-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 390,
+      "name": "plan1",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan1-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 430,
+      "name": "plan1",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan1-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 430,
+      "name": "plan1",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan1-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 768,
+      "name": "plan1",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan1-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 768,
+      "name": "plan1",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan1-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 1440,
+      "name": "plan1",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan1-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 1440,
+      "name": "plan1",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan1-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan1-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 1\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 320,
+      "name": "plan2",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan2-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 320,
+      "name": "plan2",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan2-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 390,
+      "name": "plan2",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan2-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 390,
+      "name": "plan2",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan2-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 430,
+      "name": "plan2",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan2-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 430,
+      "name": "plan2",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan2-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 768,
+      "name": "plan2",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan2-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 768,
+      "name": "plan2",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan2-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 1440,
+      "name": "plan2",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan2-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 1440,
+      "name": "plan2",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan2-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan2-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 2\nProfesional 2\nProfesional 3\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 320,
+      "name": "plan3",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan3-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-320-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 320,
+      "name": "plan3",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan3-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-320-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "plan3",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan3-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "plan3",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan3-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 430,
+      "name": "plan3",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan3-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-430-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 430,
+      "name": "plan3",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan3-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-430-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "plan3",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan3-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "plan3",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan3-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "plan3",
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-plan3-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y barba\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "plan3",
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-plan3-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-plan3-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nPropietario Demo 3\nProfesional 2\nProfesional 3\nProfesional 4\nProfesional 5\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-dark-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-dark-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-custom-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-390-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-custom-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-390-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-dark-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-dark-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-custom-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-768-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-custom-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-768-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-dark-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-dark-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-dark-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "list",
+      "javascript": {
+        "file": "javascript-custom-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-1440-list.png",
+        "text": "Publicado\nCorte de pelo\n\nServicio ficticio para explorar el panel.\n\n$0\n30 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nColoración y brushing\n\nServicio ficticio para explorar el panel.\n\n$0\n60 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nPeinado\n\nServicio ficticio para explorar el panel.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDiseño de cejas\n\nEjemplo de visita con profesionales especializados.\n\n$0\n20 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nDepilación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n35 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar\nPublicado\nCorte y terminación\n\nEjemplo de visita con profesionales especializados.\n\n$0\n45 minutos\nPreparación: 0m · Limpieza: 0m\nEditar\nOcultar",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "name": "custom",
+      "theme": {
+        "mode": "light",
+        "primary": "#137E70",
+        "secondary": "#00A5E2",
+        "font": "system",
+        "density": "compact",
+        "buttons": "outline"
+      },
+      "kind": "dialog",
+      "javascript": {
+        "file": "javascript-custom-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-custom-1440-dialog.png",
+        "text": "Nombre del servicio\nPrecio en pesos uruguayos\nDuración (minutos)\nSeña estimada (%)\nPreparación previa (min)\nTiempo posterior (min)\nDescripción\nProfesionales que ofrecen el servicio\nSofía Pereira\nLucía Fernández\nValentina Costa\nMartina Silva\nCamila Méndez\nLos porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.\nGuardar servicio",
+        "overflow": false
+      }
+    }
+  ],
+  "functional": [
+    "Crear con precio, duración, seña, buffers, descripción y profesionales; un POST",
+    "Editar y refrescar catálogo compartido",
+    "Ocultar con confirmación y publicar",
+    "Validación nativa sin transporte con nombre/duración inválidos",
+    "Escape y navegación cancelables conservan borrador",
+    "Refresh/realtime conserva formulario sin remontar",
+    "Errores 409/403 conservan borrador, sin éxito falso",
+    "Doble submit con latencia: un POST y dos lecturas; sin duplicados",
+    "Error de lectura y reintento",
+    "5 ciclos de navegación sin duplicar raíces ni handlers",
+    "Respuesta tardía tras abandonar la pantalla no remonta ni modifica DOM"
+  ],
+  "performance": [],
+  "errors": [],
+  "consoleErrors": [],
+  "external": [],
+  "failure": "TimeoutError: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ag-workspace') to be visible\u001b[22m\n"
+}

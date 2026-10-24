@@ -1,0 +1,177 @@
+[
+  {
+    "javascript": "javascript-plan1-1440.png",
+    "react": "react-plan1-1440.png",
+    "dimensions": [
+      1440,
+      960
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan1-320.png",
+    "react": "react-plan1-320.png",
+    "dimensions": [
+      320,
+      1348
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan1-390.png",
+    "react": "react-plan1-390.png",
+    "dimensions": [
+      390,
+      1328
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan1-430.png",
+    "react": "react-plan1-430.png",
+    "dimensions": [
+      430,
+      1328
+    ],
+    "differentPixels": 12,
+    "bbox": [
+      14,
+      197,
+      416,
+      1291
+    ]
+  },
+  {
+    "javascript": "javascript-plan1-768.png",
+    "react": "react-plan1-768.png",
+    "dimensions": [
+      768,
+      978
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan2-1440.png",
+    "react": "react-plan2-1440.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan2-320.png",
+    "react": "react-plan2-320.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan2-390.png",
+    "react": "react-plan2-390.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 21,
+    "bbox": [
+      34,
+      504,
+      359,
+      2102
+    ]
+  },
+  {
+    "javascript": "javascript-plan2-430.png",
+    "react": "react-plan2-430.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan2-768.png",
+    "react": "react-plan2-768.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan3-1440.png",
+    "react": "react-plan3-1440.png",
+    "dimensions": [
+      1440,
+      976
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan3-320.png",
+    "react": "react-plan3-320.png",
+    "dimensions": [
+      320,
+      2350
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan3-390.png",
+    "react": "react-plan3-390.png",
+    "dimensions": [
+      390,
+      2265
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "javascript-plan3-430.png",
+    "react": "react-plan3-430.png",
+    "dimensions": [
+      430,
+      2265
+    ],
+    "differentPixels": 19,
+    "bbox": [
+      19,
+      196,
+      399,
+      2102
+    ]
+  },
+  {
+    "javascript": "javascript-plan3-768.png",
+    "react": "react-plan3-768.png",
+    "dimensions": [
+      768,
+      1347
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  },
+  {
+    "javascript": "custom-javascript.png",
+    "react": "custom-react.png",
+    "dimensions": [
+      390,
+      2289
+    ],
+    "differentPixels": 0,
+    "bbox": null
+  }
+]
