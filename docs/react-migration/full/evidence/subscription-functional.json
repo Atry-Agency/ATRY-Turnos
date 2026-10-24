@@ -1,0 +1,6 @@
+{
+  "checks": [
+    "Simulación de cambio conserva plan y no crea solicitud ni abre WhatsApp"
+  ],
+  "errors": []
+}

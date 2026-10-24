@@ -1,0 +1,7 @@
+export interface Customer {id:string;name:string;email:string;phone:string;notes:string;marketing_consent:number|boolean;visits:number}
+export interface CustomerDraft {name:string;email:string;phone:string;notes:string;marketing_consent:boolean}
+export interface HistoryRow {id:string;service_name:string;staff_name:string;starts_at:string;status:string}
+const object=(v:unknown):v is Record<string,unknown>=>typeof v==='object'&&v!==null;
+export function customers(value:unknown):Customer[]{if(!Array.isArray(value)||!value.every(v=>object(v)&&typeof v.id==='string'&&typeof v.name==='string'&&['email','phone','notes'].every(key=>v[key]==null||typeof v[key]==='string')&&Number.isFinite(Number(v.visits??0))))throw Error('La respuesta de Clientes no tiene el formato esperado.');return value.map(v=>({...v,visits:Number(v.visits??0),email:v.email||'',phone:v.phone||'',notes:v.notes||''}))}
+export function history(value:unknown):HistoryRow[]{const list=Array.isArray(value)?value:object(value)&&Array.isArray(value.bookings)?value.bookings:undefined;if(!list||!list.every(v=>object(v)&&typeof v.id==='string'&&typeof v.service_name==='string'&&typeof v.starts_at==='string'&&typeof v.status==='string'))throw Error('No pudimos interpretar el historial del cliente.');return list as HistoryRow[]}
+export const draftOf=(c?:Customer):CustomerDraft=>({name:c?.name||'',email:c?.email||'',phone:c?.phone||'',notes:c?.notes||'',marketing_consent:Boolean(c?.marketing_consent)});

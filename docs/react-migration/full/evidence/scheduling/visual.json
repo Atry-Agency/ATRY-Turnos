@@ -1,0 +1,230 @@
+{
+  "pairs": [
+    {
+      "view": "disponibilidad",
+      "plan": 1,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-disponibilidad-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 1,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-disponibilidad-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 1,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-disponibilidad-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 1,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-disponibilidad-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 1,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-disponibilidad-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 1\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-disponibilidad-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-disponibilidad-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-disponibilidad-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-disponibilidad-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-disponibilidad-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-disponibilidad-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-disponibilidad-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-disponibilidad-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-disponibilidad-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    },
+    {
+      "view": "disponibilidad",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-disponibilidad-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-disponibilidad-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios\n\nTu semana, tus pausas y tus fechas especiales.\n\nSemana habitual\nFechas y ausencias\nRecursos\n\nUna vista clara de tu semana. Sumá tantos momentos de atención como necesites, hasta 6 tramos por día.\n\nPD\nPropietario Demo 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP2\nProfesional 2\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP3\nProfesional 3\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP4\nProfesional 4\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención\nP5\nProfesional 5\n\nHorario habitual · Uruguay\n\nEditar semana\nLunes\n09:00–19:00\nMartes\n09:00–19:00\nMiércoles\n09:00–19:00\nJueves\n09:00–19:00\nViernes\n09:00–19:00\nSábado\n09:00–19:00\nDomingo\nSin atención",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,1421 @@
+[
+  {
+    "folder": "customers",
+    "file": "javascript-p1-1440-list.png",
+    "pixels": 2282400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-1440-profile.png",
+    "pixels": 2282400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-320-list.png",
+    "pixels": 1023680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-320-profile.png",
+    "pixels": 1023680,
+    "different": 8473,
+    "over4": 23,
+    "bbox": [
+      0,
+      0,
+      320,
+      3142
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-390-list.png",
+    "pixels": 1226160,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-390-profile.png",
+    "pixels": 1226160,
+    "different": 9,
+    "over4": 0,
+    "bbox": [
+      39,
+      869,
+      208,
+      927
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-430-list.png",
+    "pixels": 1177770,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-430-profile.png",
+    "pixels": 1177770,
+    "different": 52,
+    "over4": 15,
+    "bbox": [
+      6,
+      39,
+      394,
+      2543
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-768-list.png",
+    "pixels": 1350912,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p1-768-profile.png",
+    "pixels": 1350912,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-1440-list.png",
+    "pixels": 2282400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-1440-profile.png",
+    "pixels": 2282400,
+    "different": 242,
+    "over4": 20,
+    "bbox": [
+      16,
+      48,
+      1406,
+      1502
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-320-list.png",
+    "pixels": 1146560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-320-profile.png",
+    "pixels": 1146560,
+    "different": 7885,
+    "over4": 11,
+    "bbox": [
+      0,
+      0,
+      320,
+      3476
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-390-list.png",
+    "pixels": 1226160,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-390-profile.png",
+    "pixels": 1226160,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-430-list.png",
+    "pixels": 1342890,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-430-profile.png",
+    "pixels": 1342890,
+    "different": 7,
+    "over4": 0,
+    "bbox": [
+      221,
+      869,
+      228,
+      927
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-768-list.png",
+    "pixels": 1350912,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p2-768-profile.png",
+    "pixels": 1350912,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-1440-list.png",
+    "pixels": 2282400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-1440-profile.png",
+    "pixels": 2282400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-320-list.png",
+    "pixels": 1163200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-320-profile.png",
+    "pixels": 1163200,
+    "different": 7855,
+    "over4": 13,
+    "bbox": [
+      0,
+      0,
+      320,
+      3343
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-390-list.png",
+    "pixels": 1246440,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-390-profile.png",
+    "pixels": 1246440,
+    "different": 60,
+    "over4": 24,
+    "bbox": [
+      32,
+      39,
+      354,
+      3106
+    ]
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-430-list.png",
+    "pixels": 1365250,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-430-profile.png",
+    "pixels": 1365250,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-768-list.png",
+    "pixels": 1396992,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "customers",
+    "file": "javascript-p3-768-profile.png",
+    "pixels": 1396992,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-estadisticas-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-estadisticas-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-estadisticas-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-estadisticas-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-estadisticas-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-1-1440.png",
+    "pixels": 1560960,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-1-320.png",
+    "pixels": 521600,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-1-390.png",
+    "pixels": 624390,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-1-430.png",
+    "pixels": 688430,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-1-768.png",
+    "pixels": 834816,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-2-1440.png",
+    "pixels": 1846080,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-2-320.png",
+    "pixels": 895680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-2-390.png",
+    "pixels": 1017900,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-2-430.png",
+    "pixels": 1021250,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-2-768.png",
+    "pixels": 1549056,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-3-1440.png",
+    "pixels": 1846080,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-3-320.png",
+    "pixels": 899840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-3-390.png",
+    "pixels": 1017900,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-3-430.png",
+    "pixels": 1010070,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-inicio-3-768.png",
+    "pixels": 1549056,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-lista-espera-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-lista-espera-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-lista-espera-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-lista-espera-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-lista-espera-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-smartslots-3-1440.png",
+    "pixels": 1382400,
+    "different": 2,
+    "over4": 0,
+    "bbox": [
+      308,
+      237,
+      309,
+      284
+    ]
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-smartslots-3-320.png",
+    "pixels": 307200,
+    "different": 1,
+    "over4": 0,
+    "bbox": [
+      208,
+      290,
+      209,
+      291
+    ]
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-smartslots-3-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-smartslots-3-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-smartslots-3-768.png",
+    "pixels": 737280,
+    "different": 1,
+    "over4": 0,
+    "bbox": [
+      34,
+      230,
+      35,
+      231
+    ]
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-turnos-fijos-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-turnos-fijos-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-turnos-fijos-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-turnos-fijos-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "pages",
+    "file": "javascript-turnos-fijos-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-comunicacion-3-1440.png",
+    "pixels": 1516320,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-comunicacion-3-320.png",
+    "pixels": 475200,
+    "different": 1184,
+    "over4": 1102,
+    "bbox": [
+      53,
+      1156,
+      229,
+      1174
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-comunicacion-3-390.png",
+    "pixels": 535860,
+    "different": 1184,
+    "over4": 1102,
+    "bbox": [
+      53,
+      1064,
+      229,
+      1082
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-comunicacion-3-430.png",
+    "pixels": 579640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-comunicacion-3-768.png",
+    "pixels": 846336,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-configuracion-inicial-2-1440.png",
+    "pixels": 1954080,
+    "different": 111,
+    "over4": 98,
+    "bbox": [
+      550,
+      307,
+      618,
+      318
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-configuracion-inicial-2-320.png",
+    "pixels": 732160,
+    "different": 32,
+    "over4": 28,
+    "bbox": [
+      270,
+      343,
+      276,
+      354
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-configuracion-inicial-2-390.png",
+    "pixels": 827190,
+    "different": 111,
+    "over4": 98,
+    "bbox": [
+      270,
+      343,
+      338,
+      354
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-configuracion-inicial-2-430.png",
+    "pixels": 883220,
+    "different": 111,
+    "over4": 98,
+    "bbox": [
+      270,
+      343,
+      338,
+      354
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-configuracion-inicial-2-768.png",
+    "pixels": 1565184,
+    "different": 111,
+    "over4": 98,
+    "bbox": [
+      276,
+      251,
+      344,
+      262
+    ]
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-insights-3-1440.png",
+    "pixels": 2584800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-insights-3-320.png",
+    "pixels": 1110720,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-insights-3-390.png",
+    "pixels": 1256580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-insights-3-430.png",
+    "pixels": 1385460,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "additional-pages",
+    "file": "javascript-insights-3-768.png",
+    "pixels": 1646592,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-2-1440.png",
+    "pixels": 1828800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-2-320.png",
+    "pixels": 590400,
+    "different": 505,
+    "over4": 504,
+    "bbox": [
+      35,
+      413,
+      285,
+      469
+    ]
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-2-390.png",
+    "pixels": 650520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-2-430.png",
+    "pixels": 681980,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-2-768.png",
+    "pixels": 1196544,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-3-1440.png",
+    "pixels": 1828800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-3-320.png",
+    "pixels": 590400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-3-390.png",
+    "pixels": 650520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-3-430.png",
+    "pixels": 681980,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "notifications",
+    "file": "javascript-notificaciones-3-768.png",
+    "pixels": 1196544,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-1-320.png",
+    "pixels": 320640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-2-1440.png",
+    "pixels": 1967040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-2-320.png",
+    "pixels": 662720,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-2-390.png",
+    "pixels": 781950,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-2-430.png",
+    "pixels": 842800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-2-768.png",
+    "pixels": 1388544,
+    "different": 6,
+    "over4": 0,
+    "bbox": [
+      47,
+      399,
+      720,
+      1370
+    ]
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-3-1440.png",
+    "pixels": 2662560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-3-320.png",
+    "pixels": 1018880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-3-390.png",
+    "pixels": 1198470,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-3-430.png",
+    "pixels": 1321390,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "scheduling",
+    "file": "javascript-disponibilidad-3-768.png",
+    "pixels": 2131200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-2-320.png",
+    "size": [
+      [
+        320,
+        1076
+      ],
+      [
+        320,
+        1045
+      ]
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-2-390.png",
+    "size": [
+      [
+        390,
+        960
+      ],
+      [
+        390,
+        968
+      ]
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-2-430.png",
+    "pixels": 412800,
+    "different": 75850,
+    "over4": 55274,
+    "bbox": [
+      0,
+      460,
+      430,
+      900
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-3-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-3-320.png",
+    "size": [
+      [
+        320,
+        1076
+      ],
+      [
+        320,
+        1045
+      ]
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-3-390.png",
+    "size": [
+      [
+        390,
+        960
+      ],
+      [
+        390,
+        968
+      ]
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-3-430.png",
+    "pixels": 412800,
+    "different": 75843,
+    "over4": 55283,
+    "bbox": [
+      0,
+      460,
+      430,
+      900
+    ]
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-accesos-3-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-mi-horario-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-mi-horario-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-mi-horario-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-mi-horario-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-mi-horario-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-soporte-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-soporte-1-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-soporte-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-soporte-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "access-support",
+    "file": "javascript-soporte-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-1-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-2-320.png",
+    "pixels": 452480,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-2-390.png",
+    "pixels": 515580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-2-430.png",
+    "pixels": 506540,
+    "different": 31,
+    "over4": 7,
+    "bbox": [
+      32,
+      375,
+      381,
+      894
+    ]
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-2-768.png",
+    "pixels": 804096,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-3-1440.png",
+    "pixels": 1533600,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-3-320.png",
+    "pixels": 615040,
+    "different": 34,
+    "over4": 1,
+    "bbox": [
+      34,
+      263,
+      305,
+      1780
+    ]
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-3-390.png",
+    "pixels": 713700,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-3-430.png",
+    "pixels": 683700,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "team",
+    "file": "javascript-equipo-3-768.png",
+    "pixels": 1009920,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-1-1440.png",
+    "pixels": 2021760,
+    "different": 187,
+    "over4": 151,
+    "bbox": [
+      933,
+      1304,
+      1385,
+      1314
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-1-320.png",
+    "pixels": 869440,
+    "different": 21466,
+    "over4": 0,
+    "bbox": [
+      13,
+      344,
+      305,
+      1394
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-1-390.png",
+    "pixels": 997230,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-1-430.png",
+    "pixels": 1080160,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-1-768.png",
+    "pixels": 1830144,
+    "different": 39,
+    "over4": 35,
+    "bbox": [
+      659,
+      2294,
+      666,
+      2303
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-2-1440.png",
+    "pixels": 2299680,
+    "different": 67333,
+    "over4": 153,
+    "bbox": [
+      21,
+      299,
+      1401,
+      1506
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-2-320.png",
+    "pixels": 983360,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-2-390.png",
+    "pixels": 1121640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-2-430.png",
+    "pixels": 1217330,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-2-768.png",
+    "pixels": 2063616,
+    "different": 44190,
+    "over4": 35,
+    "bbox": [
+      21,
+      340,
+      747,
+      2606
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-3-1440.png",
+    "pixels": 2545920,
+    "different": 95485,
+    "over4": 151,
+    "bbox": [
+      18,
+      299,
+      1401,
+      1677
+    ]
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-3-320.png",
+    "pixels": 1026880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-3-390.png",
+    "pixels": 1188330,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-3-430.png",
+    "pixels": 1290860,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "subscription",
+    "file": "javascript-suscripcion-3-768.png",
+    "pixels": 2194944,
+    "different": 39,
+    "over4": 35,
+    "bbox": [
+      659,
+      2768,
+      666,
+      2777
+    ]
+  }
+]

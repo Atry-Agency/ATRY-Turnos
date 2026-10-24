@@ -1,0 +1,3 @@
+export interface RecurringRecord {id:string;customer_name:string;customer_phone:string;customer_email:string;staff_id:string;service_id:string;staff_name:string;service_name:string;start_day:string;end_day?:string;minute:number;interval_weeks:number;active:number|boolean;notes?:string;last_error?:string}
+export const recurringTime=(row:Pick<RecurringRecord,'minute'>)=>String(Math.floor(row.minute/60)).padStart(2,'0')+':'+String(row.minute%60).padStart(2,'0');
+export const recurringFrequency=(weeks:number)=>({1:'Todas las semanas',2:'Cada dos semanas',4:'Cada cuatro semanas'})[weeks as 1|2|4]||'';

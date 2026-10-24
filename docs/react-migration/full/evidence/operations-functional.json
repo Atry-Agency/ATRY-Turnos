@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Agregar, quitar y copiar tramos semanales",
+    "Guardar semana mediante API demo, sin reservas reales",
+    "Crear cierre y actualizar fechas",
+    "Crear recurso y actualizar listado",
+    "Rechazo permanente de envíos demo conserva borrador de preferencias",
+    "Cancelar salida conserva cambios y ruta",
+    "Confirmar salida desmonta formulario"
+  ],
+  "errors": []
+}

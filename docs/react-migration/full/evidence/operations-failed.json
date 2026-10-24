@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Agregar, quitar y copiar tramos semanales",
+    "Guardar semana mediante API demo, sin reservas reales",
+    "Crear cierre y actualizar fechas"
+  ],
+  "errors": [],
+  "failure": "Error: locator.waitFor: Error: strict mode violation: getByText('Sala ficticia React', { exact: true }) resolved to 2 elements:\n    1) <strong>Sala ficticia React</strong> aka getByRole('strong').filter({ hasText: 'Sala ficticia React' })\n    2) <label class=\"checkline\">…</label> aka getByRole('group').getByText('Sala ficticia React')\n\nCall log:\n\u001b[2m  - waiting for getByText('Sala ficticia React', { exact: true }) to be visible\u001b[22m\n"
+}

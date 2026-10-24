@@ -1,0 +1,2 @@
+import {whatsappGlyph} from './whatsapp-glyph';
+export function WhatsAppQuick({name,onClick,disabled}:{name:string;onClick:()=>void;disabled?:boolean}){return <button type="button" className="wa-customer-quick" aria-label={'Preparar WhatsApp para '+name} title="Preparar mensaje de WhatsApp" onClick={onClick} disabled={disabled}><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d={whatsappGlyph}/></svg></button>}

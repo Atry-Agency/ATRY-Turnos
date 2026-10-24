@@ -1,0 +1,91 @@
+{
+  "checks": [
+    "Preferencias React PUT HTTP persistidas; no worker ni envío de correo",
+    "Backend rechaza quitar jornada con reservas existentes; formulario conserva borrador",
+    "Recurso creado desde React persiste en SQLite aislado"
+  ],
+  "errors": [],
+  "statuses": [
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/mail-jobs",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/mail-jobs",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/services",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff/e00d4140-59d3-41cd-be14-a4fea5240b52/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff/f888df94-01ef-412b-bd89-206d51a66938/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff/bbd2a9d0-1929-413a-8c99-0e5b9a63d48a/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/time-off",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff/e00d4140-59d3-41cd-be14-a4fea5240b52/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff/e00d4140-59d3-41cd-be14-a4fea5240b52/hours",
+      "status": 409
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/resources",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/staff",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/services",
+      "status": 200
+    },
+    {
+      "path": "/api/business/a01ad2c7-a073-47ef-b087-365a56bdfa9d/incidents",
+      "status": 200
+    }
+  ],
+  "failure": "Error: locator.fill: Error: strict mode violation: locator('[name=description]') resolved to 2 elements:\n    1) <meta name=\"description\" content=\"Atry Turnos: reservas online, agenda, clientes y equipo en un solo lugar. Una solución de Atry Agency.\"/> aka locator('meta[name=\"description\"]')\n    2) <textarea maxlength=\"2000\" name=\"description\"></textarea> aka getByRole('textbox', { name: 'Descripción' })\n\nCall log:\n\u001b[2m  - waiting for locator('[name=description]')\u001b[22m\n"
+}

@@ -1,0 +1,116 @@
+{
+  "checks": [
+    "Preferencias React PUT HTTP persistidas; no worker ni envío de correo",
+    "Backend rechaza quitar jornada con reservas existentes; formulario conserva borrador",
+    "Recurso creado desde React persiste en SQLite aislado",
+    "Soporte registra incidencia mediante endpoint propio, sin envío externo"
+  ],
+  "errors": [],
+  "statuses": [
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/mail-jobs",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/mail-jobs",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/notification-preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/services",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/32625e1d-f41f-4f0f-bf84-31a0f6b5d512/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/dd524100-50dd-4826-874d-33d2acdc34ab/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/0c2fb7a2-e32b-424b-838b-2aed9fca3627/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/time-off",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/32625e1d-f41f-4f0f-bf84-31a0f6b5d512/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/32625e1d-f41f-4f0f-bf84-31a0f6b5d512/hours",
+      "status": 409
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/resources",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/scheduling",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/services",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/32625e1d-f41f-4f0f-bf84-31a0f6b5d512/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/dd524100-50dd-4826-874d-33d2acdc34ab/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/staff/0c2fb7a2-e32b-424b-838b-2aed9fca3627/hours",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/time-off",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/incidents",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/support",
+      "status": 200
+    },
+    {
+      "path": "/api/business/3dbac639-8d6c-4a9a-916c-072e697d422f/incidents",
+      "status": 200
+    }
+  ],
+  "environment": "SQLite :memory: + HTTP efímero; sin Supabase, correo ni producción"
+}

@@ -1,0 +1,1571 @@
+
+> atry-turnos@1.2.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# (node:31680) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: A: cuenta sin organización y creación de negocios adicionales aislados
+ok 1 - A: cuenta sin organización y creación de negocios adicionales aislados
+  ---
+  duration_ms: 487.575584
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: A: invitación a empleado sin negocio, uso único, roles y revocación inmediata
+ok 2 - A: invitación a empleado sin negocio, uso único, roles y revocación inmediata
+  ---
+  duration_ms: 758.359792
+  type: 'test'
+  ...
+# Subtest: A: invitación revocada/vencida, cuenta equivocada y cambios de perfil protegidos
+ok 3 - A: invitación revocada/vencida, cuenta equivocada y cambios de perfil protegidos
+  ---
+  duration_ms: 613.54325
+  type: 'test'
+  ...
+# Subtest: Inicio: próximos turnos y gráfica se apilan según espacio disponible, con filas compactas en tarjetas angostas
+ok 4 - Inicio: próximos turnos y gráfica se apilan según espacio disponible, con filas compactas en tarjetas angostas
+  ---
+  duration_ms: 1.270792
+  type: 'test'
+  ...
+# Subtest: Cabecera móvil: altura adaptable, acciones sin apilar y copia con etiqueta accesible
+ok 5 - Cabecera móvil: altura adaptable, acciones sin apilar y copia con etiqueta accesible
+  ---
+  duration_ms: 0.663042
+  type: 'test'
+  ...
+# Subtest: Agenda angosta: las acciones conservan palabras y ancho de contenido al distribuirse en filas
+ok 6 - Agenda angosta: las acciones conservan palabras y ancho de contenido al distribuirse en filas
+  ---
+  duration_ms: 0.771292
+  type: 'test'
+  ...
+# Subtest: Visibilidad responsive: el botón base no impone display sobre menú y cierre móviles
+ok 7 - Visibilidad responsive: el botón base no impone display sobre menú y cierre móviles
+  ---
+  duration_ms: 2.437708
+  type: 'test'
+  ...
+# Subtest: Cancelación de turnos: rojo sólido, completar verde y ausencia neutra
+ok 8 - Cancelación de turnos: rojo sólido, completar verde y ausencia neutra
+  ---
+  duration_ms: 0.860709
+  type: 'test'
+  ...
+# Subtest: Visitas combinadas: ambas cancelaciones conservan sólido y confirmación
+ok 9 - Visitas combinadas: ambas cancelaciones conservan sólido y confirmación
+  ---
+  duration_ms: 0.211292
+  type: 'test'
+  ...
+# Subtest: Ficha: nombre, secciones separadas y guardado asociado al formulario al final
+ok 10 - Ficha: nombre, secciones separadas y guardado asociado al formulario al final
+  ---
+  duration_ms: 1.003875
+  type: 'test'
+  ...
+# Subtest: Contacto: cancelar mantiene cambios; guardar usa los datos editados y limpia dirty
+ok 11 - Contacto: cancelar mantiene cambios; guardar usa los datos editados y limpia dirty
+  ---
+  duration_ms: 1.376042
+  type: 'test'
+  ...
+# Subtest: Contacto: validación, error de red y guardado concurrente no pierden la edición
+ok 12 - Contacto: validación, error de red y guardado concurrente no pierden la edición
+  ---
+  duration_ms: 2.145541
+  type: 'test'
+  ...
+# Subtest: Paleta funcional: contraste AA en colores definidos de éxito, peligro, advertencia y deshabilitado
+ok 13 - Paleta funcional: contraste AA en colores definidos de éxito, peligro, advertencia y deshabilitado
+  ---
+  duration_ms: 0.589625
+  type: 'test'
+  ...
+# Subtest: Sistema CSS: sintaxis, carga final, iconos heredados y ausencia de imposición oscura sobre success
+ok 14 - Sistema CSS: sintaxis, carga final, iconos heredados y ausencia de imposición oscura sobre success
+  ---
+  duration_ms: 103.731209
+  type: 'test'
+  ...
+# Subtest: Admin presentation: unconfirmed delivery never receives a successful state
+ok 15 - Admin presentation: unconfirmed delivery never receives a successful state
+  ---
+  duration_ms: 1.997417
+  type: 'test'
+  ...
+# Subtest: Admin presentation: zero failures stay neutral and metric links retain exact filters
+ok 16 - Admin presentation: zero failures stay neutral and metric links retain exact filters
+  ---
+  duration_ms: 1.603917
+  type: 'test'
+  ...
+# Subtest: Admin presentation: empty overview reports missing evidence and escapes record titles
+ok 17 - Admin presentation: empty overview reports missing evidence and escapes record titles
+  ---
+  duration_ms: 1.513458
+  type: 'test'
+  ...
+# Subtest: Administración: conserva el código de verificación sin exigir salir del panel
+ok 18 - Administración: conserva el código de verificación sin exigir salir del panel
+  ---
+  duration_ms: 7.893334
+  type: 'test'
+  ...
+# Subtest: Administración: verifica identidad y repite exactamente una vez el mismo formulario
+ok 19 - Administración: verifica identidad y repite exactamente una vez el mismo formulario
+  ---
+  duration_ms: 1.225875
+  type: 'test'
+  ...
+# Subtest: Administración: cancelar no ejecuta la operación y un segundo rechazo no entra en bucle
+ok 20 - Administración: cancelar no ejecuta la operación y un segundo rechazo no entra en bucle
+  ---
+  duration_ms: 1.337833
+  type: 'test'
+  ...
+# Subtest: Agenda: tiempo local, duración proporcional y recorte en medianoche
+ok 21 - Agenda: tiempo local, duración proporcional y recorte en medianoche
+  ---
+  duration_ms: 26.823334
+  type: 'test'
+  ...
+# Subtest: Agenda: turnos simultáneos tienen columnas separadas sin ocultar estados finales
+ok 22 - Agenda: turnos simultáneos tienen columnas separadas sin ocultar estados finales
+  ---
+  duration_ms: 0.656209
+  type: 'test'
+  ...
+# Subtest: Agenda: jornadas, descansos, ausencias, excepciones y cierres conservan su interpretación
+ok 23 - Agenda: jornadas, descansos, ausencias, excepciones y cierres conservan su interpretación
+  ---
+  duration_ms: 0.49375
+  type: 'test'
+  ...
+# Subtest: Agenda: Día/Semana/Mes en los tres planes usan solo lecturas y respetan filtros comerciales
+ok 24 - Agenda: Día/Semana/Mes en los tres planes usan solo lecturas y respetan filtros comerciales
+  ---
+  duration_ms: 133.21925
+  type: 'test'
+  ...
+# Subtest: Agenda: empleado no solicita reglas del equipo ni muestra filtros de otros profesionales
+ok 25 - Agenda: empleado no solicita reglas del equipo ni muestra filtros de otros profesionales
+  ---
+  duration_ms: 2.122917
+  type: 'test'
+  ...
+# Subtest: Agenda: ausencias en los bordes no recortan la jornada que debe visualizarse
+ok 26 - Agenda: ausencias en los bordes no recortan la jornada que debe visualizarse
+  ---
+  duration_ms: 0.220625
+  type: 'test'
+  ...
+# Subtest: Agenda: seleccionar día semanal actualiza la fecha y Hoy restaura ambas selecciones
+ok 27 - Agenda: seleccionar día semanal actualiza la fecha y Hoy restaura ambas selecciones
+  ---
+  duration_ms: 56.146541
+  type: 'test'
+  ...
+# Subtest: Agenda: atención conserva turnos simultáneos, excluye estados finales y ordena los próximos
+ok 28 - Agenda: atención conserva turnos simultáneos, excluye estados finales y ordena los próximos
+  ---
+  duration_ms: 23.49425
+  type: 'test'
+  ...
+# Subtest: Agenda: modo atención vuelve al período previo y los chips quitan solo su filtro
+ok 29 - Agenda: modo atención vuelve al período previo y los chips quitan solo su filtro
+  ---
+  duration_ms: 118.263916
+  type: 'test'
+  ...
+# Subtest: Agenda: selección visual del equipo y estados conserva el conjunto al quitar el filtro
+ok 30 - Agenda: selección visual del equipo y estados conserva el conjunto al quitar el filtro
+  ---
+  duration_ms: 84.079042
+  type: 'test'
+  ...
+# Subtest: Agenda: selector visual del equipo solo en planes habilitados y nunca para empleados
+ok 31 - Agenda: selector visual del equipo solo en planes habilitados y nunca para empleados
+  ---
+  duration_ms: 29.860625
+  type: 'test'
+  ...
+# Subtest: Agenda: horario útil prioriza hora actual, primer turno y último turno fuera de jornada
+ok 32 - Agenda: horario útil prioriza hora actual, primer turno y último turno fuera de jornada
+  ---
+  duration_ms: 15.640334
+  type: 'test'
+  ...
+# Subtest: Agenda: móvil ofrece un único profesional y conserva selector para el equipo
+ok 33 - Agenda: móvil ofrece un único profesional y conserva selector para el equipo
+  ---
+  duration_ms: 36.356542
+  type: 'test'
+  ...
+# Subtest: Agenda: historial admite respuesta PostgreSQL y local, sin consultas para empleados
+ok 34 - Agenda: historial admite respuesta PostgreSQL y local, sin consultas para empleados
+  ---
+  duration_ms: 24.519458
+  type: 'test'
+  ...
+# Subtest: Agenda: cambiar horario conserva cliente y notas pero usa la nueva fecha y profesional
+ok 35 - Agenda: cambiar horario conserva cliente y notas pero usa la nueva fecha y profesional
+  ---
+  duration_ms: 20.752958
+  type: 'test'
+  ...
+# Subtest: Agenda: duplicados por contacto normalizado no confunden nombres ni fusionan personas
+ok 36 - Agenda: duplicados por contacto normalizado no confunden nombres ni fusionan personas
+  ---
+  duration_ms: 8.713708
+  type: 'test'
+  ...
+# Subtest: Agenda: validación de reserva indica contacto faltante y servicio incompatible por campo
+ok 37 - Agenda: validación de reserva indica contacto faltante y servicio incompatible por campo
+  ---
+  duration_ms: 33.485792
+  type: 'test'
+  ...
+# Subtest: Inicio: gráfica semanal completa días sin turnos, parte de cero y trata empates sin inventar crecimiento
+ok 38 - Inicio: gráfica semanal completa días sin turnos, parte de cero y trata empates sin inventar crecimiento
+  ---
+  duration_ms: 19.017292
+  type: 'test'
+  ...
+# Subtest: Apariencia: propietario guarda por negocio, empleado lee, terceros y valores maliciosos no cambian datos
+ok 39 - Apariencia: propietario guarda por negocio, empleado lee, terceros y valores maliciosos no cambian datos
+  ---
+  duration_ms: 4295.440917
+  type: 'test'
+  ...
+# Subtest: Apariencia: los colores extremos producen texto y acciones con contraste AA, y el tema anterior se limpia
+ok 40 - Apariencia: los colores extremos producen texto y acciones con contraste AA, y el tema anterior se limpia
+  ---
+  duration_ms: 6.982417
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# (node:31685) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Incidencia administrativa: sesión reciente, negocio real, idempotencia y auditoría
+ok 41 - Incidencia administrativa: sesión reciente, negocio real, idempotencia y auditoría
+  ---
+  duration_ms: 3806.338
+  type: 'test'
+  ...
+# Subtest: Servidor local: apariencia persistente en panel y reservas; registro de incidencia desde administración
+ok 42 - Servidor local: apariencia persistente en panel y reservas; registro de incidencia desde administración
+  ---
+  duration_ms: 540.668458
+  type: 'test'
+  ...
+# (node:31686) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: registro, autenticar, aislar negocio y permisos
+ok 43 - registro, autenticar, aislar negocio y permisos
+  ---
+  duration_ms: 370.879708
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: reservas reales, bloqueo de superposición, cancelar y volver a reservar
+ok 44 - reservas reales, bloqueo de superposición, cancelar y volver a reservar
+  ---
+  duration_ms: 234.492917
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: cambios de jornada, descansos, exportación y auditoría
+ok 45 - cambios de jornada, descansos, exportación y auditoría
+  ---
+  duration_ms: 343.374083
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: validación de datos y reservas fuera de horario
+ok 46 - validación de datos y reservas fuera de horario
+  ---
+  duration_ms: 349.378459
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: lista de espera: solicitud, acceso del dueño y oferta cuando se cancela
+ok 47 - lista de espera: solicitud, acceso del dueño y oferta cuando se cancela
+  ---
+  duration_ms: 517.213916
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: plan individual: límite de un profesional y reservas independientes por negocio
+ok 48 - plan individual: límite de un profesional y reservas independientes por negocio
+  ---
+  duration_ms: 749.0665
+  type: 'test'
+  ...
+# Subtest: dos solicitudes simultáneas nunca confirman el mismo horario
+ok 49 - dos solicitudes simultáneas nunca confirman el mismo horario
+  ---
+  duration_ms: 343.377917
+  type: 'test'
+  ...
+# (node:31688) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Brevo: aceptación verificable y errores/cuota sin divulgar clave ni respuesta privada
+ok 50 - Brevo: aceptación verificable y errores/cuota sin divulgar clave ni respuesta privada
+  ---
+  duration_ms: 1.997167
+  type: 'test'
+  ...
+# Subtest: Brevo: bloquea direcciones de documentación antes de hacer una llamada externa
+ok 51 - Brevo: bloquea direcciones de documentación antes de hacer una llamada externa
+  ---
+  duration_ms: 0.126041
+  type: 'test'
+  ...
+# Subtest: SMTP externo: no transmite destinatarios de documentación
+ok 52 - SMTP externo: no transmite destinatarios de documentación
+  ---
+  duration_ms: 48.442583
+  type: 'test'
+  ...
+# (node:31689) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Eliminación SQLite: rechazo obsoleto, baja completa vencida, otras cuentas y reintento seguro
+ok 53 - Eliminación SQLite: rechazo obsoleto, baja completa vencida, otras cuentas y reintento seguro
+  ---
+  duration_ms: 163.535334
+  type: 'test'
+  ...
+# Subtest: Demostración: todo en memoria, sin costes, sin privilegios, límites y envíos bloqueados
+ok 54 - Demostración: todo en memoria, sin costes, sin privilegios, límites y envíos bloqueados
+  ---
+  duration_ms: 12.055458
+  type: 'test'
+  ...
+# Subtest: Eliminación PostgreSQL: administrador reciente, dependencias, aislamiento y cuentas conservadas
+ok 55 - Eliminación PostgreSQL: administrador reciente, dependencias, aislamiento y cuentas conservadas
+  ---
+  duration_ms: 5860.462958
+  type: 'test'
+  ...
+# Subtest: Adaptador cloud: visitas públicas conservan clave/protección y las privadas usan el negocio autorizado
+ok 56 - Adaptador cloud: visitas públicas conservan clave/protección y las privadas usan el negocio autorizado
+  ---
+  duration_ms: 24.812833
+  type: 'test'
+  ...
+# Subtest: Catálogo: servicios y equipo simultáneos comparten una consulta y una edición obliga a leer de nuevo
+ok 57 - Catálogo: servicios y equipo simultáneos comparten una consulta y una edición obliga a leer de nuevo
+  ---
+  duration_ms: 0.527875
+  type: 'test'
+  ...
+# Subtest: Adaptador cloud: cliente conserva idempotencia y los enlaces privados se envían en el cuerpo
+ok 58 - Adaptador cloud: cliente conserva idempotencia y los enlaces privados se envían en el cuerpo
+  ---
+  duration_ms: 0.224083
+  type: 'test'
+  ...
+# Subtest: Adaptador cloud: consultas privadas usan el negocio del recorrido y traducen reglas de horario
+ok 59 - Adaptador cloud: consultas privadas usan el negocio del recorrido y traducen reglas de horario
+  ---
+  duration_ms: 0.490459
+  type: 'test'
+  ...
+# Subtest: Adaptador cloud: exporta todas las páginas y rechaza una agenda que cambia durante la exportación
+ok 60 - Adaptador cloud: exporta todas las páginas y rechaza una agenda que cambia durante la exportación
+  ---
+  duration_ms: 0.556042
+  type: 'test'
+  ...
+# Subtest: Cloud Auth: nunca acepta claves privilegiadas y transmite solo JWT del usuario a RPC
+ok 61 - Cloud Auth: nunca acepta claves privilegiadas y transmite solo JWT del usuario a RPC
+  ---
+  duration_ms: 1.140791
+  type: 'test'
+  ...
+# Subtest: Cloud Auth: consultas concurrentes comparten una renovación y logout elimina sesión
+ok 62 - Cloud Auth: consultas concurrentes comparten una renovación y logout elimina sesión
+  ---
+  duration_ms: 0.348916
+  type: 'test'
+  ...
+# Subtest: Cloud Auth: confirmación de email obligatoria se respeta y error no refleja datos del proveedor
+ok 63 - Cloud Auth: confirmación de email obligatoria se respeta y error no refleja datos del proveedor
+  ---
+  duration_ms: 2.094334
+  type: 'test'
+  ...
+# Subtest: Inicio cloud: sesión revocada permite volver a ingresar; un corte de red no borra una sesión válida
+ok 64 - Inicio cloud: sesión revocada permite volver a ingresar; un corte de red no borra una sesión válida
+  ---
+  duration_ms: 10.224833
+  type: 'test'
+  ...
+# Subtest: Worker cloud: el token de invocación se separa de la clave de acceso a la base
+ok 65 - Worker cloud: el token de invocación se separa de la clave de acceso a la base
+  ---
+  duration_ms: 21.78775
+  type: 'test'
+  ...
+# Subtest: Worker cloud: reclama uno por vez y distingue aceptación de entrega
+ok 66 - Worker cloud: reclama uno por vez y distingue aceptación de entrega
+  ---
+  duration_ms: 1.878375
+  type: 'test'
+  ...
+# Subtest: Worker cloud: remitente sin verificar bloquea envíos; timeout requiere revisión
+ok 67 - Worker cloud: remitente sin verificar bloquea envíos; timeout requiere revisión
+  ---
+  duration_ms: 1.24625
+  type: 'test'
+  ...
+# Subtest: Realtime: autentica el websocket antes de suscribir y cancela conexiones pendientes
+ok 68 - Realtime: autentica el websocket antes de suscribir y cancela conexiones pendientes
+  ---
+  duration_ms: 12.72475
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: solicitud persistente, idempotencia, aislamiento y activación manual
+ok 69 - Comercial PostgreSQL: solicitud persistente, idempotencia, aislamiento y activación manual
+  ---
+  duration_ms: 4956.595792
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: Individual deniega RPC Pro y lecturas RLS; horarios propios siguen disponibles
+ok 70 - Comercial PostgreSQL: Individual deniega RPC Pro y lecturas RLS; horarios propios siguen disponibles
+  ---
+  duration_ms: 3477.481834
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: Negocio habilita estadísticas y espera; Pro habilita recursos y exportación
+ok 71 - Comercial PostgreSQL: Negocio habilita estadísticas y espera; Pro habilita recursos y exportación
+  ---
+  duration_ms: 2705.533458
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: cuota reserva hasta el límite, acepta una vez y retiene resultados inciertos
+ok 72 - Comercial PostgreSQL: cuota reserva hasta el límite, acepta una vez y retiene resultados inciertos
+  ---
+  duration_ms: 3519.873375
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: reducción exige selección, conserva profesionales y no borra datos
+ok 73 - Comercial PostgreSQL: reducción exige selección, conserva profesionales y no borra datos
+  ---
+  duration_ms: 4042.920708
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: verificación nativa reproducible termina en rollback sin fixtures
+ok 74 - Comercial PostgreSQL: verificación nativa reproducible termina en rollback sin fixtures
+  ---
+  duration_ms: 4010.661125
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: cancelación y restablecimiento de suscripción son auditables y conservan el negocio
+ok 75 - Comercial PostgreSQL: cancelación y restablecimiento de suscripción son auditables y conservan el negocio
+  ---
+  duration_ms: 2466.078833
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: una renovación no reinicia la cuota mensual
+ok 76 - Comercial PostgreSQL: una renovación no reinicia la cuota mensual
+  ---
+  duration_ms: 2840.722875
+  type: 'test'
+  ...
+# Subtest: Comercial PostgreSQL: administración configura exportación e Insights independientemente
+ok 77 - Comercial PostgreSQL: administración configura exportación e Insights independientemente
+  ---
+  duration_ms: 2731.164708
+  type: 'test'
+  ...
+# Subtest: Comercial UI: WhatsApp exige consentimiento, valida destino y codifica todos los datos
+ok 78 - Comercial UI: WhatsApp exige consentimiento, valida destino y codifica todos los datos
+  ---
+  duration_ms: 1.966375
+  type: 'test'
+  ...
+# Subtest: Comercial UI: rutas de módulos se adaptan al cambio de capacidades sin bloquear suscripción
+ok 79 - Comercial UI: rutas de módulos se adaptan al cambio de capacidades sin bloquear suscripción
+  ---
+  duration_ms: 1.139208
+  type: 'test'
+  ...
+# (node:31697) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Comercial: catálogo persistente, solicitud idempotente, teléfono y sin privilegios anticipados
+ok 80 - Comercial: catálogo persistente, solicitud idempotente, teléfono y sin privilegios anticipados
+  ---
+  duration_ms: 611.758291
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Comercial: Individual bloquea módulos, exportación, espera pública y conserva horarios y cuenta
+ok 81 - Comercial: Individual bloquea módulos, exportación, espera pública y conserva horarios y cuenta
+  ---
+  duration_ms: 548.393667
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Comercial: Negocio tiene estadísticas y espera sin recursos, exportación u ofertas automáticas
+ok 82 - Comercial: Negocio tiene estadísticas y espera sin recursos, exportación u ofertas automáticas
+  ---
+  duration_ms: 651.8535
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Comercial: habilitación de solicitud, pago manual y reducción conserva reservas y datos
+ok 83 - Comercial: habilitación de solicitud, pago manual y reducción conserva reservas y datos
+  ---
+  duration_ms: 481.069584
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Comercial: reserva simultánea de cuota no supera el cupo y conciliación es idempotente
+ok 84 - Comercial: reserva simultánea de cuota no supera el cupo y conciliación es idempotente
+  ---
+  duration_ms: 382.488
+  type: 'test'
+  ...
+# Subtest: Comercial: dos workers simultáneos no consumen más cuota ni duplican la solicitud
+ok 85 - Comercial: dos workers simultáneos no consumen más cuota ni duplican la solicitud
+  ---
+  duration_ms: 715.805083
+  type: 'test'
+  ...
+# Subtest: Control PG: paginación, privacidad, permisos, revisión y repetición idempotente
+ok 86 - Control PG: paginación, privacidad, permisos, revisión y repetición idempotente
+  ---
+  duration_ms: 4673.75725
+  type: 'test'
+  ...
+# Subtest: Control PG: bloqueo revoca sesiones, impide identidad y protege último admin y propietario
+ok 87 - Control PG: bloqueo revoca sesiones, impide identidad y protege último admin y propietario
+  ---
+  duration_ms: 3325.485167
+  type: 'test'
+  ...
+# Subtest: Control PG: estados programado y suspendido coherentes; lecturas no inventan salud
+ok 88 - Control PG: estados programado y suspendido coherentes; lecturas no inventan salud
+  ---
+  duration_ms: 3043.454208
+  type: 'test'
+  ...
+# Subtest: Control PG: correo incierto no admite reintento ni cancelación; auditoría conserva reservas
+ok 89 - Control PG: correo incierto no admite reintento ni cancelación; auditoría conserva reservas
+  ---
+  duration_ms: 3730.54675
+  type: 'test'
+  ...
+# Subtest: Control PG: configura con revisión, consulta secciones y registra soporte esencial sin plan pago
+ok 90 - Control PG: configura con revisión, consulta secciones y registra soporte esencial sin plan pago
+  ---
+  duration_ms: 4335.65175
+  type: 'test'
+  ...
+# Subtest: Control PG: pausa pública y manual se verifica en el motor sin borrar reservas existentes
+ok 91 - Control PG: pausa pública y manual se verifica en el motor sin borrar reservas existentes
+  ---
+  duration_ms: 4166.050083
+  type: 'test'
+  ...
+# Subtest: Control PG: limpieza terminal conserva clave, estados y cuotas; excluye incertidumbre y requiere política
+ok 92 - Control PG: limpieza terminal conserva clave, estados y cuotas; excluye incertidumbre y requiere política
+  ---
+  duration_ms: 2571.4905
+  type: 'test'
+  ...
+# Subtest: Control PG: correo pausado no consume cuota y no bloquea la cola esencial
+ok 93 - Control PG: correo pausado no consume cuota y no bloquea la cola esencial
+  ---
+  duration_ms: 2334.74
+  type: 'test'
+  ...
+# Subtest: Control PG: Storage informa bytes incompletos sin exponer objetos y cron solo entrega metadatos
+ok 94 - Control PG: Storage informa bytes incompletos sin exponer objetos y cron solo entrega metadatos
+  ---
+  duration_ms: 2482.645458
+  type: 'test'
+  ...
+# (node:31703) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Control local: pagina en servidor, busca contacto y conserva privacidad
+ok 95 - Control local: pagina en servidor, busca contacto y conserva privacidad
+  ---
+  duration_ms: 235.506208
+  type: 'test'
+  ...
+# Subtest: Control local: pausas independientes, revisión e idempotencia; último admin protegido
+ok 96 - Control local: pausas independientes, revisión e idempotencia; último admin protegido
+  ---
+  duration_ms: 323.308958
+  type: 'test'
+  ...
+# Subtest: Control local: desconocidos no se reintentan ni se descuentan; solicitudes no eliminan filas
+ok 97 - Control local: desconocidos no se reintentan ni se descuentan; solicitudes no eliminan filas
+  ---
+  duration_ms: 249.491916
+  type: 'test'
+  ...
+# Subtest: Control local: resolución obligatoria y versión concurrente
+ok 98 - Control local: resolución obligatoria y versión concurrente
+  ---
+  duration_ms: 208.855708
+  type: 'test'
+  ...
+# Subtest: Control local: pausar nuevas reservas conserva materialización de turnos fijos existentes
+ok 99 - Control local: pausar nuevas reservas conserva materialización de turnos fijos existentes
+  ---
+  duration_ms: 241.810792
+  type: 'test'
+  ...
+# Subtest: Control PG: recibos auténticos de servicio, duplicados y fuera de orden no fabrican entregas
+ok 100 - Control PG: recibos auténticos de servicio, duplicados y fuera de orden no fabrican entregas
+  ---
+  duration_ms: 4874.207792
+  type: 'test'
+  ...
+# Subtest: Clientes: acceso circular sin texto visible reutiliza el mismo editor y su guardia
+ok 101 - Clientes: acceso circular sin texto visible reutiliza el mismo editor y su guardia
+  ---
+  duration_ms: 2.889667
+  type: 'test'
+  ...
+# Subtest: Clientes: círculo fijo de 44px, verde de marca y tres acciones existentes intactas
+ok 102 - Clientes: círculo fijo de 44px, verde de marca y tres acciones existentes intactas
+  ---
+  duration_ms: 2.241667
+  type: 'test'
+  ...
+# (node:31707) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Clientes: alta, búsqueda por teléfono formateado, duplicados, edición y aislamiento
+ok 103 - Clientes: alta, búsqueda por teléfono formateado, duplicados, edición y aislamiento
+  ---
+  duration_ms: 543.09125
+  type: 'test'
+  ...
+# Subtest: Demo: jornada, pausas, ausencias, especialidad y guardado usan disponibilidad consistente
+ok 104 - Demo: jornada, pausas, ausencias, especialidad y guardado usan disponibilidad consistente
+  ---
+  duration_ms: 14.92625
+  type: 'test'
+  ...
+# Subtest: Demo: contador de hoy cambia con los turnos y excluye cancelados
+ok 105 - Demo: contador de hoy cambia con los turnos y excluye cancelados
+  ---
+  duration_ms: 32.508625
+  type: 'test'
+  ...
+# Vista previa generada: interfaz pública, operaciones online deshabilitadas.
+# Subtest: GitHub Pages: publica los recursos de la interfaz y bloquea solicitudes de datos en preview
+ok 106 - GitHub Pages: publica los recursos de la interfaz y bloquea solicitudes de datos en preview
+  ---
+  duration_ms: 42.3345
+  type: 'test'
+  ...
+# Subtest: Pages: rechaza secretos y bloquea publicación antes de validar equivalencia
+ok 107 - Pages: rechaza secretos y bloquea publicación antes de validar equivalencia
+  ---
+  duration_ms: 0.348375
+  type: 'test'
+  ...
+# Vista previa generada: interfaz pública, operaciones online deshabilitadas.
+# Vista previa generada: interfaz pública, operaciones online deshabilitadas.
+# Subtest: Cloudflare: bundle real antes de la interfaz, sin datos ni credenciales de servidor
+ok 108 - Cloudflare: bundle real antes de la interfaz, sin datos ni credenciales de servidor
+  ---
+  duration_ms: 91.1825
+  type: 'test'
+  ...
+# Subtest: GitHub: conserva la demostración hasta validar y luego incluye el adaptador real
+ok 109 - GitHub: conserva la demostración hasta validar y luego incluye el adaptador real
+  ---
+  duration_ms: 173.744125
+  type: 'test'
+  ...
+# Subtest: Explorer keeps latest selection when an older image finishes later
+ok 110 - Explorer keeps latest selection when an older image finishes later
+  ---
+  duration_ms: 4.109834
+  type: 'test'
+  ...
+# Subtest: A failed screenshot retains the existing image and reports retry
+ok 111 - A failed screenshot retains the existing image and reports retry
+  ---
+  duration_ms: 0.532542
+  type: 'test'
+  ...
+# Subtest: Commercial messages use the product renderer, including reschedule and cancellation
+ok 112 - Commercial messages use the product renderer, including reschedule and cancellation
+  ---
+  duration_ms: 5.380125
+  type: 'test'
+  ...
+# Subtest: Capture fixture changes only isolated seed data, with natural names and sample prices
+ok 113 - Capture fixture changes only isolated seed data, with natural names and sample prices
+  ---
+  duration_ms: 13.487584
+  type: 'test'
+  ...
+# Subtest: Landing assets have explicit dimensions; plan and entry URLs remain intact
+ok 114 - Landing assets have explicit dimensions; plan and entry URLs remain intact
+  ---
+  duration_ms: 0.628459
+  type: 'test'
+  ...
+# Subtest: Capture gate rejects missing spacing and incomplete images instead of accepting a generated file
+ok 115 - Capture gate rejects missing spacing and incomplete images instead of accepting a generated file
+  ---
+  duration_ms: 1.325792
+  type: 'test'
+  ...
+# Subtest: Logo: recorte cuadrado dentro de imagen horizontal/vertical, zoom y extremos de desplazamiento
+ok 116 - Logo: recorte cuadrado dentro de imagen horizontal/vertical, zoom y extremos de desplazamiento
+  ---
+  duration_ms: 2.983459
+  type: 'test'
+  ...
+# Subtest: Logo: solo se envía el recorte confirmado, cancelar conserva el actual y quitar tiene prioridad
+ok 117 - Logo: solo se envía el recorte confirmado, cancelar conserva el actual y quitar tiene prioridad
+  ---
+  duration_ms: 0.639292
+  type: 'test'
+  ...
+# Subtest: Recibos: token obligatorio, sin PII, duplicados con clave estable y límite de lote
+ok 118 - Recibos: token obligatorio, sin PII, duplicados con clave estable y límite de lote
+  ---
+  duration_ms: 51.422458
+  type: 'test'
+  ...
+# Subtest: Scheduler: invoca solo el endpoint previsto, respeta pausa y mantiene Vault y la función privados
+ok 119 - Scheduler: invoca solo el endpoint previsto, respeta pausa y mantiene Vault y la función privados
+  ---
+  duration_ms: 3542.932833
+  type: 'test'
+  ...
+# (node:31716) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: B: proveedor local genera EML real y deduplica sin marcar entrega externa
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+ok 120 - B: proveedor local genera EML real y deduplica sin marcar entrega externa
+  ---
+  duration_ms: 669.87725
+  type: 'test'
+  ...
+# Subtest: B: error de proveedor, backoff, máximo de intentos y persistencia de estados
+ok 121 - B: error de proveedor, backoff, máximo de intentos y persistencia de estados
+  ---
+  duration_ms: 231.453625
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: B: preferencias y tokens vencidos impiden envío; HTML escapa contenido
+ok 122 - B: preferencias y tokens vencidos impiden envío; HTML escapa contenido
+  ---
+  duration_ms: 363.212917
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: B: workers concurrentes no reclaman el mismo trabajo y disabled conserva la cola
+ok 123 - B: workers concurrentes no reclaman el mismo trabajo y disabled conserva la cola
+  ---
+  duration_ms: 265.162667
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: B: adaptador SMTP real obtiene aceptación de un servidor local sin simular recepción final
+ok 124 - B: adaptador SMTP real obtiene aceptación de un servidor local sin simular recepción final
+  ---
+  duration_ms: 296.471625
+  type: 'test'
+  ...
+# Subtest: B: aviso al negocio sin correo de cliente y cambio de anticipación de recordatorios
+ok 125 - B: aviso al negocio sin correo de cliente y cambio de anticipación de recordatorios
+  ---
+  duration_ms: 418.697667
+  type: 'test'
+  ...
+# (node:31725) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Migración: demo excluida, selección explícita y exportación sin contraseñas/sesiones
+ok 126 - Migración: demo excluida, selección explícita y exportación sin contraseñas/sesiones
+  ---
+  duration_ms: 359.225791
+  type: 'test'
+  ...
+# Subtest: Normalización: no modifica cuentas o negocios que no coinciden con la demo conocida
+ok 127 - Normalización: no modifica cuentas o negocios que no coinciden con la demo conocida
+  ---
+  duration_ms: 265.814333
+  type: 'test'
+  ...
+# (node:31726) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: F: límites y funciones por plan se controlan en backend y se auditan
+ok 128 - F: límites y funciones por plan se controlan en backend y se auditan
+  ---
+  duration_ms: 668.982
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: F: estadísticas distinguen servicio completado, previsto y pagos sin proveedor
+ok 129 - F: estadísticas distinguen servicio completado, previsto y pagos sin proveedor
+  ---
+  duration_ms: 360.664958
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: F: incidencias aisladas, administración controla estado y no accede a clientes
+ok 130 - F: incidencias aisladas, administración controla estado y no accede a clientes
+  ---
+  duration_ms: 286.203334
+  type: 'test'
+  ...
+# Subtest: C/E: empleado crea y modifica solo su agenda, cliente reprograma con disponibilidad segura
+ok 131 - C/E: empleado crea y modifica solo su agenda, cliente reprograma con disponibilidad segura
+  ---
+  duration_ms: 521.689833
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: esquema completo, sin semillas ni credenciales heredadas y RLS en todas las tablas
+ok 132 - PostgreSQL: esquema completo, sin semillas ni credenciales heredadas y RLS en todas las tablas
+  ---
+  duration_ms: 3569.14125
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: el operador inicial exige cuenta real verificada, es idempotente y no abre CRM ajeno
+ok 133 - PostgreSQL: el operador inicial exige cuenta real verificada, es idempotente y no abre CRM ajeno
+  ---
+  duration_ms: 3608.43875
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: la cola descarta confirmaciones y horarios superados por otro cambio
+ok 134 - PostgreSQL: la cola descarta confirmaciones y horarios superados por otro cambio
+  ---
+  duration_ms: 4243.235792
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: cola de correo deduplica, respeta preferencias y no declara entregas inciertas
+ok 135 - PostgreSQL: cola de correo deduplica, respeta preferencias y no declara entregas inciertas
+  ---
+  duration_ms: 4405.27475
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: administración gestiona planes e incidencias sin acceso global al CRM
+ok 136 - PostgreSQL: administración gestiona planes e incidencias sin acceso global al CRM
+  ---
+  duration_ms: 2755.18375
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: lista de espera ofrece sin retener, confirma una vez y conserva idempotencia
+ok 137 - PostgreSQL: lista de espera ofrece sin retener, confirma una vez y conserva idempotencia
+  ---
+  duration_ms: 3017.103583
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: dashboard, ocupación y SmartSlots calculan datos propios sin inventar cobros
+ok 138 - PostgreSQL: dashboard, ocupación y SmartSlots calculan datos propios sin inventar cobros
+  ---
+  duration_ms: 2699.869333
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: configuración y CRM preservan roles, negocio y datos protegidos
+ok 139 - PostgreSQL: configuración y CRM preservan roles, negocio y datos protegidos
+  ---
+  duration_ms: 1429.471792
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: invitaciones exigen correo verificado, cuenta correcta y aceptación única
+ok 140 - PostgreSQL: invitaciones exigen correo verificado, cuenta correcta y aceptación única
+  ---
+  duration_ms: 882.456167
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: reserva pública no revela datos previos del CRM por coincidir un contacto
+ok 141 - PostgreSQL: reserva pública no revela datos previos del CRM por coincidir un contacto
+  ---
+  duration_ms: 924.672083
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: enlace privado reprograma con disponibilidad real, protege notas y cancela sin duplicar
+ok 142 - PostgreSQL: enlace privado reprograma con disponibilidad real, protege notas y cancela sin duplicar
+  ---
+  duration_ms: 914.596709
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: jornadas, descansos y cierres no invalidan reservas futuras ni mezclan negocios
+ok 143 - PostgreSQL: jornadas, descansos y cierres no invalidan reservas futuras ni mezclan negocios
+  ---
+  duration_ms: 906.742
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: límite público transaccional no es invocable por clientes
+ok 144 - PostgreSQL: límite público transaccional no es invocable por clientes
+  ---
+  duration_ms: 882.151125
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: disponibilidad pública sin contactos y reserva pública solo por el servicio protegido
+ok 145 - PostgreSQL: disponibilidad pública sin contactos y reserva pública solo por el servicio protegido
+  ---
+  duration_ms: 900.961125
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: catálogo scoped, asignaciones ajenas se revierten y límites de equipo se aplican
+ok 146 - PostgreSQL: catálogo scoped, asignaciones ajenas se revierten y límites de equipo se aplican
+  ---
+  duration_ms: 838.260167
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: sesión revocada impide usar el JWT previo y no permite revocar otra cuenta
+ok 147 - PostgreSQL: sesión revocada impide usar el JWT previo y no permite revocar otra cuenta
+  ---
+  duration_ms: 830.97125
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: cuentas sin negocio, espacios adicionales y último propietario
+ok 148 - PostgreSQL: cuentas sin negocio, espacios adicionales y último propietario
+  ---
+  duration_ms: 864.242208
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: worker reservado al servicio, presupuesto diario y confirmación del proveedor
+ok 149 - PostgreSQL: worker reservado al servicio, presupuesto diario y confirmación del proveedor
+  ---
+  duration_ms: 867.4845
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: RLS entre negocios, rol empleado y escrituras directas denegadas
+ok 150 - PostgreSQL: RLS entre negocios, rol empleado y escrituras directas denegadas
+  ---
+  duration_ms: 851.869084
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: reserva atómica, recursos exclusivos, idempotencia, reprogramación y cancelación
+ok 151 - PostgreSQL: reserva atómica, recursos exclusivos, idempotencia, reprogramación y cancelación
+  ---
+  duration_ms: 872.450708
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: turnos fijos indefinidos, recursos, RLS, idempotencia y excepciones por fecha
+ok 152 - PostgreSQL: turnos fijos indefinidos, recursos, RLS, idempotencia y excepciones por fecha
+  ---
+  duration_ms: 890.520125
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: CRM crea contactos sin duplicados y conserva el rubro personalizado al confirmar
+ok 153 - PostgreSQL: CRM crea contactos sin duplicados y conserva el rubro personalizado al confirmar
+  ---
+  duration_ms: 875.336417
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: aprobación manual, vencimientos, transferencias idempotentes y protección de todas las escrituras
+ok 154 - PostgreSQL: aprobación manual, vencimientos, transferencias idempotentes y protección de todas las escrituras
+  ---
+  duration_ms: 877.073208
+  type: 'test'
+  ...
+# (node:31729) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: recuperación: sin enumeración, token único, vencimiento y revocación de sesiones
+ok 155 - recuperación: sin enumeración, token único, vencimiento y revocación de sesiones
+  ---
+  duration_ms: 571.858959
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: empleado solo consulta su agenda y administración no abre datos privados
+ok 156 - empleado solo consulta su agenda y administración no abre datos privados
+  ---
+  duration_ms: 423.346375
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: configuración inicial, períodos de agenda, SmartSlots y recursos de marca
+ok 157 - configuración inicial, períodos de agenda, SmartSlots y recursos de marca
+  ---
+  duration_ms: 689.197916
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: oferta de lista de espera: disponibilidad, aceptación concurrente y vencimiento
+ok 158 - oferta de lista de espera: disponibilidad, aceptación concurrente y vencimiento
+  ---
+  duration_ms: 255.474208
+  type: 'test'
+  ...
+# Subtest: migración aditiva y persistencia conservan usuarios y reservas al reconectar
+ok 159 - migración aditiva y persistencia conservan usuarios y reservas al reconectar
+  ---
+  duration_ms: 268.312083
+  type: 'test'
+  ...
+# Subtest: buffers dentro de jornada, minutos completos y métricas sin reservas futuras
+ok 160 - buffers dentro de jornada, minutos completos y métricas sin reservas futuras
+  ---
+  duration_ms: 336.956958
+  type: 'test'
+  ...
+# Subtest: Edge pública: la visita completa exige la misma protección vinculada y no expone lectura privada anónima
+ok 161 - Edge pública: la visita completa exige la misma protección vinculada y no expone lectura privada anónima
+  ---
+  duration_ms: 33.857834
+  type: 'test'
+  ...
+# Subtest: Edge pública: no reserva con origen o captcha inválidos y no expone claves
+ok 162 - Edge pública: no reserva con origen o captcha inválidos y no expone claves
+  ---
+  duration_ms: 4.933667
+  type: 'test'
+  ...
+# Subtest: Edge pública: comprueba dominio, acción y clave vinculada antes del RPC protegido
+ok 163 - Edge pública: comprueba dominio, acción y clave vinculada antes del RPC protegido
+  ---
+  duration_ms: 4.259
+  type: 'test'
+  ...
+# Subtest: Edge pública: cuota, configuración y límite de cuerpo fallan de forma cerrada
+ok 164 - Edge pública: cuota, configuración y límite de cuerpo fallan de forma cerrada
+  ---
+  duration_ms: 5.562625
+  type: 'test'
+  ...
+# Subtest: Protección integrada: firma, vencimiento, IP, negocio, acción y nonce se validan en servidor
+ok 165 - Protección integrada: firma, vencimiento, IP, negocio, acción y nonce se validan en servidor
+  ---
+  duration_ms: 131.429875
+  type: 'test'
+  ...
+# Subtest: Edge integrada: desafío real protege la escritura sin contactar Cloudflare
+ok 166 - Edge integrada: desafío real protege la escritura sin contactar Cloudflare
+  ---
+  duration_ms: 180.765833
+  type: 'test'
+  ...
+# Subtest: Lecturas: comparte consultas en vuelo y entrega copias independientes, con vencimiento
+ok 167 - Lecturas: comparte consultas en vuelo y entrega copias independientes, con vencimiento
+  ---
+  duration_ms: 0.891709
+  type: 'test'
+  ...
+# Subtest: Lecturas: aislamiento por usuario y negocio, y las invalidaciones no se repueblan con respuestas antiguas
+ok 168 - Lecturas: aislamiento por usuario y negocio, y las invalidaciones no se repueblan con respuestas antiguas
+  ---
+  duration_ms: 0.780583
+  type: 'test'
+  ...
+# Subtest: Lecturas: errores, Auth, disponibilidad, enlaces privados y exportaciones siempre consultan al servidor
+ok 169 - Lecturas: errores, Auth, disponibilidad, enlaces privados y exportaciones siempre consultan al servidor
+  ---
+  duration_ms: 3.877541
+  type: 'test'
+  ...
+# (node:31733) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: C: SSE autentica, emite cambios y termina tras revocación de membresía
+ok 170 - C: SSE autentica, emite cambios y termina tras revocación de membresía
+  ---
+  duration_ms: 2318.699542
+  type: 'test'
+  ...
+# Subtest: C: SSE rechaza identificadores de otra organización
+ok 171 - C: SSE rechaza identificadores de otra organización
+  ---
+  duration_ms: 321.934625
+  type: 'test'
+  ...
+# (node:31734) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Turnos fijos: duración indefinida, fechas individuales, idempotencia y fin de repetición
+ok 172 - Turnos fijos: duración indefinida, fechas individuales, idempotencia y fin de repetición
+  ---
+  duration_ms: 324.349458
+  type: 'test'
+  ...
+# Subtest: Turnos fijos: cambiar repetición es atómico, quincenas y fecha final
+ok 173 - Turnos fijos: cambiar repetición es atómico, quincenas y fecha final
+  ---
+  duration_ms: 337.6325
+  type: 'test'
+  ...
+# Subtest: Release 043–044: el paquete preserva datos existentes y rechaza una segunda aplicación
+ok 174 - Release 043–044: el paquete preserva datos existentes y rechaza una segunda aplicación
+  ---
+  duration_ms: 3726.25025
+  type: 'test'
+  ...
+# (node:31736) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: D: descansos, jornadas excepcionales y feriados se aplican al backend
+ok 175 - D: descansos, jornadas excepcionales y feriados se aplican al backend
+  ---
+  duration_ms: 527.402125
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: D: recursos compartidos impiden simultaneidad entre profesionales y se liberan al cancelar
+ok 176 - D: recursos compartidos impiden simultaneidad entre profesionales y se liberan al cancelar
+  ---
+  duration_ms: 340.112958
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: D: reglas que invalidan reservas se revierten y no aceptan profesionales de otros negocios
+ok 177 - D: reglas que invalidan reservas se revierten y no aceptan profesionales de otros negocios
+  ---
+  duration_ms: 257.1155
+  type: 'test'
+  ...
+# Subtest: D: idempotencia devuelve la misma reserva y rechaza cambios con la misma clave
+ok 178 - D: idempotencia devuelve la misma reserva y rechaza cambios con la misma clave
+  ---
+  duration_ms: 294.618584
+  type: 'test'
+  ...
+# Subtest: Caché: recursos bajo /ATRY-Turnos/, sin interceptar Auth, datos privados ni cachés ajenas
+ok 179 - Caché: recursos bajo /ATRY-Turnos/, sin interceptar Auth, datos privados ni cachés ajenas
+  ---
+  duration_ms: 2.629958
+  type: 'test'
+  ...
+# Subtest: Presentación: el control visual existe solo en una demo embebida explícita
+ok 180 - Presentación: el control visual existe solo en una demo embebida explícita
+  ---
+  duration_ms: 21.142375
+  type: 'test'
+  ...
+# Subtest: Presentación: nombre y tema quedan aislados y no alteran límites ni importes
+ok 181 - Presentación: nombre y tema quedan aislados y no alteran límites ni importes
+  ---
+  duration_ms: 3.529541
+  type: 'test'
+  ...
+# Subtest: Presentación: no acepta estilos ejecutables ni opciones de otro plan
+ok 182 - Presentación: no acepta estilos ejecutables ni opciones de otro plan
+  ---
+  duration_ms: 1.581416
+  type: 'test'
+  ...
+# Subtest: Presentación: mensajes de otro origen o ventana no pueden cambiar la demo
+ok 183 - Presentación: mensajes de otro origen o ventana no pueden cambiar la demo
+  ---
+  duration_ms: 0.939708
+  type: 'test'
+  ...
+# Subtest: Demo completa: conserva nombre y tema válidos sin cambiar otras instancias
+ok 184 - Demo completa: conserva nombre y tema válidos sin cambiar otras instancias
+  ---
+  duration_ms: 5.782041
+  type: 'test'
+  ...
+# Subtest: Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos
+ok 185 - Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos
+  ---
+  duration_ms: 1.818875
+  type: 'test'
+  ...
+# Subtest: Fotos PostgreSQL: Storage privado, políticas cerradas, tres planes y CAS entre operadores
+ok 186 - Fotos PostgreSQL: Storage privado, políticas cerradas, tres planes y CAS entre operadores
+  ---
+  duration_ms: 4339.546625
+  type: 'test'
+  ...
+# Subtest: Fotos UI: iniciales accesibles, publicación explícita, guardado sin cambios no hace consultas
+ok 187 - Fotos UI: iniciales accesibles, publicación explícita, guardado sin cambios no hace consultas
+  ---
+  duration_ms: 5.731709
+  type: 'test'
+  ...
+# Subtest: Fotos UI: integración espera el modal antes de cargar datos y conserva los tamaños circulares
+ok 188 - Fotos UI: integración espera el modal antes de cargar datos y conserva los tamaños circulares
+  ---
+  duration_ms: 1.343
+  type: 'test'
+  ...
+# (node:31741) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Fotos: formato, tamaño y rutas quedan limitados a WebP y negocio/profesional
+ok 189 - Fotos: formato, tamaño y rutas quedan limitados a WebP y negocio/profesional
+  ---
+  duration_ms: 12.448042
+  type: 'test'
+  ...
+# Subtest: Fotos local: subir, ocultar/publicar, reemplazar con revisión y eliminar sin modificar profesional
+ok 190 - Fotos local: subir, ocultar/publicar, reemplazar con revisión y eliminar sin modificar profesional
+  ---
+  duration_ms: 160.732958
+  type: 'test'
+  ...
+# Subtest: Fotos cloud: carga única, fallo de confirmación ambiguo y limpieza posterior segura
+ok 191 - Fotos cloud: carga única, fallo de confirmación ambiguo y limpieza posterior segura
+  ---
+  duration_ms: 6.674042
+  type: 'test'
+  ...
+# Subtest: Acceso: negocio habilitado sin aviso superior y con enlace discreto al plan
+ok 192 - Acceso: negocio habilitado sin aviso superior y con enlace discreto al plan
+  ---
+  duration_ms: 0.637458
+  type: 'test'
+  ...
+# Subtest: Acceso: vencimiento cercano visible; vencido, suspendido y cancelado mantienen restricciones
+ok 193 - Acceso: vencimiento cercano visible; vencido, suspendido y cancelado mantienen restricciones
+  ---
+  duration_ms: 21.0515
+  type: 'test'
+  ...
+# (node:31743) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Suscripciones: registro pendiente, activación manual, referencia única, renovación y solo lectura al vencer
+ok 194 - Suscripciones: registro pendiente, activación manual, referencia única, renovación y solo lectura al vencer
+  ---
+  duration_ms: 595.9325
+  type: 'test'
+  ...
+# Subtest: Supabase Auth: registro espera verificación y recuperación requiere enlace de Auth
+ok 195 - Supabase Auth: registro espera verificación y recuperación requiere enlace de Auth
+  ---
+  duration_ms: 81.150125
+  type: 'test'
+  ...
+# Subtest: Supabase Auth: cambios de contraseña requieren contraseña actual y cierran todas las sesiones
+ok 196 - Supabase Auth: cambios de contraseña requieren contraseña actual y cierran todas las sesiones
+  ---
+  duration_ms: 0.408917
+  type: 'test'
+  ...
+# (node:31745) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Temas: cada plan tiene composición propia y contraste accesible incluso con colores extremos
+ok 197 - Temas: cada plan tiene composición propia y contraste accesible incluso con colores extremos
+  ---
+  duration_ms: 12.267292
+  type: 'test'
+  ...
+# Subtest: Temas: opciones permitidas por plan, sin CSS, URLs, fuentes externas ni estilos recursivos
+ok 198 - Temas: opciones permitidas por plan, sin CSS, URLs, fuentes externas ni estilos recursivos
+  ---
+  duration_ms: 0.378834
+  type: 'test'
+  ...
+# Subtest: Temas: baja de plan proyecta opciones seguras sin destruir el estilo avanzado ni sus presets
+ok 199 - Temas: baja de plan proyecta opciones seguras sin destruir el estilo avanzado ni sus presets
+  ---
+  duration_ms: 0.782125
+  type: 'test'
+  ...
+# Subtest: Temas HTTP: guardado duradero, propietarios, aislamiento, restricciones y exposición pública segura
+ok 200 - Temas HTTP: guardado duradero, propietarios, aislamiento, restricciones y exposición pública segura
+  ---
+  duration_ms: 642.528792
+  type: 'test'
+  ...
+# Subtest: Armonía: superficies intensas se suavizan y una navegación personalizada coordina los acentos por defecto
+ok 201 - Armonía: superficies intensas se suavizan y una navegación personalizada coordina los acentos por defecto
+  ---
+  duration_ms: 1.473333
+  type: 'test'
+  ...
+# Subtest: PostgreSQL temas: esquema, revisión, permisos, aislamiento y proyección pública
+ok 202 - PostgreSQL temas: esquema, revisión, permisos, aislamiento y proyección pública
+  ---
+  duration_ms: 4592.925375
+  type: 'test'
+  ...
+# Subtest: PostgreSQL visitas: continuidad fuera de cuadrícula, guardado íntegro, cuota y repetición segura
+ok 203 - PostgreSQL visitas: continuidad fuera de cuadrícula, guardado íntegro, cuota y repetición segura
+  ---
+  duration_ms: 5250.307333
+  type: 'test'
+  ...
+# Subtest: PostgreSQL visitas: reprogramación íntegra, conflicto de cliente, cancelación y datos completados
+ok 204 - PostgreSQL visitas: reprogramación íntegra, conflicto de cliente, cancelación y datos completados
+  ---
+  duration_ms: 3209.660709
+  type: 'test'
+  ...
+# Subtest: PostgreSQL visitas: cotización vieja, servicios repetidos y colisiones no dejan reservas parciales
+ok 205 - PostgreSQL visitas: cotización vieja, servicios repetidos y colisiones no dejan reservas parciales
+  ---
+  duration_ms: 2807.610583
+  type: 'test'
+  ...
+# Subtest: PostgreSQL visitas: recursos, preparación, pausas y feriados impiden recorridos imposibles
+ok 206 - PostgreSQL visitas: recursos, preparación, pausas y feriados impiden recorridos imposibles
+  ---
+  duration_ms: 3031.308625
+  type: 'test'
+  ...
+# Subtest: PostgreSQL: la comprobación remota controlada revierte fixtures y no cambia datos existentes
+ok 207 - PostgreSQL: la comprobación remota controlada revierte fixtures y no cambia datos existentes
+  ---
+  duration_ms: 1669.2995
+  type: 'test'
+  ...
+# (node:31747) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Visita: tres servicios con distintos profesionales, consecutivos, precio real, una confirmación e idempotencia
+ok 208 - Visita: tres servicios con distintos profesionales, consecutivos, precio real, una confirmación e idempotencia
+  ---
+  duration_ms: 269.882209
+  type: 'test'
+  ...
+# Subtest: Visita: precio cambiado, duplicados, servicio ajeno y conflicto intermedio no dejan reservas parciales
+ok 209 - Visita: precio cambiado, duplicados, servicio ajeno y conflicto intermedio no dejan reservas parciales
+  ---
+  duration_ms: 345.909875
+  type: 'test'
+  ...
+# Subtest: Visita: respeta preparación, recursos compartidos y horarios interiores fuera de cuadrícula
+ok 210 - Visita: respeta preparación, recursos compartidos y horarios interiores fuera de cuadrícula
+  ---
+  duration_ms: 453.033667
+  type: 'test'
+  ...
+# Subtest: Visita: reprogramación y cancelación conjuntas, sin perder original, repetición segura
+ok 211 - Visita: reprogramación y cancelación conjuntas, sin perder original, repetición segura
+  ---
+  duration_ms: 585.341833
+  type: 'test'
+  ...
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Visita HTTP: solicitudes simultáneas no duplican ni crean tramos parciales y permisos aislados
+ok 212 - Visita HTTP: solicitudes simultáneas no duplican ni crean tramos parciales y permisos aislados
+  ---
+  duration_ms: 704.881417
+  type: 'test'
+  ...
+# Subtest: Demo de visitas: aislada, sin importes, confirmación y gestión solo en memoria
+ok 213 - Demo de visitas: aislada, sin importes, confirmación y gestión solo en memoria
+  ---
+  duration_ms: 35.464542
+  type: 'test'
+  ...
+# Subtest: Visita: aprobación conjunta y cancelación de pendientes por el negocio conserva servicios completados y privacidad
+ok 214 - Visita: aprobación conjunta y cancelación de pendientes por el negocio conserva servicios completados y privacidad
+  ---
+  duration_ms: 287.329417
+  type: 'test'
+  ...
+# Subtest: Visita: impide superponer al cliente con otro profesional sin dejar tramos parciales
+ok 215 - Visita: impide superponer al cliente con otro profesional sin dejar tramos parciales
+  ---
+  duration_ms: 349.541167
+  type: 'test'
+  ...
+# Subtest: Semana PostgreSQL: tramos atómicos, validación, aislamiento y permiso de suscripción
+ok 216 - Semana PostgreSQL: tramos atómicos, validación, aislamiento y permiso de suscripción
+  ---
+  duration_ms: 4384.152
+  type: 'test'
+  ...
+# Subtest: Semana PostgreSQL: protege una reserva existente y conserva horas y pausas tras rollback
+ok 217 - Semana PostgreSQL: protege una reserva existente y conserva horas y pausas tras rollback
+  ---
+  duration_ms: 4282.891833
+  type: 'test'
+  ...
+# Subtest: Semana PostgreSQL: la verificación remota controlada revierte todos los cambios
+ok 218 - Semana PostgreSQL: la verificación remota controlada revierte todos los cambios
+  ---
+  duration_ms: 3481.685542
+  type: 'test'
+  ...
+# (node:31753) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: Semana: valida hasta seis tramos, ordena y rechaza solapes y rangos inválidos
+ok 219 - Semana: valida hasta seis tramos, ordena y rechaza solapes y rangos inválidos
+  ---
+  duration_ms: 1.022583
+  type: 'test'
+  ...
+# Subtest: Semana HTTP: varios tramos producen disponibilidad real y el rechazo revierte todo
+ok 220 - Semana HTTP: varios tramos producen disponibilidad real y el rechazo revierte todo
+  ---
+  duration_ms: 462.204041
+  type: 'test'
+  ...
+# Subtest: WhatsApp migración: conserva datos anteriores, RLS y permisos mínimos incluso con grants por defecto
+ok 221 - WhatsApp migración: conserva datos anteriores, RLS y permisos mínimos incluso con grants por defecto
+  ---
+  duration_ms: 5009.388958
+  type: 'test'
+  ...
+# Subtest: WhatsApp migración: fallo revierte DDL parcial y no deja permisos abiertos
+ok 222 - WhatsApp migración: fallo revierte DDL parcial y no deja permisos abiertos
+  ---
+  duration_ms: 3913.642042
+  type: 'test'
+  ...
+# Subtest: WhatsApp apertura: valida antes de navegar, mantiene noopener y envío siempre manual
+ok 223 - WhatsApp apertura: valida antes de navegar, mantiene noopener y envío siempre manual
+  ---
+  duration_ms: 45.197916
+  type: 'test'
+  ...
+# Subtest: WhatsApp apertura bloqueada: no acredita apertura ni envío
+ok 224 - WhatsApp apertura bloqueada: no acredita apertura ni envío
+  ---
+  duration_ms: 2.250166
+  type: 'test'
+  ...
+# Subtest: WhatsApp consentimiento retirado: no se vuelve a autorizar por una casilla preexistente
+ok 225 - WhatsApp consentimiento retirado: no se vuelve a autorizar por una casilla preexistente
+  ---
+  duration_ms: 3.03925
+  type: 'test'
+  ...
+# Subtest: WhatsApp UX: teléfono ausente o inválido bloquea apertura y ofrece corrección
+ok 226 - WhatsApp UX: teléfono ausente o inválido bloquea apertura y ofrece corrección
+  ---
+  duration_ms: 6.362584
+  type: 'test'
+  ...
+# Subtest: WhatsApp UX: consentimiento nuevo exige acción explícita y no viene marcado
+ok 227 - WhatsApp UX: consentimiento nuevo exige acción explícita y no viene marcado
+  ---
+  duration_ms: 3.541333
+  type: 'test'
+  ...
+# Subtest: WhatsApp Supabase: RLS, límites, alcance de empleados, cambios de reserva y confirmación manual
+ok 228 - WhatsApp Supabase: RLS, límites, alcance de empleados, cambios de reserva y confirmación manual
+  ---
+  duration_ms: 5761.982084
+  type: 'test'
+  ...
+# Subtest: Comunicación: correo distingue aceptación y entrega, sin mezclar estados de WhatsApp
+ok 229 - Comunicación: correo distingue aceptación y entrega, sin mezclar estados de WhatsApp
+  ---
+  duration_ms: 3.177041
+  type: 'test'
+  ...
+# Subtest: WhatsApp configuración: representación internacional única, conversión segura de valores anteriores
+ok 230 - WhatsApp configuración: representación internacional única, conversión segura de valores anteriores
+  ---
+  duration_ms: 1.780917
+  type: 'test'
+  ...
+# Subtest: Botón de éxito: sistema compartido preserva contraste y foco
+ok 231 - Botón de éxito: sistema compartido preserva contraste y foco
+  ---
+  duration_ms: 1.388
+  type: 'test'
+  ...
+# Subtest: Formularios largos: un scroll de editor, textarea expansible y acciones accesibles
+ok 232 - Formularios largos: un scroll de editor, textarea expansible y acciones accesibles
+  ---
+  duration_ms: 1.036208
+  type: 'test'
+  ...
+# Subtest: WhatsApp UI: tres planes, estados honestos, filtros Pro y controles táctiles
+ok 233 - WhatsApp UI: tres planes, estados honestos, filtros Pro y controles táctiles
+  ---
+  duration_ms: 8.185708
+  type: 'test'
+  ...
+# (node:31760) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Demo creada: usuario1@example.com / AtryDemo2026! | admin.prueba@example.com / AtryAdmin2026!
+# Subtest: WhatsApp: teléfonos internacionales, Uruguay y enlaces codificados sin ejecución
+ok 234 - WhatsApp: teléfonos internacionales, Uruguay y enlaces codificados sin ejecución
+  ---
+  duration_ms: 1.005375
+  type: 'test'
+  ...
+# Subtest: WhatsApp: plantillas sin datos ficticios, variables verificadas y límites de planes
+ok 235 - WhatsApp: plantillas sin datos ficticios, variables verificadas y límites de planes
+  ---
+  duration_ms: 0.764583
+  type: 'test'
+  ...
+# Subtest: WhatsApp local: rechaza teléfono y revisión de reserva cambiados mientras se edita el mensaje
+ok 236 - WhatsApp local: rechaza teléfono y revisión de reserva cambiados mientras se edita el mensaje
+  ---
+  duration_ms: 280.060333
+  type: 'test'
+  ...
+# Subtest: WhatsApp local: consentimiento, estados de envío, pendientes sin duplicados y cambios reales
+ok 237 - WhatsApp local: consentimiento, estados de envío, pendientes sin duplicados y cambios reales
+  ---
+  duration_ms: 365.463041
+  type: 'test'
+  ...
+# Subtest: WhatsApp: demos por plan permanecen aisladas en memoria
+ok 238 - WhatsApp: demos por plan permanecen aisladas en memoria
+  ---
+  duration_ms: 1.000792
+  type: 'test'
+  ...
+# Subtest: WhatsApp local: conserva plantillas al bajar de plan, guardar y volver a ampliar
+ok 239 - WhatsApp local: conserva plantillas al bajar de plan, guardar y volver a ampliar
+  ---
+  duration_ms: 276.341875
+  type: 'test'
+  ...
+# Subtest: WhatsApp local: bandeja evita consultas por cada reserva
+ok 240 - WhatsApp local: bandeja evita consultas por cada reserva
+  ---
+  duration_ms: 327.904083
+  type: 'test'
+  ...
+# Subtest: WhatsApp recordatorios: posponer, persistir, deshacer y gestionar sin estados de envío falsos
+ok 241 - WhatsApp recordatorios: posponer, persistir, deshacer y gestionar sin estados de envío falsos
+  ---
+  duration_ms: 189.088875
+  type: 'test'
+  ...
+1..241
+# tests 241
+# suites 0
+# pass 241
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46041.72075

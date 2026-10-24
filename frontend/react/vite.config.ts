@@ -5,7 +5,7 @@ const web=resolve(import.meta.dirname,'../../web');
 export default defineConfig({
  plugins:[{name:'isolated-legacy-demo',configureServer(server){server.middlewares.use((req,res,next)=>{
   const url=new URL(req.url||'/','http://localhost');
-  if(url.pathname==='/pilot-build/pilot.js'){res.setHeader('Content-Type','text/javascript');res.setHeader('Cache-Control','no-store');res.end(readFileSync(resolve(import.meta.dirname,'dist/pilot.js')));return;}
+  if(url.pathname.startsWith('/pilot-build/')){const dist=resolve(import.meta.dirname,'dist'),file=resolve(dist,'.'+decodeURIComponent(url.pathname.slice('/pilot-build'.length)));if(!file.startsWith(dist+sep)||!file.endsWith('.js')||!existsSync(file)||!statSync(file).isFile()){res.statusCode=404;res.end();return;}res.setHeader('Content-Type','text/javascript');res.setHeader('Cache-Control','no-store');res.end(readFileSync(file));return;}
   if(url.pathname.startsWith('/api/')){res.statusCode=403;res.end('Experimental demo: API disabled');return;}
   if(!url.pathname.startsWith('/legacy/'))return next();
   res.setHeader('Cache-Control','no-store');

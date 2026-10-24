@@ -93,8 +93,8 @@ body{background:var(--bg)}h1,h2,h3{letter-spacing:-.035em}.brand-original{width:
 @container workspace (max-width:560px){
  .agenda-toolbar .grow{grid-column:1/-1;grid-row:3}
  .agenda-toolbar>button:last-child{grid-column:2/-1}
- .activity:has([data-action="edit-role"]),.activity:has([data-action="revoke-member"]){flex-wrap:wrap}
- .activity:has([data-action="edit-role"])>.grow,.activity:has([data-action="revoke-member"])>.grow{flex-basis:100%;overflow-wrap:anywhere}
+ .activity:has([data-action="edit-role"]),.activity:has([data-action="revoke-member"]),.activity:has([data-react-action="edit-role"]){flex-wrap:wrap}
+ .activity:has([data-action="edit-role"])>.grow,.activity:has([data-action="revoke-member"])>.grow,.activity:has([data-react-action="edit-role"])>.grow{flex-basis:100%;overflow-wrap:anywhere}
 }
 
 /* Guided setup and customer actions adapt to the available panel width. */

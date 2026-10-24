@@ -18,6 +18,8 @@ function waCustomerQuick(customer){return `<button type="button" class="wa-custo
 function waCustomerContact(customer){const p=waPhoneState(customer.phone);return p.number?`<button type="button" class="btn secondary" data-wa-customer="${esc(customer.id)}">${ic('whatsapp')} Contactar por WhatsApp</button>`:`<p class="small muted">${esc(p.error)}. ${customer.phone?'Corregí':'Agregá'} el teléfono en esta ficha y guardá para habilitar WhatsApp.</p>`;}
 function waOffer(id,kind){const bid=state.business.id;waConfig().then(info=>{if(!info.config.enabled||state.business?.id!==bid)return;document.querySelector('.wa-offer')?.remove();document.querySelector('.main-content')?.insertAdjacentHTML('afterbegin',`<section class="hint-block wa-offer" role="status"><span>El cambio ya está guardado.</span><button type="button" class="btn secondary sm" data-wa-booking="${esc(id)}" data-wa-kind="${esc(kind)}">${ic('whatsapp')} Avisar al cliente</button><button type="button" class="btn secondary icon-only sm" data-wa-dismiss aria-label="Cerrar aviso">${ic('x')}</button></section>`);}).catch(()=>{});}
 async function viewWhatsApp(){
+ if(window.ATRY_SERVICES_EXTENSION)return window.ATRY_SERVICES_EXTENSION.show('comunicacion');
+
  if(state.waReminderBusiness!==state.business.id){state.waReminderBusiness=state.business.id;state.waReminderTab='pending';}
  const [settings,response]=await Promise.all([waConfig(true),api(waApi('/reminders'),{fresh:true})]);const groups=Array.isArray(response)?{pending:response,snoozed:[],managed:[]}:response;const tab=state.waReminderTab||'pending',rows=groups[tab]||[];
  const pro=settings.plan==='pro',stats=pro?await api(waApi('/stats'),{fresh:true}):[];

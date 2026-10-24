@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';
+import type {PhotoRepository} from './photos';
+export function StaffAvatar({person,photos,className='staff-avatar'}:{person:{id:string;name:string};photos:PhotoRepository;className?:string}){const [url,setURL]=useState('');useEffect(()=>{let live=true;void photos.list().then(rows=>{const row=rows.find(p=>p.staff_id===person.id);return row?photos.url(row):''}).then(url=>{if(live)setURL(url)}).catch(()=>{});return()=>{live=false}},[photos,person]);return <span className={className+' staff-photo-avatar'} aria-hidden="true"><span>{(person.name||'?').trim().split(/\s+/).map(p=>p[0]).slice(0,2).join('')}</span>{url&&<img alt="" decoding="async" width={64} height={64} src={url}/>}</span>}

@@ -1,0 +1,910 @@
+{
+  "referenceCommit": "c626238",
+  "htmlEntries": [
+    "index.html",
+    "descubrir.html"
+  ],
+  "appViews": [
+    "agenda",
+    "suscripcion",
+    "soporte",
+    "mi-horario",
+    "estadisticas",
+    "configuracion-inicial",
+    "inicio",
+    "turnos-fijos",
+    "smartslots",
+    "lista-espera",
+    "servicios",
+    "equipo",
+    "clientes",
+    "notificaciones",
+    "configuracion",
+    "comunicacion",
+    "accesos",
+    "cuenta",
+    "disponibilidad",
+    "insights"
+  ],
+  "publicRoutes": [
+    "/",
+    "/login",
+    "/registro",
+    "/cuenta-nueva",
+    "/cuenta",
+    "/recuperar",
+    "/restablecer/:token",
+    "/reservar/:slug",
+    "/gestionar/:token",
+    "/oferta/:token",
+    "/invitacion/:token"
+  ],
+  "adminSections": [
+    [
+      "inicio",
+      "Inicio"
+    ],
+    [
+      "negocios",
+      "Negocios"
+    ],
+    [
+      "usuarios",
+      "Usuarios y accesos"
+    ],
+    [
+      "comercial",
+      "Comercial y finanzas"
+    ],
+    [
+      "correos",
+      "Correos y automatizaciones"
+    ],
+    [
+      "sistema",
+      "Sistema y diagnósticos"
+    ],
+    [
+      "soporte",
+      "Soporte e incidencias"
+    ],
+    [
+      "datos",
+      "Datos y almacenamiento"
+    ],
+    [
+      "auditoria",
+      "Seguridad y auditoría"
+    ],
+    [
+      "configuracion",
+      "Configuración"
+    ]
+  ],
+  "files": {
+    "agenda-core.js": {
+      "bytes": 4179,
+      "sha256": "dc4db0701bc9452d0559778acac53521b916860cda6a7355dbc0af1f02f873ed",
+      "functions": [
+        "segment",
+        "layout",
+        "windows",
+        "bounds"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "agenda.css": {
+      "bytes": 46103,
+      "sha256": "efec5e6b40b744078664b671aa9ae5b4540a5db81da759fcb66eddbaa3f55382",
+      "functions": [],
+      "actions": [
+        "agenda-useful-hour"
+      ],
+      "forms": []
+    },
+    "agenda.js": {
+      "bytes": 60266,
+      "sha256": "5ca0fbf3c98cbb58958aa3041d384e9dda1260262669376956e779bdeb0ee13a",
+      "functions": [
+        "agendaStatus",
+        "agendaRules",
+        "agendaMonth",
+        "agendaEvent",
+        "agendaTimeGrid",
+        "agendaAttentionGroups",
+        "agendaAttention",
+        "renderProfessionalAgenda",
+        "updateAgendaClock",
+        "agendaInteraction",
+        "agendaShowDetail",
+        "agendaProfessionals",
+        "agendaSummary",
+        "agendaCreateBooking",
+        "agendaFindCustomer",
+        "agendaSelectCustomer",
+        "agendaUsefulMinute",
+        "agendaScrollUseful",
+        "agendaMobileCalendar",
+        "agendaFindTime",
+        "agendaLoadTimes",
+        "agendaCustomerHistory",
+        "agendaCaptureDraft",
+        "agendaRestoreDraft",
+        "agendaPrepareReschedule",
+        "agendaUpdateComparison",
+        "agendaDraftAtSlot",
+        "agendaContactKey",
+        "agendaExactContacts",
+        "agendaBookingIssues",
+        "agendaFieldError",
+        "agendaCheckDuplicates",
+        "agendaValidateBooking",
+        "agendaWeeklyModel",
+        "agendaWeeklyActivity"
+      ],
+      "actions": [
+        "agenda-attention",
+        "agenda-choose-time",
+        "agenda-clear-filters",
+        "agenda-customer-history",
+        "agenda-customer-reset",
+        "agenda-customer-search",
+        "agenda-customer-select",
+        "agenda-date-shift",
+        "agenda-density",
+        "agenda-detail",
+        "agenda-distinct-customer",
+        "agenda-find-for-booking",
+        "agenda-find-for-reschedule",
+        "agenda-find-time",
+        "agenda-flow-back",
+        "agenda-load-times",
+        "agenda-open-activity-day",
+        "agenda-open-day",
+        "agenda-professional",
+        "agenda-remove-filter",
+        "agenda-slot",
+        "agenda-status-filter",
+        "agenda-today",
+        "agenda-toggle-filters",
+        "agenda-toggle-tools",
+        "agenda-use-duplicate",
+        "agenda-useful-hour",
+        "agenda-view",
+        "agenda-week-day",
+        "open-booking",
+        "refresh"
+      ],
+      "forms": [
+        "agenda-search",
+        "manual-book",
+        "reschedule"
+      ]
+    },
+    "app.js": {
+      "bytes": 96651,
+      "sha256": "85256ee40d0b6821aed62217fd882e8fea5846cc2960d9279ba11755b6e32c3b",
+      "functions": [
+        "toast",
+        "confirmAction",
+        "api",
+        "requestApi",
+        "confirmAdminIdentity",
+        "renderAuthScreen",
+        "authView",
+        "appLayout",
+        "modalContent",
+        "showDialog",
+        "publicView",
+        "loadSlots",
+        "setScreen",
+        "sectionReads",
+        "prefetchSection",
+        "warmNavigation",
+        "renderApp",
+        "viewDashboard",
+        "bookingActions",
+        "viewServices",
+        "viewTeam",
+        "viewWaitlist",
+        "viewCustomers",
+        "viewSettings",
+        "serviceModal",
+        "staffModal",
+        "hoursModal",
+        "timeOffModal",
+        "bookingModal",
+        "rescheduleModal",
+        "customerModal",
+        "saveCustomerForm",
+        "customerBeforeContact",
+        "adminModal",
+        "parseMontevideo",
+        "onSubmit",
+        "setMenu",
+        "onClick",
+        "onChange",
+        "router",
+        "boot",
+        "offerView",
+        "viewSmartSlots",
+        "recoveryView",
+        "verificationView",
+        "ownerTodaySummary"
+      ],
+      "actions": [
+        "add-member",
+        "add-service",
+        "add-staff",
+        "add-timeoff",
+        "booking-reschedule",
+        "booking-status",
+        "close-menu",
+        "close-modal",
+        "copy-link",
+        "customer-booking",
+        "customer-fixed",
+        "delete-timeoff",
+        "edit-customer",
+        "edit-hours",
+        "edit-service",
+        "edit-staff",
+        "export",
+        "logout",
+        "new-customer",
+        "open-booking",
+        "public-service",
+        "public-slot",
+        "public-staff",
+        "refresh",
+        "reload-page",
+        "select-business",
+        "settings-tab",
+        "toggle-menu",
+        "toggle-service",
+        "waitlist-status"
+      ],
+      "forms": [
+        "accept-offer",
+        "add-member",
+        "admin-business",
+        "create-timeoff",
+        "manual-book",
+        "public-book",
+        "public-waitlist",
+        "reschedule",
+        "save-settings",
+        "search-customers",
+        "smart-date",
+        "staff-photo",
+        "update-customer"
+      ]
+    },
+    "appearance.css": {
+      "bytes": 36056,
+      "sha256": "7f5c2953537a81ecf8526f642963bed11e3dae5d3fecafc2fb4a3267ca2955d6",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "appearance.js": {
+      "bytes": 9772,
+      "sha256": "3803e4c19fd71bdacc13cb8b48b01e40331d205f7bf569c25c7ef811c80904d4",
+      "functions": [
+        "values",
+        "apply",
+        "appearanceMiniPreview",
+        "appearanceEditor",
+        "refreshAppearancePreview"
+      ],
+      "actions": [],
+      "forms": [
+        "save-appearance"
+      ]
+    },
+    "business-polish.css": {
+      "bytes": 23425,
+      "sha256": "608d1dafbe0c0e49c9a903c8452fdcd94dadc1c0cbbf308c4d5824a4cfd0742e",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "buttons.css": {
+      "bytes": 4739,
+      "sha256": "734b81ffa86ac9b8f101aaa4fbda1067bc56c31e89e3504068d308b6f62460dd",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "commercial.js": {
+      "bytes": 21709,
+      "sha256": "015cf6329025d42220a587ecb57d1d9341b4569eb771b25c167b8d59d5479484",
+      "functions": [
+        "pruneCommercialControls",
+        "planCards",
+        "requestContact",
+        "viewSubscription",
+        "viewOwnHours",
+        "viewBasicStatistics",
+        "commercialPlanModal",
+        "commercialAdminPanel"
+      ],
+      "actions": [
+        "add-staff",
+        "approve",
+        "cancel",
+        "close-modal",
+        "copy",
+        "customer-fixed",
+        "demo-request",
+        "edit-hours",
+        "edit-plan",
+        "export",
+        "new-recurring",
+        "refresh",
+        "request-state",
+        "select",
+        "whatsapp"
+      ],
+      "forms": [
+        "admin-business",
+        "assign-resources",
+        "create-resource"
+      ]
+    },
+    "control-center.css": {
+      "bytes": 6315,
+      "sha256": "d0b300e23777e4fb29892437407595833a6a0f1a8b4fdbde49d48b78c03b025d",
+      "functions": [],
+      "actions": [
+        "logout"
+      ],
+      "forms": []
+    },
+    "control-center.js": {
+      "bytes": 57856,
+      "sha256": "b532a1cb496224c93f0c0eb489bc42e7dfe352eed6d122715c207ec01bd3cbca",
+      "functions": [
+        "ccTable",
+        "ccFilters",
+        "ccPager",
+        "ccNavEntry",
+        "ccShell",
+        "ccMetric",
+        "ccMetricStatic",
+        "ccOverview",
+        "ccBusinessList",
+        "ccBusiness",
+        "ccUsers",
+        "ccMail",
+        "ccRequests",
+        "ccIncidents",
+        "ccAudit",
+        "ccSystem",
+        "ccGuides",
+        "ccStorage",
+        "ccRenderSection",
+        "adminView",
+        "ccActionDialog",
+        "ccConfirm",
+        "viewEssentialSupport",
+        "ccDiagnostic"
+      ],
+      "actions": [
+        "business_delete",
+        "close-menu",
+        "edit-plan",
+        "logout",
+        "toggle-menu"
+      ],
+      "forms": [
+        "admin-business"
+      ]
+    },
+    "demo.js": {
+      "bytes": 22479,
+      "sha256": "fe428393dd47dd3d6596070aabb50241022c73a39f0682e4a6ee8a95488a9730",
+      "functions": [
+        "create",
+        "available",
+        "slots",
+        "createDemo",
+        "request",
+        "seedShowcaseData",
+        "ThemeForPreview"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "descubrir.css": {
+      "bytes": 45655,
+      "sha256": "435fb104dbb8139a43c8fda2ce9ddd400f6bc0184e3b16255411fa255e884a55",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "descubrir.html": {
+      "bytes": 26830,
+      "sha256": "c9663c5ce5b8e6b70fd12667c0bfd445d098702aaa7943ebc97c5f8fb6b38e7c",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "descubrir.js": {
+      "bytes": 13612,
+      "sha256": "87614d1ce182c923070d036992d6d418ede84d6d65e4eca2083dd5756286ade8",
+      "functions": [
+        "chooseScreen",
+        "marketingIcon",
+        "polishIcons",
+        "showcasePayload",
+        "sendShowcaseTheme",
+        "loadShowcase",
+        "updateShowcaseLinks",
+        "renderMessageExample"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "features.js": {
+      "bytes": 20466,
+      "sha256": "16f4b8faa546a84e01173fc4c7d046979f7e3ff593ee8431fb90553ea56c6a43",
+      "functions": [
+        "refreshIdentity",
+        "featureLayout",
+        "accountRegistrationView",
+        "addAccountLink",
+        "viewMemberships",
+        "memberForm",
+        "invitationView",
+        "submitFeature",
+        "clickFeature",
+        "mailState",
+        "calendarRange",
+        "viewAgenda",
+        "disconnectAgendaEvents",
+        "connectAgendaEvents",
+        "employeeBookingModal",
+        "employeeCatalog"
+      ],
+      "actions": [
+        "edit-role",
+        "invitation-login",
+        "invite-member",
+        "logout",
+        "revoke-invitation",
+        "revoke-member"
+      ],
+      "forms": [
+        "accept-invitation",
+        "login",
+        "manual-book",
+        "plan-settings",
+        "register",
+        "register-account",
+        "update-resource"
+      ]
+    },
+    "index.html": {
+      "bytes": 4313,
+      "sha256": "6ccdfd95e7a756eeccc9c16eff8a53973bf4de4991c607de3fbe97d50eb6c57a",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "logo-editor.js": {
+      "bytes": 11005,
+      "sha256": "4bc51d6f47d93a0ca26a4cb51fb0dceb4b96dd16aa00653642ffe5fb6549cfae",
+      "functions": [
+        "logoCropRect",
+        "businessLogoAvatar",
+        "preparedBusinessLogo",
+        "refreshLogoControl",
+        "closeEditor",
+        "notifyPreview",
+        "openEditor",
+        "render",
+        "accountAvatar"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "management.js": {
+      "bytes": 14627,
+      "sha256": "b2154cfce0a22cc27df98e68074986c4ee895706d7dfcba83571c1478d4ba826",
+      "functions": [
+        "manageView",
+        "viewInsights",
+        "adminView"
+      ],
+      "actions": [
+        "admin-edit",
+        "copy-custom",
+        "edit-plan",
+        "logout",
+        "manage-cancel",
+        "manage-reschedule"
+      ],
+      "forms": [
+        "admin-incident",
+        "admin-search",
+        "create-incident",
+        "public-reschedule"
+      ]
+    },
+    "onboarding.js": {
+      "bytes": 10723,
+      "sha256": "db4f72641ccf8cd9486ee78f4dd5aea527bf9f3fb62ba737ca4006c356e1fde2",
+      "functions": [
+        "sectorIcon",
+        "registrationWizard",
+        "authArtwork",
+        "brandLogoControl",
+        "brandColorControl",
+        "receiptDetails",
+        "bookingReceiptPage",
+        "updateBrandColor"
+      ],
+      "actions": [
+        "copy-custom"
+      ],
+      "forms": [
+        "register"
+      ]
+    },
+    "product.css": {
+      "bytes": 40108,
+      "sha256": "63e0c21e55d3e1d7c2826a27537966637d4dc7efc688ea53518af12dc0bd0b59",
+      "functions": [],
+      "actions": [
+        "edit-role",
+        "revoke-member",
+        "toggle-menu"
+      ],
+      "forms": []
+    },
+    "react-services-bridge.js": {
+      "bytes": 1159,
+      "sha256": "1549249e1a8b3371f4c73f9ec10bfc58406c4b35b92c159002d7b812eee1da2e",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "read-cache.js": {
+      "bytes": 1546,
+      "sha256": "8a6d196cb3027da5c91b6369489dd009f8e9c24b4dcab0cf1fc6604423866ad8",
+      "functions": [
+        "createReadCache"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "recurring.js": {
+      "bytes": 7215,
+      "sha256": "68ab1cd356d8eeb2bcdf5bbd7f0cb6b93752eaf4ae01a9383e2b69cd0996abfe",
+      "functions": [
+        "viewRecurring",
+        "recurringModal",
+        "clickRecurring",
+        "submitRecurring"
+      ],
+      "actions": [
+        "edit-recurring",
+        "end-recurring",
+        "new-recurring"
+      ],
+      "forms": [
+        "end-recurring",
+        "save-recurring"
+      ]
+    },
+    "showcase-preview.js": {
+      "bytes": 2048,
+      "sha256": "f8458a9fce37b9649adaec9d16622d6e4643b668e4cbd7feb55ff89d5962b480",
+      "functions": [
+        "startShowcasePreview",
+        "update"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "staff-photo-core.js": {
+      "bytes": 1197,
+      "sha256": "763f1456aed2eccce2197e2080654112dfd83e32ec44706e1c5b6b44ee0adcf0",
+      "functions": [
+        "path",
+        "validPath",
+        "bytes"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "staff-photos.css": {
+      "bytes": 2475,
+      "sha256": "f23e938ebfee33fba8fcd2fb81fa49a48c7fc3d975d3b36f5843b4aec444810e",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "staff-photos.js": {
+      "bytes": 12094,
+      "sha256": "e5cd57d1dcfa6ea87edcf3670fcd29f5d6a51b20574e7dd9fabeaae7c0d83ad4",
+      "functions": [
+        "staffAvatar",
+        "photoRequest",
+        "photoList",
+        "photoURL",
+        "clearStaffPhotos",
+        "loadStaffAvatar",
+        "scanStaffPhotos",
+        "refreshStaffPhotos",
+        "staffPhotoEditor",
+        "staffPhotoVisibility",
+        "bindStaffPhotoEditor",
+        "photoPreview",
+        "optimizeStaffPhoto",
+        "saveStaffPhoto",
+        "staffPhotoProfiles",
+        "startStaffPhotos"
+      ],
+      "actions": [
+        "edit-staff-photo"
+      ],
+      "forms": []
+    },
+    "styles.css": {
+      "bytes": 19685,
+      "sha256": "474c78571062152a2bfacdb605690f5b89130c603e0ed049f627350d319b049e",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "subscriptions.js": {
+      "bytes": 9138,
+      "sha256": "0a8f1036ba6f3da71a6a836a4e795fe169c9f958274bd4115711e00918c52e44",
+      "functions": [
+        "subscriptionNotice",
+        "subscriptionSidebar",
+        "lockSubscriptionControls",
+        "manualSubscriptionModal"
+      ],
+      "actions": [
+        "copy-custom",
+        "refresh"
+      ],
+      "forms": [
+        "admin-business"
+      ]
+    },
+    "sw.js": {
+      "bytes": 2466,
+      "sha256": "74193aa2c636d7d316780ec6059c36aae152e2d43a9ec0e90e1d7bc860b92e97",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "theme-core.js": {
+      "bytes": 7073,
+      "sha256": "a5303c370e3bb17cf01d6191e848b6ea8c1238a39cfede27c392a341fa973af3",
+      "functions": [
+        "readable",
+        "defaults",
+        "parse",
+        "validate",
+        "calmSurface",
+        "effective",
+        "colorDistance"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "theme-studio.css": {
+      "bytes": 29558,
+      "sha256": "29a182cb978af561c74d50fcba93d88f3e613e91d9553cb3a6507834492560f7",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "theme-studio.js": {
+      "bytes": 27008,
+      "sha256": "f76d5cd9b48eafe8c2fb968847b088eeed17bd3c995164ddc55801d8dbd3874e",
+      "functions": [
+        "applyThemeTokens",
+        "studioControl",
+        "studioColor",
+        "appearanceEditor",
+        "studioDraft",
+        "studioSetDraft",
+        "refreshAppearancePreview",
+        "studioPreview",
+        "themeStudioPayload",
+        "studioInitialDraft",
+        "publicBusinessIdentity"
+      ],
+      "actions": [],
+      "forms": [
+        "create-staff",
+        "save-appearance",
+        "update-staff"
+      ]
+    },
+    "typography.css": {
+      "bytes": 1528,
+      "sha256": "7308525d7f71c813d9ab9e00a39f5096956c4cef679a2e7676fc673eddb8ee54",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "visit-core.js": {
+      "bytes": 1299,
+      "sha256": "8bc475b5d4bf8c60742499c5fefc82f97d47b3d5531bc4d04f51d553bc1e2a94",
+      "functions": [
+        "overlaps",
+        "solve",
+        "next"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "visit-demo.js": {
+      "bytes": 6170,
+      "sha256": "5bc9eb6dfd96535b6f6a3cac7ddb14c98c59c6b98e9d4ca83c71960405bc44cf",
+      "functions": [
+        "createVisitDemo",
+        "solve",
+        "read",
+        "mutable",
+        "validate"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "visits.css": {
+      "bytes": 4713,
+      "sha256": "cabc14b6592e9a0e16421b684709c34d98628da40de249f739da82b9725cd396",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "visits.js": {
+      "bytes": 15736,
+      "sha256": "e9c6f72cc3709d883e6be0c3a6d8caa0d73d951374a005cae6de0a8b1de82cdf",
+      "functions": [
+        "visitTimeline",
+        "visitFlowFor",
+        "searchVisit",
+        "publicVisitView",
+        "visitBookingActions",
+        "visitManageView",
+        "visitManageUrl",
+        "reloadVisitManage"
+      ],
+      "actions": [
+        "booking-status",
+        "copy-custom"
+      ],
+      "forms": [
+        "book",
+        "manage-search"
+      ]
+    },
+    "whatsapp-core.js": {
+      "bytes": 6976,
+      "sha256": "169ef0ed586bf780fe9a93138853ce214d791d978b366cb2a2c44d6c5dfdb2c6",
+      "functions": [
+        "phone",
+        "validateText",
+        "settings",
+        "effective",
+        "context",
+        "render",
+        "link"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "whatsapp-demo.js": {
+      "bytes": 5045,
+      "sha256": "bba9e908ade17b00c5615006834b9fe544654bf9bb1cdfb6beaf6de8d5ad6a65",
+      "functions": [
+        "create",
+        "handle"
+      ],
+      "actions": [],
+      "forms": []
+    },
+    "whatsapp.css": {
+      "bytes": 7782,
+      "sha256": "568ef1b3c25d7228b7d53fd185298cfd61595529dfca33f8c6be59181e30c415",
+      "functions": [],
+      "actions": [],
+      "forms": []
+    },
+    "whatsapp.js": {
+      "bytes": 26698,
+      "sha256": "a6627401145ff787767d33637ec30034841f32e87b8b4ccc43deff04c4bca36c",
+      "functions": [
+        "waResizeMessage",
+        "waFitEditor",
+        "waConfig",
+        "waButton",
+        "waPhoneState",
+        "waContact",
+        "waCustomerQuick",
+        "waCustomerContact",
+        "waOffer",
+        "viewWhatsApp",
+        "waSettings",
+        "waCustomFields",
+        "waCompose",
+        "waFilterRows"
+      ],
+      "actions": [
+        "close-modal"
+      ],
+      "forms": []
+    },
+    "workspace.css": {
+      "bytes": 23910,
+      "sha256": "e710833cfa616419f171fef6c2c8514813a75b3e582b232fa2f54973a8d807dc",
+      "functions": [],
+      "actions": [
+        "logout"
+      ],
+      "forms": []
+    },
+    "workspace.js": {
+      "bytes": 27363,
+      "sha256": "f5491be2396a7eeb941908149948915bf0d438d7b904b654abdbed4abe01de85",
+      "functions": [
+        "businessNavigationItems",
+        "workspaceSetupPrompt",
+        "workspaceSettingsNavigation",
+        "weeklyWindows",
+        "weekSummary",
+        "intervalRow",
+        "weeklyHoursModal",
+        "syncWeekInputs",
+        "saveWeeklyHours",
+        "viewSchedule",
+        "viewOnboarding",
+        "viewAccount",
+        "viewNotifications"
+      ],
+      "actions": [
+        "absence",
+        "account-tab",
+        "add-interval",
+        "apply-copy",
+        "copy-day",
+        "delete-schedule-rule",
+        "delete-timeoff",
+        "edit-hours",
+        "edit-resource",
+        "exception",
+        "holiday",
+        "new-business",
+        "preview-mail",
+        "remove-interval",
+        "resource",
+        "revoke-session",
+        "schedule-tab",
+        "select-business"
+      ],
+      "forms": [
+        "account-password",
+        "account-profile",
+        "assign-resources",
+        "complete-onboarding",
+        "create-exception",
+        "create-holiday",
+        "create-organization",
+        "create-resource",
+        "create-timeoff",
+        "notification-preferences",
+        "save-hours"
+      ]
+    }
+  }
+}

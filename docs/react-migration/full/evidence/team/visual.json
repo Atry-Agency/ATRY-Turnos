@@ -1,0 +1,230 @@
+{
+  "pairs": [
+    {
+      "view": "equipo",
+      "plan": 1,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-equipo-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 1,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-equipo-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 1,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-equipo-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 1,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-equipo-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 1,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-equipo-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTu perfil profesional\n\nTu fotografía, con la identidad de tu negocio.\n\nPD\nPropietario Demo 1\nEditar fotografía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-equipo-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-equipo-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-equipo-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-equipo-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-equipo-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-equipo-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-equipo-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-equipo-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-equipo-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    },
+    {
+      "view": "equipo",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-equipo-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-equipo-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEquipo y horarios\n\nOrganizá profesionales, jornadas y ausencias.\n\nAgregar profesional\nVincular cuenta del equipo\nPD\nPropietario Demo 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP2\nProfesional 2\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP3\nProfesional 3\nSin correo\nActivo\n4 servicios asignados\nEditar\nHorarios\nAusencia\nP4\nProfesional 4\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nP5\nProfesional 5\nSin correo\nActivo\n3 servicios asignados\nEditar\nHorarios\nAusencia\nBloqueos y ausencias\nVacaciones, permisos o descansos especiales\nSin bloqueos o ausencias registrados",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

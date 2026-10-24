@@ -1,0 +1,455 @@
+{
+  "pairs": [
+    {
+      "plan": 1,
+      "width": 320,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p1-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 320,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p1-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 390,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p1-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 390,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p1-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 430,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p1-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 430,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p1-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 768,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p1-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 768,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p1-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 1440,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p1-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 1,
+      "width": 1440,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p1-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p1-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 1\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 1\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 320,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p2-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 320,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p2-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 390,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p2-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 390,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p2-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 430,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p2-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 430,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p2-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 768,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p2-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 768,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p2-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 1440,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p2-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 2,
+      "width": 1440,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p2-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p2-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 2\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 2\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 320,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p3-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-320-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 320,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p3-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-320-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p3-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-390-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 390,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p3-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-390-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 430,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p3-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-430-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 430,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p3-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-430-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p3-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-768-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 768,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p3-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-768-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "scene": "list",
+      "javascript": {
+        "file": "javascript-p3-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-1440-list.png",
+        "text": "ATRY TURNOS / PANEL\nTus clientes\n\nBuscá una persona, revisá su historial y reservá desde su ficha.\n\nAgregar cliente\nExportar reservas\nBuscar por nombre, correo o teléfono\nBuscar\n8 clientes recientes\nHasta 100 resultados · Afiná la búsqueda para encontrar más\nCE\nCliente Ejemplo 1\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 2\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 3\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 4\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 5\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 6\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 7\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha\nCE\nCliente Ejemplo 8\n2 reservas registradas\nSin correo\nSin teléfono\n\nPersona ficticia de demostración.\n\nAsignar turno\nTurno fijo\nVer ficha",
+        "overflow": false
+      }
+    },
+    {
+      "plan": 3,
+      "width": 1440,
+      "scene": "profile",
+      "javascript": {
+        "file": "javascript-p3-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-p3-1440-profile.png",
+        "text": "Ficha del cliente\n\nDatos del cliente\nNombre\nTeléfono\nCorreo\n\nLos turnos existentes conservan su contacto original. Los nuevos usan estos datos.\n\nNotas internas\nTiene consentimiento para comunicaciones promocionales\nComunicación\n\nSin teléfono registrado. Agregá el teléfono en esta ficha y guardá para habilitar WhatsApp.\n\nEl consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.\n\nHistorial de reservas\nCorte de pelo\n2026-10-24 · 10:00 · Propietario Demo 3\nConfirmado\nCorte de pelo\n2026-10-24 · 14:00 · Propietario Demo 3\nConfirmado\nCancelar edición\nGuardar cambios",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

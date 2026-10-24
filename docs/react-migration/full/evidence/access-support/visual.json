@@ -1,0 +1,305 @@
+{
+  "pairs": [
+    {
+      "view": "accesos",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-accesos-2-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-2-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-accesos-2-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-2-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-accesos-2-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-2-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-accesos-2-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-2-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-accesos-2-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-2-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 2\nplan2@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-accesos-3-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-3-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-accesos-3-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-3-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-accesos-3-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-3-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-accesos-3-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-3-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "accesos",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-accesos-3-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-accesos-3-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nUsuarios y accesos\n\nInvitá personas y controlá qué pueden hacer en este negocio.\n\nInvitar persona\nPersonas con acceso\nPropietario Demo 3\nplan3@example.com · Propietario\nCambiar rol\nRevocar acceso\nInvitaciones\n\nVencen a las 48 horas. El estado del correo se consulta en Notificaciones.\n\nSin invitaciones todavía",
+        "overflow": false
+      }
+    },
+    {
+      "view": "soporte",
+      "plan": 1,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-soporte-1-320.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-soporte-1-320.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "soporte",
+      "plan": 1,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-soporte-1-390.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-soporte-1-390.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "soporte",
+      "plan": 1,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-soporte-1-430.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-soporte-1-430.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "soporte",
+      "plan": 1,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-soporte-1-768.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-soporte-1-768.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "soporte",
+      "plan": 1,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-soporte-1-1440.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-soporte-1-1440.png",
+        "text": "Ayuda y soporte\n\nReportá problemas esenciales del servicio, sin datos privados de tus clientes.\n\nAsunto\nCategoría\nServicio\nAcceso\nReserva\nCorreo\nSuscripción\nDescripción\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "mi-horario",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-mi-horario-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-mi-horario-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      }
+    },
+    {
+      "view": "mi-horario",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-mi-horario-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-mi-horario-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      }
+    },
+    {
+      "view": "mi-horario",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-mi-horario-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-mi-horario-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      }
+    },
+    {
+      "view": "mi-horario",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-mi-horario-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-mi-horario-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      }
+    },
+    {
+      "view": "mi-horario",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-mi-horario-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-mi-horario-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nMi horario\n\nTu semana de trabajo y disponibilidad.\n\nPropietario Demo 2\n\nLunes · 09:00 a 19:00\n\nMartes · 09:00 a 19:00\n\nMiércoles · 09:00 a 19:00\n\nJueves · 09:00 a 19:00\n\nViernes · 09:00 a 19:00\n\nSábado · 09:00 a 19:00\n\nEditar jornada",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

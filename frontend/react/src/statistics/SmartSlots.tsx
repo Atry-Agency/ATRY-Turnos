@@ -1,0 +1,11 @@
+import {useState} from 'react';
+import type {AppPort} from '../app/port';
+import type {Scope} from '../services/contracts';
+import type {ScreenController} from '../services/ServicesScreen';
+import {useResource} from '../infrastructure/useResource';
+import {PageHeader,Empty} from '../ui/layout';
+import {Button,Feedback,TextField} from '../ui/primitives';
+import {plusDate,today} from '../domain/format';
+interface Slots {method:string;suggestions:{service_name:string;time:string;staff_name:string}[]}
+const decode=(value:unknown):Slots=>{const x=value as Slots;if(!x||typeof x.method!=='string'||!Array.isArray(x.suggestions)||!x.suggestions.every(s=>typeof s.service_name==='string'&&typeof s.time==='string'))throw Error('No se recibieron oportunidades válidas.');return x};
+export function SmartSlots({port,scope,control}:{port:AppPort;scope:Scope;control:(value:ScreenController|null)=>void}){const [date,setDate]=useState(plusDate(today(),1)),[selected,setSelected]=useState(date);const state=useResource(port,scope,'/smartslots?date='+encodeURIComponent(selected),decode,control);return <><PageHeader title="Horarios disponibles" subtitle="Alternativas reales para aprovechar la disponibilidad."/><form className="actions" style={{marginBottom:20}} data-react-form="smart-date" onSubmit={e=>{e.preventDefault();if(selected===date)void state.reload();else setSelected(date)}}><TextField id="f-date" name="date" type="date" label="Fecha" value={date} required onChange={e=>setDate(e.target.value)}/><Button type="submit" disabled={state.loading}>Buscar horarios</Button></form>{state.error&&<Feedback error retry={()=>void state.reload()}>{state.error}</Feedback>}{state.data?<><p className="muted small">{state.data.method+'. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.'}</p><div className="grid3" data-react-smartslots>{state.data.suggestions.length?state.data.suggestions.map((s,i)=><div className="card" key={s.service_name+s.time+i}><h3>{s.service_name}</h3><strong>{s.time}</strong><p className="muted">{s.staff_name}</p><a className="btn secondary" href={'#/reservar/'+encodeURIComponent(port.business().slug)}>Abrir reservas</a></div>):<Empty port={port}>No hay alternativas para ese día.</Empty>}</div></>:state.loading&&<Feedback>Consultando disponibilidad…</Feedback>}</>}

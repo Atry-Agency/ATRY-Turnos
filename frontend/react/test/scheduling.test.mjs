@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{weeklyWindows,decodeDraft}=require('../dist/scheduling-model.cjs');
+const source=fs.readFileSync(new URL('../../../web/workspace.js',import.meta.url),'utf8'),from=source.indexOf('function weeklyWindows('),to=source.indexOf('function weekSummary(',from),reference=vm.runInNewContext(source.slice(from,to)+';weeklyWindows');
+test('weekly presentation retains established split, overlapping break, staff and ordering behavior',()=>{const hours=[{staff_id:'a',weekday:1,start_min:540,end_min:1080},{staff_id:'b',weekday:1,start_min:600,end_min:900},{staff_id:'a',weekday:2,start_min:0,end_min:1440}],breaks=[{staff_id:'a',weekday:1,start_min:660,end_min:720},{staff_id:'a',weekday:1,start_min:700,end_min:780},{staff_id:'b',weekday:1,start_min:600,end_min:630}];for(const staff of [undefined,'a','b'])assert.deepEqual(weeklyWindows(hours,breaks,staff),JSON.parse(JSON.stringify(reference(hours,breaks,staff))))});
+test('weekly form preserves midnight close, six interval limit, ordering and rejects overlap before request',()=>{const days=Array.from({length:7},()=>({enabled:false,spans:[]}));days[1]={enabled:true,spans:[{start:'23:00',end:'00:00'},{start:'09:00',end:'10:00'}]};assert.deepEqual(decodeDraft(days),[{weekday:1,start_min:540,end_min:600},{weekday:1,start_min:1380,end_min:1440}]);days[1].spans.push({start:'09:30',end:'11:00'});assert.throws(()=>decodeDraft(days),/no superponerse/);days[1].spans=Array.from({length:7},()=>({start:'09:00',end:'10:00'}));assert.throws(()=>decodeDraft(days),/1 y 6/);days[1].spans=[{start:'',end:'12:00'}];assert.throws(()=>decodeDraft(days),/Completá/)});

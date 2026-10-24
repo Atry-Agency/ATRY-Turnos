@@ -1,0 +1,530 @@
+{
+  "pairs": [
+    {
+      "view": "inicio",
+      "plan": 1,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-inicio-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-1-320.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 1,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-inicio-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-1-390.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 1,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-inicio-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-1-430.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 1,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-inicio-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-1-768.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 1,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-inicio-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-1-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTu negocio\n\nTu día, organizado.\n\nCrear turno\nHoy · sáb, 24 oct.\n2 turnos\nVer agenda de hoy \nPendientes de hoy\n0\n\nTodo al día con las confirmaciones.\n\nPróximo turno\n14:00\n\nCliente Ejemplo 1 · sáb, 24 oct.\n\nPróximos turnos\nCliente Ejemplo 1 · Corte de pelo\nsáb, 24 oct. · 14:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 10:00\nCliente Ejemplo 3 · Peinado\nlun, 26 oct. · 14:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 10:00\nCliente Ejemplo 4 · Corte de pelo\nmar, 27 oct. · 14:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 10:00\nCliente Ejemplo 5 · Corte y barba\nmié, 28 oct. · 14:00\nCliente Ejemplo 6 · Peinado\njue, 29 oct. · 10:00\nAbrir agenda",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-inicio-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-inicio-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-inicio-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-inicio-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-inicio-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n3\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 2 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Propietario Demo 2 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 2 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Profesional 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-inicio-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-inicio-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-inicio-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-inicio-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "inicio",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-inicio-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-inicio-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nBuen día, Propietario\n\nAsí está funcionando tu negocio.\n\nCrear turno\nTurnos de hoy\n2\nAgenda diaria\nClientes registrados\n8\nEn tu negocio\nProfesionales\n5\nActivos\nIngresos registrados · 30 días\n$0\nSolo turnos completados · No contabilidad\nPróximos turnos\nVer agenda \n14:00\nCliente Ejemplo 1\nCorte de pelo · Propietario Demo 3 · sáb, 24 oct.\nConfirmado\n10:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n14:00\nCliente Ejemplo 3\nPeinado · Profesional 3 · lun, 26 oct.\nConfirmado\n10:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n14:00\nCliente Ejemplo 4\nCorte de pelo · Profesional 4 · mar, 27 oct.\nConfirmado\n10:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n14:00\nCliente Ejemplo 5\nCorte y barba · Profesional 5 · mié, 28 oct.\nConfirmado\n10:00\nCliente Ejemplo 6\nPeinado · Propietario Demo 3 · jue, 29 oct.\nConfirmado\nTu semana, en números\n\ndom, 18 oct. — sáb, 24 oct.\n\n7 días\n10\nturnos no cancelados\n1,4\npromedio por día\n2\nmáximo diario · 5 días\n4\n3\n2\n1\n0\n0\ndom\n18\n2\nlun\n19\n0\nmar\n20\n2\nmié\n21\n2\njue\n22\n2\nvie\n23\n2\nsáb\n24\nHoy\nPor fecha del turno · excluye cancelados\nHoy está en curso\n\nTocá un día para ver sus turnos\n\nActividad reciente\nReservas de 30 días\n24\nCancelaciones\n2\nAusencias\n0\n Resumen del negocio\nReglas basadas en datos\nDatos ficticios. Los cambios se descartan al recargar esta demostración.\nEstas sugerencias usan información de la agenda. No son predicciones de inteligencia artificial.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "turnos-fijos",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-turnos-fijos-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-turnos-fijos-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      }
+    },
+    {
+      "view": "turnos-fijos",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-turnos-fijos-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-turnos-fijos-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      }
+    },
+    {
+      "view": "turnos-fijos",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-turnos-fijos-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-turnos-fijos-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      }
+    },
+    {
+      "view": "turnos-fijos",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-turnos-fijos-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-turnos-fijos-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      }
+    },
+    {
+      "view": "turnos-fijos",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-turnos-fijos-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-turnos-fijos-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nTurnos fijos\n\nReservá un horario habitual para tus clientes de siempre.\n\nNuevo turno fijo\n La repetición ocupa la agenda y la disponibilidad pública, también si elegís sin fecha de fin. Podés cancelar o mover una fecha desde Agenda sin cambiar las siguientes.\nVigente\nCliente fijo de ejemplo\nTodas las semanas · domingo · 17:00\nCorte de pelo · Propietario Demo 2\nDesde dom, 25 oct. · Sin fecha de fin\nCambiar repetición\nTerminar repetición",
+        "overflow": false
+      }
+    },
+    {
+      "view": "lista-espera",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-lista-espera-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-lista-espera-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      }
+    },
+    {
+      "view": "lista-espera",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-lista-espera-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-lista-espera-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      }
+    },
+    {
+      "view": "lista-espera",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-lista-espera-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-lista-espera-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCliente en espera\nCorte de pelo\nlun, 26 oct.\nCualquiera\nEn espera\nCancelar",
+        "overflow": false
+      }
+    },
+    {
+      "view": "lista-espera",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-lista-espera-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCLIENTE\tSERVICIO\tFECHA DESEADA\tPROFESIONAL\tESTADO\tACCIONES\nCliente en espera\n\tCorte de pelo\tlun, 26 oct.\tCualquiera\t\nEn espera\t\nCancelar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-lista-espera-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCLIENTE\tSERVICIO\tFECHA DESEADA\tPROFESIONAL\tESTADO\tACCIONES\nCliente en espera\n\tCorte de pelo\tlun, 26 oct.\tCualquiera\t\nEn espera\t\nCancelar",
+        "overflow": false
+      }
+    },
+    {
+      "view": "lista-espera",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-lista-espera-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCLIENTE\tSERVICIO\tFECHA DESEADA\tPROFESIONAL\tESTADO\tACCIONES\nCliente en espera\n\tCorte de pelo\tlun, 26 oct.\tCualquiera\t\nEn espera\t\nCancelar",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-lista-espera-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nLista de espera\n\nPersonas interesadas en horarios todavía no disponibles.\n\n Al cancelarse un turno, Atry identifica una solicitud compatible y prepara una oferta en la cola de avisos. No retiene el horario ni garantiza la reserva. Los avisos por correo dependen de la configuración del negocio y del proveedor.\nCLIENTE\tSERVICIO\tFECHA DESEADA\tPROFESIONAL\tESTADO\tACCIONES\nCliente en espera\n\tCorte de pelo\tlun, 26 oct.\tCualquiera\t\nEn espera\t\nCancelar",
+        "overflow": false
+      }
+    },
+    {
+      "view": "estadisticas",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-estadisticas-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-estadisticas-2-320.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      }
+    },
+    {
+      "view": "estadisticas",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-estadisticas-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-estadisticas-2-390.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      }
+    },
+    {
+      "view": "estadisticas",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-estadisticas-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-estadisticas-2-430.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      }
+    },
+    {
+      "view": "estadisticas",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-estadisticas-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-estadisticas-2-768.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      }
+    },
+    {
+      "view": "estadisticas",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-estadisticas-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-estadisticas-2-1440.png",
+        "text": "ATRY TURNOS / PANEL\nEstadísticas\n\nResumen básico de los últimos 30 días.\n\nReservas\n24\nCompletadas\n8\nCanceladas\n2",
+        "overflow": false
+      }
+    },
+    {
+      "view": "smartslots",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-smartslots-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-smartslots-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "smartslots",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-smartslots-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-smartslots-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "smartslots",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-smartslots-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-smartslots-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "smartslots",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-smartslots-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-smartslots-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "smartslots",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-smartslots-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-smartslots-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nHorarios disponibles\n\nAlternativas reales para aprovechar la disponibilidad.\n\nFecha\nBuscar horarios\n\nDemostración en memoria, sin disponibilidad real. No retienen horarios ni mueven reservas. La disponibilidad se vuelve a validar al confirmar.\n\nNo hay alternativas para ese día.",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}

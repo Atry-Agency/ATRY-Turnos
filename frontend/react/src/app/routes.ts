@@ -1,0 +1,3 @@
+export const nativeTitles={'configuracion-inicial':'Primeros pasos',notificaciones:'Notificaciones',disponibilidad:'Horarios','mi-horario':'Mi horario',soporte:'Ayuda y soporte',accesos:'Usuarios y accesos',equipo:'Equipo',suscripcion:'Mi plan y acceso',servicios:'Servicios',clientes:'Clientes',inicio:'Inicio','turnos-fijos':'Turnos fijos','lista-espera':'Lista de espera',estadisticas:'Estadísticas',smartslots:'Horarios disponibles',comunicacion:'Panel',insights:'Estadísticas'} as const;
+export type NativeView=keyof typeof nativeTitles;
+export const isNativeView=(value:string):value is NativeView=>Object.hasOwn(nativeTitles,value);

@@ -7,13 +7,14 @@ export interface LegacyPort {
  scope():Scope|null;
  request(route:string,opts?:{method?:string;body?:string;fresh?:boolean}):Promise<unknown>;
  publish(scope:Scope,catalog:Catalog):void;
- createHost():HTMLElement;
+ createHost(view?:string,title?:string):HTMLElement;
  icon(name:string):string;
  serviceIcon(sector:string,name:string):string;
  notify(message:string,error?:boolean):void;
 }
 export interface Extension {
- show():Promise<void>;
+ show(view?:string):Promise<void>;
+ activeRoute?():string|null;
  beforePage():void;
  beforeLeave():Promise<boolean>;
  signedOut():void;

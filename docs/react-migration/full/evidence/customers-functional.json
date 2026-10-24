@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Crear cliente React y refrescar catálogo",
+    "Editar contacto y notas",
+    "Activar WhatsApp desde diálogo nativo",
+    "Consentimiento y secuencia prepared/opened/manual_sent sin envío real",
+    "Crear reserva manual seleccionando cliente y navegar a agenda",
+    "Historial refleja reserva creada",
+    "Búsqueda y estado vacío"
+  ],
+  "errors": []
+}

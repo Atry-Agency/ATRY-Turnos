@@ -1,0 +1,230 @@
+{
+  "pairs": [
+    {
+      "view": "configuracion-inicial",
+      "plan": 2,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-configuracion-inicial-2-320.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-configuracion-inicial-2-320.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      }
+    },
+    {
+      "view": "configuracion-inicial",
+      "plan": 2,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-configuracion-inicial-2-390.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-configuracion-inicial-2-390.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      }
+    },
+    {
+      "view": "configuracion-inicial",
+      "plan": 2,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-configuracion-inicial-2-430.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-configuracion-inicial-2-430.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      }
+    },
+    {
+      "view": "configuracion-inicial",
+      "plan": 2,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-configuracion-inicial-2-768.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-configuracion-inicial-2-768.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      }
+    },
+    {
+      "view": "configuracion-inicial",
+      "plan": 2,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-configuracion-inicial-2-1440.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-configuracion-inicial-2-1440.png",
+        "text": "BIENVENIDO A TU ESPACIO, PROPIETARIO\nTu negocio merece\nun gran comienzo.\n\nDejá NegocioPlan2 listo para recibir a tus clientes.\nPodés avanzar a tu ritmo y volver cuando quieras.\n\n01 · Tu identidad\n02 · Tus servicios\n03 · Tus horarios\n04 · Comunicación\nPASO 1\nTu negocio\n\nQue tus clientes te reconozcan. Revisá tus datos, contacto y apariencia.\n\nNegocioPlan2\nRevisar\nPASO 2\nTus servicios\n\nDefiní qué ofrecés, cuánto dura y cuál es su precio.\n\n6 servicios activos\nRevisar\nPASO 3\nTus horarios\n\nElegí días y tramos. Mañana, tarde o varias pausas: tu semana a tu manera.\n\n3 profesionales activos\nRevisar\nPASO 4\nComunicación con tus clientes\n\nConfigurá el WhatsApp comercial, tus textos y recordatorios. Podés hacerlo después.\n\nOpcional · WhatsApp manual\nRevisar\nCUANDO TODO ESTÉ COMO VOS QUERÉS\nYa casi podés compartir tu espacio.\n\nRevisá tu página antes de enviarla. La disponibilidad pública también depende de que tu suscripción esté habilitada.\n\nVista previa de mis reservas\nRevisé mis datos, servicios y horarios.\nFinalizar configuración",
+        "overflow": false
+      }
+    },
+    {
+      "view": "comunicacion",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-comunicacion-3-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-comunicacion-3-320.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "comunicacion",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-comunicacion-3-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-comunicacion-3-390.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "comunicacion",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-comunicacion-3-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-comunicacion-3-430.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes\n0\nPospuestos\n0\nGestionados\n0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "comunicacion",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-comunicacion-3-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes 0\nPospuestos 0\nGestionados 0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-comunicacion-3-768.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes 0\nPospuestos 0\nGestionados 0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "comunicacion",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-comunicacion-3-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes 0\nPospuestos 0\nGestionados 0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-comunicacion-3-1440.png",
+        "text": "Comunicación\nNegocio\nNotificaciones\nUsuarios y accesos\nMi plan y acceso\nATRY TURNOS / PANEL\nComunicación con tus clientes\n\nMensajes preparados en ATRY. El envío lo hacés vos desde WhatsApp.\n\nConfigurar WhatsApp\nVolver a la agenda\nWhatsApp está desactivado. Podés configurarlo ahora o seguir trabajando sin este canal.\n\nAcciones registradas en los últimos 30 días. No son métricas de entrega ni lectura.\n\nRecordatorios por WhatsApp\nPendientes 0\nPospuestos 0\nGestionados 0\n\nTurnos de las próximas 24 horas. WhatsApp prepara mensajes para envío manual. Los correos de Brevo son independientes y conservan la configuración y cuota de tu plan.\n\nBuscar cliente o servicio\nFiltrar por profesional\nTodos los profesionales\n\n0 recordatorios pendientes dentro del alcance de tu usuario.\n\nNo hay recordatorios pendientes. Los turnos cancelados o finalizados no se incluyen.",
+        "overflow": false
+      }
+    },
+    {
+      "view": "insights",
+      "plan": 3,
+      "width": 320,
+      "javascript": {
+        "file": "javascript-insights-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-insights-3-320.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "insights",
+      "plan": 3,
+      "width": 390,
+      "javascript": {
+        "file": "javascript-insights-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-insights-3-390.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "insights",
+      "plan": 3,
+      "width": 430,
+      "javascript": {
+        "file": "javascript-insights-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-insights-3-430.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "insights",
+      "plan": 3,
+      "width": 768,
+      "javascript": {
+        "file": "javascript-insights-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-insights-3-768.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      }
+    },
+    {
+      "view": "insights",
+      "plan": 3,
+      "width": 1440,
+      "javascript": {
+        "file": "javascript-insights-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      },
+      "react": {
+        "file": "react-insights-3-1440.png",
+        "text": "ATRY TURNOS / PANEL\nResumen del negocio\n\nIndicadores calculados con reservas registradas de los últimos 30 días.\n\nReservas\n24\nCancelaciones\n2\nAusencias\n0\nClientes recurrentes\n8\nValor de servicios completados\n$0\n\nNo acredita dinero cobrado.\n\nValor previsto de próximos servicios\n$0\n\nTurnos futuros pendientes y confirmados.\n\nPagos verificados\nSin integración\n\nDemostración: no hay cobros ni envíos.\n\nOcupación según reglas vigentes\nPropietario Demo 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 2\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 3\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 4\n60 minutos reservados / 480 de jornada\n12.5%\nProfesional 5\n60 minutos reservados / 480 de jornada\n12.5%\n\nDatos de ejemplo en memoria\n\nServicios más solicitados\nCorte de pelo\n4\nCorte y barba\n4\nPeinado\n4\nDiseño de cejas\n4\nDepilación\n4\nCorte y terminación\n4\nHorarios de mayor demanda\n10:00\n6 turnos\nActividad diaria\nSin actividad histórica registrada.\nEvolución semanal · últimos 90 días\nSin actividad semanal.\nEvolución mensual · últimos 90 días\nSin actividad mensual.\nIncidencias de funcionamiento\nDescripción breve, sin datos de clientes\nRegistrar incidencia",
+        "overflow": false
+      }
+    }
+  ],
+  "errors": []
+}
