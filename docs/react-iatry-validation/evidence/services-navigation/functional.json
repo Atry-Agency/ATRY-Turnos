@@ -1,0 +1,33 @@
+{
+  "environment": "Local fictional demo, no media recording, no production requests",
+  "results": [
+    {
+      "engine": "chromium",
+      "passed": true,
+      "checks": [
+        "Guía IAtry navega a Servicios y apunta al botón real",
+        "Crear servicio conserva modal, guardado y celebración confirmada",
+        "Edición persiste y actualiza el catálogo",
+        "Ocultar y publicar conservan confirmación y estado",
+        "Navegación protege el borrador y permite descartarlo explícitamente",
+        "Tres ciclos Inicio/Servicios conservan una sola lista y navegación funcional",
+        "Manager mantiene acceso; staff es dirigido a Agenda"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "passed": true,
+      "checks": [
+        "Guía IAtry navega a Servicios y apunta al botón real",
+        "Crear servicio conserva modal, guardado y celebración confirmada",
+        "Edición persiste y actualiza el catálogo",
+        "Ocultar y publicar conservan confirmación y estado",
+        "Navegación protege el borrador y permite descartarlo explícitamente",
+        "Tres ciclos Inicio/Servicios conservan una sola lista y navegación funcional",
+        "Manager mantiene acceso; staff es dirigido a Agenda"
+      ],
+      "errors": []
+    }
+  ]
+}

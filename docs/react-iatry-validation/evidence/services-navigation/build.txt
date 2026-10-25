@@ -1,0 +1,95 @@
+
+> build
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+<script src="./runtime-config.js"> in "/index.html" can't be bundled without type="module" attribute
+✓ 232 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/descubrir.html                                      1.87 kB │ gzip:  0.84 kB
+dist/index.html                                          2.63 kB │ gzip:  0.96 kB
+dist/assets/proof-worker-BFG4WCn0.js                     5.96 kB
+dist/assets/atry-eurostile-medium-DSYmw3dx.otf          26.62 kB
+dist/assets/atry-eurostile-demi-aOmzqSIA.otf            27.22 kB
+dist/assets/atry-eurostile-extended-bold-B3icwCJ6.otf   28.15 kB
+dist/assets/atry-eurostile-demi-italic-BtskUuWJ.otf     28.34 kB
+dist/assets/atry-eurostile-extended-DNNip55I.ttf        43.18 kB
+dist/assets/landing-DPRcsIY5.css                        44.63 kB │ gzip:  9.85 kB
+dist/assets/app-j_piIctx.css                           249.98 kB │ gzip: 48.97 kB
+dist/model-DNvcj5RJ.js                                   0.19 kB │ gzip:  0.16 kB
+dist/Status-CDL_1QSG.js                                  0.26 kB │ gzip:  0.21 kB
+dist/download-B3BhhSpR.js                                0.27 kB │ gzip:  0.23 kB
+dist/contracts-DShQBDea.js                               0.50 kB │ gzip:  0.28 kB
+dist/useVisualViewport-vauLWtum.js                       0.53 kB │ gzip:  0.32 kB
+dist/catalog-BFE6IN-e.js                                 0.55 kB │ gzip:  0.37 kB
+dist/Timeline-DSUve5c4.js                                0.56 kB │ gzip:  0.34 kB
+dist/StaffAvatar-BNLcvf0X.js                             0.59 kB │ gzip:  0.41 kB
+dist/contracts-Ck0vpMER.js                               0.60 kB │ gzip:  0.30 kB
+dist/contracts-ClW_BlDe.js                               0.60 kB │ gzip:  0.29 kB
+dist/useConfirmation-Cq1k6qMk.js                         0.61 kB │ gzip:  0.38 kB
+dist/useMutation-Cj1tqbCb.js                             0.69 kB │ gzip:  0.42 kB
+dist/session-api-CEJq9T7A.js                             0.72 kB │ gzip:  0.49 kB
+dist/useDialogGuard-cqLFKf4T.js                          0.75 kB │ gzip:  0.45 kB
+dist/contracts-DMwozDUI.js                               0.87 kB │ gzip:  0.44 kB
+dist/BasicStatistics-8DqfdPNS.js                         0.93 kB │ gzip:  0.56 kB
+dist/api-Ohh2Zr2e.js                                     1.19 kB │ gzip:  0.71 kB
+dist/OwnHours-7pDwhidi.js                                1.30 kB │ gzip:  0.74 kB
+dist/model-D2MoHH7z.js                                   1.53 kB │ gzip:  0.80 kB
+dist/EndRecurring-CbGg4tUz.js                            1.82 kB │ gzip:  1.01 kB
+dist/SmartSlots-BpoSeuUT.js                              1.94 kB │ gzip:  0.98 kB
+dist/PublicManage-DRTPvhyC.js                            1.96 kB │ gzip:  0.97 kB
+dist/NewBusiness-DRDPWJSn.js                             2.05 kB │ gzip:  1.08 kB
+dist/OfferScreen-CBxjnozm.js                             2.45 kB │ gzip:  1.22 kB
+dist/SupportScreen-DcOcDJ9y.js                           2.57 kB │ gzip:  1.28 kB
+dist/photos-B4fP-ncU.js                                  2.59 kB │ gzip:  1.33 kB
+dist/CustomerProfile-B-rSMiJv.js                         2.63 kB │ gzip:  1.36 kB
+dist/PublicBooking-BFuP-Usn.js                           2.69 kB │ gzip:  1.24 kB
+dist/PlanDialog-LWYXxYKa.js                              2.80 kB │ gzip:  1.46 kB
+dist/RequestEditor-DgyaQjA3.js                           2.83 kB │ gzip:  1.45 kB
+dist/MemberEditor-XFwavhRY.js                            2.83 kB │ gzip:  1.46 kB
+dist/RecurringScreen-zKO3NdLz.js                         2.90 kB │ gzip:  1.36 kB
+dist/WaitlistScreen-B8DZvHUW.js                          2.90 kB │ gzip:  1.26 kB
+dist/AccessScreen-4KdAjVxg.js                            2.91 kB │ gzip:  1.21 kB
+dist/InvitationScreen-C1M1o24P.js                        3.38 kB │ gzip:  1.54 kB
+dist/CustomerEditor-DZNiqHYw.js                          3.48 kB │ gzip:  1.40 kB
+dist/Reschedule-D9g20lNX.js                              3.78 kB │ gzip:  1.63 kB
+dist/ManageBooking-CKtml2Ac.js                           3.96 kB │ gzip:  1.79 kB
+dist/Settings-CWqv4xbt.js                                4.04 kB │ gzip:  1.79 kB
+dist/OnboardingScreen-D0aEumKQ.js                        4.34 kB │ gzip:  1.97 kB
+dist/RuleEditor-CZt_Cb_j.js                              4.51 kB │ gzip:  1.94 kB
+dist/ManageVisit-B0_mbWZ7.js                             4.66 kB │ gzip:  2.08 kB
+dist/TeamScreen-BnmQ0jP_.js                              4.81 kB │ gzip:  1.78 kB
+dist/TimeFinder-92TYWqwY.js                              5.15 kB │ gzip:  2.18 kB
+dist/PrivateVisit-p1Ar1A6U.js                            5.18 kB │ gzip:  2.11 kB
+dist/WeeklyEditor-CAyJhmX5.js                            5.43 kB │ gzip:  2.25 kB
+dist/Shared-vkGKTJIP.js                                  5.56 kB │ gzip:  1.98 kB
+dist/RecurringEditor-DJ3RHNlu.js                         6.06 kB │ gzip:  2.38 kB
+dist/WhatsAppScreen-D-Q-0_ck.js                          6.15 kB │ gzip:  2.40 kB
+dist/InsightsScreen-DKgEDPe1.js                          6.35 kB │ gzip:  2.11 kB
+dist/NotificationsScreen-CrQLBMVA.js                     6.59 kB │ gzip:  2.91 kB
+dist/AccountScreen-pikV2IrN.js                           6.95 kB │ gzip:  2.58 kB
+dist/BookingDetail-OSafSn3H.js                           7.34 kB │ gzip:  2.59 kB
+dist/StaffEditor-DmV0wcSf.js                             7.75 kB │ gzip:  3.16 kB
+dist/SubscriptionDialog-_3MmbQDg.js                      7.94 kB │ gzip:  3.23 kB
+dist/VisitBooking-47Fnfpu2.js                            8.02 kB │ gzip:  3.29 kB
+dist/SettingsScreen-DeB8ZoCj.js                          8.33 kB │ gzip:  3.22 kB
+dist/WhatsAppSettings-UOJoLd7W.js                        8.35 kB │ gzip:  3.27 kB
+dist/ScheduleScreen-Cez9ayOi.js                          8.54 kB │ gzip:  2.95 kB
+dist/WhatsAppComposer-CgpjGh0k.js                        8.64 kB │ gzip:  3.41 kB
+dist/CustomersScreen-DlH1H4xr.js                         8.90 kB │ gzip:  3.65 kB
+dist/SingleBooking-BloWnBwU.js                          10.09 kB │ gzip:  3.72 kB
+dist/AuthScreen-pyDqKpRt.js                             10.82 kB │ gzip:  3.69 kB
+dist/SubscriptionScreen-DmgJ2NVt.js                     11.95 kB │ gzip:  4.20 kB
+dist/ManualBooking-Bca97fSI.js                          12.49 kB │ gzip:  4.44 kB
+dist/ActionDialog-DPYS3nLL.js                           13.84 kB │ gzip:  5.21 kB
+dist/AgendaScreen-B4HrBxGJ.js                           25.06 kB │ gzip:  8.38 kB
+dist/ThemeStudio-BA3DvX2q.js                            25.87 kB │ gzip:  8.37 kB
+dist/assets/landing-Dt_y9yk3.js                         41.81 kB │ gzip: 11.66 kB
+dist/AdminApp-Ch453meD.js                               52.22 kB │ gzip: 15.38 kB
+dist/assets/app-DfdtXmvZ.js                            162.79 kB │ gzip: 51.06 kB
+dist/jsx-runtime-BdQqJDpF.js                           225.40 kB │ gzip: 70.81 kB
+dist/cloud-runtime-DV7n-wCH.js                         239.52 kB │ gzip: 63.85 kB
+
+✓ built in 260ms

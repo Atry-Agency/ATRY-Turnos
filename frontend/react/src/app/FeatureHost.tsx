@@ -39,7 +39,9 @@ const BookingDetail=lazy(()=>import('../agenda/BookingDetail').then(m=>({default
 const Reschedule=lazy(()=>import('../agenda/Reschedule').then(m=>({default:m.Reschedule})));
 const PrivateVisit=lazy(()=>import('../visits/PrivateVisit').then(m=>({default:m.PrivateVisit})));
 const CustomerProfile=lazy(()=>import('../customers/CustomerProfile').then(m=>({default:m.CustomerProfile})));
-const Services=lazy(()=>import('../services/ServicesScreen').then(m=>({default:m.ServicesScreen})));
+// Keep this primary destination synchronous: a cold lazy import triggers the
+// Suspense fallback throttle (~300 ms), even when the catalog is already cached.
+import {ServicesScreen as Services} from '../services/ServicesScreen';
 const Customers=lazy(()=>import('../customers/CustomersScreen').then(m=>({default:m.CustomersScreen})));
 const ManualBooking=lazy(()=>import('../bookings/ManualBooking').then(m=>({default:m.ManualBooking})));
 const RecurringEditor=lazy(()=>import('../recurring/RecurringEditor').then(m=>({default:m.RecurringEditor})));

@@ -1,0 +1,496 @@
+{
+  "phase": "after",
+  "protocol": "7 fresh contexts per runtime, alternating order, Chrome headless 1440x960, fictional demo, SW blocked; identical original navigation marker; first run instrumented CPU/timeline, no screenshots/video",
+  "summary": {
+    "original": {
+      "navigationMs": 6.600000008940697,
+      "cpuTaskMs": 18.237,
+      "cpuScriptMs": 0.19699999999999998,
+      "layoutMs": 1.198
+    },
+    "react": {
+      "navigationMs": 4.600000008940697,
+      "cpuTaskMs": 8.126,
+      "cpuScriptMs": 3.9259999999999997,
+      "layoutMs": 0.878
+    }
+  },
+  "rows": [
+    {
+      "variant": "original",
+      "iteration": 0,
+      "navigationMs": 6.600000008940697,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 240.70000000298023,
+          "durationMs": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 240.79999999701977,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 241,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 9.902000000000001,
+      "cpuScriptMs": 0.205,
+      "layoutMs": 1.145
+    },
+    {
+      "variant": "react",
+      "iteration": 0,
+      "navigationMs": 6.9000000059604645,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.9000000059604645
+        },
+        {
+          "state": "catalog",
+          "ms": 5.100000008940697
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 150.29999999701977,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 150.5,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 13.318000000000003,
+      "cpuScriptMs": 5.252,
+      "layoutMs": 2.775
+    },
+    {
+      "variant": "react",
+      "iteration": 1,
+      "navigationMs": 15.5,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.5999999940395355
+        },
+        {
+          "state": "catalog",
+          "ms": 3.8999999910593033
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 109.70000000298023,
+          "durationMs": 0.10000000894069672
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 109.80000001192093,
+          "durationMs": 0
+        }
+      ],
+      "resources": [
+        {
+          "name": "/assets/brand/favicon.png",
+          "startMs": 6.200000002980232,
+          "durationMs": 1.199999988079071,
+          "responseEndMs": 7.399999991059303
+        }
+      ],
+      "services": 6,
+      "cpuTaskMs": 21.734999999999996,
+      "cpuScriptMs": 5.762,
+      "layoutMs": 2.827
+    },
+    {
+      "variant": "original",
+      "iteration": 1,
+      "navigationMs": 16.400000005960464,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 110.19999998807907,
+          "durationMs": 0.10000000894069672
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 110.29999999701977,
+          "durationMs": 0.29999999701976776
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 110.59999999403954,
+          "durationMs": 0
+        }
+      ],
+      "resources": [
+        {
+          "name": "/assets/brand/favicon.png",
+          "startMs": 6.5999999940395355,
+          "durationMs": 1,
+          "responseEndMs": 7.5999999940395355
+        }
+      ],
+      "services": 6,
+      "cpuTaskMs": 18.201,
+      "cpuScriptMs": 0.204,
+      "layoutMs": 1.143
+    },
+    {
+      "variant": "original",
+      "iteration": 2,
+      "navigationMs": 6.5999999940395355,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 115,
+          "durationMs": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 115.20000000298023,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 115.40000000596046,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 19.488000000000003,
+      "cpuScriptMs": 0.187,
+      "layoutMs": 1.315
+    },
+    {
+      "variant": "react",
+      "iteration": 2,
+      "navigationMs": 4.100000008940697,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.6000000089406967
+        },
+        {
+          "state": "catalog",
+          "ms": 4
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 106.40000000596046,
+          "durationMs": 0.19999998807907104
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 106.59999999403954,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 7.460999999999999,
+      "cpuScriptMs": 3.2070000000000003,
+      "layoutMs": 0.734
+    },
+    {
+      "variant": "react",
+      "iteration": 3,
+      "navigationMs": 15.5,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.7999999970197678
+        },
+        {
+          "state": "catalog",
+          "ms": 4.299999997019768
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 113.1000000089407,
+          "durationMs": 0.19999998807907104
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 113.20000000298023,
+          "durationMs": 0.09999999403953552
+        }
+      ],
+      "resources": [
+        {
+          "name": "/assets/brand/favicon.png",
+          "startMs": 6.5,
+          "durationMs": 1,
+          "responseEndMs": 7.5
+        }
+      ],
+      "services": 6,
+      "cpuTaskMs": 21.111,
+      "cpuScriptMs": 5.831,
+      "layoutMs": 2.677
+    },
+    {
+      "variant": "original",
+      "iteration": 3,
+      "navigationMs": 7.0999999940395355,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 109.29999999701977,
+          "durationMs": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 109.59999999403954,
+          "durationMs": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 109.69999998807907,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 10.576,
+      "cpuScriptMs": 0.256,
+      "layoutMs": 1.436
+    },
+    {
+      "variant": "original",
+      "iteration": 4,
+      "navigationMs": 6.299999997019768,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 99,
+          "durationMs": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 99.09999999403954,
+          "durationMs": 0.29999999701976776
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 99.29999999701977,
+          "durationMs": 0.09999999403953552
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 18.675,
+      "cpuScriptMs": 0.17300000000000001,
+      "layoutMs": 1.167
+    },
+    {
+      "variant": "react",
+      "iteration": 4,
+      "navigationMs": 3.8999999910593033,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.5999999940395355
+        },
+        {
+          "state": "catalog",
+          "ms": 3.8999999910593033
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 112.20000000298023,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 112.40000000596046,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 7.4799999999999995,
+      "cpuScriptMs": 3.0140000000000002,
+      "layoutMs": 0.736
+    },
+    {
+      "variant": "react",
+      "iteration": 5,
+      "navigationMs": 3.5,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.300000011920929
+        },
+        {
+          "state": "catalog",
+          "ms": 3.5
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 104.90000000596046,
+          "durationMs": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 105,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 6.699,
+      "cpuScriptMs": 2.778,
+      "layoutMs": 0.736
+    },
+    {
+      "variant": "original",
+      "iteration": 5,
+      "navigationMs": 6.700000002980232,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 114.09999999403954,
+          "durationMs": 0.09999999403953552
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 114.29999999701977,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 114.5,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 18.237,
+      "cpuScriptMs": 0.19699999999999998,
+      "layoutMs": 1.198
+    },
+    {
+      "variant": "original",
+      "iteration": 6,
+      "navigationMs": 6.5999999940395355,
+      "events": [],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET",
+          "startMs": 100.79999999701977,
+          "durationMs": 0
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 100.8999999910593,
+          "durationMs": 0.30000001192092896
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 101.09999999403954,
+          "durationMs": 0.10000000894069672
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 18.483,
+      "cpuScriptMs": 0.163,
+      "layoutMs": 1.325
+    },
+    {
+      "variant": "react",
+      "iteration": 6,
+      "navigationMs": 4.600000008940697,
+      "events": [
+        {
+          "state": "services-loading",
+          "ms": 2.4000000059604645
+        },
+        {
+          "state": "catalog",
+          "ms": 4.600000008940697
+        }
+      ],
+      "requests": [
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET",
+          "startMs": 109.59999999403954,
+          "durationMs": 0.20000000298023224
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET",
+          "startMs": 109.79999999701977,
+          "durationMs": 0
+        }
+      ],
+      "resources": [],
+      "services": 6,
+      "cpuTaskMs": 8.126,
+      "cpuScriptMs": 3.9259999999999997,
+      "layoutMs": 0.878
+    }
+  ]
+}
