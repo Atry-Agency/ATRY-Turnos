@@ -1,0 +1,1 @@
+import type {MemoryStore,Memory} from '../types';declare const memory:{createMemory(storage:Pick<Storage,'getItem'|'setItem'>|undefined,key:string):MemoryStore;normalize(value?:unknown):Memory};export default memory;

@@ -1,0 +1,206 @@
+
+> test
+> node ../../scripts/react/unit.cjs
+
+TAP version 13
+# Subtest: Personal account transport rejects expired session responses and disallows business or external paths
+ok 1 - Personal account transport rejects expired session responses and disallows business or external paths
+  ---
+  duration_ms: 5.06375
+  type: 'test'
+  ...
+# Subtest: Personal writes serialize, preserve password payload and reject an unmounted response
+ok 2 - Personal writes serialize, preserve password payload and reject an unmounted response
+  ---
+  duration_ms: 2.335
+  type: 'test'
+  ...
+# Subtest: local employee catalog accepts the actual public projection without changing scheduling rules
+ok 3 - local employee catalog accepts the actual public projection without changing scheduling rules
+  ---
+  duration_ms: 1.695959
+  type: 'test'
+  ...
+# Subtest: cloud employee catalog keeps protected reads and preserves private buffer metadata
+ok 4 - cloud employee catalog keeps protected reads and preserves private buffer metadata
+  ---
+  duration_ms: 0.592125
+  type: 'test'
+  ...
+# Subtest: ServiceCard escapes untrusted business text and preserves service actions
+ok 5 - ServiceCard escapes untrusted business text and preserves service actions
+  ---
+  duration_ms: 264.666417
+  type: 'test'
+  ...
+# Subtest: Hidden service preserves publish action and fallback description
+ok 6 - Hidden service preserves publish action and fallback description
+  ---
+  duration_ms: 0.738416
+  type: 'test'
+  ...
+# Subtest: Customer decoder preserves accents/contact and normalizes only omitted demo counts
+ok 7 - Customer decoder preserves accents/contact and normalizes only omitted demo counts
+  ---
+  duration_ms: 2.976875
+  type: 'test'
+  ...
+# Subtest: Scoped data transport rejects late reads, stale writes and unauthorized public-route injection
+ok 8 - Scoped data transport rejects late reads, stale writes and unauthorized public-route injection
+  ---
+  duration_ms: 1.170875
+  type: 'test'
+  ...
+# Subtest: Scoped write lock prevents duplicate creates, guards disposal and keeps payload intact
+ok 9 - Scoped write lock prevents duplicate creates, guards disposal and keeps payload intact
+  ---
+  duration_ms: 0.22825
+  type: 'test'
+  ...
+# Subtest: Expired subscription retains authorized reads and support but blocks operational writes
+ok 10 - Expired subscription retains authorized reads and support but blocks operational writes
+  ---
+  duration_ms: 0.304208
+  type: 'test'
+  ...
+# Subtest: Plan requests remain possible for expired business without granting operational writes
+ok 11 - Plan requests remain possible for expired business without granting operational writes
+  ---
+  duration_ms: 0.458625
+  type: 'test'
+  ...
+# Subtest: Read-only access permits only explicit closure operations, never status or contact changes
+ok 12 - Read-only access permits only explicit closure operations, never status or contact changes
+  ---
+  duration_ms: 0.355875
+  type: 'test'
+  ...
+# Subtest: Recent authentication retries the identical request once, after verification
+ok 13 - Recent authentication retries the identical request once, after verification
+  ---
+  duration_ms: 3.379083
+  type: 'test'
+  ...
+# Subtest: Cancelled verification preserves original failure and never resends mutation
+ok 14 - Cancelled verification preserves original failure and never resends mutation
+  ---
+  duration_ms: 0.603792
+  type: 'test'
+  ...
+# Subtest: Challenge rejects overlap and ignores stale completion after cancellation
+ok 15 - Challenge rejects overlap and ignores stale completion after cancellation
+  ---
+  duration_ms: 0.349833
+  type: 'test'
+  ...
+# Subtest: Administrative response is discarded when the session changes during a request
+ok 16 - Administrative response is discarded when the session changes during a request
+  ---
+  duration_ms: 0.418125
+  type: 'test'
+  ...
+# Subtest: Administrative facade rejects non-admin identities and out-of-scope routes before transport
+ok 17 - Administrative facade rejects non-admin identities and out-of-scope routes before transport
+  ---
+  duration_ms: 0.538
+  type: 'test'
+  ...
+# Subtest: Photo reads share a scoped request and reject metadata for another business
+ok 18 - Photo reads share a scoped request and reject metadata for another business
+  ---
+  duration_ms: 1.423167
+  type: 'test'
+  ...
+# Subtest: Photo revisions and explicit deletion remain intact; late response cannot cross scopes
+ok 19 - Photo revisions and explicit deletion remain intact; late response cannot cross scopes
+  ---
+  duration_ms: 24.893542
+  type: 'test'
+  ...
+# Subtest: catalog shares pending reads, validates and publishes once
+ok 20 - catalog shares pending reads, validates and publishes once
+  ---
+  duration_ms: 3.996084
+  type: 'test'
+  ...
+# Subtest: both late catalog responses are rejected after session change
+ok 21 - both late catalog responses are rejected after session change
+  ---
+  duration_ms: 2.029209
+  type: 'test'
+  ...
+# Subtest: staff is denied before catalog transport
+ok 22 - staff is denied before catalog transport
+  ---
+  duration_ms: 1.160083
+  type: 'test'
+  ...
+# Subtest: concurrent mutations do not duplicate writes, server errors remain errors
+ok 23 - concurrent mutations do not duplicate writes, server errors remain errors
+  ---
+  duration_ms: 1.230875
+  type: 'test'
+  ...
+# Subtest: malformed catalogs fail closed; form serialization preserves price, buffers, deposits and professional IDs
+ok 24 - malformed catalogs fail closed; form serialization preserves price, buffers, deposits and professional IDs
+  ---
+  duration_ms: 2.029
+  type: 'test'
+  ...
+# Subtest: disposed catalog never publishes even if the same account returns to the same business
+ok 25 - disposed catalog never publishes even if the same account returns to the same business
+  ---
+  duration_ms: 0.322875
+  type: 'test'
+  ...
+# Subtest: new session version and different business both reject an old mutation before transport
+ok 26 - new session version and different business both reject an old mutation before transport
+  ---
+  duration_ms: 0.432875
+  type: 'test'
+  ...
+# Subtest: Services repository reuses the cloud API contract, deduplicates catalog RPC and propagates permission denial
+ok 27 - Services repository reuses the cloud API contract, deduplicates catalog RPC and propagates permission denial
+  ---
+  duration_ms: 10.36925
+  type: 'test'
+  ...
+# Subtest: effect cleanup and replay rejects previous generation without poisoning the new catalog request
+ok 28 - effect cleanup and replay rejects previous generation without poisoning the new catalog request
+  ---
+  duration_ms: 0.954375
+  type: 'test'
+  ...
+# Subtest: Expired owner can inspect the catalog while mutations remain denied before transport
+ok 29 - Expired owner can inspect the catalog while mutations remain denied before transport
+  ---
+  duration_ms: 0.492125
+  type: 'test'
+  ...
+# Subtest: weekly presentation retains established split, overlapping break, staff and ordering behavior
+ok 30 - weekly presentation retains established split, overlapping break, staff and ordering behavior
+  ---
+  duration_ms: 3.641167
+  type: 'test'
+  ...
+# Subtest: weekly form preserves midnight close, six interval limit, ordering and rejects overlap before request
+ok 31 - weekly form preserves midnight close, six interval limit, ordering and rejects overlap before request
+  ---
+  duration_ms: 2.096833
+  type: 'test'
+  ...
+# Subtest: Subscription presentation preserves status, future access and inclusive final day
+ok 32 - Subscription presentation preserves status, future access and inclusive final day
+  ---
+  duration_ms: 4.38475
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 598.34375

@@ -1,0 +1,8 @@
+{
+  "status": "blocked",
+  "reason": "No hay entorno Supabase aislado configurado; el proyecto indicado por el usuario es productivo y queda excluido.",
+  "networkRequests": 0,
+  "productionProject": "lmdranjpocslqubqhrvb",
+  "productionAccess": "read-only, as confirmed by user; no dashboard session available",
+  "checksExecutedAgainstRealSupabase": 0
+}

@@ -1,0 +1,14 @@
+{
+  "reactBase": "9f26a36c0ef4e6a04fbc2405a0dc75dabf793b2a",
+  "originMain": "9a5a0d6ad6b6a1b1373f0079021ab67bc5517dc6",
+  "iatryBranchBase": "9a5a0d6ad6b6a1b1373f0079021ab67bc5517dc6",
+  "productionCommitsNotInReact": [],
+  "iatrySourceBodies": {
+    "iatry-knowledge.js": "b15f897cb42b1a59df187debc246b74b4e8cebcf9201f777c48dbff8ad2ace5f",
+    "iatry-memory.js": "41e47a5b777a5d8df92bf57485df0c9d797674d6fd8f1015bfc39ae0262dd23a",
+    "iatry-core.js": "f21b8a1addc09e2c25fa7991faaa61a5cda7e60069da0b36263b7f49808aaf25",
+    "iatry.css": "7598635f9d278950ab1a0ebd65189b803385e78e750f0b76aa3643d1cb51a4b6"
+  },
+  "originalIatryWorkingChangesPreserved": true,
+  "integrationBranch": "codex/react-iatry-consolidation"
+}

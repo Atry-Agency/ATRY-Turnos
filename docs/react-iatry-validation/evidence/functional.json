@@ -1,0 +1,105 @@
+{
+  "environment": "Fictional browser demo, ephemeral local server, emulated mobile viewport, no Supabase or messaging",
+  "results": [
+    {
+      "engine": "chromium",
+      "passed": true,
+      "checks": [
+        "Presentación real con emblema oficial, halo y reposo",
+        "Desplazamiento en flujo, control real enfocado y sin superposición",
+        "Destino desaparecido ofrece alternativa que activa la pestaña real",
+        "Diálogo oculta IAtry; celebración solo después de servicio activo confirmado",
+        "Orientación de horarios y WhatsApp; acompañamiento termina y queda bajo demanda",
+        "Despedida, memoria tras recarga, desactivación y ayuda manual; movimiento pausado",
+        "Preferencia de movimiento reducido del navegador respetada",
+        "Cero errores de consola y ninguna consulta nueva para IAtry"
+      ],
+      "errors": [],
+      "phases": [
+        "idle",
+        "appearing",
+        "moving",
+        "attention",
+        "guiding",
+        "celebrating",
+        "leaving"
+      ],
+      "requests": [
+        {
+          "route": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "route": "/api/config",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "passed": true,
+      "checks": [
+        "Presentación real con emblema oficial, halo y reposo",
+        "Desplazamiento en flujo, control real enfocado y sin superposición",
+        "Destino desaparecido ofrece alternativa que activa la pestaña real",
+        "Diálogo oculta IAtry; celebración solo después de servicio activo confirmado",
+        "Orientación de horarios y WhatsApp; acompañamiento termina y queda bajo demanda",
+        "Despedida, memoria tras recarga, desactivación y ayuda manual; movimiento pausado",
+        "Preferencia de movimiento reducido del navegador respetada",
+        "Cero errores de consola y ninguna consulta nueva para IAtry"
+      ],
+      "errors": [],
+      "phases": [
+        "idle",
+        "appearing",
+        "moving",
+        "attention",
+        "guiding",
+        "celebrating",
+        "leaving"
+      ],
+      "requests": [
+        {
+          "route": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "route": "/api/config",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/entitlements",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/services",
+          "method": "GET"
+        },
+        {
+          "route": "/api/business/demo-business-2/staff",
+          "method": "GET"
+        }
+      ]
+    }
+  ]
+}

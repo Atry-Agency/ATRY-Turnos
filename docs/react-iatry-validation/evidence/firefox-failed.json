@@ -1,0 +1,5 @@
+{
+  "checks": [],
+  "errors": [],
+  "error": "TimeoutError: browserType.launch: Timeout 180000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /private/tmp/atry-react-browsers/firefox-1538/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/y_/ghsyhd_n0rb_3nnhvc8gptz40000gn/T/playwright_firefoxdev_profile-DlnnHc -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=50925\u001b[22m\n\u001b[2m  - [pid=50925][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=50925][err] sandbox_extension_issue_file_to_process failed for /private/tmp/atry-react-browsers/firefox-1538/firefox/Nightly.app/Contents/MacOS/plugin-container.app: 1 (Operation not permitted)\u001b[22m\n\u001b[2m  - [pid=50925][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=2.94436) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\u001b[22m\n"
+}

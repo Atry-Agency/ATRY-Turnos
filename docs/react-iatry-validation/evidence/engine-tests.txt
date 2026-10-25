@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: IAtry React: original permission and completed-setup rules remain enforced
+ok 1 - IAtry React: original permission and completed-setup rules remain enforced
+  ---
+  duration_ms: 1.263625
+  type: 'test'
+  ...
+# Subtest: IAtry React: disabled, dismissed and experienced sessions stay quiet
+ok 2 - IAtry React: disabled, dismissed and experienced sessions stay quiet
+  ---
+  duration_ms: 0.125667
+  type: 'test'
+  ...
+# Subtest: IAtry React: only a verified inactive-to-active service transition celebrates
+ok 3 - IAtry React: only a verified inactive-to-active service transition celebrates
+  ---
+  duration_ms: 0.084292
+  type: 'test'
+  ...
+# Subtest: IAtry React: memory preserves v1 preferences, limits history, and isolates business/role
+ok 4 - IAtry React: memory preserves v1 preferences, limits history, and isolates business/role
+  ---
+  duration_ms: 1.489709
+  type: 'test'
+  ...
+# Subtest: IAtry React: unavailable or corrupt storage cannot interrupt a task
+ok 5 - IAtry React: unavailable or corrupt storage cannot interrupt a task
+  ---
+  duration_ms: 0.169667
+  type: 'test'
+  ...
+# Subtest: IAtry React: personal greeting excludes identifiers and role labels
+ok 6 - IAtry React: personal greeting excludes identifiers and role labels
+  ---
+  duration_ms: 0.58875
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.628042

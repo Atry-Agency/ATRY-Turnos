@@ -1,0 +1,17 @@
+{
+  "chromium": {
+    "bundledExecutable": "/Users/rodrigobrun/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "available": false
+  },
+  "firefox": {
+    "bundledExecutable": "/Users/rodrigobrun/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/firefox",
+    "available": false
+  },
+  "webkit": {
+    "bundledExecutable": "/Users/rodrigobrun/Library/Caches/ms-playwright/webkit-2336/pw_run.sh",
+    "available": false
+  },
+  "chrome": {
+    "available": true
+  }
+}

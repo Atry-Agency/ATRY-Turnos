@@ -1,0 +1,68 @@
+/* IAtry V1.2: scoped composition, official brand colors, compositor-only light motion. */
+.iatry-context{--iatry-violet:#4754E6;--iatry-cyan:#00A5E2;--iatry-white:#FFF;--iatry-navy:#071A21;--iatry-size:54px;--iatry-rim:3px;grid-column:1/-1;position:relative;min-width:0;max-width:720px;margin:0 0 20px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:var(--surface,var(--bg));color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;scroll-margin-block:20px}
+.iatry-presence{display:flex;gap:15px;align-items:center}.iatry-copy{min-width:0;flex:1}.iatry-label{display:block;font-size:10px;line-height:1.6;color:var(--muted);font-weight:500;letter-spacing:.03em}.iatry-label>span{font-weight:400}
+.iatry-context .iatry-copy h2{font-family:inherit;font-size:16px;font-weight:550;line-height:1.4;letter-spacing:-.025em;margin:3px 0 5px;color:var(--ink)}
+.iatry-copy p,.iatry-detail{font:400 12px/1.65 system-ui,-apple-system,sans-serif;max-width:62ch;margin:0;color:var(--muted)}
+.iatry-avatar{position:relative;display:inline-grid;place-items:center;isolation:isolate;flex:0 0 auto;width:var(--iatry-size,54px);height:var(--iatry-size,54px);border-radius:50%;transform-origin:50% 65%;pointer-events:none}
+.iatry-energy,.iatry-shell,.iatry-nucleus{position:absolute;inset:0;border-radius:50%;pointer-events:none}
+.iatry-haze{inset:-10%;background:radial-gradient(closest-side,transparent 65%,color-mix(in srgb,var(--iatry-violet) 56%,var(--iatry-white)) 78%,transparent 100%);filter:blur(3px);opacity:.3;transform:scale(1.02)}
+.iatry-shell{overflow:hidden;background:color-mix(in srgb,var(--iatry-white) 66%,var(--iatry-violet));mask-image:radial-gradient(farthest-side,transparent calc(100% - var(--iatry-rim) - .7px),#000 calc(100% - var(--iatry-rim)));-webkit-mask-image:radial-gradient(farthest-side,transparent calc(100% - var(--iatry-rim) - .7px),#000 calc(100% - var(--iatry-rim)));box-shadow:0 0 5px color-mix(in srgb,var(--iatry-violet) 30%,transparent)}
+.iatry-flow{position:absolute;inset:-35%;border-radius:42%;pointer-events:none}
+.iatry-flow-a{background:radial-gradient(ellipse at 22% 25%,var(--iatry-white) 0 5%,transparent 38%),radial-gradient(ellipse at 70% 78%,var(--iatry-cyan) 0 12%,transparent 48%),radial-gradient(ellipse at 50% 50%,var(--iatry-violet) 0 32%,transparent 67%),var(--iatry-violet);opacity:.74;transform:translate(-3%,1%) rotate(-8deg) scale(1.04,.98)}
+.iatry-flow-b{background:radial-gradient(ellipse at 78% 20%,var(--iatry-white) 0 4%,transparent 36%),radial-gradient(ellipse at 24% 70%,var(--iatry-violet) 0 17%,transparent 46%),radial-gradient(ellipse at 55% 48%,var(--iatry-cyan) 0 12%,transparent 49%);opacity:.68;transform:translate(2%,-2%) rotate(54deg) scale(.97,1.06)}
+.iatry-glint{position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 50% 0%,var(--iatry-white) 0 6%,transparent 32%),radial-gradient(ellipse at 96% 64%,color-mix(in srgb,var(--iatry-white) 75%,var(--iatry-cyan)),transparent 23%);opacity:.5;transform:rotate(-38deg)}
+.iatry-nucleus{inset:var(--iatry-rim);overflow:hidden;background:radial-gradient(circle at 35% 20%,color-mix(in srgb,var(--iatry-violet) 27%,var(--iatry-navy)),var(--iatry-navy) 80%);border:1px solid color-mix(in srgb,var(--iatry-white) 15%,transparent);box-shadow:inset 0 1px 3px #FFFFFF15,0 1px 4px #071A2130}
+.iatry-nucleus img{position:relative;display:block;width:100%;height:100%;object-fit:contain;border-radius:50%}
+.iatry-controls{display:flex;gap:6px 12px;align-items:center;flex-wrap:wrap;margin:9px 0 0 69px}.iatry-context .btn{min-height:44px;font-family:inherit;font-size:12px;font-weight:500;line-height:1.5;padding:9px 13px;white-space:normal;max-width:100%}
+.iatry-text-action,.iatry-options summary{font:400 11px/1.6 system-ui,-apple-system,sans-serif;color:var(--muted);background:none;border:0;cursor:pointer;padding:9px 0;min-height:44px;text-decoration:none;text-underline-offset:4px}
+.iatry-text-action:hover,.iatry-options summary:hover{color:var(--ink);text-decoration:underline}.iatry-context :is(button,summary):focus-visible{outline:2px solid var(--panel-action,var(--accent));outline-offset:3px;border-radius:8px}
+.iatry-options{min-width:0;max-width:100%}.iatry-options summary{list-style:none}.iatry-options summary::-webkit-details-marker{display:none}.iatry-options summary::after{content:' ···';letter-spacing:.08em}.iatry-options>div{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0}.iatry-options[open]{flex-basis:100%}.iatry-options[open]>summary{color:var(--ink)}
+.iatry-detail{margin:10px 0 0 69px;padding-inline-start:12px;border-inline-start:1px solid var(--line)}
+.iatry-context[data-presentation=contextual]{--iatry-size:34px;--iatry-rim:2px;max-width:640px;border:0;border-radius:0;background:transparent;padding:8px 0 10px;margin-bottom:12px}
+.iatry-context[data-presentation=contextual] .iatry-presence{gap:12px;align-items:flex-start}.iatry-context[data-presentation=contextual] .iatry-copy h2{font-size:13px;margin:1px 0 4px;font-weight:550}.iatry-context[data-presentation=contextual] .iatry-label{font-size:9px}
+.iatry-context[data-presentation=contextual] .iatry-controls,.iatry-context[data-presentation=contextual] .iatry-detail{margin-inline-start:46px;margin-top:4px}
+.iatry-context[data-guided]::after{content:'';position:absolute;left:16px;bottom:-5px;width:1px;height:12px;background:color-mix(in srgb,var(--iatry-violet) 45%,var(--line));pointer-events:none}
+.iatry-context[data-guided] .iatry-haze{opacity:.42}
+.iatry-target{outline:2px solid color-mix(in srgb,#4754E6 70%,var(--panel-action,var(--accent)))!important;outline-offset:4px;scroll-margin-block:24px}
+.iatry-rest{--iatry-size:28px;--iatry-rim:1.7px;padding:0;border:0;background:transparent;border-radius:0;margin-bottom:12px;max-width:640px}.iatry-rest-row{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.iatry-call{display:inline-flex;gap:10px;align-items:center;min-height:44px;border:0;background:none;padding:4px 0;font:400 12px/1.5 system-ui,-apple-system,sans-serif;color:var(--muted);cursor:pointer}.iatry-call:hover{color:var(--ink)}.iatry-rest .iatry-haze{opacity:.16}.iatry-notice{font:400 11px/1.6 system-ui,-apple-system,sans-serif;color:var(--muted);margin:4px 0 0 38px}
+/* Soft, nonuniform phases: two independently distorted light fields, not a spinning color wheel. */
+.iatry-context[data-iatry-state=idle] .iatry-flow-a{animation:iatry-liquid-a 17s ease-in-out infinite}
+.iatry-context[data-iatry-state=idle] .iatry-flow-b{animation:iatry-liquid-b 13s ease-in-out infinite}
+.iatry-context[data-iatry-state=idle] .iatry-haze{animation:iatry-energy-idle 11s ease-in-out infinite}
+.iatry-context[data-iatry-state=appearing] .iatry-avatar{animation:iatry-wake .65s cubic-bezier(.2,.65,.25,1) both}
+.iatry-context[data-iatry-state=appearing] .iatry-haze{animation:iatry-awaken-light .65s ease-out both}
+.iatry-context[data-iatry-state=moving] .iatry-presence{animation:iatry-position .24s ease-out both}
+.iatry-context[data-iatry-state=attention] .iatry-glint{animation:iatry-perimeter .7s cubic-bezier(.2,.55,.6,1) both}
+.iatry-context[data-iatry-state=attention] .iatry-haze{animation:iatry-attention-light .7s ease-in-out both}
+.iatry-context[data-iatry-state=guiding] .iatry-flow-a{animation:iatry-liquid-a 9s ease-in-out infinite}
+.iatry-context[data-iatry-state=guiding] .iatry-flow-b{animation:iatry-liquid-b 7s ease-in-out infinite}
+.iatry-context[data-iatry-state=guiding] .iatry-haze{animation:iatry-energy-idle 8s ease-in-out infinite}
+.iatry-context[data-iatry-state=celebrating] .iatry-glint{animation:iatry-celebration-glint .85s ease-out both}
+.iatry-context[data-iatry-state=celebrating] .iatry-haze{animation:iatry-celebration-light .85s ease-out both}
+.iatry-context[data-iatry-state=celebrating] .iatry-avatar{animation:iatry-satisfaction .85s ease-out both}
+.iatry-context[data-iatry-state=leaving]{animation:iatry-depart .2s ease-in both;pointer-events:none}
+.iatry-context[data-iatry-state=leaving] .iatry-haze{animation:iatry-contract .2s ease-in both}
+@keyframes iatry-liquid-a{0%,100%{transform:translate(-3%,1%) rotate(-8deg) scale(1.04,.98);opacity:.82}27%{transform:translate(4%,-2%) rotate(13deg) scale(.96,1.06);opacity:.92}58%{transform:translate(1%,4%) rotate(-3deg) scale(1.07,.96);opacity:.76}81%{transform:translate(-2%,-3%) rotate(9deg) scale(.99,1.04);opacity:.88}}
+@keyframes iatry-liquid-b{0%,100%{transform:translate(2%,-2%) rotate(54deg) scale(.97,1.06);opacity:.62}19%{transform:translate(-4%,2%) rotate(40deg) scale(1.06,.96);opacity:.78}53%{transform:translate(3%,3%) rotate(67deg) scale(1.01,1.03);opacity:.57}76%{transform:translate(-1%,-4%) rotate(49deg) scale(.96,1.08);opacity:.72}}
+@keyframes iatry-energy-idle{0%,100%{opacity:.23;transform:scale(1)}43%{opacity:.34;transform:scale(1.035)}72%{opacity:.27;transform:scale(.99)}}
+@keyframes iatry-wake{from{opacity:0;transform:translateY(4px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes iatry-awaken-light{0%{opacity:0;transform:scale(.92)}55%{opacity:.7;transform:scale(1.08)}100%{opacity:.3;transform:scale(1)}}
+@keyframes iatry-position{from{opacity:0;transform:translateY(3px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes iatry-perimeter{0%{opacity:0;transform:rotate(-70deg)}22%{opacity:1}72%{opacity:.75}100%{opacity:.25;transform:rotate(290deg)}}
+@keyframes iatry-attention-light{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.65;transform:scale(1.08)}}
+@keyframes iatry-celebration-glint{0%{opacity:.1;transform:rotate(-50deg) scale(.97)}38%{opacity:1;transform:rotate(90deg) scale(1.04)}100%{opacity:.25;transform:rotate(260deg) scale(1)}}
+@keyframes iatry-celebration-light{0%,100%{opacity:.3;transform:scale(1)}35%{opacity:.85;transform:scale(1.18)}70%{opacity:.4;transform:scale(1.06)}}
+@keyframes iatry-satisfaction{0%,100%{transform:none}38%{transform:translateY(-2px) scale(1.025)}70%{transform:translateY(0) scale(.99)}}
+@keyframes iatry-depart{to{opacity:0;transform:translateY(-2px) scale(.985)}}
+@keyframes iatry-contract{to{opacity:0;transform:scale(.9)}}
+.iatry-context[data-motion-off],.iatry-context[data-motion-off] *{animation:none!important;transition:none!important}
+:has(.modal-mask) .iatry-context,.main-content:has([name="confirm_setup"]:checked) .iatry-context,.app-shell .workspace-setup[hidden]{display:none}
+@media(prefers-reduced-motion:reduce){.iatry-context,.iatry-context *{animation:none!important;transition:none!important}}
+@media(max-width:600px){.iatry-context{--iatry-size:46px;--iatry-rim:2.5px;padding:12px 13px;margin-bottom:16px;border-radius:16px;scroll-margin-top:max(12px,env(safe-area-inset-top))}.iatry-presence{align-items:flex-start;gap:12px}.iatry-context .iatry-copy h2{font-size:15px}.iatry-label{font-size:9px}.iatry-controls{margin-left:0;margin-top:7px;gap:4px 12px}.iatry-context .btn{font-size:11px;padding:9px 11px}.iatry-context .iatry-text-action,.iatry-options summary{font-size:11px}.iatry-detail{margin-left:0}.iatry-context[data-presentation=contextual]{--iatry-size:30px;--iatry-rim:1.8px;padding:5px 0 8px}.iatry-context[data-presentation=contextual] .iatry-controls,.iatry-context[data-presentation=contextual] .iatry-detail{margin-left:42px}.iatry-rest{--iatry-size:26px;--iatry-rim:1.6px;padding:0;border-radius:0}.iatry-rest-row{gap:4px 12px}.iatry-notice{margin-left:36px}}
+/* React owns placement through portals into in-flow slots, never moving rendered DOM. */
+.iatry-slot{display:contents}.iatry-slot:empty{display:none}
+body:has(dialog[open]) .iatry-context{display:none}
+@media(forced-colors:active){.iatry-context{border:1px solid CanvasText}.iatry-target{outline-color:Highlight!important}}
+.main-content:has(.iatry-context:not(.iatry-rest))>.workspace-setup{display:none}
+/* A static white reflection lives in the masked rim, never over the official emblem. */
+.iatry-shell::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 32% 8%,#FFFFFFB3,transparent 42%),radial-gradient(ellipse at 93% 68%,#FFFFFF45,transparent 28%);opacity:.24;pointer-events:none}

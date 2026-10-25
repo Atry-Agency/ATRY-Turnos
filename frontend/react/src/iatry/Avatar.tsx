@@ -1,0 +1,2 @@
+/** Exact official emblem and V1.2 energy layers. The asset is never redrawn. */
+export function IatryAvatar(){return <span className="iatry-avatar" aria-hidden="true"><span className="iatry-energy iatry-haze"/><span className="iatry-shell"><span className="iatry-flow iatry-flow-a"/><span className="iatry-flow iatry-flow-b"/><span className="iatry-glint"/></span><span className="iatry-nucleus"><img src="./assets/brand/atry.png" width={58} height={58} alt=""/></span></span>}

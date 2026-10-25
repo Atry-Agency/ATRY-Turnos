@@ -1,0 +1,489 @@
+{
+  "rows": [
+    {
+      "engine": "chromium",
+      "plan": 1,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 1,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 1,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 1,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 1,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 2,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 2,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 2,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 2,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 2,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 3,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 3,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 3,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 3,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "plan": 3,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "role": "manager",
+      "passed": true,
+      "checks": [
+        "original role permissions"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "role": "staff",
+      "passed": true,
+      "checks": [
+        "original role permissions"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 1,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 1,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 1,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 1,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 1,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 2,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 2,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 2,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 2,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 2,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 3,
+      "width": 320,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 3,
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 3,
+      "width": 430,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 3,
+      "width": 768,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "plan": 3,
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "welcome responsive",
+        "settings keyboard and dirty dialog",
+        "Escape restores draft",
+        "public service/professional/date/slot selection",
+        "public customer form",
+        "IAtry absent in public flow",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "role": "manager",
+      "passed": true,
+      "checks": [
+        "original role permissions"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "role": "staff",
+      "passed": true,
+      "checks": [
+        "original role permissions"
+      ]
+    }
+  ],
+  "errors": [],
+  "physicalDevices": false,
+  "notes": "Installed Playwright Firefox/WebKit engines and system Chrome. WebKit is not a test of the actual Safari app. Emulated viewports, not physical keyboards/devices."
+}

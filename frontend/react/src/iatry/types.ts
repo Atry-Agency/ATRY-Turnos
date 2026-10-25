@@ -1,0 +1,5 @@
+export interface Tip{id:string;title:string;text:string;detail:string;target?:string;guideTitle?:string;route?:string;next?:string;nextLabel?:string;label?:string;celebrate?:boolean}
+export interface Memory{version:string;seen:string[];dismissed:string[];skipped:string[];tours:string[];disabled:boolean;motionOff:boolean;introduced:boolean;hadServices?:boolean}
+export interface MemoryStore{read():Memory;write(patch:Partial<Memory>):Memory;mark(id:string,kind?:'seen'|'dismissed'|'skipped'|'tours'):Memory}
+export interface Context{userId?:string;businessId?:string;role?:string;completed:boolean;dialog:boolean;view:string}
+export interface Engine{version:string;knowledge:Record<string,Tip>;steps:string[];available(context:Context):boolean;eligible(context:Context):boolean;analyze(services:unknown):{hasServices:boolean|null};select(context:Context,memory:Memory,facts?:{hasServices?:boolean|null}):Tip|null;presence(memory:Partial<Memory>):string;createMemory(storage:Pick<Storage,'getItem'|'setItem'>|undefined,key:string):MemoryStore}

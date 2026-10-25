@@ -1,0 +1,79 @@
+(node:52581) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+javascript 0
+javascript-iatry 0
+react-iatry 0
+react-iatry 1
+javascript-iatry 1
+javascript 1
+javascript 2
+javascript-iatry 2
+react-iatry 2
+react-iatry 3
+javascript-iatry 3
+javascript 3
+javascript 4
+javascript-iatry 4
+react-iatry 4
+{
+  javascript: {
+    readyMs: 154,
+    fontsReadyMs: 166,
+    jsBytes: 496403,
+    requests: 44,
+    jsRequests: 26,
+    demoRequests: 6,
+    navigationMs: 12.400000005960464,
+    openMs: 15.600000008940697,
+    selectionMs: 23.600000008940697,
+    serviceSelectionMs: 6.399999991059303,
+    availabilityDemoMs: 1.9000000059604645,
+    cpuTaskMs: 44.000000000000014,
+    cpuScriptMs: 3.1600000000000006,
+    layoutMs: 4.014999999999998,
+    heapAfterGcBytes: 1892356,
+    idleTaskMsPer2Seconds: 23.886000000000017,
+    idleScriptMsPer2Seconds: 3.027,
+    domNodes: 854
+  },
+  'javascript-iatry': {
+    readyMs: 197.29999999701977,
+    fontsReadyMs: 218.59999999403954,
+    jsBytes: 516551,
+    requests: 51,
+    jsRequests: 32,
+    demoRequests: 6,
+    navigationMs: 20.700000002980232,
+    openMs: 7.200000002980232,
+    selectionMs: 20.700000002980232,
+    serviceSelectionMs: 6.799999997019768,
+    availabilityDemoMs: 1.8999999910593033,
+    cpuTaskMs: 67.90599999999998,
+    cpuScriptMs: 2.632999999999999,
+    layoutMs: 7.435999999999998,
+    heapAfterGcBytes: 1921792,
+    idleTaskMsPer2Seconds: 50.090999999999966,
+    idleScriptMsPer2Seconds: 3.302000000000001,
+    domNodes: 888
+  },
+  'react-iatry': {
+    readyMs: 121.70000000298023,
+    fontsReadyMs: 124,
+    jsBytes: 389524,
+    requests: 15,
+    jsRequests: 9,
+    demoRequests: 5,
+    navigationMs: 311.1000000089407,
+    openMs: 12.099999994039536,
+    selectionMs: 23.900000005960464,
+    serviceSelectionMs: 8.799999997019768,
+    availabilityDemoMs: 1.8999999910593033,
+    cpuTaskMs: 63.332,
+    cpuScriptMs: 20.714999999999996,
+    layoutMs: 4.239,
+    heapAfterGcBytes: 3124864,
+    idleTaskMsPer2Seconds: 21.935999999999982,
+    idleScriptMsPer2Seconds: 3.9809999999999985,
+    domNodes: 531
+  }
+}

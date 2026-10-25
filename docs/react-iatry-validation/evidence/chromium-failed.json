@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Presentación real con emblema oficial, halo y reposo",
+    "Desplazamiento en flujo, control real enfocado y sin superposición",
+    "Destino desaparecido ofrece alternativa que activa la pestaña real",
+    "Diálogo oculta IAtry; celebración solo después de servicio activo confirmado"
+  ],
+  "errors": [],
+  "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Pedir ayuda a IAtry', exact: true }) to be visible\u001b[22m\n"
+}
