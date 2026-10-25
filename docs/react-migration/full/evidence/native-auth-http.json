@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Error HTTP mantiene campos y contraseña en el formulario, sin almacenamiento persistente",
+    "Registro crea negocio pendiente y sesión; no habilita suscripción ni persiste contraseña",
+    "Cuenta sin negocio abre perfil personal y no crea membresías ni negocio",
+    "Cambio de contraseña invalida sesiones en backend y vuelve al acceso",
+    "Acceso posterior acepta únicamente la contraseña actualizada"
+  ],
+  "errors": [],
+  "environment": "Build React, servidor HTTP efímero y SQLite :memory:; datos ficticios; sin correo ni Supabase"
+}

@@ -1,0 +1,636 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "light",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 1,
+      "mode": "dark",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "light",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 2,
+      "mode": "dark",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "light",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "dark",
+      "width": 1440,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 320,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 320,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 320,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 390,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 390,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 390,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 430,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 430,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 430,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 768,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 768,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 768,
+      "route": "servicios"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 1440,
+      "route": "inicio"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 1440,
+      "route": "agenda"
+    },
+    {
+      "plan": 3,
+      "mode": "contrast",
+      "width": 1440,
+      "route": "servicios"
+    }
+  ],
+  "errors": []
+}

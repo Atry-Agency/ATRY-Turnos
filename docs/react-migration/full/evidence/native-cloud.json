@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "SDK y adaptador cloud existentes montan React; RECENT_AUTH_REQUIRED abre confirmación nativa sin perder el formulario",
+    "Contraseña rechazada se limpia y mantiene la operación pendiente",
+    "Reautenticación reintenta exactamente el payload y UUID original y ejecuta una única operación; no persiste contraseñas"
+  ],
+  "errors": [],
+  "environment": "SDK Supabase real + adaptador existente; todo HTTPS interceptado en navegador; lógica de comandos SQLite local; CSP omitida solo en este fixture; cero conexión Supabase real"
+}

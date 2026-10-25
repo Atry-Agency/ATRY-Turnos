@@ -1,0 +1,275 @@
+{
+  "rows": [
+    {
+      "scene": "inicio",
+      "plan": 1,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 1,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 1,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 1,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 1,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 1,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 1,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 1,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 1,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 1,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 1,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 1,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 1,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 1,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 1,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 2,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 2,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 2,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 2,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 2,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 2,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 2,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 2,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 2,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 2,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 2,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 2,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 2,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 2,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 2,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 3,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 3,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 3,
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 3,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 3,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 3,
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 3,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 3,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 3,
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 3,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 3,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 3,
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "scene": "inicio",
+      "plan": 3,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "agenda",
+      "plan": 3,
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "scene": "configuracion",
+      "plan": 3,
+      "width": 1440,
+      "textEqual": true
+    }
+  ],
+  "errors": []
+}

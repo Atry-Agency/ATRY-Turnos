@@ -1,0 +1,110 @@
+{
+  "pairs": 500,
+  "sizeMismatch": [],
+  "largest": [
+    {
+      "folder": "native-admin",
+      "file": "javascript-correos-390.png",
+      "pixels": 374400,
+      "different": 1785,
+      "over4": 1673,
+      "bbox": [
+        29,
+        174,
+        356,
+        594
+      ]
+    },
+    {
+      "folder": "native-admin",
+      "file": "javascript-correos-430.png",
+      "pixels": 412800,
+      "different": 1401,
+      "over4": 1310,
+      "bbox": [
+        29,
+        315,
+        298,
+        579
+      ]
+    },
+    {
+      "folder": "additional-pages",
+      "file": "javascript-comunicacion-3-320.png",
+      "pixels": 475200,
+      "different": 1184,
+      "over4": 1102,
+      "bbox": [
+        53,
+        1156,
+        229,
+        1174
+      ]
+    },
+    {
+      "folder": "additional-pages",
+      "file": "javascript-comunicacion-3-390.png",
+      "pixels": 535860,
+      "different": 1184,
+      "over4": 1102,
+      "bbox": [
+        53,
+        1064,
+        229,
+        1082
+      ]
+    },
+    {
+      "folder": "native-admin",
+      "file": "javascript-usuarios-430.png",
+      "pixels": 535350,
+      "different": 870,
+      "over4": 784,
+      "bbox": [
+        121,
+        506,
+        401,
+        1162
+      ]
+    },
+    {
+      "folder": "native-admin",
+      "file": "javascript-business-320.png",
+      "pixels": 824000,
+      "different": 1158,
+      "over4": 1101,
+      "bbox": [
+        46,
+        1332,
+        227,
+        2478
+      ]
+    },
+    {
+      "folder": "native-admin",
+      "file": "javascript-business-390.png",
+      "pixels": 895050,
+      "different": 1158,
+      "over4": 1101,
+      "bbox": [
+        50,
+        1201,
+        313,
+        2212
+      ]
+    },
+    {
+      "folder": "access-support",
+      "file": "javascript-soporte-1-390.png",
+      "pixels": 374400,
+      "different": 429,
+      "over4": 410,
+      "bbox": [
+        49,
+        395,
+        107,
+        410
+      ]
+    }
+  ]
+}

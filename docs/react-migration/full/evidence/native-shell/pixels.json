@@ -1,0 +1,317 @@
+[
+  {
+    "file": "legacy-agenda-1-1440.png",
+    "pixels": 1699200,
+    "over4": 38,
+    "bbox": [
+      126,
+      122,
+      194,
+      132
+    ]
+  },
+  {
+    "file": "legacy-agenda-1-320.png",
+    "pixels": 443200,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-1-390.png",
+    "pixels": 514410,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-1-430.png",
+    "pixels": 539650,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-1-768.png",
+    "pixels": 892416,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-2-1440.png",
+    "pixels": 1794240,
+    "over4": 24,
+    "bbox": [
+      167,
+      125,
+      173,
+      132
+    ]
+  },
+  {
+    "file": "legacy-agenda-2-320.png",
+    "pixels": 487040,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-2-390.png",
+    "pixels": 567840,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-2-430.png",
+    "pixels": 598560,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-2-768.png",
+    "pixels": 943104,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-3-1440.png",
+    "pixels": 1794240,
+    "over4": 105,
+    "bbox": [
+      133,
+      122,
+      172,
+      131
+    ]
+  },
+  {
+    "file": "legacy-agenda-3-320.png",
+    "pixels": 487040,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-3-390.png",
+    "pixels": 567840,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-3-430.png",
+    "pixels": 598560,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-agenda-3-768.png",
+    "pixels": 943104,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-1-1440.png",
+    "pixels": 1382400,
+    "over4": 38,
+    "bbox": [
+      126,
+      122,
+      194,
+      132
+    ]
+  },
+  {
+    "file": "legacy-configuracion-1-320.png",
+    "pixels": 385920,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-1-390.png",
+    "pixels": 437970,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-1-430.png",
+    "pixels": 482890,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-1-768.png",
+    "pixels": 737280,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-2-1440.png",
+    "pixels": 1382400,
+    "over4": 24,
+    "bbox": [
+      167,
+      125,
+      173,
+      132
+    ]
+  },
+  {
+    "file": "legacy-configuracion-2-320.png",
+    "pixels": 400320,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-2-390.png",
+    "pixels": 455520,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-2-430.png",
+    "pixels": 502240,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-2-768.png",
+    "pixels": 741888,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-3-1440.png",
+    "pixels": 1382400,
+    "over4": 105,
+    "bbox": [
+      133,
+      122,
+      172,
+      131
+    ]
+  },
+  {
+    "file": "legacy-configuracion-3-320.png",
+    "pixels": 400320,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-3-390.png",
+    "pixels": 455520,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-3-430.png",
+    "pixels": 502240,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-configuracion-3-768.png",
+    "pixels": 741888,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-1-1440.png",
+    "pixels": 1560960,
+    "over4": 38,
+    "bbox": [
+      126,
+      122,
+      194,
+      132
+    ]
+  },
+  {
+    "file": "legacy-inicio-1-320.png",
+    "pixels": 521600,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-1-390.png",
+    "pixels": 624390,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-1-430.png",
+    "pixels": 688430,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-1-768.png",
+    "pixels": 834816,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-2-1440.png",
+    "pixels": 1846080,
+    "over4": 24,
+    "bbox": [
+      167,
+      125,
+      173,
+      132
+    ]
+  },
+  {
+    "file": "legacy-inicio-2-320.png",
+    "pixels": 895680,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-2-390.png",
+    "pixels": 1017900,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-2-430.png",
+    "pixels": 1021250,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-2-768.png",
+    "pixels": 1549056,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-3-1440.png",
+    "pixels": 1846080,
+    "over4": 105,
+    "bbox": [
+      133,
+      122,
+      172,
+      131
+    ]
+  },
+  {
+    "file": "legacy-inicio-3-320.png",
+    "pixels": 899840,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-3-390.png",
+    "pixels": 1017900,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-3-430.png",
+    "pixels": 1010070,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "file": "legacy-inicio-3-768.png",
+    "pixels": 1549056,
+    "over4": 0,
+    "bbox": null
+  }
+]

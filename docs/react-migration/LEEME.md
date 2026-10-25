@@ -1,3 +1,5 @@
+> Revisión posterior: la entrada React autónoma y su evidencia están en [full/LEEME.md](full/LEEME.md). El contenido de este documento corresponde a las primeras etapas.
+
 > **Entrega vigente: [Etapa 2 - Servicios](stage2/LEEME.md).** La documentación siguiente describe la base histórica de etapa1.
 
 # Primera entrega - React local

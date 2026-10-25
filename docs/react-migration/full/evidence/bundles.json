@@ -1,0 +1,397 @@
+[
+  {
+    "file": "AccessScreen-DP2Z7ec1.js",
+    "bytes": 2912,
+    "gzip6": 1213
+  },
+  {
+    "file": "AccountScreen-Cdg5-b2a.js",
+    "bytes": 6957,
+    "gzip6": 2583
+  },
+  {
+    "file": "ActionDialog-zTsLHAx-.js",
+    "bytes": 13845,
+    "gzip6": 5213
+  },
+  {
+    "file": "AdminApp-CqmlaBcO.js",
+    "bytes": 52287,
+    "gzip6": 15343
+  },
+  {
+    "file": "AgendaScreen-BZqTX29d.js",
+    "bytes": 25065,
+    "gzip6": 8374
+  },
+  {
+    "file": "AuthScreen-KDT8rnlI.js",
+    "bytes": 10829,
+    "gzip6": 3690
+  },
+  {
+    "file": "BasicStatistics-wckMHz9E.js",
+    "bytes": 939,
+    "gzip6": 565
+  },
+  {
+    "file": "BookingDetail-Do3WnXlN.js",
+    "bytes": 7346,
+    "gzip6": 2591
+  },
+  {
+    "file": "CustomerEditor-DFeiunFx.js",
+    "bytes": 3486,
+    "gzip6": 1395
+  },
+  {
+    "file": "CustomerProfile-Mo6HGHTm.js",
+    "bytes": 2634,
+    "gzip6": 1359
+  },
+  {
+    "file": "CustomersScreen-BTBs2mnO.js",
+    "bytes": 8940,
+    "gzip6": 3603
+  },
+  {
+    "file": "EndRecurring-BDsebhMw.js",
+    "bytes": 1822,
+    "gzip6": 1016
+  },
+  {
+    "file": "InsightsScreen-BjYTCIaZ.js",
+    "bytes": 6353,
+    "gzip6": 2127
+  },
+  {
+    "file": "InvitationScreen-B9pCpLw3.js",
+    "bytes": 3385,
+    "gzip6": 1539
+  },
+  {
+    "file": "ManageBooking-BXb6Cwp4.js",
+    "bytes": 3967,
+    "gzip6": 1801
+  },
+  {
+    "file": "ManageVisit-D7v2T-EG.js",
+    "bytes": 4656,
+    "gzip6": 2080
+  },
+  {
+    "file": "ManualBooking-Bns9XyiY.js",
+    "bytes": 12495,
+    "gzip6": 4424
+  },
+  {
+    "file": "MemberEditor-CxeB15Ph.js",
+    "bytes": 2835,
+    "gzip6": 1455
+  },
+  {
+    "file": "NewBusiness-BEI7WLT0.js",
+    "bytes": 2057,
+    "gzip6": 1083
+  },
+  {
+    "file": "NotificationsScreen-bjRgHMKt.js",
+    "bytes": 6597,
+    "gzip6": 2919
+  },
+  {
+    "file": "OfferScreen-DJFumhLH.js",
+    "bytes": 2458,
+    "gzip6": 1221
+  },
+  {
+    "file": "OnboardingScreen-Bvop_m31.js",
+    "bytes": 4165,
+    "gzip6": 1882
+  },
+  {
+    "file": "OwnHours-p5JoC3_q.js",
+    "bytes": 1306,
+    "gzip6": 746
+  },
+  {
+    "file": "PlanDialog-C2DB8Uu1.js",
+    "bytes": 2807,
+    "gzip6": 1466
+  },
+  {
+    "file": "PrivateVisit-BcBWxrhr.js",
+    "bytes": 5189,
+    "gzip6": 2119
+  },
+  {
+    "file": "PublicBooking-Bkm91A2J.js",
+    "bytes": 2757,
+    "gzip6": 1269
+  },
+  {
+    "file": "PublicManage-B6NBnltT.js",
+    "bytes": 2020,
+    "gzip6": 996
+  },
+  {
+    "file": "RecurringEditor-CYz7FiT7.js",
+    "bytes": 6101,
+    "gzip6": 2402
+  },
+  {
+    "file": "RecurringScreen-CXOfwu6l.js",
+    "bytes": 2900,
+    "gzip6": 1362
+  },
+  {
+    "file": "RequestEditor-CypYXvjC.js",
+    "bytes": 2832,
+    "gzip6": 1449
+  },
+  {
+    "file": "Reschedule-DX_vJ5eZ.js",
+    "bytes": 3779,
+    "gzip6": 1630
+  },
+  {
+    "file": "RuleEditor-BBVpPzWC.js",
+    "bytes": 4506,
+    "gzip6": 1951
+  },
+  {
+    "file": "ScheduleScreen-CI5GDSqf.js",
+    "bytes": 8429,
+    "gzip6": 2901
+  },
+  {
+    "file": "ServicesScreen-B5SAXKMj.js",
+    "bytes": 9361,
+    "gzip6": 3635
+  },
+  {
+    "file": "Settings-DatWwChd.js",
+    "bytes": 4039,
+    "gzip6": 1798
+  },
+  {
+    "file": "SettingsScreen-hEHFuMlt.js",
+    "bytes": 8250,
+    "gzip6": 3201
+  },
+  {
+    "file": "Shared-LkH8AdAM.js",
+    "bytes": 5561,
+    "gzip6": 1992
+  },
+  {
+    "file": "SingleBooking-DpaqrosX.js",
+    "bytes": 10093,
+    "gzip6": 3734
+  },
+  {
+    "file": "SmartSlots-DHL340c3.js",
+    "bytes": 1941,
+    "gzip6": 986
+  },
+  {
+    "file": "StaffAvatar-BNLcvf0X.js",
+    "bytes": 591,
+    "gzip6": 408
+  },
+  {
+    "file": "StaffEditor-CWNHDq1O.js",
+    "bytes": 7755,
+    "gzip6": 3166
+  },
+  {
+    "file": "Status-DfS_PmhH.js",
+    "bytes": 262,
+    "gzip6": 214
+  },
+  {
+    "file": "SubscriptionDialog-C1ddTxpg.js",
+    "bytes": 7934,
+    "gzip6": 3239
+  },
+  {
+    "file": "SubscriptionScreen-enkPbv2l.js",
+    "bytes": 11950,
+    "gzip6": 4211
+  },
+  {
+    "file": "SupportScreen-DpKpTCvy.js",
+    "bytes": 2574,
+    "gzip6": 1278
+  },
+  {
+    "file": "TeamScreen-Dx3irU3S.js",
+    "bytes": 4801,
+    "gzip6": 1804
+  },
+  {
+    "file": "ThemeStudio-oE1tbJ5s.js",
+    "bytes": 25878,
+    "gzip6": 8379
+  },
+  {
+    "file": "TimeFinder-BgJ49TR5.js",
+    "bytes": 5152,
+    "gzip6": 2183
+  },
+  {
+    "file": "Timeline-BfzjfOlO.js",
+    "bytes": 563,
+    "gzip6": 343
+  },
+  {
+    "file": "VisitBooking-C3pHBzil.js",
+    "bytes": 8023,
+    "gzip6": 3292
+  },
+  {
+    "file": "WaitlistScreen-RnqZO5jQ.js",
+    "bytes": 2908,
+    "gzip6": 1270
+  },
+  {
+    "file": "WeeklyEditor-BGOj86oA.js",
+    "bytes": 5437,
+    "gzip6": 2249
+  },
+  {
+    "file": "WhatsAppComposer-BFnYnNp9.js",
+    "bytes": 8642,
+    "gzip6": 3404
+  },
+  {
+    "file": "WhatsAppScreen-CH9uTd4m.js",
+    "bytes": 6078,
+    "gzip6": 2371
+  },
+  {
+    "file": "WhatsAppSettings-Bv6iP1Nn.js",
+    "bytes": 8355,
+    "gzip6": 3277
+  },
+  {
+    "file": "api-BS-4gZIq.js",
+    "bytes": 1191,
+    "gzip6": 698
+  },
+  {
+    "file": "assets/app-BvISPnhX.js",
+    "bytes": 133976,
+    "gzip6": 41712
+  },
+  {
+    "file": "assets/landing-Dt_y9yk3.js",
+    "bytes": 41814,
+    "gzip6": 11648
+  },
+  {
+    "file": "assets/proof-worker-BFG4WCn0.js",
+    "bytes": 5968,
+    "gzip6": 2915
+  },
+  {
+    "file": "catalog-B1O8oeqJ.js",
+    "bytes": 558,
+    "gzip6": 375
+  },
+  {
+    "file": "cloud-runtime-lWn_f8R-.js",
+    "bytes": 239525,
+    "gzip6": 63278
+  },
+  {
+    "file": "contracts-3uTuhux_.js",
+    "bytes": 169,
+    "gzip6": 146
+  },
+  {
+    "file": "contracts-Ck0vpMER.js",
+    "bytes": 601,
+    "gzip6": 308
+  },
+  {
+    "file": "contracts-ClW_BlDe.js",
+    "bytes": 604,
+    "gzip6": 289
+  },
+  {
+    "file": "contracts-DMwozDUI.js",
+    "bytes": 873,
+    "gzip6": 443
+  },
+  {
+    "file": "contracts-DShQBDea.js",
+    "bytes": 508,
+    "gzip6": 280
+  },
+  {
+    "file": "download-B3BhhSpR.js",
+    "bytes": 273,
+    "gzip6": 231
+  },
+  {
+    "file": "errors-BlhLyG1U.js",
+    "bytes": 127,
+    "gzip6": 130
+  },
+  {
+    "file": "jsx-runtime-BdQqJDpF.js",
+    "bytes": 225406,
+    "gzip6": 70060
+  },
+  {
+    "file": "model-D2MoHH7z.js",
+    "bytes": 1532,
+    "gzip6": 796
+  },
+  {
+    "file": "model-DNvcj5RJ.js",
+    "bytes": 197,
+    "gzip6": 161
+  },
+  {
+    "file": "photos-BuutIXVY.js",
+    "bytes": 2620,
+    "gzip6": 1354
+  },
+  {
+    "file": "repository-CqcF6idO.js",
+    "bytes": 1817,
+    "gzip6": 955
+  },
+  {
+    "file": "runtime-config.js",
+    "bytes": 139,
+    "gzip6": 145
+  },
+  {
+    "file": "session-api-BQ9TRz15.js",
+    "bytes": 722,
+    "gzip6": 490
+  },
+  {
+    "file": "useConfirmation-DB-d1t7b.js",
+    "bytes": 612,
+    "gzip6": 388
+  },
+  {
+    "file": "useDialogGuard-cqLFKf4T.js",
+    "bytes": 754,
+    "gzip6": 454
+  },
+  {
+    "file": "useMutation-Cj1tqbCb.js",
+    "bytes": 696,
+    "gzip6": 429
+  },
+  {
+    "file": "useVisualViewport-vauLWtum.js",
+    "bytes": 536,
+    "gzip6": 331
+  }
+]

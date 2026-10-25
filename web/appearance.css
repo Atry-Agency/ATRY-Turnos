@@ -279,8 +279,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-sidebar nav a{font-size:12px;min-height:44px;line-height:1.45}
 .cc-sidebar nav a .i{width:18px;height:18px;stroke-width:1.7}
 .cc-sidebar>a:not(.cc-brand){font-size:11px;padding:12px 10px;color:#CAD1ED}
-.cc-sidebar>button[data-action=logout]{background:#FFFFFF0C;border:1px solid #FFFFFF20;color:#E9ECFF;min-height:40px}
-.cc-sidebar>button[data-action=logout]:hover{background:#FFFFFF18}
+.cc-sidebar>button[data-action=logout],
+.cc-sidebar>button[data-react-action=logout]{background:#FFFFFF0C;border:1px solid #FFFFFF20;color:#E9ECFF;min-height:40px}
+.cc-sidebar>button[data-action=logout]:hover,
+.cc-sidebar>button[data-react-action=logout]:hover{background:#FFFFFF18}
 }
 @media(min-width:761px) and (max-width:1180px){.cc-shell{grid-template-columns:220px minmax(0,1fr)}
 .cc-hero{padding:26px;gap:22px}
@@ -315,8 +317,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-panel-heading{gap:10px}
 .cc-panel-heading h2{font-size:16px}
 .cc-header form{max-width:none}
-.cc-header>button[data-cc-refresh]{font-size:11px;gap:5px}
-.cc-header>button[data-cc-refresh] .i{width:14px;height:14px}
+.cc-header>button[data-cc-refresh],
+.cc-header>button[data-react-refresh]{font-size:11px;gap:5px}
+.cc-header>button[data-cc-refresh] .i,
+.cc-header>button[data-react-refresh] .i{width:14px;height:14px}
 }
 @media(prefers-reduced-motion:reduce){.cc-shell .cc-metric{transition:none}
 .cc-shell .cc-metric:hover{transform:none}
@@ -325,8 +329,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .cc-metric[class*="cc-tone-"]:not(.cc-tone-neutral) .cc-metric-label>.i{background:var(--cc-tone);color:#FFF}
 .cc-metric.cc-tone-warning .cc-metric-label>.i{background:var(--atry-amber);color:#493500}
-.cc-header>button[data-cc-refresh]{margin-left:auto}
-.cc-header form+button[data-cc-refresh]{margin-left:0}
+.cc-header>button[data-cc-refresh],
+.cc-header>button[data-react-refresh]{margin-left:auto}
+.cc-header form+button[data-cc-refresh],
+.cc-header form+button[data-react-refresh]{margin-left:0}
 .cc-filters label:has(input[name=q]){flex:2;min-width:210px}
 .cc-table .cc-badge{white-space:nowrap}
 .cc-table td small{overflow-wrap:anywhere}
@@ -368,8 +374,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:760px){.cc-header>div{flex:1;min-width:0}
 .cc-header .eyebrow{font-size:9px;line-height:1.5;display:block}
 .cc-header h1{overflow-wrap:break-word}
-.cc-header>button[data-cc-refresh]{margin-left:auto;min-height:38px}
-.cc-header form+button[data-cc-refresh]{margin-left:auto}
+.cc-header>button[data-cc-refresh],
+.cc-header>button[data-react-refresh]{margin-left:auto;min-height:38px}
+.cc-header form+button[data-cc-refresh],
+.cc-header form+button[data-react-refresh]{margin-left:auto}
 .cc-hero h2{line-height:1.3}
 .cc-panel-heading{align-items:flex-start}
 .cc-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -394,7 +402,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-shell .cc-sidebar nav a{color:#F5F4FF}
 .cc-shell .cc-sidebar .cc-brand small{color:#E8E8FF}
 .cc-shell .cc-sidebar>a:not(.cc-brand){color:#F5F4FF}
-.cc-shell .cc-sidebar>button[data-action=logout]{background:#FFFFFF12;border-color:#FFFFFF35;color:#FFF}
+.cc-shell .cc-sidebar>button[data-action=logout],
+.cc-shell .cc-sidebar>button[data-react-action=logout]{background:#FFFFFF12;border-color:#FFFFFF35;color:#FFF}
 .cc-shell .cc-sidebar nav a:hover:not([aria-current]){background:#FFFFFF15;color:#FFF}
 .cc-shell .cc-sidebar .logo b{color:#C5F7FF}
 .cc-shell .cc-sidebar nav a[aria-current]{color:#262B6D}
@@ -402,21 +411,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cc-shell .cc-sidebar .cc-mobile-account .user-card span{color:#E4E5FF}
 .cc-shell .cc-sidebar .cc-mobile-account .user-card .btn:not(.success,.danger,.warning,.orange,:disabled,[aria-disabled=true]){background:#FFFFFF15;border-color:#FFFFFF35;color:#FFF}
 .cc-refresh-icon{stroke-width:1.65}
-.cc-shell [data-cc-refresh][aria-busy=true] .cc-refresh-icon{animation:cc-refresh-spin .8s linear infinite}
-.cc-shell [data-cc-refresh]:hover:not(:disabled) .cc-refresh-icon{transform:rotate(35deg);transition:transform .25s ease}
+.cc-shell [data-cc-refresh][aria-busy=true] .cc-refresh-icon,
+.cc-shell [data-react-refresh][aria-busy=true] .cc-refresh-icon{animation:cc-refresh-spin .8s linear infinite}
+.cc-shell [data-cc-refresh]:hover:not(:disabled) .cc-refresh-icon,
+.cc-shell [data-react-refresh]:hover:not(:disabled) .cc-refresh-icon{transform:rotate(35deg);transition:transform .25s ease}
 @keyframes cc-refresh-spin{to{transform:rotate(360deg)}
 }
 @media(max-width:760px){.cc-shell .cc-sidebar nav a[aria-current]{background:#FFF;color:#262B6D}
 .cc-shell .cc-sidebar .sidebar-close{background:#FFFFFF15;border-color:#FFFFFF30;color:#FFF}
 }
-@media(prefers-reduced-motion:reduce){.cc-shell [data-cc-refresh] .cc-refresh-icon{animation:none!important;transition:none!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.cc-shell [data-cc-refresh] .cc-refresh-icon,.cc-shell [data-react-refresh] .cc-refresh-icon{animation:none!important;transition:none!important;transform:none!important}
 }
 
 @media(max-width:760px){.cc-header{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px 10px;align-items:center}
 .cc-header>.cc-menu-toggle{grid-column:1;grid-row:1;min-width:38px;width:38px;margin:0}
 .cc-header>div{grid-column:2;grid-row:1}
 .cc-header h1{font-size:clamp(20px,5.4vw,24px);overflow-wrap:normal;word-break:normal;line-height:1.25}
-.cc-header>button[data-cc-refresh],.cc-header form+button[data-cc-refresh]{grid-column:1/-1;grid-row:2;justify-self:end;margin:0}
+.cc-header>button[data-cc-refresh],.cc-header form+button[data-cc-refresh],
+.cc-header>button[data-react-refresh],.cc-header form+button[data-react-refresh]{grid-column:1/-1;grid-row:2;justify-self:end;margin:0}
 .cc-header>form{grid-column:1/-1;grid-row:3;width:100%;min-width:0}
 .cc-shell .cc-panel .cc-table tr{border-radius:12px}
 .cc-shell .cc-panel .cc-table tbody{background:transparent}

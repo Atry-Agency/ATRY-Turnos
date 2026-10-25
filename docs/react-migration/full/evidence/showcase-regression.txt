@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: Presentación: el control visual existe solo en una demo embebida explícita
+ok 1 - Presentación: el control visual existe solo en una demo embebida explícita
+  ---
+  duration_ms: 8.389709
+  type: 'test'
+  ...
+# Subtest: Presentación: nombre y tema quedan aislados y no alteran límites ni importes
+ok 2 - Presentación: nombre y tema quedan aislados y no alteran límites ni importes
+  ---
+  duration_ms: 3.309875
+  type: 'test'
+  ...
+# Subtest: Presentación: no acepta estilos ejecutables ni opciones de otro plan
+ok 3 - Presentación: no acepta estilos ejecutables ni opciones de otro plan
+  ---
+  duration_ms: 1.444791
+  type: 'test'
+  ...
+# Subtest: Presentación: mensajes de otro origen o ventana no pueden cambiar la demo
+ok 4 - Presentación: mensajes de otro origen o ventana no pueden cambiar la demo
+  ---
+  duration_ms: 0.915459
+  type: 'test'
+  ...
+# Subtest: Demo completa: conserva nombre y tema válidos sin cambiar otras instancias
+ok 5 - Demo completa: conserva nombre y tema válidos sin cambiar otras instancias
+  ---
+  duration_ms: 3.735083
+  type: 'test'
+  ...
+# Subtest: Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos
+ok 6 - Identidad: cambiar de paleta conserva reservas editadas y no vuelve a duplicar contactos
+  ---
+  duration_ms: 2.609875
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 71.991667

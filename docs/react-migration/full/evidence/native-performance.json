@@ -1,0 +1,135 @@
+{
+  "environment": "Chrome headless local; five isolated cold contexts per runtime; 1440×960; demo Pro; no network/CPU throttling; service workers blocked; ready includes fonts",
+  "rows": [
+    {
+      "runtime": "legacy",
+      "iteration": 0,
+      "readyMs": 102.09999999403954,
+      "fontsReadyMs": 108.5,
+      "domContentLoadedMs": 91.59999999403954,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3419435
+    },
+    {
+      "runtime": "legacy",
+      "iteration": 1,
+      "readyMs": 58.900000005960464,
+      "fontsReadyMs": 65.20000000298023,
+      "domContentLoadedMs": 48,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3396779
+    },
+    {
+      "runtime": "legacy",
+      "iteration": 2,
+      "readyMs": 62.6000000089407,
+      "fontsReadyMs": 67.70000000298023,
+      "domContentLoadedMs": 52.5,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3401519
+    },
+    {
+      "runtime": "legacy",
+      "iteration": 3,
+      "readyMs": 61,
+      "fontsReadyMs": 67.29999999701977,
+      "domContentLoadedMs": 50.70000000298023,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3403003
+    },
+    {
+      "runtime": "legacy",
+      "iteration": 4,
+      "readyMs": 62.19999998807907,
+      "fontsReadyMs": 68.79999999701977,
+      "domContentLoadedMs": 52.29999999701977,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3396911
+    },
+    {
+      "runtime": "react",
+      "iteration": 0,
+      "readyMs": 82.40000000596046,
+      "fontsReadyMs": 88.70000000298023,
+      "domContentLoadedMs": 36.20000000298023,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4430302
+    },
+    {
+      "runtime": "react",
+      "iteration": 1,
+      "readyMs": 74.79999999701977,
+      "fontsReadyMs": 81.79999999701977,
+      "domContentLoadedMs": 28.600000008940697,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4443996
+    },
+    {
+      "runtime": "react",
+      "iteration": 2,
+      "readyMs": 84.79999999701977,
+      "fontsReadyMs": 93.69999998807907,
+      "domContentLoadedMs": 38,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4403575
+    },
+    {
+      "runtime": "react",
+      "iteration": 3,
+      "readyMs": 79.90000000596046,
+      "fontsReadyMs": 86.30000001192093,
+      "domContentLoadedMs": 32.70000000298023,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4416154
+    },
+    {
+      "runtime": "react",
+      "iteration": 4,
+      "readyMs": 79.70000000298023,
+      "fontsReadyMs": 88.79999999701977,
+      "domContentLoadedMs": 32.900000005960464,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4416295
+    }
+  ],
+  "summary": {
+    "legacy": {
+      "readyMs": 62.19999998807907,
+      "fontsReadyMs": 67.70000000298023,
+      "domContentLoadedMs": 52.29999999701977,
+      "jsTransferBytes": 496403,
+      "jsFiles": 26,
+      "domNodes": 389,
+      "heapBytes": 3401519
+    },
+    "react": {
+      "readyMs": 79.90000000596046,
+      "fontsReadyMs": 88.70000000298023,
+      "domContentLoadedMs": 32.900000005960464,
+      "jsTransferBytes": 371410,
+      "jsFiles": 9,
+      "domNodes": 360,
+      "heapBytes": 4416295
+    }
+  }
+}

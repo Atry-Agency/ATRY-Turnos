@@ -1,0 +1,2 @@
+const paths={arrow:'M7 17 17 7M7 7h10v10',down:'M12 4v16m-6-6 6 6 6-6',calendar:'M8 3v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2',route:'M5 5h6a4 4 0 0 1 0 8H9a4 4 0 0 0 0 8h10M5 2v6m11 10 3 3-3 3',palette:'M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-3.7 1.5 1.5 0 0 1 1-2.7h2a4 4 0 0 0 4-4C21 6 17 3 12 3ZM7 9h.01M11 6h.01M16 7h.01'};
+export function MarketingIcon({kind='arrow'}:{kind?:keyof typeof paths}){return <svg className="marketing-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={paths[kind]}/></svg>}

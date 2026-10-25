@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "Invitación crea cuenta, vincula profesional y abre agenda con navegación de empleado",
+    "Invitación consumida conserva rechazo del backend, sin segunda membresía"
+  ],
+  "errors": [],
+  "environment": "HTTP efímero + SQLite :memory:; invitación en outbox local sin envío"
+}

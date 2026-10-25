@@ -1,0 +1,9 @@
+{
+  "pages": 79,
+  "imagePlacements": 146,
+  "imageObjectsAcrossPages": 134,
+  "note": "Identical images on a page share one embedded object; each placement is counted separately.",
+  "bytes": 23236194,
+  "allPagesHaveText": true,
+  "renderedPages": 79
+}

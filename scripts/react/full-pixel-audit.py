@@ -3,9 +3,9 @@ from pathlib import Path
 import json
 base=Path('docs/react-migration/full/evidence')
 results=[]
-for folder in ['customers','pages','additional-pages','notifications','scheduling','access-support','team','subscription','settings','account','agenda']:
- for a in sorted((base/folder).glob('javascript-*.png')):
-  b=a.with_name(a.name.replace('javascript-','react-',1))
+for folder in ['customers','pages','additional-pages','notifications','scheduling','access-support','team','subscription','settings','account','agenda','native-public','native-admin','native-marketing','native-shell']:
+ for a in sorted((base/folder).glob('legacy-*.png' if folder=='native-shell' else 'javascript-*.png')):
+  b=a.with_name(a.name.replace('legacy-' if folder=='native-shell' else 'javascript-','react-',1))
   if not b.exists():continue
   x,y=Image.open(a).convert('RGB'),Image.open(b).convert('RGB')
   if x.size!=y.size:results.append(dict(folder=folder,file=a.name,size=[x.size,y.size]));continue

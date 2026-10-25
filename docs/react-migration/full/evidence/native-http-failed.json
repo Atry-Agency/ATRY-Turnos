@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Login React con cookie HttpOnly y API HTTP real sobre SQLite en memoria",
+    "Perfil persiste y actualiza sesión y shell sin puente ni identidad simulada",
+    "Sesiones personales consultadas por endpoint autenticado",
+    "Crear otro negocio mantiene contratación y habilitación independientes"
+  ],
+  "errors": [],
+  "error": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[name=name]')\u001b[22m\n"
+}

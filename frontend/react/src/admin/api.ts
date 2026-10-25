@@ -1,0 +1,10 @@
+import type {AppPort} from '../app/port';
+import {StaleScopeError} from '../infrastructure/errors';
+export type Data=Record<string,unknown>;
+export function record(value:unknown):Data{if(!value||typeof value!=='object'||Array.isArray(value))throw Error('No se recibió una respuesta administrativa válida.');return value as Data}
+export const object=(data:Data,key:string):Data=>data[key]&&typeof data[key]==='object'&&!Array.isArray(data[key])?data[key] as Data:{};
+export const rows=(data:Data,key='rows'):Data[]=>Array.isArray(data[key])?(data[key] as unknown[]).map(record):[];
+export const string=(data:Data,key:string,fallback='')=>data[key]==null?fallback:String(data[key]);
+export const number=(data:Data,key:string,fallback=0)=>typeof data[key]==='number'&&Number.isFinite(data[key])?data[key] as number:fallback;
+export function adminApi(port:AppPort){const session=port.session();let disposed=false,generation=0,pending=false;const check=(version=generation)=>{const current=port.session();if(disposed||version!==generation||!session||!current||current.userId!==session.userId||current.version!==session.version)throw new StaleScopeError();if(!port.user().platform_admin)throw Object.assign(Error('Necesitás acceso administrativo.'),{status:403})};const path=(route:string)=>{if(!/^\/api\/admin\/(?:[A-Za-z0-9_-]+\/?)+(?:\?[^#]*)?$/.test(route))throw Error('Ruta administrativa inválida.');return route};return {activate(){disposed=false},dispose(){disposed=true;generation++},current(){try{check();return true}catch{return false}},async read(route:string){check();const version=generation,result=await port.request(path(route),{fresh:true});check(version);return record(result)},async write(route:string,payload:unknown,method='POST'){check();if(pending)throw Error('Ya hay una operación en curso.');pending=true;const version=generation;try{const result=await port.request(path(route),{method,body:JSON.stringify(payload)});check(version);return record(result)}finally{pending=false}}}}
+export type AdminApi=ReturnType<typeof adminApi>;

@@ -10,13 +10,9 @@ function config(env,{verificationOnly=false}={}){
  return {supabaseUrl:url,supabaseKey:key,backend:'supabase',turnstileSiteKey:env.PUBLIC_TURNSTILE_SITE_KEY||'',...(verificationOnly?{verificationOnly:true}:{})};
 }
 async function build(env,dest=path.resolve('dist/pages'),options={}){
- const c=config(env,options);fs.mkdirSync(dest,{recursive:true});fs.cpSync(path.resolve(__dirname,'../web'),dest,{recursive:true});
- await require('esbuild').build({entryPoints:[path.resolve(__dirname,'../cloud/browser-entry.mjs')],bundle:true,format:'iife',platform:'browser',target:['es2022'],outfile:path.join(dest,'cloud-backend.js'),minify:true,sourcemap:false});
- await require('esbuild').build({entryPoints:[path.resolve(__dirname,'../cloud/proof-worker.mjs')],bundle:true,format:'iife',platform:'browser',target:['es2022'],outfile:path.join(dest,'proof-worker.js'),minify:true,sourcemap:false});
- fs.writeFileSync(path.join(dest,'runtime-config.js'),'window.ATRY_CONFIG='+JSON.stringify(c)+';');
- const file=path.join(dest,'index.html'),html=fs.readFileSync(file,'utf8');fs.writeFileSync(file,html.replace('<script src="./app.js','<script src="./runtime-config.js" defer></script><script src="./cloud-backend.js" defer></script><script src="./app.js'));
+ const c=config(env,options);require('./react/package.cjs').packageReact(dest,c);
  fs.writeFileSync(path.join(dest,'_redirects'),'/* /index.html 200\n');
- fs.writeFileSync(path.join(dest,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n');return {destination:dest,backend:c.backend};
+ fs.writeFileSync(path.join(dest,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n  X-Frame-Options: SAMEORIGIN\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n');return {destination:dest,backend:c.backend};
 }
 if(require.main===module)build(process.env).then(result=>console.log(JSON.stringify(result))).catch(error=>{console.error(error.message);process.exitCode=1;});
 module.exports={config,build};

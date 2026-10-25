@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Reserva pública ante respuesta perdida reintenta el mismo cuerpo/UUID y crea un único turno",
+    "Enlace privado reprograma con disponibilidad del servidor y cancela con confirmación"
+  ],
+  "errors": [],
+  "error": "Error: no such column: b.visit_id"
+}

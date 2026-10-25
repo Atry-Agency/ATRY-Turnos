@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "width": 1440,
+      "textEqual": true
+    }
+  ],
+  "errors": []
+}

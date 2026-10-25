@@ -6,7 +6,7 @@ const crypto=require('node:crypto');
 const {connect,id,now,hashToken,randomToken,passwordHash,verifyPassword,transaction,audit}=require('./db');
 const {HttpError,fail,isDate,asMinutes,localISO,localDay,localHM,isLive,available,createBooking,updateBooking}=require('./booking');
 const root=path.join(__dirname,'../web');
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.json':'application/json; charset=utf-8','.webmanifest':'application/manifest+json'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.ico':'image/x-icon','.json':'application/json; charset=utf-8','.webmanifest':'application/manifest+json','.woff2':'font/woff2','.ttf':'font/ttf','.otf':'font/otf'};
 const string=(val,max=200)=>String(val??'').trim().slice(0,max);
 const integer=(val,min,max,name)=>{let n=Number(val);if(!Number.isInteger(n)||n<min||n>max)fail(400,`${name} debe estar entre ${min} y ${max}`);return n;};
 const isEmail=e=>/^\S+@\S+\.\S+$/.test(e) && e.length<=150;
@@ -17,6 +17,10 @@ function cookie(req,key){return (req.headers.cookie||'').split(';').map(x=>x.tri
 function readBody(req){return new Promise((resolve,reject)=>{let out='',size=0;req.on('data',ch=>{size+=ch.length;if(size>150_000){reject(new HttpError(413,'Solicitud demasiado grande'));req.destroy();return;}out+=ch;});req.on('end',()=>{try{resolve(out?JSON.parse(out):{});}catch{reject(new HttpError(400,'JSON inválido'));}});req.on('error',reject);});}
 function route(method,pattern,handler){return {method,regex:new RegExp('^'+pattern+'$'),handler};}
 function createApp({db=connect(),webRoot=root}={}) {
+  // Native builds expose only files enumerated by the local build, never arbitrary workspace files.
+  const nativeManifest=path.resolve(webRoot)!==path.resolve(root)&&fs.existsSync(path.join(webRoot,'react-assets.json'))?JSON.parse(fs.readFileSync(path.join(webRoot,'react-assets.json'),'utf8')):null;
+  if(nativeManifest&&(!Array.isArray(nativeManifest)||nativeManifest.some(file=>typeof file!=='string'||!/^\/[a-zA-Z0-9_./-]+\.(html|js|css|png|jpg|webp|svg|woff2|ttf|otf|webmanifest)$/.test(file)||file.includes('..'))))throw Error('Invalid native asset manifest');
+  const nativeAssets=nativeManifest?new Set(nativeManifest):null;
   const routes=[];const r=(method,pattern,fn)=>routes.push(route(method,pattern,fn));
   const cookieHeader=(value,req,maxAge)=>`atry_session=${value}; HttpOnly; Path=/; SameSite=Lax; Max-Age=${maxAge}; ${((req.headers['x-forwarded-proto']==='https')||process.env.NODE_ENV==='production')?'Secure; ':''}`;
   function user(req){
@@ -347,7 +351,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       // Only the explicitly isolated demo may appear inside this site's landing.
       const showcaseDocument=['/','/index.html'].includes(pathname)&&u.searchParams.get('demo')==='1'&&u.searchParams.get('showcase')==='1';
       res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');res.setHeader('X-Frame-Options',showcaseDocument?'SAMEORIGIN':'DENY');
-      res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors "+(showcaseDocument?"'self'":"'none'")+"; form-action 'self'");
+      res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors "+(showcaseDocument?"'self'":"'none'")+"; form-action 'self'");
       if(pathname.startsWith('/api/')){
         const ip=req.socket.remoteAddress||'unknown',bucket=Math.floor(Date.now()/60000),key=ip+':'+bucket;
         if(requestCounts.size>4000)requestCounts.clear();const hits=(requestCounts.get(key)||0)+1;requestCounts.set(key,hits);
@@ -378,7 +382,7 @@ function createApp({db=connect(),webRoot=root}={}) {
       }
       if(!['GET','HEAD'].includes(req.method))fail(405,'Método no permitido');
       const filepath=pathname==='/'?'/index.html':pathname;
-      if(!['/staff-photo-core.js','/staff-photos.js','/staff-photos.css','/buttons.css','/whatsapp.js','/whatsapp.css','/whatsapp-core.js','/whatsapp-demo.js','/showcase-preview.js','/descubrir.html','/descubrir.css','/descubrir.js','/visit-demo.js','/visit-core.js','/visits.js','/visits.css','/theme-core.js','/theme-studio.js','/theme-studio.css','/agenda.css','/agenda.js','/agenda-core.js','/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|jpg|woff2|otf|ttf)$/.test(filepath))fail(404,'No encontramos esa página');
+      if(nativeAssets?!nativeAssets.has(filepath):!['/staff-photo-core.js','/staff-photos.js','/staff-photos.css','/buttons.css','/whatsapp.js','/whatsapp.css','/whatsapp-core.js','/whatsapp-demo.js','/showcase-preview.js','/descubrir.html','/descubrir.css','/descubrir.js','/visit-demo.js','/visit-core.js','/visits.js','/visits.css','/theme-core.js','/theme-studio.js','/theme-studio.css','/agenda.css','/agenda.js','/agenda-core.js','/demo.js','/business-polish.css','/logo-editor.js','/typography.css','/workspace.js','/workspace.css','/index.html','/read-cache.js','/appearance.js','/app.js','/features.js','/management.js','/recurring.js','/onboarding.js','/subscriptions.js','/commercial.js','/control-center.js','/control-center.css','/appearance.css','/styles.css','/product.css','/favicon.svg','/manifest.webmanifest','/sw.js'].includes(filepath)&&!/^\/assets\/brand\/[a-zA-Z0-9.-]+\.(png|jpg|woff2|otf|ttf)$/.test(filepath)&&!/^\/assets\/landing\/[a-zA-Z0-9_-]+\.webp$/.test(filepath))fail(404,'No encontramos esa página');
       const full=path.join(webRoot,filepath);
       const content=fs.readFileSync(full);
       res.writeHead(200,{'Content-Type':mime[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});

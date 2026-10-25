@@ -1,0 +1,316 @@
+{
+  "file": "output/pdf/React - Revision integral y capturas.pdf",
+  "pages": 79,
+  "embeddedImages": 146,
+  "comparisons": [
+    {
+      "javascript": "docs/react-migration/full/evidence/customers/javascript-p3-1440-list.png",
+      "react": "docs/react-migration/full/evidence/customers/react-p3-1440-list.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/customers/javascript-p3-1440-profile.png",
+      "react": "docs/react-migration/full/evidence/customers/react-p3-1440-profile.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/pages/javascript-estadisticas-2-1440.png",
+      "react": "docs/react-migration/full/evidence/pages/react-estadisticas-2-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/pages/javascript-inicio-3-1440.png",
+      "react": "docs/react-migration/full/evidence/pages/react-inicio-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/pages/javascript-lista-espera-2-1440.png",
+      "react": "docs/react-migration/full/evidence/pages/react-lista-espera-2-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/pages/javascript-smartslots-3-1440.png",
+      "react": "docs/react-migration/full/evidence/pages/react-smartslots-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/pages/javascript-turnos-fijos-2-1440.png",
+      "react": "docs/react-migration/full/evidence/pages/react-turnos-fijos-2-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/additional-pages/javascript-comunicacion-3-1440.png",
+      "react": "docs/react-migration/full/evidence/additional-pages/react-comunicacion-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/additional-pages/javascript-configuracion-inicial-2-1440.png",
+      "react": "docs/react-migration/full/evidence/additional-pages/react-configuracion-inicial-2-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/additional-pages/javascript-insights-3-1440.png",
+      "react": "docs/react-migration/full/evidence/additional-pages/react-insights-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/notifications/javascript-notificaciones-3-1440.png",
+      "react": "docs/react-migration/full/evidence/notifications/react-notificaciones-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/scheduling/javascript-disponibilidad-3-1440.png",
+      "react": "docs/react-migration/full/evidence/scheduling/react-disponibilidad-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/access-support/javascript-accesos-3-1440.png",
+      "react": "docs/react-migration/full/evidence/access-support/react-accesos-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/access-support/javascript-mi-horario-2-1440.png",
+      "react": "docs/react-migration/full/evidence/access-support/react-mi-horario-2-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/access-support/javascript-soporte-1-1440.png",
+      "react": "docs/react-migration/full/evidence/access-support/react-soporte-1-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/team/javascript-equipo-3-1440.png",
+      "react": "docs/react-migration/full/evidence/team/react-equipo-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/subscription/javascript-suscripcion-3-1440.png",
+      "react": "docs/react-migration/full/evidence/subscription/react-suscripcion-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-components-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-components-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-general-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-general-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-identity-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-identity-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-public-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-public-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-publicacion-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-publicacion-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-reservas-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-reservas-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-themes-3-1440.png",
+      "react": "docs/react-migration/full/evidence/settings/react-themes-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/account/javascript-negocios-3-1440.png",
+      "react": "docs/react-migration/full/evidence/account/react-negocios-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/account/javascript-perfil-3-1440.png",
+      "react": "docs/react-migration/full/evidence/account/react-perfil-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/account/javascript-seguridad-3-1440.png",
+      "react": "docs/react-migration/full/evidence/account/react-seguridad-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/agenda/javascript-atencion-3-1440.png",
+      "react": "docs/react-migration/full/evidence/agenda/react-atencion-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/agenda/javascript-dia-3-1440.png",
+      "react": "docs/react-migration/full/evidence/agenda/react-dia-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/agenda/javascript-mes-3-1440.png",
+      "react": "docs/react-migration/full/evidence/agenda/react-mes-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/agenda/javascript-semana-3-1440.png",
+      "react": "docs/react-migration/full/evidence/agenda/react-semana-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-public/javascript-single-initial-3-1440.png",
+      "react": "docs/react-migration/full/evidence/native-public/react-single-initial-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-public/javascript-visit-initial-3-1440.png",
+      "react": "docs/react-migration/full/evidence/native-public/react-visit-initial-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-auditoria-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-auditoria-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-business-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-business-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-comercial-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-comercial-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-configuracion-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-configuracion-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-correos-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-correos-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-datos-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-datos-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-inicio-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-inicio-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-negocios-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-negocios-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-sistema-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-sistema-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-soporte-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-soporte-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-usuarios-1440.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-usuarios-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-agenda-3-1440.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-agenda-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-configuracion-3-1440.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-configuracion-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-inicio-3-1440.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-inicio-3-1440.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-inicio-1-390.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-inicio-1-390.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-agenda-2-320.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-agenda-2-320.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-configuracion-3-430.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-configuracion-3-430.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-shell/legacy-agenda-3-768.png",
+      "react": "docs/react-migration/full/evidence/native-shell/react-agenda-3-768.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-public/javascript-single-initial-1-390.png",
+      "react": "docs/react-migration/full/evidence/native-public/react-single-initial-1-390.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-public/javascript-visit-initial-3-390.png",
+      "react": "docs/react-migration/full/evidence/native-public/react-visit-initial-3-390.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-correos-390.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-correos-390.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/native-admin/javascript-configuracion-320.png",
+      "react": "docs/react-migration/full/evidence/native-admin/react-configuracion-320.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/team/javascript-equipo-3-390.png",
+      "react": "docs/react-migration/full/evidence/team/react-equipo-3-390.png"
+    },
+    {
+      "javascript": "docs/react-migration/full/evidence/settings/javascript-identity-3-390.png",
+      "react": "docs/react-migration/full/evidence/settings/react-identity-3-390.png"
+    }
+  ],
+  "pageTitles": [
+    "Una aplicaci\u00f3n React aut\u00f3noma",
+    "Resultados verificados",
+    "Arquitectura y contratos",
+    "Rendimiento y limitaciones",
+    "customers / p3-1440-list",
+    "customers / p3-1440-profile",
+    "pages / estadisticas-2-1440",
+    "pages / inicio-3-1440",
+    "pages / lista-espera-2-1440",
+    "pages / smartslots-3-1440",
+    "pages / turnos-fijos-2-1440",
+    "additional-pages / comunicacion-3-1440",
+    "additional-pages / configuracion-inicial-2-1440",
+    "additional-pages / insights-3-1440",
+    "notifications / notificaciones-3-1440",
+    "scheduling / disponibilidad-3-1440",
+    "access-support / accesos-3-1440",
+    "access-support / mi-horario-2-1440",
+    "access-support / soporte-1-1440",
+    "team / equipo-3-1440",
+    "subscription / suscripcion-3-1440",
+    "settings / components-3-1440",
+    "settings / general-3-1440",
+    "settings / identity-3-1440",
+    "settings / public-3-1440",
+    "settings / publicacion-3-1440",
+    "settings / reservas-3-1440",
+    "settings / themes-3-1440",
+    "account / negocios-3-1440",
+    "account / perfil-3-1440",
+    "account / seguridad-3-1440",
+    "agenda / atencion-3-1440",
+    "agenda / dia-3-1440",
+    "agenda / mes-3-1440",
+    "agenda / semana-3-1440",
+    "native-public / single-initial-3-1440",
+    "native-public / visit-initial-3-1440",
+    "native-admin / auditoria-1440",
+    "native-admin / business-1440",
+    "native-admin / comercial-1440",
+    "native-admin / configuracion-1440",
+    "native-admin / correos-1440",
+    "native-admin / datos-1440",
+    "native-admin / inicio-1440",
+    "native-admin / negocios-1440",
+    "native-admin / sistema-1440",
+    "native-admin / soporte-1440",
+    "native-admin / usuarios-1440",
+    "native-shell / agenda-3-1440",
+    "native-shell / configuracion-3-1440",
+    "native-shell / inicio-3-1440",
+    "native-shell / inicio-1-390",
+    "native-shell / agenda-2-320",
+    "native-shell / configuracion-3-430",
+    "native-shell / agenda-3-768",
+    "native-public / single-initial-1-390",
+    "native-public / visit-initial-3-390",
+    "native-admin / correos-390",
+    "native-admin / configuracion-320",
+    "team / equipo-3-390",
+    "settings / identity-3-390",
+    "Landing / 390 px / tramo 1",
+    "Landing / 390 px / tramo 2",
+    "Landing / 390 px / tramo 3",
+    "Landing / 390 px / tramo 4",
+    "Landing / 390 px / tramo 5",
+    "Landing / 390 px / tramo 6",
+    "Landing / 390 px / tramo 7",
+    "Landing / 390 px / tramo 8",
+    "Landing / 390 px / tramo 9",
+    "Landing / 390 px / tramo 10",
+    "Landing / 390 px / tramo 11",
+    "Landing / 390 px / tramo 12",
+    "Landing / 390 px / tramo 13",
+    "Landing / 390 px / tramo 14",
+    "Validaci\u00f3n React / identity-390.png",
+    "Validaci\u00f3n React / theme-3-dark-390.png",
+    "Validaci\u00f3n React / theme-3-contrast-1440.png",
+    "Validaci\u00f3n React / native-admin-http.png"
+  ]
+}

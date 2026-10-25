@@ -9,6 +9,7 @@ async function build(env=process.env,directory=path.resolve('dist/github-preview
   }
   return directory;
  }
+ fs.rmSync(path.join(directory,'validacion'),{recursive:true,force:true});
  await require('./build-pages').build(env,directory);
  fs.writeFileSync(path.join(directory,'.nojekyll'),'');
  // GitHub Pages uses hash routes; Cloudflare-specific headers are not interpreted there.

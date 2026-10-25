@@ -7,7 +7,7 @@ import {canManage,type Catalog,type FeaturePort,type Scope,type ServicePayload} 
 import {createServicesRepository,StaleScopeError} from './repository';
 import {initialDraft,type Draft} from './form';
 import {ServiceEditor} from './ServiceEditor';
-export interface ScreenController {beforeLeave():Promise<boolean>;reload():void}
+export interface ScreenController {beforeLeave():Promise<boolean>;reload():void|Promise<void>;canRefresh?():boolean}
 export function ServicesScreen({scope,port,control}:{scope:Scope;port:FeaturePort;control:(controller:ScreenController|null)=>void}){
  const repository=useMemo(()=>createServicesRepository(port,scope),[port,scope]);
  const [catalog,setCatalog]=useState<Catalog|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false);
@@ -21,7 +21,7 @@ export function ServicesScreen({scope,port,control}:{scope:Scope;port:FeaturePor
  const valid=()=>mounted.current&&repository.current();
  async function load(fresh=false){const request=++sequence.current;setLoading(true);setError('');try{const next=await repository.load(fresh);if(valid()&&request===sequence.current)setCatalog(next)}catch(e){if(valid()&&request===sequence.current&&!(e instanceof StaleScopeError))setError(e instanceof Error?e.message:'No pudimos cargar los servicios.')}finally{if(valid()&&request===sequence.current)setLoading(false)}}
  reloadRef.current=()=>{if(!operation.current)void load(true)};
- useEffect(()=>{mounted.current=true;repository.activate();void load();control({reload:()=>reloadRef.current(),beforeLeave:async()=>{if(operation.current){port.notify('Esperá a que termine el guardado para salir.',true);return false}if(!dirty.current)return true;const accepted=await ask('Hay cambios sin guardar. ¿Querés cerrar esta ventana?','Cerrar sin guardar');if(accepted)dirty.current=false;return accepted}});return()=>{mounted.current=false;repository.dispose();sequence.current++;control(null);resolveConfirmation.current?.(false);resolveConfirmation.current=null;confirmationPromise.current=null;dirty.current=false;}},[repository]);
+ useEffect(()=>{mounted.current=true;repository.activate();void load();control({canRefresh:()=>!dirty.current&&!operation.current,reload:()=>{if(!dirty.current&&!operation.current)reloadRef.current()},beforeLeave:async()=>{if(operation.current){port.notify('Esperá a que termine el guardado para salir.',true);return false}if(!dirty.current)return true;const accepted=await ask('Hay cambios sin guardar. ¿Querés cerrar esta ventana?','Cerrar sin guardar');if(accepted)dirty.current=false;return accepted}});return()=>{mounted.current=false;repository.dispose();sequence.current++;control(null);resolveConfirmation.current?.(false);resolveConfirmation.current=null;confirmationPromise.current=null;dirty.current=false;}},[repository]);
  useEffect(()=>{const unload=(e:BeforeUnloadEvent)=>{if(dirty.current||operation.current){e.preventDefault();e.returnValue=''}};window.addEventListener('beforeunload',unload);return()=>window.removeEventListener('beforeunload',unload)},[]);
  async function close(){if(operation.current)return;if(dirty.current&&!await ask('Hay cambios sin guardar. ¿Querés cerrar esta ventana?','Cerrar sin guardar'))return;dirty.current=false;setEditor(null)}
  function open(service:Service|null){if(!catalog||operation.current)return;dirty.current=false;setEditor({service,draft:initialDraft(service,catalog.staff)})}

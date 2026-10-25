@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "Landing React monta dos demostraciones nativas aisladas y completa el intercambio de tema",
+    "Nombre, paleta y cambio de vista se propagan a la aplicación real",
+    "Sin desbordes horizontales a 320 px",
+    "Sin desbordes horizontales a 390 px",
+    "Sin desbordes horizontales a 430 px",
+    "Sin desbordes horizontales a 768 px",
+    "Sin desbordes horizontales a 1440 px"
+  ],
+  "errors": []
+}

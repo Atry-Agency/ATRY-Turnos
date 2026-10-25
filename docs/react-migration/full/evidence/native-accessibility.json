@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "Menú móvil operable con Enter/Escape y restauración de foco",
+    "Galería con flechas/End, foco, selección y asociación accesible de panel",
+    "Preferencia de movimiento reducido muestra las secciones sin esperar animaciones",
+    "Paquete preview bloquea login y solicitudes públicas antes de cualquier conexión API"
+  ],
+  "errors": [],
+  "scope": "Pruebas de teclado, foco, semántica y reduced motion. No equivale a una certificación WCAG ni reemplaza lector de pantalla."
+}

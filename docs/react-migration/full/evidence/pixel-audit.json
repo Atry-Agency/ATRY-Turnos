@@ -3283,5 +3283,1520 @@
     "different": 0,
     "over4": 0,
     "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-1-1440.png",
+    "pixels": 2509920,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-1-320.png",
+    "pixels": 708480,
+    "different": 181,
+    "over4": 143,
+    "bbox": [
+      178,
+      914,
+      196,
+      1101
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-1-390.png",
+    "pixels": 843570,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-1-430.png",
+    "pixels": 921060,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-1-768.png",
+    "pixels": 1651968,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-2-1440.png",
+    "pixels": 2859840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-2-320.png",
+    "pixels": 807360,
+    "different": 181,
+    "over4": 143,
+    "bbox": [
+      178,
+      914,
+      196,
+      1101
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-2-390.png",
+    "pixels": 947700,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-2-430.png",
+    "pixels": 1035870,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-2-768.png",
+    "pixels": 1824768,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-3-1440.png",
+    "pixels": 2859840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-3-320.png",
+    "pixels": 807360,
+    "different": 181,
+    "over4": 143,
+    "bbox": [
+      178,
+      914,
+      196,
+      1101
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-3-390.png",
+    "pixels": 947700,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-3-430.png",
+    "pixels": 1035870,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-single-initial-3-768.png",
+    "pixels": 1824768,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-1-1440.png",
+    "pixels": 1591200,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      638,
+      500,
+      648,
+      506
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-1-320.png",
+    "pixels": 512320,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      62,
+      1037,
+      72,
+      1043
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-1-390.png",
+    "pixels": 585390,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      62,
+      959,
+      72,
+      965
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-1-430.png",
+    "pixels": 631240,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      62,
+      937,
+      72,
+      943
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-1-768.png",
+    "pixels": 1111296,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      80,
+      857,
+      90,
+      863
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-2-1440.png",
+    "pixels": 1952640,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      638,
+      500,
+      1195,
+      858
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-2-320.png",
+    "pixels": 586880,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      1037,
+      288,
+      1290
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-2-390.png",
+    "pixels": 676260,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      959,
+      358,
+      1290
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-2-430.png",
+    "pixels": 731430,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      937,
+      398,
+      1036
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-2-768.png",
+    "pixels": 1290240,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      80,
+      857,
+      90,
+      863
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-3-1440.png",
+    "pixels": 1952640,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      638,
+      500,
+      1195,
+      858
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-3-320.png",
+    "pixels": 586880,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      1037,
+      288,
+      1290
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-3-390.png",
+    "pixels": 676260,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      959,
+      358,
+      1290
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-3-430.png",
+    "pixels": 731430,
+    "different": 52,
+    "over4": 48,
+    "bbox": [
+      62,
+      937,
+      398,
+      1036
+    ]
+  },
+  {
+    "folder": "native-public",
+    "file": "javascript-visit-initial-3-768.png",
+    "pixels": 1290240,
+    "different": 51,
+    "over4": 48,
+    "bbox": [
+      80,
+      857,
+      90,
+      863
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-auditoria-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-auditoria-320.png",
+    "pixels": 307200,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      164,
+      727,
+      201,
+      736
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-auditoria-390.png",
+    "pixels": 374400,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      168,
+      705,
+      205,
+      714
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-auditoria-430.png",
+    "pixels": 412800,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      168,
+      708,
+      205,
+      717
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-auditoria-768.png",
+    "pixels": 737280,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      475,
+      203,
+      484
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-business-1440.png",
+    "pixels": 2057760,
+    "different": 1135,
+    "over4": 1071,
+    "bbox": [
+      327,
+      617,
+      1036,
+      827
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-business-320.png",
+    "pixels": 824000,
+    "different": 1158,
+    "over4": 1101,
+    "bbox": [
+      46,
+      1332,
+      227,
+      2478
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-business-390.png",
+    "pixels": 895050,
+    "different": 1158,
+    "over4": 1101,
+    "bbox": [
+      50,
+      1201,
+      313,
+      2212
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-business-430.png",
+    "pixels": 950300,
+    "different": 1092,
+    "over4": 1007,
+    "bbox": [
+      58,
+      569,
+      316,
+      2127
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-business-768.png",
+    "pixels": 1345536,
+    "different": 44951,
+    "over4": 1130,
+    "bbox": [
+      14,
+      35,
+      754,
+      1669
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-comercial-1440.png",
+    "pixels": 1627200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-comercial-320.png",
+    "pixels": 532800,
+    "different": 43,
+    "over4": 33,
+    "bbox": [
+      164,
+      1559,
+      201,
+      1568
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-comercial-390.png",
+    "pixels": 588510,
+    "different": 43,
+    "over4": 33,
+    "bbox": [
+      168,
+      1417,
+      205,
+      1426
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-comercial-430.png",
+    "pixels": 632960,
+    "different": 43,
+    "over4": 33,
+    "bbox": [
+      168,
+      1380,
+      205,
+      1389
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-comercial-768.png",
+    "pixels": 950016,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      1145,
+      203,
+      1154
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-configuracion-1440.png",
+    "pixels": 1857600,
+    "different": 1376,
+    "over4": 1218,
+    "bbox": [
+      789,
+      246,
+      1292,
+      593
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-configuracion-320.png",
+    "pixels": 1049280,
+    "different": 703,
+    "over4": 627,
+    "bbox": [
+      30,
+      40,
+      201,
+      3182
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-configuracion-390.png",
+    "pixels": 1264380,
+    "different": 695,
+    "over4": 619,
+    "bbox": [
+      71,
+      2162,
+      205,
+      3159
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-configuracion-430.png",
+    "pixels": 1383740,
+    "different": 695,
+    "over4": 619,
+    "bbox": [
+      71,
+      1203,
+      205,
+      3135
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-configuracion-768.png",
+    "pixels": 1565184,
+    "different": 600,
+    "over4": 465,
+    "bbox": [
+      17,
+      98,
+      751,
+      1955
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-correos-1440.png",
+    "pixels": 1382400,
+    "different": 1339,
+    "over4": 1266,
+    "bbox": [
+      302,
+      190,
+      570,
+      202
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-correos-320.png",
+    "pixels": 307200,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      164,
+      581,
+      201,
+      590
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-correos-390.png",
+    "pixels": 374400,
+    "different": 1785,
+    "over4": 1673,
+    "bbox": [
+      29,
+      174,
+      356,
+      594
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-correos-430.png",
+    "pixels": 412800,
+    "different": 1401,
+    "over4": 1310,
+    "bbox": [
+      29,
+      315,
+      298,
+      579
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-correos-768.png",
+    "pixels": 737280,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      479,
+      203,
+      488
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-datos-1440.png",
+    "pixels": 2216160,
+    "different": 713,
+    "over4": 626,
+    "bbox": [
+      314,
+      42,
+      1374,
+      1336
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-datos-320.png",
+    "pixels": 920000,
+    "different": 43,
+    "over4": 33,
+    "bbox": [
+      164,
+      2769,
+      201,
+      2778
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-datos-390.png",
+    "pixels": 1008150,
+    "different": 1118,
+    "over4": 1023,
+    "bbox": [
+      50,
+      174,
+      356,
+      2502
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-datos-430.png",
+    "pixels": 1102520,
+    "different": 734,
+    "over4": 660,
+    "bbox": [
+      50,
+      1776,
+      207,
+      2481
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-datos-768.png",
+    "pixels": 1430784,
+    "different": 752,
+    "over4": 677,
+    "bbox": [
+      52,
+      1227,
+      500,
+      1780
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-inicio-1440.png",
+    "pixels": 1765440,
+    "different": 22369,
+    "over4": 906,
+    "bbox": [
+      288,
+      340,
+      1400,
+      1067
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-inicio-320.png",
+    "pixels": 701440,
+    "different": 63,
+    "over4": 49,
+    "bbox": [
+      139,
+      1672,
+      201,
+      2095
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-inicio-390.png",
+    "pixels": 809640,
+    "different": 63,
+    "over4": 49,
+    "bbox": [
+      143,
+      1593,
+      205,
+      1993
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-inicio-430.png",
+    "pixels": 877200,
+    "different": 921,
+    "over4": 825,
+    "bbox": [
+      55,
+      1553,
+      357,
+      1957
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-inicio-768.png",
+    "pixels": 1505280,
+    "different": 106,
+    "over4": 83,
+    "bbox": [
+      145,
+      1497,
+      389,
+      1877
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-negocios-1440.png",
+    "pixels": 1382400,
+    "different": 36,
+    "over4": 30,
+    "bbox": [
+      1141,
+      419,
+      1148,
+      428
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-negocios-320.png",
+    "pixels": 341120,
+    "different": 110,
+    "over4": 90,
+    "bbox": [
+      156,
+      812,
+      201,
+      969
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-negocios-390.png",
+    "pixels": 411450,
+    "different": 110,
+    "over4": 90,
+    "bbox": [
+      160,
+      814,
+      205,
+      972
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-negocios-430.png",
+    "pixels": 454940,
+    "different": 110,
+    "over4": 90,
+    "bbox": [
+      160,
+      817,
+      205,
+      975
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-negocios-768.png",
+    "pixels": 737280,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      679,
+      203,
+      688
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-sistema-1440.png",
+    "pixels": 2629440,
+    "different": 140,
+    "over4": 124,
+    "bbox": [
+      685,
+      192,
+      1039,
+      368
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-sistema-320.png",
+    "pixels": 1099520,
+    "different": 96,
+    "over4": 86,
+    "bbox": [
+      137,
+      336,
+      201,
+      3339
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-sistema-390.png",
+    "pixels": 1233570,
+    "different": 427,
+    "over4": 396,
+    "bbox": [
+      168,
+      174,
+      356,
+      3080
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-sistema-430.png",
+    "pixels": 1301610,
+    "different": 43,
+    "over4": 33,
+    "bbox": [
+      168,
+      2935,
+      205,
+      2944
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-sistema-768.png",
+    "pixels": 1622016,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      2020,
+      203,
+      2029
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-soporte-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-soporte-320.png",
+    "pixels": 307200,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      164,
+      493,
+      201,
+      502
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-soporte-390.png",
+    "pixels": 374400,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      168,
+      454,
+      205,
+      463
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-soporte-430.png",
+    "pixels": 412800,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      168,
+      457,
+      205,
+      466
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-soporte-768.png",
+    "pixels": 737280,
+    "different": 43,
+    "over4": 34,
+    "bbox": [
+      166,
+      406,
+      203,
+      415
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-usuarios-1440.png",
+    "pixels": 1382400,
+    "different": 778,
+    "over4": 699,
+    "bbox": [
+      1217,
+      561,
+      1387,
+      573
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-usuarios-320.png",
+    "pixels": 409280,
+    "different": 114,
+    "over4": 88,
+    "bbox": [
+      117,
+      526,
+      201,
+      1182
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-usuarios-390.png",
+    "pixels": 484770,
+    "different": 115,
+    "over4": 88,
+    "bbox": [
+      121,
+      503,
+      268,
+      1160
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-usuarios-430.png",
+    "pixels": 535350,
+    "different": 870,
+    "over4": 784,
+    "bbox": [
+      121,
+      506,
+      401,
+      1162
+    ]
+  },
+  {
+    "folder": "native-admin",
+    "file": "javascript-usuarios-768.png",
+    "pixels": 737280,
+    "different": 114,
+    "over4": 88,
+    "bbox": [
+      166,
+      351,
+      540,
+      756
+    ]
+  },
+  {
+    "folder": "native-marketing",
+    "file": "javascript-landing-1440.png",
+    "pixels": 13887360,
+    "different": 482,
+    "over4": 406,
+    "bbox": [
+      120,
+      2818,
+      931,
+      4925
+    ]
+  },
+  {
+    "folder": "native-marketing",
+    "file": "javascript-landing-320.png",
+    "pixels": 4813760,
+    "different": 138,
+    "over4": 107,
+    "bbox": [
+      141,
+      54,
+      301,
+      4436
+    ]
+  },
+  {
+    "folder": "native-marketing",
+    "file": "javascript-landing-390.png",
+    "pixels": 5450250,
+    "different": 97,
+    "over4": 78,
+    "bbox": [
+      40,
+      1549,
+      165,
+      4213
+    ]
+  },
+  {
+    "folder": "native-marketing",
+    "file": "javascript-landing-430.png",
+    "pixels": 5822200,
+    "different": 95,
+    "over4": 76,
+    "bbox": [
+      141,
+      1506,
+      168,
+      4087
+    ]
+  },
+  {
+    "folder": "native-marketing",
+    "file": "javascript-landing-768.png",
+    "pixels": 9438720,
+    "different": 95,
+    "over4": 80,
+    "bbox": [
+      329,
+      1612,
+      552,
+      3633
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-1-1440.png",
+    "pixels": 1699200,
+    "different": 249,
+    "over4": 56,
+    "bbox": [
+      29,
+      39,
+      55,
+      326
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-1-320.png",
+    "pixels": 443200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-1-390.png",
+    "pixels": 514410,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-1-430.png",
+    "pixels": 539650,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-1-768.png",
+    "pixels": 892416,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-2-1440.png",
+    "pixels": 1794240,
+    "different": 504,
+    "over4": 163,
+    "bbox": [
+      29,
+      39,
+      63,
+      129
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-2-320.png",
+    "pixels": 487040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-2-390.png",
+    "pixels": 567840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-2-430.png",
+    "pixels": 598560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-2-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-3-1440.png",
+    "pixels": 1794240,
+    "different": 2213,
+    "over4": 207,
+    "bbox": [
+      18,
+      39,
+      1404,
+      1087
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-3-320.png",
+    "pixels": 487040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-3-390.png",
+    "pixels": 567840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-3-430.png",
+    "pixels": 598560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-agenda-3-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-1-1440.png",
+    "pixels": 1382400,
+    "different": 248,
+    "over4": 56,
+    "bbox": [
+      29,
+      39,
+      55,
+      54
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-1-320.png",
+    "pixels": 385920,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-1-390.png",
+    "pixels": 437970,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-1-430.png",
+    "pixels": 482890,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-2-1440.png",
+    "pixels": 1382400,
+    "different": 504,
+    "over4": 163,
+    "bbox": [
+      29,
+      39,
+      63,
+      129
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-2-320.png",
+    "pixels": 400320,
+    "different": 1,
+    "over4": 0,
+    "bbox": [
+      305,
+      483,
+      306,
+      484
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-2-390.png",
+    "pixels": 455520,
+    "different": 33,
+    "over4": 3,
+    "bbox": [
+      14,
+      402,
+      376,
+      1127
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-2-430.png",
+    "pixels": 502240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-2-768.png",
+    "pixels": 741888,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-3-1440.png",
+    "pixels": 1382400,
+    "different": 504,
+    "over4": 163,
+    "bbox": [
+      29,
+      39,
+      63,
+      129
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-3-320.png",
+    "pixels": 400320,
+    "different": 1,
+    "over4": 0,
+    "bbox": [
+      305,
+      483,
+      306,
+      484
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-3-390.png",
+    "pixels": 455520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-3-430.png",
+    "pixels": 502240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-configuracion-3-768.png",
+    "pixels": 741888,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-1-1440.png",
+    "pixels": 1560960,
+    "different": 248,
+    "over4": 56,
+    "bbox": [
+      29,
+      39,
+      55,
+      54
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-1-320.png",
+    "pixels": 521600,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-1-390.png",
+    "pixels": 624390,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-1-430.png",
+    "pixels": 688430,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-1-768.png",
+    "pixels": 834816,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-2-1440.png",
+    "pixels": 1846080,
+    "different": 504,
+    "over4": 163,
+    "bbox": [
+      29,
+      39,
+      63,
+      129
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-2-320.png",
+    "pixels": 895680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-2-390.png",
+    "pixels": 1017900,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-2-430.png",
+    "pixels": 1021250,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-2-768.png",
+    "pixels": 1549056,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-3-1440.png",
+    "pixels": 1846080,
+    "different": 504,
+    "over4": 163,
+    "bbox": [
+      29,
+      39,
+      63,
+      129
+    ]
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-3-320.png",
+    "pixels": 899840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-3-390.png",
+    "pixels": 1017900,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-3-430.png",
+    "pixels": 1010070,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "native-shell",
+    "file": "legacy-inicio-3-768.png",
+    "pixels": 1549056,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   }
 ]

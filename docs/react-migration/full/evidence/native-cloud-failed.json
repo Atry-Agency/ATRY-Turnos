@@ -1,0 +1,41 @@
+{
+  "checks": [
+    "SDK y adaptador cloud existentes montan React; RECENT_AUTH_REQUIRED abre confirmación nativa sin perder el formulario"
+  ],
+  "errors": [],
+  "network": [
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_me"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token"
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_finish_registration"
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_me"
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_control_read"
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_control_read"
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/atry_control_command"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token"
+    }
+  ],
+  "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-react-form=admin-identity] [role=status]').filter({ hasText: 'Correo o contraseña incorrectos.' }) to be visible\u001b[22m\n"
+}

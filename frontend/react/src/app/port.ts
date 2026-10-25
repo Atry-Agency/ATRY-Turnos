@@ -29,6 +29,7 @@ export interface AppPort extends FeaturePort {
  refreshPermissions():Promise<void>;
  completedOnboarding():void;
  demo():boolean;
+ privateEmployeeCatalog():boolean;
  business():BusinessContext;
  capability(name:string):boolean;
  dateAgenda():string;

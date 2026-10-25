@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "Reserva pública ante respuesta perdida reintenta el mismo cuerpo/UUID y crea un único turno",
+    "Enlace privado reprograma con disponibilidad del servidor y cancela con confirmación",
+    "Visita pública confirma dos servicios como una única visita mediante quote del servidor",
+    "Visita se reprograma completa y cancela todos sus tramos con confirmación"
+  ],
+  "errors": [],
+  "environment": "Build React + HTTP efímero + SQLite :memory:; sin envíos ni Supabase"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "Worker instalado y controla la página",
+    "Service worker almacena únicamente archivos públicos; ninguna respuesta API ni URL con parámetros",
+    "Demo recarga sin conexión y abre otra pantalla mediante chunks precargados"
+  ],
+  "cachedFiles": 92
+}

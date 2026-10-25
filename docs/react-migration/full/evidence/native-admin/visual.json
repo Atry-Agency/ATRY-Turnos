@@ -1,0 +1,280 @@
+{
+  "rows": [
+    {
+      "section": "inicio",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "negocios",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "usuarios",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "comercial",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "correos",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "sistema",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "soporte",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "datos",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "auditoria",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "configuracion",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "business",
+      "width": 320,
+      "textEqual": true
+    },
+    {
+      "section": "inicio",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "negocios",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "usuarios",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "comercial",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "correos",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "sistema",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "soporte",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "datos",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "auditoria",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "configuracion",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "business",
+      "width": 390,
+      "textEqual": true
+    },
+    {
+      "section": "inicio",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "negocios",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "usuarios",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "comercial",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "correos",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "sistema",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "soporte",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "datos",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "auditoria",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "configuracion",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "business",
+      "width": 430,
+      "textEqual": true
+    },
+    {
+      "section": "inicio",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "negocios",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "usuarios",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "comercial",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "correos",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "sistema",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "soporte",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "datos",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "auditoria",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "configuracion",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "business",
+      "width": 768,
+      "textEqual": true
+    },
+    {
+      "section": "inicio",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "negocios",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "usuarios",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "comercial",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "correos",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "sistema",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "soporte",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "datos",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "auditoria",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "configuracion",
+      "width": 1440,
+      "textEqual": true
+    },
+    {
+      "section": "business",
+      "width": 1440,
+      "textEqual": true
+    }
+  ],
+  "errors": []
+}

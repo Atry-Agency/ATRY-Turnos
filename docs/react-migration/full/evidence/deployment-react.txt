@@ -1,0 +1,48 @@
+TAP version 13
+# Subtest: GitHub preview empaqueta exclusivamente React y configuración sin backend operativo
+ok 1 - GitHub preview empaqueta exclusivamente React y configuración sin backend operativo
+  ---
+  duration_ms: 55.843292
+  type: 'test'
+  ...
+# Subtest: Pages rechaza secretos y conserva el bloqueo previo a validar equivalencia cloud
+ok 2 - Pages rechaza secretos y conserva el bloqueo previo a validar equivalencia cloud
+  ---
+  duration_ms: 0.486292
+  type: 'test'
+  ...
+# Subtest: Cloudflare conserva configuración pública, chunks cloud y worker aislado sin incluir secretos
+ok 3 - Cloudflare conserva configuración pública, chunks cloud y worker aislado sin incluir secretos
+  ---
+  duration_ms: 36.533917
+  type: 'test'
+  ...
+# Subtest: GitHub mantiene preview, aísla validación y solo activa cloud con equivalencia autorizada
+ok 4 - GitHub mantiene preview, aísla validación y solo activa cloud con equivalencia autorizada
+  ---
+  duration_ms: 135.552875
+  type: 'test'
+  ...
+# (node:47759) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: native distribution serves only enumerated build files
+ok 5 - native distribution serves only enumerated build files
+  ---
+  duration_ms: 89.684542
+  type: 'test'
+  ...
+# Subtest: native manifest rejects parent traversal before serving
+ok 6 - native manifest rejects parent traversal before serving
+  ---
+  duration_ms: 17.599959
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 273.132416

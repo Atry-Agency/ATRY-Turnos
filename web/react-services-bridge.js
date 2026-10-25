@@ -27,6 +27,7 @@
  async applyBusiness(value){state.business={...state.business,...value};state.businesses=state.businesses.map(b=>b.id===state.business.id?{...b,...value}:b);state.screen=null;window.ATRY_SERVICES_EXTENSION?.beforePage();await renderApp();},
  async refreshPermissions(){await refreshIdentity();state.business=null;await renderApp();},
  completedOnboarding(){state.business=null;nav('/app/inicio');},
+ privateEmployeeCatalog:()=>Boolean(window.ATRY_CLOUD),
  demo:()=>Boolean(window.ATRY_DEMO?.enabled),
  business:()=>structuredClone(state.business),
  capability:name=>hasCapability(name),

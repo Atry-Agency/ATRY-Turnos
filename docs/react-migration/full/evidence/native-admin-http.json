@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    "Administración nativa · inicio",
+    "Administración nativa · negocios",
+    "Administración nativa · usuarios",
+    "Administración nativa · comercial",
+    "Administración nativa · correos",
+    "Administración nativa · sistema",
+    "Administración nativa · soporte",
+    "Administración nativa · datos",
+    "Administración nativa · auditoria",
+    "Administración nativa · configuracion",
+    "Revisión concurrente devuelve 409 y conserva el formulario sin aplicar cambios",
+    "Pausa administrativa solo afecta nuevas reservas y conserva las existentes",
+    "Suspender y restablecer requieren confirmación y conservan período y reservas",
+    "Cambio de plan global usa confirmación y revisión, persistido en backend aislado"
+  ],
+  "errors": [],
+  "environment": "Build React + HTTP efímero + SQLite :memory:; sin producción ni envíos"
+}

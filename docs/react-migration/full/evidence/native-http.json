@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Login React con cookie HttpOnly y API HTTP real sobre SQLite en memoria",
+    "Perfil persiste y actualiza sesión y shell sin puente ni identidad simulada",
+    "Sesiones personales consultadas por endpoint autenticado",
+    "Crear otro negocio mantiene contratación y habilitación independientes",
+    "Cambiar negocio no mezcla contexto; cancelar salida conserva perfil editado"
+  ],
+  "errors": [],
+  "environment": "HTTP efímero + SQLite :memory: + dist React; sin Supabase, workers ni correo externo"
+}

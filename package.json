@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "private": true,
   "type": "commonjs",
-  "description": "Atry Turnos — plataforma web multiempresa de reservas (preview funcional)",
+  "description": "Atry Turnos \u2014 plataforma web multiempresa de reservas (preview funcional)",
   "engines": {
     "node": ">=22.13"
   },
@@ -16,7 +16,10 @@
     "mail-worker": "node server/mail-worker.js",
     "backup": "node scripts/backup.js",
     "build:pages": "node scripts/build-pages.js",
-    "measure:postgres": "node scripts/measure-postgres.js"
+    "measure:postgres": "node scripts/measure-postgres.js",
+    "build": "npm --prefix frontend/react run build",
+    "dev:react": "npm --prefix frontend/react run dev",
+    "test:react": "npm --prefix frontend/react test"
   },
   "dependencies": {
     "@noble/hashes": "2.4.0",
