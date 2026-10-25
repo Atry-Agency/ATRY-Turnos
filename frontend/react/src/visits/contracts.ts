@@ -1,0 +1,5 @@
+export interface VisitLeg{id?:string;service_id:string;service_name:string;staff_id:string;staff_name:string;starts_at:string;ends_at:string;price_uyu:number;status?:string}
+export interface Visit{ id:string;business_name:string;customer_name:string;starts_at:string;ends_at:string;status:string;price_uyu:number;cancel_notice_hours:number;legs:VisitLeg[]}
+export interface VisitOption{start:string;ends_at:string;duration_min:number;price_uyu:number;quote:unknown;legs:VisitLeg[]}
+export const visitValue=(v:unknown):Visit=>{const x=v as Visit;if(!x||typeof x.business_name!=='string'||typeof x.starts_at!=='string'||!Array.isArray(x.legs)||!x.legs.length||x.legs.some(l=>!l||!['service_id','staff_id','starts_at','ends_at'].every(k=>typeof l[k as 'service_id']==='string')))throw Error('No se recibió una visita válida.');return x};
+export const visitOptions=(v:unknown):VisitOption[]=>{const x=v as {options:VisitOption[]};if(!x||!Array.isArray(x.options)||x.options.some(o=>!o||typeof o.start!=='string'||!Array.isArray(o.legs)||!o.quote))throw Error('No se recibieron recorridos válidos.');return x.options};

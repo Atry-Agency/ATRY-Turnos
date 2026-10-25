@@ -1,3 +1,4 @@
+import {downloadBookings} from '../infrastructure/download';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Button,Feedback,Modal} from '../ui/primitives';
 import {Icon} from '../ui/Icon';
@@ -5,12 +6,12 @@ import {WhatsAppQuick} from '../ui/WhatsAppQuick';
 import {useConfirmation} from '../ui/useConfirmation';
 import {initials} from '../domain/format';
 import {scopedApi} from '../infrastructure/scoped-api';
-import {canManage,type LegacyPort,type Scope} from '../services/contracts';
+import {canManage,type FeaturePort,type Scope} from '../services/contracts';
 import type {ScreenController} from '../services/ServicesScreen';
 import {customers,history,draftOf,type Customer,type CustomerDraft,type HistoryRow} from './contracts';
 import {CustomerEditor} from './CustomerEditor';
 export interface CustomersActions {booking:(customer:Customer)=>void;recurring:(customer:Customer)=>void;whatsapp:(customer:Customer)=>void;phoneState:(value:string)=>{number:string;error:string};canExport:boolean;canRecurring:boolean;publish:(rows:Customer[])=>void}
-export function CustomersScreen({scope,port,actions,control,requestEditor}:{requestEditor?:{customer:Customer;nonce:number};scope:Scope;port:LegacyPort;actions:CustomersActions;control:(controller:ScreenController|null)=>void}){
+export function CustomersScreen({scope,port,actions,control,requestEditor}:{requestEditor?:{customer:Customer;nonce:number};scope:Scope;port:FeaturePort;actions:CustomersActions;control:(controller:ScreenController|null)=>void}){
  const api=useMemo(()=>scopedApi(port,scope),[scope,port]);const [rows,setRows]=useState<Customer[]>([]),[query,setQuery]=useState(''),[search,setSearch]=useState(''),[loading,setLoading]=useState(true),[error,setError]=useState(''),[busy,setBusy]=useState(false),[editor,setEditor]=useState<{customer?:Customer;history:HistoryRow[]}|null>(null);
  const live=useRef(true),generation=useRef(0),pending=useRef(false),dirty=useRef(false),draft=useRef<CustomerDraft|null>(null),loadRef=useRef<()=>void>(()=>{});const {confirm,confirmation}=useConfirmation(port);
  const valid=()=>live.current&&api.current();
@@ -23,7 +24,7 @@ export function CustomersScreen({scope,port,actions,control,requestEditor}:{requ
  async function close(){if(pending.current)return;if(dirty.current&&!await confirm('Hay cambios sin guardar. ¿Querés cerrar esta ventana?'))return;dirty.current=false;draft.current=null;setEditor(null)}
  async function save(value:CustomerDraft,closeAfter=true){if(pending.current)return;pending.current=true;setBusy(true);try{await api.write('/customers'+(editor?.customer?'/'+encodeURIComponent(editor.customer.id):''),value,editor?.customer?'PATCH':'POST');if(!valid())return;dirty.current=false;draft.current=value;port.notify('Cliente guardado');if(closeAfter)setEditor(null);await load(query,true)}finally{pending.current=false;if(valid())setBusy(false)}}
  async function contact(customer:Customer){if(dirty.current){if(!await confirm('Hay cambios sin guardar. Guardalos antes de preparar el mensaje para usar el teléfono actualizado.','Guardar y continuar'))return;try{if(!document.querySelector<HTMLFormElement>('#customer-profile-form')?.reportValidity())return;await save(draft.current!,false);customer={...customer,...draft.current!}}catch(e){port.notify(e instanceof Error?e.message:'No se pudo guardar',true);return}}if(valid()){setEditor(null);actions.whatsapp(customer)}}
- async function exportBookings(){try{const csv=await api.read('/export/bookings',value=>{if(typeof value!=='string')throw Error('No se recibió la exportación.');return value});const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const anchor=document.createElement('a');anchor.href=url;anchor.download='reservas-atry.csv';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}catch(e){if(valid())setError(e instanceof Error?e.message:'No pudimos exportar las reservas.')}}
+ async function exportBookings(){try{const csv=await api.read('/export/bookings',value=>{if(typeof value!=='string')throw Error('No se recibió la exportación.');return value});downloadBookings(csv)}catch(e){if(valid())setError(e instanceof Error?e.message:'No pudimos exportar las reservas.')}}
  const count=rows.length,summary=count+' '+(count===1?'cliente':'clientes')+' '+(query?(count===1?'encontrado':'encontrados'):(count===1?'reciente':'recientes'));
  if(!canManage(scope))return <Feedback error>No tenés permiso o acceso habilitado para gestionar clientes.</Feedback>;
  return <>

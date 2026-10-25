@@ -41,6 +41,7 @@ function agendaAttention(bookings){
 }
 
 async function renderProfessionalAgenda({background=false}={}){
+ if(window.ATRY_SERVICES_EXTENSION)return window.ATRY_SERVICES_EXTENSION.show('agenda');
  const businessId=state.business.id,routeAtStart=path(),generation=state.agendaGeneration=(state.agendaGeneration||0)+1;
  if(state.agendaAttention&&state.dateAgenda!==today())state.agendaAttention=false;
  state.agendaMode=state.agendaMode||'dia';const mode=state.agendaMode,range=calendarRange(state.dateAgenda,mode),employee=state.business.role==='staff',team=hasCapability('team')&&!employee;

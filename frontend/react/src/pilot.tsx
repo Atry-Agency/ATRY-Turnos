@@ -5,8 +5,8 @@ import {isNativeView,nativeTitles,type NativeView} from './app/routes';
 import type {Scope} from './services/contracts';
 import {FeatureHost} from './app/FeatureHost';
 import type {AppPort} from './app/port';
-import {scopeKey,type Extension} from './services/contracts';
-declare global {interface Window {ATRY_DEMO?:{enabled:boolean};ATRY_SERVICES_PORT?:AppPort;ATRY_SERVICES_EXTENSION?:Extension}}
+import {scopeKey,type Extension,type LegacyBridgePort} from './services/contracts';
+declare global {interface Window {ATRY_SERVICES_PORT?:AppPort & LegacyBridgePort;ATRY_SERVICES_EXTENSION?:Extension}}
 const port=window.ATRY_SERVICES_PORT;
 if(!window.ATRY_DEMO?.enabled||!port)throw Error('React Services requires the isolated demo bridge.');
 let root:Root|null=null,host:HTMLElement|null=null,controller:ScreenController|null=null,activeScope='',activeView:NativeView|null=null,scopeSnapshot:Scope|null=null;

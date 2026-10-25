@@ -1,8 +1,8 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
-import type {LegacyPort,Scope} from '../services/contracts';
+import type {FeaturePort,Scope} from '../services/contracts';
 import type {ScreenController} from '../services/ServicesScreen';
 import {scopedApi} from './scoped-api';
-export function useLoader<T>(port:LegacyPort,scope:Scope,key:string,loader:(api:ReturnType<typeof scopedApi>,fresh:boolean)=>Promise<T>,control:(value:ScreenController|null)=>void,allowStaff=false,allowSupport=false,allowPlanRequests=false){
+export function useLoader<T>(port:FeaturePort,scope:Scope,key:string,loader:(api:ReturnType<typeof scopedApi>,fresh:boolean)=>Promise<T>,control:(value:ScreenController|null)=>void,allowStaff=false,allowSupport=false,allowPlanRequests=false){
  const api=useMemo(()=>scopedApi(port,scope,{allowStaff,allowSupport,allowPlanRequests}),[port,scope,allowStaff,allowSupport,allowPlanRequests]),[data,setData]=useState<T|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false),live=useRef(true),generation=useRef(0),pending=useRef(false),reloadRef=useRef<()=>Promise<void>>(async()=>{}),loaderRef=useRef(loader);loaderRef.current=loader;
  async function load(fresh=false){const sequence=++generation.current;setLoading(true);setError('');try{const value=await loaderRef.current(api,fresh);if(live.current&&api.current()&&sequence===generation.current)setData(value)}catch(e){if(live.current&&api.current()&&sequence===generation.current)setError(e instanceof Error?e.message:'No se pudo cargar la pantalla.')}finally{if(live.current&&api.current()&&sequence===generation.current)setLoading(false)}}
  reloadRef.current=()=>load(true);
@@ -12,4 +12,4 @@ export function useLoader<T>(port:LegacyPort,scope:Scope,key:string,loader:(api:
  return {api,data,error,loading,busy,command,reload:()=>reloadRef.current(),write};
 }
 
-export function useResource<T>(port:LegacyPort,scope:Scope,route:string,decode:(value:unknown)=>T,control:(value:ScreenController|null)=>void,allowSupport=false){return useLoader(port,scope,route,(api,fresh)=>api.read(route,decode,fresh),control,false,allowSupport)}
+export function useResource<T>(port:FeaturePort,scope:Scope,route:string,decode:(value:unknown)=>T,control:(value:ScreenController|null)=>void,allowSupport=false){return useLoader(port,scope,route,(api,fresh)=>api.read(route,decode,fresh),control,false,allowSupport)}

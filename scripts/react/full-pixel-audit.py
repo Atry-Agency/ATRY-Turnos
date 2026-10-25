@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 base=Path('docs/react-migration/full/evidence')
 results=[]
-for folder in ['customers','pages','additional-pages','notifications','scheduling','access-support','team','subscription']:
+for folder in ['customers','pages','additional-pages','notifications','scheduling','access-support','team','subscription','settings','account','agenda']:
  for a in sorted((base/folder).glob('javascript-*.png')):
   b=a.with_name(a.name.replace('javascript-','react-',1))
   if not b.exists():continue

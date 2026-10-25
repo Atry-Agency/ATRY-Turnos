@@ -1,0 +1,13 @@
+import {plusDate} from '../domain/format';
+export interface Booking{id:string;starts_at:string;ends_at:string;status:string;staff_id:string;staff_name:string;service_id:string;service_name:string;customer_id?:string|null;customer_name:string;customer_email?:string;customer_phone?:string;notes?:string;recurring_id?:string|null;visit_id?:string|null;updated_at?:string;[key:string]:unknown}
+export interface AgendaPerson{id:string;name:string;active:number|boolean;color?:string;service_ids?:string[]}
+export interface Hours{staff_id:string;weekday:number;start_min:number;end_min:number}
+export interface Rules{hours?:Hours[];breaks?:Hours[];holidays?:{day:string}[];exceptions?:{staff_id:string;day:string;closed:number;start_min:number;end_min:number}[];time_off?:{staff_id:string;starts_at:string;ends_at:string;reason?:string}[];resources?:{id:string;name:string;active:number|boolean}[];assignments?:{service_id:string;resource_id:string}[];service_resources?:{service_id:string;resource_id:string}[]}
+export interface AgendaPreferences{date:string;mode:'dia'|'semana'|'mes';staff:string;resource:string;status:string;search:string;mobileDate:string;mobileStaff:string;attention:boolean;toolsOpen:boolean;filtersOpen:boolean;density:string;returnState?:{mode:'dia'|'semana'|'mes';date:string}}
+export interface BookingContext {date?:string;time?:string;staff?:string;service?:string}
+export const statusNames:Record<string,string>={pending:'Pendiente',confirmed:'Confirmado',completed:'Completado',cancelled:'Cancelado',no_show:'No asistió'};
+export const dayTitle=(day:string)=>new Intl.DateTimeFormat('es-UY',{weekday:'short',day:'numeric',month:'short'}).format(new Date(day+'T12:00:00Z'));
+export const dateLong=(day:string)=>new Intl.DateTimeFormat('es-UY',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(day+'T12:00:00Z'));
+export function calendarRange(date:string,mode:string){if(mode==='mes'){const first=date.slice(0,7)+'-01',weekday=new Date(first+'T12:00:00Z').getUTCDay();return {start:plusDate(first,-((weekday+6)%7)),days:42}}if(mode==='semana'){const weekday=new Date(date+'T12:00:00Z').getUTCDay();return {start:plusDate(date,-((weekday+6)%7)),days:7}}return {start:date,days:1}}
+export const bookingList=(v:unknown):Booking[]=>{if(!Array.isArray(v)||v.some(b=>!b||!['id','starts_at','ends_at','status','staff_id','service_id','customer_name'].every(k=>typeof b[k]==='string')))throw Error('No se recibieron turnos válidos.');return v};
+export const peopleList=(v:unknown):AgendaPerson[]=>{if(!Array.isArray(v)||v.some(p=>!p||typeof p.id!=='string'||typeof p.name!=='string'))throw Error('No se recibieron profesionales válidos.');return v};

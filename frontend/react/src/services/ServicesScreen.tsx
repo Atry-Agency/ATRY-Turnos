@@ -3,12 +3,12 @@ import type {Service} from '../contracts';
 import {ServiceCard} from '../ServiceCard';
 import {Button,Confirmation,Feedback,Modal} from '../ui/primitives';
 import {Icon} from '../ui/Icon';
-import {canManage,type Catalog,type LegacyPort,type Scope,type ServicePayload} from './contracts';
+import {canManage,type Catalog,type FeaturePort,type Scope,type ServicePayload} from './contracts';
 import {createServicesRepository,StaleScopeError} from './repository';
 import {initialDraft,type Draft} from './form';
 import {ServiceEditor} from './ServiceEditor';
 export interface ScreenController {beforeLeave():Promise<boolean>;reload():void}
-export function ServicesScreen({scope,port,control}:{scope:Scope;port:LegacyPort;control:(controller:ScreenController|null)=>void}){
+export function ServicesScreen({scope,port,control}:{scope:Scope;port:FeaturePort;control:(controller:ScreenController|null)=>void}){
  const repository=useMemo(()=>createServicesRepository(port,scope),[port,scope]);
  const [catalog,setCatalog]=useState<Catalog|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false);
  const [editor,setEditor]=useState<{service:Service|null;draft:Draft}|null>(null);
@@ -30,12 +30,12 @@ export function ServicesScreen({scope,port,control}:{scope:Scope;port:LegacyPort
   try{await repository.save(payload,id);if(!valid())return;dirty.current=false;setEditor(null);port.notify('active' in payload?'Servicio actualizado':'Servicio guardado');await load(true)}finally{operation.current=false;if(valid())setBusy(false)}
  }
  async function toggle(s:Service){if(operation.current)return;if(s.active&&!await ask('¿Ocultar el servicio de las nuevas reservas? Las reservas existentes se conservan.','Ocultar servicio'))return;try{await write({active:s.active?0:1},s.id)}catch(e){if(valid())setError(e instanceof Error?e.message:'No se pudo actualizar el servicio.')}}
- if(!canManage(scope))return <Feedback error>No tenés permiso o acceso habilitado para gestionar servicios.</Feedback>;
+ if(!['owner','manager'].includes(scope.role))return <Feedback error>No tenés permiso o acceso habilitado para gestionar servicios.</Feedback>;
  return <>
-  <div className="page-header"><div><span className="eyebrow">ATRY TURNOS / PANEL</span><h1>Servicios</h1><p>Definí qué ofrecés, cuánto dura y qué cuesta.</p></div><Button data-react-action="add-service" disabled={busy||!catalog} onClick={()=>open(null)}><Icon name="plus" port={port}/> Nuevo servicio</Button></div>
+  <div className="page-header"><div><span className="eyebrow">ATRY TURNOS / PANEL</span><h1>Servicios</h1><p>Definí qué ofrecés, cuánto dura y qué cuesta.</p></div><Button data-react-action="add-service" disabled={busy||!catalog||!canManage(scope)} onClick={()=>open(null)}><Icon name="plus" port={port}/> Nuevo servicio</Button></div>
   {error&&<Feedback error retry={()=>void load(true)}>{error}</Feedback>}
   {loading&&!catalog&&<Feedback>Cargando servicios…</Feedback>}
-  {catalog&&<div className="grid3" data-react-services-list aria-busy={loading}>{catalog.services.length?catalog.services.map(s=><ServiceCard key={s.id} service={s} icon={<Icon name={port.serviceIcon(scope.sector,s.name)} port={port}/>} editIcon={<Icon name="edit" port={port}/>} onEdit={()=>open(s)} onToggle={()=>void toggle(s)} disabled={busy}/>):<div className="empty"><svg className="i i-scissors big" viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{__html:port.icon('scissors')}}/><div>Todavía no hay servicios. Creá el primero para abrir la agenda.</div></div>}</div>}
+  {catalog&&<div className="grid3" data-react-services-list aria-busy={loading}>{catalog.services.length?catalog.services.map(s=><ServiceCard key={s.id} service={s} icon={<Icon name={port.serviceIcon(scope.sector,s.name)} port={port}/>} editIcon={<Icon name="edit" port={port}/>} onEdit={()=>open(s)} onToggle={()=>void toggle(s)} disabled={busy||!canManage(scope)}/>):<div className="empty"><svg className="i i-scissors big" viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{__html:port.icon('scissors')}}/><div>Todavía no hay servicios. Creá el primero para abrir la agenda.</div></div>}</div>}
   <div className="hint-block" style={{marginTop:20}}><Icon name="info" port={port}/>{' Un servicio con reservas futuras no permite cambiar su duración para evitar conflictos. Podés ocultarlo y crear otra versión.'}</div>
   {editor&&catalog&&<Modal title={editor.service?'Editar servicio':'Nuevo servicio'} onClose={()=>void close()} closeIcon={<Icon name="x" port={port}/>}><ServiceEditor key={editor.service?.id||'new'} initial={editor.draft} staff={catalog.staff} port={port} id={editor.service?.id} busy={busy} onDraft={draft=>{dirty.current=JSON.stringify(draft)!==JSON.stringify(editor.draft)}} onSave={payload=>write(payload,editor.service?.id)}/></Modal>}
   {confirmation&&<Confirmation message={confirmation.message} accept={confirmation.accept} icon={<Icon name="shield" port={port}/>} onResolve={answer}/>}

@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Guardar datos actualiza negocio y shell sin perder pestaña",
+    "Guardar reglas conserva valores numéricos y visitas múltiples",
+    "Explorar otra composición no cambia plan y bloquea publicar",
+    "Guardar estilo en borrador conserva configuración por plan",
+    "Recortar, girar, optimizar y guardar logo junto con tema confirmado",
+    "Estilo guardado permanece al reconstruir la pantalla"
+  ],
+  "errors": [],
+  "environment": "Demo ficticia en memoria; logo a partir de captura demo"
+}

@@ -950,43 +950,26 @@
   {
     "folder": "access-support",
     "file": "javascript-accesos-2-320.png",
-    "size": [
-      [
-        320,
-        1076
-      ],
-      [
-        320,
-        1045
-      ]
-    ]
+    "pixels": 344320,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
     "file": "javascript-accesos-2-390.png",
-    "size": [
-      [
-        390,
-        960
-      ],
-      [
-        390,
-        968
-      ]
-    ]
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
     "file": "javascript-accesos-2-430.png",
     "pixels": 412800,
-    "different": 75850,
-    "over4": 55274,
-    "bbox": [
-      0,
-      460,
-      430,
-      900
-    ]
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
@@ -1007,43 +990,26 @@
   {
     "folder": "access-support",
     "file": "javascript-accesos-3-320.png",
-    "size": [
-      [
-        320,
-        1076
-      ],
-      [
-        320,
-        1045
-      ]
-    ]
+    "pixels": 344320,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
     "file": "javascript-accesos-3-390.png",
-    "size": [
-      [
-        390,
-        960
-      ],
-      [
-        390,
-        968
-      ]
-    ]
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
     "file": "javascript-accesos-3-430.png",
     "pixels": 412800,
-    "different": 75843,
-    "over4": 55283,
-    "bbox": [
-      0,
-      460,
-      430,
-      900
-    ]
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   },
   {
     "folder": "access-support",
@@ -1113,9 +1079,14 @@
     "folder": "access-support",
     "file": "javascript-soporte-1-390.png",
     "pixels": 374400,
-    "different": 0,
-    "over4": 0,
-    "bbox": null
+    "different": 429,
+    "over4": 410,
+    "bbox": [
+      49,
+      395,
+      107,
+      410
+    ]
   },
   {
     "folder": "access-support",
@@ -1417,5 +1388,1900 @@
       666,
       2777
     ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-1-1440.png",
+    "pixels": 2126880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-1-320.png",
+    "pixels": 758400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-1-390.png",
+    "pixels": 866580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-1-430.png",
+    "pixels": 930090,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-1-768.png",
+    "pixels": 1597440,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-2-1440.png",
+    "pixels": 2126880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-2-320.png",
+    "pixels": 773120,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-2-390.png",
+    "pixels": 884520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-2-430.png",
+    "pixels": 949870,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-2-768.png",
+    "pixels": 1635072,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-3-1440.png",
+    "pixels": 2196000,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-3-320.png",
+    "pixels": 797440,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-3-390.png",
+    "pixels": 914550,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-3-430.png",
+    "pixels": 991580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-components-3-768.png",
+    "pixels": 1670400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-1-320.png",
+    "pixels": 385920,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-1-390.png",
+    "pixels": 437970,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-1-430.png",
+    "pixels": 482890,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-2-320.png",
+    "pixels": 400320,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-2-390.png",
+    "pixels": 455520,
+    "different": 33,
+    "over4": 3,
+    "bbox": [
+      14,
+      402,
+      376,
+      1127
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-2-430.png",
+    "pixels": 502240,
+    "different": 33,
+    "over4": 3,
+    "bbox": [
+      14,
+      402,
+      416,
+      1127
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-2-768.png",
+    "pixels": 741888,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-3-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-3-320.png",
+    "pixels": 400320,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-3-390.png",
+    "pixels": 455520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-3-430.png",
+    "pixels": 502240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-general-3-768.png",
+    "pixels": 741888,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-1-1440.png",
+    "pixels": 1959840,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      530,
+      756,
+      586,
+      764
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-1-320.png",
+    "pixels": 716480,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-1-390.png",
+    "pixels": 822120,
+    "different": 6,
+    "over4": 3,
+    "bbox": [
+      54,
+      1014,
+      78,
+      1040
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-1-430.png",
+    "pixels": 889670,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-1-768.png",
+    "pixels": 1527552,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      256,
+      738,
+      312,
+      746
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-2-1440.png",
+    "pixels": 2155680,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      530,
+      756,
+      586,
+      764
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-2-320.png",
+    "pixels": 795520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-2-390.png",
+    "pixels": 896220,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-2-430.png",
+    "pixels": 971800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-2-768.png",
+    "pixels": 1619712,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      256,
+      786,
+      312,
+      794
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-3-1440.png",
+    "pixels": 2155680,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      530,
+      756,
+      586,
+      764
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-3-320.png",
+    "pixels": 795200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-3-390.png",
+    "pixels": 895830,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-3-430.png",
+    "pixels": 971370,
+    "different": 25267,
+    "over4": 30,
+    "bbox": [
+      15,
+      398,
+      415,
+      2144
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-identity-3-768.png",
+    "pixels": 1618944,
+    "different": 85,
+    "over4": 74,
+    "bbox": [
+      256,
+      786,
+      312,
+      794
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-1-1440.png",
+    "pixels": 1778400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-1-320.png",
+    "pixels": 607680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-1-390.png",
+    "pixels": 697710,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-1-430.png",
+    "pixels": 758520,
+    "different": 24009,
+    "over4": 3,
+    "bbox": [
+      15,
+      357,
+      415,
+      1425
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-1-768.png",
+    "pixels": 1289472,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-2-1440.png",
+    "pixels": 1779840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-2-320.png",
+    "pixels": 622400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-2-390.png",
+    "pixels": 710970,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-2-430.png",
+    "pixels": 776580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-2-768.png",
+    "pixels": 1324800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-3-1440.png",
+    "pixels": 1778400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-3-320.png",
+    "pixels": 622080,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-3-390.png",
+    "pixels": 710580,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-3-430.png",
+    "pixels": 776150,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-public-3-768.png",
+    "pixels": 1324032,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-1-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-3-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-3-320.png",
+    "pixels": 368960,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-3-390.png",
+    "pixels": 402870,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-3-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-publicacion-3-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-1-1440.png",
+    "pixels": 1399680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-1-320.png",
+    "pixels": 384000,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-1-390.png",
+    "pixels": 435240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-1-430.png",
+    "pixels": 479880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-2-1440.png",
+    "pixels": 1399680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-2-320.png",
+    "pixels": 398400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-2-390.png",
+    "pixels": 452790,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-2-430.png",
+    "pixels": 499230,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-2-768.png",
+    "pixels": 769536,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-3-1440.png",
+    "pixels": 1399680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-3-320.png",
+    "pixels": 398400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-3-390.png",
+    "pixels": 452790,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-3-430.png",
+    "pixels": 499230,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-reservas-3-768.png",
+    "pixels": 769536,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-1-1440.png",
+    "pixels": 1847520,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-1-320.png",
+    "pixels": 680640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-1-390.png",
+    "pixels": 787020,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-1-430.png",
+    "pixels": 849680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-1-768.png",
+    "pixels": 1464576,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-2-1440.png",
+    "pixels": 2037600,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-2-320.png",
+    "pixels": 751680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-2-390.png",
+    "pixels": 856050,
+    "different": 22467,
+    "over4": 61,
+    "bbox": [
+      15,
+      398,
+      375,
+      1852
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-2-430.png",
+    "pixels": 925790,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-2-768.png",
+    "pixels": 1569024,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-3-1440.png",
+    "pixels": 2037600,
+    "different": 9705,
+    "over4": 58,
+    "bbox": [
+      18,
+      379,
+      1404,
+      1202
+    ]
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-3-320.png",
+    "pixels": 751360,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-3-390.png",
+    "pixels": 855660,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-3-430.png",
+    "pixels": 925360,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "settings",
+    "file": "javascript-themes-3-768.png",
+    "pixels": 1568256,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-1-1440.png",
+    "pixels": 1382400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      440,
+      451,
+      518,
+      458
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-1-320.png",
+    "pixels": 307200,
+    "different": 36,
+    "over4": 30,
+    "bbox": [
+      155,
+      573,
+      174,
+      580
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-1-390.png",
+    "pixels": 374400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      533,
+      233,
+      540
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-1-430.png",
+    "pixels": 412800,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      490,
+      233,
+      497
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-1-768.png",
+    "pixels": 737280,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      166,
+      444,
+      244,
+      451
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-2-1440.png",
+    "pixels": 1382400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      440,
+      451,
+      518,
+      458
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-2-320.png",
+    "pixels": 307200,
+    "different": 36,
+    "over4": 30,
+    "bbox": [
+      155,
+      573,
+      174,
+      580
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-2-390.png",
+    "pixels": 374400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      533,
+      233,
+      540
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-2-430.png",
+    "pixels": 412800,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      490,
+      233,
+      497
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-2-768.png",
+    "pixels": 737280,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      166,
+      444,
+      244,
+      451
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-3-1440.png",
+    "pixels": 1382400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      440,
+      451,
+      518,
+      458
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-3-320.png",
+    "pixels": 307200,
+    "different": 36,
+    "over4": 30,
+    "bbox": [
+      155,
+      573,
+      174,
+      580
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-3-390.png",
+    "pixels": 374400,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      533,
+      233,
+      540
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-3-430.png",
+    "pixels": 412800,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      155,
+      490,
+      233,
+      497
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-negocios-3-768.png",
+    "pixels": 737280,
+    "different": 70,
+    "over4": 56,
+    "bbox": [
+      166,
+      444,
+      244,
+      451
+    ]
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-1-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-2-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-3-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-3-320.png",
+    "pixels": 307200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-3-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-3-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-perfil-3-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-1-320.png",
+    "pixels": 349760,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-1-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-1-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-2-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-2-320.png",
+    "pixels": 349760,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-2-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-2-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-2-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-3-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-3-320.png",
+    "pixels": 349760,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-3-390.png",
+    "pixels": 374400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-3-430.png",
+    "pixels": 412800,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "account",
+    "file": "javascript-seguridad-3-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-1-1440.png",
+    "pixels": 1382400,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-1-320.png",
+    "pixels": 431680,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-1-390.png",
+    "pixels": 473070,
+    "different": 40,
+    "over4": 23,
+    "bbox": [
+      16,
+      188,
+      374,
+      1013
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-1-430.png",
+    "pixels": 494070,
+    "different": 33,
+    "over4": 5,
+    "bbox": [
+      31,
+      188,
+      140,
+      1022
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-1-768.png",
+    "pixels": 737280,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-2-1440.png",
+    "pixels": 1448640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-2-320.png",
+    "pixels": 450880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-2-390.png",
+    "pixels": 496860,
+    "different": 203,
+    "over4": 43,
+    "bbox": [
+      14,
+      187,
+      374,
+      632
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-2-430.png",
+    "pixels": 520300,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-2-768.png",
+    "pixels": 758784,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-3-1440.png",
+    "pixels": 1448640,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-3-320.png",
+    "pixels": 450880,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-3-390.png",
+    "pixels": 496860,
+    "different": 117,
+    "over4": 43,
+    "bbox": [
+      14,
+      188,
+      374,
+      632
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-3-430.png",
+    "pixels": 520300,
+    "different": 57,
+    "over4": 43,
+    "bbox": [
+      13,
+      187,
+      414,
+      928
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-atencion-3-768.png",
+    "pixels": 758784,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-1-1440.png",
+    "pixels": 1699200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-1-320.png",
+    "pixels": 443200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-1-390.png",
+    "pixels": 514410,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-1-430.png",
+    "pixels": 539650,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-1-768.png",
+    "pixels": 892416,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-2-1440.png",
+    "pixels": 1794240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-2-320.png",
+    "pixels": 487040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-2-390.png",
+    "pixels": 567840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-2-430.png",
+    "pixels": 598560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-2-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-3-1440.png",
+    "pixels": 1794240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-3-320.png",
+    "pixels": 487040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-3-390.png",
+    "pixels": 567840,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-3-430.png",
+    "pixels": 598560,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-dia-3-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-1-1440.png",
+    "pixels": 1879200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-1-320.png",
+    "pixels": 396160,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-1-390.png",
+    "pixels": 463320,
+    "different": 248,
+    "over4": 20,
+    "bbox": [
+      14,
+      188,
+      376,
+      1015
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-1-430.png",
+    "pixels": 490200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-1-768.png",
+    "pixels": 988416,
+    "different": 87,
+    "over4": 5,
+    "bbox": [
+      20,
+      111,
+      748,
+      562
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-2-1440.png",
+    "pixels": 1974240,
+    "different": 86,
+    "over4": 46,
+    "bbox": [
+      21,
+      117,
+      1404,
+      882
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-2-320.png",
+    "pixels": 415360,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-2-390.png",
+    "pixels": 486720,
+    "different": 43,
+    "over4": 7,
+    "bbox": [
+      14,
+      187,
+      374,
+      1142
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-2-430.png",
+    "pixels": 516000,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-2-768.png",
+    "pixels": 1039104,
+    "different": 138,
+    "over4": 46,
+    "bbox": [
+      20,
+      110,
+      748,
+      1128
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-3-1440.png",
+    "pixels": 1974240,
+    "different": 87,
+    "over4": 44,
+    "bbox": [
+      18,
+      117,
+      1404,
+      935
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-3-320.png",
+    "pixels": 415360,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-3-390.png",
+    "pixels": 486720,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-3-430.png",
+    "pixels": 516000,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-mes-3-768.png",
+    "pixels": 1039104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-1-1440.png",
+    "pixels": 1699200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-1-320.png",
+    "pixels": 467200,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-1-390.png",
+    "pixels": 543660,
+    "different": 839,
+    "over4": 44,
+    "bbox": [
+      14,
+      188,
+      376,
+      1224
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-1-430.png",
+    "pixels": 571900,
+    "different": 939,
+    "over4": 30,
+    "bbox": [
+      14,
+      188,
+      416,
+      1176
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-1-768.png",
+    "pixels": 892416,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-2-1440.png",
+    "pixels": 1794240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-2-320.png",
+    "pixels": 511040,
+    "different": 850,
+    "over4": 69,
+    "bbox": [
+      15,
+      290,
+      305,
+      1411
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-2-390.png",
+    "pixels": 597090,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-2-430.png",
+    "pixels": 630810,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-2-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-3-1440.png",
+    "pixels": 1794240,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-3-320.png",
+    "pixels": 511040,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-3-390.png",
+    "pixels": 597090,
+    "different": 898,
+    "over4": 69,
+    "bbox": [
+      16,
+      240,
+      374,
+      1361
+    ]
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-3-430.png",
+    "pixels": 630810,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
+  },
+  {
+    "folder": "agenda",
+    "file": "javascript-semana-3-768.png",
+    "pixels": 943104,
+    "different": 0,
+    "over4": 0,
+    "bbox": null
   }
 ]

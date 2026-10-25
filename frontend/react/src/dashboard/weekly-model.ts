@@ -1,0 +1,3 @@
+import {plusDate} from '../domain/format';
+import type {WeeklyModel} from './WeeklyActivity';
+export function weeklyModel(rows:unknown,end:string):WeeklyModel|null{if(!Array.isArray(rows)||rows.some(r=>!r||!/^\d{4}-\d{2}-\d{2}$/.test(r.day)||!Number.isInteger(Number(r.n))||Number(r.n)<0))return null;const days=Array.from({length:7},(_,i)=>plusDate(end,i-6)).map(day=>({day,n:rows.filter(r=>r.day===day).reduce((sum,r)=>sum+(Number.isFinite(Number(r.n))&&Number(r.n)>=0?Number(r.n):0),0)})),total=days.reduce((s,d)=>s+d.n,0),peak=Math.max(...days.map(d=>d.n)),step=Math.max(1,Math.ceil(peak/4)),max=step*4;return {days,total,average:total/7,peak,peakDays:days.filter(d=>d.n===peak).length,max,ticks:[max,max-step,max-2*step,max-3*step,0]}}

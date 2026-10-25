@@ -2,9 +2,9 @@ import {useRef,useState,type ReactNode} from 'react';
 import {Button,TextField} from '../ui/primitives';
 import {Icon} from '../ui/Icon';
 import {localDateTime,statusLabels} from '../domain/format';
-import type {LegacyPort} from '../services/contracts';
+import type {FeaturePort} from '../services/contracts';
 import {draftOf,type Customer,type CustomerDraft,type HistoryRow} from './contracts';
-export function CustomerEditor({customer,history,port,busy,onDraft,onSave,onClose,communication}:{customer?:Customer;history:HistoryRow[];port:LegacyPort;busy:boolean;onDraft:(dirty:boolean,draft:CustomerDraft)=>void;onSave:(draft:CustomerDraft)=>Promise<void>;onClose:()=>void;communication:ReactNode}){
+export function CustomerEditor({customer,history,port,busy,onDraft,onSave,onClose,communication}:{customer?:Customer;history:HistoryRow[];port:FeaturePort;busy:boolean;onDraft:(dirty:boolean,draft:CustomerDraft)=>void;onSave:(draft:CustomerDraft)=>Promise<void>;onClose:()=>void;communication:ReactNode}){
  const initial=useRef(draftOf(customer));const [draft,setDraft]=useState(initial.current),[error,setError]=useState('');const pending=useRef(false);
  const change=(next:CustomerDraft)=>{setDraft(next);onDraft(JSON.stringify(next)!==JSON.stringify(initial.current),next)};
  return <div className="customer-profile"><p className="customer-profile-subtitle">Ficha del cliente</p><h3>Datos del cliente</h3><form id="customer-profile-form" data-react-form="customer" onSubmit={async e=>{e.preventDefault();if(pending.current||busy)return;pending.current=true;setError('');try{await onSave(draft)}catch(e){setError(e instanceof Error?e.message:'No se pudo guardar el cliente.')}finally{pending.current=false}}}>

@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Buscar cliente con Enter y vincular ficha sin duplicar contacto",
+    "Buscar horario real de demo y volver conservando ficha y notas",
+    "Guardar reserva manual y actualizar fecha y calendario nativo",
+    "Detalle e historial consultan el cliente vinculado",
+    "Reprogramar mantiene ficha y refleja horario nuevo",
+    "Cancelar con confirmación actualiza estado sin enviar mensajes",
+    "Atajos, vistas semana/mes, abrir día y búsqueda aplican filtros"
+  ],
+  "errors": [],
+  "popups": 0,
+  "environment": "Demo ficticia en memoria, sin reservas ni mensajes reales"
+}

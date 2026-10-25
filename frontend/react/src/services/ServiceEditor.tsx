@@ -1,9 +1,9 @@
 import {useRef,useState} from 'react';
 import {Button,TextField} from '../ui/primitives';
 import {Icon} from '../ui/Icon';
-import type {LegacyPort,Staff,ServicePayload} from './contracts';
+import type {FeaturePort,Staff,ServicePayload} from './contracts';
 import {numericFields,toPayload,type Draft} from './form';
-export function ServiceEditor({initial,staff,port,id,busy,onDraft,onSave}:{initial:Draft;staff:Staff[];port:LegacyPort;id?:string;busy:boolean;onDraft:(draft:Draft)=>void;onSave:(payload:ServicePayload)=>Promise<void>}){
+export function ServiceEditor({initial,staff,port,id,busy,onDraft,onSave}:{initial:Draft;staff:Staff[];port:FeaturePort;id?:string;busy:boolean;onDraft:(draft:Draft)=>void;onSave:(payload:ServicePayload)=>Promise<void>}){
  const [draft,setDraft]=useState(initial),[error,setError]=useState('');const saving=useRef(false);
  const change=(next:Draft)=>{setDraft(next);onDraft(next)};
  return <form data-react-form={id?'update-service':'create-service'} data-id={id} className="form-grid" onSubmit={async e=>{e.preventDefault();e.stopPropagation();if(saving.current||busy)return;try{const payload=toPayload(draft);saving.current=true;setError('');await onSave(payload)}catch(e){setError(e instanceof Error?e.message:'No se pudo guardar el servicio.')}finally{saving.current=false}}}>

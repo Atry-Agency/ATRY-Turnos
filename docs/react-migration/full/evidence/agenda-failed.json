@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Buscar cliente con Enter y vincular ficha sin duplicar contacto",
+    "Buscar horario real de demo y volver conservando ficha y notas",
+    "Guardar reserva manual y actualizar fecha y calendario nativo",
+    "Detalle e historial consultan el cliente vinculado",
+    "Reprogramar mantiene ficha y refleja horario nuevo",
+    "Cancelar con confirmación actualiza estado sin enviar mensajes"
+  ],
+  "errors": [],
+  "failure": "TimeoutError: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ag-week-strip') to be visible\u001b[22m\n\u001b[2m    63 × locator resolved to hidden <div class=\"ag-week-strip\" aria-label=\"Seleccionar día de la semana\">…</div>\u001b[22m\n"
+}

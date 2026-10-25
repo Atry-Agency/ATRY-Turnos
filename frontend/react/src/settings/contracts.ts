@@ -1,0 +1,3 @@
+import type {BusinessContext} from '../app/port';
+export interface SettingsBusiness extends BusinessContext{sector:string;email:string;city:string;description:string;logo_url:string;theme_config?:unknown;theme_revision:number;min_notice_min:number;max_days:number;cancel_notice_hours:number;slot_step_min:number;auto_confirm:number;multi_service_enabled:number;appearance_mode?:string;primary_color?:string;secondary_color?:string}
+export const settingsBusiness=(v:unknown):SettingsBusiness=>{const b=v as SettingsBusiness;if(!b||typeof b.id!=='string'||typeof b.name!=='string'||typeof b.slug!=='string'||typeof b.plan!=='string')throw Error('No se recibieron datos válidos del negocio.');return b};
