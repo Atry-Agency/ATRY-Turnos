@@ -3,6 +3,7 @@
     "Optimizar PNG demo a WebP, guardar foto y refrescar avatar nativo",
     "Visibilidad pública y revisión conservadas al reabrir",
     "Eliminar foto con confirmación y volver a iniciales",
+    "Advertencia de colores conserva el umbral de similitud original",
     "Crear y editar profesional conservando servicios y contacto"
   ],
   "errors": [],

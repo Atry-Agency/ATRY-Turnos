@@ -1,196 +1,196 @@
 [
   {
-    "file": "AccessScreen-DP2Z7ec1.js",
+    "file": "AccessScreen-BYuhdX-B.js",
     "bytes": 2912,
     "gzip6": 1213
   },
   {
-    "file": "AccountScreen-Cdg5-b2a.js",
+    "file": "AccountScreen-DXOb7Ma0.js",
     "bytes": 6957,
-    "gzip6": 2583
+    "gzip6": 2582
   },
   {
-    "file": "ActionDialog-zTsLHAx-.js",
+    "file": "ActionDialog-DnrEXS5Q.js",
     "bytes": 13845,
-    "gzip6": 5213
+    "gzip6": 5212
   },
   {
-    "file": "AdminApp-CqmlaBcO.js",
+    "file": "AdminApp-RoOaip63.js",
     "bytes": 52287,
-    "gzip6": 15343
+    "gzip6": 15348
   },
   {
-    "file": "AgendaScreen-BZqTX29d.js",
+    "file": "AgendaScreen-DmVljhXF.js",
     "bytes": 25065,
-    "gzip6": 8374
+    "gzip6": 8375
   },
   {
-    "file": "AuthScreen-KDT8rnlI.js",
+    "file": "AuthScreen-CIlTelSS.js",
     "bytes": 10829,
-    "gzip6": 3690
+    "gzip6": 3692
   },
   {
-    "file": "BasicStatistics-wckMHz9E.js",
+    "file": "BasicStatistics-XH8A8UrQ.js",
     "bytes": 939,
     "gzip6": 565
   },
   {
-    "file": "BookingDetail-Do3WnXlN.js",
+    "file": "BookingDetail-ounqxqr0.js",
     "bytes": 7346,
-    "gzip6": 2591
+    "gzip6": 2590
   },
   {
-    "file": "CustomerEditor-DFeiunFx.js",
+    "file": "CustomerEditor-3krGkIti.js",
     "bytes": 3486,
     "gzip6": 1395
   },
   {
-    "file": "CustomerProfile-Mo6HGHTm.js",
+    "file": "CustomerProfile-DBAQf4Wc.js",
     "bytes": 2634,
     "gzip6": 1359
   },
   {
-    "file": "CustomersScreen-BTBs2mnO.js",
+    "file": "CustomersScreen-D0Bs4YI7.js",
     "bytes": 8940,
-    "gzip6": 3603
+    "gzip6": 3607
   },
   {
-    "file": "EndRecurring-BDsebhMw.js",
+    "file": "EndRecurring-C0LxkXNp.js",
     "bytes": 1822,
-    "gzip6": 1016
+    "gzip6": 1015
   },
   {
-    "file": "InsightsScreen-BjYTCIaZ.js",
+    "file": "InsightsScreen-C7b927Ey.js",
     "bytes": 6353,
     "gzip6": 2127
   },
   {
-    "file": "InvitationScreen-B9pCpLw3.js",
+    "file": "InvitationScreen-CBBSKo_8.js",
     "bytes": 3385,
-    "gzip6": 1539
+    "gzip6": 1538
   },
   {
-    "file": "ManageBooking-BXb6Cwp4.js",
+    "file": "ManageBooking-Xx1RHwHm.js",
     "bytes": 3967,
     "gzip6": 1801
   },
   {
-    "file": "ManageVisit-D7v2T-EG.js",
+    "file": "ManageVisit-BsShfu5d.js",
     "bytes": 4656,
-    "gzip6": 2080
+    "gzip6": 2077
   },
   {
-    "file": "ManualBooking-Bns9XyiY.js",
+    "file": "ManualBooking-B4Q9oVGO.js",
     "bytes": 12495,
-    "gzip6": 4424
+    "gzip6": 4421
   },
   {
-    "file": "MemberEditor-CxeB15Ph.js",
+    "file": "MemberEditor-DNur8HT6.js",
     "bytes": 2835,
-    "gzip6": 1455
+    "gzip6": 1453
   },
   {
-    "file": "NewBusiness-BEI7WLT0.js",
+    "file": "NewBusiness-dW3RTYZm.js",
     "bytes": 2057,
     "gzip6": 1083
   },
   {
-    "file": "NotificationsScreen-bjRgHMKt.js",
+    "file": "NotificationsScreen-DX6SeTbl.js",
     "bytes": 6597,
-    "gzip6": 2919
+    "gzip6": 2920
   },
   {
-    "file": "OfferScreen-DJFumhLH.js",
+    "file": "OfferScreen-Bvje4qLM.js",
     "bytes": 2458,
-    "gzip6": 1221
+    "gzip6": 1220
   },
   {
-    "file": "OnboardingScreen-Bvop_m31.js",
+    "file": "OnboardingScreen-DcFLDRpm.js",
     "bytes": 4165,
     "gzip6": 1882
   },
   {
-    "file": "OwnHours-p5JoC3_q.js",
+    "file": "OwnHours-DSZZ4wMF.js",
     "bytes": 1306,
-    "gzip6": 746
+    "gzip6": 747
   },
   {
-    "file": "PlanDialog-C2DB8Uu1.js",
+    "file": "PlanDialog-CrzEqb1H.js",
     "bytes": 2807,
     "gzip6": 1466
   },
   {
-    "file": "PrivateVisit-BcBWxrhr.js",
+    "file": "PrivateVisit-D5h0vZeC.js",
     "bytes": 5189,
     "gzip6": 2119
   },
   {
-    "file": "PublicBooking-Bkm91A2J.js",
+    "file": "PublicBooking-bcPP_5F-.js",
     "bytes": 2757,
-    "gzip6": 1269
+    "gzip6": 1272
   },
   {
-    "file": "PublicManage-B6NBnltT.js",
+    "file": "PublicManage-ysen9AqG.js",
     "bytes": 2020,
     "gzip6": 996
   },
   {
-    "file": "RecurringEditor-CYz7FiT7.js",
+    "file": "RecurringEditor-BvI4Qw4H.js",
     "bytes": 6101,
     "gzip6": 2402
   },
   {
-    "file": "RecurringScreen-CXOfwu6l.js",
+    "file": "RecurringScreen-DY8dkYa2.js",
     "bytes": 2900,
     "gzip6": 1362
   },
   {
-    "file": "RequestEditor-CypYXvjC.js",
+    "file": "RequestEditor-BpLRZVD6.js",
     "bytes": 2832,
-    "gzip6": 1449
+    "gzip6": 1450
   },
   {
-    "file": "Reschedule-DX_vJ5eZ.js",
+    "file": "Reschedule-BBBbdleg.js",
     "bytes": 3779,
-    "gzip6": 1630
+    "gzip6": 1631
   },
   {
-    "file": "RuleEditor-BBVpPzWC.js",
+    "file": "RuleEditor-DO_TFU21.js",
     "bytes": 4506,
-    "gzip6": 1951
+    "gzip6": 1949
   },
   {
-    "file": "ScheduleScreen-CI5GDSqf.js",
+    "file": "ScheduleScreen-DbowPHH6.js",
     "bytes": 8429,
     "gzip6": 2901
   },
   {
-    "file": "ServicesScreen-B5SAXKMj.js",
+    "file": "ServicesScreen-Ca6EdoPr.js",
     "bytes": 9361,
-    "gzip6": 3635
+    "gzip6": 3638
   },
   {
-    "file": "Settings-DatWwChd.js",
+    "file": "Settings-tVT85y8U.js",
     "bytes": 4039,
-    "gzip6": 1798
+    "gzip6": 1800
   },
   {
-    "file": "SettingsScreen-hEHFuMlt.js",
+    "file": "SettingsScreen-ByjkuU69.js",
     "bytes": 8250,
-    "gzip6": 3201
+    "gzip6": 3202
   },
   {
-    "file": "Shared-LkH8AdAM.js",
+    "file": "Shared-B-wj6my0.js",
     "bytes": 5561,
     "gzip6": 1992
   },
   {
-    "file": "SingleBooking-DpaqrosX.js",
+    "file": "SingleBooking-DDC6nbn6.js",
     "bytes": 10093,
-    "gzip6": 3734
+    "gzip6": 3732
   },
   {
-    "file": "SmartSlots-DHL340c3.js",
+    "file": "SmartSlots-DfXSUxdr.js",
     "bytes": 1941,
     "gzip6": 986
   },
@@ -200,79 +200,79 @@
     "gzip6": 408
   },
   {
-    "file": "StaffEditor-CWNHDq1O.js",
+    "file": "StaffEditor-Bq-_JgDb.js",
     "bytes": 7755,
     "gzip6": 3166
   },
   {
-    "file": "Status-DfS_PmhH.js",
+    "file": "Status-DCVGCoF5.js",
     "bytes": 262,
-    "gzip6": 214
+    "gzip6": 215
   },
   {
-    "file": "SubscriptionDialog-C1ddTxpg.js",
+    "file": "SubscriptionDialog-C71O6oLy.js",
     "bytes": 7934,
-    "gzip6": 3239
+    "gzip6": 3240
   },
   {
-    "file": "SubscriptionScreen-enkPbv2l.js",
+    "file": "SubscriptionScreen-C1iZmhe7.js",
     "bytes": 11950,
     "gzip6": 4211
   },
   {
-    "file": "SupportScreen-DpKpTCvy.js",
+    "file": "SupportScreen-B0m5CW1C.js",
     "bytes": 2574,
     "gzip6": 1278
   },
   {
-    "file": "TeamScreen-Dx3irU3S.js",
-    "bytes": 4801,
-    "gzip6": 1804
+    "file": "TeamScreen-Cembbgnx.js",
+    "bytes": 4820,
+    "gzip6": 1807
   },
   {
-    "file": "ThemeStudio-oE1tbJ5s.js",
+    "file": "ThemeStudio-D0_s6I3L.js",
     "bytes": 25878,
     "gzip6": 8379
   },
   {
-    "file": "TimeFinder-BgJ49TR5.js",
+    "file": "TimeFinder-DxPcQNfx.js",
     "bytes": 5152,
-    "gzip6": 2183
+    "gzip6": 2182
   },
   {
-    "file": "Timeline-BfzjfOlO.js",
+    "file": "Timeline-DSi1WwSI.js",
     "bytes": 563,
     "gzip6": 343
   },
   {
-    "file": "VisitBooking-C3pHBzil.js",
+    "file": "VisitBooking-BFGq_w0A.js",
     "bytes": 8023,
-    "gzip6": 3292
+    "gzip6": 3290
   },
   {
-    "file": "WaitlistScreen-RnqZO5jQ.js",
+    "file": "WaitlistScreen-DZfBkozl.js",
     "bytes": 2908,
-    "gzip6": 1270
+    "gzip6": 1271
   },
   {
-    "file": "WeeklyEditor-BGOj86oA.js",
+    "file": "WeeklyEditor-1F-jNqLQ.js",
     "bytes": 5437,
     "gzip6": 2249
   },
   {
-    "file": "WhatsAppComposer-BFnYnNp9.js",
+    "file": "WhatsAppComposer-Cw9UUR8R.js",
     "bytes": 8642,
-    "gzip6": 3404
+    "gzip6": 3405
   },
   {
-    "file": "WhatsAppScreen-CH9uTd4m.js",
+    "file": "WhatsAppScreen-CvhXsGWA.js",
     "bytes": 6078,
-    "gzip6": 2371
+    "gzip6": 2372
   },
   {
-    "file": "WhatsAppSettings-Bv6iP1Nn.js",
+    "file": "WhatsAppSettings-BUtU1id9.js",
     "bytes": 8355,
-    "gzip6": 3277
+    "gzip6": 3276
   },
   {
     "file": "api-BS-4gZIq.js",
@@ -280,9 +280,9 @@
     "gzip6": 698
   },
   {
-    "file": "assets/app-BvISPnhX.js",
+    "file": "assets/app-Dc4gHJyV.js",
     "bytes": 133976,
-    "gzip6": 41712
+    "gzip6": 41705
   },
   {
     "file": "assets/landing-Dt_y9yk3.js",
@@ -300,9 +300,9 @@
     "gzip6": 375
   },
   {
-    "file": "cloud-runtime-lWn_f8R-.js",
+    "file": "cloud-runtime-BHCkWqTL.js",
     "bytes": 239525,
-    "gzip6": 63278
+    "gzip6": 63279
   },
   {
     "file": "contracts-3uTuhux_.js",
@@ -375,9 +375,9 @@
     "gzip6": 490
   },
   {
-    "file": "useConfirmation-DB-d1t7b.js",
+    "file": "useConfirmation-DJCIziuC.js",
     "bytes": 612,
-    "gzip6": 388
+    "gzip6": 390
   },
   {
     "file": "useDialogGuard-cqLFKf4T.js",
