@@ -1,5 +1,7 @@
 # IAtry V3 experimental
 
+Última auditoría real de Servicios y alcance pendiente de autorización: [AUDITORIA-REAL-SERVICIOS.md](AUDITORIA-REAL-SERVICIOS.md).
+
 Estado más reciente: [Integración Supabase y móvil](INTEGRACION-SUPABASE.md). Incluye la matriz cloud, exclusiones y límites de la auditoría remota.
 
 Rama local `codex/iatry-v3-supabase`, basada en V2 (`599f974`). No publicada. Motor determinista sin modelos, APIs de IA, servicios pagos ni dependencias nuevas. El frontend publicado y Supabase no se modificaron.
