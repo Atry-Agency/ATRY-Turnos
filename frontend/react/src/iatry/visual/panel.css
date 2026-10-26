@@ -80,3 +80,12 @@
 .iatry-visual-only .iatry-v2-panel{animation:iatry-visual-open .22s ease-out both}.iatry-visual-only .iatry-v2-panel[data-exiting]{animation:iatry-visual-close .22s ease-in both;pointer-events:none}
 @keyframes iatry-visual-open{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes iatry-visual-close{from{opacity:1;transform:none}to{opacity:0;transform:translateY(5px) scale(.99)}}
+/* Finite Lucide interactions. No idle loop, timers, filters or external icon runtime. */
+.iatry-v3 .iatry-suggestion-menu button:is(:hover,:focus-visible,:active) .iatry-suggestion-icon>.iatry-panel-icon{animation:iatry-suggestion-lift .55s ease-out 1}
+.iatry-v3 .iatry-suggestion-menu button:is(:hover,:focus-visible,:active) .iatry-icon-plus{transform-box:view-box;transform-origin:12px 14px;animation:iatry-suggestion-plus .55s ease-out 1}
+.iatry-v3 .iatry-suggestion-menu button:is(:hover,:focus-visible,:active) .iatry-icon-clock-hand{transform-box:view-box;transform-origin:12px 12px;animation:iatry-suggestion-clock .65s ease-in-out 1}
+.iatry-v3 .iatry-suggestion-menu button:is(:hover,:focus-visible,:active) .iatry-icon-awning{animation:iatry-suggestion-awning .6s ease-out 1}
+@keyframes iatry-suggestion-lift{0%,100%{transform:translateY(0)}40%{transform:translateY(-2px)}70%{transform:translateY(.5px)}}
+@keyframes iatry-suggestion-plus{0%,100%{transform:scale(1)}45%{transform:scale(1.2)}75%{transform:scale(.97)}}
+@keyframes iatry-suggestion-clock{0%,100%{transform:rotate(0)}35%{transform:rotate(18deg)}70%{transform:rotate(-6deg)}}
+@keyframes iatry-suggestion-awning{0%,100%{transform:translateY(0)}40%{transform:translateY(-1.3px)}75%{transform:translateY(.3px)}}
