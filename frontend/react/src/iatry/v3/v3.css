@@ -103,7 +103,7 @@
 /* Compact screens use a protected sheet with a single scroll surface. */
 [data-iatry-mobile-backdrop]{position:fixed;inset:0;z-index:34;background:#18234b52;touch-action:none}
 @media(max-width:767px){
- .iatry-v3 .iatry-v2-panel{top:calc(var(--iatry-viewport-top,0px) + max(8px,env(safe-area-inset-top)));bottom:auto;right:max(8px,env(safe-area-inset-right));width:calc(100% - max(8px,env(safe-area-inset-left)) - max(8px,env(safe-area-inset-right)));height:calc(var(--iatry-viewport-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)));max-height:none;padding:18px 18px max(18px,env(safe-area-inset-bottom));border-radius:24px;touch-action:pan-y;overscroll-behavior:contain;scroll-padding:80px 0 24px}
+ .iatry-v3 .iatry-v2-panel{top:calc(var(--iatry-viewport-top,0px) + max(8px,env(safe-area-inset-top)));bottom:auto;right:max(8px,env(safe-area-inset-right));width:calc(100% - max(8px,env(safe-area-inset-left)) - max(8px,env(safe-area-inset-right)));height:calc(var(--iatry-viewport-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)));max-height:none;padding:18px 18px max(18px,env(safe-area-inset-bottom));border-radius:24px;touch-action:pan-y pinch-zoom;overscroll-behavior:contain;scroll-padding:80px 0 24px}
  .iatry-v3 .iatry-v2-panel :is(input,select,textarea),.iatry-v3 .iatry-intent-form #iatry-intent{font-size:16px}
  .iatry-v3 .iatry-v2-panel button,.iatry-v3 .iatry-window-controls button{min-height:44px}
  .iatry-v3 .iatry-window-controls button{width:44px}
