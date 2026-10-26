@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "routes": [
+    "inicio",
+    "agenda",
+    "servicios",
+    "clientes",
+    "equipo",
+    "disponibilidad",
+    "configuracion",
+    "configuracion-inicial",
+    "comunicacion",
+    "accesos",
+    "suscripcion",
+    "cuenta",
+    "notificaciones",
+    "turnos-fijos",
+    "lista-espera",
+    "estadisticas",
+    "smartslots",
+    "insights",
+    "soporte",
+    "reserva-publica-demo",
+    "login-anonimo-sin-envio"
+  ],
+  "errors": [],
+  "productionRequests": 0,
+  "environment": "Packaged candidate, fictional demo for private/public routes; anonymous login without submitting credentials; all external network blocked; no screenshots/video"
+}

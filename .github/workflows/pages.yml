@@ -4,6 +4,11 @@ on:
     branches: [main]
     paths: ['frontend/react/**', 'scripts/react/**', 'web/**', 'cloud/**', 'scripts/build-github*.js', 'scripts/build-pages.js', 'package*.json', '.github/workflows/pages.yml']
   workflow_dispatch:
+    inputs:
+      source_ref:
+        description: 'Commit o etiqueta a publicar; vacío utiliza la revisión seleccionada del workflow'
+        required: false
+        type: string
 permissions:
   contents: read
 concurrency:
@@ -14,14 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - uses: actions/configure-pages@v5
       - run: npm ci
-      - run: npm ci --prefix frontend/react
-      - run: npm run build
-      - run: npm run test:react
+      - name: Compilar y verificar React cuando existe en la revisión seleccionada
+        shell: bash
+        run: |
+          if [ -f frontend/react/package.json ]; then
+            npm ci --prefix frontend/react
+            npm run build
+            npm run test:react
+          fi
       - run: node scripts/build-github.js
         env:
           CLOUD_BACKEND_VALIDATED: ${{ vars.CLOUD_BACKEND_VALIDATED }}
@@ -29,6 +41,12 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_KEY: ${{ vars.PUBLIC_SUPABASE_KEY }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
+      - name: Comprobar artefacto React y proyecto definitivo
+        shell: bash
+        run: |
+          if [ -f scripts/react/release-check.cjs ]; then
+            node scripts/react/release-check.cjs
+          fi
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist/github-preview

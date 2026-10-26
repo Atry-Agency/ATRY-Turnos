@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-25",
+  "previousCommit": "9a5a0d6ad6b6a1b1373f0079021ab67bc5517dc6",
+  "previousRun": 40035133111,
+  "rollbackTag": "rollback/pre-react-iatry-2026-10-25",
+  "candidateTag": "release/react-iatry-2026-10-25-rc1",
+  "domain": "atryturnos.com",
+  "artifact": {
+    "project": "djoxdtloqwbrhgtgencc",
+    "frontend": "react-iatry",
+    "assets": 108,
+    "connectionLocked": false,
+    "supabaseRequests": 0
+  },
+  "rootTests": {
+    "passed": 252,
+    "failed": 0
+  },
+  "reactTests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "rollbackRebuildPassed": true,
+  "remoteDatabaseTestsExecuted": false,
+  "backupRestored": false,
+  "published": false
+}
