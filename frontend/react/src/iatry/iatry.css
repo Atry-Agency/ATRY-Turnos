@@ -63,6 +63,6 @@
 .iatry-slot{display:contents}.iatry-slot:empty{display:none}
 body:has(dialog[open]) .iatry-context{display:none}
 @media(forced-colors:active){.iatry-context{border:1px solid CanvasText}.iatry-target{outline-color:Highlight!important}}
-.main-content:has(.iatry-context:not(.iatry-rest))>.workspace-setup{display:none}
+.main-content:has(.iatry-context:not(.iatry-rest):not(.iatry-v3):not(.iatry-visual-guide))>.workspace-setup{display:none}
 /* A static white reflection lives in the masked rim, never over the official emblem. */
 .iatry-shell::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 32% 8%,#FFFFFFB3,transparent 42%),radial-gradient(ellipse at 93% 68%,#FFFFFF45,transparent 28%);opacity:.24;pointer-events:none}
