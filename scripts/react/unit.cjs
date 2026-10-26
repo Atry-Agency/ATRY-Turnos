@@ -7,3 +7,5 @@ for(const [name,entry] of [['customers-contracts','customers/contracts'],['scope
 const result=spawnSync(process.execPath,['--test',path.join(root,'frontend/react/test/component.test.mjs'),path.join(root,'frontend/react/test/repository.test.mjs'),path.join(root,'frontend/react/test/full-data.test.mjs'),path.join(root,'frontend/react/test/scheduling.test.mjs'),path.join(root,'frontend/react/test/photos.test.mjs'),path.join(root,'frontend/react/test/subscription.test.mjs'),path.join(root,'frontend/react/test/account.test.mjs'),path.join(root,'frontend/react/test/catalog.test.mjs'),path.join(root,'frontend/react/test/native-infrastructure.test.mjs')],{stdio:'inherit'});process.exitCode=result.status??1;
 
 if(process.exitCode===0){const v2=spawnSync(process.execPath,[path.join(root,'scripts/react/iatry-v2-unit.cjs')],{cwd:root,stdio:'inherit'});process.exitCode=v2.status??1;}
+
+if(process.exitCode===0){const v3=spawnSync(process.execPath,[path.join(root,'scripts/react/iatry-v3-security.cjs')],{cwd:root,stdio:'inherit'});process.exitCode=v3.status??1;}

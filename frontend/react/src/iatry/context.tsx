@@ -1,6 +1,6 @@
 import type {Evidence} from './v2/contracts';
 import {createContext,useCallback,useContext,useEffect,useRef} from 'react';
-export interface IatryBindings{registerAnchor(name:string,node:HTMLElement|null):void;registerSlot(name:string,node:HTMLElement|null):void;observeServices(value:unknown):void;dialog(open:boolean):void;ready(view:string,value:boolean):void;carry(view:string):void;publishEvidence?(value:Evidence|null):void}
+export interface IatryBindings{findAnchor?:(name:string)=>HTMLElement|undefined;registerAnchor(name:string,node:HTMLElement|null):void;registerSlot(name:string,node:HTMLElement|null):void;observeServices(value:unknown):void;dialog(open:boolean):void;ready(view:string,value:boolean):void;carry(view:string):void;publishEvidence?(value:Evidence|null):void}
 export const IatryContext=createContext<IatryBindings|null>(null);
 export function useIatryAnchors(){const context=useContext(IatryContext),callbacks=useRef(new Map<string,(node:HTMLElement|null)=>void>()),current=useRef(context);current.current=context;return useCallback((name:string)=>{if(!callbacks.current.has(name))callbacks.current.set(name,node=>current.current?.registerAnchor(name,node));return callbacks.current.get(name)!},[])}
 export function IatrySlot({name='context'}:{name?:string}){const context=useContext(IatryContext),register=context?.registerSlot;const ref=useCallback((node:HTMLDivElement|null)=>register?.(name,node),[register,name]);return <div className="iatry-slot" ref={ref}/>}

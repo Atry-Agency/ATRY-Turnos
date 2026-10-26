@@ -1,0 +1,23 @@
+import {localDateTime} from '../../domain/format';
+import {customers,history} from '../../customers/contracts';
+import {readCatalog} from '../../infrastructure/catalog';
+import {parseCatalog} from '../../services/repository';
+import {bookingList} from '../../agenda/model';
+import {text,rows,encoded,object,type Capability,type Field,type FieldSpec,type Plan,type ToolContext,type Values,type Row} from './contracts';
+export {customers,history,bookingList,rows,encoded,object,text};
+export const managers:Capability['roles']=['owner','manager'];
+export const everyone:Capability['roles']=['owner','manager','staff'];
+export const field=(key:string,label:string,type:FieldSpec['type']='text',extra:Partial<FieldSpec>={}):FieldSpec=>({key,label,type,required:true,...extra});
+export const pick=(key:string,label:string,load:NonNullable<FieldSpec['options']>)=>field(key,label,'select',{options:load});
+export const list=(ctx:ToolContext,tail:string)=>ctx.read(tail,rows);
+export const options=(tail:string,label='name')=>async(ctx:ToolContext)=> (await list(ctx,tail)).map(row=>({value:row.id,label:String(row[label]||row.name||row.id)}));
+export const find=async(ctx:ToolContext,tail:string,id:string)=>{const row=(await list(ctx,tail)).find(x=>x.id===id);if(!row)throw Error('El registro ya no está disponible. Volvé a elegirlo.');return row};
+export const catalog=async(ctx:ToolContext)=>{const key='catalog';if(!ctx.cache.has(key))ctx.cache.set(key,readCatalog(ctx.api,ctx.port,ctx.scope).then(data=>ctx.scope.role==='staff'?{...data,staff:data.staff.filter(p=>p.id===ctx.port.business().staff_id),services:data.services.filter(s=>data.staff.some(p=>p.id===ctx.port.business().staff_id&&p.service_ids.includes(s.id)))}:data).catch(error=>{ctx.cache.delete(key);throw error}));return await ctx.cache.get(key) as ReturnType<typeof parseCatalog>};
+export function command(tail:string,payload:unknown,method:Plan['method']='POST',success='El sistema guardó el cambio. No se verificó ni se realizó un envío desde IAtry.'):Plan{return{tail,payload,method,success,summary:[],warning:'Revisá la vista previa. Solo se guarda al confirmar.'}}
+const statusText:Record<string,string>={pending:'Pendiente',confirmed:'Confirmado',completed:'Completado',cancelled:'Cancelado',no_show:'No asistió',waiting:'En espera',offered:'Oferta preparada',booked:'Atendido',queued:'En cola',processing:'Procesando',provider_accepted:'Aceptado por proveedor; entrega sin confirmar',smtp_accepted:'Aceptado por SMTP; entrega sin confirmar',delivered:'Entrega confirmada por el sistema',delivery_unknown:'Entrega sin confirmar',bounced:'Rechazado por destinatario',stored_local:'Guardado en buzón local',skipped:'Omitido',failed:'Falló',retry:'Reintento programado',internal_only:'Aviso interno'};
+const display=(key:string,value:unknown)=>key==='status'||key==='state'?statusText[String(value)]||String(value):key==='active'?(value?'Activo':'Inactivo'):key.endsWith('_at')&&typeof value==='string'&&Number.isFinite(Date.parse(value))?localDateTime(value):String(value??'');
+export function result(title:string,values:{id:string}[],keys:string[],source:string){return{title,message:`${values.length} registros recibidos. Los filtros y límites del contrato delimitan este resultado.`,source,items:values.map(value=>{const x=value as Row;return{title:String(x.name||x.customer_name||x.subject||x.service_name||'Registro'),detail:keys.map(k=>display(k,x[k])).filter(Boolean).join(' · ')}})}}
+export const rowField=(tail:string,idKey:string,key:string,fallback:Field['value']='')=>async(ctx:ToolContext,v:Values)=>{const row=await find(ctx,tail,text(v,idKey));return row[key]===undefined?fallback:typeof row[key]==='boolean'?row[key] as boolean:Array.isArray(row[key])?row[key] as string[]:String(row[key])};
+export function unchanged(ctx:ToolContext,tail:string,row:Row){const before=JSON.stringify(row);return async()=>{const current=rows(await ctx.api.read(tail,v=>v,true)).find(x=>x.id===row.id);if(!current||JSON.stringify(current)!==before)throw Object.assign(Error('El registro cambió desde que lo elegiste. Revisalo antes de confirmar otra vez.'),{status:409})}}
+export const futureBooking=async(ctx:ToolContext,v:Values)=>{const day=text(v,'date');const list=await ctx.read('/bookings?date='+encodeURIComponent(day)+'&days=1',bookingList);const dated=list.filter(x=>localDateTime(x.starts_at).slice(0,10)===day);const own=ctx.scope.role==='staff'?dated.filter(x=>x.staff_id===ctx.port.business().staff_id):dated;return own};
+export const bookingChoice=pick('booking','¿Qué turno querés gestionar?',async(ctx,v)=>(await futureBooking(ctx,v)).map(b=>({value:b.id,label:`${b.starts_at} · ${b.customer_name} · ${b.service_name} · ${b.status}`})));

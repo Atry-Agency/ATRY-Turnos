@@ -1,0 +1,7 @@
+import type {Capability,Plan,Result,ToolContext} from './contracts';
+const equivalent=(a:unknown,b:unknown)=>typeof a==='boolean'&&[0,1].includes(b as number)?Number(a)===b:typeof b==='boolean'&&[0,1].includes(a as number)?a===Number(b):String(a)===String(b);
+export function acknowledgement(plan:Plan,tool:Capability,response:unknown,environment:ToolContext['environment']):Result{
+ const actual=response&&typeof response==='object'&&!Array.isArray(response)?response as Record<string,unknown>:null,payload=plan.payload&&typeof plan.payload==='object'?plan.payload as Record<string,unknown>:{},adjustments=actual?Object.keys(payload).filter(key=>key in actual&&['string','number','boolean'].includes(typeof payload[key])&&!equivalent(payload[key],actual[key])):[];
+ const resultRows=plan.summary.map(row=>{const field=tool.fields.find(f=>f.label===row.label);return field&&actual&&adjustments.includes(field.key)?{...row,value:String(actual[field.key])+' (valor confirmado por el sistema)'}:row});
+ return{title:environment==='demo'?'Resultado de la demostración':'El sistema confirmó la operación',message:adjustments.length?'El sistema respondió con valores ajustados. El resumen indica los valores confirmados; revisalos antes de seguir.':plan.success,rows:resultRows,source:environment==='demo'?'Adaptador de demostración; no representa datos reales ni persistencia en un servidor.':'Respuesta del contrato autorizado del negocio activo.'};
+}

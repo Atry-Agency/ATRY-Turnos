@@ -1,0 +1,12 @@
+'use strict';
+// Development-only local fixture server. Not included in the deployment manifest.
+process.env.NODE_ENV='test';process.env.MAIL_PROVIDER='disabled';
+const http=require('node:http'),path=require('node:path'),{connect,randomToken,hashToken,now}=require('../../server/db'),{seedDemo}=require('../../server/seed'),{createApp}=require('../../server/app');
+async function createLocalPreview(port=0){const db=connect(':memory:'),log=console.log;try{console.log=(...args)=>{if(!String(args[0]).startsWith('Demo creada:'))log(...args)};seedDemo(db)}finally{console.log=log}const app=createApp({db,webRoot:path.resolve(__dirname,'../../frontend/react/dist')});
+ const server=http.createServer((req,res)=>{if(!/^(127\.0\.0\.1|localhost)(:\d+)?$/.test(req.headers.host||'')){res.writeHead(403);res.end();return}const url=new URL(req.url,'http://localhost');
+ if(url.pathname==='/local-assistant'&&req.method==='GET'){const user=db.prepare("SELECT id FROM users WHERE email='usuario1@example.com'").get(),token=randomToken();db.prepare('INSERT INTO sessions(token_hash,user_id,expires_at,created_at) VALUES(?,?,?,?)').run(hashToken(token),user.id,new Date(Date.now()+8*3600000).toISOString(),now());res.writeHead(302,{'Set-Cookie':`atry_session=${token}; HttpOnly; Path=/; SameSite=Lax; Max-Age=28800`,'Location':'/#/app/inicio','Cache-Control':'no-store'});res.end();return}
+ if(url.pathname==='/runtime-config.js'){res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store'});res.end("window.ATRY_CONFIG={backend:'local',verificationOnly:true};");return}
+ app.handler(req,res)});await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve)});return{db,base:'http://127.0.0.1:'+server.address().port,async close(){server.closeAllConnections();await new Promise(resolve=>server.close(resolve));db.close()}};
+}
+module.exports={createLocalPreview};
+if(require.main===module)createLocalPreview(Number(process.env.ATRY_V3_PORT)||3322).then(server=>{console.log('IAtry local: '+server.base+'/local-assistant');console.log('SQLite temporal · datos ficticios · envíos deshabilitados · sin Supabase');for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>{void server.close().finally(()=>process.exit())})}).catch(e=>{console.error('No se pudo iniciar la vista previa local:',e.code||e.message);process.exitCode=1});

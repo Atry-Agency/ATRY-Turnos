@@ -1,0 +1,53 @@
+.iatry-v3{max-width:720px}.iatry-v3 .iatry-v2-panel{padding:18px}.iatry-v3 .iatry-v2-tabs{margin-bottom:12px}
+.iatry-workbench{max-height:min(65dvh,650px);overflow:auto;overscroll-behavior:contain;padding:2px 4px 12px;scrollbar-gutter:stable}
+.iatry-operation-context{display:flex;gap:12px;align-items:center;font-size:11px!important;color:var(--muted);margin-top:0!important}.iatry-operation-context span{margin-left:auto}.iatry-operation-context strong{color:var(--ink)}
+.iatry-workbench input:not([type=checkbox]),.iatry-workbench select{width:100%;min-height:44px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px}.iatry-workbench input[type=color]{height:52px;padding:4px}
+.iatry-operation-areas{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.iatry-operation-areas button{border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--muted);padding:7px 11px;min-height:36px;font:inherit;font-size:11px;cursor:pointer}.iatry-operation-areas button[aria-pressed=true]{color:var(--ink);border-color:#4754E6;background:color-mix(in srgb,#4754E6 8%,var(--surface))}
+.iatry-operation-menu{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.iatry-operation-menu button{display:grid;gap:5px;align-content:start;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:13px;padding:12px;font:inherit;font-size:13px;cursor:pointer;min-height:68px}.iatry-operation-menu small{color:var(--muted);font-size:10px}.iatry-operation-menu button:hover{border-color:#4754E6}
+.iatry-operation-question{display:grid;gap:12px}.iatry-operation-prompt{font-size:15px;font-weight:600}.iatry-operation-question>.btn{justify-self:start;min-height:44px}
+.iatry-operation-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;border:0;padding:0;max-height:260px;overflow:auto}.iatry-operation-choices label{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;min-height:48px}
+.iatry-workbench dl{margin:10px 0}.iatry-workbench dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.iatry-workbench dt{color:var(--muted)}.iatry-workbench dd{margin:0;overflow-wrap:anywhere;white-space:pre-wrap}.iatry-operation-consequence{border-left:3px solid #4754E6;padding:10px 12px;background:color-mix(in srgb,#4754E6 6%,var(--surface));border-radius:0 10px 10px 0}.iatry-operation-review .checkline{font-size:12px;margin:12px 0}.iatry-operation-review .btn{min-height:44px}.iatry-operation-result article{padding:12px 0;border-bottom:1px solid var(--line)}
+.iatry-workbench :focus-visible{outline:2px solid #4754E6;outline-offset:3px}.iatry-workbench .actions{flex-wrap:wrap}
+@media(max-width:480px){.iatry-operation-menu{grid-template-columns:1fr}.iatry-operation-choices{grid-template-columns:1fr}.iatry-workbench{max-height:62dvh}.iatry-v3 .iatry-v2-panel{padding:14px}.iatry-workbench dl>div{grid-template-columns:1fr;gap:4px}}
+.iatry-capability-help{margin:16px 0;padding:14px 0;border-top:1px solid var(--line)}.iatry-capability-help h3{font-size:14px}.iatry-capability-help label{display:block;font-size:12px;margin:10px 0}.iatry-capability-help select{width:100%;min-height:44px;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:13px}.iatry-capability-help li{font-size:12px;line-height:1.7}.iatry-capability-help summary{font-size:12px;min-height:44px;padding:12px 0;cursor:pointer}
+/* Compact, nonmodal conversation: the dashboard keeps its geometry and guides remain usable. */
+.iatry-v3{--iatry-size:46px;max-width:none;contain:style}
+.iatry-v3 .iatry-v2-panel{position:fixed;z-index:35;right:max(20px,env(safe-area-inset-right));bottom:max(22px,env(safe-area-inset-bottom));width:min(420px,calc(100vw - 40px));max-height:calc(100dvh - 100px);overflow:auto;overscroll-behavior:contain;padding:24px;border-radius:24px;box-shadow:0 16px 64px #071a2126}
+.iatry-v3 .iatry-v2-top{align-items:center;margin-bottom:12px}.iatry-v3 .iatry-v2-top>.iatry-v2-eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.iatry-v3 .iatry-workbench{max-height:none;overflow:visible;padding:0;scrollbar-gutter:auto}
+.iatry-v3 .iatry-v2-tabs{gap:0;border:0;margin:0 0 20px;padding:0}.iatry-v3 .iatry-v2-tabs button{font-size:11px;padding:9px 10px}
+.iatry-v3 .iatry-operation-menu{grid-template-columns:1fr;gap:4px;margin:16px 0 6px}.iatry-v3 .iatry-operation-menu button{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:48px;padding:12px;border-color:transparent;background:color-mix(in srgb,#4754E6 4%,var(--surface));font-size:13px}.iatry-v3 .iatry-operation-menu small{font-size:9px;max-width:90px;text-align:right}.iatry-v3 .iatry-operation-menu button:hover{border-color:#4754E650}
+.iatry-v3 .iatry-v2-preferences{border:0;margin-top:8px}.iatry-v3 .iatry-v2-preferences>summary{color:var(--muted);font-size:11px}.iatry-v3 .iatry-operation-areas{gap:4px}.iatry-v3 h2{font-size:23px;margin-top:4px}
+@media(max-width:600px){.iatry-v3 .iatry-v2-panel{right:12px;bottom:max(12px,env(safe-area-inset-bottom));width:calc(100vw - 24px);max-height:calc(100dvh - 90px);padding:20px;border-radius:22px}.iatry-v3{--iatry-size:42px}}
+/* All color fields are rasterized static gradients. Only transform/opacity animate. */
+.iatry-v3 .iatry-liquid{contain:layout style;--current-speed:26s;--current-opacity:.5;animation:none!important}
+.iatry-liquid-halo,.iatry-liquid-basin,.iatry-current,.iatry-liquid-reflection,.iatry-liquid-wave{position:absolute;pointer-events:none;border-radius:50%}
+.iatry-liquid-halo{inset:-3px;background:radial-gradient(ellipse,#86c9eb55 32%,#4754e62b 57%,transparent 72%);opacity:.65}
+.iatry-liquid-basin{inset:0;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 30% 15%,#d8ddfb,#4754e6 44%,#137e70);border:1px solid #ffffff80;box-shadow:inset 0 0 5px #ffffff70,0 1px 6px #4754e640}
+.iatry-current{inset:-25%;opacity:var(--current-opacity);animation-duration:var(--current-speed);animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate}
+.iatry-current-a{background:radial-gradient(ellipse at 26% 38%,#00a5e2 0 14%,#86c9ebc7 31%,transparent 57%);animation-name:iatry-liquid-tide-a}
+.iatry-current-b{background:radial-gradient(ellipse at 68% 67%,#137e70 3%,#4754e6e6 24%,transparent 55%);animation-name:iatry-liquid-tide-b;animation-delay:-9s}
+.iatry-current-c{background:radial-gradient(ellipse at 50% 33%,#ffffffb8 0%,#d8ddfb80 15%,transparent 39%);animation-name:iatry-liquid-tide-c;animation-delay:-17s}
+.iatry-liquid-reflection{inset:0;background:radial-gradient(ellipse at 27% 12%,#ffffffb3,transparent 39%),radial-gradient(ellipse at 87% 81%,#ffffff66,transparent 33%);opacity:.45}
+.iatry-liquid-emblem{position:relative;width:calc(100% - 7px);height:calc(100% - 7px);object-fit:contain;border-radius:50%;z-index:2;pointer-events:none}
+.iatry-liquid-wave{inset:1px;border:2px solid #ffffffb3;opacity:0;z-index:1}
+.iatry-v3[data-energy-state=interaction] .iatry-liquid{--current-speed:9s;--current-opacity:.8}
+.iatry-v3[data-energy-state=preparation] .iatry-liquid{--current-speed:4.8s;--current-opacity:.95}
+.iatry-v3[data-energy-state=preparation] .iatry-liquid-reflection{animation:iatry-liquid-breathe 2.6s ease-in-out infinite alternate}
+.iatry-v3[data-energy-state=confirmation] .iatry-liquid{--current-speed:14s;--current-opacity:.7}
+.iatry-v3[data-energy-state=confirmation] .iatry-liquid-halo{animation:iatry-liquid-breathe 3.6s ease-in-out infinite alternate}
+.iatry-v3[data-energy-state=success] .iatry-liquid-wave{animation:iatry-liquid-success .85s ease-out 1}
+.iatry-v3[data-energy-state=error] .iatry-liquid-reflection{animation:iatry-liquid-contained .55s ease-out 1}
+.iatry-v3[data-energy-state=farewell] .iatry-liquid-halo{animation:iatry-liquid-farewell .42s ease-out 1}
+.iatry-liquid[data-energy-visible=true] .iatry-current{will-change:transform,opacity}
+.iatry-liquid[data-energy-visible=false] *,.iatry-v3[data-motion-off] .iatry-liquid *{animation-play-state:paused!important;will-change:auto!important}
+.iatry-v3[data-motion-off] .iatry-liquid-wave{opacity:0}
+@keyframes iatry-liquid-tide-a{0%{transform:translate(-3%,-2%) scale(.96,1.04)}45%{transform:translate(7%,4%) scale(1.13,.92)}100%{transform:translate(-5%,9%) scale(.98,1.1)}}
+@keyframes iatry-liquid-tide-b{0%{transform:translate(4%,6%) scale(1.1,.94)}57%{transform:translate(-8%,-3%) scale(.91,1.14)}100%{transform:translate(5%,-6%) scale(1.06,.96)}}
+@keyframes iatry-liquid-tide-c{0%{transform:translate(-9%,6%) scale(.9,1.08)}38%{transform:translate(6%,-7%) scale(1.12,.87)}100%{transform:translate(10%,5%) scale(.96,1.13)}}
+@keyframes iatry-liquid-breathe{from{opacity:.35;transform:scale(.98)}to{opacity:.85;transform:scale(1.04)}}
+@keyframes iatry-liquid-success{0%{opacity:0;transform:scale(.35)}30%{opacity:.9}100%{opacity:0;transform:scale(1.2)}}
+@keyframes iatry-liquid-contained{0%,100%{opacity:.45}45%{opacity:.16}}
+@keyframes iatry-liquid-farewell{from{opacity:.85}to{opacity:.45}}
+@media(prefers-reduced-motion:reduce){.iatry-v3 .iatry-liquid *{animation:none!important;will-change:auto!important}}
+@media(forced-colors:active){.iatry-liquid-basin{border:2px solid CanvasText}.iatry-liquid-halo,.iatry-current,.iatry-liquid-reflection,.iatry-liquid-wave{display:none}}
