@@ -1,5 +1,7 @@
 # IAtry V3 · integración operativa y experiencia móvil
 
+Actualización: [Primera prueba real completada, 3/3](RESULTADO-SERVICIOS-REAL.md). Solo el servicio de prueba de Pelu fue creado, cambió a precio 1 y quedó oculto con autorización expresa; el ensayo está cerrado y no se habilitaron otras operaciones. El contenido de preparación que sigue conserva su contexto histórico.
+
 Actualización de la auditoría remota: [Servicios reales y autorización del primer ensayo](AUDITORIA-REAL-SERVICIOS.md). Producción sí tiene la restricción de jornadas especiales que falta en el esquema local reconstruido; esa capacidad sigue bloqueada hasta homologación.
 
 26/10/2026 · Rama `codex/iatry-v3-supabase`, creada desde `99b07f5` (`codex/iatry-v3`). Conserva el panel aprobado que dio origen al visual publicado `ffc529e` e incorpora los tres iconos Lucide locales de `63a6790`. No se fusionó ni publicó ninguna rama. Supabase definitivo: `djoxdtloqwbrhgtgencc`.

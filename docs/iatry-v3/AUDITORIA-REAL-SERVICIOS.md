@@ -1,5 +1,7 @@
 # IAtry V3 · Auditoría real de Servicios y primera prueba propuesta
 
+Actualización: [Primera prueba real completada, 3/3](RESULTADO-SERVICIOS-REAL.md). Solo el servicio de prueba de Pelu fue creado, cambió a precio 1 y quedó oculto con autorización expresa; el ensayo está cerrado y no se habilitaron otras operaciones. El contenido de preparación que sigue conserva su contexto histórico.
+
 26/10/2026. Proyecto comprobado en el dashboard: `djoxdtloqwbrhgtgencc`, rama de base de datos main/production. Código en `codex/iatry-v3-supabase` (`b807e02` al comenzar). No se cambió la estética, la experiencia móvil, el frontend publicado ni sus configuraciones.
 
 ## Alcance y método
