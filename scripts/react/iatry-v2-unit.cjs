@@ -1,0 +1,20 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{buildSync}=require('esbuild');
+const dir=fs.mkdtempSync(path.join(os.tmpdir(),'iatry-v2-unit-'));let checks=0;function check(name,fn){fn();checks++;console.log('PASS',name)}
+try{
+ const load=name=>{const file=path.join(dir,name+'.cjs');buildSync({entryPoints:[path.resolve('frontend/react/src/iatry/v2/'+name+'.ts')],outfile:file,bundle:true,platform:'node',format:'cjs'});return require(file)};
+ const {sanitizeEvidence,insights}=load('evidence'),{createV2Memory}=load('memory'),{supported}=load('contracts'),{topics}=load('knowledge');
+ const source={source:'inicio',label:'Últimos 30 días',observedAt:100,counts:{today:4,total:20,cancelled:5}};
+ check('Datos permitidos; elimina contactos e identificadores',()=>{const x=sanitizeEvidence({...source,contacts:['private'],token:'private',counts:{...source.counts,email:3,userId:100,total:NaN}});assert.equal(x.contacts,undefined);assert.equal(x.token,undefined);assert.deepEqual(x.counts,{today:4,cancelled:5});assert.equal(sanitizeEvidence({...source,source:'otro-negocio'}),null)});
+ check('Series inválidas se descartan sin interrumpir la pantalla',()=>{assert.deepEqual(sanitizeEvidence({...source,series:[null,{day:'2026-02-31',n:2},{day:'2026-10-01',n:3}]}).series,[{day:'2026-10-01',n:3}]);assert.equal(sanitizeEvidence({...source,series:{bad:true}}).series,undefined)});
+ check('Conteo y cancelación explicados; sin atribuciones',()=>{const rows=insights(source,true);assert.equal(rows.length,2);assert.match(rows[1].text,/25%/);assert.match(rows[1].calculation,/No atribuyo causas/)});
+ check('Plan sin estadísticas no recibe indicadores avanzados',()=>assert.deepEqual(insights(source,false).map(x=>x.id),['today']));
+ check('No inventa cancelaciones con denominador inválido',()=>assert.equal(insights({...source,counts:{total:2,cancelled:3}},true).length,0));
+ const series=Array.from({length:14},(_,i)=>({day:'2026-10-'+String(i+1).padStart(2,'0'),n:i<7?1:2}));
+ check('Evolución de dos semanas completas: 7 a 14 (+100%)',()=>assert.match(insights({...source,series},true,'2026-10-15').find(x=>x.id==='evolution').text,/\+100%/));
+ check('Sin tendencia si faltan fechas, hay duplicados o día parcial',()=>{for(const rows of [series.slice(1),[...series.slice(0,13),series[0]]])assert.ok(!insights({...source,series:rows},true,'2026-10-15').some(x=>x.id==='evolution'));assert.ok(!insights({...source,series},true,'2026-10-14').some(x=>x.id==='evolution'))});
+ check('Memoria aislada, persistente, acotada y sin errores sin almacenamiento',()=>{const map=new Map(),store={getItem:k=>map.get(k),setItem:(k,v)=>map.set(k,v)},a=createV2Memory(store,'usuario-negocio-rol-A'),b=createV2Memory(store,'usuario-negocio-rol-B');a.mark('seen','calendar');assert.deepEqual(b.read().seen,[]);assert.deepEqual(createV2Memory(store,'usuario-negocio-rol-A').read().seen,['calendar']);for(let i=0;i<100;i++)a.mark('dismissed','id'+i);assert.equal(a.read().dismissed.length,80);const broken=createV2Memory({getItem(){throw Error()},setItem(){throw Error()}},'broken');assert.deepEqual(broken.mark('seen','manual').seen,['manual'])});
+ check('Roles y acciones respetan alcance',()=>{assert.ok(supported('agenda',{role:'staff'}));assert.ok(!supported('clientes',{role:'staff'}));assert.ok(!supported('inicio',{role:'unknown'}));for(const view of ['inicio','agenda','servicios','clientes','configuracion','configuracion-inicial']){const t=topics(view,{role:'owner',plan:'individual',access:false,statistics:false});assert.ok(t.length);assert.ok(t.every(x=>x.steps.every(s=>!s.requiresAccess)))}});
+ check('Descartar versión de evidencia no oculta un resultado nuevo',()=>{const a=insights(source,true)[0],b=insights({...source,observedAt:200},true)[0],c=insights({...source,counts:{...source.counts,today:5}},true)[0];assert.equal(a.fingerprint,b.fingerprint);assert.notEqual(a.fingerprint,c.fingerprint)});
+ console.log(checks+' verificaciones IAtry V2 correctas');
+}finally{fs.rmSync(dir,{recursive:true,force:true})}

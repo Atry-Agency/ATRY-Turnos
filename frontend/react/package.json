@@ -8,6 +8,8 @@
     "test": "node ../../scripts/react/unit.cjs"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "2.1.9",
+    "motion": "14.6.0",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },

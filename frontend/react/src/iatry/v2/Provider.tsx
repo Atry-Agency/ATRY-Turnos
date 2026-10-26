@@ -1,0 +1,54 @@
+import {lazy,Suspense,useCallback,useEffect,useMemo,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {useMotionPreference} from './useMotionPreference';
+import type {IatryProps} from '../IatryProvider';
+import {IatryContext,type IatryBindings} from '../context';
+import {IatryAvatar} from '../Avatar';
+import engine from '../vendor/core.js';
+import type {Tip} from '../types';
+import {supported,type Evidence,type Topic,type View} from './contracts';
+import {topics} from './knowledge';
+import {insights,sanitizeEvidence} from './evidence';
+import {createV2Memory} from './memory';
+const HelpPanel=lazy(()=>import('./Presentation').then(m=>({default:m.HelpPanel})));
+const InsightsPanel=lazy(()=>import('./Presentation').then(m=>({default:m.InsightsPanel})));
+const AnimatedPanel=lazy(()=>import('./AnimatedPanel').then(m=>({default:m.AnimatedPanel})));
+import '../iatry.css';
+import './v2.css';
+export function V2Provider({children,user,business,view,demo,showcase,capabilities}:IatryProps){
+ const scope=capabilities||{role:business?.role||'',plan:'individual',access:true,statistics:false},allowed=Boolean(user&&business&&supported(view,scope)&&!showcase),reduced=useMotionPreference();
+ const key=user&&business?JSON.stringify([demo?'demo':'real',user.id,business.id,business.role]):'';
+ const stores=useMemo(()=>{let storage:Storage|undefined;try{storage=localStorage}catch{}return {v1:engine.createMemory(storage,'atry:iatry:v1:'+key),v2:createV2Memory(storage,'atry:iatry:v2:'+key)}},[key]);
+ const [preferences,setPreferences]=useState(()=>stores.v1.read()),[memory,setMemory]=useState(()=>stores.v2.read()),[expanded,setExpanded]=useState(false),[activated,setActivated]=useState(false),[tab,setTab]=useState<'help'|'insights'>('help'),[tour,setTour]=useState<{topic:Topic;step:number}|null>(null),[notice,setNotice]=useState(''),[phase,setPhase]=useState('idle'),[evidence,setEvidence]=useState<Evidence|null>(null),[dialogs,setDialogs]=useState(0),[revision,setRevision]=useState(0),[legacyTip,setLegacyTip]=useState<Tip|null>(null),[paused,setPaused]=useState(false);
+ const anchors=useRef(new Map<string,HTMLElement>()),slots=useRef(new Map<string,HTMLElement>()),readyViews=useRef(new Map<string,boolean>()),section=useRef<HTMLElement>(null),call=useRef<HTMLButtonElement>(null),tourBack=useRef<HTMLButtonElement>(null),wasServices=useRef<boolean|null>(null),currentView=useRef(view);currentView.current=view;
+ const register=useCallback((map:Map<string,HTMLElement>,name:string,node:HTMLElement|null)=>{if(map.get(name)===node||!node&&!map.has(name))return;if(node)map.set(name,node);else map.delete(name);setRevision(x=>x+1)},[]);
+ const registerAnchor=useCallback((name:string,node:HTMLElement|null)=>register(anchors.current,name,node),[register]),registerSlot=useCallback((name:string,node:HTMLElement|null)=>register(slots.current,name,node),[register]);
+ const dialog=useCallback((open:boolean)=>setDialogs(x=>Math.max(0,x+(open?1:-1))),[]),ready=useCallback((name:string,value:boolean)=>{if(readyViews.current.get(name)!==value){readyViews.current.set(name,value);setRevision(x=>x+1)}},[]);
+ const publishEvidence=useCallback((value:Evidence|null)=>{setEvidence(value&&value.source===currentView.current?sanitizeEvidence(value):null)},[]);
+ const observeServices=useCallback((value:unknown)=>{const next=engine.analyze(value).hasServices;if(next===null)return;const previous=wasServices.current;wasServices.current=next;if(previous===false&&next===true){setLegacyTip(engine.knowledge.servicios?{...engine.knowledge.servicios,title:'¡Bien! Tu servicio ya está activo.',text:'El catálogo cargado confirmó un servicio publicado. No implica una reserva ni un mensaje enviado.',celebrate:true}:null);setPhase('celebrating')}},[]);
+ const bindings=useMemo<IatryBindings>(()=>({registerAnchor,registerSlot,dialog,ready,publishEvidence,observeServices,carry:()=>{}}),[registerAnchor,registerSlot,dialog,ready,publishEvidence,observeServices]);
+ useEffect(()=>{setExpanded(false);setTour(null);setNotice('');setTab('help');setLegacyTip(null);setPhase('idle');wasServices.current=null},[view,key,scope.role,scope.plan,scope.access]);
+ useEffect(()=>{if(!allowed||view!=='configuracion-inicial'||!readyViews.current.get(view)||dialogs||preferences.disabled)return;const tip=engine.select({userId:user?.id,businessId:business?.id,role:scope.role,completed:Boolean(business?.onboarding_completed),dialog:false,view},stores.v1.read());if(tip){setLegacyTip(tip);stores.v1.mark(tip.id);setExpanded(true)}},[allowed,view,revision,dialogs,preferences.disabled,stores,business?.onboarding_completed]);
+ useEffect(()=>{if(expanded)setActivated(true)},[expanded]);
+ const active=allowed&&readyViews.current.get(view)===true&&dialogs===0,off=Boolean(reduced||preferences.motionOff||paused),slot=slots.current.get('context')||slots.current.get('default');
+ useEffect(()=>{if(!active)return;let visible=true;const change=()=>setPaused(document.hidden||!visible),observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??false;change()});if(section.current)observer.observe(section.current);document.addEventListener('visibilitychange',change);change();return()=>{observer.disconnect();document.removeEventListener('visibilitychange',change)}},[active,slot,expanded]);
+ useEffect(()=>{if(phase==='idle')return;const t=setTimeout(()=>setPhase(tour?'guiding':'idle'),off?0:phase==='celebrating'?900:420);return()=>clearTimeout(t)},[phase,tour,off]);
+ const help=allowed?topics(view as View,scope):[],step=tour?.topic.steps[tour.step],target=step?anchors.current.get(step.anchor):undefined;
+ const unavailable=useCallback(()=>setNotice('El control no está disponible ahora. Revisá la pestaña o continuá con otro paso; no cambié nada por vos.'),[]);
+ const suggestions=evidence&&evidence.source===view?insights(evidence,scope.statistics):[],unseen=suggestions.filter(i=>!memory.dismissed.includes(i.id)&&!memory.snoozed.includes(i.fingerprint));
+ function request(){setExpanded(true);setPhase('appearing');setNotice('')}
+ function start(topic:Topic){if(!topic.steps.length)return;setTour({topic,step:0});setLegacyTip(null);setExpanded(true);setPhase('attention');setNotice('');setMemory(stores.v2.mark('seen',topic.id));stores.v1.mark('v2-'+topic.id)}
+ function close(){setPhase('leaving');setExpanded(false);setTour(null);setLegacyTip(null);setNotice('');call.current?.focus({preventScroll:true})}
+ function next(){if(!tour)return;if(tour.step+1<tour.topic.steps.length){setTour({...tour,step:tour.step+1});setNotice('');setPhase('attention')}else{stores.v1.mark('v2-'+tour.topic.id,'tours');setTour(null);setNotice('Recorrido completo. Vos decidís si querés hacer cambios.');setPhase('celebrating')}}
+ useEffect(()=>{if(!tour&&notice.startsWith('Recorrido completo'))tourBack.current?.focus({preventScroll:true})},[tour,notice]);
+ useEffect(()=>{if(!active||!expanded)return;const escape=(event:KeyboardEvent)=>{if(event.key==='Escape'&&!document.querySelector('.modal-mask,dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable=true]')){event.preventDefault();close()}};document.addEventListener('keydown',escape);return()=>document.removeEventListener('keydown',escape)},[active,expanded]);
+ const body=active&&slot?<section ref={section} className={'iatry-context iatry-v2'+(!expanded?' iatry-rest':'')} data-v2-view={view} data-iatry-state={phase} data-motion-off={off||undefined} aria-label="IAtry V2, asistente contextual"><div className="iatry-v2-dock"><button ref={call} type="button" className="iatry-call" aria-expanded={expanded} aria-controls="iatry-v2-panel" onClick={()=>expanded?close():request()}><IatryAvatar/><span><strong>IAtry</strong><small>{expanded?'Estoy con vos':'Pedir ayuda'}</small></span></button><span className="iatry-v2-meta">{scope.role==='staff'?'Tu agenda':'A tu ritmo'} · V2</span></div>
+ {(expanded||activated)&&<Suspense fallback={null}><AnimatedPanel expanded={expanded} off={off}><div className="iatry-v2-top"><span className="iatry-v2-eyebrow">TE ACOMPAÑO, PASO A PASO</span><button type="button" className="iatry-v2-text" onClick={close}>Cerrar ayuda</button></div>{legacyTip&&<div className="iatry-v2-welcome"><h2>{legacyTip.title}</h2><p>{legacyTip.text}</p></div>}
+ <div className="iatry-v2-tabs" role="group" aria-label="Tipo de ayuda"><button type="button" aria-pressed={tab==='help'} onClick={()=>{setTab('help');setTour(null)}}>Mostrarme cómo</button><button type="button" aria-pressed={tab==='insights'} onClick={()=>{setTab('insights');setTour(null)}}>Qué puedo observar</button></div>
+
+ {tab==='help'&&<HelpPanel tour={tour} help={help} memory={memory} notice={notice} target={target} off={off} tourBack={tourBack} start={start} next={next} previous={()=>{if(tour)setTour({...tour,step:tour.step-1});setNotice('')}} exit={()=>setTour(null)} unavailable={unavailable}/>}
+ {tab==='insights'&&<InsightsPanel unseen={unseen} evidence={evidence} snooze={fingerprint=>setMemory(stores.v2.mark('snoozed',fingerprint))} dismiss={id=>setMemory(stores.v2.mark('dismissed',id))}/>}
+
+ <details className="iatry-v2-preferences"><summary>Preferencias de IAtry</summary><div className="actions"><button type="button" className="btn secondary sm" aria-pressed={!preferences.disabled} onClick={()=>setPreferences(stores.v1.write({disabled:!preferences.disabled}))}>{preferences.disabled?'Activar sugerencias':'Desactivar sugerencias'}</button><button type="button" className="btn secondary sm" aria-pressed={!preferences.motionOff} onClick={()=>setPreferences(stores.v1.write({motionOff:!preferences.motionOff}))}>{preferences.motionOff?'Activar movimiento':'Pausar movimiento'}</button></div><p className="small muted">Las preferencias se guardan en este navegador para tu usuario, negocio y rol. La ayuda manual sigue disponible.</p></details></AnimatedPanel></Suspense>}</section>:null;
+ return <IatryContext.Provider value={bindings}>{children}{slot&&body&&createPortal(body,slot)}</IatryContext.Provider>;
+}
