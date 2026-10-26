@@ -100,3 +100,20 @@
  .iatry-v3 .iatry-v2-top{top:-1px;padding:4px 0;margin-bottom:18px}
  .iatry-v3 .iatry-operation-choices{max-height:none;overflow:visible}
 }
+/* Secondary actions belong to one compact, keyboard accessible popover. */
+.iatry-visual-only .iatry-visual-guide[data-guided]::after{content:none;display:none}
+.iatry-visual-only .iatry-controls{gap:12px;margin-top:18px;align-items:center}
+.iatry-visual-only .iatry-controls>.iatry-text-action{padding:10px 4px;color:#59688f}
+.iatry-secondary-footer{display:flex;justify-content:flex-end;margin-top:20px;padding-top:4px}
+.iatry-overflow-trigger{display:grid;place-items:center;width:44px;height:44px;border:1px solid transparent;border-radius:13px;background:transparent;color:#59688f;cursor:pointer;transition:background-color .15s,border-color .15s}
+.iatry-overflow-trigger:hover,.iatry-overflow-trigger[aria-expanded=true]{background:#e9edfa;border-color:#dce2f5;color:#263b8b}
+.iatry-overflow-trigger:active{background:#e0e6f8}.iatry-overflow-trigger:focus-visible{outline:2px solid #4754e6;outline-offset:3px}
+.iatry-overflow-trigger .iatry-panel-icon{width:22px;height:22px}
+.iatry-context-menu{display:none;position:fixed;inset:auto;margin:0;padding:7px;box-sizing:border-box;overflow:auto;overscroll-behavior:contain;border:1px solid #e0e5f5;border-radius:17px;background:#fcfdff;color:#172450;box-shadow:0 14px 44px #26396724;font:13px/1.45 system-ui,-apple-system,sans-serif}
+.iatry-context-menu:popover-open,.iatry-context-menu[data-menu-open]{display:grid;gap:3px;animation:iatry-menu-enter .12s ease-out}
+.iatry-context-menu button{display:flex;align-items:center;gap:11px;width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:11px;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.iatry-context-menu button span{flex:1}.iatry-context-menu .iatry-panel-icon{width:18px;height:18px;flex:none;color:#6878a8}
+.iatry-context-menu button:hover,.iatry-context-menu button:focus-visible{background:#edf0fc;outline:0}.iatry-context-menu button:focus-visible{box-shadow:inset 0 0 0 2px #7f8def}.iatry-context-menu button:active{background:#e2e8fa}
+@keyframes iatry-menu-enter{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.iatry-context-menu:popover-open,.iatry-context-menu[data-menu-open]{animation:none}.iatry-overflow-trigger{transition:none}}
+.iatry-visual-only[data-motion-off] .iatry-context-menu{animation:none}

@@ -1,5 +1,6 @@
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {createPortal} from 'react-dom';
+import {SecondaryMenu,type SecondaryAction} from './SecondaryMenu';
 import {useMobileSheet} from './useMobileSheet';
 import {LiquidAvatar} from './LiquidAvatar';
 import {PanelIcon} from './PanelIcon';
@@ -7,12 +8,12 @@ import {Pearl} from './Pearl';
 import './panel-base.css';
 import './panel.css';
 interface Choice{view:string;title:string;text:string}
-interface Props{guided?:boolean;suspended:boolean;name:string;view:string;scopeKey:string;choices:Choice[];guide:ReactNode;guideId?:string;energy?:string;motionOff:boolean;suggestionsOff:boolean;onMotion:()=>void;onSuggestions:()=>void;onPick:(view:string)=>void}
+interface Props{secondaryActions?:SecondaryAction[];guided?:boolean;suspended:boolean;name:string;view:string;scopeKey:string;choices:Choice[];guide:ReactNode;guideId?:string;energy?:string;motionOff:boolean;suggestionsOff:boolean;onMotion:()=>void;onSuggestions:()=>void;onPick:(view:string)=>void}
 const labels:Record<string,string>={servicios:'Crear un servicio',disponibilidad:'Organizar mis horarios',configuracion:'Personalizar mi negocio','configuracion-inicial':'Primeros pasos',comunicacion:'Configurar WhatsApp'};
 const descriptions:Record<string,string>={servicios:'Te muestro dónde configurar tus servicios',disponibilidad:'Revisemos los días y tramos de atención',configuracion:'Nombre y datos para que te reconozcan','configuracion-inicial':'Recorramos la configuración inicial',comunicacion:'Preparar un mensaje no confirma su envío'};
 const normalize=(s:string)=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 /** Presentation only: receives the existing guide as children. No transport, tool catalogue or executor. */
-export function VisualPanel({guided=false,suspended,name,view,scopeKey,choices,guide,guideId,energy,motionOff,suggestionsOff,onMotion,onSuggestions,onPick}:Props){
+export function VisualPanel({secondaryActions=[],guided=false,suspended,name,view,scopeKey,choices,guide,guideId,energy,motionOff,suggestionsOff,onMotion,onSuggestions,onPick}:Props){
  const [activated,setActivated]=useState(false),[open,setOpen]=useState(false),[minimized,setMinimized]=useState(false),[exiting,setExiting]=useState(false),[query,setQuery]=useState(''),[exploring,setExploring]=useState(false),[reduced,setReduced]=useState(false),[hidden,setHidden]=useState(document.hidden);
  const root=useRef<HTMLElement>(null),dock=useRef<HTMLButtonElement>(null),intent=useRef<HTMLInputElement>(null),off=motionOff||reduced||hidden;
  const expanded=open&&!minimized&&!suspended,lastAutoGuide=useRef('');
@@ -39,6 +40,6 @@ export function VisualPanel({guided=false,suspended,name,view,scopeKey,choices,g
  <div className="iatry-suggestion-menu">{visible.map(choice=><button type="button" key={choice.view} data-iatry-guide={choice.view} onClick={()=>onPick(choice.view)}><span className="iatry-suggestion-icon"><PanelIcon name={choice.view==='servicios'?'service-create':choice.view==='disponibilidad'?'clock':'store'}/></span><span className="iatry-suggestion-copy"><strong>{labels[choice.view]||choice.title}</strong><small>{descriptions[choice.view]||choice.text}</small></span><PanelIcon name="chevron"/></button>)}</div>
  {!visible.length&&<p role="status">No encontré esa ayuda. Probá «servicios», «horarios» o explorá las funciones disponibles.</p>}
  <button type="button" className="iatry-v2-text iatry-explore" onClick={()=>{setExploring(!exploring);setQuery('')}}><PanelIcon name="grid"/>{exploring?'Volver a la conversación':'Explorar funciones'}<PanelIcon name="arrow"/></button></>}
- <details className="iatry-v2-preferences"><summary>Preferencias de IAtry</summary><div className="actions"><button type="button" className="btn secondary sm" aria-pressed={!suggestionsOff} onClick={onSuggestions}>{suggestionsOff?'Activar sugerencias':'Desactivar sugerencias proactivas'}</button><button type="button" className="btn secondary sm" aria-pressed={!motionOff} onClick={onMotion}>{motionOff?'Activar movimiento':'Pausar movimiento'}</button></div><p className="small muted">Preferencias de este navegador, para tu usuario, negocio y rol.</p></details>
+ <footer className="iatry-secondary-footer"><SecondaryMenu active={expanded} actions={secondaryActions} motionOff={motionOff} suggestionsOff={suggestionsOff} onMotion={onMotion} onSuggestions={onSuggestions}/></footer>
  </div>}</section></>
 }
