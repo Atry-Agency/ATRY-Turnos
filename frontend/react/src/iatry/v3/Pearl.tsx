@@ -1,0 +1,3 @@
+import {useEffect,useRef,useState} from 'react';
+/** Small decorative surface; its static gradients only move while visible. */
+export function Pearl(){const ref=useRef<HTMLSpanElement>(null),[visible,setVisible]=useState(false);useEffect(()=>{let intersects=false;const update=()=>setVisible(intersects&&!document.hidden),observer=new IntersectionObserver(entries=>{intersects=Boolean(entries[0]?.isIntersecting);update()});if(ref.current)observer.observe(ref.current);document.addEventListener('visibilitychange',update);return()=>{observer.disconnect();document.removeEventListener('visibilitychange',update)}},[]);return <span ref={ref} className="iatry-pearl" data-visible={visible} aria-hidden="true"><span/><span/></span>}

@@ -23,7 +23,7 @@ La demo de producto (`?demo=1`) permite explorar, pero simplifica algunos contra
 
 ## Experiencia y energía
 
-Panel compacto flotante, no modal, sin desplazar el dashboard. Explorador secundario, preguntas de una en una y preferencias plegadas. Escape devuelve el foco al botón; durante una escritura se conserva el bloqueo de cierre/navegación.
+Panel lateral de superficie clara nacarada, no modal, con buscador destacado y tres sugerencias contextuales. En pantallas desde 1440 px reserva una columna propia (380 px de panel; 420 px desde 1800), sin superponer los controles del contenido. Por debajo funciona como panel flotante y en móvil se ancla abajo. La reserva solo existe mientras está abierto: cerrar o minimizar restaura el ancho original. No se cambian estilos del dashboard, navegación ni tipografías globales. Explorador y modos secundarios, preguntas de una en una y preferencias plegadas. Minimizar conserva el campo en edición y el paso actual; cerrar mantiene la cancelación previa. Escape devuelve el foco al botón; durante una escritura se conserva el bloqueo de cierre/navegación.
 
 El emblema PNG oficial permanece intacto, centrado y estático. Debajo, tres corrientes de gradientes estáticos se desplazan y deforman independientemente mediante transformaciones; no hay giro del gradiente, filtros animados, canvas ni cambios de geometría por frame. Paleta ATRY: violeta, cian, verde y reflejos blancos.
 
@@ -37,7 +37,7 @@ El emblema PNG oficial permanece intacto, centrado y estático. Debajo, tres cor
 | Error/resultado incierto | Atenuación contenida de 550 ms; no anuncia éxito |
 | Cierre | Atenuación de 420 ms y vuelta a reposo |
 
-Cada emblema observa su propia intersección. Fuera de pantalla o al ocultarse la pestaña se suspende la actividad. La pausa manual y `prefers-reduced-motion` desactivan las animaciones, conservando la identidad estática. Los únicos bucles de reposo son las tres capas pequeñas de energía visibles; no existe bucle de JavaScript. No es una simulación física de fluidos.
+Cada emblema observa su propia intersección. Fuera de pantalla o al ocultarse la pestaña se suspende la actividad. La pausa manual y `prefers-reduced-motion` desactivan las animaciones, conservando la identidad estática. Los únicos bucles de reposo son las tres capas pequeñas de energía visibles; no existe bucle de JavaScript. Una forma nacarada pequeña acompaña la presentación, sin capturar eventos ni invadir los controles; se detiene fuera de vista o al pausar el movimiento. No es una simulación física de fluidos.
 
 ## Capas y permisos
 
@@ -63,7 +63,7 @@ Se mantienen roles, capacidades del plan, acceso, validación final del servidor
 - Muestra Chrome con corrientes activas: cero layouts y aproximadamente 0,04 ms de JavaScript durante 1 segundo. No es una garantía para todos los dispositivos.
 - Comparación local, cinco contextos alternados por variante, Chrome sin throttling, mismo build/backend SQLite: Servicios V2 18,2 ms; V3 20,8 ms (medianas). Dos consultas de ruta en ambas. Primera apertura V2 358 ms; V3 379 ms, medición de pared incluyendo automatización y transición. Abrir IAtry no agrega consultas. En 1,5 segundos de reposo, JavaScript mediano 0 ms en ambas. No son mediciones de latencia Supabase ni equivalentes a las mediciones históricas de demo.
 
-Comandos de pruebas: `npm --prefix frontend/react test`; scripts `scripts/react/iatry-v3-{local,security,authorization,browser,energy,performance}.cjs`. Los de navegador requieren Playwright y los binarios ya disponibles en el entorno de desarrollo. No producen capturas, videos ni PDF. El script de inventario utiliza los resultados locales temporales; sin esos registros indica «Sin registro de prueba reciente».
+Comandos de pruebas: `npm --prefix frontend/react test`; scripts `scripts/react/iatry-v3-{local,security,authorization,browser,energy,panel,performance}.cjs`. Los de navegador requieren Playwright y los binarios ya disponibles en el entorno de desarrollo. No producen capturas, videos ni PDF. El script de inventario utiliza los resultados locales temporales; sin esos registros indica «Sin registro de prueba reciente».
 
 ## Problemas corregidos y límites
 
@@ -72,3 +72,9 @@ Se corrigieron el catálogo/selección de contactos del empleado, reconocimiento
 Pendientes explícitos: selección/recorte y subida de archivos, exportación de datos personales, creación privada de visitas combinadas (no existe el contrato privado correspondiente) y comparación de períodos arbitrarios. Comercial, accesos, administración, identidad de cuenta, eliminaciones y envíos se mantienen fuera de la automatización. Las operaciones de visitas existentes sí permiten consulta, confirmación, cancelación y reprogramación completas.
 
 Veredicto: versión operativa local disponible para revisión, con controles de seguridad y presentación simplificada. No lista para publicar las operaciones V3: falta validar su adaptación y autorización contra un entorno Supabase autorizado. Ninguna prueba local demuestra por sí sola las políticas RLS o la entrega de notificaciones de producción.
+
+## Revisión estética del panel · 2026-10-26
+
+Aplicada la referencia exclusivamente al asistente: superficie nacarada clara, encabezado con minimizar/cerrar, pregunta principal, buscador y tres propuestas con iconos. Modos y preferencias quedan en accesos secundarios. Emblema, motor, catálogo, permisos y contratos operativos sin cambios respecto a `220bd03`.
+
+Comprobaciones afectadas: compilación; flujos operativos en Chrome/WebKit; siete estados de energía y pausa; minimizar/retomar conserva un campo todavía sin responder; anchos 320, 390, 768, 1024, 1440 y 1920; contraste de texto secundario frente al matiz más oscuro del panel; colores externos personalizados; restauración exacta de la geometría al cerrar; tipografía y colores originales de dashboard y navegación conservados. Abrir el panel no agrega consultas ni escrituras. Corregidas la tipografía de títulos heredada y la ausencia de un helper de etiqueta accesible propio del asistente. Sin dependencias nuevas ni publicación.

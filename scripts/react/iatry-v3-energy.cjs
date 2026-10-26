@@ -11,13 +11,14 @@ const {createLocalPreview}=require('./iatry-v3-preview.cjs');
   const dock=p.locator('.iatry-v3 .iatry-call'),root=p.locator('.iatry-v3');await dock.waitFor();
   const dashboard=p.locator('[data-react-dashboard]');await dashboard.waitFor();await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);const before=await dashboard.boundingBox();
   await dock.click();await p.locator('#iatry-intent').waitFor();
-  const after=await dashboard.boundingBox();assert.equal(before.y,after.y);assert.equal(before.height,after.height);
+  const after=await dashboard.boundingBox();assert.ok(after.width>=650);const panel=await p.locator('.iatry-v2-panel').boundingBox();assert.ok(after.x+after.width<=panel.x-12,'Desktop rail must keep content controls clear');
   assert.ok(await p.locator('[data-iatry-tool]').count()<=3);
   assert.equal(await p.locator('.iatry-operation-areas').count(),0);
   assert.match(await p.locator('[data-iatry-operations]').innerText(),/Hola/);
-  await p.getByRole('button',{name:'Explorar todas las funciones',exact:true}).click();
+  await p.getByRole('button',{name:'Explorar funciones',exact:true}).click();
   assert.ok(await p.locator('.iatry-operation-areas button').count()>3);
   await p.getByRole('button',{name:'Volver a la conversación',exact:true}).click();
+  await p.locator('[data-iatry-tool="services.create"]').click();await p.locator('input[name=name]').fill('Borrador conservado');await p.getByRole('button',{name:'Minimizar IAtry',exact:true}).click();assert.equal(await dock.getAttribute('aria-expanded'),'false');await dock.click();assert.equal(await p.locator('input[name=name]').inputValue(),'Borrador conservado');await p.getByRole('button',{name:'Cancelar operación',exact:true}).click();
   const avatar=p.locator('.iatry-v2-panel .iatry-liquid');
   await p.waitForFunction(()=>document.querySelector('.iatry-v2-panel .iatry-liquid')?.dataset.energyVisible==='true');
   assert.match(await avatar.locator('img').getAttribute('src'),/assets\/brand\/atry.png$/);
@@ -47,10 +48,10 @@ const {createLocalPreview}=require('./iatry-v3-preview.cjs');
   assert.equal(await avatar.locator('.iatry-current-a').evaluate(n=>getComputedStyle(n).animationPlayState),'paused');
   await avatar.evaluate(n=>n.style.transform='');
   for(const width of [320,390,1440]){
-   await p.setViewportSize({width,height:844});const box=await p.locator('.iatry-v2-panel').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);assert.ok(box.y>=0&&box.y+box.height<=845);
+   await p.setViewportSize({width,height:844});await p.waitForTimeout(100);const box=await p.locator('.iatry-v2-panel').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);assert.ok(box.y>=0&&box.y+box.height<=845);
   }
   await p.locator('#iatry-intent').focus();await p.keyboard.press('Escape');
   assert.equal(await dock.getAttribute('aria-expanded'),'false');await dock.evaluate(n=>{if(document.activeElement!==n)throw Error('Focus did not return')});
-  console.log('PASS',name,'seven energy states; official emblem; max three suggestions; secondary explorer; fixed geometry; pause/reduced motion/offscreen; 320/390/1440; Escape and focus');
+  console.log('PASS',name,'seven energy states; official emblem; max three suggestions; secondary explorer; desktop rail; preserved minimized draft; pause/reduced motion/offscreen; 320/390/1440; Escape and focus');
  }finally{await context.close();await browser.close();await server.close()}
 }})().catch(e=>{console.error(e);process.exitCode=1});
