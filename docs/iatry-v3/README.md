@@ -1,6 +1,8 @@
 # IAtry V3 experimental
 
-Rama local `codex/iatry-v3`, basada en V2 (`599f974`). No publicada. Motor determinista sin modelos, APIs de IA, servicios pagos ni dependencias nuevas. El frontend publicado y Supabase no se modificaron.
+Estado más reciente: [Integración Supabase y móvil](INTEGRACION-SUPABASE.md). Incluye la matriz cloud, exclusiones y límites de la auditoría remota.
+
+Rama local `codex/iatry-v3-supabase`, basada en V2 (`599f974`). No publicada. Motor determinista sin modelos, APIs de IA, servicios pagos ni dependencias nuevas. El frontend publicado y Supabase no se modificaron.
 
 ## Probar
 
@@ -23,7 +25,7 @@ La demo de producto (`?demo=1`) permite explorar, pero simplifica algunos contra
 
 ## Experiencia y energía
 
-Panel lateral de superficie clara nacarada, no modal, con buscador destacado y tres sugerencias contextuales. En pantallas desde 1440 px reserva una columna propia (380 px de panel; 420 px desde 1800), sin superponer los controles del contenido. Por debajo funciona como panel flotante y en móvil se ancla abajo. La reserva solo existe mientras está abierto: cerrar o minimizar restaura el ancho original. No se cambian estilos del dashboard, navegación ni tipografías globales. Explorador y modos secundarios, preguntas de una en una y preferencias plegadas. Minimizar conserva el campo en edición y el paso actual; cerrar mantiene la cancelación previa. Escape devuelve el foco al botón; durante una escritura se conserva el bloqueo de cierre/navegación.
+Panel lateral de superficie clara nacarada, no modal en escritorio, con buscador destacado y tres sugerencias contextuales. En pantallas desde 1440 px reserva una columna propia (380 px de panel; 420 px desde 1800), sin superponer los controles del contenido. Por debajo funciona como panel flotante y en móvil funciona como hoja modal protegida. La reserva solo existe mientras está abierto: cerrar o minimizar restaura el ancho original. No se cambian estilos del dashboard, navegación ni tipografías globales. Explorador y modos secundarios, preguntas de una en una y preferencias plegadas. Minimizar conserva el campo en edición y el paso actual; cerrar mantiene la cancelación previa. Escape devuelve el foco al botón; durante una escritura se conserva el bloqueo de cierre/navegación.
 
 El emblema PNG oficial permanece intacto, centrado y estático. Debajo, tres corrientes de gradientes estáticos se desplazan y deforman independientemente mediante transformaciones; no hay giro del gradiente, filtros animados, canvas ni cambios de geometría por frame. Paleta ATRY: violeta, cian, verde y reflejos blancos.
 

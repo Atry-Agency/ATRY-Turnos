@@ -86,3 +86,27 @@
 /* Global display headings and screen-specific sr-only helpers must not leak into this panel. */
 .iatry-v3 .iatry-v2-panel :is(h2,h3,h4){font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-stretch:normal;font-style:normal}
 .iatry-v3 .iatry-v2-panel .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* Finite Lucide interactions. No idle loop, timers, filters or external icon runtime. */
+.iatry-v3 .iatry-operation-menu button:is(:hover,:focus-visible,:active) .iatry-suggestion-icon>.iatry-panel-icon{animation:iatry-suggestion-lift .55s ease-out 1}
+.iatry-v3 .iatry-operation-menu button:is(:hover,:focus-visible,:active) .iatry-icon-plus{transform-box:view-box;transform-origin:12px 14px;animation:iatry-suggestion-plus .55s ease-out 1}
+.iatry-v3 .iatry-operation-menu button:is(:hover,:focus-visible,:active) .iatry-icon-clock-hand{transform-box:view-box;transform-origin:12px 12px;animation:iatry-suggestion-clock .65s ease-in-out 1}
+.iatry-v3 .iatry-operation-menu button:is(:hover,:focus-visible,:active) .iatry-icon-awning{animation:iatry-suggestion-awning .6s ease-out 1}
+@keyframes iatry-suggestion-lift{0%,100%{transform:translateY(0)}40%{transform:translateY(-2px)}70%{transform:translateY(.5px)}}
+@keyframes iatry-suggestion-plus{0%,100%{transform:scale(1)}45%{transform:scale(1.2)}75%{transform:scale(.97)}}
+@keyframes iatry-suggestion-clock{0%,100%{transform:rotate(0)}35%{transform:rotate(18deg)}70%{transform:rotate(-6deg)}}
+@keyframes iatry-suggestion-awning{0%,100%{transform:translateY(0)}40%{transform:translateY(-1.3px)}75%{transform:translateY(.3px)}}
+
+.iatry-v3[data-motion-off] .iatry-operation-menu *{animation:none!important}
+@media(prefers-reduced-motion:reduce){.iatry-v3 .iatry-operation-menu *{animation:none!important}}
+
+/* Compact screens use a protected sheet with a single scroll surface. */
+[data-iatry-mobile-backdrop]{position:fixed;inset:0;z-index:34;background:#18234b52;touch-action:none}
+@media(max-width:767px){
+ .iatry-v3 .iatry-v2-panel{top:calc(var(--iatry-viewport-top,0px) + max(8px,env(safe-area-inset-top)));bottom:auto;right:max(8px,env(safe-area-inset-right));width:calc(100% - max(8px,env(safe-area-inset-left)) - max(8px,env(safe-area-inset-right)));height:calc(var(--iatry-viewport-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)));max-height:none;padding:18px 18px max(18px,env(safe-area-inset-bottom));border-radius:24px;touch-action:pan-y;overscroll-behavior:contain;scroll-padding:80px 0 24px}
+ .iatry-v3 .iatry-v2-panel :is(input,select,textarea),.iatry-v3 .iatry-intent-form #iatry-intent{font-size:16px}
+ .iatry-v3 .iatry-v2-panel button,.iatry-v3 .iatry-window-controls button{min-height:44px}
+ .iatry-v3 .iatry-window-controls button{width:44px}
+ .iatry-v3 .iatry-v2-top{top:-1px;padding:4px 0;margin-bottom:18px}
+ .iatry-v3 .iatry-operation-choices{max-height:none;overflow:visible}
+}
