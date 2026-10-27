@@ -144,3 +144,6 @@
  .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-intent-form{margin-bottom:14px}
  .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-operation-menu{gap:8px;margin-bottom:8px}
 }
+
+.iatry-instruction{margin:0 0 18px;padding:16px;border:1px solid #e0e5f6;border-radius:18px;background:#ffffffbd;color:#233262}
+.iatry-instruction h3{font-size:15px;margin:0 0 10px}.iatry-instruction p{font-size:12px;line-height:1.6}.iatry-instruction ol{padding-left:20px;margin:12px 0}.iatry-instruction li{margin:0 0 14px}.iatry-instruction li>span{display:block;font-size:11px;color:#59688f;margin-top:4px}.iatry-instruction .btn{min-height:44px}.iatry-instruction .actions{gap:8px}

@@ -6,6 +6,7 @@ export const auditedReadTools=['services.list','team.list','customers.search','c
 // Filled only after normal-session, cloud-adapter, real-server validation. No write grants.
 export const verifiedProductionReads:readonly string[]=Object.freeze(['services.list','team.list','customers.search','customers.history','business.statistics']);
 export function productionAllowed(tool:Capability,ctx:Pick<ToolContext,'scope'|'environment'>){
+ if(ctx.environment==='demo')return tool.kind==='read'&&verifiedProductionReads.includes(tool.id);
  if(!['connected','supabase-readonly'].includes(ctx.environment))return true;
  if(typeof window!=='undefined'&&window.ATRY_CONFIG?.supabaseUrl!==productionProject)return false;
  const ids:readonly string[]=ctx.environment==='supabase-readonly'?auditedReadTools:verifiedProductionReads;
@@ -13,6 +14,6 @@ export function productionAllowed(tool:Capability,ctx:Pick<ToolContext,'scope'|'
 }
 /** Defense in depth: the live engine cannot use a nominal GET to materialize recurring bookings. */
 export function assertProductionRead(tail:string,ctx:Pick<ToolContext,'scope'|'environment'>){
- if(!['connected','supabase-readonly'].includes(ctx.environment))return;
- if(ctx.scope.businessId!==validationBusiness||ctx.scope.role!=='owner'||!(/^\/(services|staff|statistics)$/.test(tail)||/^\/customers(?:\?q=[^#]*|\/[A-Za-z0-9_-]+\/history)?$/.test(tail)))throw Error('Consulta pendiente de validación real. No se consultó Supabase.');
+ if(!['connected','supabase-readonly','demo'].includes(ctx.environment))return;
+ if((ctx.environment!=='demo'&&(ctx.scope.businessId!==validationBusiness||ctx.scope.role!=='owner'))||!(/^\/(services|staff|statistics)$/.test(tail)||/^\/customers(?:\?q=[^#]*|\/[A-Za-z0-9_-]+\/history)?$/.test(tail)))throw Error('Consulta pendiente de validación real. No se consultó Supabase.');
 }
