@@ -12,7 +12,7 @@ export function OperationalPanel({engine,port,onSaved,mode='operations',view='in
  const tools=engine.available().filter(t=>mode!=='business'||t.kind==='read'&&t.area==='Inicio y estadísticas'),matches=useMemo(()=>recognize(query,tools),[query,state]),visible=query.trim()?matches:exploring?tools.filter(t=>!area||t.area===area):(['servicios'].includes(view)?['services.create','services.price','services.list']:view==='clientes'?['customers.search','customers.create','customers.history']:view==='agenda'?['bookings.create','bookings.list','bookings.reschedule']:['bookings.create','services.create','business.summary']).map(id=>tools.find(t=>t.id===id)).filter((t):t is typeof tools[number]=>Boolean(t)).slice(0,3),busy=['loading','executing'].includes(state.phase);
  const start=async(id:string)=>{setConfirmed(false);setProblem('');setLimit(10);try{await engine.begin(id)}catch(e){setProblem((e as Error).message)}};
  async function execute(){if(!confirmed||!state.token)return;try{await engine.confirm(state.token);if(engine.snapshot().phase==='done')onSaved?.()}catch(e){setProblem((e as Error).message)}}
- if(engine.environment==='connected')return <p>Las herramientas operativas de esta rama están limitadas al entorno local. No se harán consultas adicionales ni cambios en Supabase.</p>;
+ if(engine.environment==='connected'&&!tools.length)return <p>Las operaciones de esta sesión siguen pendientes de validación real. La ayuda contextual permanece disponible en «Mostrame cómo».</p>;
  return <div className="iatry-workbench" data-iatry-operations data-phase={state.phase} aria-busy={busy}>
  
  

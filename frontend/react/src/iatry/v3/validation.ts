@@ -11,5 +11,5 @@ export function validate(field:Field,value:Values[string]):void{
  else if(field.type==='date'&&(!/^\d{4}-\d\d-\d\d$/.test(s)||!Number.isFinite(Date.parse(s))||new Date(s).toISOString().slice(0,10)!==s))throw Error('Ingresá una fecha válida.');
  else if(field.type==='time'&&!/^([01]\d|2[0-3]):[0-5]\d$/.test(s))throw Error('Ingresá una hora válida.');
  else if(field.type==='color'&&!/^#[0-9a-f]{6}$/i.test(s))throw Error('Elegí un color válido.');
- if(s.length>2000)throw Error('La respuesta es demasiado larga.');
+ if(s.length>(field.maxLength??2000))throw Error('La respuesta es demasiado larga.');
 }

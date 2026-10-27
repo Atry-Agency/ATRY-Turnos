@@ -1,12 +1,13 @@
 import {defineConfig} from 'vite';
 import {createRequire} from 'node:module';
+const {plugin:operationalAudit}=createRequire(import.meta.url)('../../scripts/react/iatry-operational-audit.cjs');
 const {finalize}=createRequire(import.meta.url)('../../scripts/react/build-assets.cjs') as {finalize:(directory:string)=>unknown};
 import {readFileSync,existsSync,statSync,cpSync,mkdirSync} from 'node:fs';
 import {resolve,sep,extname} from 'node:path';
 const web=resolve(import.meta.dirname,'../../web');
 export default defineConfig({
  base:'./',
- plugins:[{name:'inert-browser-cores',enforce:'pre',transform(code,id){const cores:Record<string,string>={'theme-core.js':'ATRY_THEME_CORE','agenda-core.js':'ATRY_AGENDA','visit-core.js':'ATRY_VISIT_CORE','visit-demo.js':'ATRY_VISIT_DEMO','whatsapp-core.js':'AtryWhatsApp','whatsapp-demo.js':'ATRY_WHATSAPP_DEMO','staff-photo-core.js':'AtryStaffPhoto','read-cache.js':'createAtryReadCache','demo.js':'ATRY_DEMO'};const name=Object.keys(cores).find(name=>id===resolve(web,name));if(!name)return;return {code:code.replace(/\bmodule\b/g,'__atry_browser_module').replace(/\brequire\s*\(/g,'__atry_browser_require(')+'\nexport default globalThis.'+cores[name]+';',map:null};}},{name:'isolated-legacy-demo',configureServer(server){server.middlewares.use((req,res,next)=>{
+ plugins:[operationalAudit(),{name:'inert-browser-cores',enforce:'pre',transform(code,id){const cores:Record<string,string>={'theme-core.js':'ATRY_THEME_CORE','agenda-core.js':'ATRY_AGENDA','visit-core.js':'ATRY_VISIT_CORE','visit-demo.js':'ATRY_VISIT_DEMO','whatsapp-core.js':'AtryWhatsApp','whatsapp-demo.js':'ATRY_WHATSAPP_DEMO','staff-photo-core.js':'AtryStaffPhoto','read-cache.js':'createAtryReadCache','demo.js':'ATRY_DEMO'};const name=Object.keys(cores).find(name=>id===resolve(web,name));if(!name)return;return {code:code.replace(/\bmodule\b/g,'__atry_browser_module').replace(/\brequire\s*\(/g,'__atry_browser_require(')+'\nexport default globalThis.'+cores[name]+';',map:null};}},{name:'isolated-legacy-demo',configureServer(server){server.middlewares.use((req,res,next)=>{
   const url=new URL(req.url||'/','http://localhost');
   if(url.pathname.startsWith('/pilot-build/')){const dist=resolve(import.meta.dirname,'dist'),file=resolve(dist,'.'+decodeURIComponent(url.pathname.slice('/pilot-build'.length)));if(!file.startsWith(dist+sep)||!file.endsWith('.js')||!existsSync(file)||!statSync(file).isFile()){res.statusCode=404;res.end();return;}res.setHeader('Content-Type','text/javascript');res.setHeader('Cache-Control','no-store');res.end(readFileSync(file));return;}
   if(url.pathname.startsWith('/api/')){res.statusCode=403;res.end('Experimental demo: API disabled');return;}

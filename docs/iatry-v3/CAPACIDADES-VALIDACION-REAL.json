@@ -1,0 +1,1033 @@
+{
+  "project": "djoxdtloqwbrhgtgencc",
+  "validatedScope": {
+    "business": "374cd00d-3e37-497f-9292-9bb959c1ef88",
+    "role": "owner",
+    "plan": "negocio"
+  },
+  "note": "Local compatibility is not real validation. Controlled writes do not grant general production execution.",
+  "capabilities": [
+    {
+      "id": "services.list",
+      "title": "Consultar servicios",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "normal-owner-session-read",
+      "productionCandidate": "read-only-owner-Pelu",
+      "blockedReason": null
+    },
+    {
+      "id": "services.create",
+      "title": "Crear un servicio",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "exact-authorized-fixture-write",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.price",
+      "title": "Cambiar precio de un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "exact-authorized-fixture-write",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.duration",
+      "title": "Cambiar duración de un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.details",
+      "title": "Editar nombre y descripción de un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.buffers",
+      "title": "Cambiar preparación y tiempo posterior",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.deposit",
+      "title": "Cambiar seña estimada de un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.assign",
+      "title": "Asignar profesionales a un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.publish",
+      "title": "Publicar un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "services.hide",
+      "title": "Ocultar un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "exact-authorized-fixture-write",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "customers.search",
+      "title": "Buscar clientes",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "normal-owner-session-read",
+      "productionCandidate": "read-only-owner-Pelu",
+      "blockedReason": null
+    },
+    {
+      "id": "customers.history",
+      "title": "Consultar historial de un cliente",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "normal-owner-session-read",
+      "productionCandidate": "read-only-owner-Pelu",
+      "blockedReason": null
+    },
+    {
+      "id": "customers.create",
+      "title": "Crear ficha de cliente",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "exact-authorized-fixture-write",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "customers.update",
+      "title": "Actualizar ficha de cliente",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "exact-authorized-fixture-write",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "team.list",
+      "title": "Consultar profesionales",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "normal-owner-session-read",
+      "productionCandidate": "read-only-owner-Pelu",
+      "blockedReason": null
+    },
+    {
+      "id": "team.create",
+      "title": "Incorporar un profesional",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "team",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "team.update",
+      "title": "Actualizar un profesional",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "schedule.read",
+      "title": "Consultar horarios de un profesional",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "schedule.day",
+      "title": "Cambiar un día de atención y sus pausas",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "schedule.absence",
+      "title": "Registrar ausencia o bloqueo",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "schedule.holiday",
+      "title": "Cerrar el negocio una fecha",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "schedule.exception",
+      "title": "Preparar una jornada especial",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": false,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": "Jornadas especiales sigue bloqueada: falta homologar la diferencia entre el esquema local y el real. No se ejecutará esta acción."
+    },
+    {
+      "id": "resources.create",
+      "title": "Agregar sala o equipo",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "resources",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "resources.update",
+      "title": "Modificar recurso",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "resources",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "resources.assign",
+      "title": "Asignar recursos a un servicio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "resources",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.list",
+      "title": "Consultar turnos por día y profesional",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.create",
+      "title": "Crear un turno",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.confirmed",
+      "title": "Confirmar un turno",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.completed",
+      "title": "Completar un turno",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.cancelled",
+      "title": "Cancelar un turno",
+      "kind": "cancel",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.no_show",
+      "title": "Marcar ausencia de un cliente",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "bookings.reschedule",
+      "title": "Reprogramar un turno",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "waitlist.list",
+      "title": "Consultar lista de espera",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "waitlist",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "waitlist.cancelled",
+      "title": "Cancelar solicitud de espera",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "waitlist",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "waitlist.booked",
+      "title": "Marcar solicitud de espera atendida",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "waitlist",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": false,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": "El RPC solo permite volver a espera o cancelar; marcar atendida requiere el flujo de aceptación de oferta existente."
+    },
+    {
+      "id": "recurring.list",
+      "title": "Consultar turnos recurrentes",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "recurring",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "recurring.create",
+      "title": "Crear un turno recurrente",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "recurring",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "recurring.replace",
+      "title": "Cambiar una repetición",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "recurring",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "recurring.end",
+      "title": "Terminar una repetición",
+      "kind": "cancel",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "recurring",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "visits.read",
+      "title": "Consultar una visita completa",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "visits.confirm",
+      "title": "Confirmar una visita completa",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "visits.cancel",
+      "title": "Cancelar servicios pendientes de una visita",
+      "kind": "cancel",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "visits.reschedule",
+      "title": "Reprogramar una visita completa",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.summary",
+      "title": "Consultar resumen del negocio",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.statistics",
+      "title": "Consultar indicadores de 30 días",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "statistics",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "normal-owner-session-read",
+      "productionCandidate": "read-only-owner-Pelu",
+      "blockedReason": null
+    },
+    {
+      "id": "business.insights",
+      "title": "Consultar actividad y servicios más solicitados",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "advanced",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.identity",
+      "title": "Actualizar datos del negocio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.rules",
+      "title": "Modificar una regla de reservas",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.colors",
+      "title": "Preparar colores y modo visual",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "public.info",
+      "title": "Consultar enlace y configuración pública",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "plans.read",
+      "title": "Consultar plan y límites",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "access.read",
+      "title": "Consultar integrantes y roles",
+      "kind": "read",
+      "roles": [
+        "owner"
+      ],
+      "feature": "access",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "communications.read",
+      "title": "Consultar configuración de WhatsApp",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager",
+        "staff"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "communications.settings",
+      "title": "Ajustar teléfono de WhatsApp del negocio",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "communications.preview",
+      "title": "Preparar un texto de WhatsApp sin enviarlo",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "notifications.read",
+      "title": "Consultar estados de notificaciones",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "operational_mail",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "notifications.preferences",
+      "title": "Preparar una preferencia de notificaciones",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "operational_mail",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "notifications.hours",
+      "title": "Ajustar anticipación de recordatorios",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "operational_mail",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "communications.template",
+      "title": "Preparar una plantilla de WhatsApp",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.multi",
+      "title": "Configurar visitas con varios servicios",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.setup",
+      "title": "Marcar primeros pasos revisados",
+      "kind": "update",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": null,
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.variant",
+      "title": "Ajustar tipografía y estilo avanzado",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": "pro",
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.public",
+      "title": "Preparar diseño de la página pública",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": "negocio",
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.secondary",
+      "title": "Cambiar color secundario",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": "negocio",
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.save_preset",
+      "title": "Guardar el estilo actual como preset",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": "pro",
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "appearance.apply_preset",
+      "title": "Aplicar un preset guardado",
+      "kind": "update",
+      "roles": [
+        "owner"
+      ],
+      "feature": null,
+      "minimumPlan": "pro",
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "business.opportunities",
+      "title": "Consultar oportunidades de agenda",
+      "kind": "read",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "smartslots",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    },
+    {
+      "id": "support.incident",
+      "title": "Registrar una incidencia interna",
+      "kind": "create",
+      "roles": [
+        "owner",
+        "manager"
+      ],
+      "feature": "advanced",
+      "minimumPlan": null,
+      "postgresRepositoryCompatible": true,
+      "realEvidence": "not-tested",
+      "productionCandidate": "blocked",
+      "blockedReason": null
+    }
+  ]
+}
