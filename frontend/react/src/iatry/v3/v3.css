@@ -128,3 +128,19 @@
 @keyframes iatry-menu-enter{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.iatry-context-menu:popover-open,.iatry-context-menu[data-menu-open]{animation:none}.iatry-overflow-trigger{transition:none}}
 .iatry-v3[data-motion-off] .iatry-context-menu{animation:none}
+
+/* Initial discovery: keep the approved surfaces, with less empty vertical space. */
+.iatry-v3 .iatry-v2-panel:has(.iatry-workbench[data-phase=idle]) .iatry-v2-top{margin-bottom:16px}
+.iatry-v3 .iatry-workbench[data-phase=idle] .iatry-panel-intro{min-height:0;margin-bottom:16px;padding-top:8px;padding-bottom:4px}
+.iatry-v3 .iatry-workbench[data-phase=idle] .iatry-panel-intro h2{margin-bottom:10px}
+.iatry-v3 .iatry-workbench[data-phase=idle] .iatry-intent-form{margin-bottom:16px}
+.iatry-v3 .iatry-workbench[data-phase=idle] .iatry-operation-menu{margin-bottom:12px}
+.iatry-v3 .iatry-workbench[data-phase=idle] .iatry-explore{margin-top:8px;padding-top:12px;min-height:44px}
+.iatry-v3 .iatry-v2-panel:has(.iatry-workbench[data-phase=idle]) .iatry-secondary-footer{margin-top:10px}
+@media(max-width:767px){
+ .iatry-v3 .iatry-v2-panel:has(.iatry-workbench[data-phase=idle]) .iatry-v2-top{margin-bottom:10px}
+ .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-panel-intro{padding-top:2px;margin-bottom:12px}
+ .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-panel-intro p{line-height:1.55}
+ .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-intent-form{margin-bottom:14px}
+ .iatry-v3 .iatry-workbench[data-phase=idle] .iatry-operation-menu{gap:8px;margin-bottom:8px}
+}
