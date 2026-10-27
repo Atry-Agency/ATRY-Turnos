@@ -12,6 +12,7 @@ export function Question({field,onAnswer,busy}:{field:Field;onAnswer:(value:Valu
   :field.type==='checkbox'?<label className="checkline"><input ref={node=>{input.current=node}} id={id} name={field.key} type="checkbox" checked={Boolean(value)} disabled={busy} onChange={e=>setValue(e.target.checked)}/>Sí</label>
   :<input ref={node=>{input.current=node}} id={id} name={field.key} type={field.type} required={required} min={field.min} max={field.max} maxLength={field.maxLength??2000} value={String(value)} disabled={busy} autoComplete="off" onChange={e=>setValue(e.target.value)}/>}
   {(field.type==='select'||field.type==='multiple')&&!field.options?.length&&<p role="status">No hay opciones autorizadas disponibles. Podés volver o cancelar.</p>}
+  {!field.required&&<button type="button" className="iatry-v2-text" disabled={busy} onClick={()=>onAnswer(field.value??(field.type==='multiple'?[]:field.type==='checkbox'?false:''))}>Dejar como está</button>}
   <button type="submit" className="btn sm" disabled={busy||(field.type==='select'&&field.required&&!field.options?.length)}>Continuar</button>
  </form>;
 }
