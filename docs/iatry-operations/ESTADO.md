@@ -42,3 +42,13 @@ La prueba local de Servicios dio mediana V3 26,3 ms frente a V2 18,8 ms, dos sol
 ## Recuperación
 
 La versión publicada se conserva en `a0e3e79f715988cca22ce87182a24fa1add437cd`, con etiqueta local `rollback/pre-iatry-understanding-2026-10-27`. El workflow existente permite `source_ref` con ese SHA para reconstruir y publicar la versión anterior. No se ha solicitado ni ejecutado publicación de este candidato.
+
+## Cierre de la etapa — 27/10/2026
+
+Por solicitud del usuario se suspendieron los ensayos reales de reservas. El único intento se detuvo en la comprobación previa de disponibilidad: la Edge Function rechazó el origen localhost antes de escribir. La lectura posterior confirmó cero filas de preferencias creadas y cero reservas del ensayo. No se ejecutó ninguna de las cinco escrituras propuestas. La ventana temporal se cerró y la entrada privada de reservas vuelve a `authorized=false`. No se requieren operaciones compensatorias. No continuar estos ensayos sin una nueva misión autorizada.
+
+El candidato consolida `33b7371` y los cambios posteriores: verificación de preferencias, protección del ensayo de reservas, respuestas basadas en relectura y ajuste de fechas/representaciones compartidas. Estos contratos experimentales permanecen fuera del artefacto público. Las cinco consultas productivas siguen restringidas al propietario de Pelu. Todas las escrituras productivas permanecen bloqueadas, incluso las siete capacidades con un caso real controlado exitoso. Interpretar, preguntar y preparar información no concede autorización para ejecutar.
+
+Publicable como evolución conversacional y visual restringida; no como activación general de operaciones V3. La publicación requiere confirmación final del usuario. El rollback sigue siendo el SHA y la etiqueta indicados arriba.
+
+Validación final del cierre: TypeScript/Vite y suite React completas; interpretación y conversaciones con SQLite local en Chrome/WebKit; descubrimiento restringido, roles denegados y ausencia de solicitudes en reposo; protección táctil y foco móvil; landing compartida en 320/390/1440 px con movimiento reducido. Todas correctas. El empaquetado público pasó su control: cinco lecturas, cero escrituras, proyecto correcto, sin módulos privados ni credenciales privadas y sin solicitudes a Supabase durante la comprobación. No se repitieron ensayos reales.

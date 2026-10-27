@@ -13,7 +13,7 @@ import {Pearl} from './Pearl';
 export function OperationalPanel({engine,port,onSaved,mode='operations',view='inicio'}:{engine:ReturnType<typeof createConversation>;port:AppPort;onSaved?:()=>void;mode?:'operations'|'business';view?:string}){
  const state=useSyncExternalStore(engine.subscribe,engine.snapshot),[query,setQuery]=useState(''),[area,setArea]=useState(''),[confirmed,setConfirmed]=useState(false),[problem,setProblem]=useState(''),[limit,setLimit]=useState(10),[exploring,setExploring]=useState(false);
  const instruction=state.instruction,progress=state.progress||[];
- const payload=state.plan?.payload as Record<string,unknown>|undefined,formatInstant=(value:unknown)=>typeof value==='string'&&Number.isFinite(Date.parse(value))?new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(value)):undefined,startInstant=formatInstant(payload?.starts_at),endInstant=formatInstant(payload?.ends_at);
+ const payload=state.plan?.payload as Record<string,unknown>|undefined,formatInstant=(value:unknown)=>typeof value==='string'&&Number.isFinite(Date.parse(value))?new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(value)):undefined,startInstant=formatInstant(payload?.starts_at),endInstant=formatInstant(payload?.ends_at);
 
  const intent=useRef<HTMLInputElement>(null),catalogId=useId();
  useEffect(()=>{if(state.phase==='idle'&&!matchMedia('(max-width:767px)').matches)intent.current?.focus({preventScroll:true})},[state.phase]);
