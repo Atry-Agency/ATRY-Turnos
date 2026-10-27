@@ -20,10 +20,11 @@ function dateTime(source:string){const iso=source.match(/\b(\d{4}-\d\d-\d\d)(?:T
 export function continueDialogue(tool:Capability,current:InstructionSeed,source:string):Dialogue{
  const seed=structuredClone(current),s=language(source),field=missingField(tool,seed);if(!source.trim()||source.length>500)return{seed,error:'Contame ese dato en una frase breve.'};
  const person=source.match(/^(?:para|profesional(?: es)?|con)\s+(.+)$/i);if(person&&tool.fields.some(f=>f.key==='staff')){seed.references.staff=person[1].trim();delete seed.values.staff;return{seed};}
- const updates:Values={},duration=s.match(/\b(\d{1,3})\s*(?:minutos|min)\b/),price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+(?:[.,]\d+)*)\s*pesos\b/);
+ const updates:Values={},duration=s.match(/\b(\d{1,3})\s*(?:minutos|min)\b/),price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+(?:[.,]\d+)*)\s*pesos\b/)||s.match(/(?:cuesta|precio(?: es)?|cobrar)\s+(\d+(?:[.,]\d+)*)\b/);
+ if(field?.key==='name'&&!/minutos|min\b|pesos|\$|cuesta|precio/.test(s)&&!/(?:nombre|llama)/.test(s)){try{validate({...field,options:undefined,value:source.trim()},source.trim());seed.values.name=source.trim();return{seed};}catch(e){return{seed,error:(e as Error).message};}}
  if(duration&&tool.fields.some(f=>f.key==='duration_min'))updates.duration_min=duration[1];
  if(price&&tool.fields.some(f=>f.key==='price_uyu'))updates.price_uyu=price[1].replace(/\.(?=\d{3}(?:[.,]|$))/g,'').replace(',','.');
- const rename=source.match(/(?:se (?:va a )?llama|nombre(?: es)?|llamalo|llamalo mejor)\s+(.+)$/i);
+ const rename=source.match(/(?:se (?:va a )?llama|nombre(?: es)?|llamalo(?: mejor)?)\s+(.+?)(?=,?\s+(?:y\s+)?(?:dura|cuesta|duracion|precio)\b|$)/i)||(field?.key==='name'?source.match(/^(.+?)(?:,\s*|\s+y\s+|\s+)(?:dura|cuesta)\b/i):null);
  if(rename&&tool.fields.some(f=>f.key==='name'))updates.name=rename[1].trim();
  const instant=dateTime(source);if(instant){const key=/hasta|termina|regreso|fin/.test(s)?'ends_at':/desde|empieza|inicio/.test(s)?'starts_at':field?.key;if(key&&tool.fields.some(f=>f.key===key))updates[key]=instant;}
  if(!Object.keys(updates).length&&field){
@@ -36,9 +37,10 @@ export function continueDialogue(tool:Capability,current:InstructionSeed,source:
  try{for(const[key,value]of Object.entries(updates)){const f=tool.fields.find(f=>f.key===key)!;validate({...f,options:Array.isArray(f.options)?f.options:undefined,value},value);if(f.type==='datetime-local'){const [d,t]=String(value).split('T');validate({key:'day',label:'fecha',type:'date',required:true},d);validate({key:'time',label:'hora',type:'time',required:true},t||'');}}Object.assign(seed.values,updates);if(seed.values.starts_at&&seed.values.ends_at&&String(seed.values.ends_at)<=String(seed.values.starts_at))throw Error('La fecha de regreso debe ser posterior al inicio.');return{seed};}catch(e){return{seed:structuredClone(current),error:(e as Error).message};}
 }
 export function draftFacts(tool:Capability,seed:InstructionSeed):OperationFacts{
- const rows=tool.fields.flatMap(f=>{const v=seed.values[f.key],ref=seed.references[f.key];if(ref)return[{label:f.label,value:ref==='@self'?'Tu profesional · por elegir':ref+' · por elegir'}];return v!==undefined&&v!==''&&!Array.isArray(v)&&typeof v!=='boolean'?[{label:f.label,value:displayValue(f.key,v)}]:[];});
+ const labels:Record<string,string>={name:'Nombre',price_uyu:'Precio',duration_min:'Duración',staff:'Profesional',customer:'Cliente',service:'Servicio',starts_at:'Desde',ends_at:'Hasta'};
+ const rows=tool.fields.flatMap(f=>{const v=seed.values[f.key],ref=seed.references[f.key];if(ref)return[{label:labels[f.key]||f.label,value:ref==='@self'?'Tu profesional · por elegir':ref+' · por elegir'}];return v!==undefined&&v!==''&&!Array.isArray(v)&&typeof v!=='boolean'?[{label:labels[f.key]||f.label,value:displayValue(f.key,v)}]:[];});
  const from=seed.values.starts_at,to=seed.values.ends_at;
- return{title:typeof seed.values.name==='string'?seed.values.name:tool.title,kind:tool.area==='Servicios'?'service':tool.area==='Clientes'?'customer':tool.area==='Horarios'?'period':tool.area==='Agenda'?'booking':'record',rows,...(from&&to?{interval:{start:displayValue('starts_at',from),end:displayValue('ends_at',to),title:String(seed.values.reason||'Período propuesto')}}:{})};
+ return{title:typeof seed.values.name==='string'?seed.values.name:tool.title,kind:tool.area==='Servicios'?'service':tool.area==='Clientes'?'customer':tool.area==='Horarios'?'period':tool.area==='Agenda'?'booking':'record',rows:rows.filter(r=>r.label!=='Nombre'||r.value!==seed.values.name),...(from&&to?{interval:{start:displayValue('starts_at',from),end:displayValue('ends_at',to),title:String(seed.values.reason||'Período propuesto')}}:{})};
 }
 export function parseFollowUp(step:InstructionStep,tool:Capability,source:string):Dialogue{return continueDialogue(tool,step.seed,source);}
 
