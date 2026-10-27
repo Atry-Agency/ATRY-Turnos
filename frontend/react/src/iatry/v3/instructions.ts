@@ -7,7 +7,7 @@ export interface InstructionStep {id:string;title:string;seed:InstructionSeed;en
 export interface Clarification {question:string;choices:{label:string;steps:InstructionStep[]}[]}
 export interface Instruction {source:string;steps:InstructionStep[];notes:string[];clarification?:Clarification;understood:boolean}
 const weekdays=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
-function dateOf(s:string,base:string){s=s.replace(/(?:de|por) la manana/g,'');const iso=s.match(/\b(\d{4}-\d{2}-\d{2})\b/);if(iso)return iso[1];if(/pasado manana/.test(s))return plusDate(base,2);if(/\bmanana\b/.test(s))return plusDate(base,1);if(/\bhoy\b/.test(s))return base;const day=weekdays.findIndex(w=>s.includes(w));if(day>=0){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,(day-current+7)%7)}if(/semana que viene|proxima semana/.test(s)){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,((8-current)%7)||7)}return''}
+function dateOf(s:string,base:string){s=s.replace(/(?:de|por) la manana/g,'');const iso=s.match(/\b(\d{4}-\d{2}-\d{2})\b/);if(iso){const parsed=new Date(iso[1]+'T12:00:00Z');return !Number.isNaN(parsed.valueOf())&&parsed.toISOString().slice(0,10)===iso[1]?iso[1]:'';}if(/pasado manana/.test(s))return plusDate(base,2);if(/\bmanana\b/.test(s))return plusDate(base,1);if(/\bhoy\b/.test(s))return base;const day=weekdays.findIndex(w=>s.includes(w));if(day>=0){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,(day-current+7)%7)}if(/semana que viene|proxima semana/.test(s)){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,((8-current)%7)||7)}return''}
 const hours:Record<string,number>={una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12};
 function clock(token:string,pm=false){const p=token.split(':'),h=hours[p[0]]??Number(p[0]),m=Number(p[1]||0);return Number.isInteger(h)&&h>=0&&h<24&&m>=0&&m<60?String(pm&&h<12?h+12:h).padStart(2,'0')+':'+String(m).padStart(2,'0'):''}
 const hourToken='(?:\\d{1,2}(?::\\d{2})?|una|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)';
@@ -20,6 +20,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  let ids=[...new Set(matched)];
  if(/\b(?:falto|ausencia)\b/.test(s)&&!/(?:turno|cliente|profesional|vacaciones)/.test(s)){return{source,steps:[],notes:['Una ausencia de cliente y una ausencia del equipo tienen efectos distintos.'],understood:true,clarification:{question:'¿Faltó un cliente a su turno o no atiende un profesional?',choices:['bookings.no_show','schedule.absence'].map(id=>{const t=all.find(t=>t.id===id)!;return{label:t.title,steps:[{id,title:t.title,seed:{values:{},references:{}},enabled:available.has(id),effect:id==='bookings.no_show'?'Cambia el estado del turno elegido.':'Bloquea la disponibilidad del profesional elegido.'}]}})}}}
 
+ if(ids.includes('schedule.day')&&/semanal/.test(s))ids=ids.filter(id=>id!=='schedule.absence');
  if(ids.includes('services.create'))ids=ids.filter(id=>!['services.price','services.duration'].includes(id));
  if(ids.includes('bookings.availability'))ids=ids.filter(id=>id!=='bookings.create');
  if(ids.includes('bookings.affected'))ids=ids.filter(id=>id!=='bookings.list');
@@ -49,6 +50,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  const explicitId=s.match(/\b(?:cliente|ficha) (?:llamado |de )?["“](.+?)["”]/);if(explicitId&&tool.fields.some(f=>f.key==='customer'))references.customer=explicitId[1];
  return[{id,title:tool.title,seed:{values,references},enabled:available.has(id),effect:tool.kind==='read'?'Consulta información autorizada.':id==='schedule.absence'?'Bloquea el período elegido si el servidor lo permite. No cancela reservas.':'Solo prepara datos: requiere revisión y confirmación explícita.'}];});
  if(!steps.length)return{source,steps,notes:['La función no existe en este catálogo.'],understood:false};
+ for(const step of steps){const tool=all.find(t=>t.id===step.id);for(const field of tool?.fields||[]){const value=step.seed.values[field.key];if(field.type==='number'&&typeof value==='string'&&(!Number.isFinite(Number(value))||field.min!==undefined&&Number(value)<field.min||field.max!==undefined&&Number(value)>field.max)){delete step.seed.values[field.key];notes.push('Necesito que revisemos '+field.label.toLowerCase()+': el valor indicado está fuera de los límites permitidos.')}}}
  const range=s.match(new RegExp('(?:de|desde) (?:las? )?('+hourToken+') (?:a|hasta) (?:las? )?('+hourToken+')\\b'));
  const until=s.match(new RegExp('hasta (?:las? )?('+hourToken+')\\b'));
  if(range||until){const a=range?.[1],b=range?.[2]||until?.[1],pm=/tarde|noche|\bpm\b/.test(s),am=/madrugada|\bam\b|de la manana/.test(s),ambiguous=[a,b].filter(Boolean).some(x=>{const h=hours[x!.split(':')[0]]??Number(x!.split(':')[0]);return !x!.includes(':')&&h>0&&h<12})&&!pm&&!am;

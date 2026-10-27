@@ -5,7 +5,8 @@ function plugin(){return{name:'iatry-operational-release-boundary',generateBundl
  const modules=[...new Set(Object.values(bundle).filter(x=>x.type==='chunk').flatMap(x=>Object.keys(x.modules)).filter(x=>x.includes('/src/iatry/')))];
  if(modules.some(x=>/\/(?:customer-validation|service-validation|readonly-validation)\.ts$/.test(x)))throw Error('Private live-trial code must never enter the release artifact.');
  const p=policy();if(p.verifiedProductionReads.some(id=>!p.auditedReadTools.includes(id)))throw Error('An unaudited production capability was enabled.');
- const data={mode:'operational-restricted',revision:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),rollback:'1d48879164ee7059cd08171f5b124f5c36c8e44c',project:p.productionProject,scope:{business:p.validationBusiness,role:'owner'},reads:p.verifiedProductionReads,writes:[],publicDemo:{reads:p.verifiedProductionReads,writes:[]},incompatible:['schedule.exception','waitlist.booked']};
+ if(!modules.some(x=>x.endsWith('/v3/instructions.ts'))||!modules.some(x=>x.endsWith('/v3/conversation-copy.ts')))throw Error('Missing deterministic understanding modules.');
+ const data={understanding:{mode:'deterministic',automaticExecution:false},mode:'operational-restricted',revision:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),rollback:'a0e3e79f715988cca22ce87182a24fa1add437cd',project:p.productionProject,scope:{business:p.validationBusiness,role:'owner'},reads:p.verifiedProductionReads,writes:[],publicDemo:{reads:p.verifiedProductionReads,writes:[]},incompatible:['schedule.exception','waitlist.booked']};
  this.emitFile({type:'asset',fileName:'iatry-operational-audit.js',source:'globalThis.ATRY_IATRY_BUILD=Object.freeze('+JSON.stringify(data)+');\n'});
 }}}
 module.exports={policy,plugin};
