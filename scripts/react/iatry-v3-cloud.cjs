@@ -4,13 +4,17 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const {pg}=require('../../tests/pg-context'),build=require('./iatry-v3-test-build.cjs'),{day,answer}=require('./iatry-v3-fixture-answers.cjs');
 const wa=require('../../web/whatsapp-core');
 const suite=build(),results=[];
+// Test-only opt-in: exercise the blocked contract in the in-memory database, never live.
+if(process.env.ATRY_HOMOLOGATE_EXCEPTION==='1')delete suite.cloudIncompatibilities['schedule.exception'];
 (async()=>{const {createApiAdapter}=await import('../../cloud/api-adapter.mjs');const db=await pg();
 const fixture=fs.readFileSync('tests/postgres.test.js','utf8').split('async function fixture(db){await db.exec(`')[1].split('`);}')[0];
 await db.exec(fixture);
+if(process.env.ATRY_HOMOLOGATE_EXCEPTION_FIX==='1'){const src=(await db.query("SELECT pg_get_functiondef('public.atry_save_rule(text,text,text,jsonb,boolean)'::regprocedure) src")).rows[0].src;await db.exec(src.replace('ON CONFLICT(staff_id,day)','ON CONFLICT ON CONSTRAINT schedule_exceptions_staff_id_day_key'));}
+
 await db.exec("UPDATE businesses SET plan='pro',subscription_status='active',paid_until=now()+interval '1 year',multi_service_enabled=1 WHERE id='b1'; INSERT INTO services(id,business_id,name,duration_min,created_at) VALUES('v3','b1','Segundo servicio',30,now()); INSERT INTO staff_services VALUES('s1','v3'),('s2','v3');");
 const auth=async(n=1)=>{await db.exec('RESET ROLE');await db.query("SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claims',$2,false)",['00000000-0000-0000-0000-00000000000'+n,JSON.stringify({session_id:'00000000-0000-0000-0000-00000000000'+n})]);await db.exec('SET ROLE authenticated')};
 const calls=[];
-async function rpc(name,args={}){assert.match(name,/^atry_[a-z_]+$/);const keys=Object.keys(args);assert.ok(keys.every(k=>/^[a-z_]+$/.test(k)));calls.push({name,args});try{await db.exec('SAVEPOINT rpc_call');const q=`SELECT public.${name}(${keys.map((k,i)=>k+' => $'+(i+1)).join(',')}) value`;const data=(await db.query(q,keys.map(k=>args[k]&&typeof args[k]==='object'?JSON.stringify(args[k]):args[k]))).rows[0].value;await db.exec('RELEASE SAVEPOINT rpc_call');return{data}}catch(e){await db.exec('ROLLBACK TO SAVEPOINT rpc_call;RELEASE SAVEPOINT rpc_call');return{error:{message:e.message,code:e.code}}}}
+async function rpc(name,args={}){assert.match(name,/^atry_[a-z_]+$/);const keys=Object.keys(args);assert.ok(keys.every(k=>/^[a-z_]+$/.test(k)));calls.push({name,args});try{await db.exec('SAVEPOINT rpc_call');const q=`SELECT public.${name}(${keys.map((k,i)=>k+' => $'+(i+1)).join(',')}) value`;const data=(await db.query(q,keys.map(k=>args[k]&&typeof args[k]==='object'?JSON.stringify(args[k]):args[k]))).rows[0].value;await db.exec('RELEASE SAVEPOINT rpc_call');return{data}}catch(e){if(process.env.ATRY_HOMOLOGATE_EXCEPTION==='1')console.error('LOCAL CONTRACT',name,e.code,e.message);await db.exec('ROLLBACK TO SAVEPOINT rpc_call;RELEASE SAVEPOINT rpc_call');return{error:{message:e.message,code:e.code}}}}
 async function raw(name,args){const r=await rpc(name,args);if(r.error)throw Error(r.error.message);return r.data}
 const adapter=createApiAdapter({auth:{client:{rpc}},config:{supabaseUrl:'https://isolated.invalid',supabaseKey:'public-test'},fetchImpl:async(url)=>{const u=new URL(url);assert.equal(u.hostname,'isolated.invalid');assert.equal(u.searchParams.get('operation'),'availability');await db.exec('RESET ROLE;SET ROLE service_role');try{return Response.json(await raw('atry_public_availability',{slug:u.searchParams.get('slug'),service_id:u.searchParams.get('service_id'),day:u.searchParams.get('date'),staff_id:u.searchParams.get('staff_id')||null}))}finally{await auth()}}});
 await auth();await db.exec('BEGIN');

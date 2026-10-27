@@ -10,4 +10,4 @@ if(process.exitCode===0){const v2=spawnSync(process.execPath,[path.join(root,'sc
 
 if(process.exitCode===0){const v3=spawnSync(process.execPath,[path.join(root,'scripts/react/iatry-v3-security.cjs')],{cwd:root,stdio:'inherit'});process.exitCode=v3.status??1;}
 
-if(process.exitCode===0)for(const file of ['iatry-v3-production-policy-test.cjs','iatry-v3-discovery-test.cjs','iatry-instructions-test.cjs','iatry-understanding-security.cjs']){const check=spawnSync(process.execPath,[path.join(root,'scripts/react',file)],{cwd:root,stdio:'inherit'});if(check.status!==0){process.exitCode=check.status??1;break}}
+if(process.exitCode===0)for(const file of ['iatry-v3-production-policy-test.cjs','iatry-v3-discovery-test.cjs','iatry-instructions-test.cjs','iatry-understanding-security.cjs','iatry-operation-validation-test.cjs','iatry-operation-presentation-test.cjs']){const check=spawnSync(process.execPath,[path.join(root,'scripts/react',file)],{cwd:root,stdio:'inherit'});if(check.status!==0){process.exitCode=check.status??1;break}}
