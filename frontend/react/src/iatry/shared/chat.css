@@ -50,3 +50,5 @@
 @media(max-width:767px){body:has([data-iatry-mobile-backdrop]) :is(.integration-notice,.demo-notice,.deployment-notice){visibility:hidden}}
 .iatry-v3 .iatry-v2-panel .iatry-dialogue-composer input,.iatry-v3 .iatry-v2-panel .iatry-dialogue-composer input:focus{border:0;background:transparent;box-shadow:none;outline:0;padding:6px 0;border-radius:0}
 @media(max-width:767px){.iatry-v3 .iatry-dialogue-composer button{width:44px;min-width:44px;min-height:44px;height:44px}.iatry-v3 .iatry-dialogue-footer>.iatry-v2-text,.iatry-v3 .iatry-dialogue-footer summary{min-height:44px;box-sizing:border-box;display:flex;align-items:center}}
+.iatry-dialogue-change-list{margin:10px 0 0!important}.iatry-dialogue-change-list>div{display:block!important;border:0!important;padding:4px 0!important;font-size:12px!important}.iatry-dialogue-change-list dt{font-size:11px;color:#7a859e}.iatry-dialogue-change-list dd{margin:3px 0;color:#445373}.iatry-dialogue-latest>.iatry-operation-card{transition:opacity .18s ease,transform .18s ease}
+@media(prefers-reduced-motion:reduce){.iatry-dialogue-latest>.iatry-operation-card{transition:none}}

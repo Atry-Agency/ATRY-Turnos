@@ -28,3 +28,15 @@ El campo de respuesta queda fuera del área que desplaza mensajes y sigue el vie
 La frase exacta «dura 20 minutos y cuesta 3 pesos» se comprobó desde la conversación hasta la propuesta y el traspaso al motor, sin repreguntar duración. Se amplió además el reconocimiento de correcciones como «cuesta 5» sin exigir repetir «pesos»; preserva nombre y duración. El historial ya no repite controles dentro de mensajes anteriores. Los destellos de respuesta son breves, solo en la reflexión del emblema, y respetan pausa, movimiento reducido y visibilidad.
 
 Chrome y WebKit: conversación de servicio y correcciones, consultas y permisos, protección táctil, foco y cambios de tamaño. Cuatro capturas locales representativas: móvil, viewport móvil reducido, escritorio y referencia móvil de la landing. Ninguna escritura ni consulta sobre Supabase productivo.
+
+## Continuidad y cambios de intención
+
+La extracción de datos queda separada de la selección de acciones. `entities.ts` conserva datos explícitos y `conversation-frame.ts` mantiene un contexto por paso, proyectado a los campos del contrato elegido. Las respuestas cortas se resuelven primero como selección de intención o corrección; recién después pueden ser valores de un campo. No se guarda «uno nuevo» como nombre de un registro existente.
+
+Una frase con duración/precio y sin acción clara pregunta si se trata de crear o ajustar; ambas alternativas conservan los datos. Cambiar de intención recalcula la disponibilidad efectiva y el motor vuelve a comprobar permisos al preparar. No se hereda la habilitación de la acción anterior. Los datos de una entidad no se transfieren ciegamente a otra familia.
+
+Las contradicciones generan una propuesta de corrección: se puede aceptar, rechazar o seguir corrigiendo. Aceptar estos datos solo modifica el borrador; nunca equivale a la confirmación que escribe en el servidor. Mientras hay una decisión pendiente o un período incoherente no aparece una ficha lista para ejecutar. Los nombres de profesionales/clientes permanecen como referencias por resolver mediante las opciones autorizadas, sin consultas por mensaje.
+
+Se conservan horas al corregir un día del mismo período; las referencias a un día de la semana usan el período conversado. Si hay dos fechas o dos posibles destinatarios, se pregunta cuál. Los pasos relacionados explícitamente pueden compartir una referencia; las instrucciones sobre servicios diferentes permanecen aisladas.
+
+Validación: secuencia completa «Dura 20 minutos y cuesta 3 pesos» → «Uno nuevo» → nombre → correcciones aceptadas/rechazadas → revisión real del motor local; correcciones de jueves, horas y Agustina sin pérdida del resto; campos de fichas comparados contra el estado; planes con servicios diferentes; permisos de propietario/encargado/empleado y retargeting a escrituras denegado. Pruebas de interfaz en Chrome/WebKit, 390×844 y escritorio; suite React/seguridad y protección táctil. Todo con mocks/SQLite local. No hay homologaciones, datos ni configuración nuevos en Supabase.
