@@ -1,0 +1,47 @@
+// Private loopback-only entry. Never imported by main.tsx or the Pages manifest.
+import React,{useEffect,useState,useSyncExternalStore} from 'react';
+import {createRoot} from 'react-dom/client';
+import {createCloudAuth} from '../../cloud/supabase-auth.mjs';
+import {createApiAdapter} from '../../cloud/api-adapter.mjs';
+import {createConversation} from '../../frontend/react/src/iatry/v3/engine';
+import {capabilities} from '../../frontend/react/src/iatry/v3/catalogue';
+import {createGate,trial as serviceValidation} from './iatry-phase-one-schedule-gate';
+import {V2Provider} from '../../frontend/react/src/iatry/v2/Provider';
+import {OperationalPanel} from '../../frontend/react/src/iatry/v3/OperationalPanel';
+import {IatrySlot} from '../../frontend/react/src/iatry/context';
+import type {AppPort} from '../../frontend/react/src/app/port';
+import type {Scope} from '../../frontend/react/src/services/contracts';
+import '../../frontend/react/src/iatry/v3/v3.css';
+const config=window.ATRY_CONFIG!;
+if(!['127.0.0.1','localhost'].includes(location.hostname)||config.supabaseUrl!==serviceValidation.project)throw Error('Esta vista solo funciona en loopback y el proyecto autorizado.');
+let current:Scope|null=null;
+let signedOut=()=>{};
+const auth=createCloudAuth(config,{onSignedOut:()=>{current=null;signedOut()}}),api=createApiAdapter({auth,config,fetchImpl:()=>{throw Error('Las Edge Functions y operaciones públicas están bloqueadas en este ensayo.')}});
+type Context={user:any;business:any;port:AppPort;gate:ReturnType<typeof createGate>;engine:ReturnType<typeof createConversation>};
+async function connect():Promise<Context>{
+ const identity=await api.identity(),member=identity.businesses.find((b:any)=>b.id===serviceValidation.business);
+ if(!member||member.role!=='owner')throw Error('Esta cuenta no es propietaria de Pelu. No se ejecutó ninguna operación.');
+ const business=await api.request('/api/business/'+serviceValidation.business);
+ if(business.id!==serviceValidation.business||business.is_active!==1||business.subscription_status!=='active'||Date.parse(business.paid_until)<=Date.now())throw Error('El negocio no está habilitado para esta prueba.');
+ current={businessId:business.id,userId:identity.user.id,role:'owner',sessionVersion:1,accessEnabled:true,sector:business.sector};
+ const gate=createGate(api.request,config.supabaseUrl!,()=>current,false);
+ const port={scope:()=>current,business:()=>({...business,role:'owner'}),user:()=>identity.user,demo:()=>false,capability:()=>false,privateEmployeeCatalog:()=>true,request:gate.request,publicURL:()=>'',applyBusiness:async()=>{throw Error('Cambiar configuración no está autorizado.')}} as unknown as AppPort;
+ const engine=createConversation(port,current,capabilities.filter(t=>['schedule.day','schedule.absence','schedule.read','schedule.blocks'].includes(t.id)),'local');
+ return {user:identity.user,business:{...business,role:'owner'},port,gate,engine};
+}
+function Trial({context}:{context:Context}){
+ const {engine,port,gate}=context,state=useSyncExternalStore(engine.subscribe,engine.snapshot);
+ const [rows,setRows]=useState<any[]>([]),[problem,setProblem]=useState('');
+ const refresh=()=>void gate.request('/api/business/'+serviceValidation.business+'/time-off').then(value=>setRows(value as any[]));
+ useEffect(()=>{refresh();return()=>engine.dispose()},[engine]);
+ const prepare=async()=>{setProblem('');try{const i=gate.state().index;if(i>=4)return;await engine.begin(i<2?'schedule.day':'schedule.absence');let count=0;while(engine.snapshot().phase==='question'&&count++<20){const f=engine.snapshot().field!;const values:any=i<2?{staff:serviceValidation.staff,weekday:'3',open:true,start:'09:00',end:i===0?'13:00':'18:00',start2:i===0?'14:00':'',end2:i===0?'18:00':''}:{staff:serviceValidation.staff,starts_at:i===2?'2026-11-18T00:00':'2026-11-20T00:00',ends_at:i===2?'2026-11-19T00:00':'2026-11-23T00:00',reason:i===2?'IAtry · Día completo controlado 2026-11-18':'IAtry · Vacaciones controladas 2026-11-20'};await engine.answer(values[f.key]);}if(engine.snapshot().error)throw Error(engine.snapshot().error)}catch(e){setProblem((e as Error).message)}};
+ return <V2Provider user={context.user} business={context.business} view="servicios" port={port} capabilities={{role:'owner',plan:context.business.plan,access:true,statistics:false}} operational={{locked:state.phase==='executing',energy:state.error?'error':state.phase==='loading'||state.phase==='executing'?'preparation':state.phase==='review'?'confirmation':state.phase==='done'?'success':undefined,cancel:()=>engine.cancel(),panel:<OperationalPanel engine={engine} port={port} view="servicios" onSaved={refresh}/>,helpPanel:<p>Esta sesión solo valida las tres operaciones autorizadas del servicio de prueba.</p>,businessPanel:<p>Las demás consultas están bloqueadas durante este ensayo.</p>}}>
+ <main className="container" style={{maxWidth:1050,margin:'40px auto',padding:20}}><h1>Validación controlada · Pelu</h1><p>Supabase real · cuatro escrituras de horarios y ausencias expresamente autorizadas.</p><button className="btn" onClick={()=>void prepare()} disabled={state.phase==='executing'||gate.state().done||gate.state().stopped}>Preparar siguiente paso autorizado</button>{problem&&<p role="alert">{problem}</p>}<IatrySlot/><section className="card" style={{padding:24,marginTop:24}}><h2>Lectura actual de Supabase</h2><p>{rows.length} bloqueos en el negocio. La semana original fue restaurada.</p><p>Estado del ensayo: {JSON.stringify(gate.state())}</p><details><summary>Respuestas y relecturas de Supabase</summary><pre style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{JSON.stringify(gate.evidence(),null,2)}</pre></details></section></main>
+ </V2Provider>;
+}
+function App(){const [context,setContext]=useState<Context|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+ useEffect(()=>{signedOut=()=>{setContext(null);setError('La sesión se cerró. El ensayo está detenido.')};void auth.ready().then(async()=>{const {data}=await auth.client.auth.getSession();if(data.session)setContext(await connect())}).catch(()=>setError('Iniciá sesión con la cuenta propietaria de Pelu.'));return()=>{signedOut=()=>{}}},[]);
+ if(context)return <Trial context={context}/>;
+ return <main className="container" style={{maxWidth:480,margin:'70px auto',padding:24}}><h1>IAtry · validación autorizada</h1><p>Ingresá con la cuenta habitual del propietario de Pelu. No se crean cuentas ni se envían correos.</p><form style={{display:"grid",gap:18,marginTop:28}} onSubmit={async event=>{event.preventDefault();if(busy)return;setBusy(true);setError('');const data=new FormData(event.currentTarget);try{await auth.signIn(String(data.get('email')),String(data.get('password')));setContext(await connect())}catch(e){setError((e as Error).message)}finally{setBusy(false)}}}><label style={{display:"grid",gap:8}}>Correo<input name="email" type="email" autoComplete="username" required/></label><label style={{display:"grid",gap:8}}>Contraseña<input name="password" type="password" autoComplete="current-password" required/></label><button className="btn" style={{marginTop:8,minHeight:48}} disabled={busy}>Iniciar sesión</button></form>{error&&<p role="alert">{error}</p>}<p className="small muted">Proyecto djoxdtloqwbrhgtgencc · negocio Pelu · sin publicación.</p></main>;
+}
+createRoot(document.getElementById('root')!).render(<App/>);

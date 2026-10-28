@@ -1,0 +1,5 @@
+'use strict';
+const assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs'),{transformSync}=require('esbuild');const sandbox={module:{exports:{}}};vm.runInNewContext(transformSync(fs.readFileSync('frontend/react/src/iatry/v3/customer-write-safety.ts','utf8'),{loader:'ts',format:'cjs'}).code,sandbox);const {assertCustomerWriteSafety:check}=sandbox.module.exports;
+const before={name:'Cliente',email:'a@example.invalid',phone:'',notes:'Original',marketing_consent:0};
+for(const environment of ['connected','customer-validation','operation-validation','supabase-readonly']){check(before,{...before,notes:'Updated'},environment);for(const [key,value]of [['name','Other'],['email','b@example.invalid'],['phone','099123456']])assert.throws(()=>check(before,{...before,[key]:value},environment),/recurrentes/);assert.throws(()=>check(before,{...before,marketing_consent:1},environment),/consentimiento/);}
+check(before,{...before,email:'b@example.invalid'},'phase-one-local');console.log('PASS live customer safety: notes only, name/email/phone propagation blocked, consent unchanged; local RPC coverage retained.');

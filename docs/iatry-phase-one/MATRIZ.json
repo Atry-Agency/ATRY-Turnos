@@ -8,6 +8,41 @@
     "customers.history",
     "business.statistics"
   ],
+  "releaseApproved": false,
+  "pendingRelease": {
+    "roles": [
+      "owner"
+    ],
+    "plans": [
+      "negocio"
+    ],
+    "business": "any-authorized-business",
+    "tools": [
+      "services.list",
+      "services.create",
+      "services.price",
+      "services.duration",
+      "services.details",
+      "services.publish",
+      "services.hide",
+      "customers.create",
+      "customers.update",
+      "customers.search",
+      "customers.history",
+      "schedule.read",
+      "schedule.day",
+      "schedule.absence",
+      "schedule.blocks",
+      "team.list",
+      "business.statistics"
+    ]
+  },
+  "missingRealSessions": [
+    "manager",
+    "staff",
+    "owner/individual",
+    "owner/pro"
+  ],
   "localFirstStage": [
     "services.list",
     "services.create",
@@ -47,6 +82,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "existing-owner-Pelu-only",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -68,6 +113,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -89,6 +144,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -110,6 +175,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -131,6 +206,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -145,6 +230,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -159,6 +245,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -173,6 +260,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -194,6 +282,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -215,6 +313,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -236,6 +344,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "existing-owner-Pelu-only",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -257,6 +375,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "existing-owner-Pelu-only",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -278,6 +406,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -299,6 +437,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": "notes-only; name/email/phone and marketing blocked"
+      },
       "incompatible": null
     },
     {
@@ -320,6 +468,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "existing-owner-Pelu-only",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -334,6 +492,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -348,6 +507,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -367,8 +527,18 @@
         "negocio",
         "pro"
       ],
-      "realEvidence": "not-validated-real",
+      "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -388,8 +558,18 @@
         "negocio",
         "pro"
       ],
-      "realEvidence": "not-validated-real",
+      "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -409,8 +589,18 @@
         "negocio",
         "pro"
       ],
-      "realEvidence": "not-validated-real",
+      "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -432,6 +622,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -446,6 +646,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -460,6 +661,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": "Jornadas especiales sigue bloqueada: el RPC tiene un conflicto de nombres en ON CONFLICT. La corrección solo se comprobó en PostgreSQL temporal; falta homologación real."
     },
     {
@@ -474,6 +676,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -488,6 +691,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -502,6 +706,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -517,6 +722,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -532,6 +738,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -547,6 +754,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -562,6 +770,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -577,6 +786,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -592,6 +802,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -607,6 +818,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -622,6 +834,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -637,6 +850,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -651,6 +865,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -665,6 +880,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -679,6 +895,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": "El RPC solo permite volver a espera o cancelar; marcar atendida requiere el flujo de aceptación de oferta existente."
     },
     {
@@ -693,6 +910,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -707,6 +925,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -721,6 +940,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -735,6 +955,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -749,6 +970,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -763,6 +985,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -777,6 +1000,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -791,6 +1015,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -805,6 +1030,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -825,6 +1051,16 @@
       ],
       "realEvidence": "controlled-owner-Pelu-Negocio-read",
       "production": "existing-owner-Pelu-only",
+      "pendingFinalApproval": {
+        "roles": [
+          "owner"
+        ],
+        "plans": [
+          "negocio"
+        ],
+        "business": "any-authorized-business",
+        "customerUpdate": null
+      },
       "incompatible": null
     },
     {
@@ -839,6 +1075,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -853,6 +1090,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -867,6 +1105,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -880,6 +1119,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -895,6 +1135,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -910,6 +1151,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -923,6 +1165,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -938,6 +1181,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -952,6 +1196,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -966,6 +1211,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -980,6 +1226,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -994,6 +1241,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1008,6 +1256,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1022,6 +1271,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1035,6 +1285,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1049,6 +1300,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1062,6 +1314,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1075,6 +1328,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1088,6 +1342,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1101,6 +1356,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1114,6 +1370,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1128,6 +1385,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     },
     {
@@ -1142,6 +1400,7 @@
       "phaseOneLocalPlans": [],
       "realEvidence": "not-validated-real",
       "production": "blocked",
+      "pendingFinalApproval": null,
       "incompatible": null
     }
   ]

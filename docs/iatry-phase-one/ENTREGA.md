@@ -1,5 +1,7 @@
 # IAtry · primera etapa operativa
 
+Estado vigente y matriz de habilitación: [CIERRE.md](CIERRE.md). Lo que sigue conserva el historial de evidencia y sus alcances originales.
+
 Rama `codex/iatry-v3-phase-one-operations`. Base publicada y rollback: `5a5aaa4868366eb51afcb181c6b0cc49d7c0e1ce`. Sin publicación ni cambios de infraestructura en Supabase. El ensayo real adicional autorizado el 28/10 se detalla al final.
 
 ## Versión local
