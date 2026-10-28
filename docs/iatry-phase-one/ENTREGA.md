@@ -1,6 +1,6 @@
 # IAtry · primera etapa operativa
 
-Rama `codex/iatry-v3-phase-one-operations`. Base publicada y rollback: `5a5aaa4868366eb51afcb181c6b0cc49d7c0e1ce`. Sin publicación ni cambios en Supabase. No se ejecutaron ensayos reales nuevos.
+Rama `codex/iatry-v3-phase-one-operations`. Base publicada y rollback: `5a5aaa4868366eb51afcb181c6b0cc49d7c0e1ce`. Sin publicación ni cambios de infraestructura en Supabase. El ensayo real adicional autorizado el 28/10 se detalla al final.
 
 ## Versión local
 
@@ -57,3 +57,42 @@ Las RPC actuales de catálogo/clientes/bloqueos no aportan una clave idempotente
 Etiqueta local `rollback/pre-iatry-phase-one-2026-10-28` → `5a5aaa4`. Para recuperar tras una publicación futura: GitHub Actions → Publicar interfaz Atry Turnos → Run workflow → `source_ref=rollback/pre-iatry-phase-one-2026-10-28`. Publicar/verificar la etiqueta antes de desplegar; en esta misión no se hizo push. La recuperación no cambia Supabase.
 
 Veredicto: candidato funcional local para esta etapa y base preparada para homologación progresiva. No está homologada la habilitación general de escrituras para todos los negocios. Publicar este candidato tal cual conserva los bloqueos vigentes; una activación operativa necesita la aprobación final del alcance y la evidencia faltante, no una activación masiva.
+
+## Cierre incremental — 28/10/2026
+
+Se auditó el proyecto real exclusivamente con transacciones `BEGIN READ ONLY`/`ROLLBACK`, consultando `pg_proc`, sin invocar RPC de negocio. Las nueve RPC de esta etapa tienen EXECUTE para authenticated, no para anon y son SECURITY DEFINER. Las huellas normalizadas de sus definiciones coinciden con el repositorio probado; las diferencias de hash sin normalizar eran de espacios/saltos de línea. `CONTRATOS-REALES.json` conserva las huellas, no datos ni credenciales. Esto no certifica todas las dependencias transitivas, triggers, Auth ni una sesión real de cada rol/plan.
+
+La inspección real confirma autorización owner/manager en servicios, reglas y semana; selección del negocio mediante membresía; `search_path` vacío; semana verifica suscripción activa, profesional del negocio, tramos válidos y reservas futuras. Consultar reglas/catálogo no materializa reservas. Estadísticas y funciones de recursos usan las restricciones existentes de características. No se cambiaron esos contratos.
+
+Validación adicional focalizada: `npm run test:iatry-phase-one-contacts` compara nueve huellas y prueba en PostgreSQL temporal la propagación de nombre/correo/teléfono a recurrencias coincidentes, aislamiento del otro negocio, preservación de contactos al editar solo notas, rechazo atómico de contacto duplicado y cero correos/notificaciones. La propagación es un efecto REAL del contrato: una futura habilitación de contactos debe explicarlo en la propuesta y comprobarlo, no presentarlo como una edición sin efectos secundarios. No se habilita todavía.
+
+Se reutilizan los 114 resultados anteriores; no se repitió la batería completa ni auditorías generales. La compilación actual y el test de límites de la primera etapa pasan. El código de producción mantiene cinco lecturas acotadas y cero escrituras; esta consolidación no concede permisos nuevos.
+
+### Brechas concretas
+
+- Propietario/Pelu/Negocio: siete precedentes reales acotados; falta nombre/descripción/activación, semana con descansos y ausencias de día completo/multidía. El nuevo grupo de tres cambios del servicio existente fue autorizado el 28/10; requiere sesión normal en la vista privada antes de ejecutarse.
+- Contactos: pendiente ensayo normal real y propuesta/verificación explícita de recurrencias afectadas. La edición de notas ya tiene evidencia real.
+- Encargado: falta una sesión real ya existente y autorizada. Empleado: no se concede escritura administrativa; falta comprobar rechazos reales con su propia sesión.
+- Individual y Pro: faltan sesiones existentes autorizadas y comprobación real de sus límites/aislamiento. No se crean cuentas ni se cambian planes para obtenerlas.
+- Generalización a todos los negocios: bloqueada hasta cerrar esas evidencias. Las nueve RPC coincidentes reducen incertidumbre de contratos, pero no convierten las pruebas locales en homologación general.
+
+### Publicación futura
+
+1. Aprobar el alcance preciso; no basta aprobar el diseño para habilitar operaciones.
+2. Verificar `origin/main`, publicar/verificar la etiqueta de rollback ya indicada y ejecutar compilación + control del artefacto (debe declarar exactamente las capacidades autorizadas).
+3. Publicar el único candidato mediante el workflow Pages existente. No ejecutar migraciones ni tocar Supabase.
+4. Comprobar dominio y consultas autorizadas sin escrituras automáticas adicionales.
+5. Ante regresión grave, ejecutar el mismo workflow con `source_ref=rollback/pre-iatry-phase-one-2026-10-28` (SHA `5a5aaa4868366eb51afcb181c6b0cc49d7c0e1ce`). No usar force push ni revertir datos.
+
+
+### Ensayo real autorizado completado
+
+Propietario de Pelu, plan Negocio; adaptador cloud y motor IAtry desde vista privada local. Servicio ficticio existente `47795a12-8db3-4f13-8028-6038f2f6363f`. Se ejecutaron exactamente tres PATCH: nombre/descripción, activación, ocultación. Las tres RPC respondieron `{id: "47795a12-8db3-4f13-8028-6038f2f6363f"}` y cada cambio se verificó mediante relectura fresca del catálogo. Estado final: «IAtry · Servicio homologado 2026-10-28», descripción «Ensayo controlado de nombre y descripción», activo 0, duración 20, precio 1, seña/buffers 0, profesionales vacíos. Otros servicios comparados sin cambios.
+
+Incidencia previa: el gate temporal rechazó antes de transportar la solicitud porque el editor conserva también los campos sin cambios. Se corrigió solo el gate para admitir esos valores exactos y verificar sus precondiciones. No hubo escritura rechazada en Supabase ni repetición de una escritura incierta. El catálogo confirmó el estado original antes de volver a preparar la operación. La selección de los nombres largos del ensayo pidió elegir explícitamente el servicio; no inventó identificadores.
+
+El ensayo terminó en `done`, se detuvo su servidor y el gate queda denegado por defecto para futuras ejecuciones. No se crearon reservas ni se invocaron rutas de notificaciones/envíos. No se alteraron políticas, funciones, migraciones ni configuración. Nueve capacidades tienen ahora precedentes reales acotados (se añaden services.details y services.publish); no son permisos productivos.
+
+**Matriz actual de habilitación:** propietario y encargado: 16 herramientas locales en Individual y 17 en Negocio/Pro; empleado: 0 en este alcance administrativo. En producción permanecen cinco lecturas solo propietario/Pelu y cero escrituras. Servicios cuenta con los seis precedentes reales; clientes conserva creación/notas, no homologación general de contactos; bloqueos conserva una hora, no homologación de vacaciones; semana y nuevos roles/planes pendientes. La matriz JSON distingue evidencia de habilitación.
+
+Compilación, prueba de límites por rol/plan, nueve huellas RPC, regresiones de contactos y gate finito pasan. El artefacto revisado contiene 119 assets, proyecto correcto, cinco lecturas y cero escrituras; no contiene las vistas privadas del ensayo. Se conserva la evidencia de los 114 casos previos sin repetirlos. No se modificó la interfaz aprobada.

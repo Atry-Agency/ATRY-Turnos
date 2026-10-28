@@ -129,7 +129,7 @@
         "negocio",
         "pro"
       ],
-      "realEvidence": "not-validated-real",
+      "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
       "incompatible": null
     },
@@ -192,7 +192,7 @@
         "negocio",
         "pro"
       ],
-      "realEvidence": "not-validated-real",
+      "realEvidence": "controlled-owner-Pelu-Negocio-write",
       "production": "blocked",
       "incompatible": null
     },

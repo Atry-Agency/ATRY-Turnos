@@ -1,0 +1,21 @@
+{
+  "observed": "2026-10-28",
+  "project": "djoxdtloqwbrhgtgencc",
+  "method": "Supabase SQL Editor; BEGIN READ ONLY; pg_proc only; ROLLBACK",
+  "normalization": "md5(regexp_replace(pg_get_functiondef(oid),'[[:space:]]','','g'))",
+  "authenticatedExecute": true,
+  "anonExecute": false,
+  "securityDefiner": true,
+  "hashes": {
+    "atry_catalog": "0d9620ed4908dbc51265e25d47b23d4c",
+    "atry_customer_history": "eb305e60afb732a6a01709742d1fe56d",
+    "atry_customers": "0ed71ccae2e6e2c283d4998e4f6155b0",
+    "atry_rules": "2cdab38343e819fc5400ef8b3cca3207",
+    "atry_save_customer": "4a1b5ae08e9da427a6d34bf195720e1a",
+    "atry_save_rule": "3779203424e08f1fb7d2f61507e1529d",
+    "atry_save_service": "cb9371269a7d83502c78e62bfa719037",
+    "atry_save_week": "bab195be641e18f26cbfc9c014934e15",
+    "atry_statistics": "e617d7a006349fd6024e3fc77ef4eb0c"
+  },
+  "limitation": "Evidence of deployed definitions, not normal-session execution or transitive dependency equivalence; not a production grant."
+}
