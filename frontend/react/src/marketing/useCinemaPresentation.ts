@@ -1,7 +1,8 @@
+import {cinemaReturnTarget} from './cinema-return';
 import {useEffect,useRef,useState} from 'react';
 import type {RefObject} from 'react';
 const clamp=(value:number)=>Math.max(0,Math.min(.9999,value));
-/** Local narrative clock. It never scrolls the document or executes product actions. */
+/** Local narrative clock. Autoplay never scrolls the document. Only a manual upward return can skip the pinned runway. */
 export function useCinemaPresentation(section:RefObject<HTMLElement|null>,motionOff:boolean){
  const [progress,setProgress]=useState(0),[playing,setPlaying]=useState(false),[presentationPaused,setPresentationPaused]=useState(false),[reading,setReading]=useState(false);
  const manualTarget=useRef(0),drainTimer=useRef<ReturnType<typeof setTimeout>|null>(null),directUntil=useRef(0);
@@ -10,10 +11,13 @@ export function useCinemaPresentation(section:RefObject<HTMLElement|null>,motion
  const show=(value:number)=>{current.current=clamp(value);setProgress(current.current)};
  useEffect(()=>{
   const stop=()=>{active.current=false;setPlaying(false);idleSince.current=performance.now()};
-  const input=(event:Event)=>{if(drainTimer.current){clearTimeout(drainTimer.current);drainTimer.current=null;offset.current=current.current-raw.current;manualTarget.current=current.current}stop();const target=event.target;if(target instanceof Element&&target.closest('.iatry-cinema-scroll')){engaged.current=true;setReading(true)}};
+  let previousY=window.scrollY,manualUntil=0;
+  const input=(event:Event)=>{manualUntil=performance.now()+1500;if(event.type==='touchmove'){stop();return;}if(drainTimer.current){clearTimeout(drainTimer.current);drainTimer.current=null;offset.current=current.current-raw.current;manualTarget.current=current.current}stop();const target=event.target;if(target instanceof Element&&target.closest('.iatry-cinema-scroll')){engaged.current=true;setReading(true)}};
   const drain=()=>{drainTimer.current=null;const el=section.current;if(!el)return;const box=el.getBoundingClientRect(),from=Math.floor(current.current*7),to=Math.floor(manualTarget.current*7);if(box.top>2||box.bottom<innerHeight-2||motion.current||Math.abs(to-from)<=1){show(manualTarget.current);return}show((from+Math.sign(to-from)+.1)/7);idleSince.current=performance.now();drainTimer.current=setTimeout(drain,750)};
   const update=()=>{const el=section.current;if(!el)return;const r=el.getBoundingClientRect();raw.current=clamp(-r.top/Math.max(1,r.height-innerHeight));manualTarget.current=clamp(raw.current+offset.current);if(performance.now()<directUntil.current||motion.current||r.top>2||r.bottom<innerHeight-2){if(drainTimer.current)clearTimeout(drainTimer.current);drainTimer.current=null;show(manualTarget.current);return}if(drainTimer.current)return;const from=Math.floor(current.current*7),to=Math.floor(manualTarget.current*7);if(Math.abs(to-from)>1){show((from+Math.sign(to-from)+.1)/7);drainTimer.current=setTimeout(drain,750)}else show(manualTarget.current)};
-  let frame=0;const scroll=()=>{stop();if(!frame)frame=requestAnimationFrame(()=>{frame=0;update()})};
+  let frame=0;const scroll=()=>{stop();const el=section.current,y=window.scrollY,box=el?.getBoundingClientRect(),target=box?cinemaReturnTarget({previousY,y,top:box.top,bottom:box.bottom,viewport:innerHeight,manual:performance.now()<manualUntil,direct:performance.now()<directUntil.current}):null;previousY=y;
+   if(target!==null){if(drainTimer.current)clearTimeout(drainTimer.current);drainTimer.current=null;cancelAnimationFrame(frame);frame=0;offset.current=0;manualTarget.current=0;show(0);previousY=target;window.scrollTo({top:target,behavior:'instant'});return;}
+   if(!frame)frame=requestAnimationFrame(()=>{frame=0;update()})};
   const visibility=()=>{stop()};
   const timer=setInterval(()=>{
    const el=section.current,now=performance.now();if(!el)return;const box=el.getBoundingClientRect(),chapter=Math.floor(current.current*7),focused=document.activeElement instanceof Element&&Boolean(document.activeElement.closest('#iatry .iatry-cinema-scroll'));
@@ -25,9 +29,9 @@ export function useCinemaPresentation(section:RefObject<HTMLElement|null>,motion
    show(next);offset.current=current.current-raw.current;nextAt.current=now+(phase===1||phase===2?2200:1400);
    if(Math.floor(current.current*7)===6){finished.current=true;active.current=false;setPlaying(false)}
   },200);
-  for(const name of ['wheel','touchstart','pointerdown','keydown'])window.addEventListener(name,input,{passive:true,capture:true});
+  for(const name of ['wheel','touchstart','touchmove','pointerdown','keydown'])window.addEventListener(name,input,{passive:true,capture:true});
   window.addEventListener('scroll',scroll,{passive:true});window.addEventListener('resize',update);document.addEventListener('visibilitychange',visibility);update();
-  return()=>{clearInterval(timer);if(drainTimer.current)clearTimeout(drainTimer.current);cancelAnimationFrame(frame);for(const name of ['wheel','touchstart','pointerdown','keydown'])window.removeEventListener(name,input,true);window.removeEventListener('scroll',scroll);window.removeEventListener('resize',update);document.removeEventListener('visibilitychange',visibility)};
+  return()=>{clearInterval(timer);if(drainTimer.current)clearTimeout(drainTimer.current);cancelAnimationFrame(frame);for(const name of ['wheel','touchstart','touchmove','pointerdown','keydown'])window.removeEventListener(name,input,true);window.removeEventListener('scroll',scroll);window.removeEventListener('resize',update);document.removeEventListener('visibilitychange',visibility)};
  },[section]);
  function selectChapter(index:number){if(drainTimer.current)clearTimeout(drainTimer.current);drainTimer.current=null;directUntil.current=performance.now()+1800;offset.current=0;engaged.current=false;setReading(false);finished.current=false;active.current=false;setPlaying(false);idleSince.current=performance.now();show((index+.12)/7)}
  function togglePresentation(){const pause=!presentationPaused;setPresentationPaused(pause);suspended.current=pause;active.current=false;setPlaying(false);idleSince.current=performance.now();if(!pause){engaged.current=false;setReading(false);finished.current=false}}
