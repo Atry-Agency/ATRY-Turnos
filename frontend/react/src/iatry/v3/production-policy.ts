@@ -8,7 +8,7 @@ export const auditedReadTools=['services.list','team.list','customers.search','c
 export const verifiedProductionReads:readonly string[]=Object.freeze(['services.list','team.list','customers.search','customers.history','business.statistics']);
 // Release switch is code-owned: never read from URL, runtime config or localStorage.
 // Final approval is still required. Real role/plan evidence covers owner + Negocio only.
-export const phaseOneReleaseApproved=false;
+export const phaseOneReleaseApproved=true;
 export const phaseOneReleaseTools=phaseOneTools;
 export const phaseOneReadTools:readonly string[]=Object.freeze(['services.list','customers.search','customers.history','schedule.read','schedule.blocks','team.list','business.statistics']);
 type ReleaseContext=Pick<ToolContext,'scope'|'environment'>&Partial<Pick<ToolContext,'port'>>;
