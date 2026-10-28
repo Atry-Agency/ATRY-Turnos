@@ -42,7 +42,7 @@ export function continueDialogue(tool:Capability,current:InstructionSeed,source:
 }
 export function draftFacts(tool:Capability,seed:InstructionSeed):OperationFacts{
  const labels:Record<string,string>={name:'Nombre',price_uyu:'Precio',duration_min:'Duración',staff:'Profesional',customer:'Cliente',service:'Servicio',starts_at:'Desde',ends_at:'Hasta'};
- const rows=tool.fields.flatMap(f=>{const v=seed.values[f.key],ref=seed.references[f.key];if(ref)return[{label:labels[f.key]||f.label,value:ref==='@self'?'Tu profesional · por elegir':ref+' · por elegir'}];return v!==undefined&&v!==''&&!Array.isArray(v)&&typeof v!=='boolean'?[{label:labels[f.key]||f.label,value:displayValue(f.key,v)}]:[];});
+ const rows=tool.fields.flatMap(f=>{const v=seed.values[f.key],ref=seed.references[f.key];if(ref)return[{label:labels[f.key]||f.label,value:ref==='@self'?'Tu profesional · por elegir':ref+(v?'':' · por elegir')}];return v!==undefined&&v!==''&&!Array.isArray(v)&&typeof v!=='boolean'?[{label:labels[f.key]||f.label,value:displayValue(f.key,v)}]:[];});
  const from=seed.values.starts_at,to=seed.values.ends_at;
  return{title:typeof seed.values.name==='string'?seed.values.name:tool.title,kind:tool.area==='Servicios'?'service':tool.area==='Clientes'?'customer':tool.area==='Horarios'?'period':tool.area==='Agenda'?'booking':'record',rows:rows.filter(r=>r.label!=='Nombre'||r.value!==seed.values.name),...(from&&to?{interval:{start:displayValue('starts_at',from),end:displayValue('ends_at',to),title:String(seed.values.reason||'Período propuesto')}}:{})};
 }

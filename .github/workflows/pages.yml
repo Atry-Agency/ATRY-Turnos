@@ -33,6 +33,7 @@ jobs:
             npm ci --prefix frontend/react
             npm run build
             npm run test:react
+            if npm run | grep -q test:iatry-consolidation; then npm run test:iatry-consolidation; fi
           fi
       - run: node scripts/build-github.js
         env:
