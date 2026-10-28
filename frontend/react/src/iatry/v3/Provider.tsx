@@ -1,3 +1,4 @@
+import {conversationEnergy} from './personality';
 import {lazy,Suspense,useEffect,useMemo,useSyncExternalStore} from 'react';
 import type {IatryProps} from '../IatryProvider';
 import {V2Provider} from '../v2/Provider';
@@ -15,5 +16,5 @@ export function V3Provider(props:IatryProps){
  useEffect(()=>{props.bindOperationGuard?.(()=>!engine?.busy());return()=>props.bindOperationGuard?.(null)},[engine,props.bindOperationGuard]);
  useEffect(()=>{if(engine&&!engine.busy())engine.cancel()},[props.view,engine]);
  if(!engine||!port)return <V2Provider {...props}/>;
- return <V2Provider {...props} operational={{locked:state?.phase==='executing',energy:state?.error?'error':state?.phase==='loading'||state?.phase==='executing'?'preparation':state?.phase==='review'?'confirmation':state?.phase==='done'?(state.result?.verified||state.tool?.kind==='read'?'success':'interaction'):state?.phase==='error'||state?.phase==='uncertain'?'error':state?.phase==='question'||state?.instruction?'interaction':undefined,cancel:()=>engine.cancel(),businessPanel:<Suspense fallback={<p>Preparando consultas…</p>}><Panel engine={engine} port={port} view={props.view} mode="business"/></Suspense>,helpPanel:<Suspense fallback={null}><Help tools={engine.available()}/></Suspense>,panel:<Suspense fallback={<p role="status">Preparando tus herramientas…</p>}><Panel engine={engine} port={port} view={props.view} onSaved={props.onOperationSaved}/></Suspense>}}/>;
+ return <V2Provider {...props} operational={{locked:state?.phase==='executing',energy:conversationEnergy(state),cancel:()=>engine.cancel(),businessPanel:<Suspense fallback={<p>Preparando consultas…</p>}><Panel engine={engine} port={port} view={props.view} mode="business"/></Suspense>,helpPanel:<Suspense fallback={null}><Help tools={engine.available()}/></Suspense>,panel:<Suspense fallback={<p role="status">Preparando tus herramientas…</p>}><Panel engine={engine} port={port} view={props.view} onSaved={props.onOperationSaved}/></Suspense>}}/>;
 }

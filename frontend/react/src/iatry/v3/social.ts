@@ -1,0 +1,44 @@
+import {normalizeLanguage} from './language';
+export type SocialIntent='greeting'|'thanks'|'goodbye'|'wellbeing'|'open'|'fatigue'|'uncertainty'|'celebration'|'resume';
+export interface SocialContext {pending?:boolean;hour?:number}
+export interface SocialReply {source:string;intent:SocialIntent;text:string}
+/** Social classification is anchored: a greeting must never swallow an operational instruction. */
+export function socialIntent(source:string):SocialIntent|undefined{
+ if(!source.trim()||source.length>500)return undefined;
+ const s=normalizeLanguage(source).replace(/[.,;:]/g,'').replace(/\s+/g,' ').trim().replace(/\b(?:grasias|grcias|grasia)\b/g,'gracias').replace(/\bhloa\b/g,'hola').replace(/\basemos\b/g,'hacemos').replace(/\bcansao\b/g,'cansado').replace(/\bcansada+\b/g,'cansada').replace(/\bcansado+\b/g,'cansado').replace(/\bkomo\b/g,'como').replace(/\bke\b/g,'que');
+ if(/^(?:hola+|holaa+|holi|ola|buenas|buen dia|buenos dias|buenas tardes|buenas noches|ey|hey)(?: iatry)?$/.test(s))return'greeting';
+ if(/^(?:(?:hola|buenas) )?(?:como estas|como andas|todo bien|que tal)(?: iatry)?$/.test(s))return'wellbeing';
+ if(/^(?:muchas |mil )?(?:gracias|te agradezco)(?: iatry| por la ayuda)?$/.test(s))return'thanks';
+ if(/^(?:chau+|chao|adios+|hasta luego|hasta manana|nos vemos)(?: iatry)?$/.test(s))return'goodbye';
+ if(/^(?:que hacemos hoy|que podemos hacer|que podes hacer|en que me podes ayudar|ayudame|necesito ayuda|por donde empezamos|que hago hoy)$/.test(s))return'open';
+ if(/^(?:(?:estoy|toy|ando|me siento) (?:muy |re )?(?:cansad[oa]|agotad[oa])|que cansancio|no tengo energia)$/.test(s))return'fatigue';
+ if(/^(?:no se que hacer|nose que hacer|no se por donde empezar|no entiendo|tengo dudas|estoy perdid[oa])$/.test(s))return'uncertainty';
+ if(/^(?:seguimos|sigamos|retomemos|retomar|continuemos|continuar)$/.test(s))return'resume';
+ if(/^(?:genial|buenisimo|excelente|que bueno|me encanta|vamos arriba)$/.test(s))return'celebration';
+ return undefined;
+}
+/** Extend banks without touching interpretation, authorization or execution. No human emotions claimed. */
+export const socialBanks:Record<SocialIntent,readonly string[]>={
+ resume:['Retomamos la solicitud desde donde quedó.','Seguimos con la propuesta pendiente.','Volvemos al paso en el que estábamos.','Podemos retomar los datos que ya definimos.','La solicitud sigue disponible para continuar.','Seguimos paso a paso con la misma propuesta.','Retomamos sin cambiar los datos aceptados.','Continuamos con lo que ya veníamos preparando.','Volvemos a la propuesta que estabas revisando.','Seguimos con la solicitud, sin ejecutar nada todavía.'],
+ greeting:['¡Hola! ¿En qué te doy una mano hoy?','¡Buenas! ¿Qué organizamos?','¡Hola! Podemos empezar por lo que más te simplifique el día.','¡Buenas! ¿Revisamos algo del negocio?','¡Hola! Contame qué necesitás resolver.','¡Buenas! ¿Vamos con una tarea a la vez?','¡Hola! Te acompaño a ordenar lo que necesites.','{saludo} ¿Por dónde querés empezar?','¡Hola! Podemos ver agenda, clientes o servicios.','¡Buenas! ¿Qué tenemos entre manos hoy?'],
+ thanks:['De nada. Seguimos cuando quieras.','¡A las órdenes! Podemos seguir con lo que necesites.','Gracias a vos. ¿Seguimos con algo más?','Para eso estoy. Vos marcás el ritmo.','De nada. Si surge otra consulta, la vemos juntos.','¡A las órdenes! Vamos paso a paso.','De nada. Acá podés retomar cuando quieras.','Gracias a vos. Seguimos con calma.','De nada. ¿Hay algo más que quieras ordenar?','¡A las órdenes! Contá conmigo para la próxima tarea.'],
+ goodbye:['¡Chau! Que tengas un buen día. Cuando vuelvas, seguimos.','Hasta luego. Acá podés retomar el trabajo cuando quieras.','¡Nos vemos! Que siga bien tu jornada.','Hasta la próxima. Seguimos cuando lo necesites.','¡Chau! Que tengas una buena jornada en el negocio.','Nos vemos. Cuando vuelvas, vamos paso a paso.','Hasta luego. Gracias por trabajar con IAtry.','¡Chau! Te espero por acá para la próxima consulta.','Que siga todo bien. Retomamos cuando quieras.','Hasta la próxima. Un paso a la vez también cuenta.'],
+ wellbeing:['Acá, para ayudarte. ¿Qué querés organizar?','Todo preparado para darte una mano. ¿Con qué empezamos?','Disponible para trabajar con vos. ¿Vamos con alguna tarea?','Acá estoy. Podemos revisar agenda, servicios o clientes.','Con las herramientas a mano. Contame qué necesitás.','Por acá, para simplificarte el trabajo. ¿Qué vemos primero?','Preparado para ayudarte paso a paso. Vos elegís la tarea.','Acá, a tu disposición. ¿Organizamos algo del negocio?','Todo dispuesto para empezar. ¿En qué te doy una mano?','Acá estoy. Hagamos más simple la próxima tarea.'],
+ open:['Podemos revisar la agenda, buscar un cliente o ver los servicios. ¿Qué te sirve más?','Yo empezaría por elegir una tarea concreta: agenda, clientes o servicios.','Vos elegís: podemos organizar horarios o consultar los indicadores disponibles.','¿Revisamos la agenda o vemos cómo viene el negocio?','Podemos empezar por tus servicios y después seguir con clientes. ¿Te sirve?','Tres caminos: agenda, servicios o indicadores. ¿Por cuál vamos?','Contame qué querés simplificar y preparamos el siguiente paso.','Podemos consultar información o preparar una propuesta para revisar. ¿Qué necesitás?','¿Qué te resulta más útil ahora: ver turnos, buscar una ficha o revisar servicios?','Vamos por algo concreto. ¿Agenda, clientes o catálogo de servicios?'],
+ fatigue:['Suena a un día intenso. Podemos simplificar una tarea y seguir de a poco.','Tomémoslo con calma. ¿Querés que te guíe con una tarea concreta?','No hace falta resolver todo ahora. Podemos empezar por algo sencillo.','Podemos ir paso a paso. ¿Te sirve revisar la agenda o preparar un descanso?','Te propongo elegir una sola cosa para ordenar. Vos decidís cuál.','Vamos sin apuro. Contame qué parte del trabajo querés simplificar.','Podemos dejar una propuesta preparada para que la revises con calma.','Un paso corto puede ayudar. ¿Vemos horarios o alguna consulta?','Te acompaño a hacer más simple la próxima tarea. ¿Con cuál seguimos?','Podemos bajar el ritmo y ordenar una cosa a la vez. Vos marcás el paso.'],
+ uncertainty:['Podemos elegir entre agenda, clientes o servicios. ¿Qué te gustaría ordenar primero?','Empecemos por una consulta sencilla. ¿Agenda o catálogo de servicios?','No hace falta tenerlo decidido. Contame qué parte del negocio querés revisar.','Te doy tres opciones: horarios, fichas de clientes o indicadores.','Vamos por partes. ¿Querés consultar algo o preparar un cambio para revisar?','Podemos empezar viendo qué información necesitás. ¿Turnos, clientes o servicios?','Elegí lo que más te simplifique el día: agenda, horarios o servicios.','Lo vemos juntos. ¿Hay una tarea concreta que te esté trabando?','Podemos ordenar una sola cosa primero. ¿Qué área te gustaría revisar?','Si querés, arrancamos con agenda o clientes. También podemos repasar servicios.'],
+ celebration:['¡Buenísimo! Seguimos al ritmo que te sirva.','¡Vamos arriba! ¿Seguimos con lo próximo?','Qué bueno que te sirva. Podemos continuar cuando quieras.','¡Excelente! Vos elegís el siguiente paso.','Seguimos así, una tarea a la vez.','¡Bien ahí! ¿Hay algo más que quieras revisar?','Qué bueno. Podemos seguir con otra consulta.','¡Buenísimo! Contame con qué continuamos.','Vamos paso a paso. ¿Qué vemos ahora?','¡Excelente! Acá estoy para lo que siga.']
+};
+/** Randomness affects wording only; memory is private to this conversation and is never persisted. */
+export function createSocialResponder(random:()=>number=Math.random,clock:()=>Date=()=>new Date()){
+ const recent=new Map<SocialIntent,number[]>();
+ return{reply(source:string,context:SocialContext={}):SocialReply|undefined{
+  const intent=socialIntent(source);if(!intent)return undefined;
+  const bank=socialBanks[intent==='resume'&&!context.pending?'open':intent],used=recent.get(intent)||[],candidates=bank.map((_,i)=>i).filter(i=>!used.includes(i));
+  const r=random(),index=candidates[Math.min(candidates.length-1,Math.max(0,Math.floor((Number.isFinite(r)?r:0)*candidates.length)))];recent.set(intent,[...used,index].slice(-Math.min(5,bank.length-1)));
+  const hour=context.hour??Number(new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',hour:'numeric',hourCycle:'h23'}).format(clock())),saludo=hour<12?'¡Buen día!':hour<20?'¡Buenas tardes!':'¡Buenas noches!';
+  let text=bank[index].replace('{saludo}',saludo);
+  if(context.pending&&intent!=='resume')text+=intent==='goodbye'?' Despedirnos no ejecuta lo que esté pendiente. Podés retomarlo mientras esta conversación siga abierta.':' La solicitud sigue en el punto en que la dejamos. Podemos retomarla cuando quieras.';
+  return{source,intent,text};
+ },clear(){recent.clear()}};
+}

@@ -1,3 +1,4 @@
+import {calendarDay,resolvePeriod} from './temporal';
 import {extractEntities} from './entities';
 import {intentRules,language} from './intent-catalogue';
 import {recognize} from './recognition';
@@ -7,13 +8,13 @@ export interface InstructionSeed {values:Values;references:Record<string,string>
 export interface InstructionStep {id:string;title:string;seed:InstructionSeed;enabled:boolean;effect:string;linkToPrevious?:'service'|'period'}
 export interface Clarification {question:string;choices:{label:string;steps:InstructionStep[]}[]}
 export interface Instruction {source:string;steps:InstructionStep[];notes:string[];clarification?:Clarification;understood:boolean}
-const weekdays=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
-export function dateOf(s:string,base:string){s=s.replace(/(?:de|por) la manana/g,'');const iso=s.match(/\b(\d{4}-\d{2}-\d{2})\b/);if(iso){const parsed=new Date(iso[1]+'T12:00:00Z');return !Number.isNaN(parsed.valueOf())&&parsed.toISOString().slice(0,10)===iso[1]?iso[1]:'';}if(/pasado manana/.test(s))return plusDate(base,2);if(/\bmanana\b/.test(s))return plusDate(base,1);if(/\bhoy\b/.test(s))return base;const day=weekdays.findIndex(w=>s.includes(w));if(day>=0){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,(day-current+7)%7)}if(/semana que viene|proxima semana/.test(s)){const current=new Date(base+'T12:00:00Z').getUTCDay();return plusDate(base,((8-current)%7)||7)}return''}
+export const dateOf=calendarDay;
 const hours:Record<string,number>={una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12};
 function clock(token:string,pm=false){const p=token.split(':'),h=hours[p[0]]??Number(p[0]),m=Number(p[1]||0);return Number.isInteger(h)&&h>=0&&h<24&&m>=0&&m<60?String(pm&&h<12?h+12:h).padStart(2,'0')+':'+String(m).padStart(2,'0'):''}
 const hourToken='(?:\\d{1,2}(?::\\d{2})?|una|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)';
 export function interpretInstruction(source:string,all:readonly Capability[],enabled:readonly Capability[],base=today()):Instruction{
  const s=language(source),notes:string[]=[],available=new Set(enabled.map(t=>t.id));
+ if(/\d\s*%/.test(s))return{source,steps:[],notes:['Entendí el porcentaje, pero los descuentos y promociones no tienen un contrato operativo homologado. No aplicaré cambios ni convertiré ese porcentaje en un precio.'],understood:false};
  if(source.length>500||/(?:^|;\s*|\sy\s+)(?:por favor )?(?:borra\w*|elimina\w*|destrui\w*|drop|truncate)\b/.test(s))return{source,steps:[],notes:['No automatizo eliminaciones. Usá los controles específicos del sistema.'],understood:false};
  // Facts alone do not specify creation vs editing. Keep them while asking for the action.
  const entities=extractEntities(source);
@@ -26,7 +27,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  const matched=intentRules.filter(rule=>rule.patterns.some(p=>p.test(s))).map(x=>x.id);
  let ids=[...new Set(matched)];
  if(/^(?:cuanto|cual|que precio|que duracion)/.test(s)&&ids.some(id=>id==='services.price'||id==='services.duration'))ids=['services.list'];
- if(/\b(?:falto|ausencia)\b/.test(s)&&!/(?:turno|cliente|profesional|vacaciones)/.test(s)){return{source,steps:[],notes:['Una ausencia de cliente y una ausencia del equipo tienen efectos distintos.'],understood:true,clarification:{question:'¿Faltó un cliente a su turno o no atiende un profesional?',choices:['bookings.no_show','schedule.absence'].map(id=>{const t=all.find(t=>t.id===id)!;return{label:t.title,steps:[{id,title:t.title,seed:{values:{},references:{}},enabled:available.has(id),effect:id==='bookings.no_show'?'Cambia el estado del turno elegido.':'Bloquea la disponibilidad del profesional elegido.'}]}})}}}
+ if(/\b(?:falto|ausencia|no vino)\b/.test(s)&&!/(?:turno|cliente|profesional|vacaciones)/.test(s)){return{source,steps:[],notes:['Una ausencia de cliente y una ausencia del equipo tienen efectos distintos.'],understood:true,clarification:{question:'¿Faltó un cliente a su turno o no atiende un profesional?',choices:['bookings.no_show','schedule.absence'].map(id=>{const t=all.find(t=>t.id===id)!;return{label:t.title,steps:[{id,title:t.title,seed:{values:{},references:{}},enabled:available.has(id),effect:id==='bookings.no_show'?'Cambia el estado del turno elegido.':'Bloquea la disponibilidad del profesional elegido.'}]}})}}}
 
  if(ids.includes('schedule.day')&&/semanal/.test(s))ids=ids.filter(id=>id!=='schedule.absence');
  if(ids.includes('services.create'))ids=ids.filter(id=>!['services.price','services.duration'].includes(id));
@@ -39,14 +40,15 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  if(!ids.length){const matches=recognize(source,[...all]);if(matches.length===1&&[matches[0].title,...matches[0].aliases].some(label=>language(label)===s||s.split(' ').filter(w=>w.length>3&&language(label).split(' ').includes(w)).length>=2))ids=[matches[0].id];else return{source,steps:[],notes:['No puedo resolver esa instrucción con certeza. Elegí una tarea disponible o describí una sola acción.'],understood:false}}
  const date=dateOf(s,base),steps=ids.flatMap(id=>{const tool=all.find(t=>t.id===id);if(!tool)return[];const values:Values={},references:Record<string,string>={};if(date){for(const key of ['date','new_date','day','start_day'])if(tool.fields.some(f=>f.key===key))values[key]=date}
  if(id==='schedule.absence'){
-  if(date)values.starts_at=date+'T00:00';
+  const period=resolvePeriod(source,base);if(period.values)Object.assign(values,period.values);
+  if(date&&!values.starts_at&&!period.question)values.starts_at=date+'T00:00';
   values.reason=/vacaciones/.test(s)?'Vacaciones':/almuerzo/.test(s)?'Almuerzo':/descans/.test(s)?'Descanso':'Ausencia';
-  if(date&&/no trabajo|no atiendo/.test(s)){values.starts_at=date+'T00:00';values.ends_at=plusDate(date,1)+'T00:00';notes.push('Propongo el día completo; revisá ambas fechas y el profesional antes de confirmar.')}
+  if(period.values)notes.push('Período de días calendario de Uruguay; la fecha final mostrada es el límite exclusivo. Revisá el profesional antes de confirmar.');if(period.question)notes.push(period.question);
   if(/\b(?:me |no trabajo|no atiendo|bloqueame|descanso)\b/.test(s))references.staff='@self';
  }
  if(id==='bookings.affected'&&date){values.starts_at=date+'T00:00';notes.push('La consulta de reservas afectadas no cancela ni reprograma ningún turno.')}
  if(id==='services.create'){
-  const name=source.match(/\bservicio(?: de)? (.+?)(?= de \d+| \d+\s*(?:minutos|min)\b| a \$| por \$|$)/i);if(name)values.name=name[1].trim();
+  const name=source.replace(/\bservis[i]?o\b/gi,'servicio').match(/\bservicio(?: de)? (.+?)(?= de \d+| \d+\s*(?:minutos|min)\b| a \$| por \$|$)/i);if(name&&!/^(?:nuevo|otro|por favor)$/.test(name[1].trim()))values.name=name[1].trim();
   const duration=s.match(/\b(\d{1,3})\s*(?:minutos|min)\b/);if(duration)values.duration_min=duration[1];
  }
  for(const [key,value]of Object.entries(entities))if(tool.fields.some(f=>f.key===key))values[key]=value;

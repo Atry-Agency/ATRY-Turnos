@@ -1,3 +1,4 @@
+import {normalizeLanguage} from './language';
 /** Extensible linguistic layer. IDs resolve only to existing, permission-filtered capabilities. */
 export const intentRules:{id:string;patterns:RegExp[]}[]=[
  {id:'services.list',patterns:[/\bque servicios\b/,/\b(?:ver|mostra|consulta).{0,20}servicio/,/\bcatalogo\b/]},
@@ -11,10 +12,10 @@ export const intentRules:{id:string;patterns:RegExp[]}[]=[
  {id:'customers.history',patterns:[/\bhistorial\b/]},
  {id:'customers.update',patterns:[/\b(?:edita|actualiza|cambia).{0,25}(?:cliente|ficha|contacto)\b/]},
  {id:'customers.search',patterns:[/\b(?:busca|consulta|ver|mostra).{0,20}cliente/]},
- {id:'bookings.no_show',patterns:[/\b(?:falto|falta|no vino|no asistio).{0,25}(?:turno|cliente)\b/,/\bcliente.{0,25}(?:falto|no vino|no asistio)/]},
+ {id:'bookings.no_show',patterns:[/\b(?:falto|falta|no vino|no asistio).{0,25}(?:turno|cliente)\b/,/\bcliente.{0,25}(?:falto|no vino|no asistio)/,/^.{1,50}\bno vino\b/]},
  {id:'schedule.read',patterns:[/\b(?:ver|mostra|consulta).{0,20}horarios?\b/]},
  {id:'schedule.day',patterns:[/\b(?:cambia|organiza|ajusta|configura).{0,25}horario/,/\b(?:horario|descanso|pausa) semanal\b/]},
- {id:'schedule.absence',patterns:[/\b(?:vacaciones|almuerzo|descanso|descansar|no trabajo|no atiendo|ausencia del profesional)\b/,/\bbloquea\w*.{0,30}(?:horario|manana|hoy)\b/]},
+ {id:'schedule.absence',patterns:[/\b(?:vacaciones|dias? libres?|almuerzo|descanso|descansar|no trabajo|no atiendo|ausencia del profesional)\b/,/\bbloquea\w*.{0,30}(?:horario|manana|hoy|de una|de \d)\b/]},
  {id:'schedule.exception',patterns:[/\b(?:abrimos|cerramos|abrir|cerrar).{0,30}(?:hasta|a las|desde)/]},
  {id:'bookings.availability',patterns:[/\b(?:horario|lugar|turno|hueco).{0,15}(?:libre|disponible)\b/]},
  {id:'bookings.affected',patterns:[/\breservas? afectadas?\b/,/\bturnos? afectados?\b/]},
@@ -27,4 +28,4 @@ export const intentRules:{id:string;patterns:RegExp[]}[]=[
  {id:'business.statistics',patterns:[/\b(?:estadisticas|indicadores|cancelaciones del mes)\b/,/\bcomo (?:va|viene|anda|esta).{0,20}(?:negocio|actividad)\b/]},
  {id:'business.summary',patterns:[/\bresumen.{0,20}negocio\b/]}
 ];
-export const language=(value:string)=>value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[¿?¡!]/g,'').replace(/\s+/g,' ').trim();
+export const language=normalizeLanguage;

@@ -6,7 +6,7 @@ buildSync({stdin:{contents:"export * from './frontend/react/src/iatry/v3/instruc
 let x=parse('Mañana descanso de una a dos');assert.equal(x.steps[0].id,'schedule.absence');assert.equal(x.clarification.choices[1].steps[0].seed.values.starts_at,'2026-10-27T13:00');assert.equal(x.clarification.choices[1].steps[0].seed.values.ends_at,'2026-10-27T14:00');
 assert.equal(parse('Descanso de una a dos de la mañana').steps[0].seed.values.starts_at,undefined);x=parse('Bloqueame el almuerzo');assert.equal(x.steps[0].id,'schedule.absence');assert.equal(x.steps[0].seed.values.starts_at,undefined);
 x=parse('No trabajo el viernes');assert.equal(x.steps[0].seed.values.starts_at,'2026-10-30T00:00');assert.equal(x.steps[0].seed.values.ends_at,'2026-10-31T00:00');
-x=parse('Me voy de vacaciones la semana que viene');assert.equal(x.steps[0].seed.values.starts_at,'2026-11-02T00:00');assert.equal(x.steps[0].seed.values.ends_at,undefined);
+x=parse('Me voy de vacaciones la semana que viene');assert.equal(x.steps[0].seed.values.starts_at,'2026-11-02T00:00');assert.equal(x.steps[0].seed.values.ends_at,'2026-11-09T00:00');
 x=parse('El jueves abrimos hasta las ocho');assert.equal(x.steps[0].id,'schedule.exception');assert.ok(x.clarification.choices.some(c=>c.steps[0].seed.values.end==='20:00'));
 x=parse('Juan faltó al turno');assert.equal(x.steps[0].id,'bookings.no_show');assert.equal(x.steps[0].seed.references.booking,'juan');assert.ok(parse('Juan faltó').clarification);
 x=parse('Agregame un servicio de barba de 20 minutos a $400');assert.equal(x.steps[0].id,'services.create');assert.deepEqual(x.steps[0].seed.values,{name:'barba',duration_min:'20',price_uyu:'400'});

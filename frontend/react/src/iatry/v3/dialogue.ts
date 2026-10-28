@@ -1,3 +1,4 @@
+import {voice} from './personality';
 import {type InstructionSeed,type InstructionStep} from './instructions';
 import {language} from './intent-catalogue';
 import {validate} from './validation';
@@ -10,13 +11,14 @@ export const displayValue=(key:string,value:unknown)=>{
  return key==='duration_min'?s+' minutos':key==='price_uyu'?'$ '+s:s;
 };
 export function missingField(tool:Capability,seed:InstructionSeed){return tool.fields.find(f=>f.required&&!Object.hasOwn(seed.values,f.key)&&!seed.references[f.key]);}
-export function localPrompt(tool:Capability,seed:InstructionSeed){const f=missingField(tool,seed);if(!f)return tool.kind==='read'?(tool.id==='business.statistics'?'Veamos cómo viene tu negocio. ¿Consultamos los números?':tool.id==='customers.search'?'Busquemos esa ficha. ¿Querés que la consulte?':tool.id==='services.list'?'¿Vemos los servicios de tu negocio?':'Ya tengo lo necesario. ¿Lo consultamos?'):'¡Listo! Te muestro cómo quedaría antes de hacer cambios.';
+function basePrompt(tool:Capability,seed:InstructionSeed){const f=missingField(tool,seed);if(!f)return tool.kind==='read'?(tool.id==='business.statistics'?'Veamos cómo viene tu negocio. ¿Consultamos los números?':tool.id==='customers.search'?'Busquemos esa ficha. ¿Querés que la consulte?':tool.id==='services.list'?'¿Vemos los servicios de tu negocio?':'Ya tengo lo necesario. ¿Lo consultamos?'):'¡Listo! Te muestro cómo quedaría antes de hacer cambios.';
  if(f.key==='name')return tool.id==='services.create'?'¡Dale! ¿Cómo se va a llamar?':tool.area==='Clientes'?'¿Cómo se llama el cliente?':'¿Qué nombre le ponemos?';
  if(tool.id==='services.create'&&['price_uyu','duration_min'].includes(f.key)&&!seed.values.price_uyu&&!seed.values.duration_min)return 'Perfecto. ¿Cuánto dura y cuánto cuesta?';
  const prompts:Record<string,string>={service:'¿Qué servicio querés ajustar?',customer:'¿De qué cliente hablamos?',staff:'¿Para qué profesional lo preparamos?',person:'¿Qué profesional querés consultar?',price_uyu:'¿Qué precio querés ponerle, en pesos?',duration_min:'¿Cuántos minutos dura?',starts_at:'¿Desde qué día y hora? Por ejemplo, 16/11/2026 a las 13:00.',ends_at:'¿Hasta qué día y hora?',q:'¿A qué cliente buscamos?',date:'¿Para qué fecha?',reason:'¿Qué motivo querés dejar anotado?'};
  return prompts[f.key]||f.label;
 }
-function dateTime(source:string){const iso=source.match(/\b(\d{4}-\d\d-\d\d)(?:T| a las | a la | a | )(\d{1,2}:\d\d)\b/);if(iso)return iso[1]+'T'+iso[2].padStart(5,'0');const local=source.match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})(?: a las | a la | a | )(\d{1,2}:\d\d)\b/);return local?local[3]+'-'+local[2].padStart(2,'0')+'-'+local[1].padStart(2,'0')+'T'+local[4].padStart(5,'0'):undefined;}
+export function localPrompt(tool:Capability,seed:InstructionSeed){return voice({state:missingField(tool,seed)?'question':'ready',tool,values:seed.values,question:basePrompt(tool,seed)});}
+function dateTime(raw:string){const source=language(raw);const iso=source.match(/\b(\d{4}-\d\d-\d\d)(?:[tT]| a las | a la | a | )(\d{1,2}:\d\d)\b/);if(iso)return iso[1]+'T'+iso[2].padStart(5,'0');const local=source.match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})(?: a las | a la | a | )(\d{1,2}:\d\d)\b/);return local?local[3]+'-'+local[2].padStart(2,'0')+'-'+local[1].padStart(2,'0')+'T'+local[4].padStart(5,'0'):undefined;}
 export function continueDialogue(tool:Capability,current:InstructionSeed,source:string):Dialogue{
  const seed=structuredClone(current),s=language(source),field=missingField(tool,seed);if(!source.trim()||source.length>500)return{seed,error:'Contame ese dato en una frase breve.'};
  const person=source.match(/^(?:para|profesional(?: es)?|con)\s+(.+)$/i);if(person&&tool.fields.some(f=>f.key==='staff')){seed.references.staff=person[1].trim();delete seed.values.staff;return{seed};}
