@@ -29,6 +29,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  if(/^(?:cuanto|cual|que precio|que duracion)/.test(s)&&ids.some(id=>id==='services.price'||id==='services.duration'))ids=['services.list'];
  if(/\b(?:falto|ausencia|no vino)\b/.test(s)&&!/(?:turno|cliente|profesional|vacaciones)/.test(s)){return{source,steps:[],notes:['Una ausencia de cliente y una ausencia del equipo tienen efectos distintos.'],understood:true,clarification:{question:'¿Faltó un cliente a su turno o no atiende un profesional?',choices:['bookings.no_show','schedule.absence'].map(id=>{const t=all.find(t=>t.id===id)!;return{label:t.title,steps:[{id,title:t.title,seed:{values:{},references:{}},enabled:available.has(id),effect:id==='bookings.no_show'?'Cambia el estado del turno elegido.':'Bloquea la disponibilidad del profesional elegido.'}]}})}}}
 
+ if(ids.includes('schedule.blocks'))ids=ids.filter(id=>id!=='schedule.absence');
  if(ids.includes('schedule.day')&&/semanal/.test(s))ids=ids.filter(id=>id!=='schedule.absence');
  if(ids.includes('services.create'))ids=ids.filter(id=>!['services.price','services.duration'].includes(id));
  if(ids.includes('bookings.availability'))ids=ids.filter(id=>id!=='bookings.create');

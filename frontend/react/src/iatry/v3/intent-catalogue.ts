@@ -3,6 +3,7 @@ import {normalizeLanguage} from './language';
 export const intentRules:{id:string;patterns:RegExp[]}[]=[
  {id:'services.list',patterns:[/\bque servicios\b/,/\b(?:ver|mostra|consulta).{0,20}servicio/,/\bcatalogo\b/]},
  {id:'services.create',patterns:[/\b(?:agrega|crea|nuevo|alta).{0,30}\bservicio\b/]},
+ {id:'services.details',patterns:[/\b(?:cambia|modifica|edita|renombra).{0,30}(?:nombre|descripcion).{0,30}servicio/,/\b(?:nombre|descripcion) del? servicio/]},
  {id:'services.price',patterns:[/\bprecio\b/,/\b(?:subi|baja|cobra).{0,35}\$\s*\d/]},
  {id:'services.duration',patterns:[/\b(?:duracion|dura|durara)\b/]},
  {id:'services.assign',patterns:[/\b(?:asigna|ofrece|ofrecen).{0,35}servicio/]},
@@ -13,6 +14,7 @@ export const intentRules:{id:string;patterns:RegExp[]}[]=[
  {id:'customers.update',patterns:[/\b(?:edita|actualiza|cambia).{0,25}(?:cliente|ficha|contacto)\b/]},
  {id:'customers.search',patterns:[/\b(?:busca|consulta|ver|mostra).{0,20}cliente/]},
  {id:'bookings.no_show',patterns:[/\b(?:falto|falta|no vino|no asistio).{0,25}(?:turno|cliente)\b/,/\bcliente.{0,25}(?:falto|no vino|no asistio)/,/^.{1,50}\bno vino\b/]},
+ {id:'schedule.blocks',patterns:[/\b(?:ver|mostra|consulta).{0,25}(?:bloqueos|ausencias|vacaciones)/]},
  {id:'schedule.read',patterns:[/\b(?:ver|mostra|consulta).{0,20}horarios?\b/]},
  {id:'schedule.day',patterns:[/\b(?:cambia|organiza|ajusta|configura).{0,25}horario/,/\b(?:horario|descanso|pausa) semanal\b/]},
  {id:'schedule.absence',patterns:[/\b(?:vacaciones|dias? libres?|almuerzo|descanso|descansar|no trabajo|no atiendo|ausencia del profesional)\b/,/\bbloquea\w*.{0,30}(?:horario|manana|hoy|de una|de \d)\b/]},

@@ -19,7 +19,8 @@
     "measure:postgres": "node scripts/measure-postgres.js",
     "build": "npm --prefix frontend/react run build",
     "dev:react": "npm --prefix frontend/react run dev",
-    "test:react": "npm --prefix frontend/react test"
+    "test:react": "npm --prefix frontend/react test",
+    "test:iatry-phase-one": "node scripts/react/iatry-phase-one-test.cjs && node scripts/react/iatry-phase-one-postgres.cjs"
   },
   "dependencies": {
     "@noble/hashes": "2.4.0",

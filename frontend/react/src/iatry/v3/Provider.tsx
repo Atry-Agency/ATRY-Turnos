@@ -10,7 +10,7 @@ const Help=lazy(()=>import('./CapabilityHelp').then(m=>({default:m.CapabilityHel
 const Panel=lazy(()=>import('./OperationalPanel').then(m=>({default:m.OperationalPanel})));
 export function V3Provider(props:IatryProps){
  const port=props.port,scope=port?.scope(),key=scopeKey(scope||null);
- const engine=useMemo(()=>port&&scope?createConversation(port,scope,capabilities,port.demo()?'demo':window.ATRY_CONFIG?.backend==='local'&&['localhost','127.0.0.1'].includes(location.hostname)?'local':'connected',()=>props.canOperate?.()??true):null,[port,key]);
+ const engine=useMemo(()=>port&&scope?createConversation(port,scope,capabilities,port.demo()?'demo':window.ATRY_CONFIG?.backend==='local'&&['localhost','127.0.0.1'].includes(location.hostname)?window.ATRY_CONFIG?.phaseOneLocal===true?'phase-one-local':'local':'connected',()=>props.canOperate?.()??true):null,[port,key]);
  const state=useSyncExternalStore(engine?.subscribe||(()=>()=>{}),engine?.snapshot||(()=>null));
  useEffect(()=>()=>engine?.dispose(),[engine]);
  useEffect(()=>{props.bindOperationGuard?.(()=>!engine?.busy());return()=>props.bindOperationGuard?.(null)},[engine,props.bindOperationGuard]);

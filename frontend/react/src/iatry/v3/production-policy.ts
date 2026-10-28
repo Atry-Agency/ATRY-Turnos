@@ -6,6 +6,7 @@ export const auditedReadTools=['services.list','team.list','customers.search','c
 // Filled only after normal-session, cloud-adapter, real-server validation. No write grants.
 export const verifiedProductionReads:readonly string[]=Object.freeze(['services.list','team.list','customers.search','customers.history','business.statistics']);
 export function productionAllowed(tool:Capability,ctx:Pick<ToolContext,'scope'|'environment'>){
+ if(ctx.environment==='phase-one-local'&&typeof window!=='undefined'&&(window.ATRY_CONFIG?.backend!=='local'||!['localhost','127.0.0.1'].includes(location.hostname)))return false;
  if(ctx.environment==='demo')return tool.kind==='read'&&verifiedProductionReads.includes(tool.id);
  if(!['connected','supabase-readonly'].includes(ctx.environment))return true;
  if(typeof window!=='undefined'&&window.ATRY_CONFIG?.supabaseUrl!==productionProject)return false;
@@ -14,6 +15,7 @@ export function productionAllowed(tool:Capability,ctx:Pick<ToolContext,'scope'|'
 }
 /** Defense in depth: the live engine cannot use a nominal GET to materialize recurring bookings. */
 export function assertProductionRead(tail:string,ctx:Pick<ToolContext,'scope'|'environment'>){
+ if(ctx.environment==='phase-one-local'){if(!(/^\/(services|staff|statistics|scheduling|time-off)$/.test(tail)||/^\/staff\/[A-Za-z0-9_-]+\/hours$/.test(tail)||/^\/customers(?:\?q=[^#]*|\/[A-Za-z0-9_-]+\/history)?$/.test(tail)))throw Error('Esta lectura queda fuera de la primera etapa local.');return;}
  if(!['connected','supabase-readonly','demo'].includes(ctx.environment))return;
  if((ctx.environment!=='demo'&&(ctx.scope.businessId!==validationBusiness||ctx.scope.role!=='owner'))||!(/^\/(services|staff|statistics)$/.test(tail)||/^\/customers(?:\?q=[^#]*|\/[A-Za-z0-9_-]+\/history)?$/.test(tail)))throw Error('Consulta pendiente de validación real. No se consultó Supabase.');
 }

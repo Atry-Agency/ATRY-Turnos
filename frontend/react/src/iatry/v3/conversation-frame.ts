@@ -72,6 +72,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  }
  if(frame.stopped)return{...frame,reply:'Esta solicitud quedó descartada. Empezá otra consulta para seguir.'};
  const draft:FrameDraft={toolId:working.toolId,memory:clone(working.memory)},currentTool=all.find(t=>t.id===draft.toolId)!,seed=projectFrame(draft,currentTool),f=missingField(currentTool,seed),correction=clean(source);
+ if(currentTool.id==='schedule.day'){const field=currentTool.fields.find(f=>f.key==='weekday'),value=Array.isArray(field?.options)?field.options.find(o=>language(o.label)===language(correction).replace(/^(?:el |era para el )/,'')):undefined;if(value){draft.memory.values.weekday=value.value;return propose(frame,draft,all);}}
  const person=correction.match(/^(?:es )?(?:para|profesional(?: es)?|cliente(?: es)?|con)\s+(.+)$/i),staffKey=currentTool.fields.find(f=>['staff','person','staff_id'].includes(f.key))?.key,customerKey=currentTool.fields.find(f=>['customer','customer_id'].includes(f.key))?.key;
  if(person){const name=person[1].trim().replace(/^(?:la |el )?(?:profesional|cliente)\s+/i,''),isStaff=/profesional/.test(correction),isCustomer=/cliente/.test(correction),keys=isStaff&&staffKey?[staffKey]:isCustomer&&customerKey?[customerKey]:[staffKey,customerKey].filter((k):k is string=>Boolean(k));
  if(keys.length>1)return{...frame,clarification:{question:'¿Hablás del cliente o del profesional?',choices:keys.map(key=>({label:key===staffKey?'Del profesional':'Del cliente',draft:{...clone(draft),memory:{values:Object.fromEntries(Object.entries(draft.memory.values).filter(([k])=>k!==key)),references:{...draft.memory.references,[key]:name}}}}))}};
@@ -93,7 +94,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  // Resolve date-only corrections in the context of the existing interval, preserving explicit hours.
  const contextDay=String(seed.values.starts_at||seed.values.date||seed.values.day||draft.memory.values.date||'').slice(0,10),anchor=/\b(?:lunes|martes|miercoles|jueves|viernes|sabado|domingo)\b/.test(s)&&/^\d{4}-\d\d-\d\d$/.test(contextDay)?contextDay:base;
  const day=dateOf(s,anchor),hasDate=/\b(?:hoy|ayer|manana|lunes|martes|miercoles|jueves|viernes|sabado|domingo)\b|\d{4}-\d\d-\d\d/.test(s),hasClock=/\d{1,2}:\d\d|\b(?:de|desde|hasta) (?:las? )?(?:\d|una|dos|tres)/.test(s);
- if(day&&hasDate&&!hasClock){
+ if(day&&hasDate&&!hasClock&&currentTool.fields.some(f=>['starts_at','date','day','new_date','start_day'].includes(f.key))){
   if(currentTool.fields.some(f=>f.key==='starts_at')){const from=String(seed.values.starts_at||''),to=String(seed.values.ends_at||'');
    if(!from&&!/hasta|fin|regreso/.test(s)){draft.memory.values.date=day;return{...draft,reply:'Ya tengo el día. ¿Desde qué hora y hasta qué hora lo preparamos?'};}
    if(from&&to&&from.slice(0,10)!==to.slice(0,10)&&!(from.slice(11)==='00:00'&&to.slice(11)==='00:00'&&Date.parse(to.slice(0,10))-Date.parse(from.slice(0,10))===86400000)&&!/(?:inicio|desde|regreso|hasta|fin)/.test(s)){return{...frame,clarification:{question:'¿Cambiamos el inicio o el regreso a esa fecha?',choices:[['El inicio','starts_at'],['El regreso','ends_at']].map(([label,key])=>({label,draft:{...clone(draft),memory:{...clone(draft.memory),values:{...draft.memory.values,[key]:day+'T'+String(seed.values[key]).slice(11,16)}}}}))}};}
@@ -108,7 +109,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  let independent=extractEntities(source);
  if(/^mejor \d{1,3}[.! ]*$/.test(s)){const keys=['duration_min','price_uyu'].filter(k=>draft.memory.values[k]!==undefined);if(keys.length!==1)return{...frame,reply:'¿Ese número es la duración en minutos o el precio en pesos?'};independent={[keys[0]]:s.match(/\d+/)![0]};}
  if(/^(?:ese|esa|eso)$/.test(s))return{...frame,reply:'¿Cuál exactamente? Decime el nombre para elegirlo sin confundirnos.'};
- if(independent.name&&f?.type==='select'&&typeof f.options==='function'&&Object.keys(independent).length===1){draft.memory.references[f.key]=String(independent.name);delete draft.memory.values[f.key];return propose(frame,draft,all);}
+ if(independent.name&&!currentTool.fields.some(f=>f.key==='name')&&f?.type==='select'&&typeof f.options==='function'&&Object.keys(independent).length===1){draft.memory.references[f.key]=String(independent.name);delete draft.memory.values[f.key];return propose(frame,draft,all);}
  if(Object.keys(independent).length){Object.assign(draft.memory.values,independent);return propose(frame,draft,all);}
  // A short answer is a field value only after intent/correction resolution, never before.
  const shortTime=s.match(/^(?:a las |desde |hasta )?(\d{1,2}:\d\d)$/i),answerText=shortTime&&contextDay&&f?.type==='datetime-local'?contextDay+'T'+shortTime[1].padStart(5,'0'):f&&['select','text','number'].includes(f.type)?correction:source;
