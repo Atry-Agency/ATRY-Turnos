@@ -13,7 +13,7 @@ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'iatry-consolidation-permissions-
  const ctx={port,scope:base,alive:()=>true,environment:'connected'};
  const ids=c=>s.capabilities.filter(t=>s.available(t,c)).map(t=>t.id).sort();
  assert.deepEqual(ids(ctx),expected);checks++;
- for(const role of ['owner','manager','staff'])for(const level of ['individual','negocio','pro']){plan=level;assert.equal(ids({...ctx,scope:{...base,role}}).length,role==='owner'&&level==='negocio'?17:0);checks++;}
+ for(const role of ['owner','manager','staff'])for(const level of ['individual','negocio','pro']){plan=level;assert.equal(ids({...ctx,scope:{...base,role}}).length,role==='owner'?(level==='individual'?16:17):0);checks++;}
  plan='negocio';
  assert.deepEqual(ids({...ctx,scope:{...base,accessEnabled:false}}),s.capabilities.filter(t=>expected.includes(t.id)&&t.kind==='read').map(t=>t.id).sort());checks++;
  assert.equal(ids({...ctx,alive:()=>false}).length,0);checks++;

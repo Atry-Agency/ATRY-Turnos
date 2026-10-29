@@ -49,11 +49,12 @@ async function probe(fetchImpl=fetch){
   const audit=assignment(text,'globalThis.ATRY_IATRY_BUILD=Object.freeze(',');');
   if(audit.project!==PROJECT)throw Error('WRONG_PROJECT');
   if(audit.understanding?.automaticExecution!==false)throw Error('UNSAFE_AUTOMATIC_EXECUTION');
-  if(audit.scope?.role!=='owner'||audit.scope?.plan!=='negocio')throw Error('UNEXPECTED_SCOPE');
+  if(audit.scope?.role!=='owner'||JSON.stringify(audit.scope?.plans)!==JSON.stringify(['individual','negocio','pro']))throw Error('UNEXPECTED_SCOPE');
   if(!Array.isArray(audit.reads)||!Array.isArray(audit.writes))throw Error('UNEXPECTED_TOOL_SCOPE');
   const enabled=[...audit.reads,...audit.writes];
   if(enabled.length!==APPROVED_TOOLS.length||new Set(enabled).size!==enabled.length||enabled.some(id=>!APPROVED_TOOLS.includes(id)))throw Error('UNEXPECTED_TOOL_SCOPE');
   if(audit.reads.length!==APPROVED_READS.length||audit.reads.some(id=>!APPROVED_READS.includes(id))||audit.writes.some(id=>APPROVED_READS.includes(id)))throw Error('UNEXPECTED_TOOL_ACCESS');
+  for(const plan of ['individual','negocio','pro']){const allowed=APPROVED_TOOLS.filter(id=>plan!=='individual'||id!=='business.statistics'),actual=audit.toolsByPlan?.[plan];if(!Array.isArray(actual)||actual.length!==allowed.length||new Set(actual).size!==actual.length||actual.some(id=>!allowed.includes(id)))throw Error('UNEXPECTED_PLAN_TOOLS');}
   if(JSON.stringify(audit.fieldRestrictions?.['customers.update'])!==JSON.stringify(['notes']))throw Error('UNSAFE_CUSTOMER_FIELDS');
   if(!Array.isArray(audit.publicDemo?.writes)||audit.publicDemo.writes.length)throw Error('UNSAFE_DEMO_WRITES');
  });

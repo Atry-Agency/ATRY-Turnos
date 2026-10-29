@@ -5,7 +5,7 @@ const base='https://atryturnos.com/';
 const tools=['services.list','services.create','services.price','services.duration','services.details','services.publish','services.hide','customers.create','customers.update','customers.search','customers.history','schedule.read','schedule.day','schedule.absence','schedule.blocks','team.list','business.statistics'];
 const reads=['services.list','customers.search','customers.history','schedule.read','schedule.blocks','team.list','business.statistics'];
 function fixture(overrides={}){
- const audit={project:'https://djoxdtloqwbrhgtgencc.supabase.co',understanding:{automaticExecution:false},scope:{role:'owner',plan:'negocio'},reads,writes:tools.filter(id=>!reads.includes(id)),fieldRestrictions:{'customers.update':['notes']},publicDemo:{writes:[]}};
+ const audit={project:'https://djoxdtloqwbrhgtgencc.supabase.co',understanding:{automaticExecution:false},scope:{role:'owner',plans:['individual','negocio','pro']},toolsByPlan:{individual:tools.filter(id=>id!=='business.statistics'),negocio:tools,pro:tools},reads,writes:tools.filter(id=>!reads.includes(id)),fieldRestrictions:{'customers.update':['notes']},publicDemo:{writes:[]}};
  return {...{
   'index.html':'<div id="root"></div><script type="module" crossorigin src="./assets/index-current.js"></script>',
   'runtime-config.js':'window.ATRY_CONFIG='+JSON.stringify({backend:'supabase',supabaseUrl:audit.project,supabaseKey:'sb_publishable_test'})+';',

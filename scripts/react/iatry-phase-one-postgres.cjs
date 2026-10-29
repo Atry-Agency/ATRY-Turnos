@@ -12,7 +12,7 @@ const adapter=createApiAdapter({auth:{client:{rpc}},config:{supabaseUrl:'https:/
 async function raw(name,args={}){const r=await rpc(name,args);if(r.error)throw Error(r.error.message);return r.data;}
 const mutation=c=>/^atry_(save|create|update|end)_/.test(c.name);
 await db.exec('BEGIN');await auth(1);await raw('atry_save_customer',{bid:'b1',customer_id:null,payload:{name:'Cliente local',email:'fixture@example.invalid',phone:'',notes:'Fixture privado',marketing_consent:0}});
-for(const plan of (process.env.ATRY_PHASE_ONE_CONNECTED==='1'?['negocio']:['individual','negocio','pro']))for(const [role,user]of (process.env.ATRY_PHASE_ONE_CONNECTED==='1'?[['owner',1]]:[['owner',1],['manager',4]])){
+for(const plan of (process.env.ATRY_PHASE_ONE_CONNECTED==='1'?['individual','pro']:['individual','negocio','pro']))for(const [role,user]of (process.env.ATRY_PHASE_ONE_CONNECTED==='1'?[['owner',1]]:[['owner',1],['manager',4]])){
 await db.exec('RESET ROLE;SAVEPOINT combination');await db.query("UPDATE businesses SET plan=$1,subscription_status='active',paid_until=now()+interval '1 year' WHERE id='b1'",[plan]);if(plan==='individual')await db.exec("UPDATE staff SET active=0 WHERE id='s2'");await auth(user);
 const business=await raw('atry_business',{bid:'b1'}),ent=await raw('atry_entitlements',{bid:'b1'});assert.equal(ent.staff_limit,{individual:1,negocio:4,pro:10}[plan]);if(plan==='individual')await assert.rejects(()=>raw('atry_statistics',{bid:'b1'}));
 let scope={userId:uid(user),businessId:'b1',role,sessionVersion:1,accessEnabled:true,sector:business.sector};const port={scope:()=>scope,business:()=>({...business,role,staff_id:'s1'}),privateEmployeeCatalog:()=>true,capability:k=>ent.features[k]===true,request:adapter.request};
