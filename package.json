@@ -23,7 +23,7 @@
     "test:iatry-phase-one": "node scripts/react/iatry-phase-one-test.cjs && node scripts/react/iatry-phase-one-postgres.cjs",
     "test:iatry-phase-one-release": "node scripts/react/iatry-phase-one-release-test.cjs && node scripts/react/iatry-phase-one-customer-safety-test.cjs && node scripts/react/iatry-phase-one-schedule-gate-test.cjs",
     "test:iatry-phase-one-contacts": "node scripts/react/iatry-phase-one-contact-test.cjs",
-    "test:iatry-consolidation": "node scripts/react/iatry-result-context-test.cjs && node scripts/react/iatry-plan-advisor-test.cjs && node scripts/react/iatry-consolidation-permissions-test.cjs"
+    "test:iatry-consolidation": "node scripts/react/iatry-result-context-test.cjs && node scripts/react/iatry-plan-advisor-test.cjs && node scripts/react/iatry-consolidation-permissions-test.cjs && node scripts/react/iatry-closeout-conversation-test.cjs && node scripts/react/iatry-closeout-permissions-test.cjs"
   },
   "dependencies": {
     "@noble/hashes": "2.4.0",

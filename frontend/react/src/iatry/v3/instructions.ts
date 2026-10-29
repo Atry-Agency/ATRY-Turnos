@@ -7,7 +7,7 @@ import type {Capability,Values} from './contracts';
 export interface InstructionSeed {values:Values;references:Record<string,string>}
 export interface InstructionStep {id:string;title:string;seed:InstructionSeed;enabled:boolean;effect:string;linkToPrevious?:'service'|'period'}
 export interface Clarification {question:string;choices:{label:string;steps:InstructionStep[]}[]}
-export interface Instruction {source:string;steps:InstructionStep[];notes:string[];clarification?:Clarification;understood:boolean}
+export interface Instruction {guidance?:string;source:string;steps:InstructionStep[];notes:string[];clarification?:Clarification;understood:boolean}
 export const dateOf=calendarDay;
 const hours:Record<string,number>={una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12};
 function clock(token:string,pm=false){const p=token.split(':'),h=hours[p[0]]??Number(p[0]),m=Number(p[1]||0);return Number.isInteger(h)&&h>=0&&h<24&&m>=0&&m<60?String(pm&&h<12?h+12:h).padStart(2,'0')+':'+String(m).padStart(2,'0'):''}
