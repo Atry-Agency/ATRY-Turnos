@@ -1,3 +1,4 @@
+import {isContextReference} from './references';
 import {voice} from './personality';
 import {type InstructionSeed,type InstructionStep} from './instructions';
 import {language} from './intent-catalogue';
@@ -30,6 +31,11 @@ export function continueDialogue(tool:Capability,current:InstructionSeed,source:
  if(price&&tool.fields.some(f=>f.key==='price_uyu'))updates.price_uyu=price[1].replace(/\.(?=\d{3}(?:[.,]|$))/g,'').replace(',','.');
  const rename=source.match(/(?:se (?:va a )?llama|nombre(?: es)?|llamalo(?: mejor)?)\s+(.+?)(?=,?\s+(?:y\s+)?(?:dura|cuesta|duracion|precio)\b|$)/i)||(field?.key==='name'?source.match(/^(.+?)(?:,\s*|\s+y\s+|\s+)(?:dura|cuesta)\b/i):null);
  if(rename&&tool.fields.some(f=>f.key==='name'))updates.name=rename[1].trim();
+ // A missing name can be supplied alongside labelled quantities; quantities alone are never names.
+ if(field?.key==='name'&&!updates.name&&(duration||price)){
+  const prefix=source.replace(/^(?:s[ií]|dale|bueno|ok)[,!\s]+/i,'').match(/^([^,;]+?)(?:[,;]\s*|\s+)(?=\$?\d+(?:[.,]\d+)?\s*(?:minutos?|min|pesos)\b|\$\s*\d)/i)?.[1]?.trim();
+  if(prefix&&/^[\p{L}]/u.test(prefix)&&!/[0-9$]/.test(prefix)&&!isContextReference(prefix)&&!/(?:dura|cuesta|precio|duracion|duración)$/i.test(prefix))updates.name=prefix;
+ }
  const instant=dateTime(source);if(instant){const key=/hasta|termina|regreso|fin/.test(s)?'ends_at':/desde|empieza|inicio/.test(s)?'starts_at':field?.key;if(key&&tool.fields.some(f=>f.key===key))updates[key]=instant;}
  if(!Object.keys(updates).length&&field){
   if(typeof field.options==='function'){seed.references[field.key]=source.trim();return{seed};}

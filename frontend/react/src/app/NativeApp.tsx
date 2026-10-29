@@ -35,7 +35,8 @@ export function NativeApp({model}:{model:ApplicationModel}){
  if(business?.role==='staff'&&!['agenda','comunicacion','cuenta','suscripcion'].includes(view))view='agenda';
  if(!routeAllowed(view,model.port.capability))view='suscripcion';
  if(business?.role==='owner'&&business.subscription_status==='pending'&&!snapshot.pendingRequests&&!['suscripcion','cuenta'].includes(view))view='suscripcion';
- if(snapshot.route==='/app'&&business&&!business.onboarding_completed&&business.role!=='staff'&&view!=='suscripcion')view='configuracion-inicial';
+ if(snapshot.route==='/app'&&business&&!business.onboarding_completed&&business.role==='owner'&&view!=='suscripcion')view='configuracion-inicial';
+ useEffect(()=>{if(snapshot.status!=='ready'||snapshot.route!=='/app/inicio'||business?.role!=='owner'||business.onboarding_completed||view==='suscripcion')return;const key='atry:welcome-entered:'+snapshot.identity?.user.id+':'+business.id;try{if(localStorage.getItem(key)==='1')return;localStorage.setItem(key,'1')}catch{}model.navigate('/app/configuracion-inicial')},[snapshot.status,snapshot.route,business?.id,business?.role,business?.onboarding_completed,view,model]);
  const previousView=useRef<{route:string;business:string;role:string;view:NativeView}|null>(null),previous=previousView.current;
  if(previous&&previous.route===snapshot.route&&previous.business===business?.id&&previous.role===business?.role&&previous.view!==view&&controller.current?.canRefresh?.()===false)view=previous.view;
  previousView.current=business?{route:snapshot.route,business:business.id,role:business.role,view}:null;

@@ -1,6 +1,6 @@
 import {normalizeLanguage} from './language';
-export type SocialIntent='greeting'|'thanks'|'goodbye'|'wellbeing'|'open'|'fatigue'|'uncertainty'|'celebration'|'resume';
-export interface SocialContext {pending?:boolean;hour?:number}
+export type SocialIntent='greeting'|'thanks'|'goodbye'|'wellbeing'|'open'|'fatigue'|'uncertainty'|'celebration'|'resume'|'frustration'|'mistake'|'finished';
+export interface SocialContext {pending?:boolean;hour?:number;name?:string;introduce?:boolean}
 export interface SocialReply {source:string;intent:SocialIntent;text:string}
 /** Social classification is anchored: a greeting must never swallow an operational instruction. */
 export function socialIntent(source:string):SocialIntent|undefined{
@@ -11,14 +11,20 @@ export function socialIntent(source:string):SocialIntent|undefined{
  if(/^(?:muchas |mil )?(?:gracias|te agradezco)(?: iatry| por la ayuda)?$/.test(s))return'thanks';
  if(/^(?:chau+|chao|adios+|hasta luego|hasta manana|nos vemos)(?: iatry)?$/.test(s))return'goodbye';
  if(/^(?:que hacemos hoy|que podemos hacer|que podes hacer|en que me podes ayudar|ayudame|necesito ayuda|por donde empezamos|que hago hoy)$/.test(s))return'open';
- if(/^(?:(?:estoy|toy|ando|me siento) (?:muy |re )?(?:cansad[oa]|agotad[oa])|que cansancio|no tengo energia)$/.test(s))return'fatigue';
+ if(/^(?:(?:estoy|toy|ando|me siento) (?:muy |re )?(?:cansad[oa]|agotad[oa])|que cansancio|que dia largo|fue un dia largo|no tengo energia)$/.test(s))return'fatigue';
  if(/^(?:no se que hacer|nose que hacer|no se por donde empezar|no entiendo|tengo dudas|estoy perdid[oa])$/.test(s))return'uncertainty';
+ if(/^(?:estoy frustrad[oa]|que frustracion|esto me supera|no me sale|no puedo con esto|que complicado|me esta costando|esto es un lio)$/.test(s))return'frustration';
+ if(/^(?:me equivoque|me confundi|cometi un error|perdon me equivoque|lo hice mal|pifie)$/.test(s))return'mistake';
+ if(/^(?:terminamos|por hoy terminamos|eso es todo|por hoy es todo|ya esta por hoy)$/.test(s))return'finished';
  if(/^(?:seguimos|sigamos|retomemos|retomar|continuemos|continuar)$/.test(s))return'resume';
  if(/^(?:genial|buenisimo|excelente|que bueno|me encanta|vamos arriba)$/.test(s))return'celebration';
  return undefined;
 }
 /** Extend banks without touching interpretation, authorization or execution. No human emotions claimed. */
 export const socialBanks:Record<SocialIntent,readonly string[]>={
+ frustration:['Vamos por partes. Contame qué se trabó y buscamos el siguiente paso.','No hace falta resolver todo de una. ¿Qué parte te está complicando?','Lo revisamos con calma. ¿Dónde dejaste de poder avanzar?','Podemos hacerlo más simple: una cosa a la vez. ¿Qué querés resolver primero?','Si algo no salió, revisemos ese paso antes de seguir.','Te acompaño a destrabarlo. Contame qué esperabas que pasara.','No tenés que adivinar cómo hacerlo. Decime qué necesitás conseguir.','Vamos a bajarlo a un paso concreto. ¿Qué parte revisamos?','Podemos volver sobre el detalle que falta, sin apurarnos.','Lo vemos juntos. ¿Es un dato, una propuesta o una consulta?'],
+ mistake:['No pasa nada. Decime qué querés corregir.','Lo revisamos. ¿Qué dato querés cambiar?','Podemos corregirlo con calma. Contame qué tendría que decir.','Gracias por avisar. ¿Cuál es el dato correcto?','Vamos a ajustar lo que haga falta. ¿Qué cambió?','Una corrección a tiempo ayuda. ¿Qué revisamos?','Seguimos desde acá. Decime qué querés dejar distinto.','Lo importante es revisarlo antes de confirmar. ¿Qué dato cambiamos?','Sin problema. Contame dónde está el error.','Vamos con la corrección. ¿Qué valor querés usar?'],
+ finished:['Buen trabajo por hoy. Cuando quieras, seguimos.','Cerramos por acá. Podés volver cuando necesites una mano.','De acuerdo. Seguimos otro día, a tu ritmo.','Hasta acá por hoy. Que siga bien tu jornada.','Podés dejarlo por acá y retomar cuando quieras.','Dejamos la conversación por acá. Gracias por trabajar con IAtry.','Vamos cerrando. Acá podés volver cuando lo necesites.','Bien por dedicarle este rato a tu negocio. Seguimos cuando quieras.','Por hoy, cerramos. Si surge algo más, me escribís.','De acuerdo. Un paso a la vez también cuenta.'],
  resume:['Retomamos la solicitud desde donde quedó.','Seguimos con la propuesta pendiente.','Volvemos al paso en el que estábamos.','Podemos retomar los datos que ya definimos.','La solicitud sigue disponible para continuar.','Seguimos paso a paso con la misma propuesta.','Retomamos sin cambiar los datos aceptados.','Continuamos con lo que ya veníamos preparando.','Volvemos a la propuesta que estabas revisando.','Seguimos con la solicitud, sin ejecutar nada todavía.'],
  greeting:['¡Hola! ¿En qué te doy una mano hoy?','¡Buenas! ¿Qué organizamos?','¡Hola! Podemos empezar por lo que más te simplifique el día.','¡Buenas! ¿Revisamos algo del negocio?','¡Hola! Contame qué necesitás resolver.','¡Buenas! ¿Vamos con una tarea a la vez?','¡Hola! Te acompaño a ordenar lo que necesites.','{saludo} ¿Por dónde querés empezar?','¡Hola! Podemos ver agenda, clientes o servicios.','¡Buenas! ¿Qué tenemos entre manos hoy?'],
  thanks:['De nada. Seguimos cuando quieras.','¡A las órdenes! Podemos seguir con lo que necesites.','Gracias a vos. ¿Seguimos con algo más?','Para eso estoy. Vos marcás el ritmo.','De nada. Si surge otra consulta, la vemos juntos.','¡A las órdenes! Vamos paso a paso.','De nada. Acá podés retomar cuando quieras.','Gracias a vos. Seguimos con calma.','De nada. ¿Hay algo más que quieras ordenar?','¡A las órdenes! Contá conmigo para la próxima tarea.'],
@@ -31,14 +37,17 @@ export const socialBanks:Record<SocialIntent,readonly string[]>={
 };
 /** Randomness affects wording only; memory is private to this conversation and is never persisted. */
 export function createSocialResponder(random:()=>number=Math.random,clock:()=>Date=()=>new Date()){
- const recent=new Map<SocialIntent,number[]>();
+ const recent=new Map<SocialIntent,number[]>();let introduced=false;
  return{reply(source:string,context:SocialContext={}):SocialReply|undefined{
   const intent=socialIntent(source);if(!intent)return undefined;
   const bank=socialBanks[intent==='resume'&&!context.pending?'open':intent],used=recent.get(intent)||[],candidates=bank.map((_,i)=>i).filter(i=>!used.includes(i));
   const r=random(),index=candidates[Math.min(candidates.length-1,Math.max(0,Math.floor((Number.isFinite(r)?r:0)*candidates.length)))];recent.set(intent,[...used,index].slice(-Math.min(5,bank.length-1)));
   const hour=context.hour??Number(new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',hour:'numeric',hourCycle:'h23'}).format(clock())),saludo=hour<12?'¡Buen día!':hour<20?'¡Buenas tardes!':'¡Buenas noches!';
   let text=bank[index].replace('{saludo}',saludo);
-  if(context.pending&&intent!=='resume')text+=intent==='goodbye'?' Despedirnos no ejecuta lo que esté pendiente. Podés retomarlo mientras esta conversación siga abierta.':' La solicitud sigue en el punto en que la dejamos. Podemos retomarla cuando quieras.';
+  const name=typeof context.name==='string'?context.name.trim().split(/\s+/)[0].replace(/[<>\r\n]/g,'').slice(0,40):'';
+  if(intent==='greeting'&&name)text=text.replace(/^(¡(?:Hola|Buenas|Buen día|Buenas tardes|Buenas noches))!/, '$1, '+name+'!');
+  if(intent==='greeting'&&context.introduce&&!introduced){text+=' Soy IAtry; te acompaño a organizar tu negocio, paso a paso.';introduced=true;}
+  if(context.pending&&intent!=='resume')text+=intent==='goodbye'?' Lo pendiente no se ejecutó por despedirnos. Podés retomarlo en esta conversación.':' La solicitud sigue en el punto en que la dejamos. Podemos retomarla cuando quieras.';
   return{source,intent,text};
- },clear(){recent.clear()}};
+ },clear(){recent.clear();introduced=false}};
 }

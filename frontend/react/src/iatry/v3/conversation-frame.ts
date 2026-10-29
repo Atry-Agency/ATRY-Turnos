@@ -11,7 +11,7 @@ import {language} from './intent-catalogue';
 import {today,plusDate} from '../../domain/format';
 import type {Capability} from './contracts';
 export type FrameDraft={toolId:string;memory:InstructionSeed};
-export type ConversationFrame=FrameDraft&{stopped?:boolean;reply?:string;pending?:{draft:FrameDraft;changes:{label:string;before:string;after:string}[]};clarification?:{question:string;choices:{label:string;draft:FrameDraft}[]}};
+export type ConversationFrame=FrameDraft&{correctionField?:string;stopped?:boolean;reply?:string;pending?:{draft:FrameDraft;changes:{label:string;before:string;after:string}[]};clarification?:{question:string;choices:{label:string;draft:FrameDraft}[]}};
 const clone=<T,>(v:T):T=>structuredClone(v);
 /** Semantic memory belongs to one action in one conversation, never to global/session storage. */
 export function createFrame(step:InstructionStep,source=''):ConversationFrame{return{toolId:step.id,memory:{values:{...extractEntities(source),...clone(step.seed.values)},references:clone(step.seed.references)}};}
@@ -112,11 +112,15 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  if(parsed.steps[0]?.seed.values.ends_at){Object.assign(draft.memory.values,Object.fromEntries(Object.entries(parsed.steps[0].seed.values).filter(([key])=>['starts_at','ends_at'].includes(key))));return propose(frame,draft,all);}}
  // A bare correction can target a single reference field; multiple candidates require clarification.
  if(correction!==source&&/^[a-záéíóúüñ][a-záéíóúüñ .'-]*$/i.test(correction)&&!hasDate){const references=currentTool.fields.filter(f=>f.type==='select'&&typeof f.options==='function');if(references.length===1){const key=references[0].key;draft.memory.references[key]=correction;delete draft.memory.values[key];return propose(frame,draft,all);}if(references.length>1)return{...frame,clarification:{question:'¿Qué dato querés corregir?',choices:references.map(f=>({label:f.label,draft:{...clone(draft),memory:{values:Object.fromEntries(Object.entries(draft.memory.values).filter(([key])=>key!==f.key)),references:{...draft.memory.references,[f.key]:correction}}}}))}};}
+ // A correction request identifies a field, but does not erase its accepted value.
+ const correctionRequest=s.match(/^(?:me equivoque|me confundi|hay un error|quiero corregir)(?: con| en)?(?: el| la)? (.+)$/);
+ if(correctionRequest){const terms=correctionRequest[1],matches=currentTool.fields.filter(field=>language(field.label).includes(terms)||({price_uyu:'precio',duration_min:'duracion',name:'nombre',email:'correo',phone:'telefono'}[field.key]===terms));if(matches.length===1)return{...frame,correctionField:matches[0].key,reply:'No pasa nada, lo revisamos. '+(matches[0].key==='price_uyu'?'¿Qué precio querés ponerle?':matches[0].key==='duration_min'?'¿Cuánto debería durar?':'¿Qué valor usamos para '+matches[0].label.toLowerCase()+'?')};}
+ if(frame.correctionField&&/^[0-9]+(?:[.,][0-9]+)?$/.test(s)){const field=currentTool.fields.find(field=>field.key===frame.correctionField);if(field?.type==='number'){const probe=continueDialogue({...currentTool,fields:[field]},{values:{},references:{}},source);if(probe.error)return{...frame,reply:probe.error};Object.assign(draft.memory.values,probe.seed.values);return propose(frame,draft,all);}}
  let independent=extractEntities(source);
  if(/^mejor \d{1,3}[.! ]*$/.test(s)){const keys=['duration_min','price_uyu'].filter(k=>draft.memory.values[k]!==undefined);if(keys.length!==1)return{...frame,reply:'¿Ese número es la duración en minutos o el precio en pesos?'};independent={[keys[0]]:s.match(/\d+/)![0]};}
  if(/^(?:ese|esa|eso)$/.test(s))return{...frame,reply:'¿Cuál exactamente? Decime el nombre para elegirlo sin confundirnos.'};
  if(independent.name&&!currentTool.fields.some(f=>f.key==='name')&&f?.type==='select'&&typeof f.options==='function'&&Object.keys(independent).length===1){draft.memory.references[f.key]=String(independent.name);delete draft.memory.values[f.key];return propose(frame,draft,all);}
- if(Object.keys(independent).length){Object.assign(draft.memory.values,independent);return propose(frame,draft,all);}
+ if(Object.keys(independent).length){if(f?.key==='name'){const named=continueDialogue(currentTool,seed,source);if(!named.error)Object.assign(draft.memory.values,named.seed.values);}Object.assign(draft.memory.values,independent);return propose(frame,draft,all);}
  // A short answer is a field value only after intent/correction resolution, never before.
  const shortTime=s.match(/^(?:a las |desde |hasta )?(\d{1,2}:\d\d)$/i),answerText=shortTime&&contextDay&&f?.type==='datetime-local'?contextDay+'T'+shortTime[1].padStart(5,'0'):f&&['select','text','number'].includes(f.type)?correction:source;
  const answer=continueDialogue(currentTool,seed,answerText);if(answer.error)return{...frame,reply:answer.error};

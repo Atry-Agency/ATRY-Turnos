@@ -9,9 +9,9 @@ export function voice(c:VoiceContext):string{
  case 'question':
   if(family==='services'&&c.tool?.kind==='create'){
    if(!v.name)return pick(['Vamos con ese servicio nuevo. ','Le damos un lugar en tu catálogo. '],c)+q;
-   if(!v.duration_min&&!v.price_uyu)return 'Vamos con '+name+'. ¿Cuánto dura y qué precio le ponemos?';
-   if(!v.duration_min)return 'Ya tengo el precio'+(name?' de '+name:'')+'. ¿Cuántos minutos dura?';
-   if(!v.price_uyu)return 'La duración ya está. ¿Qué precio le ponemos, en pesos?';
+   if((v.duration_min===undefined||v.duration_min==='')&&(v.price_uyu===undefined||v.price_uyu===''))return 'Vamos con '+name+'. ¿Cuánto dura y qué precio le ponemos?';
+   if(v.duration_min===undefined||v.duration_min==='')return 'Ya tengo el precio'+(name?' de '+name:'')+'. ¿Cuántos minutos dura?';
+   if(v.price_uyu===undefined||v.price_uyu==='')return 'La duración ya está. ¿Qué precio le ponemos, en pesos?';
   }
   if(family==='customers'&&c.tool?.kind==='create')return (name?'Seguimos con la ficha de '+name+'. ':'Armemos la ficha del cliente. ')+q;
   if(family==='schedule')return pick(['Vamos a ordenar ese tiempo en tu agenda. ','Dejemos ese período bien definido. '],c)+q;

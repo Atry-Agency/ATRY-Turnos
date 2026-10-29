@@ -1,0 +1,88 @@
+/* IAtry hosts setup using the same restrained surfaces as the operational chat. */
+.iatry-welcome{width:min(100%,760px);margin:0 auto;padding:20px 4px 28px;min-width:0;color:var(--ink,#202c50);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.iatry-welcome *,.welcome-resume *{box-sizing:border-box}
+.welcome-host{display:flex;align-items:center;gap:22px;margin:0 0 24px}
+.welcome-orb{--iatry-size:80px;flex:0 0 80px;width:80px;height:80px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center}
+.welcome-orb>.iatry-avatar{width:80px;height:80px;flex-shrink:0}
+.welcome-copy{flex:1;min-width:0}
+.welcome-copy .eyebrow{font-family:inherit;font-size:11px;letter-spacing:.09em;font-weight:600;color:#6976a6}
+.iatry-welcome .welcome-copy h1{margin:7px 0 9px;font-family:inherit;font-size:clamp(25px,3.4vw,34px);line-height:1.17;font-weight:650;letter-spacing:-.045em;text-wrap:balance}
+.iatry-welcome p{margin:0;font-size:14px;line-height:1.6;color:#68738e;text-wrap:pretty}
+.welcome-progress{margin:0 0 18px}
+.welcome-progress-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px;font-size:12px;line-height:1.4;color:#6d7892}
+.welcome-progress progress{display:block;appearance:none;-webkit-appearance:none;width:100%;height:5px;border:0;border-radius:8px;overflow:hidden;background:#e9ecf5;color:#6874e7}
+.welcome-progress progress::-webkit-progress-bar{background:#e9ecf5;border-radius:8px}
+.welcome-progress progress::-webkit-progress-value{background:linear-gradient(90deg,#5765df,#71b4e0);border-radius:8px;transition:width .25s ease}
+.welcome-progress progress::-moz-progress-bar{background:linear-gradient(90deg,#5765df,#71b4e0);border-radius:8px}
+.welcome-next{display:flex;align-items:flex-start;gap:16px;padding:23px;border:1px solid #e4e8f1;border-radius:24px;background:linear-gradient(125deg,#fff 45%,#f5f6ff);box-shadow:0 7px 25px #25336505;margin:0 0 13px;min-width:0}
+.welcome-next>div:not(.welcome-next-icon){flex:1;min-width:0}
+.welcome-next-icon{flex:0 0 43px;display:grid;place-items:center;width:43px;height:43px;background:#eff1fc;border-radius:14px;color:#6371d3}
+.welcome-next-icon svg{width:22px;height:22px;stroke-width:1.7}
+.iatry-welcome :is(.welcome-next,.welcome-review,.welcome-success) h2{font-family:inherit;font-size:18px;line-height:1.3;letter-spacing:-.025em;font-weight:620;margin:0 0 8px}
+.welcome-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:16px}
+.iatry-welcome .btn{font-family:inherit;font-size:13px;font-weight:550;min-height:44px;border-radius:13px;padding:10px 15px;line-height:1.4;white-space:normal;transition:background .16s ease,box-shadow .16s ease;max-width:100%}
+.iatry-welcome .btn.secondary{background:#fff;border:1px solid #e1e5ef;color:#65718c;box-shadow:none}
+.iatry-welcome .btn.secondary:hover{background:#f6f7fb;color:#35436c}
+.iatry-welcome :is(button,a,input):focus-visible,.welcome-resume a:focus-visible{outline:2px solid #6b76de;outline-offset:3px}
+.welcome-composer{display:flex;align-items:center;gap:8px;min-width:0;margin:12px 0 20px;padding:5px 6px 5px 17px;background:#fff;border:1px solid #e0e5ef;border-radius:24px;box-shadow:0 2px 8px #25336503}
+.welcome-composer:focus-within{border-color:#a4aee2;box-shadow:0 0 0 3px #6874e70b}
+.iatry-welcome .welcome-composer input{flex:1;min-width:0;width:100%;min-height:42px;margin:0;padding:7px 0;border:0;border-radius:0;background:transparent;box-shadow:none;font-family:inherit;font-size:16px;color:#344464;outline:0}
+.welcome-composer input::placeholder{font-size:13px;color:#8792a9}
+.welcome-composer button{flex:0 0 42px;width:42px;height:42px;min-height:42px;padding:0;border:0;border-radius:50%;display:grid;place-items:center;background:#5963df;color:white;cursor:pointer}
+.welcome-composer button:disabled{opacity:.4;cursor:default}
+.welcome-composer button svg{width:19px;height:19px}
+.welcome-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 20px}
+.welcome-task{display:flex;align-items:center;gap:12px;text-align:left;width:100%;min-width:0;min-height:80px;padding:15px;background:#ffffffb8;border:1px solid #e7eaf2;border-radius:17px;color:inherit;font-family:inherit;cursor:pointer;transition:background .16s ease,border-color .16s ease}
+.welcome-task:hover{background:#fff;border-color:#cdd4e8}
+.welcome-task:active{background:#f4f6fc}
+.welcome-task.is-current{background:#f7f8ff;border-color:#d5daf2}
+.welcome-task-number{flex:0 0 28px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#edf0f8;font-size:11px;font-weight:600;color:#7b85a1}
+.welcome-task-number svg{width:15px;height:15px}
+.welcome-task.is-complete .welcome-task-number{background:#e9f4f0;color:#3c8d76}
+.welcome-task.is-current .welcome-task-number{background:#e9ecff;color:#606ed5}
+.welcome-task-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.welcome-task-copy strong{font-size:13px;font-weight:600;line-height:1.4;color:#3c4967}
+.welcome-task-copy small{font-size:11px;line-height:1.5;color:#8790a5;overflow-wrap:anywhere}
+.welcome-review,.welcome-success{padding:22px;border:1px solid #e4e8f1;border-radius:20px;background:#fff;margin-top:16px}
+.iatry-welcome .checkline{display:flex;align-items:flex-start;gap:9px;margin-top:16px;font-size:12px;line-height:1.55;color:#66738c}
+.iatry-welcome .checkline input{flex-shrink:0;width:17px;height:17px;margin:1px 0 0;accent-color:#5d6bd9}
+.welcome-success{background:linear-gradient(120deg,#fff,#f4f7fc)}
+.welcome-success>svg{width:27px;height:27px;color:#438f7b;margin-bottom:12px}
+.iatry-welcome .welcome-reassurance{font-size:11px;line-height:1.65;color:#8b94a8;margin:15px 3px 0}
+.welcome-resume{display:flex;align-items:center;gap:13px;padding:14px 17px;margin:0 0 20px;border:1px solid #e4e8f1;border-radius:18px;background:#ffffffc4;font-family:system-ui,-apple-system,sans-serif;min-width:0}
+.welcome-resume .iatry-avatar{--iatry-size:42px;width:42px;height:42px;flex:0 0 42px}
+.welcome-resume>div{flex:1;min-width:0}
+.welcome-resume strong{display:block;font-size:13px;line-height:1.4;font-weight:600;color:#3b4869}
+.welcome-resume p{font-size:12px;line-height:1.5;color:#7c879f;margin:3px 0 0}
+.welcome-resume a{font-size:12px;line-height:1.5;font-weight:550;color:#5d6bd0;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:7px 0;flex-shrink:0}
+.welcome-resume a:hover{text-decoration:underline;text-underline-offset:3px}
+.welcome-loading{padding:35px 5px;font-size:13px;color:#7e89a1}
+@media(max-width:600px){
+ .iatry-welcome{padding:10px 0 max(20px,env(safe-area-inset-bottom));max-width:100%}
+ .welcome-host{gap:15px;margin-bottom:20px;align-items:flex-start}
+ .welcome-orb,.welcome-orb>.iatry-avatar{--iatry-size:60px;width:60px;height:60px;flex-basis:60px}
+ .iatry-welcome .welcome-copy h1{font-size:25px;margin-top:5px}
+ .welcome-copy .eyebrow{font-size:10px;letter-spacing:.06em}
+ .iatry-welcome p{font-size:13px;line-height:1.55}
+ .welcome-next{padding:18px 16px;gap:12px;border-radius:20px}
+ .welcome-next-icon{width:35px;height:35px;flex-basis:35px;border-radius:12px}
+ .welcome-next-icon svg{width:19px;height:19px}
+ .iatry-welcome .welcome-next h2{font-size:17px}
+ .welcome-checklist{gap:8px}
+ .welcome-task{padding:12px 10px;gap:8px;align-items:flex-start;min-height:86px;border-radius:15px}
+ .welcome-task-number{width:23px;height:23px;flex-basis:23px;font-size:10px}
+ .welcome-task-copy strong{font-size:12px}
+ .welcome-task-copy small{font-size:10px}
+ .welcome-composer{margin-bottom:16px;padding-left:13px}
+ .welcome-composer button{width:44px;height:44px;flex-basis:44px}
+ .welcome-review,.welcome-success{padding:18px 16px}
+ .welcome-resume{padding:12px;gap:10px;flex-wrap:wrap}
+ .welcome-resume a{margin-left:52px;min-height:36px;padding:3px 0}
+}
+@media(max-width:350px){.welcome-checklist{grid-template-columns:minmax(0,1fr)}.welcome-task{min-height:66px}.welcome-host{gap:12px}.welcome-orb,.welcome-orb>.iatry-avatar{--iatry-size:48px;width:48px;height:48px;flex-basis:48px}}
+@media(prefers-reduced-motion:reduce){.iatry-welcome *,.welcome-resume *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.iatry-welcome[data-motion-off] *,.welcome-resume[data-motion-off] *{animation:none!important;transition:none!important}
+
+.iatry-welcome .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+
+.welcome-overview{margin:22px 0 14px;border-top:1px solid #e7eaf2;padding-top:17px}.welcome-overview>summary{display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer;font-size:13px;font-weight:600;min-height:40px;color:#414d70;list-style:none}.welcome-overview>summary:after{content:'+';font-size:20px;font-weight:400;color:#6b75a0}.welcome-overview[open]>summary:after{content:'−'}.welcome-overview>summary>span{margin-left:auto;color:#8590a9;font-size:11px;font-weight:400}.welcome-overview .welcome-checklist{margin:12px 0 0}.welcome-review>summary{cursor:pointer;list-style:none;min-height:36px;display:flex;align-items:center;justify-content:space-between;gap:12px}.welcome-review>summary:after{content:'+';font-size:20px;color:#6b75a0}.welcome-review[open]>summary:after{content:'−'}.welcome-review>summary h2{margin:0}.welcome-review[open]>summary{margin-bottom:12px}.welcome-resume>div>span{display:block;font-size:12px;line-height:1.5;color:#7c879f;margin-top:3px}.welcome-host,.welcome-next{animation:welcome-arrive .38s cubic-bezier(.2,.7,.3,1) both}.welcome-next{animation-delay:70ms}@keyframes welcome-arrive{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
