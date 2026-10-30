@@ -1,0 +1,19 @@
+import type {ReactNode} from 'react';
+import {calendarInstant,type CalendarBooking} from './event';
+import './calendar.css';
+import {bookingLocation,locationText,directionsUrl,coordinates} from '../location/model';
+import {CalendarIcon} from './CalendarIcon';
+/** One presentation for the public receipt and the local design review. */
+export function ReservationSummary({booking:b,businessIdentity,professionalAvatar}:{booking:CalendarBooking;businessIdentity?:ReactNode;professionalAvatar?:ReactNode}){
+ const start=calendarInstant(b.starts_at),end=b.ends_at?calendarInstant(b.ends_at):null;
+ const format=(date:Date,options:Intl.DateTimeFormatOptions)=>new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',...options}).format(date);
+ const location=bookingLocation(b),address=!b.business_address&&location.location_kind==='physical'&&coordinates(location)?'Ubicación exacta del negocio':locationText(location),directions=directionsUrl(location,b.status);
+ const point=location.location_kind==='physical'&&b.status==='confirmed'&&coordinates(location)?{latitude:location.latitude!,longitude:location.longitude!}:null;
+ const nextDay=Boolean(start&&end&&format(start,{dateStyle:'short'})!==format(end,{dateStyle:'short'}));
+ return <div className="calendar-reservation-summary">
+  <div className="calendar-editorial-top"><div><span className="calendar-detail-label">TU TURNO</span><div className="calendar-reservation-business">{b.business_name||'Tu negocio'}</div><h2>{b.service_name||'Tu servicio'}</h2>{b.staff_name&&<p className="calendar-reservation-professional">{professionalAvatar||<span className="calendar-professional-avatar" aria-hidden="true"><CalendarIcon name="user"/></span>}con {b.staff_name}</p>}</div><div className="calendar-editorial-empty">{businessIdentity}</div></div>
+  {start&&<div className="calendar-reservation-schedule"><div className="calendar-date-tile"><span><CalendarIcon name="calendar"/>{format(start,{month:'short'}).replace('.','')}</span><strong>{format(start,{day:'2-digit'})}</strong><span>{format(start,{weekday:'long'})}</span></div><div className="calendar-time-details"><span className="calendar-detail-label"><CalendarIcon name="clock"/>HORARIO<span className="calendar-accessible-only"> · {format(start,{year:'numeric'})}</span></span><strong>{format(start,{hour:'2-digit',minute:'2-digit',hourCycle:'h23'})}{end&&<> <span className="calendar-time-dash">—</span> {format(end,{hour:'2-digit',minute:'2-digit',hourCycle:'h23'})}</>}</strong><span>{nextDay&&<span className="calendar-overnight" title="Finaliza al día siguiente">+1 día</span>}<span className="calendar-zone">Hora de Uruguay</span></span></div></div>}
+  {address&&<div className="calendar-location-section"><CalendarIcon name="pin"/><div><span className="calendar-location-label">{location.location_kind==='at_home'?'MODALIDAD':location.location_kind==='physical'?'UBICACIÓN':'UBICACIÓN DEL NEGOCIO'}</span><p className="calendar-reservation-location">{address}</p>{directions&&<a className="calendar-directions" href={directions} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">Cómo llegar <CalendarIcon name="navigation"/></a>}</div></div>}
+  {point&&<div className="calendar-map-strip"><div className="calendar-map-window"><iframe inert tabIndex={-1} className="calendar-location-map" title="Mapa de la ubicación del negocio" loading="lazy" referrerPolicy="no-referrer" src={'https://www.openstreetmap.org/export/embed.html?bbox='+[Math.max(-180,point.longitude-.004),Math.max(-90,point.latitude-.002),Math.min(180,point.longitude+.004),Math.min(90,point.latitude+.002)].join('%2C')+'&layer=mapnik'}/></div><a className="calendar-map-credit" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap</a></div>}
+ </div>
+}

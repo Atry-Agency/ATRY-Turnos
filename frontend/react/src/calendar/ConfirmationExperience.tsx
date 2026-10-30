@@ -1,0 +1,10 @@
+import {useState,type ReactNode} from 'react';
+import {AddToCalendar} from './AddToCalendar';
+import {ReservationSummary} from './ReservationSummary';
+import type {CalendarBooking} from './event';
+import './confirmation.css';
+export function ConfirmationExperience({booking,logo,mode='light',avatar,management,children}:{booking:CalendarBooking;logo?:string;mode?:string;avatar?:ReactNode;management:string;children?:ReactNode}){
+ const [logoFailed,setLogoFailed]=useState(false),confirmed=booking.status==='confirmed',cancelled=booking.status==='cancelled';
+ const safeLogo=typeof logo==='string'&&/^(https:\/\/|blob:|data:image\/(?:png|jpeg|webp);|\/[^/]|\.\/)/i.test(logo)?logo:'';
+ return <div className="premium-confirmation-shell" data-theme={mode==='dark'?'dark':'light'}><main className="premium-confirmation" data-theme={mode==='dark'?'dark':'light'}><header><a href="#/" aria-label="ATRY Turnos, inicio">ATRY TURNOS</a></header><section><div className="confirmation-intro"><span className="status" data-status={booking.status}>{confirmed?'TU RESERVA ESTÁ CONFIRMADA':cancelled?'RESERVA CANCELADA':'PENDIENTE DE CONFIRMACIÓN'}</span><h1>{confirmed?'Todo listo para tu próxima visita.':cancelled?'Tu reserva fue cancelada.':'Tu solicitud está en camino.'}</h1><p className="intro">{confirmed?<>Te esperamos en {booking.business_name}.<br/>Aquí tenés los detalles de tu turno.</>:cancelled?'Podés consultar los detalles de tu reserva.':'El negocio debe confirmar tu turno.'}</p></div><article className="receipt"><ReservationSummary booking={booking} professionalAvatar={avatar} businessIdentity={safeLogo&&!logoFailed?<img className="calendar-commerce-logo" src={safeLogo} alt={'Logotipo de '+booking.business_name} onError={()=>setLogoFailed(true)}/>:undefined}/></article><AddToCalendar booking={booking} expanded/><a className="calendar-done" href={management}>Listo, gracias <span aria-hidden="true">→</span></a><details className="confirmation-management"><summary>Detalles y enlace de tu reserva</summary>{children}</details></section></main></div>
+}
