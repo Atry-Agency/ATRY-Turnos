@@ -34,6 +34,6 @@ export default defineConfig({
   res.end(readFileSync(file));
  });},closeBundle(){const target=resolve(import.meta.dirname,'dist/assets');mkdirSync(target,{recursive:true});cpSync(resolve(web,'assets'),target,{recursive:true});finalize(resolve(import.meta.dirname,'dist'));}}],
  define:{'process.env.NODE_ENV':JSON.stringify('production')},
- build:{minify:true,rollupOptions:{input:{app:resolve(import.meta.dirname,'index.html'),landing:resolve(import.meta.dirname,'descubrir.html'),...(process.env.ATRY_COMPARISON_BUILD==='1'?{pilot:resolve(import.meta.dirname,'src/pilot.tsx')}:{})},output:{entryFileNames:chunk=>chunk.name==='pilot'?'pilot.js':'assets/[name]-[hash].js',chunkFileNames:'[name]-[hash].js'}},outDir:'dist',emptyOutDir:true},
+ build:{minify:true,rollupOptions:{input:{app:resolve(import.meta.dirname,'index.html'),landing:resolve(import.meta.dirname,'descubrir.html'),security:resolve(import.meta.dirname,'seguridad.html'),...(process.env.ATRY_COMPARISON_BUILD==='1'?{pilot:resolve(import.meta.dirname,'src/pilot.tsx')}:{})},output:{entryFileNames:chunk=>chunk.name==='pilot'?'pilot.js':'assets/[name]-[hash].js',chunkFileNames:'[name]-[hash].js'}},outDir:'dist',emptyOutDir:true},
  server:{host:'127.0.0.1',port:3321,strictPort:true,fs:{strict:true,allow:[resolve(import.meta.dirname),web,resolve(import.meta.dirname,'../../cloud')]}},
 });
