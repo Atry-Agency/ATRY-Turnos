@@ -163,3 +163,35 @@ button.is-refreshing>.i-refresh{animation:atry-refresh-turn .85s linear infinite
 :root .table.waitlist-table td .waitlist-status{justify-content:center;vertical-align:middle}
 :root .table.waitlist-table td .tiny{margin-top:3px;line-height:1.5}
 @media(max-width:760px){:root .table.waitlist-table td::before{text-align:center}:root .table.waitlist-table td>.actions{justify-content:center}}
+.waitlist-explainer{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding:12px 14px;border-radius:13px;background:var(--surface2);color:var(--muted);font-size:12px;line-height:1.6}
+.waitlist-explainer>span{flex:1;min-width:0}
+.waitlist-explainer>button{display:grid;place-items:center;flex:0 0 36px;min-height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--accent);cursor:pointer}
+.waitlist-explainer>button .i{width:18px;height:18px}
+.waitlist-explainer>button:hover{background:var(--surface)}
+.waitlist-explainer>button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@container workspace (max-width:760px){
+ :root [data-react-waitlist]:has(.waitlist-table){padding:0;border:0;background:transparent;box-shadow:none}
+ :root [data-react-waitlist]>.scroll-x{overflow:visible}
+ :root .table.waitlist-table,:root .table.waitlist-table tbody{display:block;width:100%;min-width:0!important}
+ :root .table.waitlist-table thead{display:none}
+ :root .table.waitlist-table tbody{display:grid;gap:12px}
+ :root .table.waitlist-table tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:13px 16px;padding:17px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 4px 12px #26324d05}
+ :root .table.waitlist-table tr:last-child{border-bottom:1px solid var(--line)}
+ :root .table.waitlist-table td{display:block;min-width:0;padding:0!important;border:0!important;text-align:left;overflow-wrap:anywhere}
+ :root .table.waitlist-table td::before{content:attr(data-label);display:block;margin-bottom:5px;text-align:left;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-size:9px;line-height:1.4}
+ :root .table.waitlist-table td:nth-child(1){grid-column:1;grid-row:1}
+ :root .table.waitlist-table td:nth-child(1) strong{font-size:15px;line-height:1.4}
+ :root .table.waitlist-table td:nth-child(1) .tiny:empty{display:none}
+ :root .table.waitlist-table td:nth-child(2){grid-column:1/-1;grid-row:2;margin-top:-8px;font-size:12px;color:var(--muted)}
+ :root .table.waitlist-table td:nth-child(3){grid-column:1;grid-row:3;font-size:13px}
+ :root .table.waitlist-table td:nth-child(4){grid-column:2;grid-row:3;font-size:13px;text-align:right}
+ :root .table.waitlist-table td:nth-child(4)::before{text-align:right}
+ :root .table.waitlist-table td:nth-child(5){grid-column:2;grid-row:1;align-self:start;text-align:right}
+ :root .table.waitlist-table td:nth-child(6){grid-column:1/-1;grid-row:4;padding-top:12px!important;border-top:1px solid var(--line)!important}
+ :root .table.waitlist-table td:nth-child(1)::before,:root .table.waitlist-table td:nth-child(2)::before,:root .table.waitlist-table td:nth-child(5)::before,:root .table.waitlist-table td:nth-child(6)::before{display:none}
+ :root .table.waitlist-table td>.actions{justify-content:flex-end;gap:8px;flex-wrap:wrap}
+ :root .table.waitlist-table .waitlist-status{font-size:10px;padding:5px 8px;gap:5px}
+ :root .table.waitlist-table .waitlist-status i{width:5px;height:5px;flex-basis:5px}
+ :root .table.waitlist-table .btn{min-height:40px;white-space:normal;font-size:11px}
+ .waitlist-explainer{font-size:11px;padding:9px 12px;margin-bottom:14px;background:transparent;border:1px solid var(--line)}
+}
