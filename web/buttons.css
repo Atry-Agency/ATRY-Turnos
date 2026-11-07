@@ -48,3 +48,13 @@
 .customer-profile-actions{position:sticky;bottom:-27px;z-index:2;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));margin-top:22px;background:var(--surface);border-top:1px solid var(--line)}
 .modal:has(.customer-profile){scroll-padding-block:24px 100px;max-height:calc(var(--wa-visible-height,100dvh) - 30px)}
 @media(max-width:540px){.customer-profile-actions{bottom:-18px}.customer-profile-actions>.btn{flex:1 1 120px}.modal:has(.customer-profile) input,.modal:has(.customer-profile) textarea{font-size:16px}}
+/* Approved semantic gradients: deeper WhatsApp green keeps white labels readable. */
+:root{--atry-success-gradient:linear-gradient(115deg,#00852c,#00892f);--atry-coral-gradient:linear-gradient(115deg,#ce1740,#e51c49)}
+:root .btn.success:not(:disabled):not([aria-disabled=true]){--button-fg:#fff;--button-border:#00892f;background:var(--atry-success-gradient);color:#fff;border-color:#00892f;box-shadow:inset 0 1px #ffffff1c,0 3px 9px #00892f12}
+:root .btn.danger:not(.outline):not(:disabled):not([aria-disabled=true]){--button-fg:#fff;--button-border:#e51c49;background:var(--atry-coral-gradient);color:#fff;border-color:#e51c49;box-shadow:inset 0 1px #ffffff1a,0 3px 9px #d2194110}
+:root .btn.success:hover:not(:disabled):not([aria-disabled=true]){background:linear-gradient(115deg,#007a27,#007e2a);border-color:#007e2a}
+:root .btn.success:active:not(:disabled):not([aria-disabled=true]){background:#006f24;border-color:#006f24}
+:root .btn.danger:not(.outline):hover:not(:disabled):not([aria-disabled=true]){background:linear-gradient(115deg,#bd1338,#d21740);border-color:#d21740}
+:root .btn.danger:not(.outline):active:not(:disabled):not([aria-disabled=true]){background:#b61136;border-color:#b61136}
+:root .service-card .badge:not(.pending){background:var(--atry-success-gradient);color:#fff;border-color:transparent;box-shadow:inset 0 1px #ffffff1a;font-weight:600}
+:root .service-card .badge{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:5px 11px;line-height:1;vertical-align:middle;text-align:center;font-size:10px;font-weight:600;letter-spacing:0;box-sizing:border-box}

@@ -14,6 +14,17 @@ import '../../../web/visits.css';
 import '../../../web/whatsapp.css';
 import '../../../web/buttons.css';
 import '../../../web/staff-photos.css';
+// Local visual fixture only. The normal demo has completed setup and a 2099 expiry.
+if(import.meta.env.DEV&&window.ATRY_DEMO?.enabled&&window.ATRY_DEMO.request){
+ const demoRequest=window.ATRY_DEMO.request;
+ window.ATRY_DEMO.request=async(route,options)=>{
+  const result=await demoRequest(route,options);
+  if(/^\/api\/business\/[^/?]+$/.test(route)&&(!options?.method||options.method==='GET')){
+   return {...result as Record<string,unknown>,onboarding_completed:0,paid_until:'2026-11-06T03:00:00.000Z',trial_until:null};
+  }
+  return result;
+ };
+}
 const root=createRoot(document.getElementById('root')!);let model:ApplicationModel|null=null,disposed=false;
 async function start(){try{const config=window.ATRY_CONFIG,cloud=config?.backend==='supabase'&&!window.ATRY_DEMO?.enabled?(await import('./infrastructure/cloud-runtime')).createCloudRuntime(config):undefined;if(disposed)return;model=new ApplicationModel({config,cloud});root.render(<NativeApp model={model}/>)}catch(error){if(!disposed)root.render(<div className="closing"><h2>No pudimos iniciar Atry Turnos</h2><p>{error instanceof Error?error.message:'Reintentá la conexión.'}</p><button className="btn" onClick={()=>location.reload()}>Reintentar</button></div>)}}
 void start();

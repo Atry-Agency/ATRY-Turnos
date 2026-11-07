@@ -1,0 +1,20 @@
+import {useEffect,useId,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {PanelIcon} from '../iatry/v3/PanelIcon';
+import {Icon} from '../ui/Icon';
+import {Modal} from '../ui/primitives';
+import type {FeaturePort} from '../services/contracts';
+/** Shared compact action menu: no native disclosure arrows or clipped overlays. */
+export function WorkspaceActionMenu({port,actions,disabled=false}:{disabled?:boolean;port:FeaturePort;actions:{label:string;icon:string;description?:string;run:()=>void}[]}){
+ const [help,setHelp]=useState<{title:string;text:string}|null>(null),[open,setOpen]=useState(false),trigger=useRef<HTMLButtonElement>(null),menu=useRef<HTMLDivElement>(null),id=useId();
+ const close=(focus=true)=>{setOpen(false);if(focus)trigger.current?.focus({preventScroll:true})};
+ useEffect(()=>{if(!open)return;const node=menu.current!;const native=typeof node.showPopover==='function';if(native)node.showPopover();else node.setAttribute('data-menu-open','true');
+  const position=()=>{const anchor=trigger.current!.getBoundingClientRect(),viewport=window.visualViewport,left=viewport?.offsetLeft||0,top=viewport?.offsetTop||0,width=viewport?.width||innerWidth,height=viewport?.height||innerHeight;node.style.width=Math.min(280,width-32)+'px';const above=anchor.top-top-12,below=top+height-anchor.bottom-12,up=above>=below;node.style.maxHeight=Math.max(1,Math.min(360,up?above:below))+'px';const box=node.getBoundingClientRect();node.style.left=Math.max(left+12,Math.min(anchor.right-box.width,left+width-box.width-12))+'px';node.style.top=(up?Math.max(top+12,anchor.top-box.height-8):anchor.bottom+8)+'px'};
+  position();node.querySelector<HTMLElement>('[role^=menuitem]')?.focus({preventScroll:true});
+  const outside=(e:PointerEvent)=>{if(!node.contains(e.target as Node)&&!trigger.current?.contains(e.target as Node))close(false)};
+  const scroll=(e:Event)=>{if(!node.contains(e.target as Node))position()};
+  document.addEventListener('pointerdown',outside,true);document.addEventListener('scroll',scroll,true);window.addEventListener('resize',position);window.visualViewport?.addEventListener('resize',position);
+  return()=>{if(native&&node.matches(':popover-open'))node.hidePopover();node.removeAttribute('data-menu-open');document.removeEventListener('pointerdown',outside,true);document.removeEventListener('scroll',scroll,true);window.removeEventListener('resize',position);window.visualViewport?.removeEventListener('resize',position)};
+ },[open]);
+ return <div className="workspace-action-menu"><button type="button" ref={trigger} className="workspace-action-trigger" disabled={disabled} aria-label="Acciones del plan" aria-haspopup="menu" aria-expanded={open} aria-controls={id} onClick={()=>setOpen(!open)}><PanelIcon name="ellipsis"/></button>{createPortal(<div ref={menu} id={id} popover="manual" className="workspace-action-popover" role="menu" aria-label="Acciones del plan" onKeyDown={event=>{const items=Array.from(menu.current!.querySelectorAll<HTMLButtonElement>('[role=menuitem]')),index=items.indexOf(document.activeElement as HTMLButtonElement);if(event.key==='Escape'){event.preventDefault();event.stopPropagation();close()}else if(event.key==='Tab'){close()}else if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)){event.preventDefault();items[event.key==='Home'?0:event.key==='End'?items.length-1:(index+(event.key==='ArrowDown'?1:-1)+items.length)%items.length]?.focus()}}}>{actions.map(action=><div className="workspace-action-row" role="none" key={action.label}><button type="button" role="menuitem" onClick={()=>{close();action.run()}}><Icon name={action.icon} port={port}/><span>{action.label}</span></button>{action.description&&<button type="button" role="menuitem" className="workspace-action-help" aria-label={'Para qué sirve: '+action.label} aria-haspopup="dialog" onClick={()=>{close();setHelp({title:action.label,text:action.description!})}}><PanelIcon name="info"/></button>}</div>)}</div>,document.body)}{help&&<Modal title={help.title} closeIcon={<Icon name="x" port={port}/>} onClose={()=>{setHelp(null);trigger.current?.focus()}}><p>{help.text}</p></Modal>}</div>;
+}

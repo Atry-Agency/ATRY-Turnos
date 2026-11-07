@@ -1,0 +1,331 @@
+/* Scoped presentation only: membership, subscription gates and navigation stay in Shell. */
+.app-shell .workspace-switch{margin:12px 0 14px;padding:15px 13px;border:1px solid #ffffff52;border-radius:19px;background:linear-gradient(125deg,#ffffff19,#ffffff08);box-shadow:inset 0 1px #ffffff18;min-width:0}
+.workspace-switch-label{display:block;margin:0 0 10px;font-size:10px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:#fff}
+.workspace-switch-content{display:flex;align-items:center;gap:10px;min-width:0}
+.workspace-switch-content .store-icon{flex-shrink:0;width:38px;height:38px;border-radius:12px}
+.app-shell .sidebar .workspace-switch select{width:100%;min-width:0;min-height:32px;margin:0;padding:3px 23px 3px 0;border:0;border-radius:6px;background-color:transparent;color:#fff;font:inherit;font-size:12px;font-weight:650;text-overflow:ellipsis;box-shadow:none;cursor:pointer}
+.workspace-switch select option{color:#20203b;background:#fff}
+.workspace-switch select:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.workspace-switch-meta{display:block;font-size:10px;line-height:1.6;color:#f0efff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.app-shell .workspace-switch+.side-title{margin-top:0;padding-top:0;margin-bottom:7px}
+/* Editorial notice composition, shared in desktop and narrow workspaces. */
+.app-shell .subscription-notice.restricted{display:grid;grid-template-columns:100px minmax(0,1fr) minmax(210px,260px);align-items:center;gap:25px;padding:24px 28px;margin-bottom:22px;background:radial-gradient(ellipse at 4% 95%,#ccb6fa47,transparent 35%),radial-gradient(ellipse at 90% 0%,#d9cbf954,transparent 45%),linear-gradient(115deg,#f5efff,#fbf9ff 56%,#f0ebfb);box-shadow:inset 0 1px 1px #fff,0 3px 6px #4c30910c,0 12px 30px #4c30910c;border:1px solid #e2d7fa;border-radius:25px}
+.app-shell .subscription-notice.restricted::before{content:"";position:absolute;z-index:-1;pointer-events:none;right:-5%;top:6%;width:36%;height:160%;border-top:1px solid #fff;border-left:1px solid #ffffffc9;border-radius:100px 0 0 0;transform:skewX(-28deg);box-shadow:-12px -6px 28px #ffffff65}
+.app-shell .plan-notice-symbol{position:relative;display:grid;place-items:center;width:94px;height:94px;border:1px solid #fff9;border-radius:50%;background:linear-gradient(135deg,#eee6ff,#d8c8fa70);box-shadow:inset 0 1px 7px #fff9,0 5px 17px #7447bc10;color:#52308e}
+.app-shell .plan-notice-symbol>.i{width:43px;height:43px;margin:0;stroke-width:1.5}
+.plan-notice-symbol>span{position:absolute;right:22px;bottom:23px;width:21px;height:21px;display:grid;place-items:center;border:2px solid #63409b;border-radius:50%;background:#e8dcfc;color:#52308e;font:700 13px/1 system-ui}
+.app-shell .subscription-notice-copy{padding-left:22px;border-left:1px solid #d2bdf3}
+.app-shell .subscription-notice-copy .eyebrow{margin-bottom:5px;color:#50328f;font-size:10px;font-weight:750;letter-spacing:.13em}
+.app-shell .subscription-notice-copy h2{margin:0 0 9px;font-size:clamp(24px,2.2vw,32px);line-height:1.15;letter-spacing:-.035em;color:#291b53}
+.app-shell .plan-notice-date{display:inline-flex;padding:5px 13px;border-radius:30px;background:#e3d6fb;color:#4a2c83;font-size:11px;font-weight:700;line-height:1.4}
+.app-shell .subscription-notice-copy p{margin:9px 0 0;font-size:12px;line-height:1.6;color:#493968;max-width:680px}
+.plan-notice-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;text-align:center}
+.app-shell .subscription-notice .plan-notice-primary{display:flex;justify-content:center;gap:18px;min-height:45px;padding:12px 16px;border-radius:14px;background:linear-gradient(110deg,#50308f,#6138ab)!important;border:1px solid #ffffff70;color:#fff!important;font-size:13px;box-shadow:inset 0 1px #ffffff24,0 5px 12px #5a369322;white-space:normal}
+.app-shell .plan-notice-history{font-size:11px;font-weight:650;color:#38235e;padding:4px;line-height:1.5}
+.app-shell .plan-notice-tools{font-size:10px;color:#594777}
+.plan-notice-tools summary{cursor:pointer;display:list-item;list-style-position:inside;padding:4px;border-radius:6px}
+.plan-notice-tools>div{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding-top:7px}
+.app-shell .plan-notice-tools .btn{font-size:10px;min-height:34px;white-space:normal}
+.plan-notice-actions a:focus-visible,.plan-notice-tools summary:focus-visible{outline:2px solid #7049c4;outline-offset:3px}
+.app-shell .workspace-setup{border-radius:25px;padding:24px 30px;gap:26px;min-height:152px;background:radial-gradient(ellipse at 2% 5%,#473cab50,transparent 42%),linear-gradient(112deg,#191654,#202774 58%,#2c358a);box-shadow:inset 0 1px #d9dcff2e,0 12px 28px #24227416}
+.workspace-setup-avatar{position:relative;flex-basis:105px;width:105px;height:105px}
+.workspace-setup-avatar .iatry-avatar{width:91px;height:91px}
+.setup-orbit{position:absolute;inset:0;border:1px solid #bec8ff35;border-radius:50%;box-shadow:0 0 24px #9495ff24,inset 0 0 18px #a3b7ff14}
+.app-shell .workspace-setup>.grow{padding-left:22px;border-left:1px solid #bdc9ff28;min-width:0}
+.app-shell .workspace-setup .eyebrow{font-size:10px;letter-spacing:.13em;color:#ace9f6}
+.app-shell .workspace-setup h2{font-size:clamp(23px,2.1vw,31px);line-height:1.2;margin:7px 0 10px;max-width:720px}
+.app-shell .workspace-setup p{max-width:650px;color:#e0e5ff;font-size:13px}
+.app-shell .workspace-setup>.btn{min-width:220px;border-radius:14px!important;padding:13px 20px;gap:15px;transition:transform .2s,box-shadow .2s}
+.app-shell .workspace-setup>.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px #10134135}
+@container workspace (max-width:1000px){.app-shell .subscription-notice.restricted{grid-template-columns:76px minmax(0,1fr);gap:18px}.app-shell .plan-notice-symbol{width:74px;height:74px}.plan-notice-symbol>span{right:10px;bottom:12px}.plan-notice-actions{grid-column:2;max-width:320px}.app-shell .workspace-setup>.btn{margin-left:153px}}
+@media(max-width:1100px){.app-shell .workspace-setup{flex-wrap:wrap}.app-shell .workspace-setup>.btn{margin-left:153px}}
+@media(max-width:600px){.app-shell .subscription-notice.restricted{grid-template-columns:52px minmax(0,1fr);padding:20px 17px;gap:14px;border-radius:21px}.app-shell .plan-notice-symbol{width:51px;height:51px;align-self:start;margin-top:4px}.app-shell .plan-notice-symbol>.i{width:27px;height:27px}.plan-notice-symbol>span{width:15px;height:15px;font-size:10px;right:5px;bottom:7px;border-width:1.5px}.app-shell .subscription-notice-copy{padding-left:0;border:0}.app-shell .subscription-notice-copy h2{font-size:25px}.app-shell .subscription-notice-copy .eyebrow{font-size:9px}.app-shell .subscription-notice-copy p{font-size:12px}.app-shell .plan-notice-date{font-size:10px}.plan-notice-actions{grid-column:1/-1;max-width:none;padding-top:3px;gap:8px}.app-shell .plan-notice-primary{width:100%}.app-shell .plan-notice-history{padding:7px}.app-shell .workspace-setup{padding:21px 18px;gap:15px;border-radius:21px}.workspace-setup-avatar{flex-basis:61px;width:61px;height:61px;align-self:start;margin-top:5px}.workspace-setup-avatar .iatry-avatar{width:57px;height:57px}.app-shell .workspace-setup>.grow{border:0;padding:0;flex-basis:calc(100% - 76px)}.app-shell .workspace-setup h2{font-size:23px}.app-shell .workspace-setup .eyebrow{font-size:9px;letter-spacing:.08em}.app-shell .workspace-setup p{font-size:12px}.app-shell .workspace-setup>.btn{margin:2px 0 0;width:100%;min-width:0;min-height:46px}.app-shell .workspace-setup::before{inset:67% -30% -60%}}
+@media(prefers-reduced-motion:reduce){.app-shell .workspace-setup>.btn{transition:none}.app-shell .workspace-setup>.btn:hover{transform:none}}
+/* Use the available content width, never the browser width, to place banner actions. */
+.app-shell .workspace-setup{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(180px,230px);align-items:center;gap:22px;min-height:150px;margin-bottom:24px;position:relative;isolation:isolate;overflow:hidden}
+.app-shell .workspace-setup>.grow{width:auto;min-width:0;grid-column:2;grid-row:1;overflow-wrap:normal;word-break:normal}
+.app-shell .workspace-setup>.btn{grid-column:3;grid-row:1;margin:0;width:100%;min-width:0;white-space:normal;text-align:center}
+.app-shell .workspace-setup-avatar{width:90px;height:90px;grid-column:1;grid-row:1;position:relative;display:grid;place-items:center;align-self:center}
+.app-shell .workspace-setup-avatar .iatry-avatar{width:82px;height:82px}
+.app-shell .subscription-notice-copy{grid-column:2;grid-row:1;min-width:0}
+.app-shell .plan-notice-actions{grid-column:3;grid-row:1;max-width:none;width:auto}
+.app-shell .plan-notice-symbol{grid-column:1;grid-row:1}
+.app-shell .workspace-setup::after,.app-shell .premium-attention::after{content:"";position:absolute;inset:-80% auto auto -10%;width:65%;height:240%;z-index:-1;border:0;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse,#b9b6ff20,transparent 65%);animation:workspace-light-drift 18s ease-in-out infinite alternate}
+.app-shell .premium-attention{isolation:isolate;position:relative;overflow:hidden}
+.app-shell .premium-attention::after{background:radial-gradient(ellipse,#b3e5ef25,#d5b5f329 35%,transparent 65%)}
+@keyframes workspace-light-drift{to{transform:translate3d(85%,7%,0)}}
+@container workspace (max-width:1000px){
+ .app-shell .workspace-setup{grid-template-columns:76px minmax(0,1fr);gap:16px 20px;padding:23px}
+ .app-shell .workspace-setup-avatar{width:76px;height:76px}
+ .app-shell .workspace-setup-avatar .iatry-avatar{width:70px;height:70px}
+ .app-shell .workspace-setup>.btn{grid-column:2;grid-row:2;width:auto;justify-self:start;margin:0;min-width:210px}
+ .app-shell .workspace-setup h2{font-size:26px;max-width:none}
+ .app-shell .workspace-setup>.grow{padding-left:0;border:0}
+ .app-shell .subscription-notice.restricted{grid-template-columns:76px minmax(0,1fr);gap:16px 20px;padding:23px}
+ .app-shell .plan-notice-symbol{width:74px;height:74px}
+ .app-shell .plan-notice-actions{grid-column:2;grid-row:2;max-width:320px;margin:0}
+ .app-shell .subscription-notice-copy{padding:0;border:0}
+ .app-shell .subscription-notice-copy h2{font-size:28px}
+}
+@container workspace (max-width:520px){
+ .app-shell .workspace-setup,.app-shell .subscription-notice.restricted{grid-template-columns:48px minmax(0,1fr);padding:20px 17px;gap:14px;border-radius:20px}
+ .app-shell .workspace-setup-avatar{width:48px;height:48px;align-self:start;margin-top:4px}
+ .app-shell .workspace-setup-avatar .iatry-avatar{width:46px;height:46px}
+ .app-shell .workspace-setup>.grow{grid-column:2;grid-row:1;padding:0;border:0}
+ .app-shell .workspace-setup h2{font-size:22px;line-height:1.2;margin:6px 0 8px}
+ .app-shell .workspace-setup p{font-size:12px;line-height:1.6}
+ .app-shell .workspace-setup .eyebrow{font-size:9px;letter-spacing:.07em}
+ .app-shell .workspace-setup>.btn{grid-column:1/-1;grid-row:2;justify-self:stretch;width:100%;min-width:0;margin:0;font-size:12px}
+ .app-shell .plan-notice-symbol{width:48px;height:48px;align-self:start;margin-top:4px}
+ .app-shell .plan-notice-symbol>.i{width:26px;height:26px}
+ .app-shell .plan-notice-symbol>span{width:15px;height:15px;font-size:10px;right:4px;bottom:6px;border-width:1.5px}
+ .app-shell .subscription-notice-copy{grid-column:2;grid-row:1;padding:0;border:0}
+ .app-shell .subscription-notice-copy h2{font-size:24px}
+ .app-shell .subscription-notice-copy .eyebrow{font-size:9px}
+ .app-shell .plan-notice-actions{grid-column:1/-1;grid-row:2;width:100%;max-width:none}
+}
+@media(prefers-reduced-motion:reduce){.app-shell .workspace-setup::after,.app-shell .premium-attention::after{animation:none}.app-shell .workspace-setup>.btn{transition:none}.app-shell .workspace-setup>.btn:hover{transform:none}}
+.workspace-action-menu{display:flex;justify-content:center}
+.workspace-action-trigger{display:grid;place-items:center;width:38px;height:32px;padding:0;border:1px solid #78609c22;border-radius:11px;background:#ffffff55;color:#59417c;cursor:pointer;transition:background .16s,box-shadow .16s}
+.workspace-action-trigger .iatry-panel-icon{width:21px;height:21px}
+.workspace-action-trigger:hover,.workspace-action-trigger[aria-expanded=true]{background:#fff;box-shadow:0 3px 10px #51347612}
+.workspace-action-trigger:focus-visible{outline:2px solid #7655b0;outline-offset:3px}
+.workspace-action-popover{display:none;position:fixed;inset:auto;margin:0;padding:7px;border:1px solid #e6def0;border-radius:16px;background:#fdfbff;color:#34244e;box-shadow:0 12px 40px #33204624;font:12px/1.5 system-ui,-apple-system,sans-serif;overflow:auto;overscroll-behavior:contain}
+.workspace-action-popover:popover-open,.workspace-action-popover[data-menu-open]{display:grid;gap:3px;animation:workspace-menu-in .14s ease-out}
+.workspace-action-popover button{display:flex;align-items:center;gap:11px;width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:10px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.workspace-action-popover .i{width:17px;height:17px;flex-shrink:0;color:#795c9d}
+.workspace-action-popover button:hover,.workspace-action-popover button:focus-visible{background:#f0eaf8;outline:0}
+.workspace-action-popover button:focus-visible{box-shadow:inset 0 0 0 2px #9c80c7}
+.workspace-action-popover button:active{background:#e7dcf4}
+@keyframes workspace-menu-in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.workspace-action-trigger{transition:none}.workspace-action-popover:popover-open,.workspace-action-popover[data-menu-open]{animation:none}}
+/* Secondary actions belong to the notice chrome, outside its conversion hierarchy. */
+.app-shell .subscription-notice.restricted{padding-top:29px;padding-right:54px}
+.app-shell .subscription-notice>.workspace-action-menu{position:absolute;inset:9px 9px auto auto;z-index:2;display:block}
+.app-shell .subscription-notice .workspace-action-trigger{width:36px;height:36px;border:1px solid transparent;border-radius:50%;background:transparent;color:#766389;box-shadow:none}
+.app-shell .subscription-notice .workspace-action-trigger .iatry-panel-icon{width:20px;height:20px;stroke-width:1.8}
+.app-shell .subscription-notice .workspace-action-trigger:hover,.app-shell .subscription-notice .workspace-action-trigger[aria-expanded=true]{background:#ffffffb3;border-color:#81629c1f;color:#4d3475;box-shadow:0 2px 8px #49306508}
+.app-shell .subscription-notice .workspace-action-trigger:active{background:#e9dff7;color:#3f2467}
+.app-shell .subscription-notice .workspace-action-trigger:focus-visible{outline:2px solid #7957ac;outline-offset:2px;background:#fff}
+@container workspace (max-width:1000px){.app-shell .subscription-notice.restricted{padding:25px 49px 23px 23px}}
+@container workspace (max-width:520px){.app-shell .subscription-notice.restricted{padding:23px 17px 20px}.app-shell .subscription-notice-copy .eyebrow{padding-right:29px}.app-shell .subscription-notice>.workspace-action-menu{top:7px;right:7px}.app-shell .subscription-notice .workspace-action-trigger{width:40px;height:40px}}
+@media(pointer:coarse){.app-shell .subscription-notice .workspace-action-trigger{width:44px;height:44px}.app-shell .subscription-notice>.workspace-action-menu{top:4px;right:4px}}
+/* Compact glass identity: a quiet status header and one integrated control. */
+.app-shell .sidebar .workspace-switch{position:relative;isolation:isolate;overflow:hidden;flex-shrink:0;margin:3px 0 16px;padding:0;border:1px solid #ffffff30;border-radius:18px;background:linear-gradient(135deg,#ffffff18,#ffffff08);box-shadow:inset 0 1px #ffffff24,0 6px 18px #17245e0d}
+.app-shell .workspace-switch::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-60% -20% 10% -50%;border-radius:50%;background:radial-gradient(ellipse,#a9dfff17,transparent 65%);transform:rotate(-20deg)}
+.app-shell .workspace-switch-label{display:flex;align-items:center;gap:6px;padding:11px 13px 9px;margin:0;border-bottom:1px solid #ffffff12;color:#eaedff;font:500 9px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.035em;text-transform:none}
+.workspace-switch-status{width:5px;height:5px;flex-shrink:0;border-radius:50%;background:#a7f1ee;box-shadow:0 0 7px #a7f1ee35}
+.app-shell .workspace-switch-content{position:relative;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:10px;min-height:65px;min-width:0;padding:12px 13px 14px}
+.app-shell .workspace-switch-identity{min-width:0}
+.app-shell .workspace-switch-name{display:block;color:#fff;font:600 12px/1.45 system-ui,-apple-system,sans-serif;letter-spacing:-.01em;white-space:normal;overflow-wrap:anywhere}
+.app-shell .workspace-switch-meta{display:flex;align-items:center;flex-wrap:wrap;column-gap:5px;row-gap:1px;margin-top:3px;color:#e0e5ff;font:400 9px/1.5 system-ui,-apple-system,sans-serif;white-space:normal;overflow:visible}
+.workspace-switch-city::before{content:'·';padding-right:5px;color:#aebcfa}
+.app-shell .workspace-switch-content .store-icon{width:34px;height:34px;min-width:34px;border:1px solid #ffffff25;box-shadow:0 2px 5px #16205e12}
+.app-shell .workspace-switch-chevron{display:grid;place-items:center;width:23px;height:27px;border-radius:8px;color:#e6eaff;background:#ffffff09;border:1px solid #ffffff0b}
+.workspace-switch-chevron .i{width:13px;height:13px;transform:rotate(90deg)}
+.app-shell .sidebar .workspace-switch select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:1;min-height:44px}
+.app-shell .workspace-switch.is-switchable:hover{border-color:#ffffff60;background:linear-gradient(135deg,#ffffff22,#ffffff0d)}
+.app-shell .workspace-switch.is-switchable:hover .workspace-switch-chevron{background:#ffffff18}
+.app-shell .workspace-switch:has(select:focus-visible){outline:2px solid #fff;outline-offset:3px}
+.app-shell .workspace-switch+.side-title{margin:0 0 5px;padding:0 12px;color:#dce3ff;font-size:9px;letter-spacing:.1em}
+@media(prefers-reduced-motion:no-preference){.app-shell .workspace-switch,.workspace-switch-chevron{transition:background .18s,border-color .18s}.app-shell .workspace-switch::before{animation:workspace-glass-light 18s ease-in-out infinite alternate}}
+@keyframes workspace-glass-light{to{transform:translate3d(25%,12%,0) rotate(8deg)}}
+.banner-mobile-copy{display:none}
+/* Mobile is a compact editorial card, not a scaled desktop billboard. */
+@container workspace (max-width:520px){
+ .app-shell .subscription-notice.restricted{grid-template-columns:35px minmax(0,1fr);gap:10px 11px;padding:17px 16px 15px;margin-bottom:14px;border-radius:18px;background:linear-gradient(115deg,#f3edfc,#faf7ff);box-shadow:inset 0 1px #fff,0 5px 16px #49316e08}
+ .app-shell .subscription-notice.restricted::before{display:none}
+ .app-shell .plan-notice-symbol{width:35px;height:35px;margin-top:2px;border-radius:12px;background:#e9dff8;box-shadow:none;border:1px solid #fff9}
+ .app-shell .plan-notice-symbol>.i{width:22px;height:22px}
+ .app-shell .plan-notice-symbol>span{width:12px;height:12px;right:2px;bottom:3px;font-size:8px;background:#ede4fa}
+ .app-shell .subscription-notice-copy{display:contents}
+ .app-shell .subscription-notice-copy .eyebrow{display:none}
+ .app-shell .subscription-notice-copy h2{grid-column:2;grid-row:1;align-self:center;margin:0;padding-right:26px;font:650 18px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:-.025em}
+ .app-shell .plan-notice-date{grid-column:1/-1;justify-self:start;margin:0;padding:3px 8px;border-radius:6px;font:600 10px/1.5 system-ui,-apple-system,sans-serif;background:#e8ddf6}
+ .app-shell .subscription-notice-copy p{grid-column:1/-1;margin:0;font-size:12px;line-height:1.6;color:#534263}
+ .app-shell .plan-notice-actions{grid-column:1/-1;grid-row:auto;display:flex;flex-direction:row;align-items:center;gap:10px;padding-top:3px;max-width:none;width:100%}
+ .app-shell .subscription-notice .plan-notice-primary{flex:1;min-height:42px;padding:10px 12px;border-radius:11px;font:650 12px/1.4 system-ui,-apple-system,sans-serif;gap:8px;box-shadow:0 3px 8px #50308f13}
+ .app-shell .plan-notice-primary .i{width:15px;height:15px;margin:0}
+ .app-shell .plan-notice-history{flex:0 1 112px;padding:7px 2px;font:500 10px/1.45 system-ui,-apple-system,sans-serif;text-align:center;color:#634d7b}
+ .app-shell .workspace-setup{grid-template-columns:40px minmax(0,1fr);gap:11px;padding:17px 16px 15px;margin-bottom:20px;border-radius:18px;min-height:0;background:linear-gradient(115deg,#211e60,#29347e);box-shadow:inset 0 1px #ffffff24,0 7px 19px #24227413}
+ .app-shell .workspace-setup::before{display:none}
+ .app-shell .workspace-setup-avatar{width:40px;height:40px;align-self:center;margin:0}
+ .app-shell .workspace-setup-avatar .iatry-avatar{width:39px;height:39px}
+ .app-shell .setup-orbit{inset:-2px;box-shadow:none;border-color:#c3c9ff20}
+ .app-shell .workspace-setup>.grow{display:contents}
+ .app-shell .workspace-setup .eyebrow{grid-column:2;grid-row:1;align-self:start;margin-top:1px;font:500 9px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em}
+ .app-shell .workspace-setup h2{grid-column:2;grid-row:1;align-self:end;margin:17px 0 0;font:600 17px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:-.02em}
+ .app-shell .workspace-setup p{grid-column:1/-1;margin:0;color:#dce2ff;font-size:12px;line-height:1.5}
+ .app-shell .workspace-setup>.btn{grid-column:1/-1;grid-row:auto;min-height:42px;margin:2px 0 0;padding:10px 14px;border-radius:11px!important;font:650 12px/1.4 system-ui,-apple-system,sans-serif;box-shadow:none!important;justify-content:space-between}
+ .app-shell .workspace-setup>.btn .i{width:16px;height:16px}
+ .banner-desktop-copy{display:none}.banner-mobile-copy{display:inline}
+}
+.plan-details-trigger{display:none}
+@container workspace (max-width:520px){
+ .app-shell .subscription-notice.restricted{grid-template-columns:30px minmax(0,1fr) 26px;gap:5px 10px;padding:15px;margin-bottom:12px;border-radius:16px}
+ .app-shell .plan-notice-symbol{width:30px;height:30px;grid-row:1/3;align-self:center;margin:0;border:0;background:transparent}
+ .app-shell .plan-notice-symbol>.i{width:24px;height:24px}
+ .app-shell .plan-notice-symbol>span{right:0;bottom:1px}
+ .app-shell .subscription-notice-copy h2{grid-column:2;grid-row:1;font-size:16px;padding-right:20px;line-height:1.3}
+ .app-shell .plan-notice-date{grid-column:2;grid-row:2;justify-self:start;background:transparent;padding:0;color:#685579;font-weight:400;font-size:10px}
+ .app-shell .plan-details-trigger{display:grid;place-items:center;grid-column:3;grid-row:2;align-self:center;justify-self:end;width:28px;height:28px;padding:0;border:0;border-radius:50%;background:transparent;color:#7b648f;cursor:pointer}
+ .plan-details-trigger .i{width:16px;height:16px;margin:0}
+ .plan-details-trigger:focus-visible{outline:2px solid #7655b0;outline-offset:2px}
+ .plan-details-trigger:hover,.plan-details-trigger[aria-expanded=true]{background:#e8dff3;color:#4d3273}
+ .app-shell .subscription-notice-copy .plan-notice-description{display:none}
+ .app-shell .subscription-notice-copy .plan-notice-description.is-expanded{display:block;grid-column:1/-1;grid-row:3;margin:7px 0;font-size:12px;line-height:1.6}
+ .app-shell .plan-notice-actions{display:flex;flex-direction:column;align-items:stretch;gap:0;grid-column:1/-1;padding-top:6px}
+ .app-shell .subscription-notice .plan-notice-primary{min-height:38px;padding:9px 12px;justify-content:space-between;font-size:12px}
+ .app-shell .plan-notice-history{display:none;flex:auto;padding:12px 0 0}
+ .app-shell .plan-notice-history.is-expanded{display:block}
+ .app-shell .workspace-setup{grid-template-columns:32px minmax(0,1fr);gap:10px;padding:15px;border-radius:16px;margin-bottom:18px}
+ .app-shell .workspace-setup-avatar{width:32px;height:32px;grid-row:1;align-self:center}
+ .app-shell .workspace-setup-avatar .iatry-avatar{width:32px;height:32px}
+ .app-shell .workspace-setup .eyebrow,.app-shell .workspace-setup p{display:none}
+ .app-shell .workspace-setup h2{grid-column:2;grid-row:1;align-self:center;font:550 15px/1.4 system-ui,-apple-system,sans-serif;margin:0;letter-spacing:-.015em}
+ .app-shell .workspace-setup>.btn{margin:2px 0 0;min-height:38px;padding:9px 12px;font-size:12px}
+}
+/* Final compact-card polish: aligned optical edges and comfortable touch targets. */
+@container workspace (max-width:520px){
+ .app-shell .subscription-notice.restricted,.app-shell .workspace-setup{border-radius:17px}
+ .app-shell .subscription-notice-copy h2{letter-spacing:-.02em;font-weight:600}
+ .app-shell .plan-notice-date{font-size:11px;line-height:1.5;color:#614d73}
+ .app-shell .plan-details-trigger{position:relative;width:28px;height:28px;color:#6b527f}
+ .app-shell .plan-details-trigger::before{content:"";position:absolute;inset:-8px}
+ .app-shell .subscription-notice .plan-notice-primary,.app-shell .workspace-setup>.btn{min-height:44px;border-radius:11px!important;letter-spacing:0}
+ .app-shell .workspace-setup h2{font-weight:550;line-height:1.45}
+ .app-shell .plan-notice-actions{padding-top:8px}
+ .app-shell .plan-notice-history.is-expanded{padding:13px 0 3px;font-size:11px}
+ .app-shell .plan-notice-description.is-expanded{padding-top:4px;border-top:1px solid #d9cce93b}
+ .app-shell .workspace-setup::after,.app-shell .premium-attention::after{opacity:.55}
+}
+/* Expiry has a distinct semantic treatment; suspension/pending states stay unchanged. */
+.app-shell .subscription-notice.restricted.is-expired{background:radial-gradient(ellipse at 5% 100%,#af54602b,transparent 50%),linear-gradient(115deg,#742c3b,#893546);border-color:#a75f6a;color:#fff;box-shadow:inset 0 1px #ffffff1a,0 7px 22px #64213212}
+.app-shell .subscription-notice.is-expired::before{border-color:#ffffff16;box-shadow:none}
+.app-shell .subscription-notice.is-expired::after{background:radial-gradient(ellipse,#ffffff0d,transparent 65%)}
+.app-shell .is-expired .subscription-notice-copy{border-left-color:#ffffff24}
+.app-shell .is-expired .subscription-notice-copy h2{color:#fff}
+.app-shell .is-expired .subscription-notice-copy .eyebrow{color:#f9d9df}
+.app-shell .is-expired .subscription-notice-copy p{color:#f8e3e7}
+.app-shell .is-expired .plan-notice-date{background:#ffffff14;color:#fff}
+.app-shell .is-expired .plan-notice-symbol{color:#fff;background:#ffffff0e;border-color:#ffffff20;box-shadow:inset 0 1px #ffffff15}
+.app-shell .is-expired .plan-notice-symbol>span{background:#853242;border-color:#f5d5dc;color:#fff}
+.app-shell .subscription-notice.is-expired .plan-notice-primary{background:#fff!important;color:#712637!important;border-color:#fff;box-shadow:0 3px 10px #3d0b171a}
+.app-shell .is-expired .plan-notice-history{color:#fff}
+.app-shell .subscription-notice.is-expired .workspace-action-trigger{color:#f9dce2}
+.app-shell .subscription-notice.is-expired .workspace-action-trigger:hover,.app-shell .subscription-notice.is-expired .workspace-action-trigger[aria-expanded=true]{background:#ffffff14;color:#fff;border-color:#ffffff25}
+.app-shell .subscription-notice.is-expired .workspace-action-trigger:focus-visible{background:#ffffff14;outline-color:#fff}
+.app-shell .is-expired .plan-details-trigger{color:#f7dce2}
+.app-shell .is-expired .plan-details-trigger:hover,.app-shell .is-expired .plan-details-trigger[aria-expanded=true]{background:#ffffff15;color:#fff}
+.app-shell .is-expired .plan-details-trigger:focus-visible,.app-shell .is-expired .plan-notice-history:focus-visible{outline-color:#fff}
+@container workspace (max-width:520px){.app-shell .is-expired .plan-notice-date{background:transparent;color:#f5d6de}.app-shell .is-expired .plan-notice-symbol{background:transparent;border:0;box-shadow:none}.app-shell .is-expired .plan-notice-description.is-expanded{border-color:#ffffff20}}
+/* Same semantic red as the approved cancelled-reservation notice. */
+.app-shell .subscription-notice.restricted.is-expired{background:#b42332;border-color:#b42332;box-shadow:inset 0 1px #ffffff12,0 7px 22px #b4233212}
+.app-shell .is-expired .plan-notice-symbol>span{background:#b42332}
+.app-shell .subscription-notice.is-expired .plan-notice-primary{color:#b42332!important}
+/* Keep semantic expiry colors above business typography/theme overrides. */
+:root[data-appearance] .app-shell .subscription-notice.restricted.is-expired .subscription-notice-copy h2,
+:root .app-shell .subscription-notice.restricted.is-expired h2{color:#fff!important}
+@container workspace (max-width:520px){
+ .app-shell .subscription-notice.restricted{grid-template-columns:30px minmax(0,1fr);column-gap:10px}
+ .app-shell .subscription-notice-copy h2{padding-right:34px}
+ .app-shell .plan-notice-actions{position:relative;padding-right:40px;min-height:50px;justify-content:center}
+ .app-shell .plan-details-trigger{position:absolute;inset:auto 15px 16px auto;width:34px;height:44px;display:grid;place-items:center;border-radius:11px;z-index:1}
+ .app-shell .plan-details-trigger::before{display:none}
+ .app-shell .plan-details-trigger .i{width:18px;height:18px}
+ .app-shell .is-expired .plan-details-trigger{border:1px solid #ffffff35;background:#ffffff0a;color:#fff}
+ .app-shell .is-expired .plan-details-trigger:hover,.app-shell .is-expired .plan-details-trigger[aria-expanded=true]{background:#ffffff20;color:#fff}
+ .app-shell .plan-notice-actions:has(.plan-notice-history.is-expanded){padding-bottom:34px}
+ .app-shell .plan-notice-history.is-expanded{position:relative;padding-top:12px}
+}
+@container workspace (max-width:520px){
+ .app-shell .plan-notice-actions{display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:6px;padding:8px 0 0;min-height:0}
+ .app-shell .plan-details-trigger{position:static;inset:auto;grid-column:2;grid-row:1;width:34px;height:44px;align-self:center}
+ .app-shell .plan-notice-primary{grid-column:1;grid-row:1}
+ .app-shell .plan-notice-actions:has(.plan-notice-history.is-expanded){padding-bottom:0}
+ .app-shell .plan-notice-history.is-expanded{grid-column:1/-1;grid-row:2;padding:8px 0 0}
+}
+@container workspace (max-width:520px){
+ .app-shell .plan-notice-actions{display:block;padding:9px 0 0;min-height:0}
+ .app-shell .subscription-notice .plan-notice-primary{width:100%;min-height:44px}
+ .app-shell .subscription-notice.restricted,.app-shell .workspace-setup{padding:17px;border-radius:18px}
+ .app-shell .subscription-notice-copy h2{font-size:16px;font-weight:600;letter-spacing:-.02em}
+ .app-shell .subscription-notice>.workspace-action-menu{top:9px;right:8px}
+ .app-shell .subscription-notice .workspace-action-trigger{width:36px;height:36px}
+}
+/* Quiet invitation: animate only the opacity of a local halo, never the layout. */
+.app-shell .workspace-setup>.btn{position:relative;isolation:isolate}
+.app-shell .workspace-setup>.btn::after{content:"";position:absolute;inset:-3px;border:1px solid #c6d7ff88;border-radius:inherit;box-shadow:0 0 15px 2px #b7ceff30;pointer-events:none;opacity:.12}
+@media(prefers-reduced-motion:no-preference){.app-shell .workspace-setup>.btn::after{animation:iatry-invitation-breathe 5.5s ease-in-out infinite}.app-shell .workspace-setup>.btn:is(:hover,:focus-visible)::after{animation-play-state:paused}}
+@keyframes iatry-invitation-breathe{0%,100%{opacity:.12}50%{opacity:.65}}
+@media(prefers-reduced-motion:reduce){.app-shell .workspace-setup>.btn::after{animation:none;opacity:0}}
+/* Breathe around the official sphere; its geometry and emblem remain still. */
+.app-shell .workspace-setup-avatar::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:radial-gradient(circle,#b0caff00 42%,#b8d8ff20 65%,transparent 75%);box-shadow:0 0 18px #a6bcff20;pointer-events:none;opacity:.15}
+@media(prefers-reduced-motion:no-preference){.app-shell .workspace-setup-avatar::after{animation:iatry-sphere-breathe 6s ease-in-out infinite}}
+@keyframes iatry-sphere-breathe{0%,100%{opacity:.15}50%{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.app-shell .workspace-setup-avatar::after{animation:none;opacity:0}}
+/* Optical finishing: matching controls, calm highlights and no hover movement on touch. */
+.app-shell .workspace-setup>.btn,.app-shell .subscription-notice .plan-notice-primary{align-items:center;line-height:1.4}
+.app-shell .workspace-setup>.btn .i,.app-shell .subscription-notice .plan-notice-primary .i{flex-shrink:0;stroke-width:1.8}
+.app-shell .subscription-notice .plan-notice-primary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.app-shell .workspace-setup>.btn:focus-visible{outline:2px solid #bce8ff;outline-offset:4px}
+.app-shell .workspace-setup-avatar::after{opacity:.12}
+@container workspace (max-width:520px){
+ .app-shell .subscription-notice.restricted,.app-shell .workspace-setup{box-shadow:inset 0 1px #ffffff14,0 4px 12px #20205008}
+ .app-shell .subscription-notice .plan-notice-primary,.app-shell .workspace-setup>.btn{padding-inline:14px;font-weight:600}
+ .app-shell .workspace-setup h2{padding-right:1px;text-wrap:pretty}
+ .app-shell .subscription-notice-copy h2{padding-right:37px}
+ .app-shell .subscription-notice>.workspace-action-menu{top:6px;right:6px}
+ .app-shell .subscription-notice .workspace-action-trigger{width:44px;height:44px}
+ .app-shell .subscription-notice .workspace-action-trigger .iatry-panel-icon{width:19px;height:19px}
+}
+@media(hover:none){.app-shell .workspace-setup>.btn:hover{transform:none}.app-shell .workspace-setup>.btn:is(:hover,:focus-visible)::after{animation-play-state:running}}
+/* Coral-red reference, with a deeper reading zone beneath small white text. */
+.app-shell .subscription-notice.restricted.is-expired{background:linear-gradient(115deg,#ce1740 0%,#d91a44 62%,#ff2854 100%);border-color:#ed3155;box-shadow:inset 0 1px #ffffff25,0 6px 19px #e51c4512}
+.app-shell .subscription-notice.is-expired::after{width:70%;height:240%;inset:-75% auto auto -15%;background:radial-gradient(ellipse,#ff73892e 0%,#ff2a5519 35%,transparent 65%);opacity:.65}
+.app-shell .is-expired .plan-notice-symbol>span{background:#d31942}
+.app-shell .subscription-notice.is-expired .plan-notice-primary{color:#bf173b!important}
+.app-shell .is-expired .subscription-notice-copy p,.app-shell .is-expired .subscription-notice-copy .eyebrow,.app-shell .is-expired .plan-notice-date{color:#fff}
+@media(prefers-reduced-motion:no-preference){.app-shell .subscription-notice.is-expired::after{animation:expiry-coral-light 13s ease-in-out infinite alternate}}
+@keyframes expiry-coral-light{from{transform:translate3d(0,0,0) rotate(-12deg)}to{transform:translate3d(60%,10%,0) rotate(8deg)}}
+@media(prefers-reduced-motion:reduce){.app-shell .subscription-notice.is-expired::after{animation:none}}
+/* Semantic notice colors must win over the global business eyebrow theme. */
+:root[data-appearance] .app-shell .subscription-notice.restricted.is-expired .subscription-notice-copy>.eyebrow,
+:root .app-shell .subscription-notice.restricted.is-expired .subscription-notice-copy>.eyebrow{color:#fff!important}
+/* Give the desktop action its actual label width instead of forcing a line break. */
+.app-shell .workspace-setup{grid-template-columns:90px minmax(0,1fr) minmax(240px,max-content)}
+.app-shell .workspace-setup>.btn{white-space:nowrap;font-size:13px;padding-inline:20px}
+@container workspace (max-width:1000px){.app-shell .workspace-setup{grid-template-columns:76px minmax(0,1fr)}.app-shell .workspace-setup>.btn{min-width:230px}}
+@container workspace (max-width:520px){.app-shell .workspace-setup{grid-template-columns:32px minmax(0,1fr)}.app-shell .workspace-setup>.btn{min-width:0;font-size:12px;padding-inline:14px}}
+.workspace-action-row{display:flex;align-items:center;gap:2px;min-width:0}
+.workspace-action-row>button:first-child{flex:1;min-width:0}
+.workspace-action-popover .workspace-action-help{flex:0 0 36px;width:36px;min-height:44px;padding:8px;justify-content:center;color:#795c9d}
+.workspace-action-help .iatry-panel-icon{width:17px;height:17px}
+/* Permission refresh is feedback, never an optimistic activation. */
+.subscription-notice-motion{display:grid;grid-template-rows:1fr;opacity:1;transform:translateY(0);transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1),opacity .25s,transform .4s}
+.subscription-notice-motion>div{min-height:0;overflow:hidden;padding:2px}
+.subscription-notice-motion.is-leaving{grid-template-rows:0fr;opacity:0;transform:translateY(-12px)}
+.app-shell .subscription-notice[data-review=unchanged],.app-shell .subscription-notice[data-review=error]{animation:plan-review-shake .4s ease-in-out}
+.app-shell .subscription-notice[data-review=checking]{cursor:progress}
+.app-shell .subscription-notice:focus{outline:none}
+.plan-review-feedback{grid-column:2/-1;margin:0!important;font:500 11px/1.6 system-ui!important;color:inherit!important}
+.plan-review-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.app-shell .subscription-notice.restricted.is-restored{grid-template-columns:76px minmax(0,1fr);background:linear-gradient(115deg,#25d366,#48dfa1);border-color:#29c979;color:#073e28;box-shadow:0 6px 18px #25d36614}
+:root[data-appearance] .app-shell .subscription-notice.restricted.is-restored .subscription-notice-copy h2,:root .app-shell .subscription-notice.restricted.is-restored h2{color:#073e28!important}
+:root[data-appearance] .app-shell .subscription-notice.restricted.is-restored .subscription-notice-copy>.eyebrow{color:#104d34!important}
+.app-shell .is-restored .plan-notice-date{color:#104d34;background:transparent}
+.app-shell .is-restored .plan-notice-symbol{background:#ffffff25;color:#073e28;border-color:#ffffff40;box-shadow:none}
+.app-shell .is-restored .subscription-notice-copy{border-left-color:#0b644329}
+.plan-review-preview{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:7px;margin:-8px 0 18px;font:10px/1.4 system-ui;color:#706487}
+.plan-review-preview>span{margin-right:auto}
+.plan-review-preview button{min-height:32px;border:1px solid #ded6e9;border-radius:9px;padding:6px 9px;background:#faf8fd;color:#543d70;font:inherit;cursor:pointer}
+.plan-review-preview button:hover{background:#eee7f7}
+.plan-review-preview button:focus-visible{outline:2px solid #7958ac;outline-offset:2px}
+@keyframes plan-review-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+@container workspace (max-width:520px){.app-shell .subscription-notice.restricted.is-restored{grid-template-columns:30px minmax(0,1fr)}.plan-review-feedback{grid-column:1/-1;font-size:11px!important;padding-top:4px}.app-shell .is-restored .subscription-notice-copy h2{padding-right:0}.plan-review-preview{justify-content:flex-start}.plan-review-preview>span{flex-basis:100%;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.app-shell .subscription-notice[data-review=unchanged],.app-shell .subscription-notice[data-review=error]{animation:none}.subscription-notice-motion{transition:opacity .12s}.subscription-notice-motion.is-leaving{transform:none}}
+/* Success follows the same white-on-green semantic treatment as published services. */
+.app-shell .subscription-notice.restricted.is-restored{background:var(--atry-success-gradient,linear-gradient(115deg,#00852c,#00892f));border-color:#00892f;color:#fff}
+:root[data-appearance] .app-shell .subscription-notice.restricted.is-restored .subscription-notice-copy h2,:root .app-shell .subscription-notice.restricted.is-restored h2,:root[data-appearance] .app-shell .subscription-notice.restricted.is-restored .subscription-notice-copy>.eyebrow{color:#fff!important}
+.app-shell .is-restored .plan-notice-date,.app-shell .is-restored .plan-notice-symbol{color:#fff}
+.app-shell .is-restored .subscription-notice-copy{border-left-color:#ffffff28}
