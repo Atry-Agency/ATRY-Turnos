@@ -58,3 +58,9 @@
 :root .btn.danger:not(.outline):active:not(:disabled):not([aria-disabled=true]){background:#b61136;border-color:#b61136}
 :root .service-card .badge:not(.pending){background:var(--atry-success-gradient);color:#fff;border-color:transparent;box-shadow:inset 0 1px #ffffff1a;font-weight:600}
 :root .service-card .badge{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:5px 11px;line-height:1;vertical-align:middle;text-align:center;font-size:10px;font-weight:600;letter-spacing:0;box-sizing:border-box}
+/* Center the whole text/icon group on the same axis, with symmetric vertical padding. */
+:root .btn{align-items:center;justify-content:center;text-align:center;line-height:1.2;padding-block:11px}
+:root .btn.sm{padding-block:9px}
+:root .btn.icon-only{padding-block:10px}
+:root .btn>.i,:root .btn>svg{display:block;flex-shrink:0;margin:0;align-self:center}
+:root .btn>span{line-height:inherit}
