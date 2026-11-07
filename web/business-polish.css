@@ -157,3 +157,9 @@ button.is-refreshing>.i-refresh{animation:atry-refresh-turn .85s linear infinite
 @keyframes waitlist-breathe{0%,100%{box-shadow:0 0 0 0 #c58a0e00;opacity:.75}50%{box-shadow:0 0 0 4px #c58a0e19;opacity:1}}
 @media(prefers-reduced-motion:reduce){.waitlist-status--waiting i{animation:none}}
 @media(max-width:760px){.waitlist-table thead{display:none}.waitlist-table,.waitlist-table tbody{display:block;width:100%;min-width:0!important}.waitlist-table tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px;padding:18px 0;border-bottom:1px solid var(--line)}.waitlist-table tr:last-child{border-bottom:0}.waitlist-table td{display:block;padding:0!important;border:0!important;min-width:0;overflow-wrap:anywhere}.waitlist-table td::before{content:attr(data-label);display:block;margin-bottom:7px;font-size:9px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}.waitlist-table td:first-child{grid-column:1/-1}.waitlist-table .actions{flex-wrap:wrap}.waitlist-table .btn{white-space:normal}}
+/* Each waitlist heading and its data share the same visual column axis. */
+:root .table.waitlist-table th,:root .table.waitlist-table td{text-align:center;vertical-align:middle}
+:root .table.waitlist-table td>.actions{justify-content:center;align-items:center}
+:root .table.waitlist-table td .waitlist-status{justify-content:center;vertical-align:middle}
+:root .table.waitlist-table td .tiny{margin-top:3px;line-height:1.5}
+@media(max-width:760px){:root .table.waitlist-table td::before{text-align:center}:root .table.waitlist-table td>.actions{justify-content:center}}
