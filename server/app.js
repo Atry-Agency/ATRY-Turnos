@@ -48,6 +48,7 @@ function createApp({db=connect(),webRoot=root}={}) {
   r('GET','/api/health',()=>({status:'ok',app:'Atry Turnos',version:'1.2.0'}));
   r('GET','/api/config',()=>({app:'Atry Turnos',version:'1.2.0',currency:'UYU',timezone:'America/Montevideo',payments_live:false,mail_provider:process.env.MAIL_PROVIDER||(process.env.NODE_ENV==='production'?'disabled':'local'),automatic_email_live:process.env.MAIL_PROVIDER==='smtp',whatsapp_live:false,tax_status:require('./commercial').settings(db).tax_status,plans:['individual','negocio','pro'].map(code=>require('./commercial').plan(db,code))}));
   r('POST','/api/auth/register',async({req,body})=>{
+    if(body.country&&body.country!=='UY')fail(400,'Este servidor de desarrollo solo admite Uruguay. Panamá requiere el adaptador cloud multipaís.');
     const email=string(body.email,150).toLowerCase(),name=string(body.name,100),password=String(body.password||'');
     const businessName=string(body.business_name,100),slug=slugify(body.slug||businessName);
     if(!isEmail(email)||name.length<2||businessName.length<2||password.length<10||password.length>128||slug.length<3)fail(400,'Verificá los datos. La contraseña debe tener al menos 10 caracteres.');

@@ -3,7 +3,7 @@ import type {WeeklyModel} from '../dashboard/WeeklyActivity';
 import type {FeaturePort} from '../services/contracts';
 import type {WhatsAppConfig} from '../communications/contracts';
 import type {Customer} from '../customers/contracts';
-export interface BusinessContext {id:string;name:string;slug:string;role:'owner'|'manager'|'staff';plan:string;staff_id?:string;address?:string;timezone?:string;slot_step_min?:number;phone?:string;is_active?:number|boolean;subscription_status?:string;subscription_started_at?:string|null;paid_until?:string|null;trial_until?:string|null}
+export interface BusinessContext {country?:'UY'|'PA';currency?:'UYU'|'USD';locale?:'es-UY'|'es-PA';id:string;name:string;slug:string;role:'owner'|'manager'|'staff';plan:string;staff_id?:string;address?:string;timezone?:string;slot_step_min?:number;phone?:string;is_active?:number|boolean;subscription_status?:string;subscription_started_at?:string|null;paid_until?:string|null;trial_until?:string|null}
 export interface WhatsAppCore {templates:Record<string,string>;labels:Record<string,string>;variables:string[];phone:(phone:string,country?:string)=>string;render:(text:string,context:Record<string,string>)=>string;context:(business:BusinessContext,customer:Pick<Customer,'name'>,booking?:Record<string,unknown>,previous?:string,base?:string)=>Record<string,string>;link:(phone:string,message:string)=>string;settings:(input:unknown,plan:string)=>WhatsAppConfig}
 export interface AppPort extends FeaturePort {
  agendaPreferences(patch?:Partial<AgendaPreferences>):AgendaPreferences;

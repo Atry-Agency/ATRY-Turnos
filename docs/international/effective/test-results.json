@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-14",
+  "environment": "Local only; no remote credentials or operations",
+  "general": {
+    "passed": 267,
+    "failed": 0,
+    "skipped": 0
+  },
+  "build": "passed",
+  "react": "passed",
+  "postgresRegional": "passed",
+  "adapterIatry": "passed",
+  "permissionsRegional": "passed",
+  "regionalDatesMoneyExports": "passed",
+  "securityEffectiveAclRls": "passed",
+  "recoveryDisposable": "passed",
+  "compatibilityUy": "passed",
+  "preflightSqlLocal": "passed",
+  "additionalIatryPackageScripts": "passed",
+  "browser": {
+    "engines": [
+      "Chrome",
+      "WebKit"
+    ],
+    "widths": [
+      320,
+      390,
+      430,
+      1440
+    ],
+    "applicationScenarios": 8,
+    "landingScenarios": 8,
+    "nonLocalCommercialScenarios": 2,
+    "passed": true,
+    "physicalDevice": false
+  },
+  "artifact": "local verification package only, PA closed",
+  "remoteSupabaseHomologated": false,
+  "nativeRestoreHomologated": false,
+  "productionReady": false
+}

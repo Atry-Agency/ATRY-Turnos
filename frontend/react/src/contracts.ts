@@ -1,6 +1,6 @@
 export interface Service {
  id:string; name:string; description?:string; active:number|boolean;
- price_uyu:number; duration_min:number; deposit_percent:number;
+ price_minor?:number;currency?:string;price_uyu:number; duration_min:number; deposit_percent:number;
  buffer_before_min:number; buffer_after_min:number;
 }
 // Shared extension contracts. Services uses a validated repository over the existing API transport.

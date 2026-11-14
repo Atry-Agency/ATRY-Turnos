@@ -15,7 +15,7 @@ test('Edge integrada: desafío real protege la escritura sin contactar Cloudflar
   assert.ok(!url.includes('cloudflare'));if(url.endsWith('atry_public_rate'))return Response.json(true);
   const data=JSON.parse(options.body).payload;assert.ok(!('proof_challenge'in data));assert.equal(data.idempotency_key,key);booked++;return Response.json({id:'booking-one'});
  }});
- const request=(operation,data,ip='203.0.113.1, 10.0.0.1')=>new Request('https://project.supabase.co/functions/v1/atry-public?operation='+operation+'&slug='+slug,{method:'POST',headers:{origin,'content-type':'application/json','x-forwarded-for':ip},body:JSON.stringify(data)});
+ const request=(operation,data,ip='203.0.113.1, 10.0.0.1')=>new Request('https://project.supabase.co/functions/v1/atry-public?regional_contract=1&operation='+operation+'&slug='+slug,{method:'POST',headers:{origin,'content-type':'application/json','x-forwarded-for':ip},body:JSON.stringify(data)});
  assert.equal((await handler(request('book',{idempotency_key:key,accept_policy:true}))).status,403);assert.equal(booked,0);
  const minted=await handler(request('challenge',{action:'booking',key}));assert.equal(minted.status,200);const ticket=await minted.json(),counter=await findProof(ticket.challenge,ticket.bits);
  const data={idempotency_key:key,accept_policy:true,proof_challenge:ticket.challenge,proof_counter:counter};

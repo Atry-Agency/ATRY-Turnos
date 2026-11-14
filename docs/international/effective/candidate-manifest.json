@@ -1,0 +1,39 @@
+{
+  "source": "Disposable PostgreSQL loaded from repository migration chain; not a production introspection",
+  "generatedAt": "2026-11-14T20:01:51.281Z",
+  "functions": 187,
+  "migrations": [
+    {
+      "file": "202611130001_regional_foundation.sql",
+      "sha256": "c16a36aee920c23e6d0f4f0a83250c29fadea36bfb7a8d0d0dd5439a98c2bf23"
+    },
+    {
+      "file": "202611130002_regional_snapshots.sql",
+      "sha256": "730f241c393d7152be9ce1e5ab6262d6fb63681bc1727e8422eea4fa3ac655d0"
+    },
+    {
+      "file": "202611130003_regional_consumers.sql",
+      "sha256": "af2517be7a2c5281c7e73c7fb5d47b9b37d0bee72b74dc9b2bac090d733cfd30"
+    },
+    {
+      "file": "202611130004_regional_whatsapp.sql",
+      "sha256": "8c6b50f14c09d01aaa833692cab6bffce557871cdf71dce793aa18f5bbe57e31"
+    },
+    {
+      "file": "202611130005_regional_public_commercial.sql",
+      "sha256": "e9a94c343bcd8fe9f76edc6299ac9f674cb12ad35e3de2c5920374a2d4a55bdc"
+    },
+    {
+      "file": "202611140001_regional_release_guards.sql",
+      "sha256": "884eb15331fe7dafe6ab2234f5b71fd261c29e1b9f85725f7b0e8956f4309f9b"
+    }
+  ],
+  "remainingMontevideoLiterals": [
+    "public.atry_create_organization",
+    "public.atry_runtime_config"
+  ],
+  "rls": {
+    "tables": 43,
+    "all_enabled": true
+  }
+}

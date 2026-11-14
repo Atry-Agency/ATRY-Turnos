@@ -6,7 +6,7 @@ import type {Context,Tip} from './types';
 import {IatryContext,type IatryBindings} from './context';
 import {IatryAvatar} from './Avatar';
 import './iatry.css';
-interface Props{children:ReactNode;user?:{id:string;name:string};business?:{id:string;role:string;onboarding_completed?:boolean|number};view:string;demo:boolean;showcase:boolean;navigate(route:string):void}
+interface Props{children:ReactNode;user?:{id:string;name:string};business?:{country?:string;timezone?:string;id:string;role:string;onboarding_completed?:boolean|number};view:string;demo:boolean;showcase:boolean;navigate(route:string):void}
 interface Issue{text:string;label:string;route?:string;tab?:string}
 interface UI{view:string;tip:Tip|null;manual:boolean;located:boolean;detail:boolean;notice:string;issue:Issue|null;focus?:'primary'|'request'|'options';sequence:number}
 type Phase='idle'|'appearing'|'moving'|'attention'|'guiding'|'celebrating'|'leaving';

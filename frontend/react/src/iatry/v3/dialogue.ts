@@ -15,7 +15,7 @@ function basePrompt(tool:Capability,seed:InstructionSeed){const f=missingField(t
  if(tool.id==='customers.create'&&f.key==='email')return '¿Qué correo o teléfono dejamos como contacto?';
  if(f.key==='name')return tool.id==='services.create'?'¡Dale! ¿Cómo se va a llamar?':tool.area==='Clientes'?'¿Cómo se llama el cliente?':'¿Qué nombre le ponemos?';
  if(tool.id==='services.create'&&['price_uyu','duration_min'].includes(f.key)&&!seed.values.price_uyu&&!seed.values.duration_min)return 'Perfecto. ¿Cuánto dura y cuánto cuesta?';
- const prompts:Record<string,string>={service:'¿Qué servicio querés ajustar?',customer:'¿De qué cliente hablamos?',staff:'¿Para qué profesional lo preparamos?',person:'¿Qué profesional querés consultar?',price_uyu:'¿Qué precio querés ponerle, en pesos?',duration_min:'¿Cuántos minutos dura?',starts_at:'¿Desde qué día y hora? Por ejemplo, 16/11/2026 a las 13:00.',ends_at:'¿Hasta qué día y hora?',q:'¿A qué cliente buscamos?',date:'¿Para qué fecha?',reason:'¿Qué motivo querés dejar anotado?'};
+ const prompts:Record<string,string>={service:'¿Qué servicio querés ajustar?',customer:'¿De qué cliente hablamos?',staff:'¿Para qué profesional lo preparamos?',person:'¿Qué profesional querés consultar?',price_uyu:'¿Qué precio querés ponerle?',duration_min:'¿Cuántos minutos dura?',starts_at:'¿Desde qué día y hora? Por ejemplo, 16/11/2026 a las 13:00.',ends_at:'¿Hasta qué día y hora?',q:'¿A qué cliente buscamos?',date:'¿Para qué fecha?',reason:'¿Qué motivo querés dejar anotado?'};
  return prompts[f.key]||f.label;
 }
 export function localPrompt(tool:Capability,seed:InstructionSeed){return voice({state:missingField(tool,seed)?'question':'ready',tool,values:seed.values,question:basePrompt(tool,seed)});}
@@ -23,7 +23,7 @@ function dateTime(raw:string){const source=language(raw);const iso=source.match(
 export function continueDialogue(tool:Capability,current:InstructionSeed,source:string):Dialogue{
  const seed=structuredClone(current),s=language(source),field=missingField(tool,seed);if(!source.trim()||source.length>500)return{seed,error:'Contame ese dato en una frase breve.'};
  const person=source.match(/^(?:para|profesional(?: es)?|con)\s+(.+)$/i);if(person&&tool.fields.some(f=>f.key==='staff')){seed.references.staff=person[1].trim();delete seed.values.staff;return{seed};}
- const updates:Values={},duration=s.match(/\b(\d{1,3})\s*(?:minutos|min)\b/),price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+(?:[.,]\d+)*)\s*pesos\b/)||s.match(/(?:cuesta|precio(?: es)?|cobrar)\s+(\d+(?:[.,]\d+)*)\b/);
+ const updates:Values={},duration=s.match(/\b(\d{1,3})\s*(?:minutos|min)\b/),price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+(?:[.,]\d+)*)\s*(?:pesos|uyu|usd|dolares)\b/)||s.match(/(?:cuesta|precio(?: es)?|cobrar)\s+(\d+(?:[.,]\d+)*)\b/);
  const contact=source.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),phone=source.match(/^(?:(?:telefono|teléfono|celular)\s+)?(\+?\d[\d -]{4,32})$/i);if(tool.id.startsWith('customers.')){if(contact)updates.email=contact[0];if(phone)updates.phone=phone[1].trim();}
  if(field?.key==='name'&&!/minutos|min\b|pesos|\$|cuesta|precio/.test(s)&&!/(?:nombre|llama)/.test(s)){try{validate({...field,options:undefined,value:source.trim()},source.trim());seed.values.name=source.trim();return{seed};}catch(e){return{seed,error:(e as Error).message};}}
  if(duration&&tool.fields.some(f=>f.key==='duration_min'))updates.duration_min=duration[1];
@@ -37,7 +37,7 @@ export function continueDialogue(tool:Capability,current:InstructionSeed,source:
   else if(field.type==='datetime-local')return{seed,error:'Necesito el día y la hora exactos. Podés escribir 16/11/2026 a las 13:00.'};
   else updates[field.key]=source.trim();
  }
- if(!Object.keys(updates).length)return{seed,error:'¿Qué dato querés corregir? Podés decir «30 minutos», «500 pesos» o «el nombre es Barba».'};
+ if(!Object.keys(updates).length)return{seed,error:'¿Qué dato querés corregir? Podés decir «30 minutos», «500» o «el nombre es Barba».'};
  try{for(const[key,value]of Object.entries(updates)){const f=tool.fields.find(f=>f.key===key)!;validate({...f,options:Array.isArray(f.options)?f.options:undefined,value},value);if(f.type==='datetime-local'){const [d,t]=String(value).split('T');validate({key:'day',label:'fecha',type:'date',required:true},d);validate({key:'time',label:'hora',type:'time',required:true},t||'');}}Object.assign(seed.values,updates);if(seed.values.starts_at&&seed.values.ends_at&&String(seed.values.ends_at)<=String(seed.values.starts_at))throw Error('La fecha de regreso debe ser posterior al inicio.');return{seed};}catch(e){return{seed:structuredClone(current),error:(e as Error).message};}
 }
 export function draftFacts(tool:Capability,seed:InstructionSeed):OperationFacts{
@@ -48,4 +48,4 @@ export function draftFacts(tool:Capability,seed:InstructionSeed):OperationFacts{
 }
 export function parseFollowUp(step:InstructionStep,tool:Capability,source:string):Dialogue{return continueDialogue(tool,step.seed,source);}
 
-export function quickReplies(tool:Capability,seed:InstructionSeed){const f=missingField(tool,seed);if(!f)return[];if(Array.isArray(f.options))return f.options.slice(0,3).map(o=>o.label);if(f.key==='duration_min')return['15 minutos','30 minutos','60 minutos'];if(f.key==='price_uyu')return['0 pesos'];return[];}
+export function quickReplies(tool:Capability,seed:InstructionSeed){const f=missingField(tool,seed);if(!f)return[];if(Array.isArray(f.options))return f.options.slice(0,3).map(o=>o.label);if(f.key==='duration_min')return['15 minutos','30 minutos','60 minutos'];if(f.key==='price_uyu')return[f.decimalPlaces===2?'0 USD':'0 pesos'];return[];}

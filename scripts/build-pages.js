@@ -7,7 +7,8 @@ function config(env,{verificationOnly=false}={}){
  if(key.startsWith('eyJ')){let payload;try{payload=JSON.parse(Buffer.from(key.split('.')[1],'base64url').toString());}catch{throw new Error('Clave inválida');}if(payload.role!=='anon')throw new Error('Clave privilegiada prohibida');throw new Error('Usá la clave pública sb_publishable del proyecto');}
  if(!key.startsWith('sb_publishable_'))throw new Error('Formato de clave pública inválido');
  if(env.CLOUD_BACKEND_VALIDATED!=='1'&&!verificationOnly)throw new Error('Publicación bloqueada: falta validar equivalencia completa del backend cloud');
- return {supabaseUrl:url,supabaseKey:key,backend:'supabase',turnstileSiteKey:env.PUBLIC_TURNSTILE_SITE_KEY||'',...(verificationOnly?{verificationOnly:true}:{})};
+ const paRequested=env.PUBLIC_PA_REGISTRATION_ENABLED==='1';if(paRequested&&(env.REGIONAL_BACKEND_VALIDATED!=='1'||env.PA_RELEASE_APPROVED!=='1'||verificationOnly))throw new Error('Altas PA bloqueadas: faltan homologación regional y autorización de publicación.');
+ return {supabaseUrl:url,supabaseKey:key,backend:'supabase',turnstileSiteKey:env.PUBLIC_TURNSTILE_SITE_KEY||'',...(paRequested?{paRegistrationEnabled:true}:{}),...(verificationOnly?{verificationOnly:true}:{})};
 }
 async function build(env,dest=path.resolve('dist/pages'),options={}){
  const c=config(env,options);require('./react/package.cjs').packageReact(dest,c);

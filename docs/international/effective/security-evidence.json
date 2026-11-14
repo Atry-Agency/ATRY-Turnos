@@ -1,0 +1,27 @@
+{
+  "source": "Effective local policies and ACLs plus adversarial roles; not remote Supabase validation",
+  "policyCount": 34,
+  "policyDigest": "88796b00e1635bed7a284dc7a6853978b86725eb7659f83af1f05f64d69dac30",
+  "policiesUnchanged": true,
+  "tableAndSchemaGrantsUnchanged": true,
+  "searchPathSpoofDenied": true,
+  "sessionMismatchDenied": true,
+  "existingFunctionAclsUnchanged": true,
+  "securityDefinerSearchPathChecked": true,
+  "addedInternalFunctions": [
+    "private.business_zone",
+    "private.guard_business_region",
+    "private.require_public_region",
+    "private.require_regional_client",
+    "private.sync_regional_money",
+    "public.atry_request_plan_regional_base",
+    "public.atry_save_service_regional_base"
+  ],
+  "addedFunctionsNotExecutableByClients": true,
+  "paDefaultClosed": true,
+  "legacyUyCompatible": true,
+  "legacyPaClientRejected": true,
+  "crossOwnerDenied": true,
+  "employeeDenied": true,
+  "privateAliasesDenied": true
+}

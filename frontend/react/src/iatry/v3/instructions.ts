@@ -54,7 +54,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  }
  for(const [key,value]of Object.entries(entities))if(tool.fields.some(f=>f.key===key))values[key]=value;
  const price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+)\s*(?:pesos|uyu)\b/);if(price&&tool.fields.some(f=>f.key==='price_uyu'))values.price_uyu=price[1].replace(/\.(?=\d{3}(?:[.,]|$))/g,'').replace(',','.');
- if(id==='services.price'){if(/\d\s*%/.test(s))notes.push('Indicá el importe final en pesos. No aplicaré un porcentaje implícito.');const ref=s.match(/precio (?:del? |de la )?(.+?)(?= (?:a|en) \$?\d|$)/);if(ref)references.service=ref[1].trim()}
+ if(id==='services.price'){if(/\d\s*%/.test(s))notes.push('Indicá el importe final. No aplicaré un porcentaje implícito.');const ref=s.match(/precio (?:del? |de la )?(.+?)(?= (?:a|en) \$?\d|$)/);if(ref)references.service=ref[1].trim()}
  if(id==='bookings.no_show'){const ref=s.match(/^(.+?) (?:falto|no vino|no asistio)/);if(ref)references.booking=ref[1].replace(/^el cliente /,'').trim()}
  if(id==='customers.search'){const match=source.match(/\bcliente\s+(?:llamado\s+)?(.+)$/i);if(match)values.q=match[1].trim()}
  if(id==='customers.history'){const match=source.match(/historial (?:del cliente |de |del )(.+)$/i);if(match&&!/^(?:un cliente|cliente)$/i.test(match[1]))references.customer=match[1].trim()}

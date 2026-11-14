@@ -8,7 +8,7 @@ export type Values=Record<string,string|string[]|boolean>;
 export type Option={value:string;label:string};
 export type Row=Record<string,unknown>&{id:string};
 export type FieldType='text'|'email'|'tel'|'number'|'date'|'time'|'datetime-local'|'select'|'multiple'|'checkbox'|'color';
-export interface Field {key:string;label:string;type:FieldType;required?:boolean;min?:number;max?:number;maxLength?:number;hint?:string;options?:Option[];value?:string|string[]|boolean}
+export interface Field {key:string;label:string;type:FieldType;required?:boolean;min?:number;max?:number;decimalPlaces?:2;maxLength?:number;hint?:string;options?:Option[];value?:string|string[]|boolean}
 export interface FieldSpec extends Omit<Field,'options'|'value'>{options?:Option[]|((ctx:ToolContext,values:Values)=>Promise<Option[]>);value?:Field['value']|((ctx:ToolContext,values:Values)=>Promise<Field['value']>)}
 export interface Result {preview?:OperationFacts;verified?:boolean;title:string;message:string;rows?:{label:string;value:string}[];items?:{id?:string;title:string;detail:string}[];records?:{tail:string;rows:Row[]};source?:string}
 export interface Plan {tail:string;method:'POST'|'PATCH'|'PUT';payload:unknown;summary:{label:string;value:string}[];warning:string;success:string;recheck?:()=>Promise<void>;applyBusiness?:boolean;verify?:(response:unknown)=>Promise<unknown>}

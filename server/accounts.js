@@ -4,6 +4,7 @@ const {fail}=require('./booking');
 const slugify=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,55);
 function register({r,db,auth,authorized,string,isEmail,record}){
  function addBusiness(user,body){
+  if(body.country&&body.country!=='UY')fail(400,'Este servidor de desarrollo solo admite Uruguay. Panamá requiere el adaptador cloud multipaís.');
   const name=string(body.name,100),slug=slugify(body.slug||name);if(name.length<2||slug.length<3)fail(400,'Ingresá un nombre y enlace válidos');
   if(db.prepare("SELECT count(*) n FROM memberships WHERE user_id=? AND role='owner'").get(user.id).n>=10)fail(403,'La cuenta alcanzó el límite de diez negocios');
   return transaction(db,()=>{if(db.prepare('SELECT id FROM businesses WHERE slug=?').get(slug))fail(409,'El enlace ya está en uso');const bid=id(),sid=id();

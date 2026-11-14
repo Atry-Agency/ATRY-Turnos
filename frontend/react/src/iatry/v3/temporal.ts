@@ -1,7 +1,8 @@
+import {regionalDay,type RegionalBusiness} from '../../domain/region';
 import {normalizeLanguage} from './language';
 import {plusDate,today} from '../../domain/format';
 const days=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
-/** Calendar dates are Montevideo local dates; conversion to UTC stays in the existing adapter. */
+/** Calendar dates use the explicit business-local base. Legacy callers default to Uruguay; UTC conversion stays in the existing adapter. */
 export function calendarDay(text:string,base=today()):string{
  const s=normalizeLanguage(text).replace(/(?:de|por) la manana/g,'');
  const iso=s.match(/\b(\d{4}-\d{2}-\d{2})\b/),local=s.match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/);const value=iso?.[1]||(local?local[3]+'-'+local[2].padStart(2,'0')+'-'+local[1].padStart(2,'0'):'');
@@ -21,3 +22,7 @@ export function resolvePeriod(text:string,base=today(),contextDay=''):PeriodReso
 
  return{day};
 }
+
+/** Explicit business-scoped entry points; callers must supply authenticated business context. */
+export const businessCalendarDay=(text:string,business:RegionalBusiness,now=new Date())=>calendarDay(text,regionalDay(now,business));
+export const businessPeriod=(text:string,business:RegionalBusiness,now=new Date(),contextDay='')=>resolvePeriod(text,regionalDay(now,business),contextDay);

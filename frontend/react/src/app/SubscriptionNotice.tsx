@@ -10,7 +10,7 @@ type Phase='idle'|'checking'|'unchanged'|'error'|'success'|'leaving'|'dismissed'
 export function SubscriptionNotice({business:b,port,beforeLeave,copy}:{business:Business;port:AppPort;beforeLeave:()=>Promise<boolean>;copy:(text:string)=>Promise<void>}){
  const [phase,setPhase]=useState<Phase>('idle'),[details,setDetails]=useState(false),[attempt,setAttempt]=useState(0),[preview,setPreview]=useState(false);
  const busy=useRef(false),mounted=useRef(true),notice=useRef<HTMLElement>(null);
- const live=subscriptionLive(b),end=subscriptionDay(subscriptionDeadline(b)),label=subscriptionLabel(b),demo=import.meta.env.DEV&&port.demo();
+ const live=subscriptionLive(b),end=subscriptionDay(subscriptionDeadline(b),b),label=subscriptionLabel(b),demo=import.meta.env.DEV&&port.demo();
  const successful=['success','leaving','dismissed'].includes(phase),visible=phase!=='dismissed'&&(!live||['checking','success','leaving'].includes(phase));
  useEffect(()=>{mounted.current=true;return()=>{mounted.current=false}},[]);
  useEffect(()=>{if(phase!=='success')return;const timer=setTimeout(()=>setPhase('leaving'),1300);return()=>clearTimeout(timer)},[phase]);

@@ -1,0 +1,212 @@
+[
+  {
+    "schema": "private",
+    "name": "bookings_before_recurring",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "check_slot_before_recurring",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "check_slot_single",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "private",
+    "name": "commercial_cycle",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "private",
+    "name": "control_command_base",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "control_read_base",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "control_save_business_base",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "control_save_plan_base",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "create_booking",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "dashboard_before_recurring",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "expand_recurring",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "manage_single",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "public_info_theme_base",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "validate_visit",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "private",
+    "name": "visit_fingerprint",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_leg",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_notify",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_options",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_read",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_search",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "private",
+    "name": "visit_slot_base",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "private",
+    "name": "visit_slot_raw",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "public",
+    "name": "atry_admin_businesses",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_admin_save_plan",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_create_recurring",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "public",
+    "name": "atry_customer_history",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_dashboard",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "public",
+    "name": "atry_end_recurring",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "public",
+    "name": "atry_export_bookings",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_insights",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_mail_ingest",
+    "time": true,
+    "money": false
+  },
+  {
+    "schema": "public",
+    "name": "atry_request_plan",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_runtime_config",
+    "time": true,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_save_service",
+    "time": false,
+    "money": true
+  },
+  {
+    "schema": "public",
+    "name": "atry_subscription",
+    "time": false,
+    "money": true
+  }
+]

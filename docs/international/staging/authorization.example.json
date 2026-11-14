@@ -1,0 +1,10 @@
+{
+  "authorized": false,
+  "purpose": "readonly-staging-homologation",
+  "projectRef": "REEMPLAZAR_POR_STAGING_AUTORIZADO",
+  "expiresAt": "REEMPLAZAR_POR_FECHA_ISO_AUTORIZADA",
+  "identities": [
+    {"label":"propietario A","tokenEnv":"ATRY_STAGING_OWNER_A_TOKEN","expectedUserId":"UUID_AUTORIZADO_A","ownBusinessId":"ID_FICTICIO_A","forbiddenBusinessId":"ID_FICTICIO_B"},
+    {"label":"propietario B","tokenEnv":"ATRY_STAGING_OWNER_B_TOKEN","expectedUserId":"UUID_AUTORIZADO_B","ownBusinessId":"ID_FICTICIO_B","forbiddenBusinessId":"ID_FICTICIO_A"}
+  ]
+}

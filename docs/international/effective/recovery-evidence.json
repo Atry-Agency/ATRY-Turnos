@@ -1,0 +1,21 @@
+{
+  "environment": "Disposable PGlite/PostgreSQL, synthetic data only; not a pg_dump or Supabase restore certification",
+  "migrations": [
+    "202611130001_regional_foundation.sql",
+    "202611130002_regional_snapshots.sql",
+    "202611130003_regional_consumers.sql",
+    "202611130004_regional_whatsapp.sql",
+    "202611130005_regional_public_commercial.sql",
+    "202611140001_regional_release_guards.sql"
+  ],
+  "legacyTables": 66,
+  "legacyIntegrity": "unchanged except listed cache revisions",
+  "metadataChanged": [
+    "public.calendar_revisions"
+  ],
+  "baselineRestore": true,
+  "failedMigrationAtomic": true,
+  "paCompatibleRestore": true,
+  "baselineDigest": "5a8333347f8b15ce0dff89e2334d3024d554932f6c7a5f26503761803b0365cb",
+  "candidateDigest": "f9f014ef8ac61b98a6881dbf78136448bdf96137a07542ab9f0fb778023291a1"
+}

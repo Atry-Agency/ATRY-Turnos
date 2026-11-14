@@ -3,8 +3,13 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{pg}=require('../../tests/pg-context');
 (async()=>{const db=await pg();try{
  const snapshot=require('../../docs/iatry-phase-one/CONTRATOS-REALES.json');
- const functions=(await db.query("SELECT proname,md5(regexp_replace(pg_get_functiondef(p.oid),'[[:space:]]','','g')) hash FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public'")).rows;
- for(const [name,hash] of Object.entries(snapshot.hashes))assert.equal(functions.find(f=>f.proname===name)?.hash,hash,'Deployed contract drift: '+name);
+ const fingerprint=async connection=>(await connection.query("SELECT proname,md5(regexp_replace(pg_get_functiondef(p.oid),'[[:space:]]','','g')) hash FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public'")).rows;
+ // Retain the deployed evidence verbatim. The candidate deliberately changes only
+ // these two contracts; regional security/money suites verify their new behavior.
+ const baseline=await pg({through:'202611130000'});try{const deployed=await fingerprint(baseline);for(const [name,hash] of Object.entries(snapshot.hashes))assert.equal(deployed.find(f=>f.proname===name)?.hash,hash,'Baseline deployed contract drift: '+name)}finally{await baseline.close()}
+ const functions=await fingerprint(db),changed=[];
+ for(const [name,hash] of Object.entries(snapshot.hashes))if(functions.find(f=>f.proname===name)?.hash!==hash)changed.push(name);
+ assert.deepEqual(changed.sort(),['atry_catalog','atry_save_service'],'Unexpected regional change to deployed contracts');
  await db.exec(fs.readFileSync('tests/postgres.test.js','utf8').split('async function fixture(db){await db.exec(`')[1].split('`);}')[0]);
  await db.exec("BEGIN;INSERT INTO public.recurring_appointments(id,business_id,staff_id,service_id,customer_name,customer_email,customer_phone,start_day,minute,interval_weeks) VALUES('contact-own','b1','s1','v1','Original','original@example.invalid','','2026-11-01',600,1),('contact-other','b2','s3','v2','Original','original@example.invalid','','2026-11-01',600,1);");
  await db.query("SELECT set_config('request.jwt.claim.sub','00000000-0000-0000-0000-000000000001',false),set_config('request.jwt.claims',$1,false)",[JSON.stringify({session_id:'00000000-0000-0000-0000-000000000001'})]);await db.exec('SET ROLE authenticated');
@@ -17,5 +22,5 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),{pg}=require('.
  await db.exec('SET ROLE authenticated');await save(customer.id,{notes:'Only notes'});await db.exec('RESET ROLE');assert.deepEqual((await db.query('SELECT id,customer_name,customer_email,customer_phone FROM public.recurring_appointments ORDER BY id')).rows,rows);
  await db.exec('SET ROLE authenticated');await save(null,{name:'Other',email:'conflict@example.invalid',phone:''});await db.exec('SAVEPOINT conflict');await assert.rejects(()=>save(customer.id,{email:'conflict@example.invalid'}),/CONTACT_CONFLICT/);await db.exec('ROLLBACK TO SAVEPOINT conflict;RESET ROLE');assert.deepEqual((await db.query('SELECT id,customer_name,customer_email,customer_phone FROM public.recurring_appointments ORDER BY id')).rows,rows);
  const counts=(await db.query('SELECT (SELECT count(*) FROM notifications)::int n,(SELECT count(*) FROM mail_jobs)::int m')).rows[0];assert.deepEqual(counts,{n:0,m:0});await db.exec('ROLLBACK');
- console.log('PASS 9 deployed RPC definition fingerprints; local contact propagation, tenant isolation, notes preservation, atomic contact-conflict rejection; zero mail/notifications.');
+ console.log('PASS 9 original RPC fingerprints against baseline; candidate has exactly 2 declared regional contract changes; local contact propagation, tenant isolation, notes preservation, atomic contact-conflict rejection; zero mail/notifications.');
  }finally{await db.close()}})().catch(e=>{console.error(e.message);process.exitCode=1});

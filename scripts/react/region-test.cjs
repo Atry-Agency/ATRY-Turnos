@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict'),path=require('node:path');
+const root=path.resolve(__dirname,'../..'),out='/private/tmp/atry-region-tests.cjs';
+require('esbuild').buildSync({stdin:{contents:"export * from './domain/region';export * from './calendar/event';export * from './location/model';export * from './iatry/v3/temporal';",resolveDir:path.join(root,'frontend/react/src')},bundle:true,platform:'node',format:'cjs',outfile:out});
+const r=require(out),uy={country:'UY'},pa={country:'PA'},now=new Date('2026-11-14T04:00:00Z');
+assert.equal(r.regionalDay(now,uy),'2026-11-14');assert.equal(r.regionalDay(now,pa),'2026-11-13');
+assert.equal(r.localInstant('2026-11-14T15:00',uy),'2026-11-14T18:00:00.000Z');assert.equal(r.localInstant('2026-11-14T15:00',pa),'2026-11-14T20:00:00.000Z');
+for(const business of [uy,pa])for(const day of ['2026-01-01','2026-11-14','2027-12-31'])assert.equal(r.regionalDateTime(r.localInstant(day+'T00:00',business),business),day+'T00:00');
+assert.throws(()=>r.localInstant('2026-02-30T12:00',pa));assert.throws(()=>r.region({country:'PA',currency:'UYU'}));assert.throws(()=>r.region({country:'XX'}));
+for(const [v,n] of [['0',0],['0.10',10],['12,50',1250],['790',79000]]){assert.equal(r.amountMinor(v),n);assert.equal(r.amountMinor(r.decimalAmount(n)),n)}
+for(const v of ['1.001','-1','1e2','NaN',''])assert.throws(()=>r.amountMinor(v));assert.equal(r.legacyUyuMinor(1490),149000);
+assert.equal(r.businessCalendarDay('hoy',uy,now),'2026-11-14');assert.equal(r.businessCalendarDay('hoy',pa,now),'2026-11-13');for(const b of [uy,pa])assert.equal(r.businessCalendarDay('domingo',b,now),'2026-11-15');assert.equal(r.businessCalendarDay('mañana',uy,now),'2026-11-15');assert.equal(r.businessCalendarDay('mañana',pa,now),'2026-11-14');
+for(const country of ['UY','PA']){const b={status:'confirmed',business_name:'Negocio ficticio',service_name:'Servicio',business_country:country,starts_at:'2026-11-14T15:00',ends_at:'2026-11-14T15:30'};const e=r.calendarEvent(b);assert(e);assert.equal(new URL(r.googleCalendarUrl(e)).searchParams.get('ctz'),r.regions[country].timezone);assert(e.description.includes(r.regions[country].name));assert(r.calendarIcs(e).includes('DTSTART:20261114T'+(country==='PA'?'200000':'180000')+'Z'));const url=r.directionsUrl({country,address:'Dirección ficticia'},'confirmed');assert(new URL(url).searchParams.get('destination').includes(r.regions[country].name));}
+assert(r.regionalMoney(Number.MAX_SAFE_INTEGER,pa).includes('409.91'));
+const wa=require('../../web/whatsapp-core');assert.equal(wa.phone('6000 0001','507'),'50760000001');assert.equal(wa.phone('+59899000001','507'),'59899000001');assert.equal(wa.phone('099000001','598'),'59899000001');const booking={starts_at:now.toISOString(),ends_at:new Date(now.valueOf()+1800000).toISOString()};const business={name:'Ficticio',slug:'ficticio'};assert.equal(wa.context({...business,...r.regions.PA},{name:'Cliente'},booking).hora,'23:00');assert.equal(wa.context({...business,...r.regions.UY},{name:'Cliente'},booking).hora,'01:00');
+console.log('PASS local regional foundation: simultaneous UY/PA dates, midnight/year boundaries, exact cents, legacy UYU, contextual tomorrow, Google/Apple exports and country-aware Maps. No network or production writes.');

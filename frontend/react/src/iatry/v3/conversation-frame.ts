@@ -36,9 +36,9 @@ export function referenceFrame(frame:ConversationFrame,seed:InstructionSeed,tool
 export function unresolvedReferenceFrame(frame:ConversationFrame,tool:Capability,message:string){const memory=clone(frame.memory);for(const f of tool.fields)if(['service','customer'].includes(f.key)){delete memory.values[f.key];delete memory.references[f.key];}return{toolId:frame.toolId,memory,reply:message};}
 const clean=(s:string)=>s.replace(/^(?:(?:no|en realidad(?: es)?|mejor|quiero|quisiera|necesito|prefiero)[,\s]+)+/i,'').trim();
 function family(tool:Capability){return tool.id.split('.')[0];}
-function switchTarget(tool:Capability,source:string,all:readonly Capability[]){const s=language(source),area=family(tool);
+function switchTarget(tool:Capability,source:string,all:readonly Capability[],base:string){const s=language(source),area=family(tool);
  if((!conversationTopics(source).length||conversationTopics(source).includes(area))&&/^(?:uno|una|otro|otra|un servicio|una ficha)?\s*(?:nuevo|nueva)|^(?:crear|crea|agregar|agrega) (?:uno|una)\b/.test(s)){const id=area==='services'?'services.create':area==='customers'?'customers.create':area==='bookings'?'bookings.create':undefined;return all.find(t=>t.id===id);}
- if(/\b(?:crea\w*|agrega\w*|consulta\w*|mostra\w*|cancela\w*|modifica\w*|edita\w*|cambia el precio|subi el precio)\b/.test(s)){const parsed=interpretInstruction(source,all,all);if(!parsed.clarification&&parsed.steps.length===1){const candidate=all.find(t=>t.id===parsed.steps[0].id);if(candidate)return candidate;}}
+ if(/\b(?:crea\w*|agrega\w*|consulta\w*|mostra\w*|cancela\w*|modifica\w*|edita\w*|cambia el precio|subi el precio)\b/.test(s)){const parsed=interpretInstruction(source,all,all,base);if(!parsed.clarification&&parsed.steps.length===1){const candidate=all.find(t=>t.id===parsed.steps[0].id);if(candidate)return candidate;}}
  return undefined;
 }
 export function confirmFrame(frame:ConversationFrame,accept:boolean,tools:readonly Capability[]):ConversationFrame{
@@ -67,7 +67,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
   if(tool.kind==='create'&&seed.values.name)return{...frame,reply:'¿Te referís a la propuesta «'+seed.values.name+'»? Todavía no está guardada. Podemos seguir ajustándola; no la voy a tratar como un registro existente.'};
   return{...frame,reply:'No puedo identificar ese registro con certeza. Decime el nombre o elegilo entre las opciones disponibles; no hice cambios.'};
  }
- const working=clone(frame.pending?.draft||frame),target=switchTarget(tool,clean(source),all);
+ const working=clone(frame.pending?.draft||frame),target=switchTarget(tool,clean(source),all,base);
  if(target?.id===working.toolId&&/^(?:(?:uno|una|otro|otra)\s+nuev[oa]|(?:crear|crea|agregar|agrega)\s+(?:uno|una))[.! ]*$/.test(language(clean(source))))return{...frame,reply:intentReply(frame,target)};
  if(target&&target.id!==working.toolId){
   const draft:FrameDraft={toolId:target.id,memory:family(target)===family(tool)?clone(frame.memory):{values:{},references:{}}};
@@ -113,7 +113,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  // A bare correction can target a single reference field; multiple candidates require clarification.
  if(correction!==source&&/^[a-záéíóúüñ][a-záéíóúüñ .'-]*$/i.test(correction)&&!hasDate){const references=currentTool.fields.filter(f=>f.type==='select'&&typeof f.options==='function');if(references.length===1){const key=references[0].key;draft.memory.references[key]=correction;delete draft.memory.values[key];return propose(frame,draft,all);}if(references.length>1)return{...frame,clarification:{question:'¿Qué dato querés corregir?',choices:references.map(f=>({label:f.label,draft:{...clone(draft),memory:{values:Object.fromEntries(Object.entries(draft.memory.values).filter(([key])=>key!==f.key)),references:{...draft.memory.references,[f.key]:correction}}}}))}};}
  let independent=extractEntities(source);
- if(/^mejor \d{1,3}[.! ]*$/.test(s)){const keys=['duration_min','price_uyu'].filter(k=>draft.memory.values[k]!==undefined);if(keys.length!==1)return{...frame,reply:'¿Ese número es la duración en minutos o el precio en pesos?'};independent={[keys[0]]:s.match(/\d+/)![0]};}
+ if(/^mejor \d{1,3}[.! ]*$/.test(s)){const keys=['duration_min','price_uyu'].filter(k=>draft.memory.values[k]!==undefined);if(keys.length!==1)return{...frame,reply:'¿Ese número es la duración en minutos o el precio?'};independent={[keys[0]]:s.match(/\d+/)![0]};}
  if(/^(?:ese|esa|eso)$/.test(s))return{...frame,reply:'¿Cuál exactamente? Decime el nombre para elegirlo sin confundirnos.'};
  if(independent.name&&!currentTool.fields.some(f=>f.key==='name')&&f?.type==='select'&&typeof f.options==='function'&&Object.keys(independent).length===1){draft.memory.references[f.key]=String(independent.name);delete draft.memory.values[f.key];return propose(frame,draft,all);}
  if(Object.keys(independent).length){Object.assign(draft.memory.values,independent);return propose(frame,draft,all);}

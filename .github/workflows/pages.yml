@@ -42,6 +42,9 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_KEY: ${{ vars.PUBLIC_SUPABASE_KEY }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
+          REGIONAL_BACKEND_VALIDATED: ${{ vars.REGIONAL_BACKEND_VALIDATED }}
+          PA_RELEASE_APPROVED: ${{ vars.PA_RELEASE_APPROVED }}
+          PUBLIC_PA_REGISTRATION_ENABLED: ${{ vars.PUBLIC_PA_REGISTRATION_ENABLED }}
       - name: Comprobar artefacto React y proyecto definitivo
         shell: bash
         run: |

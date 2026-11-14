@@ -1,0 +1,107 @@
+{
+  "note": "Local synthetic schema fingerprints; production must be compared, not assumed identical.",
+  "baseline": [
+    {
+      "categoria": "columnas",
+      "cantidad": 429,
+      "huella": "cf7980c942597db40c648e41cc64de66"
+    },
+    {
+      "categoria": "extensiones",
+      "cantidad": 2,
+      "huella": "affb90a715b4aba3438dbbe510b93aa4"
+    },
+    {
+      "categoria": "funciones",
+      "cantidad": 180,
+      "huella": "75be44a912b4fb7af283067833edc8f7"
+    },
+    {
+      "categoria": "permisos",
+      "cantidad": 160,
+      "huella": "11f1676b4569985c76bf0ea9e9bb44f0"
+    },
+    {
+      "categoria": "permisos_funciones",
+      "cantidad": 180,
+      "huella": "5e1db0356acf07b5a14bc92934ee39cd"
+    },
+    {
+      "categoria": "politicas",
+      "cantidad": 34,
+      "huella": "1c25b8f63370bb55c3c654fcfe603105"
+    },
+    {
+      "categoria": "postgresql",
+      "cantidad": 1,
+      "huella": "18.6"
+    },
+    {
+      "categoria": "restricciones",
+      "cantidad": 581,
+      "huella": "746df93fce2d333f15804a478a0e3ac2"
+    },
+    {
+      "categoria": "rls",
+      "cantidad": 60,
+      "huella": "fd4aa9f5e8ed09e0623e06e878617e19"
+    },
+    {
+      "categoria": "triggers",
+      "cantidad": 47,
+      "huella": "880cda4f10ed16d27b2984f5291f4fb8"
+    }
+  ],
+  "candidate": [
+    {
+      "categoria": "columnas",
+      "cantidad": 438,
+      "huella": "0de26b0276a3d00fa27aa432d066eb3b"
+    },
+    {
+      "categoria": "extensiones",
+      "cantidad": 2,
+      "huella": "affb90a715b4aba3438dbbe510b93aa4"
+    },
+    {
+      "categoria": "funciones",
+      "cantidad": 187,
+      "huella": "24f9ed313aa20985e266a027cdf5d817"
+    },
+    {
+      "categoria": "permisos",
+      "cantidad": 160,
+      "huella": "11f1676b4569985c76bf0ea9e9bb44f0"
+    },
+    {
+      "categoria": "permisos_funciones",
+      "cantidad": 187,
+      "huella": "6a4aba4b91226116dc641bb458246602"
+    },
+    {
+      "categoria": "politicas",
+      "cantidad": 34,
+      "huella": "1c25b8f63370bb55c3c654fcfe603105"
+    },
+    {
+      "categoria": "postgresql",
+      "cantidad": 1,
+      "huella": "18.6"
+    },
+    {
+      "categoria": "restricciones",
+      "cantidad": 595,
+      "huella": "6cb61f1ffecbf40138d7f26f7ba9daa8"
+    },
+    {
+      "categoria": "rls",
+      "cantidad": 60,
+      "huella": "fd4aa9f5e8ed09e0623e06e878617e19"
+    },
+    {
+      "categoria": "triggers",
+      "cantidad": 50,
+      "huella": "cc094a7f2f7d3c558b46f87321e3a398"
+    }
+  ]
+}

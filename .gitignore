@@ -21,4 +21,8 @@ supabase/.branches/
 docs/screenshots/
 coverage/
 
+# Remote diagnostics stay local; they are not product assets or database backups.
+docs/international/effective/production*.json
+docs/international/effective/atry-public-v8-rollback.ts
+
 node_modules

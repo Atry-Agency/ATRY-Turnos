@@ -38,6 +38,7 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
    const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(serviceKey),{name:'HMAC',hash:'SHA-256'},false,['sign']);
    const hashed=[...new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode('atry-rate-v1:'+ip)))].map(x=>x.toString(16).padStart(2,'0')).join('');
    if(!await rpc('atry_public_rate',{key_hash:hashed,request_scope:operation+':'+(businessOperation||operation==='challenge'?slug||'private-link':'private-link')}))return reply(429,{error:'PUBLIC_RATE_LIMIT'},origin);
+   if(url.searchParams.get('regional_contract')!=='1'&&['info','availability'].includes(operation)){const profile=await rpc('atry_public_info',{slug});if(profile?.business?.country==='PA')throw reject(409,'REGIONAL_CLIENT_REQUIRED');if(operation==='info')return reply(200,profile,origin);}
    if(operation==='info')return reply(200,await rpc('atry_public_info',{slug}),origin);
    if(operation==='availability'){
     const day=url.searchParams.get('date'),service_id=url.searchParams.get('service_id'),staff_id=url.searchParams.get('staff_id')||null;
@@ -63,6 +64,7 @@ export function createPublicHandler({supabaseUrl,serviceKey,siteUrl,turnstileSec
     }
    }
    const {turnstile_token,proof_challenge,proof_counter,token:ignoredToken,...data}=payload;
+   if(url.searchParams.get('regional_contract')!=='1'){if(businessOperation){const profile=await rpc('atry_public_info',{slug});if(profile?.business?.country==='PA')throw reject(409,'REGIONAL_CLIENT_REQUIRED');}else if(['manage','manage_availability','cancel','reschedule','offer','accept_offer','visit_manage_availability'].includes(operation)){const profile=await rpc(['offer','accept_offer'].includes(operation)?'atry_offer':'atry_manage',{token});if(profile?.business_country==='PA')throw reject(409,'REGIONAL_CLIENT_REQUIRED');}}
    if(operation==='visit_availability')return reply(200,await rpc('atry_public_visit_availability',{slug,payload:data}),origin);
    if(operation==='visit_book')return reply(200,await rpc('atry_public_visit_book',{slug,payload:data}),origin);
    if(operation==='visit_manage_availability')return reply(200,await rpc('atry_manage_visit_availability',{token,payload:data}),origin);

@@ -1,3 +1,4 @@
+import {regionalDay} from '../../domain/region';
 import {lazy,Suspense,useCallback,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import {createPortal} from 'react-dom';
 import {SecondaryMenu} from '../v3/SecondaryMenu';
@@ -41,7 +42,7 @@ export function V2Provider({children,user,business,view,demo,showcase,capabiliti
  const mobileModal=useMobileSheet(section,Boolean(operational)&&active&&expanded&&!minimized);
  const help=allowed&&supported(view,scope)?topics(view as View,scope):[],step=tour?.topic.steps[tour.step],target=step?anchors.current.get(step.anchor):undefined;
  const unavailable=useCallback(()=>setNotice('El control no está disponible ahora. Revisá la pestaña o continuá con otro paso; no cambié nada por vos.'),[]);
- const suggestions=evidence&&evidence.source===view?insights(evidence,scope.statistics):[],unseen=suggestions.filter(i=>!memory.dismissed.includes(i.id)&&!memory.snoozed.includes(i.fingerprint));
+ const suggestions=evidence&&evidence.source===view?insights(evidence,scope.statistics,regionalDay(new Date(),business||{})):[],unseen=suggestions.filter(i=>!memory.dismissed.includes(i.id)&&!memory.snoozed.includes(i.fingerprint));
  function request(){setMinimized(false);setExpanded(true);setPhase('appearing');setNotice('')}
  function start(topic:Topic){if(!topic.steps.length)return;setTour({topic,step:0});setLegacyTip(null);setExpanded(true);setPhase('attention');setNotice('');setMemory(stores.v2.mark('seen',topic.id));stores.v1.mark('v2-'+topic.id)}
  function minimize(){if(operational?.locked)return;setMinimized(true);setPhase('leaving');call.current?.focus({preventScroll:true})}
