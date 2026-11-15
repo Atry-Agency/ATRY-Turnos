@@ -86,26 +86,15 @@ html.ios-standalone{--landing-app-clearance:24px}
 .people-story figure{width:100%;max-width:560px;justify-self:center}
 
 .agency-legal{flex-wrap:wrap}.agency-legal .public-security-link{color:#dedbed;min-height:32px;font-size:12px;text-underline-offset:4px}.agency-legal .public-security-link:focus-visible{outline:2px solid #a9a0ff;outline-offset:4px;border-radius:3px}
-/* Product footer: editorial hierarchy, original identity, complete navigation. */
-.agency-footer{background:#11141c;border-top:1px solid #252b38;padding:64px 0 28px;margin-top:65px}
-.agency-footer:before{display:none}
-.agency-footer-top{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:start;gap:64px;padding-bottom:48px}
-.agency-footer .eyebrow{color:#a5b1c9;letter-spacing:.16em;font-size:10px;margin-bottom:22px}
-.agency-footer h2{font-size:clamp(28px,3.2vw,43px);line-height:1.18;letter-spacing:-.025em;margin:0;color:#f3f5fa}
-.agency-signature{padding-top:8px;max-width:310px}.agency-signature img{width:232px}.agency-signature>span{font-size:12px;line-height:1.6;color:#b9c2d4;max-width:270px;margin-top:22px}
-.agency-footer-bottom{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:64px;padding:30px 0;border-color:#ffffff18}
-.agency-footer-bottom p{font-size:13px;line-height:1.8;color:#aeb9cd}
-.agency-footer nav{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;font-size:13px}.agency-footer nav a{min-height:44px;align-items:center;color:#e1e6f0}
-.agency-legal{font-size:11px;color:#aeb9cd;padding-top:20px;gap:24px}.agency-legal a{min-height:44px;color:#cbd4e4}
-.agency-footer a{transition:color .18s ease}.agency-footer a:hover{color:#b9c9ff}.agency-footer a:focus-visible{outline:2px solid #9bb4ff;outline-offset:6px;border-radius:3px}
-@media(max-width:800px){.agency-footer{padding:44px 0 22px;margin-top:45px}.agency-footer-top{grid-template-columns:1fr;gap:34px;padding-bottom:34px}.agency-signature{justify-self:start}.agency-signature img{width:210px}.agency-footer-bottom{grid-template-columns:1fr;gap:22px;padding:24px 0}.agency-footer nav{gap:4px 20px}.agency-legal{flex-wrap:wrap;gap:8px 22px}.agency-legal>span{order:3;flex-basis:100%;padding-top:12px}}
-/* Compact studio signature: a quiet endorsement rather than a second headline. */
-.agency-signature{display:flex;align-items:center;align-self:end;gap:18px;max-width:330px;padding:0}
-.agency-signature img{display:block;width:132px;max-width:132px;height:auto;flex:0 0 132px}
-.agency-signature>span{display:block;max-width:160px;margin:0;font-size:11px;line-height:1.6;color:#adb8ce}
-@media(max-width:800px){.agency-footer-top{gap:28px}.agency-signature{align-self:start;justify-self:start;gap:14px;max-width:310px}.agency-signature img{width:124px;max-width:124px;flex-basis:124px}.agency-signature>span{max-width:155px}}
-/* Official stacked lockup: symbol above the name, supporting copy below. */
-.agency-signature{display:grid;justify-items:center;align-self:center;gap:0;width:220px;max-width:100%;text-align:center;padding:0}
-.agency-signature img{width:150px;max-width:150px;height:116px;flex:none;object-fit:cover;object-position:center}
-.agency-signature>span{max-width:210px;margin:6px 0 0;font-size:11.5px;line-height:1.6;color:#b6c0d2}
-@media(max-width:800px){.agency-signature{justify-self:center;align-self:center;gap:0}.agency-signature img{width:150px;max-width:150px;flex:none}.agency-signature>span{max-width:210px}}
+
+/* Editorial studio closing — original brand artwork, no decorative navigation. */
+.agency-footer{background:#0c1019;color:#f5f5f7;padding:0 0 24px;margin-top:70px;border-top:1px solid #2a3040;isolation:isolate}.agency-footer:before{display:none}
+.footer-masthead{display:flex;justify-content:space-between;gap:20px;padding:28px 0;border-bottom:1px solid #ffffff1c;font-size:10px;font-weight:600;letter-spacing:.16em;color:#c2c7d4}
+.footer-masthead>span:first-child{color:#fff;letter-spacing:.2em}.footer-editorial{display:grid;grid-template-columns:1.25fr 1fr;gap:9%;padding:66px 0 56px}
+.agency-footer .eyebrow{font-size:9px;letter-spacing:.2em;color:#9da9bf;margin:0 0 26px}.agency-footer h2{font:500 clamp(35px,4.4vw,64px)/1.09 var(--wide);letter-spacing:-.045em;color:#f5f6fa;margin:0}.agency-footer h2 em{font:inherit;color:#a5adc2}.footer-manifesto{color:#aab2c4;font-size:13px;line-height:1.9;margin:28px 0 0}
+.footer-directory{display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-width:0}.agency-footer nav{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:0}.agency-footer nav>div{display:flex;flex-direction:column;align-items:flex-start}.footer-label{font-size:9px;letter-spacing:.14em;color:#8895ac;margin-bottom:16px}.agency-footer nav a{display:flex;align-items:center;min-height:44px;color:#eef0f6;font-size:13px;text-decoration:none;gap:12px}.agency-footer nav p{font-size:12px;line-height:1.7;color:#929eb3;margin:9px 0 0}.footer-contact-dot{width:5px;height:5px;background:#78d7df;border-radius:50%}
+.agency-signature{display:flex;justify-self:auto;align-self:auto;align-items:center;justify-content:flex-start;gap:22px;max-width:none;width:auto;text-align:left;padding:20px 0 0;border-top:1px solid #ffffff15;text-decoration:none}.agency-signature img{display:block;width:98px;max-width:98px;height:76px;object-fit:cover;object-position:center;flex:none}.agency-signature>span{margin:0;font-size:11px;line-height:1.7;color:#b6bfd0;max-width:none;display:block}
+.agency-legal{display:flex;align-items:center;gap:28px;flex-wrap:wrap;border-top:1px solid #ffffff1c;padding-top:16px;font-size:11px;color:#9aa6bb}.agency-legal>span{margin-right:auto}.agency-legal a,.agency-legal .public-security-link{display:flex;align-items:center;min-height:44px;color:#c3cbda;font-size:11px;text-decoration:none}.agency-footer a{transition:color .2s}.agency-footer a:hover{color:#fff}.agency-footer a:focus-visible{outline:2px solid #98d9ea;outline-offset:5px;border-radius:3px}
+@media(max-width:800px){.agency-footer{margin-top:44px}.footer-masthead{padding:23px 0;font-size:8px;letter-spacing:.12em}.footer-masthead>span:last-child{max-width:120px;text-align:right;line-height:1.6}.footer-editorial{grid-template-columns:1fr;gap:38px;padding:40px 0 28px}.agency-footer h2{font-size:clamp(34px,8.8vw,50px)}.agency-footer .eyebrow{margin-bottom:20px}.footer-manifesto{margin-top:22px;font-size:12px}.agency-footer nav{gap:16px}.footer-directory{gap:25px}.agency-signature{padding-top:16px}.agency-legal{gap:0 24px}.agency-legal>span{order:0;flex-basis:100%;padding:0;margin:0}.agency-legal a:last-child{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){.agency-footer a{transition:none}}
+.agency-footer nav{align-items:start}
