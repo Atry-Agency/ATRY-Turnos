@@ -86,3 +86,16 @@ html.ios-standalone{--landing-app-clearance:24px}
 .people-story figure{width:100%;max-width:560px;justify-self:center}
 
 .agency-legal{flex-wrap:wrap}.agency-legal .public-security-link{color:#dedbed;min-height:32px;font-size:12px;text-underline-offset:4px}.agency-legal .public-security-link:focus-visible{outline:2px solid #a9a0ff;outline-offset:4px;border-radius:3px}
+/* Product footer: editorial hierarchy, original identity, complete navigation. */
+.agency-footer{background:#11141c;border-top:1px solid #252b38;padding:64px 0 28px;margin-top:65px}
+.agency-footer:before{display:none}
+.agency-footer-top{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:start;gap:64px;padding-bottom:48px}
+.agency-footer .eyebrow{color:#a5b1c9;letter-spacing:.16em;font-size:10px;margin-bottom:22px}
+.agency-footer h2{font-size:clamp(28px,3.2vw,43px);line-height:1.18;letter-spacing:-.025em;margin:0;color:#f3f5fa}
+.agency-signature{padding-top:8px;max-width:310px}.agency-signature img{width:232px}.agency-signature>span{font-size:12px;line-height:1.6;color:#b9c2d4;max-width:270px;margin-top:22px}
+.agency-footer-bottom{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:64px;padding:30px 0;border-color:#ffffff18}
+.agency-footer-bottom p{font-size:13px;line-height:1.8;color:#aeb9cd}
+.agency-footer nav{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;font-size:13px}.agency-footer nav a{min-height:44px;align-items:center;color:#e1e6f0}
+.agency-legal{font-size:11px;color:#aeb9cd;padding-top:20px;gap:24px}.agency-legal a{min-height:44px;color:#cbd4e4}
+.agency-footer a{transition:color .18s ease}.agency-footer a:hover{color:#b9c9ff}.agency-footer a:focus-visible{outline:2px solid #9bb4ff;outline-offset:6px;border-radius:3px}
+@media(max-width:800px){.agency-footer{padding:44px 0 22px;margin-top:45px}.agency-footer-top{grid-template-columns:1fr;gap:34px;padding-bottom:34px}.agency-signature{justify-self:start}.agency-signature img{width:210px}.agency-footer-bottom{grid-template-columns:1fr;gap:22px;padding:24px 0}.agency-footer nav{gap:4px 20px}.agency-legal{flex-wrap:wrap;gap:8px 22px}.agency-legal>span{order:3;flex-basis:100%;padding-top:12px}}

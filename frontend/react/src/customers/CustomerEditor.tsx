@@ -1,3 +1,4 @@
+import {BusyMark} from '../ui/PanelSkeleton';
 import {useRef,useState,type ReactNode} from 'react';
 import {Button,TextField} from '../ui/primitives';
 import {Icon} from '../ui/Icon';
@@ -15,5 +16,5 @@ export function CustomerEditor({customer,history,port,busy,onDraft,onSave,onClos
   <label className="checkline"><input type="checkbox" name="marketing_consent" checked={draft.marketing_consent} onChange={e=>change({...draft,marketing_consent:e.target.checked})} disabled={busy}/>{' Tiene consentimiento para comunicaciones promocionales'}</label>{error&&<p role="alert" className="small">{error}</p>}
  </form>
  {customer&&<><section aria-label="Comunicación"><h3>Comunicación</h3>{communication}<p className="tiny muted">El consentimiento de WhatsApp se verifica al preparar el mensaje. No se envía automáticamente.</p></section><section aria-label="Historial de reservas"><h3>Historial de reservas</h3>{history.length?history.map(a=><div className="activity" key={a.id}><div className="grow"><strong className="small">{a.service_name}</strong><div className="tiny muted">{`${localDateTime(a.starts_at,port.scope()||{})} · ${a.staff_name||''}`}</div></div><span className={'badge '+a.status}>{statusLabels[a.status]||'Estado sin identificar'}</span></div>):<div className="empty"><Icon name="calendar" port={port} className="big"/><div>Sin reservas registradas</div></div>}</section></>}
- <footer className="customer-profile-actions"><Button type="button" variant="secondary" onClick={onClose} disabled={busy}>Cancelar edición</Button><Button type="submit" form="customer-profile-form" disabled={busy}>{busy?<><span className="spin"/> Guardando...</>:<><Icon name="check" port={port}/> Guardar cambios</>}</Button></footer></div>;
+ <footer className="customer-profile-actions"><Button type="button" variant="secondary" onClick={onClose} disabled={busy}>Cancelar edición</Button><Button type="submit" form="customer-profile-form" disabled={busy}>{busy?<><BusyMark/> Guardando...</>:<><Icon name="check" port={port}/> Guardar cambios</>}</Button></footer></div>;
 }

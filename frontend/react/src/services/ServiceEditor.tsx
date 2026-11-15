@@ -1,3 +1,4 @@
+import {BusyMark} from '../ui/PanelSkeleton';
 import {region,type RegionalBusiness} from '../domain/region';
 import {useRef,useState} from 'react';
 import {Button,TextField} from '../ui/primitives';
@@ -18,6 +19,6 @@ export function ServiceEditor({business={},initial,staff,port,id,busy,onDraft,on
   <div className="form-full hint-block">Los porcentajes de seña se configuran aquí, pero el cobro online todavía no está conectado.</div>
   </div></details>
   {error&&<p className="form-full small" role="alert">{error}</p>}
-  <div className="form-full"><Button full type="submit" disabled={busy}>{busy?<><span className="spin"/> Guardando...</>:<><Icon name="check" port={port}/> Guardar servicio</>}</Button></div>
+  <div className="form-full"><Button full type="submit" disabled={busy}>{busy?<><BusyMark/> Guardando...</>:<><Icon name="check" port={port}/> Guardar servicio</>}</Button></div>
  </form>;
 }
