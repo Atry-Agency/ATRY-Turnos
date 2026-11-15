@@ -8,6 +8,9 @@ export const commercialCatalog=Object.freeze({
  PA:{name:'Panamá',currency:'USD',status:'approved',paidContractingEnabled:false,prices:proposals.PA.prices_minor},
 } as const);
 export function commercialCountry(value:unknown):CommercialCountry|undefined{return value==='UY'||value==='PA'?value:undefined}
-export function resolveCommercialCountry(manual:unknown,hint:unknown):CommercialCountry{return commercialCountry(manual)||commercialCountry(hint)||'UY'}
+/** Exact IANA zones only: offsets and browser language do not identify a country. */
+export function commercialTimeZoneCountry(timeZone:unknown):CommercialCountry|undefined{return timeZone==='America/Panama'?'PA':timeZone==='America/Montevideo'?'UY':undefined}
+/** A server hint is optional on static hosting. Only a visitor's explicit choice is persisted. */
+export function resolveCommercialCountry(manual:unknown,hint:unknown,timeZone?:unknown):CommercialCountry{return commercialCountry(manual)||commercialCountry(hint)||commercialTimeZoneCountry(timeZone)||'UY'}
 export function localCommercialPreview(hostname:string){return ['127.0.0.1','localhost','[::1]'].includes(hostname)}
 export function commercialPrice(country:CommercialCountry,plan:keyof typeof commercialCatalog.UY.prices,localPreview=false){const c=commercialCatalog[country];return (country==='PA'?'US$':'$')+new Intl.NumberFormat('es-UY',{maximumFractionDigits:0}).format(c.prices[plan]/100)}
