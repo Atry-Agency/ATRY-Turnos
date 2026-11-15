@@ -1,8 +1,9 @@
+import {useLayoutEffect,useRef} from 'react';
 import {CalendarIcon} from '../calendar/CalendarIcon';
 import googleLogo from '../calendar/assets/google-calendar.svg';
 import appleLogo from '../calendar/assets/apple-calendar.jpg';
 /** Display-only editorial fixture. No booking, export, or authenticated operations. */
-export function ConfirmationPhone({active}:{active:number}){return <div className="receipt-phone" role="img" aria-label="Vista ilustrativa de una reserva confirmada: Estudio Aurora, corte de pelo con Lucía, 1 de noviembre de 10:00 a 10:30. Opciones de calendario y ubicación.">
+export function ConfirmationPhone({active}:{active:number}){const frame=useRef<HTMLDivElement>(null);useLayoutEffect(()=>{const el=frame.current;if(!el)return;const update=()=>el.style.setProperty('--receipt-scale',String(el.getBoundingClientRect().width/390));update();const observer=new ResizeObserver(update);observer.observe(el);return()=>observer.disconnect()},[]);return <div ref={frame} className="receipt-phone" role="img" aria-label="Vista ilustrativa de una reserva confirmada: Estudio Aurora, corte de pelo con Lucía, 1 de noviembre de 10:00 a 10:30. Opciones de calendario y ubicación.">
 <div className="receipt-phone-island" aria-hidden="true"/><div className="receipt-phone-screen" aria-hidden="true">
 <div className="receipt-brand">ATRY TURNOS</div><div className="receipt-status"><span>✓</span> TU RESERVA ESTÁ CONFIRMADA</div>
 <h3>Todo listo para tu<br/>próxima visita.</h3><p className="receipt-intro">Te esperamos en Estudio Aurora.<br/>Aquí tenés los detalles de tu turno.</p>
