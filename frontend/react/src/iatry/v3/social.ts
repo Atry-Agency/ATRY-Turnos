@@ -6,6 +6,8 @@ export interface SocialReply {source:string;intent:SocialIntent;text:string}
 export function socialIntent(source:string):SocialIntent|undefined{
  if(!source.trim()||source.length>500)return undefined;
  const s=normalizeLanguage(source).replace(/[.,;:]/g,'').replace(/\s+/g,' ').trim().replace(/\b(?:grasias|grcias|grasia)\b/g,'gracias').replace(/\bhloa\b/g,'hola').replace(/\basemos\b/g,'hacemos').replace(/\bcansao\b/g,'cansado').replace(/\bcansada+\b/g,'cansada').replace(/\bcansado+\b/g,'cansado').replace(/\bkomo\b/g,'como').replace(/\bke\b/g,'que');
+ if(/^(?:que xopa|xopa)(?:[, ]+(?:iatry|fren|mopri))?[.! ]*$/.test(s)||/^(?:fren|mopri)[.! ]*$/.test(s))return 'greeting';
+ if(/^(?:priti|que priti)[.! ]*$/.test(s))return 'celebration';
  if(/^(?:hola+|holaa+|holi|ola|buenas|buen dia|buenos dias|buenas tardes|buenas noches|ey|hey)(?: iatry)?$/.test(s))return'greeting';
  if(/^(?:(?:hola|buenas) )?(?:como estas|como andas|todo bien|que tal)(?: iatry)?$/.test(s))return'wellbeing';
  if(/^(?:muchas |mil )?(?:gracias|te agradezco)(?: iatry| por la ayuda)?$/.test(s))return'thanks';

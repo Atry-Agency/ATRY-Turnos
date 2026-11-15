@@ -74,6 +74,6 @@ Las pruebas de teclado móvil usan el viewport visual simulado de navegador; no 
 - Errores de Clientes comprobados mediante fallo de lectura inyectado y recuperación con «Reintentar».
 - Contraste de etiquetas oscuras: 2,29:1 antes; 8,73:1 después, con la paleta ATRY existente. Texto de inputs y estados revisados con mínimo 4,5:1 en los casos comprobados.
 - Capturas finales inspeccionadas en claro/oscuro y móvil/escritorio. Formularios públicos y horarios UY/PA revisados sin confirmar reservas.
-- El motor determinista, las herramientas, las confirmaciones y los permisos conservan su código publicado. Esta rama no incorpora ni elimina el trabajo conversacional independiente que continúa en la rama multipaís.
+- La auditoría UX se preparó primero sin tocar el motor. Posteriormente se integraron las mejoras regionales de IAtry desde `codex/multicountry-uy-pa`, conservando sus pruebas, herramientas, confirmaciones y permisos. La integración y preparación de publicación están registradas en `PREPUBLICACION-UX-IATRY-2026-11-15.md`.
 
 Vista local: `http://127.0.0.1:3355/#/app/servicios`. Datos ficticios y PostgreSQL desechable. No es la sesión ni la base productiva.
