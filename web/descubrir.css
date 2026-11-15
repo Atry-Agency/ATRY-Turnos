@@ -104,3 +104,8 @@ html.ios-standalone{--landing-app-clearance:24px}
 .agency-signature img{display:block;width:132px;max-width:132px;height:auto;flex:0 0 132px}
 .agency-signature>span{display:block;max-width:160px;margin:0;font-size:11px;line-height:1.6;color:#adb8ce}
 @media(max-width:800px){.agency-footer-top{gap:28px}.agency-signature{align-self:start;justify-self:start;gap:14px;max-width:310px}.agency-signature img{width:124px;max-width:124px;flex-basis:124px}.agency-signature>span{max-width:155px}}
+/* Official stacked lockup: symbol above the name, supporting copy below. */
+.agency-signature{display:grid;justify-items:center;align-self:center;gap:0;width:220px;max-width:100%;text-align:center;padding:0}
+.agency-signature img{width:150px;max-width:150px;height:116px;flex:none;object-fit:cover;object-position:center}
+.agency-signature>span{max-width:210px;margin:6px 0 0;font-size:11.5px;line-height:1.6;color:#b6c0d2}
+@media(max-width:800px){.agency-signature{justify-self:center;align-self:center;gap:0}.agency-signature img{width:150px;max-width:150px;flex:none}.agency-signature>span{max-width:210px}}
