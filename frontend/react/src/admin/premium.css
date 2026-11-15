@@ -1,0 +1,100 @@
+/* Same ATRY product rhythm, scoped to administration and its existing dialogs. */
+.cc-shell{background:#f7f7fc;color:#202439}
+.cc-main{padding:28px clamp(18px,3vw,44px);max-width:1800px}
+.cc-header{gap:16px;margin-bottom:24px}
+.cc-header h1{font-size:clamp(25px,2.3vw,36px);line-height:1.14;letter-spacing:-.045em}
+.cc-header .eyebrow{font-size:10px;letter-spacing:.12em;color:#5351ce}
+.cc-header form{max-width:620px;flex:1 1 300px}
+.cc-header form input{width:100%;background:#fff;border-color:#e1e2ed;border-radius:13px;font-size:14px}
+.cc-header .btn{min-height:44px;font-size:13px}
+.cc-shell .cc-sidebar{gap:16px}
+.cc-shell .cc-sidebar nav a{min-height:44px;border-left:0;font-size:13px;line-height:1.4;border-radius:13px;padding:12px}
+.cc-shell .cc-sidebar nav a[aria-current]{background:#f7f7fc;color:#24243d}
+.cc-shell .cc-sidebar nav a[aria-current] .i{color:#5750ec}
+.cc-shell .cc-brand .logo{white-space:nowrap;gap:9px}
+.cc-shell .cc-brand .brand-original{width:28px;height:28px}
+.cc-shell .cc-brand .logo b{white-space:nowrap}
+.cc-shell .cc-panel,.cc-shell .cc-table-wrap,.cc-shell .cc-business-entry{border:1px solid #e6e5f0;border-radius:20px;box-shadow:0 6px 22px #20243903;background:#fff}
+.cc-shell .cc-panel{padding:24px}
+.cc-shell .cc-panel h2,.cc-shell .cc-section-heading h2{font-size:19px;letter-spacing:-.025em;line-height:1.35}
+.cc-shell .cc-table{font-size:13px}
+.cc-shell .cc-table th{font:600 11px/1.4 system-ui;letter-spacing:.04em;background:#faf9fd;color:#62657b;padding:16px}
+.cc-shell .cc-table td{padding:18px 16px;vertical-align:middle;line-height:1.55;border-color:#eeedf4}
+.cc-shell .cc-table td small{font-size:12px;line-height:1.5;color:#66697e}
+.cc-shell .cc-actions .btn{min-height:44px;padding:10px 14px;font-size:12px}
+.cc-shell .cc-badge{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:6px 10px;min-height:28px;font:600 11px/1.2 system-ui;border-radius:99px}
+.cc-shell .cc-filters{gap:12px;align-items:end;margin:20px 0}
+.cc-shell .cc-filters label{font-size:12px;font-weight:550;color:#565c72;gap:7px;min-width:130px}
+.cc-shell .cc-filters input,.cc-shell .cc-filters select{font:400 14px/1.4 system-ui;min-height:44px;background:#fff}
+.cc-shell .cc-source,.cc-shell .cc-footnote{font-size:11px;line-height:1.6;color:#66697e}
+.cc-shell .cc-hero{border-radius:24px;padding:clamp(24px,3vw,42px);box-shadow:none}
+.cc-shell .cc-hero h2{font-size:clamp(26px,3vw,40px);line-height:1.14;letter-spacing:-.035em}
+.cc-shell .cc-hero p{font-size:14px;line-height:1.65}
+.cc-shell .cc-metric{border:1px solid #e6e5f0;border-radius:18px;padding:20px;gap:10px;color:#272b40}
+.cc-shell .cc-metric-label{font-size:12px;line-height:1.5}
+.cc-shell .cc-metric strong{font:650 34px/1.1 system-ui;letter-spacing:-.04em}
+.cc-shell .cc-metric-bottom{font-size:11px;color:#66697e}
+.cc-shell .cc-metric-bottom>.i{display:none}
+.cc-shell details>summary{list-style:none;display:flex;align-items:center;min-height:44px;cursor:pointer;font-size:13px;font-weight:550;color:#5148bb}
+.cc-shell details>summary::-webkit-details-marker{display:none}
+.cc-shell details>summary:hover{text-decoration:underline;text-underline-offset:4px}
+.cc-shell .cc-facts dt{font-size:12px;color:#66697e}
+.cc-shell .cc-facts dd{font-size:14px;line-height:1.55}
+.cc-assistant{margin:0 0 24px;border:1px solid #e3e0f2;border-radius:20px;background:#fff;box-shadow:0 5px 25px #37318605;overflow:hidden}
+.cc-assistant-heading{display:flex;align-items:center;gap:12px;padding:16px 20px}
+.cc-assistant-heading>.iatry-avatar{width:42px;height:42px;flex:none}
+.cc-assistant-heading>div{flex:1;min-width:0}
+.cc-assistant-heading strong{font:650 15px/1.4 system-ui;color:#26253e}
+.cc-assistant-heading strong span{margin-left:6px;font-size:11px;font-weight:500;color:#716a8d}
+.cc-assistant-heading p{margin:3px 0 0;font:400 12px/1.5 system-ui;color:#66697e}
+.cc-assistant-heading>.btn{flex:none;min-height:44px}
+.cc-assistant-body{padding:0 20px 18px;border-top:1px solid #eeedf4}
+.cc-assistant-log{max-height:260px;overflow:auto;overscroll-behavior:contain;padding:14px 0;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin}
+.cc-assistant-log p{font:400 14px/1.6 system-ui;margin:0;padding:10px 13px;border-radius:15px;max-width:90%;color:#34354e;background:#f7f7fb}
+.cc-assistant-log .cc-chat-user{align-self:flex-end;background:#eeeafb;color:#403789}
+.cc-assistant-composer{display:flex;gap:8px;align-items:center;margin-top:12px}
+.cc-assistant-composer input{flex:1;min-width:0;min-height:46px;font-size:14px}
+.cc-assistant-composer .btn{min-height:46px}
+.cc-assistant-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cc-assistant-shortcuts button{border:0;border-radius:8px;min-height:36px;padding:6px 10px;font:500 12px/1.4 system-ui;background:#f6f4fb;color:#5148a7;cursor:pointer}
+.cc-assistant-choices{display:flex;flex-wrap:wrap;gap:8px;max-height:180px;overflow:auto}
+.cc-assistant-proposal{background:#faf9ff;border:1px solid #e6e1f4;border-radius:16px;padding:18px;margin:4px 0 12px}
+.cc-assistant-proposal .eyebrow{font-size:9px;color:#716a8d}
+.cc-assistant-proposal h3{font:650 17px/1.4 system-ui;margin:7px 0}
+.cc-assistant-proposal p{font:400 13px/1.6 system-ui;margin:6px 0 12px}
+.cc-assistant-proposal .checkline{font:400 13px/1.5 system-ui;margin:12px 0;align-items:center}
+.cc-assistant-proposal input[type=checkbox]{width:18px;height:18px;flex:none}
+.cc-assistant :focus-visible{outline:3px solid #7164e1;outline-offset:3px}
+.cc-assistant button:disabled{cursor:default;opacity:.5}
+@media(max-width:1100px){.cc-shell .cc-hero{grid-template-columns:1fr}.cc-shell .cc-hero-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.cc-shell .cc-hero-links>a{padding:14px}.cc-shell .cc-hero-links small{font-size:11px}.cc-shell .cc-hero-links>a>.i:last-child{display:none}}
+@media(max-width:760px){
+ .cc-main{padding:calc(18px + env(safe-area-inset-top,0px)) 16px 24px}
+ .cc-header{gap:10px}.cc-header>div{flex:1}.cc-header h1{font-size:25px}.cc-header .eyebrow{font-size:9px}
+ .cc-shell .cc-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .cc-shell .cc-metric{padding:15px;min-height:124px;gap:8px}
+ .cc-shell .cc-metric-label{font-size:11px}.cc-shell .cc-metric strong{font-size:28px}
+ .cc-shell .cc-metric-bottom{font-size:10px}.cc-shell .cc-metric-label>.i{width:18px;height:18px}
+ .cc-shell .cc-hero{padding:24px;gap:18px}.cc-shell .cc-hero h2{font-size:28px}
+ .cc-shell .cc-hero-links{grid-template-columns:1fr}.cc-shell .cc-hero-links>a{min-height:60px;padding:12px 14px}
+ .cc-shell .cc-hero-links small{font-size:12px}
+ .cc-shell .cc-table-wrap{border:0;background:transparent;box-shadow:none;overflow:visible}
+ .cc-shell .cc-table,.cc-shell .cc-table tbody{display:block;width:100%}
+ .cc-shell .cc-table tr{padding:16px;margin-bottom:12px;display:grid;gap:12px;background:#fff;border:1px solid #e6e5f0;border-radius:18px}
+ .cc-shell .cc-table td{padding:0;min-width:0;max-width:none;text-align:left}
+ .cc-shell .cc-table td:before{font:600 10px/1.5 system-ui;letter-spacing:.04em;margin:0 0 4px;color:#73758a}
+ .cc-shell .cc-panel{padding:18px;border-radius:20px}.cc-shell .cc-filters label{flex:1 1 130px;min-width:0}
+ .cc-shell .cc-pagination .btn{min-height:44px}
+ .cc-assistant-heading{gap:10px;padding:12px}.cc-assistant-heading strong span{display:block;margin:0}.cc-assistant-heading p{display:none}
+ .cc-assistant-heading>.btn{font-size:12px;padding:10px}.cc-assistant-body{padding:0 12px 14px}
+ .cc-assistant-proposal{padding:14px}.cc-assistant-proposal .btn{width:100%}
+ .cc-assistant-composer{position:relative}.cc-assistant-log p{font-size:13px;max-width:96%}
+ .cc-assistant-shortcuts button{min-height:44px;text-align:left;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.cc-assistant *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.cc-header>div{min-width:0}
+.cc-shell .cc-panel h2,.cc-shell .cc-section-heading h2{font-family:system-ui,sans-serif;font-weight:650;overflow-wrap:anywhere}
+.cc-shell .cc-panel-heading>div{min-width:0}
+@media(max-width:760px){.cc-shell .cc-header h1{font-size:clamp(20px,5.5vw,26px);overflow-wrap:anywhere}.cc-shell .cc-panel-heading{gap:10px}.cc-shell .cc-section-icon{width:36px;height:36px;flex:none}}
+@media(max-width:360px){.cc-assistant-heading strong span{display:none}.cc-assistant-heading>.btn{padding:10px;font-size:11px}}
+.cc-assistant .iatry-liquid{contain:layout style;--current-speed:26s;--current-opacity:.5;animation:none!important}
+.cc-assistant[data-stage=review] .iatry-liquid{--current-speed:14s;--current-opacity:.65}
