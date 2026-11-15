@@ -1,0 +1,38 @@
+/* Focused refinements: existing ATRY tokens, no business or public-theme overrides. */
+html:has([data-react-overlay]),body:has([data-react-overlay]),html:has(dialog[open]),body:has(dialog[open]){overflow:hidden;overscroll-behavior:none}
+.ui-dialog{max-height:min(92dvh,calc(var(--wa-visible-height,100dvh) - 32px));overscroll-behavior:contain;scroll-padding-block:76px 24px}
+.ui-dialog .modal-head{position:sticky;top:0;z-index:2;background:var(--surface);padding-block:4px 14px;margin-bottom:18px}
+.ui-dialog input,.ui-dialog select,.ui-dialog textarea{scroll-margin-block:76px 24px}
+.ui-dialog .field>label{color:var(--muted)}
+.ui-dialog .checkline{color:var(--ink)}
+.app-shell .ui-feedback{border-color:var(--line);box-shadow:none}
+.ui-feedback p{margin:0;line-height:1.65}
+.app-shell .ui-feedback.is-error{border-color:var(--line);border-inline-start:3px solid var(--atry-danger,var(--danger))}
+.ui-feedback.is-error p{color:var(--ink)}
+.app-shell .customer-search>.field{display:grid;gap:8px;min-width:0}
+.app-shell .customer-search>.field>label{font-size:12px;font-weight:650;line-height:1.5;color:var(--muted);margin:0}
+.customer-search-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.service-staff{border:0;padding:0;margin:0;min-width:0}
+.service-staff legend{font-size:12px;font-weight:650;line-height:1.5;color:var(--muted);padding:0;margin-bottom:7px}
+.service-advanced{border:1px solid var(--line);border-radius:14px;min-width:0;background:var(--surface)}
+.service-advanced summary{display:flex;align-items:center;gap:11px;list-style:none;padding:14px;min-height:60px;cursor:pointer;border-radius:14px;color:var(--ink)}
+.service-advanced summary::-webkit-details-marker{display:none}
+.service-advanced summary>span{flex:1;min-width:0}
+.service-advanced summary strong{display:block;font:650 13px/1.5 system-ui}
+.service-advanced summary small{display:block;font:400 12px/1.5 system-ui;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.service-advanced summary>.i{color:var(--muted)}
+.service-advanced summary>.i:last-child{width:16px;height:16px;transition:transform .16s}
+.service-advanced[open] summary>.i:last-child{transform:rotate(90deg)}
+.service-advanced summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.service-advanced-fields{padding:2px 14px 14px}
+.service-advanced .hint-block{margin:0;font-size:12px;line-height:1.6}
+@media(max-width:760px),(pointer:coarse){
+ .app-shell .ag-view-switch button,.app-shell .ag-density button{min-height:44px}
+ .app-shell .ag-summary{gap:4px 8px}
+ .app-shell .ag-summary button{min-height:44px;padding:9px 8px;font-size:11px}
+ .app-shell .waitlist-explainer>button{flex-basis:44px;min-height:44px}
+ .iatry-v3 .iatry-v2-panel .iatry-window-controls button{width:44px;height:44px;min-height:44px}
+ .iatry-v3 .iatry-operation-areas button{min-height:44px}
+ .ui-dialog input:not([type=checkbox]):not([type=radio]),.ui-dialog select,.ui-dialog textarea{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.service-advanced summary>.i:last-child{transition:none}}

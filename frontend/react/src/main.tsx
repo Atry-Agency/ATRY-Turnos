@@ -14,6 +14,7 @@ import '../../../web/visits.css';
 import '../../../web/whatsapp.css';
 import '../../../web/buttons.css';
 import '../../../web/staff-photos.css';
+import './ui/refinements.css';
 // Local visual fixture only. The normal demo has completed setup and a 2099 expiry.
 if(import.meta.env.DEV&&window.ATRY_DEMO?.enabled&&window.ATRY_DEMO.request){
  const demoRequest=window.ATRY_DEMO.request;
