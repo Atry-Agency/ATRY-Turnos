@@ -1,3 +1,4 @@
+import {vagueTimeQuestion} from './appointment-language';
 import {conversationTopics,isConversationalConfirmation} from './conversation-context';
 import {createSocialResponder} from './social';
 import {voice} from './personality';
@@ -53,7 +54,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  const s=language(source),tool=all.find(t=>t.id===frame.toolId);if(!tool||source.length>500||!source.trim())return{...frame,reply:'Contame ese dato en una frase breve.'};
  if(/\d\s*%/.test(s))return{...frame,reply:'Entendí el porcentaje. Los descuentos y promociones todavía no están disponibles; no cambié la propuesta.'};
  if(frame.clarification){const ordinal=ordinalChoice(source,frame.clarification.choices.length);if(ordinal!==undefined)return chooseFrame(frame,ordinal,all);const matches=frame.clarification.choices.map((c,i)=>({c,i})).filter(({c})=>language(c.label)===s||s.length>=4&&language(c.label).includes(s.replace(/^el |^la /,'')));if(matches.length===1)return chooseFrame(frame,matches[0].i,all);}
- if(frame.pending&&/^(?:si|dale|correcto|confirmo|usar estos datos|si, cambiar)[.! ]*$/.test(s))return confirmFrame(frame,true,all);
+ if(frame.pending&&/^(?:si|dale|ofi|de una|correcto|confirmo|usar estos datos|si, cambiar)[.! ]*$/.test(s))return confirmFrame(frame,true,all);
  if(frame.pending&&/^(?:no|no gracias|conservar|conservar anterior|dejalo como estaba)[.! ]*$/.test(s))return confirmFrame(frame,false,all);
  if(isConversationalConfirmation(source))return{...frame,reply:missingField(tool,projectFrame(frame,tool))?localPrompt(tool,projectFrame(frame,tool)):'Ya tengo la propuesta. Usá «Revisar el cambio»; antes de guardar vas a tener que confirmar la ficha.'};
  if(/^(?:mejor )?(?:cancelar|cancela|cancelalo|descartar|descartalo|olvidalo|no quiero seguir)(?: la conversacion| esta solicitud| esto)?[.! ]*$/.test(s))return{...frame,stopped:true,pending:undefined,clarification:undefined,reply:'No voy a ejecutar nada. Podés cerrar esta solicitud con «Empezar otra consulta».'};
@@ -84,6 +85,7 @@ export function continueFrame(frame:ConversationFrame,source:string,all:readonly
  if(keys.length>1)return{...frame,clarification:{question:'¿Hablás del cliente o del profesional?',choices:keys.map(key=>({label:key===staffKey?'Del profesional':'Del cliente',draft:{...clone(draft),memory:{values:Object.fromEntries(Object.entries(draft.memory.values).filter(([k])=>k!==key)),references:{...draft.memory.references,[key]:name}}}}))}};
  if(keys.length===1){draft.memory.references[keys[0]]=name;delete draft.memory.values[keys[0]];return propose(frame,draft,all);}}
 
+ const timeQuestion=vagueTimeQuestion(s);if(timeQuestion&&(currentTool.id.startsWith('schedule.')||currentTool.id.startsWith('bookings.')))return{...frame,reply:timeQuestion};
  if(currentTool.fields.some(f=>f.key==='starts_at')){
   const contextDay=String(seed.values.starts_at||draft.memory.values.date||'').slice(0,10),period=resolvePeriod(source,base,contextDay);
   if(period.values){Object.assign(draft.memory.values,period.values);return propose(frame,draft,all);}

@@ -1,3 +1,4 @@
+import {nonOperationalCitation,vagueTimeQuestion} from './appointment-language';
 import {calendarDay,resolvePeriod} from './temporal';
 import {extractEntities} from './entities';
 import {intentRules,language} from './intent-catalogue';
@@ -16,6 +17,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  const s=language(source),notes:string[]=[],available=new Set(enabled.map(t=>t.id));
  if(/\d\s*%/.test(s))return{source,steps:[],notes:['Entendí el porcentaje, pero los descuentos y promociones no tienen un contrato operativo homologado. No aplicaré cambios ni convertiré ese porcentaje en un precio.'],understood:false};
  if(source.length>500||/(?:^|;\s*|\sy\s+)(?:por favor )?(?:borra\w*|elimina\w*|destrui\w*|drop|truncate)\b/.test(s))return{source,steps:[],notes:['No automatizo eliminaciones. Usá los controles específicos del sistema.'],understood:false};
+ if(nonOperationalCitation(s))return{source,steps:[],notes:['¿Querés trabajar con una reserva del negocio o hablás de una cita textual?'],understood:false};
  // Facts alone do not specify creation vs editing. Keep them while asking for the action.
  const entities=extractEntities(source);
  if((entities.duration_min||entities.price_uyu)&&!intentRules.some(rule=>!rule.id.startsWith('services.')&&rule.patterns.some(p=>p.test(s)))&&!/^(?:cuanto|cual|que precio|que duracion)/.test(s)&&!/(?:agrega|crea|nuevo|nueva|alta|subi|baja|cambia|modifica|ajusta|edita|consulta|mostra|cancela|precio (?:del?|de la) )/.test(s)){
@@ -42,9 +44,9 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  const date=dateOf(s,base),steps=ids.flatMap(id=>{const tool=all.find(t=>t.id===id);if(!tool)return[];const values:Values={},references:Record<string,string>={};if(date){for(const key of ['date','new_date','day','start_day'])if(tool.fields.some(f=>f.key===key))values[key]=date}
  if(id==='schedule.absence'){
   const period=resolvePeriod(source,base);if(period.values)Object.assign(values,period.values);
-  if(date&&!values.starts_at&&!period.question)values.starts_at=date+'T00:00';
+  if(date&&!values.starts_at&&!period.question&&!vagueTimeQuestion(s))values.starts_at=date+'T00:00';
   values.reason=/vacaciones/.test(s)?'Vacaciones':/almuerzo/.test(s)?'Almuerzo':/descans/.test(s)?'Descanso':'Ausencia';
-  if(period.values)notes.push('Período de días calendario de Uruguay; la fecha final mostrada es el límite exclusivo. Revisá el profesional antes de confirmar.');if(period.question)notes.push(period.question);
+  if(period.values)notes.push('Período de días calendario del negocio; la fecha final mostrada es el límite exclusivo. Revisá el profesional antes de confirmar.');if(period.question)notes.push(period.question);
   if(/\b(?:me |no trabajo|no atiendo|bloqueame|descanso)\b/.test(s))references.staff='@self';
  }
  if(id==='bookings.affected'&&date){values.starts_at=date+'T00:00';notes.push('La consulta de reservas afectadas no cancela ni reprograma ningún turno.')}
@@ -70,8 +72,10 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
   if(ambiguous&&steps.some(x=>x.id.startsWith('schedule.')))return{source,steps,notes,understood:true,clarification:{question:'¿A qué horario te referís?',choices:[{label:range?clock(a!)+ '–'+clock(b!):clock(b!),steps:apply(false)},{label:range?clock(a!,true)+'–'+clock(b!,true):clock(b!,true),steps:apply(true)}]}};
   const timed=apply(pm);steps.splice(0,steps.length,...timed);
  }
+ const incomeQuestion=/\bcuanto (?:hice|ingrese|facture|gane|vendi)\b/.test(s);
+ const timeQuestion=vagueTimeQuestion(s);if(timeQuestion&&steps.some(step=>step.id.startsWith('schedule.')||step.id.startsWith('bookings.'))){notes.push(timeQuestion);for(const step of steps){delete step.seed.values.starts_at;delete step.seed.values.ends_at;}}
  if(/\bfalto\b/.test(s)&&!/(?:turno|cliente|profesional)/.test(s))notes.push('Si hablás de un cliente, marcamos su turno; si falta un profesional, bloqueamos su disponibilidad. Especificá cuál.');
  if(/vacaciones|almuerzo/.test(s)&&!range)notes.push('La conversación pedirá el inicio y fin exactos; no asumiré horarios ni fecha de regreso.');
  if(combined)notes.push('Primero consultaremos las reservas afectadas. Después podrás preparar el bloqueo. Cada paso se inicia por separado; no hay cancelaciones implícitas.');
- return{source,steps,notes,understood:true};
+ return{source,steps,notes,understood:true,...(incomeQuestion?{guidance:'Entendí que querés consultar ingresos. IAtry todavía no tiene una consulta de ingresos diarios homologada. Puedo mostrarte los indicadores disponibles de los últimos 30 días; no equivalen a dinero cobrado.'}:timeQuestion&&steps.some(step=>step.id.startsWith('schedule.')||step.id.startsWith('bookings.'))?{guidance:timeQuestion}:{})};
 }

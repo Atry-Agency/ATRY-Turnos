@@ -1,0 +1,28 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{buildSync}=require('esbuild');
+const dir=fs.mkdtempSync(path.join(os.tmpdir(),'iatry-pa-')),file=path.join(dir,'test.cjs');
+try{
+ buildSync({stdin:{contents:["export * from './frontend/react/src/iatry/v3/instructions';","export * from './frontend/react/src/iatry/v3/conversation-frame';","export * from './frontend/react/src/iatry/v3/conversation-context';","export * from './frontend/react/src/iatry/v3/social';","export * from './frontend/react/src/iatry/v3/temporal';","export {createConversation} from './frontend/react/src/iatry/v3/engine';","export {capabilities} from './frontend/react/src/iatry/v3/catalogue';","export {phaseOneReleaseTools} from './frontend/react/src/iatry/v3/production-policy';","export {regionalDay} from './frontend/react/src/domain/region';"].join('\n'),resolveDir:process.cwd(),loader:'ts'},outfile:file,bundle:true,platform:'node',format:'cjs'});
+ globalThis.ATRY_THEME_CORE=require('../../web/theme-core');const m=require(file),all=m.capabilities,parse=q=>m.interpretInstruction(q,all,[],'2026-11-14');
+ const cases={
+ 'bookings.create':['Agendame una cita mañana a las 3','Mañana a las 3 poneme una cita','Fren, cuadrame una cita para mañana','agendame una citta maniana','Ponme una cita mañana','Agéndame una cita mañana','Reservame un turno mañana'],
+ 'bookings.list':['¿Qué citas tengo hoy?','¿Cómo está la agenda este sábado?','Mostrame los turnos de hoy','Consulta mis citas','q citas tengo hoy'],
+ 'bookings.availability':['¿Tengo cupo el viernes?','¿Hay cupos mañana?','¿Hay un horario disponible mañana?'],
+ 'bookings.reschedule':["Moveme la cita pa’l sábado","Pasame esa cita pa'l lunes",'Reprogramá el turno'],
+ 'bookings.cancelled':['Cancelame esa cita','Cancelá esa reserva'],
+ 'schedule.absence':['Bloqueame la tarde','Mañana no laburo','maniana no trabajo','Mopri, bloqueame la tarde'],
+ 'business.statistics':['¿Cuánto hice hoy?','¿Cómo viene mi negocio?']};
+ let count=0;for(const [id,phrases]of Object.entries(cases))for(const phrase of phrases){const p=parse(phrase);assert.equal(p.steps[0]?.id,id,phrase);assert.equal(p.steps[0].enabled,false);count++;}
+ for(const phrase of ['Agendame una cita textual','Creá una cita bibliográfica','Citame una frase','Pasado mañana una cita','Qué xopá, IAtry','Fren','Mopri','Priti','Ofi','De una'])assert.equal(parse(phrase).steps.length,0,phrase);
+ for(const phrase of ['¿Qué xopá, IAtry?','Que xopa fren','xopa','mopri'])assert.equal(m.socialIntent(phrase),'greeting',phrase);
+ assert.equal(m.socialIntent('Fren, cuadrame una cita'),undefined);assert.equal(m.socialIntent('Qué xopá, cancelame la cita'),undefined);
+ for(const q of ['Agendame una cita ahorita','Bloqueame más tarde','Poneme una cita mañana a las 8','Bloqueame mañana a las 8:00']){const p=parse(q);assert.match(p.guidance,/horario exactos|hora exactamente/);assert.equal(p.steps[0].seed.values.starts_at,undefined);}
+ const frame=m.createFrame(parse('Mañana no laburo').steps[0]);for(const q of ['ahorita','más tarde','mañana a las 8']){const next=m.continueFrame(frame,q,all,'2026-11-14');assert.deepEqual(next.memory,frame.memory);assert.match(next.reply,/horario exactos|hora exactamente/);}
+ for(const word of ['Ofi','Dale','De una']){assert.equal(m.isConversationalConfirmation(word),true);const next=m.continueFrame(frame,word,all);assert.deepEqual(next.memory,frame.memory);assert.equal(next.stopped,undefined);}
+ const now=new Date('2026-11-15T03:30:00Z'),uy={country:'UY',timezone:'America/Montevideo'},pa={country:'PA',timezone:'America/Panama'};
+ assert.equal(m.businessCalendarDay('hoy',uy,now),'2026-11-15');assert.equal(m.businessCalendarDay('hoy',pa,now),'2026-11-14');assert.equal(m.businessCalendarDay('maniana',uy,now),'2026-11-16');assert.equal(m.businessCalendarDay('maniana',pa,now),'2026-11-15');
+ assert.match(parse('¿Cuánto hice hoy?').guidance,/no tiene una consulta de ingresos diarios homologada/);
+ assert.equal(m.phaseOneReleaseTools.length,17);
+ let calls=0;for(const country of [uy,pa])for(const plan of ['individual','negocio','pro'])for(const role of ['owner','manager','staff']){const scope={userId:'test',businessId:'fictional',role,sessionVersion:1,accessEnabled:true};const engine=m.createConversation({scope:()=>scope,business:()=>({...country,id:'fictional',role,plan}),capability:k=>k==='statistics'&&plan!=='individual',request:async()=>{calls++;throw Error('No transport allowed')}},scope,all,'connected');assert.equal(engine.available().length,role==='owner'?(plan==='individual'?16:17):0);for(const phrase of Object.values(cases).flat()){engine.interpret(phrase);for(const step of engine.snapshot().instruction.steps){assert.equal(step.enabled,engine.available().some(t=>t.id===step.id));}}for(const phrase of ['Qué xopá, IAtry','Gracias','Priti'])engine.respondSocial(phrase);engine.dispose();}assert.equal(calls,0);
+ console.log(`PASS Panama language: ${count} regional variants; citations/social separation; ambiguous times; contextual affirmations; UY/PA day boundary; 18 role/plan/country combinations; unchanged 17/16 tools; zero requests/writes`);
+}finally{fs.rmSync(dir,{recursive:true,force:true});}
