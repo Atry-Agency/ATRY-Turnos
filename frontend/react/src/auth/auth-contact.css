@@ -1,0 +1,10 @@
+.auth-contact{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:26px;padding-top:18px;border-top:1px solid #eeedf5;max-width:100%}
+.auth-contact>span{font-size:12px;line-height:1.5;color:#657084;font-weight:450}
+.auth-contact>div{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.auth-contact a{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:linear-gradient(90deg,#4754E6 0%,#6250DF 100%);box-shadow:0 3px 9px #4754e612;text-decoration:none;transition:transform .18s,box-shadow .18s}
+.auth-contact a img{display:block;width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1)}
+.auth-contact a:focus-visible{outline:3px solid #4754E6;outline-offset:4px}
+@media(hover:hover){.auth-contact a:hover{transform:translateY(-2px);box-shadow:0 5px 14px #4754e624}}
+.auth-contact a:active{transform:scale(.96)}
+@media(max-width:370px){.auth-contact{gap:10px}.auth-contact>div{gap:8px}.auth-contact>span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.auth-contact a{transition:none}.auth-contact a:hover,.auth-contact a:active{transform:none}}
