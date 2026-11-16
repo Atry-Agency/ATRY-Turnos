@@ -1,0 +1,32 @@
+/* The mobile form owns the screen; the approved artwork becomes a short brand cap. */
+@media(max-width:800px){
+ :root .auth-screen-host .auth-shell{display:flex;flex-direction:column;min-height:100svh;background:#fff}
+ :root .auth-screen-host .auth-shell>.auth-artwork{display:flex;flex-direction:column;justify-content:space-between;flex:none;width:100%;height:calc(132px + env(safe-area-inset-top,0px));min-height:0;padding:calc(20px + env(safe-area-inset-top,0px)) 26px 22px;border-radius:0 0 36px 36px}
+ :root .auth-screen-host .auth-shell>.auth-artwork>.logo{align-self:flex-start;margin:0;min-height:28px;gap:10px}
+ :root .auth-screen-host .auth-artwork .brand-original{width:28px;height:28px}
+ :root .auth-screen-host .auth-artwork .logo{font-size:12px}
+ :root .auth-screen-host .auth-artwork .logo b{font-size:9px;padding-left:9px}
+ :root .auth-screen-host .auth-artwork .auth-pitch{padding:0;margin:0;max-width:none;container-type:normal}
+ :root .auth-screen-host .auth-artwork .auth-pitch h1{font-size:25px;line-height:1.2;margin:0;letter-spacing:-.035em}
+ .auth-screen-host .auth-artwork .auth-pitch-lead,.auth-screen-host .auth-artwork .auth-brand-line,.auth-screen-host .auth-artwork .auth-pitch>p,.auth-screen-host .auth-artwork .auth-switch,.auth-screen-host .auth-artwork .auth-signature{display:none}
+ :root .auth-screen-host .auth-shell>.auth-right{min-height:0;width:100%;padding:26px 24px 24px;display:block}
+ :root .auth-screen-host .auth-form{max-width:430px;margin:0 auto;padding:0}
+ .auth-screen-host .auth-mobile-brand{display:none}
+ :root .auth-shell--login .auth-form>.eyebrow{margin-top:0!important;font-size:10px;letter-spacing:.14em}
+ :root .auth-shell--login .auth-form>h2{font-size:26px;line-height:1.22;margin:9px 0 24px}
+ .auth-shell--login .auth-form>p{display:none}
+ :root .auth-screen-host .auth-shell--register>.auth-right{order:1;padding-top:24px;padding-bottom:24px}
+ :root .auth-screen-host .auth-shell--register>.auth-artwork{order:2;height:124px;padding-top:20px;border-radius:36px 36px 0 0;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+ :root .auth-shell--register .onboarding-progress{margin:12px 0 22px}
+ :root .auth-shell--register .auth-return{margin:0;min-height:44px;display:inline-flex;align-items:center}
+ :root .registration-wizard section>h2{font-size:26px;line-height:1.22}
+ :root .registration-wizard section>p{font-size:12px;line-height:1.6;margin-bottom:20px}
+ :root .auth-screen-host .auth-form .bottom{font-size:12px;line-height:1.6;margin-top:16px;text-align:center}
+ :root .auth-screen-host .auth-form>.recovery-link{display:flex;align-items:center;justify-content:center;font-size:12px;min-height:44px;margin:4px 0}
+ .auth-secondary-links{display:flex;flex-wrap:wrap;justify-content:center;column-gap:18px;margin-top:4px}
+ :root .auth-secondary-links .recovery-link{display:inline-flex;align-items:center;min-height:44px;font-size:11px;margin:0}
+ :root .auth-screen-host .auth-contact{justify-content:center;margin-top:12px;padding-top:8px;border-top:0}
+ .auth-screen-host .auth-contact>span{display:none}
+ .auth-screen-host .auth-contact>div{gap:14px}
+}
+@media(max-width:360px){:root .auth-screen-host .auth-shell>.auth-right{padding-inline:20px}.auth-secondary-links{column-gap:12px}}

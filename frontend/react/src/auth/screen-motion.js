@@ -14,9 +14,11 @@ export async function playAuthScreen(current,mode){
  authScreenMotion?.cancel();
  const old=savedScreen;savedScreen=null;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- if(!old||performance.now()-old.at>1000||old.mode===mode||!['login','register'].includes(mode)||reduced.matches||!Element.prototype.animate)return;
+ if(!old||performance.now()-old.at>1000||old.mode===mode||!['login','register'].includes(mode))return;
+ if(innerWidth<=800)window.scrollTo(0,0);
+ if(reduced.matches||!Element.prototype.animate)return;
  const previous=old;
- const duration=innerWidth<=800?220:680;
+ const duration=innerWidth<=800?440:680;
  const easing='cubic-bezier(.4,0,.2,1)';
  const animations=[];
  let stage=null;
@@ -45,13 +47,13 @@ export async function playAuthScreen(current,mode){
   const departingForm=ghost(oldForm,oldFormRect);departingForm.style.background='transparent';
   oldLayer.append(departingForm,oldPanelCopy);stage.append(oldLayer);
  }
- const newPanel=current.querySelector('.auth-artwork'),newForm=current.querySelector('.auth-right');
+ const newPanel=current.querySelector('.auth-artwork'),newForm=current.querySelector('.auth-right'),panelZ=newPanel.style.zIndex;
  const play=(element,frames,options={})=>{const animation=element.animate(frames,{duration,easing,fill:'both',...options});animations.push(animation);return animation;};
  let finished=false;
  const cleanup=()=>{
   if(finished)return;finished=true;
   for(const animation of animations)animation.cancel();
-  stage?.remove();newPanel.style.removeProperty('visibility');
+  stage?.remove();newPanel.style.removeProperty('visibility');newPanel.style.zIndex=panelZ;
   window.removeEventListener('resize',cancel);reduced.removeEventListener('change',cancel);
   if(authScreenMotion?.cancel===cancel)authScreenMotion=null;
  };
@@ -86,7 +88,12 @@ export async function playAuthScreen(current,mode){
    play(oldLayer.querySelector('.auth-right'),[{opacity:1,offset:0},{opacity:0,offset:.24},{opacity:0,offset:1}],{easing:'linear'});
    play(newForm,[{opacity:0,transform:'translate3d('+(mode==='register'?'-14':'14')+'px,0,0)',offset:0},{opacity:0,transform:'translate3d('+(mode==='register'?'-14':'14')+'px,0,0)',offset:.28},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
   }else{
-   play(newForm,[{opacity:0,transform:'translate3d('+(mode==='register'?'12':'-12')+'px,0,0)'},{opacity:1,transform:'translate3d(0,0,0)'}]);
+   const target=newPanel.getBoundingClientRect();
+   newPanel.style.zIndex='2';
+   if(oldPanelRect.bottom>0&&oldPanelRect.top<innerHeight){
+    play(newPanel,[{transform:'translate3d(0,'+(oldPanelRect.top-target.top)+'px,0)',borderRadius:oldRadius},{transform:'translate3d(0,0,0)',borderRadius:getComputedStyle(newPanel).borderRadius}]);
+   }
+   play(newForm,[{opacity:0,transform:'translate3d(0,'+(mode==='register'?'8':'-8')+'px,0)',offset:0},{opacity:.3,transform:'translate3d(0,4px,0)',offset:.28},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
   }
   await Promise.all(animations.map(animation=>animation.finished.catch(()=>{})));
  }finally{cleanup();}
