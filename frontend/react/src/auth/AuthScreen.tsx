@@ -1,3 +1,4 @@
+import './sector-choices.css';
 import {CredentialField} from './CredentialField';
 import './auth-mobile.css';
 import {ContactLinks} from './ContactLinks';
@@ -18,7 +19,8 @@ const sectors=['Barbería','Peluquería','Uñas y manicura','Pestañas y cejas',
 export function AuthScreen({model,mode,token='',control}:{model:ApplicationModel;mode:AuthMode;token?:string;control:(value:ScreenController|null)=>void}){
  const screen=useRef<HTMLDivElement>(null);useLayoutEffect(()=>{const root=screen.current?.querySelector<HTMLElement>('.auth-shell');if(root)void playAuthScreen(root,mode);else stopAuthMotion();return()=>{if(root)rememberAuthScreen(root,mode);else stopAuthMotion()}},[mode]);
  const preview=window.ATRY_CONFIG?.backend==='preview',port=model.port,form=useRef<HTMLFormElement>(null),[step,setStep]=useState(1),[sector,setSector]=useState(sectors[0]),[busy,setBusy]=useState(false),[error,setError]=useState(''),[verification,setVerification]=useState(''),pending=useRef(false),dirty=useRef(false),live=useRef(true),{confirm,confirmation}=useConfirmation(port);
- useEffect(()=>{live.current=true;control({canRefresh:()=>!dirty.current&&!pending.current,reload:()=>{},beforeLeave:async()=>!pending.current&&(!dirty.current||await confirm('Hay cambios sin guardar. ¿Querés salir de esta pantalla?'))});const unload=(e:BeforeUnloadEvent)=>{if(dirty.current||pending.current){e.preventDefault();e.returnValue=''}};window.addEventListener('beforeunload',unload);return()=>{live.current=false;control(null);window.removeEventListener('beforeunload',unload);if(form.current)form.current.reset()}},[]);
+ const entryScreen=mode==='login'||mode==='register';
+ useEffect(()=>{live.current=true;control({canRefresh:()=>!dirty.current&&!pending.current,reload:()=>{},beforeLeave:async()=>!pending.current&&(entryScreen||!dirty.current||await confirm('Hay cambios sin guardar. ¿Querés salir de esta pantalla?'))});const unload=(e:BeforeUnloadEvent)=>{if(pending.current||!entryScreen&&dirty.current){e.preventDefault();e.returnValue=''}};window.addEventListener('beforeunload',unload);return()=>{live.current=false;control(null);window.removeEventListener('beforeunload',unload);if(form.current)form.current.reset()}},[]);
  const advance=<Icon name="chevron" port={port}/>;
  const focusedStep=useRef(1);useLayoutEffect(()=>{if(focusedStep.current!==step){focusedStep.current=step;form.current?.querySelector<HTMLElement>('[data-register-step="'+step+'"] input:not([type=hidden])')?.focus()}},[step]);
  function show(n:number){setStep(n)}

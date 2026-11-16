@@ -1,0 +1,16 @@
+/* The label is the touch target; the native radio keeps semantics without a rectangular overlay. */
+:root .registration-wizard .sector-option{border-radius:20px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+:root .registration-wizard .sector-option:last-child{border-radius:22px}
+:root .registration-wizard .sector-option *{-webkit-tap-highlight-color:transparent}
+:root .registration-wizard .sector-option input{position:absolute;inset:auto;left:16px;top:50%;width:1px;height:1px;min-width:0;min-height:0;margin:0;padding:0;border:0;clip-path:inset(50%);overflow:hidden;opacity:0;pointer-events:none}
+:root .registration-wizard .sector-option>span{background:#fcfbfe;border-color:#e1dfeb;transform:none;transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+:root .registration-wizard .sector-option strong{color:#4b4c63;font-weight:550;transition:color .16s ease}
+:root .registration-wizard .sector-option .i{color:#817b9b;stroke-width:1.6;transition:color .16s ease}
+:root .registration-wizard .sector-option input:checked+span{background:#f3f0ff;border-color:#b9acee;color:#6250df}
+:root .registration-wizard .sector-option input:checked+span strong{color:#4733a4;font-weight:600}
+:root .registration-wizard .sector-option input:checked+span .i{color:#6250df}
+:root .registration-wizard .sector-option input:focus-visible+span{outline:2px solid #6250df;outline-offset:3px}
+:root .registration-wizard .sector-option:active>span{background:#ede8fc;border-color:#a697e2;transform:none}
+:root .registration-wizard .sector-option:has(input:disabled){cursor:not-allowed}
+@media(hover:hover) and (pointer:fine){:root .registration-wizard .sector-option:not(:has(input:checked,input:disabled)):hover>span{background:#f5f2fc;border-color:#c9c0e7;transform:none}}
+@media(prefers-reduced-motion:reduce){:root .registration-wizard .sector-option>span,:root .registration-wizard .sector-option strong,:root .registration-wizard .sector-option .i{transition:none}}
