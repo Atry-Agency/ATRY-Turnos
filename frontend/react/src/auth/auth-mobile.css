@@ -55,3 +55,30 @@
  :root .auth-screen-host .auth-shell--login .auth-artwork .auth-pitch h1{font-size:clamp(20px,4vw,32px);line-height:1.08}
 }
 @media(max-width:360px){:root .auth-screen-host .auth-shell>.auth-artwork{padding-inline:20px}}
+.auth-demo-link{gap:6px}
+.auth-demo-link>.i{width:13px;height:13px;margin:0;stroke-width:1.65}
+@media(max-width:800px){
+ .auth-secondary-links{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:10px}
+ .auth-secondary-links>div:first-child{text-align:left}
+ .auth-secondary-links>div:last-child{text-align:right}
+ :root .auth-secondary-links .recovery-link{font-size:11.5px;line-height:1.45;text-decoration:none}
+ .auth-secondary-links>div:first-child>.recovery-link{color:#657084}
+ .auth-demo-link{justify-content:flex-end}
+}
+:root .auth-secondary-links .auth-demo-link{color:#4754e6;font-weight:500}
+/* The registration cap carries the very same silhouette, reflected vertically. */
+@media(max-width:800px){
+ :root .auth-screen-host .auth-shell--register>.auth-artwork{height:calc(40.975vw + env(safe-area-inset-bottom,0px));padding-top:calc(9.4vw + 14px);border-radius:0;--auth-curve-bottom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1086 445'%3E%3Cpath fill='white' transform='translate(0 445) scale(1 -1)' d='M0 0H1086V57.25C1086 140.75 1031.25 343 716 343H206C117 343 52 382 0 445Z'/%3E%3C/svg%3E");-webkit-mask-image:linear-gradient(black,black),var(--auth-curve-bottom);mask-image:linear-gradient(black,black),var(--auth-curve-bottom);-webkit-mask-size:100% env(safe-area-inset-bottom,0px),100% calc(100% - env(safe-area-inset-bottom,0px));mask-size:100% env(safe-area-inset-bottom,0px),100% calc(100% - env(safe-area-inset-bottom,0px));-webkit-mask-position:bottom,top;mask-position:bottom,top;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+ :root .auth-secondary-links>div:first-child>.recovery-link{color:#007ea8}
+ :root .auth-secondary-links .auth-demo-link{display:inline-flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:3px;min-height:48px;line-height:1.25}
+ .auth-demo-note{font-size:10px;font-weight:400;color:#657084;letter-spacing:.01em}
+ .auth-demo-link strong{font-size:12px;font-weight:550;letter-spacing:-.01em;text-decoration:underline;text-decoration-color:#beb8ed;text-underline-offset:4px;text-decoration-thickness:1px}
+}
+/* Rounded choices retain the existing two-column rhythm and comfortable touch area. */
+:root .registration-wizard .sector-option>span{border-radius:20px;padding-inline:14px}
+:root .registration-wizard .sector-option:last-child>span{border-radius:22px}
+@media(min-width:801px){
+ :root .auth-secondary-links .auth-demo-link{display:inline-flex;flex-direction:column;align-items:flex-start;gap:3px}
+ .auth-demo-note{font-size:10px;font-weight:400;color:#657084}
+ .auth-demo-link strong{font-size:12px;font-weight:550}
+}

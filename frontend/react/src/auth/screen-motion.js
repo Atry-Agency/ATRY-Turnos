@@ -18,7 +18,7 @@ export async function playAuthScreen(current,mode){
  if(innerWidth<=800)window.scrollTo(0,0);
  if(reduced.matches||!Element.prototype.animate)return;
  const previous=old;
- const duration=innerWidth<=800?440:680;
+ const duration=innerWidth<=800?560:680;
  const easing='cubic-bezier(.4,0,.2,1)';
  const animations=[];
  let stage=null;
@@ -88,12 +88,34 @@ export async function playAuthScreen(current,mode){
    play(oldLayer.querySelector('.auth-right'),[{opacity:1,offset:0},{opacity:0,offset:.24},{opacity:0,offset:1}],{easing:'linear'});
    play(newForm,[{opacity:0,transform:'translate3d('+(mode==='register'?'-14':'14')+'px,0,0)',offset:0},{opacity:0,transform:'translate3d('+(mode==='register'?'-14':'14')+'px,0,0)',offset:.28},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
   }else{
-   const target=newPanel.getBoundingClientRect();
-   newPanel.style.zIndex='2';
-   if(oldPanelRect.bottom>0&&oldPanelRect.top<innerHeight){
-    play(newPanel,[{transform:'translate3d(0,'+(oldPanelRect.top-target.top)+'px,0)',borderRadius:oldRadius},{transform:'translate3d(0,0,0)',borderRadius:getComputedStyle(newPanel).borderRadius}]);
-   }
-   play(newForm,[{opacity:0,transform:'translate3d(0,'+(mode==='register'?'8':'-8')+'px,0)',offset:0},{opacity:.3,transform:'translate3d(0,4px,0)',offset:.28},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
+   // One opaque curtain expands to cover, then settles at the opposite edge.
+   // Its path keeps a consistent winding/command topology so WebKit can interpolate it.
+   const width=innerWidth,height=innerHeight,scale=width/1086;
+   const shape=(top,panelHeight,login=false,cover=false)=>{
+    const bottom=top+panelHeight,safe=Math.max(0,panelHeight-width*445/1086),mirrored=!login&&!cover;
+    const y=n=>top+safe+n*scale;
+    const edge=login?{right:y(57.25),c1:y(140.75),c2:y(343),base:y(343),left:y(382)}:{right:bottom,c1:bottom,c2:bottom,base:bottom,left:bottom};
+    const upper=n=>top+(mirrored?n*scale:0);
+    return 'path("M0 '+top+' C'+(52*scale)+' '+upper(63)+' '+(117*scale)+' '+upper(102)+' '+(206*scale)+' '+upper(102)+' L'+(716*scale)+' '+upper(102)+' C'+(1031.25*scale)+' '+upper(102)+' '+width+' '+upper(304.25)+' '+width+' '+upper(387.75)+' L'+width+' '+edge.right+' C'+width+' '+edge.c1+' '+(1031.25*scale)+' '+edge.c2+' '+(716*scale)+' '+edge.base+' L'+(206*scale)+' '+edge.base+' C'+(117*scale)+' '+edge.base+' '+(52*scale)+' '+edge.left+' 0 '+bottom+' Z")';
+   };
+   const target=newPanel.getBoundingClientRect(),initialTop=Math.max(-oldPanelRect.height-16,Math.min(oldPanelRect.top,height+16)),finalTop=Math.max(-target.height-16,Math.min(target.top,height+16));
+   stage=document.createElement('div');stage.className='auth-motion-stage auth-mobile-transition';stage.inert=true;stage.setAttribute('aria-hidden','true');
+   const host=document.createElement('div');host.className='auth-screen-host';host.style.cssText='position:absolute;inset:0;pointer-events:none';
+   const previousLayer=document.createElement('div');previousLayer.className=previous.className+' auth-mobile-motion-layer';
+   previousLayer.style.cssText='position:absolute;inset:0;display:block;min-height:0;background:transparent';
+   const departing=ghost(oldForm,oldFormRect);departing.style.background='transparent';departing.style.zIndex='1';previousLayer.append(departing);host.append(previousLayer);
+   const brandCopy=(source,rect)=>{const copy=ghost(source,rect);copy.style.background='transparent';copy.style.maskImage='none';copy.style.webkitMaskImage='none';copy.style.borderRadius='0';copy.style.zIndex='3';copy.style.visibility='visible';return copy};
+   const departingBrand=brandCopy(oldPanel,{left:oldPanelRect.left,top:initialTop,width:oldPanelRect.width,height:oldPanelRect.height});previousLayer.append(departingBrand);
+   const arrivalLayer=document.createElement('div');arrivalLayer.className=current.className+' auth-mobile-motion-layer';arrivalLayer.style.cssText='position:absolute;inset:0;display:block;min-height:0;background:transparent';const arrivingBrand=brandCopy(newPanel,{left:target.left,top:finalTop,width:target.width,height:target.height});arrivalLayer.append(arrivingBrand);host.append(arrivalLayer);
+   const surface=document.createElement('div');surface.className='auth-mobile-motion-surface';surface.style.cssText='position:absolute;inset:0;z-index:2;pointer-events:none;will-change:clip-path;';surface.style.background=getComputedStyle(newPanel).backgroundImage;
+   stage.append(host,surface);document.body.append(stage);newPanel.style.visibility='hidden';
+   const start=shape(initialTop,oldPanelRect.height,previous.mode==='login'),end=shape(finalTop,target.height,mode==='login'),covered=shape(-16,height+32,false,true);
+   play(surface,[{clipPath:start,offset:0},{clipPath:covered,offset:.43},{clipPath:covered,offset:.54},{clipPath:end,offset:1}],{easing:'cubic-bezier(.65,0,.35,1)'});
+   const direction=mode==='register'?1:-1;
+   play(departingBrand,[{opacity:1,transform:'translate3d(0,0,0)',offset:0},{opacity:0,transform:'translate3d(0,'+(direction*24)+'px,0)',offset:.28},{opacity:0,transform:'translate3d(0,'+(direction*24)+'px,0)',offset:1}]);
+   play(arrivingBrand,[{opacity:0,transform:'translate3d(0,'+(direction*12)+'px,0)',offset:0},{opacity:0,transform:'translate3d(0,'+(direction*12)+'px,0)',offset:.68},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
+   play(departing,[{opacity:1,transform:'translate3d(0,0,0)',offset:0},{opacity:0,transform:'translate3d(0,'+(-direction*48)+'px,0)',offset:.38},{opacity:0,transform:'translate3d(0,'+(-direction*48)+'px,0)',offset:1}]);
+   play(newForm,[{opacity:0,transform:'translate3d(0,'+(direction*52)+'px,0)',offset:0},{opacity:0,transform:'translate3d(0,'+(direction*52)+'px,0)',offset:.4},{opacity:1,transform:'translate3d(0,0,0)',offset:1}]);
   }
   await Promise.all(animations.map(animation=>animation.finished.catch(()=>{})));
  }finally{cleanup();}
