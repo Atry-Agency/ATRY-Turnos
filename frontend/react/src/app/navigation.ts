@@ -10,3 +10,13 @@ export function businessNavigation(b:BusinessContext,capability:(name:string)=>b
  items.push(['comunicacion','whatsapp','Comunicaciones'],['configuracion','settings','Configuración'],['soporte','help','Ayuda y soporte']);return items.filter(([view])=>routeAllowed(view,capability));
 }
 export function settingsNavigation(role:string,capability:(name:string)=>boolean){return [['comunicacion','whatsapp','Comunicación'],...(role==='staff'?[]:[['configuracion','shop','Negocio']]),...(capability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(role==='owner'&&capability('access')?[['accesos','shield','Usuarios y accesos']]:[]),['suscripcion','wallet','Mi plan y acceso']]}
+
+/** Settings destinations mirror existing routes/tabs and their existing guards. */
+export function settingsSections(role:string,capability:(name:string)=>boolean){
+ if(role==='staff')return [];
+ return [
+  {label:'Tu negocio',items:[['configuracion/general','shop','Datos del negocio'],...(role==='owner'?[['configuracion/apariencia','spark','Apariencia e identidad']]:[]),['configuracion/reservas','settings','Reglas de reserva'],['configuracion/publicacion','calendar','Página de reservas']]},
+  {label:'Gestión',items:[...(capability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(role==='owner'&&capability('access')?[['accesos','shield','Usuarios y accesos']]:[]),['suscripcion','wallet','Mi plan y acceso']]}
+ ];
+}
+export function settingsDestination(view:string,tab:string){return view==='configuracion'?'configuracion/'+(['general','apariencia','reservas','publicacion'].includes(tab)?tab:'general'):view;}

@@ -8,7 +8,7 @@ function config(env,{verificationOnly=false}={}){
  if(!key.startsWith('sb_publishable_'))throw new Error('Formato de clave pública inválido');
  if(env.CLOUD_BACKEND_VALIDATED!=='1'&&!verificationOnly)throw new Error('Publicación bloqueada: falta validar equivalencia completa del backend cloud');
  const paRequested=env.PUBLIC_PA_REGISTRATION_ENABLED==='1';if(paRequested&&(env.REGIONAL_BACKEND_VALIDATED!=='1'||env.PA_RELEASE_APPROVED!=='1'||verificationOnly))throw new Error('Altas PA bloqueadas: faltan homologación regional y autorización de publicación.');
- return {supabaseUrl:url,supabaseKey:key,backend:'supabase',turnstileSiteKey:env.PUBLIC_TURNSTILE_SITE_KEY||'',...(paRequested?{paRegistrationEnabled:true}:{}),...(verificationOnly?{verificationOnly:true}:{})};
+ return {supabaseUrl:url,supabaseKey:key,backend:'supabase',...(!verificationOnly?{adminChatValidated:true}:{}),turnstileSiteKey:env.PUBLIC_TURNSTILE_SITE_KEY||'',...(paRequested?{paRegistrationEnabled:true}:{}),...(verificationOnly?{verificationOnly:true}:{})};
 }
 async function build(env,dest=path.resolve('dist/pages'),options={}){
  const c=config(env,options);require('./react/package.cjs').packageReact(dest,c);

@@ -98,3 +98,40 @@
 @media(max-width:360px){.cc-assistant-heading strong span{display:none}.cc-assistant-heading>.btn{padding:10px;font-size:11px}}
 .cc-assistant .iatry-liquid{contain:layout style;--current-speed:26s;--current-opacity:.5;animation:none!important}
 .cc-assistant[data-stage=review] .iatry-liquid{--current-speed:14s;--current-opacity:.65}
+.cc-chat-body{display:flex;flex-direction:column;max-height:var(--cc-chat-height,650px);overflow:auto;overscroll-behavior:contain;padding-top:12px;scrollbar-width:thin}
+.cc-chat-body>.cc-assistant-log{flex:1 1 auto;min-height:90px;max-height:240px}
+.cc-chat-body.cc-chat-state-review>.cc-assistant-log{max-height:130px;min-height:60px}
+.cc-chat-body>.cc-assistant-composer{position:sticky;bottom:0;background:#fff;padding:10px 0;margin:0;flex:none;z-index:1}
+.cc-chat-status{font:500 13px/1.6 system-ui;color:#6156a9;margin:8px 0}
+.cc-chat-selection,.cc-chat-question{padding:12px 0}
+.cc-chat-question h3{font:600 15px/1.5 system-ui;letter-spacing:-.01em;color:#34314b;margin:0 0 12px}
+.cc-chat-records{display:grid;gap:6px;max-height:250px;overflow:auto;margin:12px 0;overscroll-behavior:contain}
+.cc-chat-records>label{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #e9e5f3;border-radius:12px;background:#faf9fe;min-height:52px;cursor:pointer;min-width:0}
+.cc-chat-records input[type=checkbox]{width:18px;height:18px;flex:none;margin:0}
+.cc-chat-records label>span{min-width:0}.cc-chat-records strong{font:600 13px/1.5 system-ui;display:block;overflow-wrap:anywhere}
+.cc-chat-records small{display:block;font:400 11px/1.5 system-ui;color:#6b6680;overflow-wrap:anywhere}
+.cc-chat-review{display:grid;gap:12px;padding:8px 0}
+.cc-chat-proposals{display:grid;gap:14px;max-height:none;overflow:visible}
+.cc-chat-effect{font:400 12px/1.6 system-ui;color:#68637a;margin:8px 0 0}
+.cc-chat-review .checkline{font:500 13px/1.5 system-ui;display:flex;align-items:center;gap:10px;margin:0;min-height:44px}
+.cc-chat-review input[type=checkbox]{width:18px;height:18px;flex:none}
+.cc-chat-confirm{min-height:48px;width:100%}
+.cc-chat-results{display:grid;gap:12px;padding:12px;border-radius:14px;background:#f4faf7;color:#24483a}
+.cc-chat-results>div>strong{font:600 13px/1.5 system-ui}
+.cc-chat-error{padding:12px;border-radius:12px;background:#fff0f1;color:#a72d41;font:500 13px/1.6 system-ui}
+.cc-chat-catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px;max-height:280px;overflow:auto}
+.cc-chat-catalog button{display:grid;gap:4px;text-align:left;padding:12px;border:1px solid #e5e2f0;border-radius:12px;background:#faf9fd;cursor:pointer;color:#403a64;min-height:64px}
+.cc-chat-catalog small{font-size:10px;color:#7c728f}
+.cc-chat-read{padding:14px;background:#faf9fd;border:1px solid #ebe7f3;border-radius:14px;max-height:280px;overflow:auto;font:400 13px/1.6 system-ui}
+.cc-chat-read ol{margin:0;padding-left:20px}.cc-chat-read li{padding:8px 0}.cc-chat-read small{display:block;color:#716b80}
+.cc-chat-read dl{display:grid;gap:8px;margin:0}.cc-chat-read dl>div{display:flex;gap:12px;justify-content:space-between}.cc-chat-read dd{margin:0;font-weight:600}
+.cc-assistant[data-stage=locating] .iatry-liquid,.cc-assistant[data-stage=verifying] .iatry-liquid{--current-speed:9s;--current-opacity:.7}
+.cc-assistant[data-stage=executing] .iatry-liquid{--current-speed:6s;--current-opacity:.85}
+@media(max-width:600px){.cc-chat-catalog{grid-template-columns:1fr}.cc-chat-proposals{max-height:none}.cc-chat-body{padding-top:8px}.cc-chat-body>.cc-assistant-composer input{font-size:16px}.cc-chat-review .checkline{font-size:12px}.cc-chat-review .iatry-operation-card{padding:14px}}
+@media(prefers-reduced-motion:reduce){.cc-assistant-operational *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.cc-chat-corrections>summary{list-style:none;display:inline-flex;align-items:center;gap:7px;padding:9px 0;font:500 12px/1.4 system-ui;color:#514497;cursor:pointer;min-height:44px}
+.cc-chat-corrections>summary::-webkit-details-marker{display:none}
+.cc-chat-corrections>summary .i{width:15px;height:15px}
+.cc-chat-corrections>summary:focus-visible{outline:2px solid #7863d1;outline-offset:3px;border-radius:4px}
+
+.cc-assistant-operational .iatry-operation-card dt,.cc-assistant-operational .iatry-operation-card>header>span{color:#626C88}

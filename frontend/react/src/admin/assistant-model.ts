@@ -73,3 +73,5 @@ export function adminFollowUp(source:string,previous:string){
  const p=normalize(previous),patterns:[RegExp,string][]=[[/\b(renov\w*|habilit\w*|activ\w*|suscri\w*|suspend\w*|restablec\w*)\b/,'gestionar suscripcion'],[/\bdiagnosti\w*\b/,'diagnostico'],[/\bincidencia\b/,'gestionar incidencia'],[/\bseguimiento\b/,'seguimiento'],[/\bdesbloquea\w*\b/,'desbloquear cuenta'],[/\bbloquea\w*\b/,'bloquear cuenta'],[/\brevoca\w*\b/,'revocar sesiones']];
  const task=patterns.find(([pattern])=>pattern.test(p));return task?task[1]+' '+n:source;
 }
+
+export {identify as resolveAdminReference};
