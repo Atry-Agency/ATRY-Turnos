@@ -15,7 +15,7 @@ export function settingsNavigation(role:string,capability:(name:string)=>boolean
 export function settingsSections(role:string,capability:(name:string)=>boolean){
  if(role==='staff')return [];
  return [
-  {label:'Tu negocio',items:[['configuracion/general','shop','Datos generales'],...(role==='owner'?[['configuracion/apariencia','spark','Apariencia']]:[]),['configuracion/reservas','settings','Reservas'],['configuracion/publicacion','calendar','Página pública']]},
+  {label:'Tu negocio',items:[['configuracion/general','shop','Datos generales'],...(role==='owner'?[['configuracion/apariencia','palette','Apariencia']]:[]),['configuracion/reservas','calendar','Reservas'],['configuracion/publicacion','globe','Página pública']]},
   {label:'Gestión',items:[...(capability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(role==='owner'&&capability('access')?[['accesos','shield','Accesos']]:[]),['suscripcion','wallet','Mi plan']]}
  ];
 }

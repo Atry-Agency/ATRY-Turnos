@@ -18,3 +18,6 @@ Notification switches use #4754E6 when checked, neutral #8691A6 when unchecked, 
 ## Release / recovery
 Previous production: d736300c4e94913dcfdd6f82e04d3dea50a2b8f9.
 Publish and verify annotated rollback tag rollback/pre-sidebar-polish-20261116 before pushing the candidate to main. Existing Pages workflow performs build, React, IAtry consolidation and artifact checks. Verify workflow also executes root tests and dependency audit. To recover, dispatch Pages with source_ref set to that tag; no database rollback is needed.
+
+## Requested follow-up: familiar settings icons
+After reviewing the published version, the owner requested distinct familiar icons in the settings submenu. Restored exactly one quiet 16px symbol per destination: store, palette, calendar, globe, bell, shield and wallet. No duplicated gear icons, decorated icon containers, extra labels or route changes. Added the palette to the shared icon catalog (otherwise it fell back to Info). Browser regression now verifies one icon per entry and actual palette geometry, retaining the same responsive/contrast/route checks.
