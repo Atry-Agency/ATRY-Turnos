@@ -351,3 +351,6 @@
 :root[data-theme-custom-palette=true] .sidebar .settings-toggle.is-current,:root[data-theme-custom-palette=true] .sidebar .settings-nav-link:hover{background:color-mix(in srgb,var(--brand-on-sidebar) 8%,transparent)}
 :root[data-theme-custom-palette=true] .sidebar .settings-nav-link[aria-current=page]{background:var(--bg);color:var(--ink);box-shadow:inset 2px 0 var(--panel-action)}
 :root[data-theme-custom-palette=true] .settings-nav-group+.settings-nav-group{border-color:color-mix(in srgb,var(--brand-on-sidebar) 14%,transparent)}
+/* Hover accents stay within the sidebar palette rather than using the secondary cyan. */
+:root[data-appearance=business] .app-shell .sidebar .navlink:hover:not(.active){box-shadow:inset 3px 0 var(--sidebar-hover-accent,#B9B4FF)}
+:root[data-theme-custom-palette=true] .app-shell .sidebar{--sidebar-hover-accent:color-mix(in srgb,var(--brand-on-sidebar) 65%,var(--brand-sidebar))}
