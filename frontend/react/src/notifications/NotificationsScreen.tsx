@@ -1,3 +1,4 @@
+import './notification-controls.css';
 import {PanelSkeleton} from '../ui/PanelSkeleton';
 import {useEffect,useRef,useState} from 'react';
 import type {AppPort} from '../app/port';

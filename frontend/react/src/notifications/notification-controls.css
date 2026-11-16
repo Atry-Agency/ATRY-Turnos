@@ -1,0 +1,7 @@
+/* Checked state must win over the generic themed input surface. */
+:root .app-shell .notification-choice input[type=checkbox]{-webkit-appearance:none;appearance:none;background:#8691A6;border:0;box-shadow:none;transition:background-color .18s ease,opacity .18s ease}
+:root .app-shell .notification-choice input[type=checkbox]:checked{background:var(--atry-primary,#4754E6)}
+:root .app-shell .notification-choice input[type=checkbox]::before{background:#fff}
+:root .app-shell .notification-choice input[type=checkbox]:focus-visible{outline:3px solid var(--brand-focus,var(--atry-primary,#4754E6));outline-offset:4px}
+:root .app-shell .notification-choice input[type=checkbox]:disabled{opacity:.55;cursor:not-allowed}
+@media(prefers-reduced-motion:reduce){:root .app-shell .notification-choice input[type=checkbox],:root .app-shell .notification-choice input[type=checkbox]::before{transition:none}}

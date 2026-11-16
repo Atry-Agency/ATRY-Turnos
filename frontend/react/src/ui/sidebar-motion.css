@@ -1,0 +1,31 @@
+/* One connected surface in both panels. The drawer keeps a contained mobile selection. */
+@media(min-width:1001px){
+ .app-shell{--sidebar-nav-gutter:18px;--sidebar-selection-surface:var(--bg,#F6F7FC)}
+ .cc-shell{--sidebar-nav-gutter:16px;--sidebar-selection-surface:#F6F7FC}
+ :root .cc-shell .cc-sidebar.sidebar nav{margin-inline-end:0}
+ :root .cc-shell .cc-sidebar.sidebar nav a{margin-inline-end:0}
+ :root[data-appearance=business] .app-shell .sidebar .navlink.active,
+ :root[data-appearance=business] .app-shell .sidebar .settings-toggle.is-current,
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]{position:relative;width:calc(100% + var(--sidebar-nav-gutter));margin-inline-end:calc(-1 * var(--sidebar-nav-gutter));border:0;border-radius:16px 0 0 16px;background:var(--sidebar-selection-surface);box-shadow:none;view-transition-name:none;transition:color .18s ease,background-color .18s ease}
+ :root[data-appearance=business] .app-shell .sidebar .settings-toggle.is-current,
+ :root[data-appearance=business] .app-shell .sidebar .settings-toggle.is-current:hover{background:var(--sidebar-selection-surface);color:var(--ink);box-shadow:none}
+ :root[data-appearance=business] .app-shell .sidebar .settings-toggle.is-current>.i{color:var(--panel-action)}
+ :root[data-appearance=business] .app-shell .sidebar :is(.navlink.active,.settings-toggle.is-current)::before,
+ :root[data-appearance=business] .app-shell .sidebar :is(.navlink.active,.settings-toggle.is-current)::after,
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::before,
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::after{content:"";display:block;position:absolute;right:0;width:24px;height:24px;pointer-events:none}
+ :root[data-appearance=business] .app-shell .sidebar :is(.navlink.active,.settings-toggle.is-current)::before,
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::before{top:-24px;background:radial-gradient(circle at 0 0,transparent 23.5px,var(--sidebar-selection-surface) 24px)}
+ :root[data-appearance=business] .app-shell .sidebar :is(.navlink.active,.settings-toggle.is-current)::after,
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::after{bottom:-24px;background:radial-gradient(circle at 0 100%,transparent 23.5px,var(--sidebar-selection-surface) 24px)}
+}
+@media(max-width:1000px){
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]{margin-inline-end:0;border-radius:12px;view-transition-name:none}
+ :root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::before,:root .cc-shell .cc-sidebar.sidebar nav a[aria-current=page]::after{display:none}
+}
+.sidebar-motion-stage{position:fixed;inset:0;z-index:45;pointer-events:none;overflow:hidden}
+.sidebar-motion-stage *{pointer-events:none!important}
+[data-sidebar-motion-target]{opacity:0!important;transition:none!important}
+[data-sidebar-motion-departing]{transition:none!important}
+@media(prefers-reduced-motion:reduce){.sidebar-motion-stage{display:none}.app-shell .sidebar .navlink,.cc-shell .cc-sidebar.sidebar nav a{transition:none!important}}
+:root .cc-shell .cc-sidebar.sidebar nav a:hover:not([aria-current]){background:#FFFFFF15;color:#fff;border-left:0;box-shadow:inset 3px 0 #B9B4FF}
