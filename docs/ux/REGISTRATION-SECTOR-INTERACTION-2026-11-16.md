@@ -9,3 +9,10 @@ Login and registration are ephemeral entry forms: navigating away no longer open
 Verification: production compilation and release artifact checks; Chrome/WebKit at390 and1440, pointer/touch choice, keyboard focus/selection, exact selected form value across registration steps, direct register→login and login→register navigation without dialogs, unchanged pending-request guard using one intercepted local request per case, and reduced motion. All requests stay in disposable local fixtures; no actual login, registration, email or Supabase write is performed. The source of an iOS-only native highlight cannot be fully certified without the owner's device, but its rectangular native hit overlay and tap-highlight paint are removed from the implementation.
 
 Preview remains http://127.0.0.1:3360/#/registro. No publication for this follow-up.
+
+## Subsequent visual detail pass
+Country is labelled “País”, grouped with its selector at a fixed10px gap. The violet/white pill paints at about36px high while the native select retains a44px hit area. Options keep readable native-popup colors and visible keyboard focus. Sector choices now have26px radii. Unselected standard-sector icons use the same muted variable as the descriptive paragraph; selected icons retain violet. The catch-all option uses flat #222228 and white text/icon in all hover/active/checked states, with a separate lavender selected border.
+
+Visible “Otro rubro” becomes “Otra actividad” and its custom-field label becomes “Actividad de tu negocio” (example “Ej.: Fotografía”). The existing canonical radio value and custom-sector submission logic are deliberately unchanged. No business records or backend contracts are relabelled.
+
+Chrome/WebKit verified compact grouping,44px target, country values/payload, muted icon matching, rounded choices, matte-state contrast, accessible custom-field behavior and direct navigation without prompts. The matte option is specifically excluded from light hover surfaces and was checked on both desktop engines. Build and release artifact checks passed. Same local preview; not published.

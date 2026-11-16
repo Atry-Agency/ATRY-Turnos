@@ -75,8 +75,8 @@
  .auth-demo-link strong{font-size:12px;font-weight:550;letter-spacing:-.01em;text-decoration:underline;text-decoration-color:#beb8ed;text-underline-offset:4px;text-decoration-thickness:1px}
 }
 /* Rounded choices retain the existing two-column rhythm and comfortable touch area. */
-:root .registration-wizard .sector-option>span{border-radius:20px;padding-inline:14px}
-:root .registration-wizard .sector-option:last-child>span{border-radius:22px}
+:root .registration-wizard .sector-option>span{border-radius:26px;padding-inline:14px}
+:root .registration-wizard .sector-option:last-child>span{border-radius:26px}
 @media(min-width:801px){
  :root .auth-secondary-links .auth-demo-link{display:inline-flex;flex-direction:column;align-items:flex-start;gap:3px}
  .auth-demo-note{font-size:10px;font-weight:400;color:#657084}
