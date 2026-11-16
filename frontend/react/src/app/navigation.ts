@@ -15,8 +15,8 @@ export function settingsNavigation(role:string,capability:(name:string)=>boolean
 export function settingsSections(role:string,capability:(name:string)=>boolean){
  if(role==='staff')return [];
  return [
-  {label:'Tu negocio',items:[['configuracion/general','shop','Datos del negocio'],...(role==='owner'?[['configuracion/apariencia','spark','Apariencia e identidad']]:[]),['configuracion/reservas','settings','Reglas de reserva'],['configuracion/publicacion','calendar','Página de reservas']]},
-  {label:'Gestión',items:[...(capability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(role==='owner'&&capability('access')?[['accesos','shield','Usuarios y accesos']]:[]),['suscripcion','wallet','Mi plan y acceso']]}
+  {label:'Tu negocio',items:[['configuracion/general','shop','Datos generales'],...(role==='owner'?[['configuracion/apariencia','spark','Apariencia']]:[]),['configuracion/reservas','settings','Reservas'],['configuracion/publicacion','calendar','Página pública']]},
+  {label:'Gestión',items:[...(capability('operational_mail')?[['notificaciones','bell','Notificaciones']]:[]),...(role==='owner'&&capability('access')?[['accesos','shield','Accesos']]:[]),['suscripcion','wallet','Mi plan']]}
  ];
 }
 export function settingsDestination(view:string,tab:string){return view==='configuracion'?'configuracion/'+(['general','apariencia','reservas','publicacion'].includes(tab)?tab:'general'):view;}

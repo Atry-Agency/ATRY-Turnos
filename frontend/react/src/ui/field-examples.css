@@ -1,0 +1,2 @@
+/* Examples remain subordinate to permanent labels, without browser opacity loss. */
+.field input::placeholder,.field textarea::placeholder,.cc-filters input::placeholder{color:var(--muted,#657084);opacity:1}
