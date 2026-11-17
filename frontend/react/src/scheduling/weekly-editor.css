@@ -1,0 +1,18 @@
+/* Weekly editor composes the shared dialog instead of changing its header or scroll owner. */
+.week-modal{--dialog-width:740px}
+.week-editor-intro{padding:0 0 var(--space-3)}
+.week-editor-intro p{font-size:var(--text-small);color:var(--muted);line-height:var(--line-body);margin:var(--space-2) 0}
+.week-editor-day{border:1px solid var(--line);border-radius:var(--radius-control);padding:var(--space-4);margin-bottom:var(--space-3);background:var(--surface)}
+.week-day-heading .checkline{color:var(--ink)}
+.week-interval{display:grid;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr) var(--control-height);align-items:end;gap:var(--space-2);margin:var(--space-3) 0}
+.week-interval label{min-width:0}
+.week-interval label>span{font-size:var(--text-caption);color:var(--muted);display:block;margin-bottom:var(--space-1)}
+.week-interval input{width:100%;min-width:0;min-inline-size:0;max-width:100%;min-height:var(--control-height);font-size:var(--text-input);padding:var(--control-padding-block) var(--space-2);font-variant-numeric:tabular-nums}
+.week-interval>.btn{width:var(--control-height);height:var(--control-height);min-width:var(--control-height);padding:var(--control-padding-block)}
+.week-add,.week-copy{border:0;background:transparent;color:var(--theme-action);font-size:var(--text-small);font-family:var(--font-brand-body);font-weight:600;min-height:var(--control-height);padding:var(--space-2) 0;display:inline-flex;align-items:center;gap:var(--space-2);line-height:1.4;text-align:left;white-space:normal}
+.week-copy{margin-left:var(--space-4);color:var(--muted)}
+.week-editor-footer{position:sticky;bottom:0;padding:var(--space-3) 0 0;background:var(--surface);z-index:2;border-top:1px solid var(--line)}
+@media(max-width:600px){.week-editor-day{padding:var(--space-3)}.week-day-heading{gap:var(--space-2);flex-wrap:wrap}.week-interval{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.week-interval .interval-dash{display:none}.week-interval>.btn{grid-column:2;justify-self:end}.week-add,.week-copy{display:flex;margin:0}}
+
+/* Below two native-time control widths, stack the fields instead of clipping AM/PM. */
+@container dialog-body (max-width:280px){.week-interval{grid-template-columns:minmax(0,1fr) var(--control-height)}.week-interval label{grid-column:1}.week-interval>.btn{grid-column:2;grid-row:1 / span 2;align-self:end}}

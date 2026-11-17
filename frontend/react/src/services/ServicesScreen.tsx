@@ -1,5 +1,6 @@
+import {PageHeader} from '../ui/layout';
 import {PanelSkeleton} from '../ui/PanelSkeleton';
-import {useIatryReady,IatrySlot,useIatryAnchors,useIatryServices} from '../iatry/context';
+import {useIatryReady,useIatryAnchors,useIatryServices} from '../iatry/context';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import type {Service} from '../contracts';
 import {ServiceCard} from '../ServiceCard';
@@ -36,7 +37,7 @@ export function ServicesScreen({scope,port,control}:{scope:Scope;port:FeaturePor
  async function toggle(s:Service){if(operation.current)return;if(s.active&&!await ask('¿Ocultar el servicio de las nuevas reservas? Las reservas existentes se conservan.','Ocultar servicio'))return;try{await write({active:s.active?0:1},s.id)}catch(e){if(valid())setError(e instanceof Error?e.message:'No se pudo actualizar el servicio.')}}
  if(!['owner','manager'].includes(scope.role))return <Feedback error>No tenés permiso o acceso habilitado para gestionar servicios.</Feedback>;
  return <>
-  <div className="page-header"><div><span className="eyebrow">ATRY TURNOS / PANEL</span><h1>Servicios</h1><p>Definí qué ofrecés, cuánto dura y qué cuesta.</p></div><Button ref={anchor('services')} data-react-action="add-service" disabled={busy||!catalog||!canManage(scope)} onClick={()=>open(null)}><Icon name="plus" port={port}/> Nuevo servicio</Button></div><IatrySlot/>
+  <PageHeader title="Servicios" subtitle="Definí qué ofrecés, cuánto dura y qué cuesta."><Button ref={anchor('services')} data-react-action="add-service" disabled={busy||!catalog||!canManage(scope)} onClick={()=>open(null)}><Icon name="plus" port={port}/> Nuevo servicio</Button></PageHeader>
   {error&&<Feedback error retry={()=>void load(true)}>{error}</Feedback>}
   {loading&&!catalog&&<PanelSkeleton label="Cargando servicios…" variant="grid"/>}
   {catalog&&<div ref={anchor('service-list')} className="grid3" data-react-services-list aria-busy={loading}>{catalog.services.length?catalog.services.map(s=><ServiceCard key={s.id} service={s} icon={<Icon name={port.serviceIcon(scope.sector,s.name)} port={port}/>} editIcon={<Icon name="edit" port={port}/>} onEdit={()=>open(s)} onToggle={()=>void toggle(s)} disabled={busy||!canManage(scope)}/>):<div className="empty"><svg className="i i-scissors big" viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{__html:port.icon('scissors')}}/><div>Todavía no hay servicios. Creá el primero para abrir la agenda.</div></div>}</div>}

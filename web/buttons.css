@@ -6,13 +6,13 @@
  --button-bg:var(--panel-action,var(--brand-action,#4D4CE8));
  --button-fg:var(--panel-on-action,var(--brand-on-action,#FFF));
  --button-border:var(--button-bg);
- align-items:center;justify-content:center;gap:8px;
- min-height:44px;max-width:100%;min-width:0;padding:11px 17px;
- border:1px solid var(--button-border);border-radius:13px;
- background:var(--button-bg);color:var(--button-fg);font-size:13px;font-weight:650;
- line-height:1.4;text-align:center;text-decoration:none;white-space:normal;
+ align-items:center;justify-content:center;gap:var(--space-2);
+ min-height:var(--control-height);max-width:100%;min-width:0;padding:var(--control-padding-block) var(--control-padding-inline);
+ border:1px solid var(--button-border);border-radius:var(--radius-control);
+ background:var(--button-bg);color:var(--button-fg);font-size:var(--text-small);font-weight:var(--weight-action);
+ line-height:var(--line-control);text-align:center;text-decoration:none;white-space:normal;
  overflow-wrap:anywhere;cursor:pointer;box-shadow:none;
- transition:background .16s,border-color .16s,box-shadow .16s;
+ transition:background var(--motion-fast),border-color var(--motion-fast),box-shadow var(--motion-fast);
 }
 :root .btn.secondary{--button-bg:var(--surface2,#F2F3FA);--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
 :root .btn.outline{--button-bg:transparent;--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
@@ -33,23 +33,23 @@
 :root .btn.danger.booking-cancel{--button-bg:var(--atry-danger,#E51D4F);--button-fg:#FFF;--button-border:var(--atry-danger,#E51D4F)}
 :root .btn.danger.booking-cancel:hover:not(:disabled):not([aria-disabled=true]){background:var(--atry-danger-hover,#C81240);border-color:var(--atry-danger-hover,#C81240)}
 :root .btn.danger.booking-cancel:active:not(:disabled):not([aria-disabled=true]){background:#A80F35;border-color:#A80F35}
-:root .btn:focus-visible{outline:3px solid #4754E6;outline-offset:3px;box-shadow:0 0 0 2px #FFF}
+:root .btn:focus-visible{outline:3px solid var(--brand-focus,var(--atry-primary));outline-offset:3px;box-shadow:0 0 0 2px #FFF}
 :root .btn:disabled,:root .btn[aria-disabled=true]{background:#E5E7EB;border-color:#D1D5DB;color:#4B5563;box-shadow:none;filter:none;opacity:1;cursor:not-allowed;transform:none}
 :root .btn .i,:root .btn svg,:root .btn .spin{color:inherit}
 :root .btn .spin{border-color:currentColor;border-right-color:transparent}
-:root .btn.sm{min-height:40px;padding:9px 12px;font-size:11px}
-:root .btn.icon-only{width:44px;min-width:44px;padding:10px}
+:root .btn.sm{min-height:var(--control-height-small);padding:var(--control-padding-small) var(--space-3);font-size:var(--text-caption);line-height:var(--line-control-small)}
+:root .btn.icon-only{width:var(--control-height);min-width:var(--control-height);height:var(--control-height);padding:var(--control-padding-block)}
 :root .btn.full{width:100%}
-@media(pointer:coarse){:root .btn.btn{min-height:44px;min-width:44px}}
+@media(pointer:coarse){:root .btn.btn{min-height:var(--control-height);min-width:var(--control-height)}}
 @media(prefers-reduced-motion:reduce){:root .btn{transition:none}}
 /* Profile sections follow the data / communication / history / save hierarchy. */
 .customer-profile{min-width:0}.customer-profile>section{border-top:1px solid var(--line);padding-top:22px;margin-top:22px}
-.customer-profile h3{font-size:15px;margin:0 0 15px}.customer-profile-subtitle{font-size:12px;color:var(--muted);margin:-9px 0 22px}
-.customer-profile-actions{position:sticky;bottom:-27px;z-index:2;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));margin-top:22px;background:var(--surface);border-top:1px solid var(--line)}
+.customer-profile h3{font-size:15px;margin:0 0 15px}.customer-profile-subtitle{font-size:var(--text-caption);color:var(--muted);margin:0 0 var(--space-6)}
+.customer-profile-actions{position:sticky;bottom:0;z-index:2;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));margin-top:22px;background:var(--surface);border-top:1px solid var(--line)}
 .modal:has(.customer-profile){scroll-padding-block:24px 100px;max-height:calc(var(--wa-visible-height,100dvh) - 30px)}
-@media(max-width:540px){.customer-profile-actions{bottom:-18px}.customer-profile-actions>.btn{flex:1 1 120px}.modal:has(.customer-profile) input,.modal:has(.customer-profile) textarea{font-size:16px}}
+@media(max-width:540px){.customer-profile-actions>.btn{flex:1 1 120px}.modal:has(.customer-profile) input,.modal:has(.customer-profile) textarea{font-size:16px}}
 /* Approved semantic gradients: deeper WhatsApp green keeps white labels readable. */
-:root{--atry-success-gradient:linear-gradient(115deg,#00852c,#00892f);--atry-coral-gradient:linear-gradient(115deg,#ce1740,#e51c49)}
+
 :root .btn.success:not(:disabled):not([aria-disabled=true]){--button-fg:#fff;--button-border:#00892f;background:var(--atry-success-gradient);color:#fff;border-color:#00892f;box-shadow:inset 0 1px #ffffff1c,0 3px 9px #00892f12}
 :root .btn.danger:not(.outline):not(:disabled):not([aria-disabled=true]){--button-fg:#fff;--button-border:#e51c49;background:var(--atry-coral-gradient);color:#fff;border-color:#e51c49;box-shadow:inset 0 1px #ffffff1a,0 3px 9px #d2194110}
 :root .btn.success:hover:not(:disabled):not([aria-disabled=true]){background:linear-gradient(115deg,#007a27,#007e2a);border-color:#007e2a}
@@ -59,8 +59,8 @@
 :root .service-card .badge:not(.pending){background:var(--atry-success-gradient);color:#fff;border-color:transparent;box-shadow:inset 0 1px #ffffff1a;font-weight:600}
 :root .service-card .badge{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:5px 11px;line-height:1;vertical-align:middle;text-align:center;font-size:10px;font-weight:600;letter-spacing:0;box-sizing:border-box}
 /* Center the whole text/icon group on the same axis, with symmetric vertical padding. */
-:root .btn{align-items:center;justify-content:center;text-align:center;line-height:1.2;padding-block:11px}
-:root .btn.sm{padding-block:9px}
-:root .btn.icon-only{padding-block:10px}
 :root .btn>.i,:root .btn>svg{display:block;flex-shrink:0;margin:0;align-self:center}
 :root .btn>span{line-height:inherit}
+
+:root .btn>.i,:root .btn>svg{width:var(--control-icon);height:var(--control-icon)}
+:root .btn.sm>.i,:root .btn.sm>svg{width:var(--control-icon-small);height:var(--control-icon-small)}

@@ -1,11 +1,11 @@
 /* Same ATRY product rhythm, scoped to administration and its existing dialogs. */
 .cc-shell{background:#f7f7fc;color:#202439}
 .cc-main{padding:28px clamp(18px,3vw,44px);max-width:1800px}
-.cc-header{gap:16px;margin-bottom:24px}
-.cc-header h1{font-size:clamp(25px,2.3vw,36px);line-height:1.14;letter-spacing:-.045em}
+.cc-header{gap:var(--space-4);margin-bottom:var(--space-section)}
+.cc-header h1{font-size:var(--text-page-title);line-height:var(--line-heading);letter-spacing:-.045em}
 .cc-header .eyebrow{font-size:10px;letter-spacing:.12em;color:#5351ce}
 .cc-header form{max-width:620px;flex:1 1 300px}
-.cc-header form input{width:100%;background:#fff;border-color:#e1e2ed;border-radius:13px;font-size:14px}
+.cc-header form input{width:100%;background:#fff;border-color:#e1e2ed;border-radius:var(--radius-control);font-size:var(--text-input);line-height:var(--line-control);min-height:var(--control-height);padding:var(--control-padding-block) var(--space-3)}
 .cc-header .btn{min-height:44px;font-size:13px}
 .cc-shell .cc-sidebar{gap:16px}
 .cc-shell .cc-sidebar nav a{min-height:44px;border-left:0;font-size:13px;line-height:1.4;border-radius:13px;padding:12px}
@@ -15,17 +15,17 @@
 .cc-shell .cc-brand .brand-original{width:28px;height:28px}
 .cc-shell .cc-brand .logo b{white-space:nowrap}
 .cc-shell .cc-panel,.cc-shell .cc-table-wrap,.cc-shell .cc-business-entry{border:1px solid #e6e5f0;border-radius:20px;box-shadow:0 6px 22px #20243903;background:#fff}
-.cc-shell .cc-panel{padding:24px}
-.cc-shell .cc-panel h2,.cc-shell .cc-section-heading h2{font-size:19px;letter-spacing:-.025em;line-height:1.35}
+.cc-shell .cc-panel{padding:var(--space-card)}
+.cc-shell .cc-panel h2,.cc-shell .cc-section-heading h2{font-size:var(--text-card-title);letter-spacing:-.025em;line-height:1.35}
 .cc-shell .cc-table{font-size:13px}
-.cc-shell .cc-table th{font:600 11px/1.4 system-ui;letter-spacing:.04em;background:#faf9fd;color:#62657b;padding:16px}
-.cc-shell .cc-table td{padding:18px 16px;vertical-align:middle;line-height:1.55;border-color:#eeedf4}
+.cc-shell .cc-table th{font:600 var(--text-caption)/1.4 var(--font-data);letter-spacing:.04em;background:#faf9fd;color:#62657b;padding:var(--space-4)}
+.cc-shell .cc-table td{padding:var(--space-4);vertical-align:middle;line-height:1.55;border-color:#eeedf4}
 .cc-shell .cc-table td small{font-size:12px;line-height:1.5;color:#66697e}
-.cc-shell .cc-actions .btn{min-height:44px;padding:10px 14px;font-size:12px}
+.cc-shell .cc-actions .btn{min-height:var(--control-height);padding:var(--control-padding-small) var(--space-3);font-size:var(--text-caption)}
 .cc-shell .cc-badge{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:6px 10px;min-height:28px;font:600 11px/1.2 system-ui;border-radius:99px}
-.cc-shell .cc-filters{gap:12px;align-items:end;margin:20px 0}
-.cc-shell .cc-filters label{font-size:12px;font-weight:550;color:#565c72;gap:7px;min-width:130px}
-.cc-shell .cc-filters input,.cc-shell .cc-filters select{font:400 14px/1.4 system-ui;min-height:44px;background:#fff}
+.cc-shell .cc-filters{gap:var(--space-3);align-items:end;margin:var(--space-5) 0}
+.cc-shell .cc-filters label{font-size:12px;font-weight:550;color:#565c72;gap:var(--space-field);min-width:130px}
+.cc-shell .cc-filters input,.cc-shell .cc-filters select{font:400 var(--text-input)/var(--line-control) var(--font-data);min-height:var(--control-height);background:#fff}
 .cc-shell .cc-source,.cc-shell .cc-footnote{font-size:11px;line-height:1.6;color:#66697e}
 .cc-shell .cc-hero{border-radius:24px;padding:clamp(24px,3vw,42px);box-shadow:none}
 .cc-shell .cc-hero h2{font-size:clamp(26px,3vw,40px);line-height:1.14;letter-spacing:-.035em}
@@ -69,7 +69,7 @@
 @media(max-width:1100px){.cc-shell .cc-hero{grid-template-columns:1fr}.cc-shell .cc-hero-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.cc-shell .cc-hero-links>a{padding:14px}.cc-shell .cc-hero-links small{font-size:11px}.cc-shell .cc-hero-links>a>.i:last-child{display:none}}
 @media(max-width:760px){
  .cc-main{padding:calc(18px + env(safe-area-inset-top,0px)) 16px 24px}
- .cc-header{gap:10px}.cc-header>div{flex:1}.cc-header h1{font-size:25px}.cc-header .eyebrow{font-size:9px}
+ .cc-header{gap:10px}.cc-header>div{flex:1}.cc-header h1{font-size:var(--text-page-title)}.cc-header .eyebrow{font-size:9px}
  .cc-shell .cc-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .cc-shell .cc-metric{padding:15px;min-height:124px;gap:8px}
  .cc-shell .cc-metric-label{font-size:11px}.cc-shell .cc-metric strong{font-size:28px}
@@ -81,8 +81,8 @@
  .cc-shell .cc-table,.cc-shell .cc-table tbody{display:block;width:100%}
  .cc-shell .cc-table tr{padding:16px;margin-bottom:12px;display:grid;gap:12px;background:#fff;border:1px solid #e6e5f0;border-radius:18px}
  .cc-shell .cc-table td{padding:0;min-width:0;max-width:none;text-align:left}
- .cc-shell .cc-table td:before{font:600 10px/1.5 system-ui;letter-spacing:.04em;margin:0 0 4px;color:#73758a}
- .cc-shell .cc-panel{padding:18px;border-radius:20px}.cc-shell .cc-filters label{flex:1 1 130px;min-width:0}
+ .cc-shell .cc-table td:before{font:600 var(--text-caption)/1.5 var(--font-data);letter-spacing:.04em;margin:0 0 4px;color:#73758a}
+ .cc-shell .cc-panel{padding:var(--space-card);border-radius:var(--radius-panel)}.cc-shell .cc-filters label{flex:1 1 130px;min-width:0}
  .cc-shell .cc-pagination .btn{min-height:44px}
  .cc-assistant-heading{gap:10px;padding:12px}.cc-assistant-heading strong span{display:block;margin:0}.cc-assistant-heading p{display:none}
  .cc-assistant-heading>.btn{font-size:12px;padding:10px}.cc-assistant-body{padding:0 12px 14px}

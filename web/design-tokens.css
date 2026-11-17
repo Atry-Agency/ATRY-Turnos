@@ -1,0 +1,30 @@
+/* ATRY foundations. ThemeScope continues to own business colors, font/radius/density variants.
+   Existing space/radius/motion/color names are retained for compatibility. */
+:root{--atry-primary:#4754E6;--atry-primary-hover:#3643CB;--atry-cyan:#00EFFF;--atry-link:#007BA9;--atry-pale:#BCDAED;--atry-alert:#FF2D55;--atry-alert-ink:#A80E32;--atry-positive:#22C55E;--atry-warning:#91630B;--motion-fast:160ms;--motion-normal:240ms;--focus-ring:0 0 0 3px #4754E633;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--radius-control:12px;--radius-panel:20px;--shadow-panel:0 14px 38px #171C6010;
+ --space-0:0px;--space-5:20px;--space-10:40px;--space-12:48px;--space-16:64px;
+ --font-brand-body:"Atry Eurostile",Arial,Helvetica,sans-serif;
+ --font-brand-display:"Atry Eurostile Extended",Arial,Helvetica,sans-serif;
+ --font-data:system-ui,-apple-system,sans-serif;
+ --text-caption:12px;--text-small:13px;--text-body:14px;--text-input:14px;
+ --text-label:13px;--text-section:16px;--text-card-title:20px;
+ --text-dialog-title:clamp(20px,2.2vw,24px);--text-page-title:clamp(28px,2.4vw,36px);
+ --line-body:1.6;--line-heading:1.2;--line-control:20px;--line-control-small:16px;
+ --status-danger-text:color-mix(in srgb,var(--atry-alert) 35%,var(--theme-ink,var(--ink)));
+ --weight-label:600;--weight-action:650;
+ --control-choice-size:20px;--control-textarea-min:96px;--control-height:44px;--control-height-small:40px;--control-icon:20px;--control-icon-small:16px;
+ --control-padding-inline:var(--space-4);
+ --control-padding-block:calc((var(--control-height) - var(--line-control) - 2px)/2);
+ --control-padding-small:calc((var(--control-height-small) - var(--line-control-small) - 2px)/2);
+ --radius-subtle:8px;--radius-card:var(--radius,20px);
+ --space-field:var(--space-2);--space-form:var(--space-4);--space-stack:var(--space-4);
+ --space-card:var(--space-6);--space-page-inline:var(--space-8);--space-page-block:var(--space-8);
+ --space-dialog:var(--space-6);--space-section:var(--space-6);
+ --dialog-clearance:var(--space-4);--dialog-width:560px;
+ --shadow-dialog:0 24px 80px #10152b33;
+ --atry-success-gradient:linear-gradient(115deg,#00852c,#00892f);
+ --atry-coral-gradient:linear-gradient(115deg,#ce1740,#e51c49);
+}
+@media(max-width:1000px){:root{--space-page-inline:var(--space-6)}}
+@media(max-width:600px){:root{--text-input:16px;--space-page-inline:var(--space-4);--space-page-block:var(--space-6);--space-card:var(--space-4);--space-dialog:var(--space-4);--dialog-clearance:var(--space-3)}}
+
+@media(pointer:coarse){:root{--text-input:16px}}

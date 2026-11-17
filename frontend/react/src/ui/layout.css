@@ -1,0 +1,6 @@
+.page-header>div:first-child{min-width:0}
+.page-header>.actions{flex-shrink:0}
+.section-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2) var(--space-4);margin:var(--space-section) 0 var(--space-4)}
+.section-heading>.section-label{flex:0 1 auto;min-width:0}
+.section-heading-context{min-width:0;color:var(--muted);font-size:var(--text-small);line-height:var(--line-body)}
+@media(max-width:600px){.section-heading{display:grid;gap:var(--space-2)}.page-header>.actions{justify-content:flex-start}.page-header>.actions>.btn{max-width:100%}}

@@ -1,7 +1,7 @@
 
 /* Theme surfaces are scoped to the business. Platform administration keeps ATRY's own skin. */
 :root[data-appearance=business] body{background:var(--theme-bg)}
-:root[data-appearance=business] :is(.app-shell,.public-shell,.modal-mask .modal){--bg:var(--theme-bg);--surface:var(--theme-surface);--surface2:var(--theme-surface2);--surface3:var(--theme-surface2);--ink:var(--theme-ink);--muted:var(--theme-muted);--line:var(--theme-line);--radius:var(--theme-radius);--shadow:var(--theme-shadow);color:var(--ink);background:var(--bg)}
+:root[data-appearance=business] :is(.app-shell,.public-shell,.modal-mask .modal){--bg:var(--theme-bg);--surface:var(--theme-surface);--surface2:var(--theme-surface2);--surface3:var(--theme-surface2);--ink:var(--theme-ink);--muted:var(--theme-muted);--line:var(--theme-line);--radius:var(--theme-radius);--radius-card:var(--theme-radius);--shadow:var(--theme-shadow);color:var(--ink);background:var(--bg)}
 :root[data-appearance=business] :is(.app-shell,.public-shell) :is(.card,.metric,.topbar,.modal,.book-identity){background:var(--surface);color:var(--ink);border-color:var(--line)}
 :root[data-appearance=business] :is(.app-shell,.public-shell) :is(.card,.metric){border-radius:var(--theme-radius);box-shadow:var(--theme-shadow)}
 :root[data-appearance=business] .modal-mask .modal{background:var(--surface);border-color:var(--line)}
@@ -12,7 +12,7 @@
 :root[data-theme-font=system] :is(.app-shell,.public-shell,.modal-mask) :is(h1,h2,h3,h4,input,select,textarea,button,a,p,span,strong,small){font-family:system-ui,-apple-system,sans-serif}
 :root[data-theme-cards=flat] :is(.app-shell,.public-shell) :is(.card,.metric){box-shadow:none;border-color:transparent}
 :root[data-theme-cards=outlined] :is(.app-shell,.public-shell) :is(.card,.metric){box-shadow:none;border:1px solid var(--line)}
-:root[data-theme-density=compact] .app-shell .card{padding:18px}:root[data-theme-density=compact] .app-shell .metric{padding:18px}
+:root[data-theme-density=compact] .app-shell{--space-card:var(--space-4)}:root[data-theme-density=compact] .app-shell .card,:root[data-theme-density=compact] .app-shell .metric{padding:var(--space-card)}
 :root[data-theme-buttons=outline] :is(.app-shell,.public-shell) .btn:not(.secondary,.outline,.ghost,.danger,.success,.warning,.orange){--button-bg:transparent;--button-fg:var(--panel-action);--button-border:var(--panel-action)}
 :root[data-theme-plan=negocio] .app-shell .metric{position:relative;overflow:hidden}
 :root[data-theme-plan=pro] .app-shell .topbar{border-bottom:1px solid var(--line)}

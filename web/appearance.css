@@ -1,5 +1,5 @@
 /* Misión 006: Atry owns the platform shell; a business owns only its surfaces. */
-:root{--atry-primary:#4754E6;--atry-primary-hover:#3643CB;--atry-cyan:#00EFFF;--atry-link:#007BA9;--atry-pale:#BCDAED;--atry-alert:#FF2D55;--atry-alert-ink:#A80E32;--atry-positive:#22C55E;--atry-warning:#91630B;--motion-fast:160ms;--motion-normal:240ms;--focus-ring:0 0 0 3px #4754E633;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--radius-control:12px;--radius-panel:20px;--shadow-panel:0 14px 38px #171C6010;--accent:#4754E6;--accent2:#00A5E2;--primary:#4754E6;--radius:20px;--shadow:var(--shadow-panel)}
+:root{--accent:#4754E6;--accent2:#00A5E2;--primary:#4754E6;--radius:20px;--shadow:var(--shadow-panel)}
 body{background:#F6F7FC}
 .logo b,.eyebrow,.auth-form .bottom a{color:var(--atry-primary)}
 .site{background:#F7F8FC}.hero-window,.price-card.featured{box-shadow:var(--shadow-panel)}
@@ -38,7 +38,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 :root[data-appearance=business] .public-shell .book-identity{border-top:5px solid var(--theme-action)}
 :root[data-appearance=business] .public-shell .service-option.selected,:root[data-appearance=business] .public-shell .staff-option.selected,:root[data-appearance=business] .public-shell .slot.selected{background:var(--theme-soft);border-color:var(--theme-action);box-shadow:inset 0 0 0 1px var(--theme-action)}
 :root[data-appearance=business] .public-shell .book-step .num{background:var(--theme-action);color:var(--brand-on-action)}
-:root[data-appearance=business] .app-shell .hint-block,:root[data-appearance=business] .public-shell .hint-block{background:var(--theme-soft-secondary);border-color:var(--theme-soft-secondary)}
+:root[data-appearance=business] .app-shell .hint-block,:root[data-appearance=business] .public-shell .hint-block{background:color-mix(in srgb,var(--accent) 5%,var(--surface));border-color:var(--line);color:var(--ink)}
 :root[data-appearance-mode=dark] .app-shell,:root[data-appearance-mode=dark] .public-shell{--bg:#10131D;--surface:#191D2A;--surface2:#222737;--surface3:#2B3143;--line:#394052;--ink:#F4F6FB;--muted:#BEC6D7;background:var(--bg);color:var(--ink);color-scheme:dark}
 :root[data-appearance-mode=dark] .app-shell .topbar,:root[data-appearance-mode=dark] .app-shell .card,:root[data-appearance-mode=dark] .app-shell .metric,:root[data-appearance-mode=dark] .public-shell .card,:root[data-appearance-mode=dark] .public-shell .book-identity{background:var(--surface);color:var(--ink)}
 :root[data-appearance-mode=dark] .public-shell .service-option,:root[data-appearance-mode=dark] .public-shell .staff-option,:root[data-appearance-mode=dark] .public-shell .slot{background:var(--surface2);color:var(--ink);border-color:var(--line)}

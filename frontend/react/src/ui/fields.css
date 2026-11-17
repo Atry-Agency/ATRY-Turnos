@@ -1,0 +1,8 @@
+/* Native controls keep type, constraints and values. Checkbox/radio/color/file controls retain their own geometry. */
+.field :where(input:not([type=checkbox],[type=radio],[type=color],[type=range],[type=file],[type=hidden]),select,textarea){min-width:0;width:100%;max-width:100%;padding:var(--control-padding-block) var(--space-3);border-radius:var(--radius-control);font-size:var(--text-input);box-sizing:border-box}
+.field :where(input:not([type=checkbox],[type=radio],[type=color],[type=range],[type=file],[type=hidden]),select){min-height:var(--control-height);line-height:var(--line-control)}
+.field textarea{line-height:var(--line-body);min-height:var(--control-textarea-min);resize:vertical}
+.field [aria-invalid=true]{border-color:var(--atry-alert)}
+.field :where(input,select,textarea):focus-visible{outline:2px solid var(--brand-focus,var(--atry-primary));outline-offset:2px}
+.field :where(input,select,textarea):disabled{cursor:not-allowed}
+.field .ag-field-error{font-size:var(--text-caption);line-height:var(--line-body);margin:0;color:var(--status-danger-text)}

@@ -15,7 +15,9 @@ import '../../../web/whatsapp.css';
 import '../../../web/buttons.css';
 import '../../../web/staff-photos.css';
 import './ui/refinements.css';
-import './ui/dialog-layout.css';
+import './ui/fields.css';
+import './ui/dialog.css';
+import './ui/layout.css';
 import './admin/premium.css';
 // Local visual fixture only. The normal demo has completed setup and a 2099 expiry.
 if(import.meta.env.DEV&&window.ATRY_DEMO?.enabled&&window.ATRY_DEMO.request){

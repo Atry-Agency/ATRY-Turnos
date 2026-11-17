@@ -1,3 +1,4 @@
+import './weekly-editor.css';
 import {PanelSkeleton} from '../ui/PanelSkeleton';
 import {useEffect,useMemo,useState} from 'react';
 import type {AppPort} from '../app/port';
