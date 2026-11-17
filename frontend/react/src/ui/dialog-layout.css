@@ -1,3 +1,4 @@
+/* Native time controls retain the device locale; layout must also fit 12-hour values. */
 /* Shared dialog geometry: reserve real control widths and keep content in the safe viewport. */
 .ui-dialog .modal-head{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:16px;align-items:start;top:0;padding-block:4px 14px}
 .ui-dialog .modal-head h2{min-width:0;overflow-wrap:anywhere;line-height:1.25}

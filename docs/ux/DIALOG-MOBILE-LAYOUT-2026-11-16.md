@@ -20,3 +20,6 @@ Production build and React suite passed. The release artifact retains exactly 17
 `scripts/react/premium-ux-browser.cjs`: existing ten-screen responsive/form regression, including UY/PA request payloads, validations and confirmations, with intercepted disposable local submissions only. No production records are used.
 
 Screenshots are local test artifacts under /tmp/atry-{staff,week}-dialog-*.png. Native iPhone Home Screen rendering still needs the owner's device check; desktop WebKit is not a physical iPhone.
+
+## Release validation follow-up
+The remote full suite crossed UTC midnight onto 17 November: its demo visit fixture selected Sunday 22 November, a closed day, and then read a missing option. The existing test now advances Sunday to Monday; availability behavior is unchanged. Verified the demo offers zero options Sunday22 and32 options Monday23. No application or server business logic was changed.
