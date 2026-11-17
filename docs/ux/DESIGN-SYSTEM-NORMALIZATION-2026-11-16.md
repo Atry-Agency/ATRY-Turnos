@@ -101,3 +101,13 @@ Se aplicaron principios, sin incorporar otra biblioteca visual:
 - Apple: [Design tips](https://developer.apple.com/design/tips/), [Layout](https://developer.apple.com/design/human-interface-guidelines/layout) y [Typography](https://developer.apple.com/design/human-interface-guidelines/typography): legibilidad, alineación, adaptación y objetivos táctiles.
 - Carbon: [Spacing](https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview): escala y roles de espaciado.
 - Material Web: [Theming](https://github.com/material-components/material-web/blob/main/docs/theming/README.md): separación de tokens y propiedades de componentes. No se adoptó Material como estética de ATRY.
+
+## Publicación autorizada — 17/11/2026
+
+El usuario autorizó la publicación de `96fdac1`. Se comprobó que `origin/main` seguía en `ba8f991`, sin cambios ajenos, y se publicó/verificó `rollback/pre-design-system-20261117` apuntando exactamente a esa base.
+
+El workflow de Pages de `96fdac1` completó compilación, React, IAtry, validación del artefacto y despliegue. La verificación general de CI encontró una aserción estática antigua en `tests/whatsapp-round2.test.js`: exigía el selector legacy sin su nueva delimitación. Se actualizó para comprobar el selector legacy acotado, el propietario React del scroll y la declaración explícita del editor; no se eliminó ninguna comprobación de textarea expansible, acciones sticky, visualViewport o envío manual. Este ajuste posterior solo modifica pruebas y su descripción; no cambia el código entregado al navegador.
+
+Smoke sobre `https://atryturnos.com`: Chrome y WebKit a 320/390/430/1440, cinco pantallas por contexto (Inicio, Agenda, Servicios, Clientes y Equipo), apertura/cierre de servicio y saludo social de IAtry. Ocho contextos aprobados, cero errores JavaScript, cero escrituras y cero solicitudes externas. No certifica una sesión productiva autenticada ni iPhone físico. El monitor HTTP también confirmó los puntos de entrada publicados.
+
+El manifiesto publicado coincide con los 150 archivos del candidato. La política conserva herramientas, planes, restricciones y confirmaciones; el campo `revision` se genera con el commit de CI y se comprueba separadamente de los bytes de aplicación.
