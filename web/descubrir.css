@@ -100,3 +100,14 @@ html.ios-standalone{--landing-app-clearance:24px}
 .agency-footer nav{align-items:start}
 /* Quiet actions: labels carry the CTA; only functional directional cues remain. */
 .button{justify-content:center}.demo-choices button{grid-template-columns:35px minmax(0,1fr)}.demo-choices strong{grid-column:2;grid-row:1}.demo-choices small{grid-column:2;grid-row:2}.browser-bar>a[data-screen-full]{display:inline-flex;align-items:center;gap:7px}.browser-bar>a[data-screen-full] .marketing-icon{width:13px;height:13px}
+
+/* ATRY signature: shared with Agency and the auth curve; no mask on content or links. */
+.agency-footer{
+ --footer-curve-height:clamp(64px,10.5vw,154px);
+ --footer-surface:#0c1019;
+ position:relative;isolation:isolate;overflow:hidden;
+ margin-top:clamp(24px,3vw,44px);border-top:0;background:var(--paper);padding-top:var(--footer-curve-height);
+}
+.agency-footer::before,.agency-footer::after{content:"";display:block;position:absolute;z-index:-1;pointer-events:none;background:var(--footer-surface);border-radius:0}
+.agency-footer::before{inset:0 auto auto 0;width:100%;height:calc(var(--footer-curve-height) + 1px);mask:url("./assets/brand/atry-footer-curve.svg") top / 100% 100% no-repeat}
+.agency-footer::after{inset:var(--footer-curve-height) 0 0}
