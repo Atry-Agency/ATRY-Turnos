@@ -1,0 +1,13 @@
+'use strict';
+// Read-only comparison against the committed interpreter; never checks out or modifies files.
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{execFileSync}=require('node:child_process'),{build}=require('esbuild'),corpus=require('./fixtures/iatry-language-corpus.cjs');
+(async()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'iatry-baseline-'));try{
+ const revision=process.argv[2]||'HEAD',root=process.cwd(),file=path.join(dir,'suite.cjs'),original=new Set(['language.ts','recognition.ts','intent-catalogue.ts','instructions.ts','catalogue.ts','contracts.ts']);
+ await build({stdin:{contents:"export {interpretInstruction} from './frontend/react/src/iatry/v3/instructions';export {capabilities} from './frontend/react/src/iatry/v3/catalogue';",resolveDir:root,loader:'ts'},outfile:file,bundle:true,platform:'node',format:'cjs',plugins:[{name:'committed-interpreter',setup(b){b.onLoad({filter:/\/iatry\/v3\/[^/]+\.ts$/},args=>original.has(path.basename(args.path))?{contents:execFileSync('git',['show',revision+':'+path.relative(root,args.path)],{encoding:'utf8'}),loader:'ts'}:undefined)}}]});
+ globalThis.ATRY_THEME_CORE=require('../../web/theme-core');const m=require(file),parse=q=>m.interpretInstruction(q,m.capabilities,[],'2026-11-24');let correct=0,correctValidation=0,falsePositives=0,validationFalsePositives=0;const confusion={};
+ for(const[expected,phrases]of Object.entries(corpus.intents))for(const q of phrases){const out=parse(q),actual=out.steps.length===1?out.steps[0].id:'clarification';if(actual===expected)correct++;else{confusion[expected]??={};confusion[expected][actual]=(confusion[expected][actual]||0)+1;}}
+ for(const q of corpus.negatives)if(parse(q).steps.length)falsePositives++;
+ for(const[expected,phrases]of Object.entries(corpus.validationIntents))for(const q of phrases)if(parse(q).steps[0]?.id===expected)correctValidation++;
+ for(const q of corpus.validationNegatives)if(parse(q).steps.length)validationFalsePositives++;
+ const result={revision:execFileSync('git',['rev-parse',revision],{encoding:'utf8'}).trim(),positiveCount:Object.values(corpus.intents).flat().length,correct,negativeCount:corpus.negatives.length,falsePositives,validation:{positiveCount:Object.values(corpus.validationIntents).flat().length,correct:correctValidation,negativeCount:corpus.validationNegatives.length,falsePositives:validationFalsePositives},confusion};fs.writeFileSync('/tmp/atry-language-baseline-report.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
+}finally{fs.rmSync(dir,{recursive:true,force:true})}})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,5 +1,6 @@
 import {resultPositions} from './conversation-context';
 import {language} from './intent-catalogue';
+import {literalLanguage} from './language';
 import type {Result,Row} from './contracts';
 /** Ephemeral, scoped references. Only records returned by an authorized read enter here. */
 export function createResultContext(businessId:string,now:()=>number=Date.now){
@@ -12,7 +13,7 @@ export function createResultContext(businessId:string,now:()=>number=Date.now){
  function resolve(source:string):{row?:Row;reference:boolean;ambiguous?:boolean}{
   const r=current(),s=language(source);if(!r)return{reference:resultPositions(source).length>0||/\b(?:ese|esa|segundo|anterior|ultimo|recien)\b/.test(s)};
   const positions=resultPositions(source),deictic=/\b(?:el anterior|la anterior|el ultimo|la ultima|recien|hablabamos|ese|esa|mismo|misma)\b/.test(s);
-  const named=r.rows.filter(x=>typeof x.name==='string'&&language(x.name).length>1&&(' '+s+' ').includes(' '+language(x.name)+' '));
+  const named=r.rows.filter(x=>typeof x.name==='string'&&literalLanguage(x.name).length>1&&(' '+literalLanguage(source)+' ').includes(' '+literalLanguage(x.name)+' '));
   if(named.length>1)return{reference:true,ambiguous:true};
   const candidates=new Set<string>();if(named.length===1)candidates.add(named[0].id);
   let missing=false;for(const position of positions){const id=visible[position];if(id)candidates.add(id);else missing=true;}

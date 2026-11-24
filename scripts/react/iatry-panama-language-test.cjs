@@ -12,7 +12,7 @@ try{
  'bookings.cancelled':['Cancelame esa cita','Cancelá esa reserva'],
  'schedule.absence':['Bloqueame la tarde','Mañana no laburo','maniana no trabajo','Mopri, bloqueame la tarde'],
  'business.statistics':['¿Cuánto hice hoy?','¿Cómo viene mi negocio?']};
- let count=0;for(const [id,phrases]of Object.entries(cases))for(const phrase of phrases){const p=parse(phrase);assert.equal(p.steps[0]?.id,id,phrase);assert.equal(p.steps[0].enabled,false);count++;}
+ let count=0;for(const [id,phrases]of Object.entries(cases))for(const phrase of phrases){const p=parse(phrase);const step=p.steps[0]||p.clarification?.choices[0]?.steps[0];assert.equal(step?.id,id,phrase);assert.equal(step.enabled,false);if(!p.steps.length){assert.equal(p.confidence.level,'medium');assert.equal(p.clarification.kind,'intent');}count++;}
  for(const phrase of ['Agendame una cita textual','Creá una cita bibliográfica','Citame una frase','Pasado mañana una cita','Qué xopá, IAtry','Fren','Mopri','Priti','Ofi','De una'])assert.equal(parse(phrase).steps.length,0,phrase);
  for(const phrase of ['¿Qué xopá, IAtry?','Que xopa fren','xopa','mopri'])assert.equal(m.socialIntent(phrase),'greeting',phrase);
  assert.equal(m.socialIntent('Fren, cuadrame una cita'),undefined);assert.equal(m.socialIntent('Qué xopá, cancelame la cita'),undefined);

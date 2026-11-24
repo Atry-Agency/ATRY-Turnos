@@ -27,7 +27,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 :root[data-appearance=business] .sidebar .store-box,:root[data-appearance=business] .sidebar select{background:#252A3D;border-color:#3A4059;color:#F8F9FF}
 :root[data-appearance=business] .sidebar .store-icon,:root[data-appearance=business] .sidebar .user-card .avatar{background:var(--theme-action);color:var(--brand-on-action)}
 :root[data-appearance=business] .sidebar .navlink{color:#D2D6E8}
-:root[data-appearance=business] .sidebar .navlink:hover,:root[data-appearance=business] .sidebar .navlink.active{background:var(--theme-action);color:var(--brand-on-action);box-shadow:inset 3px 0 var(--theme-secondary)}
+:root[data-appearance=business] .sidebar .navlink:hover:not(.is-current),:root[data-appearance=business] .sidebar .navlink.active{background:var(--theme-action);color:var(--brand-on-action);box-shadow:inset 3px 0 var(--theme-secondary)}
 :root[data-appearance=business] .sidebar .navlink.active .i{color:inherit}
 :root[data-appearance=business] .sidebar .side-title{color:#B4BDE0}
 :root[data-appearance=business] .app-shell .topbar{border-bottom:2px solid var(--theme-soft-secondary)}

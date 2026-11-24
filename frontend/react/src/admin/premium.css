@@ -93,8 +93,8 @@
 .cc-assistant-heading>.btn{flex:none;min-height:44px}
 .cc-assistant-body{padding:0 20px 18px;border-top:1px solid #eeedf4}
 .cc-assistant-log{max-height:260px;overflow:auto;overscroll-behavior:contain;padding:14px 0;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin}
-.cc-assistant-log p{font:400 14px/1.6 system-ui;margin:0;padding:10px 13px;border-radius:15px;max-width:90%;color:#34354e;background:#f7f7fb}
-.cc-assistant-log .cc-chat-user{align-self:flex-end;background:var(--iatry-response-soft,#eeeafb);color:var(--iatry-response-text,#403789)}
+.cc-assistant-log p{align-self:flex-start;width:fit-content;font:400 14px/1.6 system-ui;margin:0;padding:10px 13px;border-radius:15px;max-width:90%;color:#34354e;background:#f7f7fb}
+.cc-assistant-log .cc-chat-user{align-self:flex-end;margin-inline:auto 0;background:var(--iatry-response-soft,#eeeafb);color:var(--iatry-response-text,#403789)}
 .cc-assistant-composer{display:flex;gap:8px;align-items:center;margin-top:12px}
 .cc-assistant-composer input{flex:1;min-width:0;min-height:46px;font-size:14px}
 .cc-assistant-composer .btn{min-height:46px}

@@ -15,7 +15,7 @@
 :root[data-appearance=business] .app-shell .sidebar .btn:not(.success,.danger,.warning,.orange,:disabled,[aria-disabled=true]){background:color-mix(in srgb,var(--brand-on-sidebar) 8%,transparent);border-color:color-mix(in srgb,var(--brand-on-sidebar) 24%,transparent);color:var(--brand-on-sidebar)}
 :root[data-appearance=business] .app-shell .sidebar .store-icon,
 :root[data-appearance=business] .app-shell .sidebar .avatar{background:color-mix(in srgb,var(--brand-on-sidebar) 12%,transparent);color:var(--brand-on-sidebar)}
-:root[data-appearance=business] .app-shell .sidebar .navlink:hover:not(.active){background:color-mix(in srgb,var(--brand-on-sidebar) 10%,transparent);color:var(--brand-on-sidebar)}
+:root[data-appearance=business] .app-shell .sidebar .navlink:hover:not(.active,.is-current){background:color-mix(in srgb,var(--brand-on-sidebar) 10%,transparent);color:var(--brand-on-sidebar)}
 :root[data-appearance=business] .app-shell .sidebar .navlink.active{background:var(--bg);color:var(--ink);box-shadow:none}
 :root[data-appearance=business] .app-shell .sidebar .navlink.active .i{color:var(--panel-action)}
 :root[data-appearance=business] .app-shell .sidebar .user-card{border-color:color-mix(in srgb,var(--brand-on-sidebar) 22%,transparent)}

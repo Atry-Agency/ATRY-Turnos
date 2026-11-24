@@ -5,6 +5,7 @@ import {cloudIncompatibilities} from './cloud-compatibility';
 export function instructionReply(instruction:Instruction){
  if(instruction.guidance)return instruction.guidance;
  if(instruction.clarification)return 'Antes de seguir, quiero asegurarme de entenderte.';
+ if(!instruction.understood&&instruction.notes.length)return instruction.notes[0];
  if(!instruction.understood)return 'No identifiqué una tarea con suficiente certeza. Contame qué querés hacer y lo vemos juntos.';
  if(instruction.steps.length>1)return 'Lo ordenamos paso a paso. Vas a revisar cada parte antes de seguir.';
  const id=instruction.steps[0]?.id;

@@ -1,6 +1,6 @@
 /* Shared visual language with the story; attribution lives in alignment and the official orb. */
-.iatry-conversation-message{align-self:flex-start;width:fit-content;max-width:94%;min-width:0;padding:10px 13px;border:0;border-radius:17px 17px 17px 6px;background:#ffffffc9;box-shadow:0 1px 5px #18234b04;overflow-wrap:anywhere;animation:iatry-conversation-arrive .2s ease-out both}
-.iatry-conversation-message[data-speaker=user]{align-self:flex-end;max-width:88%;background:#e9ebf5;color:#303c60;border-radius:17px 17px 6px 17px;box-shadow:none}
+.iatry-conversation-message{align-self:flex-start;margin-inline:0 auto;width:fit-content;max-width:94%;min-width:0;padding:10px 13px;border:0;border-radius:17px 17px 17px 6px;background:#ffffffc9;box-shadow:0 1px 5px #18234b04;overflow-wrap:anywhere;animation:iatry-conversation-arrive .2s ease-out both}
+.iatry-conversation-message[data-speaker=user]{align-self:flex-end;margin-inline:auto 0;max-width:88%;background:#e9ebf5;color:#303c60;border-radius:17px 17px 6px 17px;box-shadow:none}
 .iatry-conversation-message>p{margin:0;font-size:13px;font-weight:400;letter-spacing:-.012em;line-height:1.5;color:#465374;text-wrap:pretty}
 .iatry-conversation-message[data-speaker=user]>p{color:#34415f}
 .iatry-dialogue-thread{display:flex;flex-direction:column;gap:6px;margin:0;min-width:0}
@@ -17,8 +17,14 @@
 .iatry-dialogue-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px;margin-top:12px}
 .iatry-dialogue-actions button{min-height:44px;white-space:normal;font-size:12px;border-radius:13px}
 .iatry-dialogue-details{font-size:11px;color:#7a849b;margin:0}.iatry-dialogue-details summary{cursor:pointer;min-height:32px;display:list-item;padding:8px 0}.iatry-dialogue-details p{font-size:12px}
-.iatry-dialogue-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:4px}
-.iatry-dialogue-footer>.iatry-v2-text{font-size:11px;min-height:32px;padding:5px 0;margin:0;color:#7a849b}
+.iatry-dialogue-footer{display:flex;align-items:center;justify-content:center;padding-top:8px}
+.iatry-dialogue-restart{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;max-width:100%;margin:0;padding:10px 14px;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--iatry-response-accent,#5941B5);font:500 13px/1.4 system-ui,sans-serif;letter-spacing:-.01em;text-align:center;text-decoration:none;cursor:pointer;transition:background-color var(--motion-fast,150ms ease),border-color var(--motion-fast,150ms ease)}
+.iatry-dialogue-restart>svg{width:16px;height:16px;flex:none}
+.iatry-dialogue-restart>span{min-width:0;overflow-wrap:anywhere}
+.iatry-dialogue-restart:hover:not(:disabled){background:var(--iatry-response-soft,#F0ECFC);border-color:var(--iatry-response-line,#DDD7F1)}
+.iatry-dialogue-restart:focus-visible{outline:2px solid var(--iatry-response-accent,#5941B5);outline-offset:2px;background:var(--iatry-response-soft,#F0ECFC)}
+.iatry-dialogue-restart:disabled{opacity:.5;cursor:default}
+@media(prefers-reduced-motion:reduce){.iatry-dialogue-restart{transition:none}}
 .iatry-dialogue-footer:has(details[open]){display:block}
 .iatry-dialogue-thread button:focus-visible,.iatry-dialogue-composer button:focus-visible{outline:2px solid #6661ed;outline-offset:3px}
 .iatry-dialogue-history{font-size:11px;color:#7b859c}.iatry-dialogue-history summary{cursor:pointer;padding:5px 0}.iatry-dialogue-history>div{display:flex;flex-direction:column;gap:6px}
@@ -45,10 +51,9 @@
  .iatry-v3 .iatry-dialogue-composer{position:relative;bottom:auto;margin-top:6px}
  .iatry-v3 .iatry-dialogue-composer button{width:40px;min-width:40px;min-height:40px;height:40px}
  .iatry-v3 .iatry-conversation-message>p{font-size:13px;line-height:1.48}
- .iatry-v3 .iatry-dialogue-footer>.iatry-v2-text{min-height:32px}
 }
 @media(max-width:767px){body:has([data-iatry-mobile-backdrop]) :is(.integration-notice,.demo-notice,.deployment-notice){visibility:hidden}}
 .iatry-v3 .iatry-v2-panel .iatry-dialogue-composer input,.iatry-v3 .iatry-v2-panel .iatry-dialogue-composer input:focus{border:0;background:transparent;box-shadow:none;outline:0;padding:6px 0;border-radius:0}
-@media(max-width:767px){.iatry-v3 .iatry-dialogue-composer button{width:44px;min-width:44px;min-height:44px;height:44px}.iatry-v3 .iatry-dialogue-footer>.iatry-v2-text,.iatry-v3 .iatry-dialogue-footer summary{min-height:44px;box-sizing:border-box;display:flex;align-items:center}}
+@media(max-width:767px){.iatry-v3 .iatry-dialogue-composer button{width:44px;min-width:44px;min-height:44px;height:44px}.iatry-v3 .iatry-dialogue-footer summary{min-height:44px;box-sizing:border-box;display:flex;align-items:center}}
 .iatry-dialogue-change-list{margin:10px 0 0!important}.iatry-dialogue-change-list>div{display:block!important;border:0!important;padding:4px 0!important;font-size:12px!important}.iatry-dialogue-change-list dt{font-size:11px;color:#7a859e}.iatry-dialogue-change-list dd{margin:3px 0;color:#445373}.iatry-dialogue-latest>.iatry-operation-card{transition:opacity .18s ease,transform .18s ease}
 @media(prefers-reduced-motion:reduce){.iatry-dialogue-latest>.iatry-operation-card{transition:none}}
