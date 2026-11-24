@@ -1,3 +1,4 @@
+import '../iatry/shared/response-card.css';
 import {OperationalAdminAssistant,adminChatEnabled} from './OperationalAdminAssistant';
 import type {ScreenController} from '../services/ServicesScreen';
 import {useEffect,useMemo,useRef,useState} from 'react';

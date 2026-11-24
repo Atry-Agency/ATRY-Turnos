@@ -14,8 +14,8 @@
 .iatry-dialogue-composer input::placeholder{font-size:13px;color:#8a94ad}
 .iatry-dialogue-composer button{width:38px;min-width:38px;min-height:38px;height:38px;border-radius:50%;border:0;background:#565be4;color:#fff;display:grid;place-items:center;transition:background .15s,opacity .15s}
 .iatry-dialogue-composer button:disabled{opacity:.35}.iatry-dialogue-composer svg{width:18px;height:18px}
-.iatry-dialogue-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.iatry-dialogue-actions button{min-height:38px;white-space:normal;font-size:12px;border-radius:13px}
+.iatry-dialogue-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px;margin-top:12px}
+.iatry-dialogue-actions button{min-height:44px;white-space:normal;font-size:12px;border-radius:13px}
 .iatry-dialogue-details{font-size:11px;color:#7a849b;margin:0}.iatry-dialogue-details summary{cursor:pointer;min-height:32px;display:list-item;padding:8px 0}.iatry-dialogue-details p{font-size:12px}
 .iatry-dialogue-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:4px}
 .iatry-dialogue-footer>.iatry-v2-text{font-size:11px;min-height:32px;padding:5px 0;margin:0;color:#7a849b}
@@ -26,20 +26,20 @@
 @media(prefers-reduced-motion:reduce){.iatry-conversation-message{animation:none}.iatry-dialogue-composer button{transition:none}}
 .iatry-v3[data-motion-off] .iatry-conversation-message{animation:none}
 /* A dedicated message scroller keeps the composer outside scroll/keyboard occlusion. */
-.iatry-v3 .iatry-v2-panel:has(.iatry-dialogue){display:flex;flex-direction:column;height:min(660px,calc(100dvh - 48px));max-height:calc(100dvh - 48px);overflow:hidden}
+.iatry-v3 .iatry-v2-panel:has(.iatry-dialogue){display:flex;flex-direction:column;height:min(660px,calc(100dvh - var(--iatry-response-clearance,48px)));max-height:calc(100dvh - var(--iatry-response-clearance,48px));overflow:hidden}
 .iatry-v3 .iatry-v2-panel:has(.iatry-dialogue) .iatry-v2-top{flex-shrink:0;margin-bottom:12px;position:relative}
 .iatry-v3 .iatry-workbench:has(>.iatry-dialogue){flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .iatry-v3 .iatry-dialogue{flex:1;min-height:0;display:flex;flex-direction:column}
 .iatry-v3 .iatry-dialogue-thread[role=log]{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#dce0ec transparent;padding:2px 3px 8px}
 .iatry-v3 .iatry-dialogue-composer,.iatry-v3 .iatry-dialogue-footer{flex-shrink:0}
-.iatry-v3 .iatry-dialogue-latest>.iatry-operation-card{background:#fff;border:1px solid #e5e8f0;border-radius:19px;box-shadow:0 3px 14px #25335405}
+.iatry-v3 .iatry-dialogue-latest>.iatry-operation-card{background:var(--iatry-response-surface,#fff);border:1px solid var(--iatry-response-line,#e5e8f0);border-radius:19px;box-shadow:0 3px 14px #25335405}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-object{margin-bottom:6px;font-size:10px;color:#7d87a0}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-object>svg{padding:7px;background:#f4f5fa;border:0;color:#6877b5}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-card>header{padding:14px 14px 8px;font-size:14px;letter-spacing:-.02em}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-card dl{margin:0;padding:4px 14px 14px;gap:0}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-card dl>div{border:0;padding:5px 0;gap:8px;display:flex;justify-content:space-between}
 .iatry-v3 .iatry-dialogue-latest .iatry-operation-card dd{font-weight:550;font-size:13px;color:#354261}
-.iatry-v3 .iatry-dialogue-latest .iatry-operation-card dt{font-size:11px;color:#8590a5}
+.iatry-v3 .iatry-dialogue-latest .iatry-operation-card dt{font-size:12px;color:var(--iatry-response-muted,#8590a5)}
 @media(max-width:767px){
  .iatry-v3 .iatry-v2-panel:has(.iatry-dialogue){height:calc(var(--iatry-viewport-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)));max-height:none;padding:14px 14px max(10px,env(safe-area-inset-bottom))}
  .iatry-v3 .iatry-dialogue-composer{position:relative;bottom:auto;margin-top:6px}

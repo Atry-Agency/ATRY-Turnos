@@ -4,7 +4,8 @@
 .ui-dialog .modal-head{display:grid;grid-template-columns:minmax(0,1fr) var(--control-height);gap:var(--space-4);align-items:start;flex:none;position:relative;top:auto;padding:0;margin:0 0 var(--space-4);background:var(--surface)}
 .ui-dialog .modal-head h2{min-width:0;margin:0;font-size:var(--text-dialog-title);line-height:var(--line-heading);overflow-wrap:anywhere}
 .ui-dialog .modal-head>.btn{width:var(--control-height);height:var(--control-height);min-width:var(--control-height);min-height:var(--control-height);padding:var(--control-padding-block);margin:0}
-.ui-dialog-body{container-type:inline-size;container-name:dialog-body;min-width:0;min-height:0;overflow-y:auto;overscroll-behavior:contain;scroll-padding:var(--space-3);padding:var(--space-1);margin:0}
+/* Forms scroll vertically; lateral gestures must not displace their content. */
+.ui-dialog-body{container-type:inline-size;container-name:dialog-body;min-width:0;min-height:0;overflow-y:auto;overflow-x:hidden;touch-action:pan-y pinch-zoom;overscroll-behavior:contain;scroll-padding:var(--space-3);padding:var(--space-1);margin:0}
 .ui-dialog-body :is(input,select,textarea){scroll-margin-block:var(--space-4)}
 .ui-dialog .checkline{color:var(--ink)}
 .ui-dialog .checkline input[type=checkbox]{flex:0 0 var(--control-choice-size);width:var(--control-choice-size);min-width:var(--control-choice-size);max-width:var(--control-choice-size);height:var(--control-choice-size);min-height:var(--control-choice-size);max-height:var(--control-choice-size);margin:0;padding:0;align-self:center}

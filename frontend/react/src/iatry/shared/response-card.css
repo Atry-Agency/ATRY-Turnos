@@ -1,0 +1,49 @@
+/* ATRY response language. These tokens do not recolor the rest of the product. */
+.iatry-v3,.cc-assistant{--iatry-response-text:#262346;--iatry-response-muted:#5D587B;--iatry-response-accent:#5941B5;--iatry-response-line:#DDD7F1;--iatry-response-soft:#F0ECFC;--iatry-response-surface:linear-gradient(135deg,#FFFFFF,#F7F4FF)}
+.iatry-response{min-width:0;padding:4px 0 0;color:var(--iatry-response-text)}
+.iatry-response-heading{display:flex;align-items:flex-start;gap:12px;margin:0 0 18px;min-width:0}
+.iatry-response-symbol{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:13px;background:var(--iatry-response-soft);color:var(--iatry-response-accent)}
+.iatry-response-symbol>svg{width:23px;height:23px}
+.iatry-response-heading>div{min-width:0;flex:1}
+.iatry-v3 .iatry-response-heading h3,.iatry-response-heading h3{margin:0;font:650 18px/1.3 system-ui,sans-serif;letter-spacing:-.035em;overflow-wrap:anywhere;color:var(--iatry-response-text)}
+.iatry-v3 .iatry-response-heading p{margin:8px 0 0;font:400 14px/1.6 system-ui,sans-serif;color:var(--iatry-response-muted);overflow-wrap:anywhere}
+.iatry-response-content{display:flex;flex-direction:column;gap:18px;min-width:0}
+.iatry-response-steps{counter-reset:response-step;list-style:none;padding:4px 14px;margin:0;border:1px solid var(--iatry-response-line);border-radius:16px;background:var(--iatry-response-surface)}
+.iatry-response-steps>li{counter-increment:response-step;display:flex;align-items:flex-start;gap:12px;padding:12px 0;min-width:0;font:400 14px/1.55 system-ui,sans-serif}
+.iatry-response-steps>li+li{border-top:1px solid var(--iatry-response-line)}
+.iatry-response-steps>li:before{content:counter(response-step);flex:0 0 24px;height:24px;display:grid;place-items:center;border-radius:7px;background:var(--iatry-response-soft);color:var(--iatry-response-accent);font:600 12px/1 system-ui}
+.iatry-response-steps>li>span{min-width:0;overflow-wrap:anywhere}
+.iatry-response-actions{display:grid;gap:8px}
+.iatry-v3 .iatry-v2-panel .btn.iatry-response-action{display:flex;justify-content:flex-start;gap:12px;min-height:50px;padding:13px 15px;border-radius:14px;--button-bg:#5941B5;--button-fg:#fff;background:linear-gradient(115deg,#5748CD,#6741B4);border-color:transparent;color:#fff;font:600 14px/1.5 system-ui,sans-serif;text-align:left}
+.iatry-v3 .iatry-v2-panel .btn.iatry-response-action.secondary{--button-bg:var(--iatry-response-soft);--button-fg:var(--iatry-response-accent);background:var(--iatry-response-soft);border-color:var(--iatry-response-line);color:var(--iatry-response-accent)}
+.iatry-response-action>svg{width:21px;height:21px;flex:none}
+.iatry-response-action>span{min-width:0;overflow-wrap:anywhere}
+.iatry-response-related{border-top:1px solid var(--iatry-response-line);padding-top:16px}
+.iatry-v3 .iatry-response-related h4{margin:0 0 12px;font:600 13px/1.5 system-ui,sans-serif;letter-spacing:-.01em;color:var(--iatry-response-text)}
+.iatry-response-related>div{display:grid;gap:8px}
+.iatry-response-option{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;width:100%;min-height:48px;padding:11px 13px;border:1px solid var(--iatry-response-line);border-radius:13px;background:#ffffffb3;color:var(--iatry-response-text);font:500 14px/1.5 system-ui,sans-serif;text-align:left;cursor:pointer;transition:background-color .15s,border-color .15s}
+.iatry-response-option>span{min-width:0;overflow-wrap:anywhere}
+.iatry-response-option>svg{width:16px;height:16px;flex:none;color:var(--iatry-response-accent)}
+.iatry-response-option:hover{background:var(--iatry-response-soft);border-color:#B8AAE1}
+.iatry-response-option:active{background:#E7DFF8}
+.iatry-response-option:focus-visible{outline:2px solid var(--iatry-response-accent);outline-offset:3px}
+.iatry-v3 .iatry-v2-text.iatry-response-explore{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin:14px 0 0;padding:8px;text-decoration:none;color:var(--iatry-response-accent);font:550 13px/1.5 system-ui,sans-serif}
+.iatry-response-explore>svg{width:17px;height:17px;flex:none}
+.iatry-v3{--iatry-response-clearance:48px}
+@media(min-width:1440px){.iatry-v3{--iatry-response-clearance:116px}}
+/* Help and orientation share the same protected composer as the existing dialogue. */
+.iatry-v3 .iatry-v2-panel:has(.iatry-response-thread){display:flex;flex-direction:column;height:min(660px,calc(100dvh - var(--iatry-response-clearance,48px)));max-height:calc(100dvh - var(--iatry-response-clearance,48px));overflow:hidden}
+.iatry-v3 .iatry-v2-panel:has(.iatry-response-thread) .iatry-v2-top{flex:none}
+.iatry-v3 .iatry-workbench:has(>.iatry-response-thread){display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.iatry-v3 .iatry-response-thread{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;gap:16px;overflow-y:auto;overscroll-behavior:contain;padding:3px 4px 10px;scrollbar-width:thin;scrollbar-color:var(--iatry-response-line) transparent}
+.iatry-v3 .iatry-workbench:has(>.iatry-response-thread)>.iatry-intent-form{flex:none;margin:10px 0 0}
+.iatry-response-thread>.iatry-conversation-message[data-speaker=user]{align-self:flex-end;background:#EAE4FA;color:var(--iatry-response-text)}
+.iatry-response-thread>.iatry-conversation-message[data-speaker=user]>p{color:var(--iatry-response-text)}
+@media(max-width:767px){
+ .iatry-v3 .iatry-v2-panel:has(.iatry-response-thread){height:calc(var(--iatry-viewport-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)));max-height:none}
+ .iatry-response-heading{gap:10px;margin-bottom:16px}.iatry-response-symbol{width:36px;height:36px;border-radius:11px}.iatry-response-heading h3{font-size:18px}
+ .iatry-response-content{gap:16px}.iatry-response-steps{padding-inline:12px}
+}
+.iatry-v3[data-motion-off] .iatry-response-option{transition:none}
+@media(prefers-reduced-motion:reduce){.iatry-response-option{transition:none}}
+@media(forced-colors:active){.iatry-response-steps,.iatry-response-option,.iatry-response-symbol{border:1px solid CanvasText}.iatry-v3 .iatry-v2-panel .btn.iatry-response-action{background:ButtonFace;color:ButtonText;border-color:ButtonText}}

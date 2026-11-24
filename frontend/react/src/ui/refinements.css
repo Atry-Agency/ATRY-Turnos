@@ -69,8 +69,8 @@ html:has([data-react-overlay]),body:has([data-react-overlay]),html:has(dialog[op
  .customer-profile-actions .btn{min-height:44px;white-space:nowrap;font-size:14px}
  :root .public-shell[data-react-public-booking] .book-layout .pb-identity{padding:22px!important;min-height:0!important;display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:14px;row-gap:8px}
  :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-signature,:root .public-shell[data-react-public-booking] .book-layout .pb-identity>.eyebrow,:root .public-shell[data-react-public-booking] .book-layout .pb-identity>footer,:root .public-shell[data-react-public-booking] .book-layout .pb-identity-art{display:none}
- :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-logo{grid-column:1;grid-row:1 / span 2;width:56px;height:56px;margin:0}
- :root .public-shell[data-react-public-booking] .book-layout .pb-identity>h1{grid-column:2;margin:0;font-size:24px!important;line-height:1.2;align-self:center}
+ :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-logo{grid-column:1;grid-row:1;align-self:center;width:56px;height:56px;margin:0}
+ :root .public-shell[data-react-public-booking] .book-layout .pb-identity>h1{grid-column:2;grid-row:1;text-align:start;margin:0;font-size:24px!important;line-height:1.2;align-self:center}
  :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-description{grid-column:1 / -1;font-size:13px;margin:4px 0;line-height:1.5}
  :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-facts,:root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-local-time{grid-column:1 / -1;font-size:12px;margin:0;gap:8px}
  :root .public-shell[data-react-public-booking] .book-layout .pb-identity .pb-facts{display:flex;flex-wrap:wrap}
