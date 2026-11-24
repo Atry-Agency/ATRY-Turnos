@@ -6,8 +6,8 @@ export function phoneExample(country?:string){return country==='PA'?'+507 6000 0
 export function fieldExample({name='',label='',type='text',min,max,autoComplete,minLength,country}:FieldExample):string|undefined{
  if(['hidden','file','checkbox','radio','color','range','date','time','datetime-local','month','week','button','submit'].includes(type))return undefined;
  const text=normalize(label+' '+name);
- if(type==='email'||type!=='number'&&/email|correo/.test(text))return 'nombre@correo.com';
  if(type==='password')return autoComplete==='new-password'?(minLength?'Al menos '+minLength+' caracteres':'Elegí una contraseña segura'):'Tu contraseña actual';
+ if(type==='email'||type!=='number'&&/email|correo/.test(text))return 'nombre@correo.com';
  if(type==='tel'||/telefono|whatsapp|phone/.test(text))return phoneExample(country);
  if(type==='url'||/sitio web|pagina web/.test(text))return 'https://tu-sitio.com';
  if(type==='number'){

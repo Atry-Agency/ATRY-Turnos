@@ -1,0 +1,21 @@
+/* Logo identity composition. Upload/crop/delete retain their existing draft and persistence contracts. */
+.logo-identity{--logo-target:var(--control-height);display:grid;grid-template-columns:96px minmax(0,1fr);grid-template-areas:"preview copy" "preview upload" "footer footer";align-items:center;gap:var(--space-4) var(--space-5);padding:var(--space-5);border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--surface);min-width:0}
+.logo-identity-preview{grid-area:preview;display:grid;place-items:center;width:96px;height:96px;border-radius:50%;border:1px solid var(--line);overflow:hidden;background:repeating-conic-gradient(#f0f5f7 0 25%,#fff 0 50%) 0/16px 16px;color:var(--panel-action,var(--atry-primary))}
+.logo-identity-preview img{display:block;width:100%;height:100%;object-fit:cover}
+.logo-identity-preview>.i{width:32px;height:32px}
+.logo-identity-copy{grid-area:copy;min-width:0}
+.logo-identity-copy>strong{display:block;font-size:var(--text-body);font-weight:650;line-height:1.4;color:var(--ink)}
+.logo-identity-copy>p{font-size:var(--text-caption);line-height:1.5;color:var(--muted);margin:var(--space-1) 0 0}
+.logo-identity .logo-identity-upload{grid-area:upload;--accent:var(--panel-action,var(--atry-primary));background:var(--surface);width:fit-content;max-width:100%;min-width:0;min-height:var(--logo-target);padding-inline:var(--space-3);font-size:var(--text-caption);white-space:normal;text-align:center;justify-content:center}
+.logo-identity-upload:has(input:disabled){opacity:.5;cursor:not-allowed}
+.logo-identity-footer{grid-area:footer;grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--line);min-width:0}
+.logo-identity-status{flex:1;min-width:0;overflow-wrap:anywhere;color:var(--muted);font-size:var(--text-caption);line-height:1.5}
+.logo-identity-tools{display:flex;align-items:center;gap:var(--space-1);flex-shrink:0}
+.logo-identity-tools>.btn{min-height:var(--logo-target);background:transparent;border-color:transparent;box-shadow:none}
+.logo-identity-tools>.btn:hover:not(:disabled){background:var(--surface2);border-color:var(--line)}
+.logo-identity-edit{gap:var(--space-2);padding-inline:var(--space-2);font-size:var(--text-caption);font-family:var(--font-data);font-weight:600;color:var(--ink)}
+.logo-identity-tools .logo-identity-remove{--button-fg:var(--status-danger-text);color:var(--status-danger-text);width:var(--logo-target);padding:0}
+.logo-identity-tools .i{width:18px;height:18px;flex-shrink:0}
+.logo-identity :is(button,.upload-trigger):focus-visible,.logo-identity-upload:focus-within{outline:2px solid var(--brand-focus,var(--atry-primary));outline-offset:2px}
+@media(max-width:600px){.logo-identity{grid-template-columns:80px minmax(0,1fr);gap:var(--space-3);padding:var(--space-4)}.logo-identity .logo-identity-upload{width:100%}.logo-identity-preview{width:80px;height:80px}.logo-identity-copy>p{font-size:11px}.logo-identity-footer{gap:var(--space-2)}.logo-identity-status{font-size:11px}.logo-identity-edit{padding-inline:var(--space-1);gap:var(--space-1)}}
+@media(max-width:360px){.logo-identity{grid-template-columns:68px minmax(0,1fr);grid-template-areas:"preview copy" "upload upload" "footer footer";padding:var(--space-3)}.logo-identity-preview{width:68px;height:68px}.logo-identity-footer{flex-wrap:wrap}.logo-identity-status{flex-basis:100%}.logo-identity-tools{justify-content:space-between;width:100%}}

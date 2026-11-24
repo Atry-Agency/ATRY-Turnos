@@ -1,3 +1,4 @@
+import {customerSearchTarget,isNoShowInquiry} from './query-language';
 import {nonOperationalCitation,vagueTimeQuestion} from './appointment-language';
 import {calendarDay,resolvePeriod} from './temporal';
 import {extractEntities} from './entities';
@@ -18,6 +19,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  if(/\d\s*%/.test(s))return{source,steps:[],notes:['Entendí el porcentaje, pero los descuentos y promociones no tienen un contrato operativo homologado. No aplicaré cambios ni convertiré ese porcentaje en un precio.'],understood:false};
  if(source.length>500||/(?:^|;\s*|\sy\s+)(?:por favor )?(?:borra\w*|elimina\w*|destrui\w*|drop|truncate)\b/.test(s))return{source,steps:[],notes:['No automatizo eliminaciones. Usá los controles específicos del sistema.'],understood:false};
  if(nonOperationalCitation(s))return{source,steps:[],notes:['¿Querés trabajar con una reserva del negocio o hablás de una cita textual?'],understood:false};
+ if(isNoShowInquiry(source))return{source,steps:[],notes:[],guidance:'Querés consultar las ausencias de clientes. Podés revisarlas en Agenda con el estado «No asistió». Esta consulta no marca ni modifica ningún turno.',understood:true};
  // Facts alone do not specify creation vs editing. Keep them while asking for the action.
  const entities=extractEntities(source);
  if((entities.duration_min||entities.price_uyu)&&!intentRules.some(rule=>!rule.id.startsWith('services.')&&rule.patterns.some(p=>p.test(s)))&&!/^(?:cuanto|cual|que precio|que duracion)/.test(s)&&!/(?:agrega|crea|nuevo|nueva|alta|subi|baja|cambia|modifica|ajusta|edita|consulta|mostra|cancela|precio (?:del?|de la) )/.test(s)){
@@ -26,8 +28,9 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  }
  const clauses=source.split(/\s+y (?:despu[eé]s |luego )?(?=(?:crea|agrega|sub[ií]|baja|cambia|modifica|consulta|mostra|cancela|bloquea|reprograma|agenda|reserva|elimina|borra))|;\s*/i);
  if(clauses.length>1){const parts=clauses.map(part=>interpretInstruction(part,all,enabled,base));if(parts.every(p=>p.understood&&p.steps.length>0&&!p.clarification)){const combinedSteps=parts.flatMap(p=>p.steps);if(combinedSteps.length>3)return{source,steps:[],notes:['Separá la orden en planes de hasta tres pasos.'],understood:false};const vacation=combinedSteps.length===2&&combinedSteps.some(t=>t.id==='schedule.absence')&&combinedSteps.some(t=>t.id==='bookings.affected');if(vacation)combinedSteps.sort((a,b)=>a.id==='bookings.affected'?-1:b.id==='bookings.affected'?1:0);return{source,steps:combinedSteps,notes:[vacation?'Primero consultamos las reservas afectadas; después podrás preparar el bloqueo. No se cancela ningún turno.':'Cada acción solicitada se prepara y confirma por separado. No se agregan acciones implícitas.',...parts.flatMap(p=>p.notes)],understood:true}}if(parts.some(p=>p.clarification)||clauses.slice(1).some(p=>/\$\s*\d|^(?:crea|agrega|cancela|bloquea|mostra|subi|baja)/i.test(language(p))))return{source,steps:[],notes:['Necesito aclarar cada parte de esta orden. Probá una acción por vez; no ejecuté ninguna.'],understood:false}}
+ const personSearch=customerSearchTarget(source);
  const matched=intentRules.filter(rule=>rule.patterns.some(p=>p.test(s))).map(x=>x.id);
- let ids=[...new Set(matched)];
+ let ids=personSearch?['customers.search']:[...new Set(matched)];
  if(/^(?:cuanto|cual|que precio|que duracion)/.test(s)&&ids.some(id=>id==='services.price'||id==='services.duration'))ids=['services.list'];
  if(/\b(?:falto|ausencia|no vino)\b/.test(s)&&!/(?:turno|cliente|profesional|vacaciones)/.test(s)){return{source,steps:[],notes:['Una ausencia de cliente y una ausencia del equipo tienen efectos distintos.'],understood:true,clarification:{question:'¿Faltó un cliente a su turno o no atiende un profesional?',choices:['bookings.no_show','schedule.absence'].map(id=>{const t=all.find(t=>t.id===id)!;return{label:t.title,steps:[{id,title:t.title,seed:{values:{},references:{}},enabled:available.has(id),effect:id==='bookings.no_show'?'Cambia el estado del turno elegido.':'Bloquea la disponibilidad del profesional elegido.'}]}})}}}
 
@@ -58,7 +61,7 @@ export function interpretInstruction(source:string,all:readonly Capability[],ena
  const price=s.match(/\$\s*(\d+(?:[.,]\d+)*)/)||s.match(/\b(\d+)\s*(?:pesos|uyu)\b/);if(price&&tool.fields.some(f=>f.key==='price_uyu'))values.price_uyu=price[1].replace(/\.(?=\d{3}(?:[.,]|$))/g,'').replace(',','.');
  if(id==='services.price'){if(/\d\s*%/.test(s))notes.push('Indicá el importe final. No aplicaré un porcentaje implícito.');const ref=s.match(/precio (?:del? |de la )?(.+?)(?= (?:a|en) \$?\d|$)/);if(ref)references.service=ref[1].trim()}
  if(id==='bookings.no_show'){const ref=s.match(/^(.+?) (?:falto|no vino|no asistio)/);if(ref)references.booking=ref[1].replace(/^el cliente /,'').trim()}
- if(id==='customers.search'){const match=source.match(/\bcliente\s+(?:llamado\s+)?(.+)$/i);if(match)values.q=match[1].trim()}
+ if(id==='customers.search'){const match=source.match(/\bcliente\s+(?:llamado\s+)?(.+)$/i);if(match)values.q=match[1].trim();else if(personSearch)values.q=personSearch}
  if(id==='customers.history'){const match=source.match(/historial (?:del cliente |de |del )(.+)$/i);if(match&&!/^(?:un cliente|cliente)$/i.test(match[1]))references.customer=match[1].trim()}
  if(id==='customers.create'){const match=source.match(/(?:cliente|ficha de)\s+(.+?)(?=\s+(?:con|correo|email|telefono)|$)/i);if(match&&!/^(?:un |una )?(?:cliente|ficha)(?: nuevo| nueva)?$/i.test(match[1].trim()))values.name=match[1].trim();const email=source.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/);if(email)values.email=email[0];const phone=source.match(/(?:telefono|teléfono|celular)\s+(\+?\d[\d -]{5,18})/i);if(phone)values.phone=phone[1].trim()}
  const explicitId=s.match(/\b(?:cliente|ficha) (?:llamado |de )?["“](.+?)["”]/);if(explicitId&&tool.fields.some(f=>f.key==='customer'))references.customer=explicitId[1];

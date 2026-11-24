@@ -14,8 +14,9 @@ test('Cabecera móvil: altura adaptable, acciones sin apilar y copia con etiquet
  assert.ok(css.includes('.app-shell .topbar{height:auto;min-height:77px;'));
  assert.ok(css.includes('.app-shell .topbar>.actions{flex-shrink:0;flex-wrap:nowrap}'));
  assert.ok(css.includes('.app-shell .topbar>.row{flex:1;min-width:0}'));
- assert.ok(css.includes('.app-shell .topbar .btn{white-space:nowrap;flex-shrink:0}'));
- assert.ok(css.includes('@media(max-width:400px){.app-shell .topbar .desktop-label{display:none}}'));
+ const controls=css.match(/\.app-shell \.topbar \.btn\{([^}]+)\}/)?.[1]||'';
+ for(const declaration of ['white-space:nowrap','flex-shrink:0','min-width:44px','min-height:44px'])assert.ok(controls.includes(declaration),declaration);
+ assert.ok(css.includes('@media(max-width:600px){.app-shell .topbar .desktop-label{display:none}}'));
  assert.ok(source.includes('data-action="copy-link" aria-label="Copiar enlace de reservas"'));
 });
 test('Agenda angosta: las acciones conservan palabras y ancho de contenido al distribuirse en filas',()=>{

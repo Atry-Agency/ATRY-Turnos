@@ -23,7 +23,8 @@ html:has([data-react-overlay]),body:has([data-react-overlay]),html:has(dialog[op
 .service-advanced .hint-block{margin:0;font-size:12px;line-height:1.6}
 @media(max-width:760px),(pointer:coarse){
  .app-shell .ag-view-switch button,.app-shell .ag-density button{min-height:44px}
- .app-shell .ag-summary{gap:4px 8px}
+ .app-shell .ag-summary{flex-wrap:nowrap;gap:4px 8px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;max-width:100%}
+ .app-shell .ag-summary button{flex-shrink:0;white-space:nowrap}
  .app-shell .ag-summary button{min-height:44px;padding:9px 8px;font-size:11px}
  .app-shell .waitlist-explainer>button{flex-basis:44px;min-height:44px}
  .iatry-v3 .iatry-v2-panel .iatry-window-controls button{width:44px;height:44px;min-height:44px}

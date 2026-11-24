@@ -10,6 +10,6 @@ try{
  const baseline=JSON.parse(fs.readFileSync(path.join(root,'scripts/react/fixtures/landing-navigation-before-icons.json'),'utf8'));
  assert.deepEqual(links,baseline,'All published destinations and their order remain intact');
  for(const file of ['frontend/react/src/iatry/v3/OperationalPanel.tsx','frontend/react/src/iatry/v3/InstructionPlan.tsx'])assert.match(fs.readFileSync(path.join(root,file),'utf8'),/aria-label="Enviar (?:mensaje|respuesta)"[^>]*><PanelIcon name="arrow"\/>/,'Send controls retain their necessary icon');
- const shell=fs.readFileSync(path.join(root,'frontend/react/src/app/Shell.tsx'),'utf8');assert.match(shell,/icon\('calendar'\)\} Reservar/);assert.match(shell,/workspace-switch-chevron/);
+ const shell=fs.readFileSync(path.join(root,'frontend/react/src/app/Shell.tsx'),'utf8');assert.match(shell,/aria-label="Ver página de reservas"/);assert.match(shell,/icon\('calendar'\)/);assert.match(shell,/workspace-switch-chevron/);
  console.log('PASS navigation iconography: repeated diagonal absent from React and legacy sources; no decorative glyph arrows; all '+links.length+' destinations retained; necessary send and workspace controls preserved');
 }finally{fs.rmSync(temp,{recursive:true,force:true})}

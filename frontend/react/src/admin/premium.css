@@ -1,5 +1,5 @@
 /* Same ATRY product rhythm, scoped to administration and its existing dialogs. */
-.cc-shell{background:#f7f7fc;color:#202439}
+.cc-shell{--control-height-small:var(--control-height);background:#f7f7fc;color:#202439}
 .cc-main{padding:28px clamp(18px,3vw,44px);max-width:1800px}
 .cc-header{gap:var(--space-4);margin-bottom:var(--space-section)}
 .cc-header h1{font-size:var(--text-page-title);line-height:var(--line-heading);letter-spacing:-.045em}
@@ -24,8 +24,12 @@
 .cc-shell .cc-actions .btn{min-height:var(--control-height);padding:var(--control-padding-small) var(--space-3);font-size:var(--text-caption)}
 .cc-shell .cc-badge{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:6px 10px;min-height:28px;font:600 11px/1.2 system-ui;border-radius:99px}
 .cc-shell .cc-filters{gap:var(--space-3);align-items:end;margin:var(--space-5) 0}
+.cc-filter-actions{display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap}
+.cc-filter-options,.cc-filter-fields{display:contents}
+.cc-shell .cc-filter-options>summary{display:none}
 .cc-shell .cc-filters label{font-size:12px;font-weight:550;color:#565c72;gap:var(--space-field);min-width:130px}
 .cc-shell .cc-filters input,.cc-shell .cc-filters select{font:400 var(--text-input)/var(--line-control) var(--font-data);min-height:var(--control-height);background:#fff}
+.cc-shell .cc-filters select{height:var(--control-height)}
 .cc-shell .cc-source,.cc-shell .cc-footnote{font-size:11px;line-height:1.6;color:#66697e}
 .cc-shell .cc-hero{border-radius:24px;padding:clamp(24px,3vw,42px);box-shadow:none}
 .cc-shell .cc-hero h2{font-size:clamp(26px,3vw,40px);line-height:1.14;letter-spacing:-.035em}
@@ -33,7 +37,7 @@
 .cc-shell .cc-metric{border:1px solid #e6e5f0;border-radius:18px;padding:20px;gap:10px;color:#272b40}
 .cc-shell .cc-metric-label{font-size:12px;line-height:1.5}
 .cc-shell .cc-metric strong{font:650 34px/1.1 system-ui;letter-spacing:-.04em}
-.cc-shell .cc-metric-bottom{font-size:11px;color:#66697e}
+.cc-shell .cc-metric-bottom{font-size:12px;color:#66697e}
 .cc-shell .cc-metric-bottom>.i{display:none}
 .cc-shell details>summary{list-style:none;display:flex;align-items:center;min-height:44px;cursor:pointer;font-size:13px;font-weight:550;color:#5148bb}
 .cc-shell details>summary::-webkit-details-marker{display:none}
@@ -69,13 +73,13 @@
 @media(max-width:1100px){.cc-shell .cc-hero{grid-template-columns:1fr}.cc-shell .cc-hero-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.cc-shell .cc-hero-links>a{padding:14px}.cc-shell .cc-hero-links small{font-size:11px}.cc-shell .cc-hero-links>a>.i:last-child{display:none}}
 @media(max-width:760px){
  .cc-main{padding:calc(18px + env(safe-area-inset-top,0px)) 16px 24px}
- .cc-header{gap:10px}.cc-header>div{flex:1}.cc-header h1{font-size:var(--text-page-title)}.cc-header .eyebrow{font-size:9px}
+ .cc-header{gap:10px}.cc-header>div{flex:1}.cc-header>[data-react-refresh]{flex:0 0 44px;width:44px;padding-inline:0}.cc-header>[data-react-refresh] span{display:none}.cc-header h1{font-size:var(--text-page-title)}.cc-header .eyebrow{font-size:9px}
  .cc-shell .cc-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .cc-shell .cc-metric{padding:15px;min-height:124px;gap:8px}
  .cc-shell .cc-metric-label{font-size:11px}.cc-shell .cc-metric strong{font-size:28px}
- .cc-shell .cc-metric-bottom{font-size:10px}.cc-shell .cc-metric-label>.i{width:18px;height:18px}
- .cc-shell .cc-hero{padding:24px;gap:18px}.cc-shell .cc-hero h2{font-size:28px}
- .cc-shell .cc-hero-links{grid-template-columns:1fr}.cc-shell .cc-hero-links>a{min-height:60px;padding:12px 14px}
+ .cc-shell .cc-metric-bottom{font-size:12px}.cc-shell .cc-metric-label>.i{width:18px;height:18px}
+ .cc-shell .cc-hero{padding:18px;gap:12px}.cc-shell .cc-hero h2{font-size:22px}.cc-shell .cc-hero h2 br{display:none}.cc-shell .cc-hero p{margin:8px 0;font-size:13px}
+ .cc-shell .cc-hero-links{grid-template-columns:1fr}.cc-shell .cc-hero-links>a{min-height:44px;padding:8px 10px}.cc-shell .cc-hero-links{gap:8px}
  .cc-shell .cc-hero-links small{font-size:12px}
  .cc-shell .cc-table-wrap{border:0;background:transparent;box-shadow:none;overflow:visible}
  .cc-shell .cc-table,.cc-shell .cc-table tbody{display:block;width:100%}
@@ -83,6 +87,17 @@
  .cc-shell .cc-table td{padding:0;min-width:0;max-width:none;text-align:left}
  .cc-shell .cc-table td:before{font:600 var(--text-caption)/1.5 var(--font-data);letter-spacing:.04em;margin:0 0 4px;color:#73758a}
  .cc-shell .cc-panel{padding:var(--space-card);border-radius:var(--radius-panel)}.cc-shell .cc-filters label{flex:1 1 130px;min-width:0}
+ .cc-shell .cc-filters-grouped{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:14px}
+ .cc-filters-grouped>label,.cc-filters-grouped>.cc-filter-options{grid-column:1/-1}
+ .cc-shell .cc-filter-options{display:block;min-width:0}
+ .cc-shell .cc-filter-options>summary{display:flex;justify-content:space-between;min-height:44px;padding:0 2px;gap:12px;font-size:13px}
+ .cc-filter-options>summary>span:last-child{font-size:12px;color:var(--muted)}
+ .cc-filter-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:8px}
+ .cc-shell .cc-filter-fields label{font-size:12px}
+ .cc-filter-actions{grid-column:1/-1}.cc-filter-actions>.btn:first-child{flex:1}
+ .cc-assistant-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cc-assistant-shortcuts button{min-width:0}
+ .cc-back{display:inline-flex;align-items:center;min-height:44px}
  .cc-shell .cc-pagination .btn{min-height:44px}
  .cc-assistant-heading{gap:10px;padding:12px}.cc-assistant-heading strong span{display:block;margin:0}.cc-assistant-heading p{display:none}
  .cc-assistant-heading>.btn{font-size:12px;padding:10px}.cc-assistant-body{padding:0 12px 14px}
