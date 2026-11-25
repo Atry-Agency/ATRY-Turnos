@@ -37,7 +37,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 :root[data-appearance=business] .app-shell .settings-tabs button.active{background:var(--theme-soft);border-color:var(--theme-action);color:var(--theme-action)}
 :root[data-appearance=business] .public-shell .book-identity{border-top:5px solid var(--theme-action)}
 :root[data-appearance=business] .public-shell .service-option.selected,:root[data-appearance=business] .public-shell .staff-option.selected,:root[data-appearance=business] .public-shell .slot.selected{background:var(--theme-soft);border-color:var(--theme-action);box-shadow:inset 0 0 0 1px var(--theme-action)}
-:root[data-appearance=business] .public-shell .book-step .num{background:var(--theme-action);color:var(--brand-on-action)}
+:root[data-appearance=business] .public-shell .book-step .num{background:var(--booking-step-fill,var(--theme-action));color:var(--booking-step-ink,var(--brand-on-action))}
 :root[data-appearance=business] .app-shell .hint-block,:root[data-appearance=business] .public-shell .hint-block{background:color-mix(in srgb,var(--accent) 5%,var(--surface));border-color:var(--line);color:var(--ink)}
 :root[data-appearance-mode=dark] .app-shell,:root[data-appearance-mode=dark] .public-shell{--bg:#10131D;--surface:#191D2A;--surface2:#222737;--surface3:#2B3143;--line:#394052;--ink:#F4F6FB;--muted:#BEC6D7;background:var(--bg);color:var(--ink);color-scheme:dark}
 :root[data-appearance-mode=dark] .app-shell .topbar,:root[data-appearance-mode=dark] .app-shell .card,:root[data-appearance-mode=dark] .app-shell .metric,:root[data-appearance-mode=dark] .public-shell .card,:root[data-appearance-mode=dark] .public-shell .book-identity{background:var(--surface);color:var(--ink)}
@@ -446,3 +446,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .account-avatar{display:inline-grid;place-items:center;flex-shrink:0;overflow:hidden}.account-avatar--atry{background:#191E63!important;border:1px solid #FFFFFF30}.account-avatar--atry img{display:block;width:80%;height:80%;object-fit:contain}.cc-sidebar>a>.account-avatar{width:32px;height:32px;border-radius:10px}.account-identity>.account-avatar{width:58px;height:58px;border-radius:17px}
 .registration-wizard .registration-custom-sector:not([hidden]){margin-bottom:20px}
+
+:root[data-theme-collection=color-club] .public-shell{--booking-step-fill:var(--brand-accent);--booking-step-ink:var(--brand-on-accent)}

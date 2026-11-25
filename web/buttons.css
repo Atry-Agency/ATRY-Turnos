@@ -3,8 +3,8 @@
 /* Component visibility and responsive controls take precedence over the default. */
 :where(.btn){display:inline-flex}
 :root .btn{
- --button-bg:var(--panel-action,var(--brand-action,#4D4CE8));
- --button-fg:var(--panel-on-action,var(--brand-on-action,#FFF));
+ --button-bg:var(--panel-action-fill,var(--panel-action,var(--brand-action,#4D4CE8)));
+ --button-fg:var(--panel-on-action-fill,var(--panel-on-action,var(--brand-on-action,#FFF)));
  --button-border:var(--button-bg);
  align-items:center;justify-content:center;gap:var(--space-2);
  min-height:var(--control-height);max-width:100%;min-width:0;padding:var(--control-padding-block) var(--control-padding-inline);
