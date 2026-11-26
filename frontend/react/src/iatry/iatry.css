@@ -56,12 +56,12 @@
 @keyframes iatry-depart{to{opacity:0;transform:translateY(-2px) scale(.985)}}
 @keyframes iatry-contract{to{opacity:0;transform:scale(.9)}}
 .iatry-context[data-motion-off],.iatry-context[data-motion-off] *{animation:none!important;transition:none!important}
-:has(.modal-mask) .iatry-context,.main-content:has([name="confirm_setup"]:checked) .iatry-context,.app-shell .workspace-setup[hidden]{display:none}
+:has(.modal-mask) .iatry-context,.main-content:has([name="confirm_setup"]:checked) .iatry-context{visibility:hidden;pointer-events:none}.app-shell .workspace-setup[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){.iatry-context,.iatry-context *{animation:none!important;transition:none!important}}
 @media(max-width:600px){.iatry-context{--iatry-size:46px;--iatry-rim:2.5px;padding:12px 13px;margin-bottom:16px;border-radius:16px;scroll-margin-top:max(12px,env(safe-area-inset-top))}.iatry-presence{align-items:flex-start;gap:12px}.iatry-context .iatry-copy h2{font-size:15px}.iatry-label{font-size:9px}.iatry-controls{margin-left:0;margin-top:7px;gap:4px 12px}.iatry-context .btn{font-size:11px;padding:9px 11px}.iatry-context .iatry-text-action,.iatry-options summary{font-size:11px}.iatry-detail{margin-left:0}.iatry-context[data-presentation=contextual]{--iatry-size:30px;--iatry-rim:1.8px;padding:5px 0 8px}.iatry-context[data-presentation=contextual] .iatry-controls,.iatry-context[data-presentation=contextual] .iatry-detail{margin-left:42px}.iatry-rest{--iatry-size:26px;--iatry-rim:1.6px;padding:0;border-radius:0}.iatry-rest-row{gap:4px 12px}.iatry-notice{margin-left:36px}}
 /* React owns placement through portals into in-flow slots, never moving rendered DOM. */
 .iatry-slot{display:contents}.iatry-slot:empty{display:none}
-body:has(dialog[open]) .iatry-context{display:none}
+body:has(dialog[open]) .iatry-context{visibility:hidden;pointer-events:none}
 @media(forced-colors:active){.iatry-context{border:1px solid CanvasText}.iatry-target{outline-color:Highlight!important}}
 .main-content:has(.iatry-context:not(.iatry-rest):not(.iatry-v3))>.workspace-setup{display:none}
 /* A static white reflection lives in the masked rim, never over the official emblem. */

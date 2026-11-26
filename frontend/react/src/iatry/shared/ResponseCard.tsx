@@ -1,10 +1,12 @@
+import {useContentMotion} from '../../ui/useContentMotion';
 import type {ReactNode} from 'react';
 import {PanelIcon} from '../v3/PanelIcon';
 import './response-card.css';
 
 /** Structured information only. Callers retain routing, permissions and execution state. */
 export function ResponseCard({title,icon='info',description,children,className='',label}:{title:string;icon?:string;description?:string;children:ReactNode;className?:string;label?:string}){
- return <section className={'iatry-response '+className} aria-label={label||title}>
+ const arrival=useContentMotion<HTMLElement>(title,true);
+ return <section ref={arrival} className={'iatry-response '+className} aria-label={label||title}>
   <ResponseHeading title={title} icon={icon} description={description}/>
   <div className="iatry-response-content">{children}</div>
  </section>;

@@ -40,7 +40,7 @@ export function navigateWithSidebarMotion(update:()=>void){
  const target=after.link,animation=copy.animate([
   {transform:`translate3d(${from.left-after.bounds.left}px,${from.top-after.bounds.top}px,0)`,width:from.width+'px',height:from.height+'px'},
   {transform:`translate3d(${to.left-after.bounds.left}px,${to.top-after.bounds.top}px,0)`,width:to.width+'px',height:to.height+'px'}
- ],{duration:360,easing:'cubic-bezier(.22,.7,.25,1)',fill:'both'});
+ ],{duration:220,easing:'cubic-bezier(.22,.7,.25,1)',fill:'both'});
  let finished=false;const cancel=()=>{if(finished)return;finished=true;animation.cancel();content?.cancel();stage.remove();delete target.dataset.sidebarMotionTarget;if(departing)delete departing.dataset.sidebarMotionDeparting;window.removeEventListener('resize',cancel);after!.aside.removeEventListener('scroll',cancel);reduced.removeEventListener('change',cancel);if(flight?.cancel===cancel)flight=undefined;};
  flight={realm:after.realm,visual:copy,cancel};window.addEventListener('resize',cancel,{once:true});after.aside.addEventListener('scroll',cancel,{once:true});reduced.addEventListener('change',cancel,{once:true});void animation.finished.then(cancel,cancel);
 }

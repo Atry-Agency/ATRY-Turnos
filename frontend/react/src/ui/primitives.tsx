@@ -1,10 +1,11 @@
+import {BusyMark} from './PanelSkeleton';
 import './field-examples.css';
 import {fieldExample} from './field-examples';
 import {useVisualViewport} from './useVisualViewport';
 import {useIatryDialog} from '../iatry/context';
 import {useEffect,useId,useRef,type ButtonHTMLAttributes,type InputHTMLAttributes,type SelectHTMLAttributes,type ReactNode,type Ref} from 'react';
 import {createPortal} from 'react-dom';
-export function Button({variant='',small=false,full=false,className='',...props}:ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'secondary'|'danger'|'success'|'';small?:boolean;full?:boolean;ref?:Ref<HTMLButtonElement>}){return <button {...props} className={`btn${variant?' '+variant:''}${small?' sm':''}${full?' full':''}${className?' '+className:''}`}/>}
+export function Button({variant='',small=false,full=false,busy=false,children,className='',...props}:ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'secondary'|'danger'|'success'|'';small?:boolean;full?:boolean;busy?:boolean;ref?:Ref<HTMLButtonElement>}){return <button {...props} aria-busy={busy||props['aria-busy']} className={`btn${variant?' '+variant:''}${small?' sm':''}${full?' full':''}${className?' '+className:''}`}>{busy&&<BusyMark/>}{children}</button>}
 export function Card({children,className=''}:{children:ReactNode;className?:string}){return <div className={'card'+(className?' '+className:'')}>{children}</div>}
 export function Badge({active}:{active:number|boolean}){return <span className={'badge'+(active?'':' pending')}>{active?'Publicado':'Oculto'}</span>}
 export function TextField({label,id,error,inputRef,fieldClassName='',exampleCountry,leadingIcon,trailingAction,...props}:InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;inputRef?:Ref<HTMLInputElement>;fieldClassName?:string;exampleCountry?:string;leadingIcon?:ReactNode;trailingAction?:ReactNode}){const generated=useId();const fieldId=id||generated;const input=<input {...props} placeholder={props.placeholder??fieldExample({...props,label,country:exampleCountry})} ref={inputRef} id={fieldId} aria-invalid={error?true:props['aria-invalid']} aria-describedby={[props['aria-describedby'],error?fieldId+'-error':undefined].filter(Boolean).join(' ')||undefined}/>;return <div className={'field'+(fieldClassName?' '+fieldClassName:'')}><label htmlFor={fieldId}>{label}</label>{leadingIcon||trailingAction?<span className="field-input-shell">{leadingIcon}{input}{trailingAction}</span>:input}{error&&<p className="ag-field-error" id={fieldId+'-error'} role="alert">{error}</p>}</div>}
