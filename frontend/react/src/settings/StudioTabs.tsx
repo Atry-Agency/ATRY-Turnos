@@ -2,7 +2,7 @@ import {useLayoutEffect,useRef,useState} from 'react';
 import type {AppPort} from '../app/port';
 import {Icon} from '../ui/Icon';
 
-const tabs=[['identity','Identidad','shop'],['themes','Temas','spark'],['components','Componentes','grid'],['public','Página de reservas','external']];
+const tabs=[['identity','Identidad','shop'],['themes','Temas','spark'],['components','Detalles','grid'],['public','Página pública','external']];
 /** Preserve the existing buttons and selection model; reveal horizontal continuation and the active item. */
 export function StudioTabs({active,onChange,port}:{active:string;onChange:(id:string)=>void;port:AppPort}){
  const ref=useRef<HTMLElement>(null),[edges,setEdges]=useState({start:false,end:false});

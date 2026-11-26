@@ -1,0 +1,6 @@
+/* Feedback is attached only to successful actions or an active busy state. */
+[data-icon-motion="confirm"]{animation:icon-confirm 180ms ease-out 1;transform-origin:center}
+[data-icon-motion="spin"]{animation:icon-busy 900ms linear infinite;transform-origin:center}
+@keyframes icon-confirm{0%{transform:scale(.8)}70%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes icon-busy{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){[data-icon-motion]{animation:none}}

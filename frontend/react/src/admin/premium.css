@@ -19,7 +19,8 @@
 .cc-shell .btn.secondary,:root:has(.cc-shell) :is(.modal-mask,.confirm-dialog) .btn.secondary{--button-bg:#F0EEFC;--button-fg:#5148BB;--button-border:#D9D5F2;--brand-focus:#5148BB}
 .cc-header .btn{min-height:44px;font-size:13px}
 .cc-shell .cc-sidebar{gap:16px}
-.cc-shell .cc-sidebar nav a{min-height:44px;border-left:0;font-size:13px;line-height:1.4;border-radius:13px;padding:12px}
+.cc-shell .cc-sidebar nav a{gap:12px;min-height:44px;border-left:0;font-size:13px;line-height:1.4;border-radius:13px;padding:12px}
+.cc-shell .cc-sidebar nav a>.i{display:block;width:var(--control-icon);height:var(--control-icon);flex:0 0 var(--control-icon);stroke-width:var(--navigation-icon-stroke)}
 .cc-shell .cc-sidebar nav a[aria-current]{background:#f7f7fc;color:#24243d}
 .cc-shell .cc-sidebar nav a[aria-current] .i{color:#5750ec}
 .cc-shell .cc-brand .logo{white-space:nowrap;gap:9px}

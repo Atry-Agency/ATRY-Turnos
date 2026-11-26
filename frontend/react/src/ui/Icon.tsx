@@ -1,2 +1,3 @@
 import type {FeaturePort} from '../services/contracts';
-export function Icon({name,port,className=''}:{name:string;port:FeaturePort;className?:string}){return <svg className={`i i-${name} ${className}`} viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{__html:port.icon(name)}}/>}
+import {LibraryIcon} from './LibraryIcon';
+export function Icon({name,port,className='',motion}:{name:string;port:FeaturePort;className?:string;motion?:'confirm'|'spin'}){return <LibraryIcon name={name} markup={port.icon(name)} className={`i i-${name} ${className}`} motion={motion}/>}

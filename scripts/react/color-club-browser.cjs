@@ -22,14 +22,16 @@ const assert=require('node:assert/strict'),{chromium,webkit}=require('playwright
    }
    await page.setViewportSize({width:390,height:1000});
    for(const mode of ['light','dark']){
+    await page.getByRole('button',{name:'Detalles',exact:true}).click();
     await page.getByRole('combobox',{name:'Modo del panel',exact:true}).selectOption(mode);
+    await page.getByRole('button',{name:'Temas',exact:true}).click();
     for(const p of T.colorClub){
      await page.getByRole('button',{name:new RegExp('^'+p.name+',')}).click();
      assert.equal(await page.getByRole('button',{name:new RegExp('^'+p.name+',')}).getAttribute('aria-pressed'),'true');
      for(const view of ['Panel','Reservas']){
       await page.getByRole('button',{name:view,exact:true}).click();
-      const actual=await page.locator('.ts-preview-frame').evaluate(el=>{const c=getComputedStyle(el);return{primary:c.getPropertyValue('--sp-action').trim(),secondary:c.getPropertyValue('--sp-secondary').trim(),accent:c.getPropertyValue('--sp-accent').trim(),id:el.dataset.colorClub}});
-      assert.deepEqual(actual,{primary:p.primary,secondary:p.secondary,accent:p.accent,id:p.id});
+      const actual=await page.locator('.ts-preview-frame').evaluate(el=>{const c=getComputedStyle(el);return{primary:c.getPropertyValue('--sp-sidebar').trim(),background:c.getPropertyValue('--sp-bg').trim(),action:c.getPropertyValue('--sp-action').trim(),surface:c.getPropertyValue('--sp-surface').trim(),secondary:c.getPropertyValue('--sp-secondary').trim(),accent:c.getPropertyValue('--sp-accent').trim(),id:el.dataset.colorClub}});
+      assert.deepEqual(actual,{primary:p.primary,background:p.secondary,action:p.accent,surface:T.effective({plan:'negocio',theme_config:{primary:p.primary,secondary:p.secondary,mode}}).surface,secondary:p.secondary,accent:p.accent,id:p.id});
      }
     }
    }
@@ -41,15 +43,23 @@ const assert=require('node:assert/strict'),{chromium,webkit}=require('playwright
    assert.deepEqual(errors,[]);checks.push(`${engine.name()} 9 triples × light/dark × panel/public; keyboard; draft isolation; no autosave`);
    // Verify existing PostgreSQL persistence, public projection and actual page tokens.
    for(const [id,slug] of [['b1','negocio-prueba-1'],['pa','panama-local']]){
+    const publicPage=await browser.newPage({viewport:{width:390,height:1000},serviceWorkers:'block'});
     for(const p of T.colorClub){
-     await fixture.db.query('SELECT atry_save_appearance($1,$2::jsonb)',[id,JSON.stringify({theme_config:{version:1,primary:p.primary,secondary:p.secondary,mode:'dark'}})]);
+     await fixture.db.query('SELECT atry_save_appearance($1,$2::jsonb)',[id,JSON.stringify({theme_config:{version:1,primary:p.primary,secondary:p.secondary,mode:'light'}})]);
      const stored=(await fixture.db.query('SELECT atry_business($1) v',[id])).rows[0].v;
      assert.equal(T.effective(stored).accent,p.accent);assert.equal(stored.theme_config.accent,undefined);
+     await publicPage.setExtraHTTPHeaders({'x-atry-local-fixture-id':engine.name()+'-'+id+'-'+p.id});
+     await publicPage.goto(fixture.base+'/?palette='+p.id+'#/reservar/'+slug);await publicPage.locator('.book-step .num').first().waitFor();
+     const actual=await publicPage.locator('html').evaluate(el=>{const c=getComputedStyle(el);return{primary:c.getPropertyValue('--brand-primary'),secondary:c.getPropertyValue('--brand-secondary-raw'),accent:c.getPropertyValue('--brand-accent'),background:c.getPropertyValue('--theme-bg'),collection:el.dataset.themeCollection}});
+     assert.deepEqual(actual,{primary:p.primary,secondary:p.secondary,accent:p.accent,background:p.secondary,collection:'color-club'});
+     const samples=await publicPage.evaluate(()=>{
+      const hex=c=>'#'+c.match(/[0-9.]+/g).slice(0,3).map(n=>Number(n).toString(16).padStart(2,'0')).join('').toUpperCase();
+      const color=sel=>hex(getComputedStyle(document.querySelector(sel)).color),bg=sel=>hex(getComputedStyle(document.querySelector(sel)).backgroundColor);
+      return {background:bg('.public-shell'),heading:color('.pb-booking-heading h2'),description:color('.pb-booking-heading p'),card:bg('.public-shell .card'),cardHeading:color('.book-step h2'),badge:bg('.book-step .num'),badgeInk:color('.book-step .num')};
+     });
+     assert.equal(samples.background,p.secondary);assert.equal(samples.card,'#FFFFFF');for(const [fg,bg]of [[samples.heading,samples.background],[samples.description,samples.background],[samples.cardHeading,samples.card],[samples.badgeInk,samples.badge]])assert.ok(T.contrast(fg,bg)>=4.5,JSON.stringify({palette:p.id,fg,bg}));
     }
-    const publicPage=await browser.newPage({viewport:{width:390,height:1000},serviceWorkers:'block'});
-    await publicPage.goto(fixture.base+'/#/reservar/'+slug);await publicPage.locator('.book-step .num').first().waitFor();
-    const actual=await publicPage.locator('html').evaluate(el=>{const c=getComputedStyle(el);return{primary:c.getPropertyValue('--brand-primary'),secondary:c.getPropertyValue('--brand-secondary-raw'),accent:c.getPropertyValue('--brand-accent'),collection:el.dataset.themeCollection}});
-    assert.deepEqual(actual,{primary:'#28282B',secondary:'#F9F9F9',accent:'#FF4200',collection:'color-club'});await publicPage.close();
+    await publicPage.close();
    }
    // Restore the fixture before the next engine's published-versus-draft check.
    for(const id of ['b1','pa'])await fixture.db.query('SELECT atry_save_appearance($1,$2::jsonb)',[id,JSON.stringify({theme_config:{version:1,primary:'#4754E6',secondary:'#00A5E2',mode:'light'}})]);

@@ -1,0 +1,7 @@
+/* Metric values reflow within their own card; formatted amounts retain currency and precision. */
+.dashboard-metrics>.metric{container-type:inline-size;min-width:0}
+.dashboard-metrics .metric-top{gap:12px;align-items:flex-start}
+.dashboard-metrics .metric-top h3{min-width:0;overflow-wrap:break-word}
+.dashboard-metrics .metric-value{display:block;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;line-height:1.15}
+.dashboard-metrics .metric-value--money{font-size:clamp(20px,14cqi,32px);letter-spacing:-.025em}
+.dashboard-metrics .delta{overflow-wrap:break-word}

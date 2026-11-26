@@ -11,7 +11,7 @@
  --line-body:1.6;--line-heading:1.2;--line-control:20px;--line-control-small:16px;
  --status-danger-text:color-mix(in srgb,var(--atry-alert) 35%,var(--theme-ink,var(--ink)));
  --weight-label:600;--weight-action:650;
- --control-choice-size:20px;--control-textarea-min:96px;--control-height:44px;--control-height-small:40px;--control-icon:20px;--control-icon-small:16px;
+ --control-choice-size:20px;--control-textarea-min:96px;--control-height:44px;--control-height-small:40px;--control-icon:20px;--control-icon-small:16px;--navigation-icon-stroke:1.7;
  --control-padding-inline:var(--space-4);
  --control-padding-block:calc((var(--control-height) - var(--line-control) - 2px)/2);
  --control-padding-small:calc((var(--control-height-small) - var(--line-control-small) - 2px)/2);
