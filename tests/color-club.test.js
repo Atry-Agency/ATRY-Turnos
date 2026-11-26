@@ -1,8 +1,8 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
 const T=require('../web/theme-core'),{prepare,publicConfig}=require('../server/appearance');
-const triples=[['Soft Static','Calma','#222526','#CCDCEF','#FF6574'],['Ocean Drive','Calma','#2C99D6','#FBFAFC','#EB2F33'],['Blue Romance','Calma','#09318D','#FCFFFF','#EED2E2'],['Neon Rodeo','Energía','#1734BE','#FBE45C','#ED2B8C'],['Tropic Fever','Energía','#005C47','#E0F354','#FD550A'],['Cherry Soda','Energía','#CA0B0A','#FCFFFF','#EC9AC2'],['Velvet Vice','Actitud','#55263D','#F5EBCC','#F34E3D'],['Night Swim','Actitud','#080F1B','#329DD2','#FF4C2B'],['Afterburn','Actitud','#28282B','#F9F9F9','#FF4200']];
-test('COLOR CLUB: the nine official triples are exact and immutable',()=>{
+const triples=[['Soft Static','Calma','#222526','#CCDCEF','#FF6574'],['Ocean Drive','Calma','#2C99D6','#FBFAFC','#EB2F33'],['Blue Romance','Calma','#09318D','#FCFFFF','#EED2E2'],['Palm Social','Calma','#3B2418','#F2E8DA','#8EC5FF'],['Sunday Market','Calma','#9CAF88','#F7F5EF','#E8412C'],['Neon Rodeo','Energía','#1734BE','#FBE45C','#ED2B8C'],['Tropic Fever','Energía','#005C47','#E0F354','#FD550A'],['Cherry Soda','Energía','#CA0B0A','#FCFFFF','#EC9AC2'],['Velvet Vice','Actitud','#55263D','#F5EBCC','#F34E3D'],['Night Swim','Actitud','#080F1B','#329DD2','#FF4C2B'],['Afterburn','Actitud','#28282B','#F9F9F9','#FF4200'],['Chrome Rush','Actitud','#2B2D31','#D9DADC','#FFC93C']];
+test('COLOR CLUB: the twelve official triples are exact and immutable',()=>{
  assert.deepEqual(T.colorClub.map(p=>[p.name,p.category,p.primary,p.secondary,p.accent]),triples);
  assert.equal(Object.isFrozen(T.colorClub),true);assert.ok(T.colorClub.every(Object.isFrozen));
 });
@@ -35,6 +35,6 @@ test('COLOR CLUB: default cards retain classic white/light and dark surfaces, wh
   assert.equal(v.surface,mode==='dark'?'#1B1C24':'#FFFFFF');
   assert.equal(v.background,p.secondary);assert.equal(v.sidebar,p.primary);assert.equal(v.accent,p.accent);
  }
- const p=T.colorClub[6],custom=T.effective({plan:'pro',theme_config:{primary:p.primary,secondary:p.secondary,surface:'#FAF8F5'}});
+ const p=T.colorClub.find(p=>p.id==='velvet-vice'),custom=T.effective({plan:'pro',theme_config:{primary:p.primary,secondary:p.secondary,surface:'#FAF8F5'}});
  assert.equal(custom.surface,'#FAF8F5');assert.equal(T.effective({plan:'negocio'}).surface,'#FFFFFF');
 });

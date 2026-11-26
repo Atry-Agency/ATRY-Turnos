@@ -7,12 +7,15 @@ const colorClub=[
 {id:'soft-static',name:'Soft Static',category:'Calma',primary:'#222526',secondary:'#CCDCEF',accent:'#FF6574'},
 {id:'ocean-drive',name:'Ocean Drive',category:'Calma',primary:'#2C99D6',secondary:'#FBFAFC',accent:'#EB2F33'},
 {id:'blue-romance',name:'Blue Romance',category:'Calma',primary:'#09318D',secondary:'#FCFFFF',accent:'#EED2E2'},
+{id:'palm-social',name:'Palm Social',category:'Calma',primary:'#3B2418',secondary:'#F2E8DA',accent:'#8EC5FF'},
+{id:'sunday-market',name:'Sunday Market',category:'Calma',primary:'#9CAF88',secondary:'#F7F5EF',accent:'#E8412C'},
 {id:'neon-rodeo',name:'Neon Rodeo',category:'Energía',primary:'#1734BE',secondary:'#FBE45C',accent:'#ED2B8C'},
 {id:'tropic-fever',name:'Tropic Fever',category:'Energía',primary:'#005C47',secondary:'#E0F354',accent:'#FD550A'},
 {id:'cherry-soda',name:'Cherry Soda',category:'Energía',primary:'#CA0B0A',secondary:'#FCFFFF',accent:'#EC9AC2'},
 {id:'velvet-vice',name:'Velvet Vice',category:'Actitud',primary:'#55263D',secondary:'#F5EBCC',accent:'#F34E3D'},
 {id:'night-swim',name:'Night Swim',category:'Actitud',primary:'#080F1B',secondary:'#329DD2',accent:'#FF4C2B'},
-{id:'afterburn',name:'Afterburn',category:'Actitud',primary:'#28282B',secondary:'#F9F9F9',accent:'#FF4200'}
+{id:'afterburn',name:'Afterburn',category:'Actitud',primary:'#28282B',secondary:'#F9F9F9',accent:'#FF4200'},
+{id:'chrome-rush',name:'Chrome Rush',category:'Actitud',primary:'#2B2D31',secondary:'#D9DADC',accent:'#FFC93C'}
 ].map(p=>Object.freeze(p));Object.freeze(colorClub);
 function paletteFor(config){return colorClub.find(p=>p.primary===hex(config?.primary)&&p.secondary===hex(config?.secondary))||null;}
 const essential=['#4754E6','#2056A0','#187459'];

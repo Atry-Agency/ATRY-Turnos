@@ -9,11 +9,11 @@ const assert=require('node:assert/strict'),{chromium,webkit}=require('playwright
    const page=await browser.newPage({viewport:{width:1440,height:1000},serviceWorkers:'block',reducedMotion:'reduce'}),errors=[];let writes=0;
    page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(r.url().includes('/appearance')&&r.method()!=='GET')writes++});
    await page.goto(fixture.base+'/#/app/configuracion/apariencia');await page.getByRole('button',{name:'Temas',exact:true}).click();
-   await page.locator('.cc-card').first().waitFor();assert.equal(await page.locator('.cc-card').count(),9);
+   await page.locator('.cc-card').first().waitFor();assert.equal(await page.locator('.cc-card').count(),T.colorClub.length);
    for(const width of [320,375,390,430,768,1440]){
     await page.setViewportSize({width,height:1000});
     for(const category of ['Calma','Energía','Actitud','Todas']){
-     await page.getByRole('button',{name:category,exact:true}).click();assert.equal(await page.locator('.cc-card').count(),category==='Todas'?9:3);
+     await page.getByRole('button',{name:category,exact:true}).click();assert.equal(await page.locator('.cc-card').count(),T.colorClub.filter(p=>category==='Todas'||p.category===category).length);
      const geometry=await page.locator('.cc-card,.cc-filters button,.cc-original').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return{width:r.width,height:r.height,left:r.left,right:r.right,scroll:n.scrollWidth,client:n.clientWidth}}));
      assert.ok(geometry.every(r=>r.height>=44&&r.left>=0&&r.right<=width+1&&r.scroll<=r.client+1),JSON.stringify({width,category,geometry}));
     }
@@ -37,10 +37,10 @@ const assert=require('node:assert/strict'),{chromium,webkit}=require('playwright
    }
    assert.equal(writes,0,'Selection/filter/view changes must not autosave');
    await page.getByRole('button',{name:'Ver publicada',exact:true}).click();assert.equal(await page.locator('.ts-preview-frame').getAttribute('data-color-club'),null);
-   await page.getByRole('button',{name:'Ver borrador',exact:true}).click();assert.equal(await page.locator('.ts-preview-frame').getAttribute('data-color-club'),'afterburn');
+   await page.getByRole('button',{name:'Ver borrador',exact:true}).click();assert.equal(await page.locator('.ts-preview-frame').getAttribute('data-color-club'),T.colorClub.at(-1).id);
    await page.getByRole('button',{name:/^ATRY Original/}).click();assert.equal(await page.locator('.ts-preview-frame').getAttribute('data-color-club'),null);
-   await page.getByRole('button',{name:'Calma',exact:true}).focus();await page.keyboard.press('Enter');assert.equal(await page.locator('.cc-card').count(),3);
-   assert.deepEqual(errors,[]);checks.push(`${engine.name()} 9 triples × light/dark × panel/public; keyboard; draft isolation; no autosave`);
+   await page.getByRole('button',{name:'Calma',exact:true}).focus();await page.keyboard.press('Enter');assert.equal(await page.locator('.cc-card').count(),T.colorClub.filter(p=>p.category==='Calma').length);
+   assert.deepEqual(errors,[]);checks.push(`${engine.name()} ${T.colorClub.length} triples × light/dark × panel/public; keyboard; draft isolation; no autosave`);
    // Verify existing PostgreSQL persistence, public projection and actual page tokens.
    for(const [id,slug] of [['b1','negocio-prueba-1'],['pa','panama-local']]){
     const publicPage=await browser.newPage({viewport:{width:390,height:1000},serviceWorkers:'block'});
