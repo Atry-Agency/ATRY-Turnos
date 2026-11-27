@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "server": "PostgreSQL 17.6 on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit",
+  "backend_pids": [
+    28272,
+    28274,
+    28276
+  ],
+  "checks": [
+    "Same parent/key: two independent connections, one immutable closeout and identical replay",
+    "Distinct keys / same quote: second closeout rejected after lock, no duplicate collection",
+    "Direct partial receipt versus stale collective closeout: stale review rejected atomically",
+    "Collective full receipt versus direct receipt: overpayment rejected",
+    "Concurrent forgotten opening and close: one opening, one close; second rejected",
+    "Close wins versus cash receipt: late cash receipt rejected, closed count immutable",
+    "Cash receipt wins versus close: stale count rejected; receipt retained once",
+    "Agenda cancellation versus receipt: booking lock forces reread and rejects cancelled work",
+    "Agenda completion versus stale closeout: rejected after booking lock, exactly one charge, no deadlock",
+    "Late close failure after child receipt on server PostgreSQL: all money, charge projections and revision rolled back",
+    "Other tenant writes complete while first business ledger lock is held",
+    "Connection lost before commit: PostgreSQL rolls back the entire transaction",
+    "Final reconciliation: all account balances equal postings and charge projections equal allocations; zero drift"
+  ],
+  "closeouts": 5,
+  "closed_sessions": 2,
+  "negative_balances": 0,
+  "account_drift": 0,
+  "charge_drift": 0
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-27",
+  "project": "djoxdtloqwbrhgtgencc",
+  "branch": "codex/finance-cash-local",
+  "columns_hash": "ca23f20207b3348a25562ffa4320e881",
+  "baseline_columns": 112,
+  "migration_count": 3,
+  "migration_files": [
+    {
+      "file": "202611270001_finance_core.sql",
+      "sha256": "e987a0f6afd1c7b569aca31d829c0d12accd802db3b6cf8ebd8a99c51c865e7b"
+    },
+    {
+      "file": "202611270002_finance_closeout.sql",
+      "sha256": "a90d08011f4b76631f8f67704b33b9f37d87102db76bde0e47c0fd1efeee778c"
+    },
+    {
+      "file": "202611270003_finance_closeout_refinement.sql",
+      "sha256": "89997623ccb5802bb03df2f704a98d3fad22a86e8537bf36124613bea65437bf"
+    }
+  ],
+  "remote_writes": 0,
+  "deployment_performed": false
+}

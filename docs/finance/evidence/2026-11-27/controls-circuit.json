@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": [
+    "chromium: collective selection, split methods, partial payment, explicit exceptions, spontaneous work, expense, forgotten-opening declaration, live cash totals, review + explicit single atomic POST, lost-response recovery, unchanged booking states; zero requests on selection/typing/steps; 320\u20131440px no modal overflow",
+    "webkit: collective selection, split methods, partial payment, explicit exceptions, spontaneous work, expense, forgotten-opening declaration, live cash totals, review + explicit single atomic POST, lost-response recovery, unchanged booking states; zero requests on selection/typing/steps; 320\u20131440px no modal overflow"
+  ]
+}

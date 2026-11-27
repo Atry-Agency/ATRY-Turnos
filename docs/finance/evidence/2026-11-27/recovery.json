@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": [
+    "chromium: changed balance retains draft and requires explicit correction; drafts from different days coexist; offline submission survives reload, verifies absent, original retry records one empty review and no extra money",
+    "webkit: changed balance retains draft and requires explicit correction; drafts from different days coexist; offline submission survives reload, verifies absent, original retry records one empty review and no extra money"
+  ]
+}

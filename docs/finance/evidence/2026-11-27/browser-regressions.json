@@ -1,0 +1,259 @@
+{
+  "passed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "business": "b1",
+      "passed": [
+        "A01 full resets partial",
+        "A02 short-height one usable scroller",
+        "A03 immediate inline validation and focus",
+        "A04 reload/refresh/pause preserve draft without authorization",
+        "A05 discount/courtesy real ledger",
+        "A06 no-money review",
+        "A07 atomic Agenda cancellation",
+        "A08 professional bulk selection",
+        "A09 filtered history and revisit",
+        "A10 digital flow skips cash and verified result"
+      ],
+      "geometry": [
+        {
+          "width": 320,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 699.609375,
+          "stepHeight": 505.8125,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 721.8125,
+          "stepHeight": 546.015625,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 721.8125,
+          "stepHeight": 546.015625,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 430,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 721.8125,
+          "stepHeight": 546.015625,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 661.15625,
+          "stepHeight": 471.859375,
+          "bodyScroll": "hidden",
+          "bodyBottom": 787,
+          "dialogBottom": 812,
+          "footerBottom": 787
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 661.15625,
+          "stepHeight": 471.859375,
+          "bodyScroll": "hidden",
+          "bodyBottom": 787,
+          "dialogBottom": 812,
+          "footerBottom": 787
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 280,
+          "stepHeight": 919.296875,
+          "bodyScroll": "auto",
+          "bodyBottom": 361,
+          "dialogBottom": 374,
+          "footerBottom": 1160.296875
+        },
+        {
+          "width": 720,
+          "height": 422,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 312,
+          "stepHeight": 919.296875,
+          "bodyScroll": "auto",
+          "bodyBottom": 393,
+          "dialogBottom": 406,
+          "footerBottom": 1160.296875
+        },
+        {
+          "width": 390,
+          "height": 300,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 198,
+          "stepHeight": 1013.84375,
+          "bodyScroll": "auto",
+          "bodyBottom": 275,
+          "dialogBottom": 288,
+          "footerBottom": 1254.84375
+        }
+      ],
+      "financePosts": 2
+    },
+    {
+      "engine": "webkit",
+      "business": "pa",
+      "passed": [
+        "A01 full resets partial",
+        "A02 short-height one usable scroller",
+        "A03 immediate inline validation and focus",
+        "A04 reload/refresh/pause preserve draft without authorization",
+        "A05 discount/courtesy real ledger",
+        "A06 no-money review",
+        "A07 atomic Agenda cancellation",
+        "A08 professional bulk selection",
+        "A09 filtered history and revisit",
+        "A10 digital flow skips cash and verified result"
+      ],
+      "geometry": [
+        {
+          "width": 320,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 700,
+          "stepHeight": 507,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 722,
+          "stepHeight": 547,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 722,
+          "stepHeight": 547,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 430,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 722,
+          "stepHeight": 547,
+          "bodyScroll": "hidden",
+          "bodyBottom": 815,
+          "dialogBottom": 832,
+          "footerBottom": 815
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 662,
+          "stepHeight": 474,
+          "bodyScroll": "hidden",
+          "bodyBottom": 787,
+          "dialogBottom": 812,
+          "footerBottom": 787
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 662,
+          "stepHeight": 474,
+          "bodyScroll": "hidden",
+          "bodyBottom": 787,
+          "dialogBottom": 812,
+          "footerBottom": 787
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 280,
+          "stepHeight": 917,
+          "bodyScroll": "auto",
+          "bodyBottom": 361,
+          "dialogBottom": 374,
+          "footerBottom": 1158
+        },
+        {
+          "width": 720,
+          "height": 422,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 312,
+          "stepHeight": 917,
+          "bodyScroll": "auto",
+          "bodyBottom": 393,
+          "dialogBottom": 406,
+          "footerBottom": 1158
+        },
+        {
+          "width": 390,
+          "height": 300,
+          "center": 0,
+          "overflow": 0,
+          "bodyHeight": 198,
+          "stepHeight": 1010,
+          "bodyScroll": "auto",
+          "bodyBottom": 275,
+          "dialogBottom": 288,
+          "footerBottom": 1251
+        }
+      ],
+      "financePosts": 2
+    }
+  ]
+}

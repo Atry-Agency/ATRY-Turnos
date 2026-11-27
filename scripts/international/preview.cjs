@@ -16,6 +16,15 @@ INSERT INTO staff(id,business_id,name,created_at) VALUES('chat-uy-staff','chat-u
 INSERT INTO memberships VALUES('00000000-0000-0000-0000-000000000001','chat-uy','owner'),('00000000-0000-0000-0000-000000000001','chat-pa','owner');
 UPDATE businesses SET subscription_status='pending',paid_until=NULL,is_active=0,subscription_started_at=NULL WHERE id IN ('chat-uy','chat-pa');
 SET ROLE authenticated;`)}
+if(options.finance){
+ // Fictional reservations only; no financial records, automatic payments or deliveries.
+ for(const [bid,sid,vid,zone] of [['b1','s1','v1','America/Montevideo'],['pa','ps','pv','America/Panama']]){
+  for(const [i,name]of ['Camila Duarte','Diego Santos','Valentina Pérez'].entries()){
+   const start=(await db.query("SELECT (((now() AT TIME ZONE $1)::date+1)+make_time(10+$2::int,0,0)) AT TIME ZONE $1 t",[zone,i])).rows[0].t;
+   await db.query('SELECT public.atry_create_booking($1,$2::jsonb)',[bid,JSON.stringify({staff_id:sid,service_id:vid,starts_at:start,customer_name:name,customer_email:'finanzas-'+bid+'-'+i+'@example.invalid',idempotency_key:'finance_preview_'+bid+'_booking_000'+i})]);
+  }
+ }
+}
 const {createApiAdapter}=await import(path.resolve(__dirname,'../../cloud/api-adapter.mjs'));
 const client={auth:{getSession:async()=>({data:{session:{}}})},async rpc(name,args={}){try{if(!/^atry_[a-z_]+$/.test(name))throw Error('RPC not admitted');const pairs=Object.entries(args);if(pairs.some(([k])=>!/^[a-z_]+$/.test(k)))throw Error('Invalid RPC argument');return{data:(await db.query(`SELECT public.${name}(${pairs.map(([k],i)=>k+'=>$'+(i+1)).join(',')}) v`,pairs.map(([,v])=>v!==null&&typeof v==='object'?JSON.stringify(v):v))).rows[0].v}}catch(e){return{error:{message:e.message,code:e.code}}}}};
 const {createPublicHandler}=await import(path.resolve(__dirname,'../../supabase/functions/_shared/public-gateway.mjs'));

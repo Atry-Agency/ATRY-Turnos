@@ -1,0 +1,85 @@
+/private/tmp/atry-v2-regression.log
+# tests 275
+# pass 275
+# fail 0
+
+/private/tmp/atry-v2-react.log
+# tests 32
+# pass 32
+# fail 0
+PASS Datos permitidos; elimina contactos e identificadores
+PASS Series inválidas se descartan sin interrumpir la pantalla
+PASS Conteo y cancelación explicados; sin atribuciones
+PASS Plan sin estadísticas no recibe indicadores avanzados
+PASS No inventa cancelaciones con denominador inválido
+PASS Evolución de dos semanas completas: 7 a 14 (+100%)
+PASS Sin tendencia si faltan fechas, hay duplicados o día parcial
+PASS Memoria aislada, persistente, acotada y sin errores sin almacenamiento
+PASS Roles y acciones respetan alcance
+PASS Descartar versión de evidencia no oculta un resultado nuevo
+PASS Texto ambiguo o destructivo nunca ejecuta; reconocimiento acotado con acentos
+PASS Rol y plan excluyen herramientas no autorizadas
+PASS Acceso vencido permite lectura y cancelación, no creaciones
+PASS Vista previa y token explícito; volver y cancelar no escriben
+PASS Ejecuciones duplicadas y confirmación repetida rechazadas
+PASS Un error 409 se informa sin éxito ni reintento automático
+PASS Resultado de red incierto bloquea reejecución y nunca anuncia éxito
+PASS Cambio de usuario, negocio, rol o sesión invalida la confirmación
+PASS Respuesta tardía de otro contexto se descarta
+PASS Backend conectado a Supabase no permite escrituras experimentales
+PASS No hay acceso al ejecutor desde preparación; bloqueo de rutas fuera del negocio
+PASS Las opciones de otro negocio no pueden inyectarse en un selector
+PASS Una respuesta con business_id ajeno se descarta
+PASS Cancelar una consulta pendiente descarta su respuesta sin bloquear una nueva tarea
+PASS Los valores aceptados por el servidor prevalecen sobre los solicitados
+PASS Los borradores ajenos a IAtry bloquean el inicio y la confirmación de escrituras
+PASS Respuesta vacía del servidor nunca se anuncia como éxito
+PASS Catálogo anidado de otro negocio rechazado también en ctx.api.read
+PASS Fallo de relectura tras guardar deja resultado incierto incluso con HTTP 401
+PASS official icons: all semantic aliases, sector mappings, safe decorative SVGs, IAtry metadata and busy feedback; no external runtime
+PASS robust context: extensible metadata, protected literals, safe compounds, negative follow-ups, literal references/expiry, medium-confidence gate, copy with fresh re-read, user/business/session isolation; zero writes
+PASS owner guidance: 89 checks; UY/PA dates, questions versus writes, bounded client searches, role/plan-aware destinations, fresh summary reads; no transport or permission expansion
+PASS first-use guidance: 27 checks; bounded goal recognition, negatives, explicit scoped review marks, unresolved professional asks for clarification; no transport
+PASS UX corrections: 26 checks; UY/PA currency in both receipt consumers, legacy UY, exact USD guard, identity layout and status gates.
+PASS registration country: explicit preference > existing hint > exact IANA zone > UY; no language/offset guesses; unknown inputs rejected
+PASS field examples: 34 checks; meaningful hints, existing values and validations preserved, native control exceptions, explicit overrides and UY/PA examples. No requests.
+PASS PostgreSQL conversational trial14 + exact once + readback
+PASS admin chat PostgreSQL: 82 focused checks, 29 local writes; real current RPC/cloud adapter; no Supabase or mail delivery.
+PASS settings navigation: 9 role/plan combinations; existing capability guards, unique links, owner-only appearance/access, unchanged staff navigation
+PASS admin assistant: 43 identity, ambiguity, current source, permissions and confirmation checks; zero transport calls.
+PASS navigation iconography: repeated diagonal absent from React and legacy sources; no decorative glyph arrows; all 36 destinations retained; necessary send and workspace controls preserved
+PASS UX components: helper+error association, caller aria-invalid, error announcement, complete UY/PA form fields and decimal step, existing optional values disclosed; no transport
+PASS subscription notice: 3 plans; expired, future, suspended, server denial, changed identity/business/session and failed read never report success; single read refresh; local controls and incomplete legal pages excluded from production
+PASS public security: verified informational page, original brand, responsive/reduced motion, footer link, no drafts/proposals/contract acceptance/data requests; other legal documents absent
+PASS landing confirmation: exact position, three moments, bounded scroll progression, reduced motion, coded noninteractive receipt with official assets and attributed map, existing demo CTA, no operational requests/writes/scroll interception; client defaults to light
+PASS client calendar: confirmed gate, Uruguay midnight, UTC exports, privacy, escaping/folding, changes and cancellations
+PASS calendar presentation: Uruguay day/year/time, overnight, missing data, confirmed-only and no client IAtry
+PASS production confirmation: actual receipt data, permitted logo, private link isolation, status gates, no demo location/map or decoration, both themes
+PASS cinematic upward return: manual exit, forward flow, nested chat isolation, direct navigation, autoplay and bounds
+PASS phase one: 9 role-plan availability cases; 17 bounded local tools; approved connected role/plan boundary; side-effect routes denied; strict readback rejects stale/foreign/mismatched records; weekly dialogue; zero requests.
+PASS social: nine intents × ten variants; bounded typo recognition; no recent repeats; hour/context; mixed commands not intercepted; draft/clarification/review/token preserved; explicit correction still works; zero requests or writes
+PASS personality: contextual questions across services, clients, holidays and breaks; corrections preserve facts; stable varied voice; success/energy require verified results; no transport
+PASS contextual references and calendar periods: no fabricated names/IDs; proposal vs existing reference; repeated tomorrow; full days, week, inclusive dates; Uruguay UTC conversion; accepted/pending corrections; no network
+PASS language: bounded typo repair, synonyms, accents, short contextual answers, durations, percentage guard, ambiguity and retained corrections; no transport
+PASS Panama language: 26 regional variants; citations/social separation; ambiguous times; contextual affirmations; UY/PA day boundary; 18 role/plan/country combinations; unchanged 17/16 tools; zero requests/writes
+PASS continuity: independent entities, short action change, no data loss, proposed contradictions accepted/rejected, dates/hours/staff corrections, cross-domain isolation, linked vs unrelated compound steps, cancellation distinct from execution, production retargeting denied; zero transport
+PASS natural dialogue: service, correction, price, vacation, break, absence, clients, statistics, compounds; human dates; invalid values retained; no transport or permission escalation; validated handoff skips repeats without writes
+PASS production: 17 approved tools; owner/Negocio scope; incomplete writes and unknown/materializing reads denied; stale sessions denied; contact required; no live requests
+PASS contextual discovery: ten routes, 17 approved production tools, role restrictions, no fabricated actions, no requests
+PASS 11 requested utterances, Uruguay dates, AM/PM clarification, contact/service reference, seed validation, explicit preview, compound no cancellation, real permissions preserved
+PASS understanding: 18 role/plan/business combinations; interpretation never writes; unapproved tools and materializing requests blocked; clarification allowed without transport; stale sessions; missing/invalid dates and numbers; no requests or writes
+PASS finite private trial: authorization default denied, exact payloads, seven locally simulated writes/readbacks across two groups, replay and stale scope blocked; zero network requests
+PASS presentation: no verified state without re-read; actual server values only; no demo facts; period uses Uruguay time
+PASS reservation safety plan: default denied; exact five simulated writes; business alerts off before booking; re-read after every write; restore settings; no tokens in receipts; stale scope/replay blocked; no network
+
+/private/tmp/atry-v2-finance-tests.log
+PASS finance model: exact signed money, large aggregates, malformed input/response rejection; expired-access exception only for explicit financial closing, never new receipts; stale context denied
+PASS financial guidance: financial role/capability/country questions, no transport or executable operations; explicit destinations only for owner/finance_core; negatives; exact count differences; unchanged tool catalogue
+
+/private/tmp/atry-v2-closeout-tests-final.log
+PASS intelligent closeout: explicit confirmation; fresh scoped quote; existing partial deduction; collective mixed methods; spontaneous work; expense; declared recovered opening; counted difference; atomic late-failure rollback; immutable audit; no booking-state edits; idempotent replay and payload-key rejection; staff/cross-business denial
+PASS financial guidance: financial role/capability/country questions, no transport or executable operations; explicit destinations only for owner/finance_core; negatives; exact count differences; unchanged tool catalogue
+PASS A05/A06/A07/A09: exact fixed/percentage discounts and courtesy, no fake cash; atomic cancellation via Agenda, late-failure rollback including cancellation; cancellation replay idempotent; exception-only and postponed/empty days; history 20+4 without duplicates and literal search; amount/permission/tenant guards; session-bound draft scope; day end metadata.
+PASS A04/A05 model: session/user/business isolation, 24h expiry, concurrent day drafts retained, confirmed-day deletion, malformed drafts rejected, logout cleanup; exact percentage rounding and courtesy without float money.
+Final creative build: passed; git diff --check: passed.
+DOM-only live preview: center offset 0px, horizontal overflow 0px, avatar 46px, body overflow auto, notification pointer-events none.

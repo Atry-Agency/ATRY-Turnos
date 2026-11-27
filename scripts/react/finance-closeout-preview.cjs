@@ -1,0 +1,10 @@
+'use strict';
+// Always a NEW disposable database. Never attaches to or overwrites an earlier rehearsal.
+const {createPreview}=require('../international/preview.cjs');
+(async()=>{const s=await createPreview(Number(process.env.ATRY_CLOSEOUT_PORT)||3388,{adminChat:true,finance:true});try{
+ await s.db.exec('RESET ROLE');
+ await s.db.exec("UPDATE bookings b SET starts_at=b.starts_at+((now() AT TIME ZONE z.timezone)::date-(b.starts_at AT TIME ZONE z.timezone)::date)*interval '1 day',ends_at=b.ends_at+((now() AT TIME ZONE z.timezone)::date-(b.starts_at AT TIME ZONE z.timezone)::date)*interval '1 day',blocked_from=b.blocked_from+((now() AT TIME ZONE z.timezone)::date-(b.starts_at AT TIME ZONE z.timezone)::date)*interval '1 day',blocked_until=b.blocked_until+((now() AT TIME ZONE z.timezone)::date-(b.starts_at AT TIME ZONE z.timezone)::date)*interval '1 day' FROM businesses z WHERE z.id=b.business_id AND z.id IN ('b1','pa')");
+ for(const [bid,service]of[['b1','v1'],['pa','pv']]){await s.db.query("INSERT INTO staff(id,business_id,name,created_at) VALUES($1,$2,'Mateo',now())",['closeout_'+bid,bid]);await s.db.query('INSERT INTO staff_services VALUES($1,$2)',['closeout_'+bid,service]);await s.db.query('INSERT INTO working_hours SELECT $1,d,540,1080 FROM generate_series(0,6)d',['closeout_'+bid]);await s.db.query("UPDATE bookings SET staff_id=$1 WHERE business_id=$2 AND customer_name_snapshot='Diego Santos'",['closeout_'+bid,bid]);}
+ await s.db.exec('SET ROLE authenticated');for(const bid of ['b1','pa'])await s.db.query('SELECT atry_finance_command($1,$2,$3::jsonb) v',[bid,'initialize',JSON.stringify({request_key:'local_closeout_setup_'+bid.padEnd(16,'0')})]);
+ console.log('CIERRE INTELIGENTE · CORRECCIONES A01–A10 · '+s.base+'/#/app/finanzas/closeout');console.log('Base nueva efímera con trabajos ficticios de hoy y dos profesionales. Sin cobros precargados. Los ensayos anteriores se conservan en sus puertos.');for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>void s.close().finally(()=>process.exit()));
+ }catch(e){await s.close();throw e}})().catch(e=>{console.error(e);process.exitCode=1});

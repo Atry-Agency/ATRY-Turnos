@@ -15,6 +15,7 @@
  transition:background var(--motion-fast),border-color var(--motion-fast),box-shadow var(--motion-fast);
 }
 :root .btn.secondary{--button-bg:var(--surface2,#F2F3FA);--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
+:root .btn.assistant{--button-bg:var(--panel-soft);--button-fg:var(--panel-action);--button-border:color-mix(in srgb,var(--panel-action) 24%,var(--line))}
 :root .btn.outline{--button-bg:transparent;--button-fg:var(--ink,#1B2030);--button-border:var(--line,#DDE0EB)}
 :root .btn.ghost{--button-bg:transparent;--button-fg:var(--ink,#1B2030);--button-border:transparent}
 :root .btn.success{--button-bg:#15803D;--button-fg:#FFF;--button-border:#15803D}
@@ -64,3 +65,11 @@
 
 :root .btn>.i,:root .btn>svg{width:var(--control-icon);height:var(--control-icon)}
 :root .btn.sm>.i,:root .btn.sm>svg{width:var(--control-icon-small);height:var(--control-icon-small)}
+
+/* Assistant selection is a preview action, with an optional pointer response. */
+@media(hover:hover) and (pointer:fine){:root .btn.assistant:hover:not(:disabled):not([aria-disabled=true]){--button-bg:var(--panel-action-fill,var(--panel-action));--button-fg:var(--panel-on-action-fill,var(--panel-on-action,var(--brand-on-action)));--button-border:var(--button-bg);background:var(--button-bg);color:var(--button-fg)}}
+@media(prefers-reduced-motion:reduce){:root .btn.assistant{transition:none}}
+
+/* Dismissal shares the approved cancellation red, while preserving native button semantics. */
+:root button.dialog-close:is(:focus-visible,:active):not(:disabled):not([aria-disabled=true]){background:var(--atry-danger,#E51D4F);border-color:var(--atry-danger,#E51D4F);color:#FFF}
+@media(hover:hover){:root button.dialog-close:hover:not(:disabled):not([aria-disabled=true]){background:var(--atry-danger,#E51D4F);border-color:var(--atry-danger,#E51D4F);color:#FFF}}

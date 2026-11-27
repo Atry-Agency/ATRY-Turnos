@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "currency": "UYU",
+      "services": "catalog incl hidden; multiple and repeated services; exact total; remove; custom; restore edited amount",
+      "cash": "count incl opening, expected amount and matching count",
+      "writes": 1,
+      "viewports": "320,375,390,430,768,1440 and landscape",
+      "events": [
+        {
+          "kind": "expense",
+          "amount_minor": "100",
+          "note": "Compra de insumos"
+        },
+        {
+          "kind": "income",
+          "amount_minor": "25000",
+          "note": "Servicio adicional de prueba con nombre largo"
+        },
+        {
+          "kind": "income",
+          "amount_minor": "300",
+          "note": "Producto personalizado"
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "currency": "USD",
+      "services": "catalog incl hidden; multiple and repeated services; exact total; remove; custom; restore edited amount",
+      "cash": "count incl opening, expected amount and matching count",
+      "writes": 1,
+      "viewports": "320,375,390,430,768,1440 and landscape",
+      "events": [
+        {
+          "kind": "expense",
+          "amount_minor": "100",
+          "note": "Compra de insumos"
+        },
+        {
+          "kind": "income",
+          "amount_minor": "300",
+          "note": "Producto personalizado"
+        },
+        {
+          "kind": "income",
+          "amount_minor": "525",
+          "note": "Servicio adicional de prueba con nombre largo"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "identity": "official LiquidAvatar + actual state transitions",
+      "hover": {
+        "media": true,
+        "second": "none",
+        "label": "Seleccionar todos",
+        "transform": "matrix(1, 0, 0, 1, 0, -21.45)",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(71, 84, 230)",
+        "width": 166.625,
+        "height": 44
+      },
+      "reduced": {
+        "text": "none",
+        "avatar": [
+          "none",
+          "none",
+          "none"
+        ]
+      },
+      "touch": "stable action, no hover-only affordance, compact selected cards; no financial writes"
+    },
+    {
+      "engine": "webkit",
+      "identity": "official LiquidAvatar + actual state transitions",
+      "hover": {
+        "media": true,
+        "second": "none",
+        "label": "Seleccionar todos",
+        "transform": "matrix(1, 0, 0, 1, 0, -20.9)",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(71, 84, 230)",
+        "width": 166.625,
+        "height": 44
+      },
+      "reduced": {
+        "text": "none",
+        "avatar": [
+          "none",
+          "none",
+          "none"
+        ]
+      },
+      "touch": "stable action, no hover-only affordance, compact selected cards; no financial writes"
+    }
+  ]
+}

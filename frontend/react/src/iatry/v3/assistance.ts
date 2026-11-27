@@ -1,3 +1,4 @@
+import {financeAssistance} from './finance-assistance';
 import {regionalDay,type RegionalBusiness} from '../../domain/region';
 import type {IatryDestination} from '../navigation';
 import {calendarDay} from './temporal';
@@ -16,6 +17,7 @@ function agendaTarget(source:string,business:RegionalBusiness,status='',now=new 
 export function assistanceFor(source:string,context:AssistanceContext,now=new Date()):Assistance|undefined{
  if(!source.trim()||source.length>500)return;
  const s=normalizeLanguage(source);if(/\b(?:no quiero|no necesito|no hagas|no cierres|no cambies)\b/.test(s))return;
+ const finance=financeAssistance(s,context);if(finance)return finance;
  const staff=context.business.role==='staff',info=informationRequest(s),manage=!staff;
  const answer=(title:string,text:string,steps:string[],links:Assistance['links'],related:string[]=[]):Assistance=>({title,text,steps,links,related});
  const restricted=(area:string)=>answer('Acceso del negocio','La gestión de '+area+' corresponde al propietario o al responsable con permiso. No cambié tu acceso.',[],[link('Ver mi agenda','/app/agenda')],['¿Qué puedo hacer con IAtry?']);

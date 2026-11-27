@@ -1,0 +1,4 @@
+OBSERVED discount attempt: price 1000, received 900 => outstanding 100; no discount operation exists
+OBSERVED exception-only day: no payment, entry or cash close => FINANCE_CLOSEOUT_EMPTY; declaration cannot be saved alone
+PASS not-done declaration preserves original booking and outstanding balance; requires separate explicit Agenda resolution
+PASS independent/Individual day: bank collection 900 + spontaneous 1 - cash expense 5 = net 896; initial cash 100 excluded, counted 95 closes with no variance

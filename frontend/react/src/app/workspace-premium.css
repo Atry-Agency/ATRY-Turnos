@@ -97,6 +97,14 @@
 .workspace-action-popover button:hover,.workspace-action-popover button:focus-visible{background:#f0eaf8;outline:0}
 .workspace-action-popover button:focus-visible{box-shadow:inset 0 0 0 2px #9c80c7}
 .workspace-action-popover button:active{background:#e7dcf4}
+/* Business surfaces opt in; the plan notice keeps its established appearance. */
+.workspace-action-menu--business .workspace-action-trigger{width:44px;height:44px;border-color:var(--theme-line);background:var(--theme-surface);color:var(--theme-ink)}
+.workspace-action-menu--business .workspace-action-trigger:hover,.workspace-action-menu--business .workspace-action-trigger[aria-expanded=true]{background:var(--theme-surface2);box-shadow:none}
+.workspace-action-menu--business .workspace-action-trigger:focus-visible{outline-color:var(--brand-action)}
+.workspace-action-popover--business{border-color:var(--theme-line);background:var(--theme-surface);color:var(--theme-ink)}
+.workspace-action-popover--business .i{color:var(--brand-action)}
+.workspace-action-popover--business button:hover,.workspace-action-popover--business button:focus-visible,.workspace-action-popover--business button:active{background:var(--theme-surface2)}
+.workspace-action-popover--business button:focus-visible{box-shadow:inset 0 0 0 2px var(--brand-action)}
 @keyframes workspace-menu-in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.workspace-action-trigger{transition:none}.workspace-action-popover:popover-open,.workspace-action-popover[data-menu-open]{animation:none}}
 /* Secondary actions belong to the notice chrome, outside its conversion hierarchy. */

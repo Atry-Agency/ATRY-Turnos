@@ -1,0 +1,653 @@
+{
+  "completed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "business": "b1",
+      "observations": [
+        {
+          "case": "overpayment",
+          "blockedBeforeReview": true,
+          "invalidFields": 0,
+          "focusedElement": {
+            "tag": "BUTTON",
+            "label": "Continuar"
+          }
+        },
+        {
+          "case": "exception_full_after_previous_partial",
+          "label": "Sí recibí el importe completo",
+          "actualAmount": "700",
+          "fullAmount": "790",
+          "mismatch": true
+        },
+        {
+          "case": "backtracking",
+          "paymentAndSpontaneousDraftRetained": true
+        },
+        {
+          "case": "text_200percent",
+          "geometry": {
+            "overflow": 0,
+            "bodyHeight": 398.21875
+          }
+        },
+        {
+          "case": "short_landscape",
+          "geometry": {
+            "overflow": 0,
+            "bodyHeight": 12,
+            "dialogHeight": 326
+          }
+        },
+        {
+          "case": "reload_unsent_draft",
+          "selectedPayments": 0,
+          "dateAfterReload": "2026-11-26",
+          "dateBeforeReload": "2026-11-27"
+        },
+        {
+          "case": "offline_before_dispatch_then_reload",
+          "originalRequestRecovered": true,
+          "retryRecordedExactlyOnce": true
+        }
+      ],
+      "geometry": [
+        {
+          "width": 320,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 333.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 258.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 258.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 312.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 297.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "business": "pa",
+      "observations": [
+        {
+          "case": "overpayment",
+          "blockedBeforeReview": true,
+          "invalidFields": 0,
+          "focusedElement": {
+            "tag": "BODY",
+            "label": "Validación de integración · datos temporales · no usar para "
+          }
+        },
+        {
+          "case": "exception_full_after_previous_partial",
+          "label": "Sí recibí el importe completo",
+          "actualAmount": "7",
+          "fullAmount": "12.99",
+          "mismatch": true
+        },
+        {
+          "case": "backtracking",
+          "paymentAndSpontaneousDraftRetained": true
+        },
+        {
+          "case": "text_200percent",
+          "geometry": {
+            "overflow": 0,
+            "bodyHeight": 398.21875
+          }
+        },
+        {
+          "case": "short_landscape",
+          "geometry": {
+            "overflow": 0,
+            "bodyHeight": 12,
+            "dialogHeight": 326
+          }
+        },
+        {
+          "case": "reload_unsent_draft",
+          "selectedPayments": 0,
+          "dateAfterReload": "2026-11-26",
+          "dateBeforeReload": "2026-11-27"
+        },
+        {
+          "case": "offline_before_dispatch_then_reload",
+          "originalRequestRecovered": true,
+          "retryRecordedExactlyOnce": true
+        }
+      ],
+      "geometry": [
+        {
+          "width": 320,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 333.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Cobros",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 258.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Excepciones",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 258.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 395.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Otros movimientos",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 330.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 413.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Efectivo",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 320,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 315.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 375,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 390,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 430,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 398.21875,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 768,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        },
+        {
+          "width": 1440,
+          "step": "Revisión",
+          "centerError": 0,
+          "overflow": 0,
+          "bodyHeight": 408.625,
+          "footerGap": 16,
+          "footerInside": true
+        }
+      ]
+    }
+  ]
+}

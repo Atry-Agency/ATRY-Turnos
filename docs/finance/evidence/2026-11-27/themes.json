@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": [
+    "chromium: original + 12 COLOR CLUB, light/dark, selected text >=4.5, centered 320/835/1440px, independent scrolling and non-overlapping footer, no writes before confirmation",
+    "webkit: original + 12 COLOR CLUB, light/dark, selected text >=4.5, centered 320/835/1440px, independent scrolling and non-overlapping footer, no writes before confirmation"
+  ]
+}

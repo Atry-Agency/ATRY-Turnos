@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "nativeCheckbox": "Space, focus ring, check and uncheck; Lucide stroke transition in both directions",
+      "close": "future state communicated; toggling preserves amount; no writes",
+      "face": {
+        "duration": "0.18s, 0.18s, 0.14s",
+        "outline": "solid",
+        "width": 22
+      },
+      "choiceStyle": {
+        "padding": "16px",
+        "border": "solid",
+        "background": "rgb(245, 246, 254)",
+        "height": 44
+      },
+      "fields": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        }
+      ],
+      "forced": {
+        "background": "rgba(5, 0, 73, 0.8)",
+        "border": "rgba(5, 0, 73, 0.8)",
+        "mark": "rgb(255, 255, 255)"
+      },
+      "responsive": "320,375,390,430,768,1440 and landscape",
+      "reducedMotion": "no transitions or reveal animations"
+    },
+    {
+      "engine": "webkit",
+      "nativeCheckbox": "Space, focus ring, check and uncheck; Lucide stroke transition in both directions",
+      "close": "future state communicated; toggling preserves amount; no writes",
+      "face": {
+        "duration": "0.18s, 0.18s, 0.14s",
+        "outline": "solid",
+        "width": 22
+      },
+      "choiceStyle": {
+        "padding": "16px",
+        "border": "solid",
+        "background": "rgb(247, 248, 254)",
+        "height": 44
+      },
+      "fields": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "paper": "#FFFFFF",
+          "focus": "none"
+        }
+      ],
+      "forced": {
+        "background": "rgba(128, 188, 254, 0.6)",
+        "border": "rgba(128, 188, 254, 0.6)",
+        "mark": "rgb(0, 0, 0)"
+      },
+      "responsive": "320,375,390,430,768,1440 and landscape",
+      "reducedMotion": "no transitions or reveal animations"
+    }
+  ]
+}

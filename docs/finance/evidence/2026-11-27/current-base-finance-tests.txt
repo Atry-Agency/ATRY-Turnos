@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": [
+    "activation without historical debts; unchanged prices; exact cents; partial/full/mixed-method collection; no cash without session; idempotency and changed-payload denial; atomic failures; pending balance; refunds; insufficient cash; stale close; counted variance; immutable history; reopening without duplicated capital; correction; plan limits; direct-write denial; cross-tenant/staff/session/subscription isolation; operation recovery"
+  ]
+}
+PASS A05/A06/A07/A09: exact fixed/percentage discounts and courtesy, no fake cash; atomic cancellation via Agenda, late-failure rollback including cancellation; cancellation replay idempotent; exception-only and postponed/empty days; history 20+4 without duplicates and literal search; amount/permission/tenant guards; session-bound draft scope; day end metadata.

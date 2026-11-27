@@ -6,6 +6,11 @@ export function phoneExample(country?:string){return country==='PA'?'+507 6000 0
 export function fieldExample({name='',label='',type='text',min,max,autoComplete,minLength,country}:FieldExample):string|undefined{
  if(['hidden','file','checkbox','radio','color','range','date','time','datetime-local','month','week','button','submit'].includes(type))return undefined;
  const text=normalize(label+' '+name);
+ if(/efectivo.*contad|counted/.test(text))return 'Ingresá cuánto contaste';
+ if(/efectivo.*inicial|efectivo.*abrir|opening/.test(text))return 'Ingresá con cuánto empezás';
+ if(/recibido|received|cobraste/.test(text))return 'Ingresá cuánto cobraste';
+ if(/pagaste|expense/.test(text))return 'Ingresá cuánto pagaste';
+ if(/importe|amount/.test(text))return 'Ingresá cuánto es';
  if(type==='password')return autoComplete==='new-password'?(minLength?'Al menos '+minLength+' caracteres':'Elegí una contraseña segura'):'Tu contraseña actual';
  if(type==='email'||type!=='number'&&/email|correo/.test(text))return 'nombre@correo.com';
  if(type==='tel'||/telefono|whatsapp|phone/.test(text))return phoneExample(country);
@@ -34,6 +39,7 @@ export function fieldExample({name='',label='',type='text',min,max,autoComplete,
  if(/direccion|address/.test(text))return 'Calle y número de puerta';
  if(/city|ciudad/.test(text))return 'Tu ciudad';
  if(/subject|asunto|descripcion breve/.test(text))return 'Resumí tu consulta en una frase';
+ if(/concepto|detalle|\bnote\b/.test(text))return 'Contanos de qué se trata';
  if(/nombre|name/.test(text))return 'Nombre y apellido';
  return label&&!label.includes('?')&&!label.includes('¿')?'Ingresá '+label.charAt(0).toLowerCase()+label.slice(1):'Escribí tu respuesta';
 }

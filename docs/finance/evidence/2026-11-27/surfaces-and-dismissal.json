@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "evidence": [
+    {
+      "engine": "chromium",
+      "mode": "light",
+      "field": {
+        "background": "rgb(255, 255, 255)",
+        "outline": "none",
+        "shadow": "rgb(204, 61, 34) 0px 0px 0px 1px inset",
+        "radius": "12px"
+      },
+      "hover": {
+        "background": "rgb(229, 29, 79)",
+        "color": "rgb(255, 255, 255)",
+        "icon": "rgb(255, 255, 255)"
+      },
+      "checked": "method + expense controls; close hover/focus; shared services modal and IAtry dismissal; 320\u20131440 and landscape",
+      "writes": 0
+    },
+    {
+      "engine": "chromium",
+      "mode": "dark",
+      "field": {
+        "background": "rgb(27, 28, 36)",
+        "outline": "none",
+        "shadow": "rgb(255, 76, 43) 0px 0px 0px 1px inset",
+        "radius": "12px"
+      },
+      "hover": {
+        "background": "rgb(229, 29, 79)",
+        "color": "rgb(255, 255, 255)",
+        "icon": "rgb(255, 255, 255)"
+      },
+      "checked": "method + expense controls; close hover/focus; shared services modal and IAtry dismissal; 320\u20131440 and landscape",
+      "writes": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "light",
+      "field": {
+        "background": "rgb(255, 255, 255)",
+        "outline": "none",
+        "shadow": "rgb(204, 61, 34) 0px 0px 0px 1px inset",
+        "radius": "12px"
+      },
+      "hover": {
+        "background": "rgb(229, 29, 79)",
+        "color": "rgb(255, 255, 255)",
+        "icon": "rgb(255, 255, 255)"
+      },
+      "checked": "method + expense controls; close hover/focus; shared services modal and IAtry dismissal; 320\u20131440 and landscape",
+      "writes": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "dark",
+      "field": {
+        "background": "rgb(27, 28, 36)",
+        "outline": "none",
+        "shadow": "rgb(255, 76, 43) 0px 0px 0px 1px inset",
+        "radius": "12px"
+      },
+      "hover": {
+        "background": "rgb(229, 29, 79)",
+        "color": "rgb(255, 255, 255)",
+        "icon": "rgb(255, 255, 255)"
+      },
+      "checked": "method + expense controls; close hover/focus; shared services modal and IAtry dismissal; 320\u20131440 and landscape",
+      "writes": 0
+    }
+  ]
+}

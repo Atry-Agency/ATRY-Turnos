@@ -1,0 +1,9 @@
+{
+  "archive": "dist/finance-release-20261127.zip",
+  "sha256": "73bef22ddef88757f643b39be24c68805c6bb882b913736f764cd44423d65a50",
+  "bytes": 3494562,
+  "candidateAssets": 162,
+  "previousAssets": 158,
+  "routes": 21,
+  "remoteWrites": 0
+}
